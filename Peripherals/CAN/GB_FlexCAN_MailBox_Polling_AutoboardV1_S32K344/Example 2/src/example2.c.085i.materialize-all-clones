@@ -1,0 +1,34 @@
+main ()
+{
+  struct Flexcan_Ip_MsgBuffType rxData;
+  struct Flexcan_Ip_DataInfoType rx_info;
+  Flexcan_Ip_StatusType FlexCAN_Api_Status;
+  int D.10237;
+  <unnamed type> _1;
+
+  <bb 2> :
+  Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  Port_Init (0B);
+  rx_info = {};
+  rx_info.data_length = 8;
+  rx_info.is_polling = 1;
+  FlexCAN_Ip_Init_Privileged (4, &FlexCAN_State0, &FlexCAN_Config0);
+  FlexCAN_Api_Status_12 = FlexCAN_Ip_SetStartMode_Privileged (4);
+
+  <bb 3> :
+  FlexCAN_Api_Status_14 = FlexCAN_Ip_ConfigRxMb (4, 1, &rx_info, 801);
+
+  <bb 4> :
+  _1 = FlexCAN_Ip_ReceiveBlocking (4, 1, &rxData, 1, 1000);
+  if (_1 == 3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  memset (&rxData.data, 0, 64);
+  goto <bb 3>; [INV]
+
+}
+
+

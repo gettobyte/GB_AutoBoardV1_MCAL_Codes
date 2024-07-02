@@ -1,0 +1,78 @@
+
+Marking local functions:
+
+
+Marking externally visible functions:
+
+
+Marking externally visible variables: Port_apInoutMuxSettings/9 Port_apInMuxSettingsIndex/8 Port_apInMuxSettings/7 Port_apSiul2InstancePinModeAvailability/6 Port_au16NumInoutMuxSettings/5
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Port_apInoutMuxSettings/9 (Port_apInoutMuxSettings) @071dc168
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Port_SIUL2_0_aInoutMuxSettings/4 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Port_apInMuxSettingsIndex/8 (Port_apInMuxSettingsIndex) @071dc120
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Port_SIUL2_0_au16InMuxSettingsIndex/1 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Port_apInMuxSettings/7 (Port_apInMuxSettings) @071dc0d8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Port_SIUL2_0_aInMuxSettings/3 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Port_apSiul2InstancePinModeAvailability/6 (Port_apSiul2InstancePinModeAvailability) @071dc090
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Port_SIUL2_0_au16PinModeAvailability/2 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Port_au16NumInoutMuxSettings/5 (Port_au16NumInoutMuxSettings) @071dc048
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Port_SIUL2_0_aInoutMuxSettings/4 (Port_SIUL2_0_aInoutMuxSettings) @071dc000
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Port_apInoutMuxSettings/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Port_SIUL2_0_aInMuxSettings/3 (Port_SIUL2_0_aInMuxSettings) @069cabd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Port_apInMuxSettings/7 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Port_SIUL2_0_au16PinModeAvailability/2 (Port_SIUL2_0_au16PinModeAvailability) @069caab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Port_apSiul2InstancePinModeAvailability/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Port_SIUL2_0_au16InMuxSettingsIndex/1 (Port_SIUL2_0_au16InMuxSettingsIndex) @06f4fa20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Port_apInMuxSettingsIndex/8 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

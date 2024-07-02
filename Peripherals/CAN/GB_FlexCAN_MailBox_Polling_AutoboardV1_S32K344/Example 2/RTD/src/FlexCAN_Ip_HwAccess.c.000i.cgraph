@@ -1,0 +1,3814 @@
+Trivially needed symbols: FlexCAN_ResetImaskBuff/84 FlexCAN_ConfigCtrlOptions/83 FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_EnableEnhancedRxFifo/81 FlexCAN_IsEnhancedRxFifoAvailable/80 FlexCAN_IsMbOutOfRange/79 FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetOperationMode/75 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuffTimestamp/71 FlexCAN_SetRxMsgBuff/70 FlexCAN_EnableInterrupts/69 FlexCAN_DisableInterrupts/68 FLEXCAN_ClearMsgBuffIntCmd/67 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_LockRxMsgBuff/65 FlexCAN_GetMbPayloadSize/64 FlexCAN_GetPayloadSize/63 FlexCAN_SetPayloadSize/62 FlexCAN_EnableRxFifo/61 FlexCAN_Init/60 FlexCAN_SetErrIntCmd/59 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMsgBuffRegion/53 FlexCAN_ComputePayloadSize/52 FlexCAN_ClearRAM/51 FlexCAN_ComputeDLCValue/50 FlexCAN_Ip_au32ImaskBuff/49
+Trivially needed symbols: FlexcanBase/107 maxMbNum/87 flexcanBase/86 payload_code/85
+
+
+Initial Symbol table:
+
+FlexcanBase/107 (FlexcanBase) @07e50240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @07d61620
+  References: 
+  Referring: FlexCAN_IsEnhancedRxFifoAvailable/80 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13) @07e20d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13) @07e20c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11) @07e08ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11) @07e08e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18) @07e08b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18) @07e08a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06) @07e080e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06) @07e08000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05) @07dfbe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05) @07dfbd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04) @07dfbb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04) @07dfba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03) @07dfb8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03) @07dfb7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+OsIf_GetElapsed/92 (OsIf_GetElapsed) @07dfb620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_GetCounter/91 (OsIf_GetCounter) @07dfb540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02) @07dfb460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02) @07dfb380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_MicrosToTicks/88 (OsIf_MicrosToTicks) @07dfb2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+maxMbNum/87 (maxMbNum) @07dff120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @07cad0e0
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+flexcanBase/86 (flexcanBase) @07dff0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @07dff120
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+payload_code/85 (payload_code) @07d8f0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @07d45a80
+  References: 
+  Referring: FlexCAN_ComputeDLCValue/50 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_ResetImaskBuff/84 (FlexCAN_ResetImaskBuff) @07d61e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ConfigCtrlOptions/83 (FlexCAN_ConfigCtrlOptions) @07d61b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07d61e00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetEdgeFilter/35 FlexCAN_SetEdgeFilter/35 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_CanBitSampling/36 FlexCAN_CanBitSampling/36 FlexCAN_SetProtocolException/32 FlexCAN_SetProtocolException/32 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetIsoCan/30 FlexCAN_SetIsoCan/30 
+FlexCAN_SetEnhancedRxFifoFilter/82 (FlexCAN_SetEnhancedRxFifoFilter) @07d618c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07d61b60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+FlexCAN_EnableEnhancedRxFifo/81 (FlexCAN_EnableEnhancedRxFifo) @07d61620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07d618c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsEnhancedRxFifoAvailable/80 
+FlexCAN_IsEnhancedRxFifoAvailable/80 (FlexCAN_IsEnhancedRxFifoAvailable) @07d611c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07d61620
+  References: FlexcanBase/107 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_EnableEnhancedRxFifo/81 
+  Calls: 
+FlexCAN_IsMbOutOfRange/79 (FlexCAN_IsMbOutOfRange) @07cd6e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07d611c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ReadEnhancedRxFifo/78 (FlexCAN_ReadEnhancedRxFifo) @07cd67e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cd6e00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_ReadRxFifo/77 (FlexCAN_ReadRxFifo) @07cd6d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cd67e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_SetRxFifoFilter/76 (FlexCAN_SetRxFifoFilter) @07cd69a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cd6d20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 DevAssert/0 
+FlexCAN_SetOperationMode/75 (FlexCAN_SetOperationMode) @07cd6700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cd69a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetSelfReception/26 
+FlexCAN_SetMaxMsgBuffNum/74 (FlexCAN_SetMaxMsgBuffNum) @07cd6000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cd6700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMsgBuffRegion/53 DevAssert/0 FlexCAN_GetMbPayloadSize/64 
+FlexCAN_SetTxMsgBuff/73 (FlexCAN_SetTxMsgBuff) @07cc2a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cd6000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_ComputePayloadSize/52 FlexCAN_ComputeDLCValue/50 DevAssert/0 
+FlexCAN_GetMsgBuff/72 (FlexCAN_GetMsgBuff) @07cc2e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cc2a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMbPayloadSize/64 DevAssert/0 FlexCAN_ComputePayloadSize/52 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMsgBuffTimestamp/71 (FlexCAN_GetMsgBuffTimestamp) @07cc29a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cc2e00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_SetRxMsgBuff/70 (FlexCAN_SetRxMsgBuff) @07cc2700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cc29a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_EnableInterrupts/69 (FlexCAN_EnableInterrupts) @07cc2460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cc2700
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_DisableInterrupts/68 (FlexCAN_DisableInterrupts) @07cc21c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cc2460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FLEXCAN_ClearMsgBuffIntCmd/67 (FLEXCAN_ClearMsgBuffIntCmd) @07cb5e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cc21c0
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 
+FlexCAN_SetMsgBuffIntCmd/66 (FlexCAN_SetMsgBuffIntCmd) @07cb58c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cb5e00
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 
+FlexCAN_LockRxMsgBuff/65 (FlexCAN_LockRxMsgBuff) @07cb52a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cb58c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMbPayloadSize/64 (FlexCAN_GetMbPayloadSize) @07cb5d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cb52a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuff/72 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_GetPayloadSize/63 (FlexCAN_GetPayloadSize) @07cb5a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @07cb5d20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 
+  Calls: 
+FlexCAN_SetPayloadSize/62 (FlexCAN_SetPayloadSize) @07cb57e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cb5a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 
+FlexCAN_EnableRxFifo/61 (FlexCAN_EnableRxFifo) @07cb5540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cb57e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_Init/60 (FlexCAN_Init) @07cb51c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cb5540
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_ClearRAM/51 OsIf_GetElapsed/92 OsIf_GetCounter/91 OsIf_MicrosToTicks/88 
+FlexCAN_SetErrIntCmd/59 (FlexCAN_SetErrIntCmd) @07cad8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cb51c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 
+FlexCAN_Disable/58 (FlexCAN_Disable) @07cadb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cad8c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 OsIf_MicrosToTicks/88 
+FlexCAN_ExitFreezeMode/57 (FlexCAN_ExitFreezeMode) @07cad7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cadb60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 OsIf_MicrosToTicks/88 
+FlexCAN_Enable/56 (FlexCAN_Enable) @07cad380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cad7e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 OsIf_MicrosToTicks/88 
+FlexCAN_EnterFreezeMode/55 (FlexCAN_EnterFreezeMode) @07cad0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cad380
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 OsIf_MicrosToTicks/88 
+FlexCAN_GetMaxMbNum/54 (FlexCAN_GetMaxMbNum) @07d45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07cad0e0
+  References: flexcanBase/86 (read) maxMbNum/87 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_EnableInterrupts/69 FlexCAN_DisableInterrupts/68 FlexCAN_EnableRxFifo/61 FlexCAN_Init/60 FlexCAN_Init/60 FlexCAN_ClearRAM/51 FlexCAN_ClearRAM/51 
+  Calls: 
+FlexCAN_GetMsgBuffRegion/53 (FlexCAN_GetMsgBuffRegion) @07d45380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07d45700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuffTimestamp/71 FlexCAN_SetRxMsgBuff/70 FlexCAN_LockRxMsgBuff/65 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_ComputePayloadSize/52 (FlexCAN_ComputePayloadSize) @07d45d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @07d45380
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 
+  Calls: 
+FlexCAN_ClearRAM/51 (FlexCAN_ClearRAM) @07d45a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @07d45d20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_Init/60 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 
+FlexCAN_ComputeDLCValue/50 (FlexCAN_ComputeDLCValue) @07d45620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @07d45a80
+  References: payload_code/85 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetTxMsgBuff/73 
+  Calls: 
+FlexCAN_Ip_au32ImaskBuff/49 (FlexCAN_Ip_au32ImaskBuff) @06945438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @07d45620
+  References: 
+  Referring: FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_ResetImaskBuff/84 (write) 
+  Availability: not-ready
+  Varpool flags:
+FlexCAN_SetRegDefaultVal/48 (FlexCAN_SetRegDefaultVal) @07d3ab60
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetEnhancedRxFIFOIntStatusFlag/47 (FlexCAN_GetEnhancedRxFIFOIntStatusFlag) @07d3a0e0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ClearEnhancedRxFifoIntStatusFlag/46 (FlexCAN_ClearEnhancedRxFifoIntStatusFlag) @07d37e00
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetEnhancedRxFIFOStatusFlag/45 (FlexCAN_GetEnhancedRxFIFOStatusFlag) @07d37b60
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetEnhancedRxFifoIntAll/44 (FlexCAN_SetEnhancedRxFifoIntAll) @07d378c0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsEnhancedRxFifoEnabled/43 (FlexCAN_IsEnhancedRxFifoEnabled) @07d37620
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetRxMaskType/42 (FlexCAN_SetRxMaskType) @07d37380
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetTxArbitrationStartDelay/41 (FlexCAN_SetTxArbitrationStartDelay) @07c94ee0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsFreezeMode/40 (FlexCAN_IsFreezeMode) @07c94b60
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetRxIndividualMask/39 (FlexCAN_SetRxIndividualMask) @07c948c0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetRxMsgBuffGlobalMask/38 (FlexCAN_SetRxMsgBuffGlobalMask) @07c94620
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetMsgBuffIntStatusFlag/37 (FlexCAN_GetMsgBuffIntStatusFlag) @07c94380
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_CanBitSampling/36 (FlexCAN_CanBitSampling) @07c940e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07c919a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEdgeFilter/35 (FlexCAN_SetEdgeFilter) @07c91d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07d61e00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetBusOffAutorecovery/34 (FlexCAN_SetBusOffAutorecovery) @07c919a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07c91620
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetRemoteReqStore/33 (FlexCAN_SetRemoteReqStore) @07c91620
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07c91d20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetProtocolException/32 (FlexCAN_SetProtocolException) @07c912a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07c940e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEntireFrameArbitrationFieldComparison/31 (FlexCAN_SetEntireFrameArbitrationFieldComparison) @07c8dee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07c912a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetIsoCan/30 (FlexCAN_SetIsoCan) @07c8db60
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07c8dee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+RxFifoOcuppiedLastMsgBuff/29 (RxFifoOcuppiedLastMsgBuff) @07c8d620
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsListenOnlyModeEnabled/28 (FlexCAN_IsListenOnlyModeEnabled) @07c8d380
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsFDEnabled/27 (FlexCAN_IsFDEnabled) @07c8d0e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07cb5a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+FlexCAN_SetSelfReception/26 (FlexCAN_SetSelfReception) @07c8ae00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07cd69a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetOperationMode/75 
+  Calls: 
+FlexCAN_EnableExtCbt/25 (FlexCAN_EnableExtCbt) @07c8a9a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_EnhCbtEnable/24 (FlexCAN_EnhCbtEnable) @07c8a620
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsEnhCbtEnabled/23 (FlexCAN_IsEnhCbtEnabled) @07c8a2a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsExCbtEnabled/22 (FlexCAN_IsExCbtEnabled) @07c8a000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetFDTimeSegments/21 (FlexCAN_GetFDTimeSegments) @07c63d20
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetTimeSegments/20 (FlexCAN_GetTimeSegments) @07c63a80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetExtendedTimeSegments/19 (FlexCAN_GetExtendedTimeSegments) @07c637e0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetEnhancedDataTimeSegments/18 (FlexCAN_GetEnhancedDataTimeSegments) @07c63540
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetEnhancedDataTimeSegments/17 (FlexCAN_SetEnhancedDataTimeSegments) @07c632a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetEnhancedNominalTimeSegments/16 (FlexCAN_GetEnhancedNominalTimeSegments) @07c5ed20
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetEnhancedNominalTimeSegments/15 (FlexCAN_SetEnhancedNominalTimeSegments) @07c5ea80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetExtendedTimeSegments/14 (FlexCAN_SetExtendedTimeSegments) @07c5e540
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetTimeSegments/13 (FlexCAN_SetTimeSegments) @07c5be00
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetFDTimeSegments/12 (FlexCAN_SetFDTimeSegments) @07c5b700
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetBuffStatusImask/11 (FlexCAN_GetBuffStatusImask) @07c5b000
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetBuffStatusFlag/10 (FlexCAN_GetBuffStatusFlag) @07c54d20
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ClearMsgBuffIntStatusFlag/9 (FlexCAN_ClearMsgBuffIntStatusFlag) @07c54a80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_UnlockRxMsgBuff/8 (FlexCAN_UnlockRxMsgBuff) @07c547e0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetListenOnlyMode/7 (FlexCAN_SetListenOnlyMode) @07c54460
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetFDEnabled/6 (FlexCAN_SetFDEnabled) @07c540e0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_DisableMemErrorDetection/5 (FlexCAN_DisableMemErrorDetection) @07c4fc40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsEnabled/4 (FlexCAN_IsEnabled) @07c4f540
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetEnhancedTDCOffset/3 (FlexCAN_SetEnhancedTDCOffset) @07c4f0e0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetTDCOffset/2 (FlexCAN_SetTDCOffset) @07c49d20
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetRxFifoGlobalMask/1 (FlexCAN_SetRxFifoGlobalMask) @07c499a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+DevAssert/0 (DevAssert) @07bb57e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @07c8d0e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 FlexCAN_SetRxMsgBuff/70 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+
+Removing unused symbols: FlexCAN_SetRegDefaultVal/48 FlexCAN_GetEnhancedRxFIFOIntStatusFlag/47 FlexCAN_ClearEnhancedRxFifoIntStatusFlag/46 FlexCAN_GetEnhancedRxFIFOStatusFlag/45 FlexCAN_SetEnhancedRxFifoIntAll/44 FlexCAN_IsEnhancedRxFifoEnabled/43 FlexCAN_SetRxMaskType/42 FlexCAN_SetTxArbitrationStartDelay/41 FlexCAN_IsFreezeMode/40 FlexCAN_SetRxIndividualMask/39 FlexCAN_SetRxMsgBuffGlobalMask/38 FlexCAN_GetMsgBuffIntStatusFlag/37 RxFifoOcuppiedLastMsgBuff/29 FlexCAN_IsListenOnlyModeEnabled/28 FlexCAN_EnableExtCbt/25 FlexCAN_EnhCbtEnable/24 FlexCAN_IsEnhCbtEnabled/23 FlexCAN_IsExCbtEnabled/22 FlexCAN_GetFDTimeSegments/21 FlexCAN_GetTimeSegments/20 FlexCAN_GetExtendedTimeSegments/19 FlexCAN_GetEnhancedDataTimeSegments/18 FlexCAN_SetEnhancedDataTimeSegments/17 FlexCAN_GetEnhancedNominalTimeSegments/16 FlexCAN_SetEnhancedNominalTimeSegments/15 FlexCAN_SetExtendedTimeSegments/14 FlexCAN_SetTimeSegments/13 FlexCAN_SetFDTimeSegments/12 FlexCAN_GetBuffStatusImask/11 FlexCAN_GetBuffStatusFlag/10 FlexCAN_ClearMsgBuffIntStatusFlag/9 FlexCAN_UnlockRxMsgBuff/8 FlexCAN_SetListenOnlyMode/7 FlexCAN_SetFDEnabled/6 FlexCAN_DisableMemErrorDetection/5 FlexCAN_IsEnabled/4 FlexCAN_SetEnhancedTDCOffset/3 FlexCAN_SetTDCOffset/2 FlexCAN_SetRxFifoGlobalMask/1
+
+Reclaimed Symbol table:
+
+FlexcanBase/107 (FlexcanBase) @07e50240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_IsEnhancedRxFifoAvailable/80 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13) @07e20d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13) @07e20c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11) @07e08ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11) @07e08e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18) @07e08b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18) @07e08a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06) @07e080e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06) @07e08000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05) @07dfbe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05) @07dfbd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04) @07dfbb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04) @07dfba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03) @07dfb8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03) @07dfb7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+OsIf_GetElapsed/92 (OsIf_GetElapsed) @07dfb620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_GetCounter/91 (OsIf_GetCounter) @07dfb540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02) @07dfb460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02) @07dfb380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_MicrosToTicks/88 (OsIf_MicrosToTicks) @07dfb2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+maxMbNum/87 (maxMbNum) @07dff120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+flexcanBase/86 (flexcanBase) @07dff0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+payload_code/85 (payload_code) @07d8f0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_ComputeDLCValue/50 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_ResetImaskBuff/84 (FlexCAN_ResetImaskBuff) @07d61e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ConfigCtrlOptions/83 (FlexCAN_ConfigCtrlOptions) @07d61b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetEdgeFilter/35 FlexCAN_SetEdgeFilter/35 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_CanBitSampling/36 FlexCAN_CanBitSampling/36 FlexCAN_SetProtocolException/32 FlexCAN_SetProtocolException/32 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetIsoCan/30 FlexCAN_SetIsoCan/30 
+FlexCAN_SetEnhancedRxFifoFilter/82 (FlexCAN_SetEnhancedRxFifoFilter) @07d618c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+FlexCAN_EnableEnhancedRxFifo/81 (FlexCAN_EnableEnhancedRxFifo) @07d61620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsEnhancedRxFifoAvailable/80 
+FlexCAN_IsEnhancedRxFifoAvailable/80 (FlexCAN_IsEnhancedRxFifoAvailable) @07d611c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexcanBase/107 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_EnableEnhancedRxFifo/81 
+  Calls: 
+FlexCAN_IsMbOutOfRange/79 (FlexCAN_IsMbOutOfRange) @07cd6e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ReadEnhancedRxFifo/78 (FlexCAN_ReadEnhancedRxFifo) @07cd67e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_ReadRxFifo/77 (FlexCAN_ReadRxFifo) @07cd6d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_SetRxFifoFilter/76 (FlexCAN_SetRxFifoFilter) @07cd69a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 DevAssert/0 
+FlexCAN_SetOperationMode/75 (FlexCAN_SetOperationMode) @07cd6700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetSelfReception/26 
+FlexCAN_SetMaxMsgBuffNum/74 (FlexCAN_SetMaxMsgBuffNum) @07cd6000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMsgBuffRegion/53 DevAssert/0 FlexCAN_GetMbPayloadSize/64 
+FlexCAN_SetTxMsgBuff/73 (FlexCAN_SetTxMsgBuff) @07cc2a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_ComputePayloadSize/52 FlexCAN_ComputeDLCValue/50 DevAssert/0 
+FlexCAN_GetMsgBuff/72 (FlexCAN_GetMsgBuff) @07cc2e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMbPayloadSize/64 DevAssert/0 FlexCAN_ComputePayloadSize/52 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMsgBuffTimestamp/71 (FlexCAN_GetMsgBuffTimestamp) @07cc29a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_SetRxMsgBuff/70 (FlexCAN_SetRxMsgBuff) @07cc2700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_EnableInterrupts/69 (FlexCAN_EnableInterrupts) @07cc2460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_DisableInterrupts/68 (FlexCAN_DisableInterrupts) @07cc21c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FLEXCAN_ClearMsgBuffIntCmd/67 (FLEXCAN_ClearMsgBuffIntCmd) @07cb5e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 
+FlexCAN_SetMsgBuffIntCmd/66 (FlexCAN_SetMsgBuffIntCmd) @07cb58c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 
+FlexCAN_LockRxMsgBuff/65 (FlexCAN_LockRxMsgBuff) @07cb52a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMbPayloadSize/64 (FlexCAN_GetMbPayloadSize) @07cb5d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuff/72 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_GetPayloadSize/63 (FlexCAN_GetPayloadSize) @07cb5a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 
+  Calls: 
+FlexCAN_SetPayloadSize/62 (FlexCAN_SetPayloadSize) @07cb57e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 
+FlexCAN_EnableRxFifo/61 (FlexCAN_EnableRxFifo) @07cb5540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_Init/60 (FlexCAN_Init) @07cb51c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_ClearRAM/51 OsIf_GetElapsed/92 OsIf_GetCounter/91 OsIf_MicrosToTicks/88 
+FlexCAN_SetErrIntCmd/59 (FlexCAN_SetErrIntCmd) @07cad8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 
+FlexCAN_Disable/58 (FlexCAN_Disable) @07cadb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 OsIf_MicrosToTicks/88 
+FlexCAN_ExitFreezeMode/57 (FlexCAN_ExitFreezeMode) @07cad7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 OsIf_MicrosToTicks/88 
+FlexCAN_Enable/56 (FlexCAN_Enable) @07cad380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 OsIf_MicrosToTicks/88 
+FlexCAN_EnterFreezeMode/55 (FlexCAN_EnterFreezeMode) @07cad0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 OsIf_MicrosToTicks/88 
+FlexCAN_GetMaxMbNum/54 (FlexCAN_GetMaxMbNum) @07d45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: flexcanBase/86 (read) maxMbNum/87 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_EnableInterrupts/69 FlexCAN_DisableInterrupts/68 FlexCAN_EnableRxFifo/61 FlexCAN_Init/60 FlexCAN_Init/60 FlexCAN_ClearRAM/51 FlexCAN_ClearRAM/51 
+  Calls: 
+FlexCAN_GetMsgBuffRegion/53 (FlexCAN_GetMsgBuffRegion) @07d45380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuffTimestamp/71 FlexCAN_SetRxMsgBuff/70 FlexCAN_LockRxMsgBuff/65 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_ComputePayloadSize/52 (FlexCAN_ComputePayloadSize) @07d45d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 
+  Calls: 
+FlexCAN_ClearRAM/51 (FlexCAN_ClearRAM) @07d45a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_Init/60 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 
+FlexCAN_ComputeDLCValue/50 (FlexCAN_ComputeDLCValue) @07d45620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: payload_code/85 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetTxMsgBuff/73 
+  Calls: 
+FlexCAN_Ip_au32ImaskBuff/49 (FlexCAN_Ip_au32ImaskBuff) @06945438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_ResetImaskBuff/84 (write) 
+  Availability: not-ready
+  Varpool flags:
+FlexCAN_CanBitSampling/36 (FlexCAN_CanBitSampling) @07c940e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEdgeFilter/35 (FlexCAN_SetEdgeFilter) @07c91d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetBusOffAutorecovery/34 (FlexCAN_SetBusOffAutorecovery) @07c919a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetRemoteReqStore/33 (FlexCAN_SetRemoteReqStore) @07c91620
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetProtocolException/32 (FlexCAN_SetProtocolException) @07c912a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEntireFrameArbitrationFieldComparison/31 (FlexCAN_SetEntireFrameArbitrationFieldComparison) @07c8dee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetIsoCan/30 (FlexCAN_SetIsoCan) @07c8db60
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_IsFDEnabled/27 (FlexCAN_IsFDEnabled) @07c8d0e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+FlexCAN_SetSelfReception/26 (FlexCAN_SetSelfReception) @07c8ae00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetOperationMode/75 
+  Calls: 
+DevAssert/0 (DevAssert) @07bb57e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 FlexCAN_SetRxMsgBuff/70 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+
+
+Initial Symbol table:
+
+FlexcanBase.0/107 (FlexcanBase) @07e50240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_IsEnhancedRxFifoAvailable/80 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13) @07e20d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13) @07e20c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11) @07e08ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11) @07e08e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18) @07e08b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18) @07e08a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06) @07e080e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06) @07e08000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05) @07dfbe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05) @07dfbd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04) @07dfbb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04) @07dfba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03) @07dfb8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03) @07dfb7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+OsIf_GetElapsed/92 (OsIf_GetElapsed) @07dfb620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_GetCounter/91 (OsIf_GetCounter) @07dfb540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02) @07dfb460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02) @07dfb380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_MicrosToTicks/88 (OsIf_MicrosToTicks) @07dfb2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+maxMbNum.1/87 (maxMbNum) @07dff120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+flexcanBase.2/86 (flexcanBase) @07dff0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+payload_code.3/85 (payload_code) @07d8f0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_ComputeDLCValue/50 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_ResetImaskBuff/84 (FlexCAN_ResetImaskBuff) @07d61e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ConfigCtrlOptions/83 (FlexCAN_ConfigCtrlOptions) @07d61b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetEdgeFilter/35 FlexCAN_SetEdgeFilter/35 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_CanBitSampling/36 FlexCAN_CanBitSampling/36 FlexCAN_SetProtocolException/32 FlexCAN_SetProtocolException/32 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetIsoCan/30 FlexCAN_SetIsoCan/30 
+FlexCAN_SetEnhancedRxFifoFilter/82 (FlexCAN_SetEnhancedRxFifoFilter) @07d618c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+FlexCAN_EnableEnhancedRxFifo/81 (FlexCAN_EnableEnhancedRxFifo) @07d61620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsEnhancedRxFifoAvailable/80 
+FlexCAN_IsEnhancedRxFifoAvailable/80 (FlexCAN_IsEnhancedRxFifoAvailable) @07d611c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexcanBase.0/107 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_EnableEnhancedRxFifo/81 
+  Calls: 
+FlexCAN_IsMbOutOfRange/79 (FlexCAN_IsMbOutOfRange) @07cd6e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ReadEnhancedRxFifo/78 (FlexCAN_ReadEnhancedRxFifo) @07cd67e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_ReadRxFifo/77 (FlexCAN_ReadRxFifo) @07cd6d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_SetRxFifoFilter/76 (FlexCAN_SetRxFifoFilter) @07cd69a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 DevAssert/0 
+FlexCAN_SetOperationMode/75 (FlexCAN_SetOperationMode) @07cd6700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetSelfReception/26 
+FlexCAN_SetMaxMsgBuffNum/74 (FlexCAN_SetMaxMsgBuffNum) @07cd6000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMsgBuffRegion/53 DevAssert/0 FlexCAN_GetMbPayloadSize/64 
+FlexCAN_SetTxMsgBuff/73 (FlexCAN_SetTxMsgBuff) @07cc2a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_ComputePayloadSize/52 FlexCAN_ComputeDLCValue/50 DevAssert/0 
+FlexCAN_GetMsgBuff/72 (FlexCAN_GetMsgBuff) @07cc2e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMbPayloadSize/64 DevAssert/0 FlexCAN_ComputePayloadSize/52 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMsgBuffTimestamp/71 (FlexCAN_GetMsgBuffTimestamp) @07cc29a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_SetRxMsgBuff/70 (FlexCAN_SetRxMsgBuff) @07cc2700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_EnableInterrupts/69 (FlexCAN_EnableInterrupts) @07cc2460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_DisableInterrupts/68 (FlexCAN_DisableInterrupts) @07cc21c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FLEXCAN_ClearMsgBuffIntCmd/67 (FLEXCAN_ClearMsgBuffIntCmd) @07cb5e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 
+FlexCAN_SetMsgBuffIntCmd/66 (FlexCAN_SetMsgBuffIntCmd) @07cb58c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 
+FlexCAN_LockRxMsgBuff/65 (FlexCAN_LockRxMsgBuff) @07cb52a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMbPayloadSize/64 (FlexCAN_GetMbPayloadSize) @07cb5d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuff/72 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_GetPayloadSize/63 (FlexCAN_GetPayloadSize) @07cb5a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 
+  Calls: 
+FlexCAN_SetPayloadSize/62 (FlexCAN_SetPayloadSize) @07cb57e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 
+FlexCAN_EnableRxFifo/61 (FlexCAN_EnableRxFifo) @07cb5540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_Init/60 (FlexCAN_Init) @07cb51c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_ClearRAM/51 OsIf_GetElapsed/92 OsIf_GetCounter/91 OsIf_MicrosToTicks/88 
+FlexCAN_SetErrIntCmd/59 (FlexCAN_SetErrIntCmd) @07cad8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 
+FlexCAN_Disable/58 (FlexCAN_Disable) @07cadb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 OsIf_MicrosToTicks/88 
+FlexCAN_ExitFreezeMode/57 (FlexCAN_ExitFreezeMode) @07cad7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 OsIf_MicrosToTicks/88 
+FlexCAN_Enable/56 (FlexCAN_Enable) @07cad380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 OsIf_MicrosToTicks/88 
+FlexCAN_EnterFreezeMode/55 (FlexCAN_EnterFreezeMode) @07cad0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 OsIf_MicrosToTicks/88 
+FlexCAN_GetMaxMbNum/54 (FlexCAN_GetMaxMbNum) @07d45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: flexcanBase.2/86 (read) maxMbNum.1/87 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_EnableInterrupts/69 FlexCAN_DisableInterrupts/68 FlexCAN_EnableRxFifo/61 FlexCAN_Init/60 FlexCAN_Init/60 FlexCAN_ClearRAM/51 FlexCAN_ClearRAM/51 
+  Calls: 
+FlexCAN_GetMsgBuffRegion/53 (FlexCAN_GetMsgBuffRegion) @07d45380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuffTimestamp/71 FlexCAN_SetRxMsgBuff/70 FlexCAN_LockRxMsgBuff/65 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_ComputePayloadSize/52 (FlexCAN_ComputePayloadSize) @07d45d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 
+  Calls: 
+FlexCAN_ClearRAM/51 (FlexCAN_ClearRAM) @07d45a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_Init/60 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 
+FlexCAN_ComputeDLCValue/50 (FlexCAN_ComputeDLCValue) @07d45620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: payload_code.3/85 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetTxMsgBuff/73 
+  Calls: 
+FlexCAN_Ip_au32ImaskBuff/49 (FlexCAN_Ip_au32ImaskBuff) @06945438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_ResetImaskBuff/84 (write) 
+  Availability: not-ready
+  Varpool flags:
+FlexCAN_CanBitSampling/36 (FlexCAN_CanBitSampling) @07c940e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEdgeFilter/35 (FlexCAN_SetEdgeFilter) @07c91d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetBusOffAutorecovery/34 (FlexCAN_SetBusOffAutorecovery) @07c919a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetRemoteReqStore/33 (FlexCAN_SetRemoteReqStore) @07c91620
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetProtocolException/32 (FlexCAN_SetProtocolException) @07c912a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEntireFrameArbitrationFieldComparison/31 (FlexCAN_SetEntireFrameArbitrationFieldComparison) @07c8dee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetIsoCan/30 (FlexCAN_SetIsoCan) @07c8db60
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_IsFDEnabled/27 (FlexCAN_IsFDEnabled) @07c8d0e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+FlexCAN_SetSelfReception/26 (FlexCAN_SetSelfReception) @07c8ae00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetOperationMode/75 
+  Calls: 
+DevAssert/0 (DevAssert) @07bb57e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 FlexCAN_SetRxMsgBuff/70 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+FlexcanBase.0/107 (FlexcanBase) @07e50240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_IsEnhancedRxFifoAvailable/80 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13) @07e20d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13) @07e20c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11) @07e08ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11) @07e08e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18) @07e08b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18) @07e08a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06) @07e080e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06) @07e08000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05) @07dfbe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05) @07dfbd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04) @07dfbb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04) @07dfba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03) @07dfb8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03) @07dfb7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+OsIf_GetElapsed/92 (OsIf_GetElapsed) @07dfb620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_GetCounter/91 (OsIf_GetCounter) @07dfb540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02) @07dfb460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02) @07dfb380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_MicrosToTicks/88 (OsIf_MicrosToTicks) @07dfb2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+maxMbNum.1/87 (maxMbNum) @07dff120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+flexcanBase.2/86 (flexcanBase) @07dff0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+payload_code.3/85 (payload_code) @07d8f0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_ComputeDLCValue/50 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_ResetImaskBuff/84 (FlexCAN_ResetImaskBuff) @07d61e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ConfigCtrlOptions/83 (FlexCAN_ConfigCtrlOptions) @07d61b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetEdgeFilter/35 FlexCAN_SetEdgeFilter/35 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_CanBitSampling/36 FlexCAN_CanBitSampling/36 FlexCAN_SetProtocolException/32 FlexCAN_SetProtocolException/32 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetIsoCan/30 FlexCAN_SetIsoCan/30 
+FlexCAN_SetEnhancedRxFifoFilter/82 (FlexCAN_SetEnhancedRxFifoFilter) @07d618c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+FlexCAN_EnableEnhancedRxFifo/81 (FlexCAN_EnableEnhancedRxFifo) @07d61620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsEnhancedRxFifoAvailable/80 
+FlexCAN_IsEnhancedRxFifoAvailable/80 (FlexCAN_IsEnhancedRxFifoAvailable) @07d611c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexcanBase.0/107 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_EnableEnhancedRxFifo/81 
+  Calls: 
+FlexCAN_IsMbOutOfRange/79 (FlexCAN_IsMbOutOfRange) @07cd6e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ReadEnhancedRxFifo/78 (FlexCAN_ReadEnhancedRxFifo) @07cd67e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_ReadRxFifo/77 (FlexCAN_ReadRxFifo) @07cd6d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_SetRxFifoFilter/76 (FlexCAN_SetRxFifoFilter) @07cd69a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 DevAssert/0 
+FlexCAN_SetOperationMode/75 (FlexCAN_SetOperationMode) @07cd6700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetSelfReception/26 
+FlexCAN_SetMaxMsgBuffNum/74 (FlexCAN_SetMaxMsgBuffNum) @07cd6000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMsgBuffRegion/53 DevAssert/0 FlexCAN_GetMbPayloadSize/64 
+FlexCAN_SetTxMsgBuff/73 (FlexCAN_SetTxMsgBuff) @07cc2a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_ComputePayloadSize/52 FlexCAN_ComputeDLCValue/50 DevAssert/0 
+FlexCAN_GetMsgBuff/72 (FlexCAN_GetMsgBuff) @07cc2e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMbPayloadSize/64 DevAssert/0 FlexCAN_ComputePayloadSize/52 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMsgBuffTimestamp/71 (FlexCAN_GetMsgBuffTimestamp) @07cc29a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_SetRxMsgBuff/70 (FlexCAN_SetRxMsgBuff) @07cc2700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_EnableInterrupts/69 (FlexCAN_EnableInterrupts) @07cc2460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_DisableInterrupts/68 (FlexCAN_DisableInterrupts) @07cc21c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FLEXCAN_ClearMsgBuffIntCmd/67 (FLEXCAN_ClearMsgBuffIntCmd) @07cb5e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 
+FlexCAN_SetMsgBuffIntCmd/66 (FlexCAN_SetMsgBuffIntCmd) @07cb58c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 
+FlexCAN_LockRxMsgBuff/65 (FlexCAN_LockRxMsgBuff) @07cb52a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMbPayloadSize/64 (FlexCAN_GetMbPayloadSize) @07cb5d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuff/72 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_GetPayloadSize/63 (FlexCAN_GetPayloadSize) @07cb5a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 
+  Calls: 
+FlexCAN_SetPayloadSize/62 (FlexCAN_SetPayloadSize) @07cb57e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 
+FlexCAN_EnableRxFifo/61 (FlexCAN_EnableRxFifo) @07cb5540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_Init/60 (FlexCAN_Init) @07cb51c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_ClearRAM/51 OsIf_GetElapsed/92 OsIf_GetCounter/91 OsIf_MicrosToTicks/88 
+FlexCAN_SetErrIntCmd/59 (FlexCAN_SetErrIntCmd) @07cad8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 
+FlexCAN_Disable/58 (FlexCAN_Disable) @07cadb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 OsIf_MicrosToTicks/88 
+FlexCAN_ExitFreezeMode/57 (FlexCAN_ExitFreezeMode) @07cad7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 OsIf_MicrosToTicks/88 
+FlexCAN_Enable/56 (FlexCAN_Enable) @07cad380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 OsIf_MicrosToTicks/88 
+FlexCAN_EnterFreezeMode/55 (FlexCAN_EnterFreezeMode) @07cad0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 OsIf_MicrosToTicks/88 
+FlexCAN_GetMaxMbNum/54 (FlexCAN_GetMaxMbNum) @07d45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: flexcanBase.2/86 (read) maxMbNum.1/87 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_EnableInterrupts/69 FlexCAN_DisableInterrupts/68 FlexCAN_EnableRxFifo/61 FlexCAN_Init/60 FlexCAN_Init/60 FlexCAN_ClearRAM/51 FlexCAN_ClearRAM/51 
+  Calls: 
+FlexCAN_GetMsgBuffRegion/53 (FlexCAN_GetMsgBuffRegion) @07d45380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuffTimestamp/71 FlexCAN_SetRxMsgBuff/70 FlexCAN_LockRxMsgBuff/65 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_ComputePayloadSize/52 (FlexCAN_ComputePayloadSize) @07d45d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 
+  Calls: 
+FlexCAN_ClearRAM/51 (FlexCAN_ClearRAM) @07d45a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_Init/60 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 
+FlexCAN_ComputeDLCValue/50 (FlexCAN_ComputeDLCValue) @07d45620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: payload_code.3/85 (read) 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetTxMsgBuff/73 
+  Calls: 
+FlexCAN_Ip_au32ImaskBuff/49 (FlexCAN_Ip_au32ImaskBuff) @06945438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_ResetImaskBuff/84 (write) 
+  Availability: not-ready
+  Varpool flags:
+FlexCAN_CanBitSampling/36 (FlexCAN_CanBitSampling) @07c940e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEdgeFilter/35 (FlexCAN_SetEdgeFilter) @07c91d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetBusOffAutorecovery/34 (FlexCAN_SetBusOffAutorecovery) @07c919a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetRemoteReqStore/33 (FlexCAN_SetRemoteReqStore) @07c91620
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetProtocolException/32 (FlexCAN_SetProtocolException) @07c912a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEntireFrameArbitrationFieldComparison/31 (FlexCAN_SetEntireFrameArbitrationFieldComparison) @07c8dee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetIsoCan/30 (FlexCAN_SetIsoCan) @07c8db60
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_IsFDEnabled/27 (FlexCAN_IsFDEnabled) @07c8d0e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+FlexCAN_SetSelfReception/26 (FlexCAN_SetSelfReception) @07c8ae00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetOperationMode/75 
+  Calls: 
+DevAssert/0 (DevAssert) @07bb57e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 FlexCAN_SetRxMsgBuff/70 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+FlexcanBase.0/107 (FlexcanBase) @07e50240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: FlexCAN_IsEnhancedRxFifoAvailable/80 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13) @07e20d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13) @07e20c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetRxFifoFilter/76 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11) @07e08ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11) @07e08e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 FLEXCAN_ClearMsgBuffIntCmd/67 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18) @07e08b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18) @07e08a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 FlexCAN_SetMsgBuffIntCmd/66 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06) @07e080e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06) @07e08000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_SetErrIntCmd/59 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05) @07dfbe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05) @07dfbd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_Disable/58 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04) @07dfbb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04) @07dfba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_ExitFreezeMode/57 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03) @07dfb8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03) @07dfb7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_Enable/56 
+  Calls: 
+OsIf_GetElapsed/92 (OsIf_GetElapsed) @07dfb620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_GetCounter/91 (OsIf_GetCounter) @07dfb540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02) @07dfb460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02) @07dfb380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_EnterFreezeMode/55 
+  Calls: 
+OsIf_MicrosToTicks/88 (OsIf_MicrosToTicks) @07dfb2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: FlexCAN_Init/60 FlexCAN_Disable/58 FlexCAN_ExitFreezeMode/57 FlexCAN_Enable/56 FlexCAN_EnterFreezeMode/55 
+  Calls: 
+maxMbNum.1/87 (maxMbNum) @07dff120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+flexcanBase.2/86 (flexcanBase) @07dff0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: FlexCAN_GetMaxMbNum/54 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+payload_code.3/85 (payload_code) @07d8f0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: FlexCAN_ComputeDLCValue/50 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_ResetImaskBuff/84 (FlexCAN_ResetImaskBuff) @07d61e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ConfigCtrlOptions/83 (FlexCAN_ConfigCtrlOptions) @07d61b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetEdgeFilter/35 FlexCAN_SetEdgeFilter/35 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetRemoteReqStore/33 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_SetBusOffAutorecovery/34 FlexCAN_CanBitSampling/36 FlexCAN_CanBitSampling/36 FlexCAN_SetProtocolException/32 FlexCAN_SetProtocolException/32 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetEntireFrameArbitrationFieldComparison/31 FlexCAN_SetIsoCan/30 FlexCAN_SetIsoCan/30 
+FlexCAN_SetEnhancedRxFifoFilter/82 (FlexCAN_SetEnhancedRxFifoFilter) @07d618c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+FlexCAN_EnableEnhancedRxFifo/81 (FlexCAN_EnableEnhancedRxFifo) @07d61620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsEnhancedRxFifoAvailable/80 
+FlexCAN_IsEnhancedRxFifoAvailable/80 (FlexCAN_IsEnhancedRxFifoAvailable) @07d611c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: FlexcanBase.0/107 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: FlexCAN_EnableEnhancedRxFifo/81 
+  Calls: 
+FlexCAN_IsMbOutOfRange/79 (FlexCAN_IsMbOutOfRange) @07cd6e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+FlexCAN_ReadEnhancedRxFifo/78 (FlexCAN_ReadEnhancedRxFifo) @07cd67e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_ReadRxFifo/77 (FlexCAN_ReadRxFifo) @07cd6d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_ComputePayloadSize/52 
+FlexCAN_SetRxFifoFilter/76 (FlexCAN_SetRxFifoFilter) @07cd69a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 DevAssert/0 
+FlexCAN_SetOperationMode/75 (FlexCAN_SetOperationMode) @07cd6700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_SetSelfReception/26 
+FlexCAN_SetMaxMsgBuffNum/74 (FlexCAN_SetMaxMsgBuffNum) @07cd6000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_GetMsgBuffRegion/53 DevAssert/0 FlexCAN_GetMbPayloadSize/64 
+FlexCAN_SetTxMsgBuff/73 (FlexCAN_SetTxMsgBuff) @07cc2a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_ComputePayloadSize/52 FlexCAN_ComputeDLCValue/50 DevAssert/0 
+FlexCAN_GetMsgBuff/72 (FlexCAN_GetMsgBuff) @07cc2e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMbPayloadSize/64 DevAssert/0 FlexCAN_ComputePayloadSize/52 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMsgBuffTimestamp/71 (FlexCAN_GetMsgBuffTimestamp) @07cc29a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_SetRxMsgBuff/70 (FlexCAN_SetRxMsgBuff) @07cc2700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_EnableInterrupts/69 (FlexCAN_EnableInterrupts) @07cc2460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_DisableInterrupts/68 (FlexCAN_DisableInterrupts) @07cc21c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FLEXCAN_ClearMsgBuffIntCmd/67 (FLEXCAN_ClearMsgBuffIntCmd) @07cb5e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 
+FlexCAN_SetMsgBuffIntCmd/66 (FlexCAN_SetMsgBuffIntCmd) @07cb58c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (read) FlexCAN_Ip_au32ImaskBuff/49 (write) FlexCAN_Ip_au32ImaskBuff/49 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 
+FlexCAN_LockRxMsgBuff/65 (FlexCAN_LockRxMsgBuff) @07cb52a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMsgBuffRegion/53 
+FlexCAN_GetMbPayloadSize/64 (FlexCAN_GetMbPayloadSize) @07cb5d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuff/72 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_GetPayloadSize/63 (FlexCAN_GetPayloadSize) @07cb5a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: FlexCAN_GetMbPayloadSize/64 FlexCAN_GetMsgBuffRegion/53 
+  Calls: 
+FlexCAN_SetPayloadSize/62 (FlexCAN_SetPayloadSize) @07cb57e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 DevAssert/0 FlexCAN_IsFDEnabled/27 
+FlexCAN_EnableRxFifo/61 (FlexCAN_EnableRxFifo) @07cb5540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 
+FlexCAN_Init/60 (FlexCAN_Init) @07cb51c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 FlexCAN_ClearRAM/51 OsIf_GetElapsed/92 OsIf_GetCounter/91 OsIf_MicrosToTicks/88 
+FlexCAN_SetErrIntCmd/59 (FlexCAN_SetErrIntCmd) @07cad8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 
+FlexCAN_Disable/58 (FlexCAN_Disable) @07cadb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 OsIf_MicrosToTicks/88 
+FlexCAN_ExitFreezeMode/57 (FlexCAN_ExitFreezeMode) @07cad7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 OsIf_MicrosToTicks/88 
+FlexCAN_Enable/56 (FlexCAN_Enable) @07cad380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 OsIf_MicrosToTicks/88 
+FlexCAN_EnterFreezeMode/55 (FlexCAN_EnterFreezeMode) @07cad0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/92 OsIf_GetCounter/91 SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 OsIf_MicrosToTicks/88 
+FlexCAN_GetMaxMbNum/54 (FlexCAN_GetMaxMbNum) @07d45700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: flexcanBase.2/86 (read) maxMbNum.1/87 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_EnableInterrupts/69 FlexCAN_DisableInterrupts/68 FlexCAN_EnableRxFifo/61 FlexCAN_Init/60 FlexCAN_Init/60 FlexCAN_ClearRAM/51 FlexCAN_ClearRAM/51 
+  Calls: 
+FlexCAN_GetMsgBuffRegion/53 (FlexCAN_GetMsgBuffRegion) @07d45380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_GetMsgBuff/72 FlexCAN_GetMsgBuffTimestamp/71 FlexCAN_SetRxMsgBuff/70 FlexCAN_LockRxMsgBuff/65 
+  Calls: FlexCAN_GetPayloadSize/63 
+FlexCAN_ComputePayloadSize/52 (FlexCAN_ComputePayloadSize) @07d45d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 
+  Calls: 
+FlexCAN_ClearRAM/51 (FlexCAN_ClearRAM) @07d45a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: FlexCAN_Init/60 
+  Calls: FlexCAN_GetMaxMbNum/54 FlexCAN_GetMaxMbNum/54 
+FlexCAN_ComputeDLCValue/50 (FlexCAN_ComputeDLCValue) @07d45620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: payload_code.3/85 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: FlexCAN_SetTxMsgBuff/73 
+  Calls: 
+FlexCAN_Ip_au32ImaskBuff/49 (FlexCAN_Ip_au32ImaskBuff) @06945438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: FlexCAN_SetMsgBuffIntCmd/66 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FlexCAN_EnableInterrupts/69 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (read) FlexCAN_SetMsgBuffIntCmd/66 (write) FlexCAN_SetMsgBuffIntCmd/66 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FLEXCAN_ClearMsgBuffIntCmd/67 (read) FLEXCAN_ClearMsgBuffIntCmd/67 (write) FlexCAN_EnableInterrupts/69 (read) FlexCAN_EnableInterrupts/69 (read) FlexCAN_ResetImaskBuff/84 (write) 
+  Availability: available
+  Varpool flags:
+FlexCAN_CanBitSampling/36 (FlexCAN_CanBitSampling) @07c940e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEdgeFilter/35 (FlexCAN_SetEdgeFilter) @07c91d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetBusOffAutorecovery/34 (FlexCAN_SetBusOffAutorecovery) @07c919a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetRemoteReqStore/33 (FlexCAN_SetRemoteReqStore) @07c91620
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetProtocolException/32 (FlexCAN_SetProtocolException) @07c912a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetEntireFrameArbitrationFieldComparison/31 (FlexCAN_SetEntireFrameArbitrationFieldComparison) @07c8dee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_SetIsoCan/30 (FlexCAN_SetIsoCan) @07c8db60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_ConfigCtrlOptions/83 FlexCAN_ConfigCtrlOptions/83 
+  Calls: 
+FlexCAN_IsFDEnabled/27 (FlexCAN_IsFDEnabled) @07c8d0e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+FlexCAN_SetSelfReception/26 (FlexCAN_SetSelfReception) @07c8ae00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_SetOperationMode/75 
+  Calls: 
+DevAssert/0 (DevAssert) @07bb57e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_SetEnhancedRxFifoFilter/82 FlexCAN_ReadEnhancedRxFifo/78 FlexCAN_ReadRxFifo/77 FlexCAN_SetRxFifoFilter/76 FlexCAN_SetMaxMsgBuffNum/74 FlexCAN_SetTxMsgBuff/73 FlexCAN_GetMsgBuff/72 FlexCAN_SetRxMsgBuff/70 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 FlexCAN_SetPayloadSize/62 
+  Calls: 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: FlexcanBase.0/107 maxMbNum.1/87 flexcanBase.2/86 payload_code.3/85 FlexCAN_Ip_au32ImaskBuff/49
+Removing variables:
+
+Final Symbol table:
+
+FlexcanBase.0/107 (FlexcanBase) @07e50240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13/106 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_13) @07e20d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13/105 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_13) @07e20c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11/104 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_11) @07e08ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11/103 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_11) @07e08e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18/102 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18) @07e08b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18/101 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_18) @07e08a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06/100 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_06) @07e080e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06/99 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_06) @07e08000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05/98 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_05) @07dfbe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05/97 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_05) @07dfbd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04/96 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_04) @07dfbb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04/95 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_04) @07dfba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03/94 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_03) @07dfb8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03/93 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_03) @07dfb7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetElapsed/92 (OsIf_GetElapsed) @07dfb620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetCounter/91 (OsIf_GetCounter) @07dfb540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02/90 (SchM_Exit_Can_CAN_EXCLUSIVE_AREA_02) @07dfb460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02/89 (SchM_Enter_Can_CAN_EXCLUSIVE_AREA_02) @07dfb380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_MicrosToTicks/88 (OsIf_MicrosToTicks) @07dfb2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+maxMbNum.1/87 (maxMbNum) @07dff120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @07e50240
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+flexcanBase.2/86 (flexcanBase) @07dff0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @07dff120
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+payload_code.3/85 (payload_code) @07d8f0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @07dff0d8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_ResetImaskBuff/84 (FlexCAN_ResetImaskBuff) @07d61e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ConfigCtrlOptions/83 (FlexCAN_ConfigCtrlOptions) @07d61b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetEnhancedRxFifoFilter/82 (FlexCAN_SetEnhancedRxFifoFilter) @07d618c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_EnableEnhancedRxFifo/81 (FlexCAN_EnableEnhancedRxFifo) @07d61620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsEnhancedRxFifoAvailable/80 (FlexCAN_IsEnhancedRxFifoAvailable) @07d611c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_IsMbOutOfRange/79 (FlexCAN_IsMbOutOfRange) @07cd6e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ReadEnhancedRxFifo/78 (FlexCAN_ReadEnhancedRxFifo) @07cd67e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ReadRxFifo/77 (FlexCAN_ReadRxFifo) @07cd6d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetRxFifoFilter/76 (FlexCAN_SetRxFifoFilter) @07cd69a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetOperationMode/75 (FlexCAN_SetOperationMode) @07cd6700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetMaxMsgBuffNum/74 (FlexCAN_SetMaxMsgBuffNum) @07cd6000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetTxMsgBuff/73 (FlexCAN_SetTxMsgBuff) @07cc2a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetMsgBuff/72 (FlexCAN_GetMsgBuff) @07cc2e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetMsgBuffTimestamp/71 (FlexCAN_GetMsgBuffTimestamp) @07cc29a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetRxMsgBuff/70 (FlexCAN_SetRxMsgBuff) @07cc2700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_EnableInterrupts/69 (FlexCAN_EnableInterrupts) @07cc2460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_DisableInterrupts/68 (FlexCAN_DisableInterrupts) @07cc21c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FLEXCAN_ClearMsgBuffIntCmd/67 (FLEXCAN_ClearMsgBuffIntCmd) @07cb5e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetMsgBuffIntCmd/66 (FlexCAN_SetMsgBuffIntCmd) @07cb58c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_LockRxMsgBuff/65 (FlexCAN_LockRxMsgBuff) @07cb52a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetMbPayloadSize/64 (FlexCAN_GetMbPayloadSize) @07cb5d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetPayloadSize/63 (FlexCAN_GetPayloadSize) @07cb5a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetPayloadSize/62 (FlexCAN_SetPayloadSize) @07cb57e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_EnableRxFifo/61 (FlexCAN_EnableRxFifo) @07cb5540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_Init/60 (FlexCAN_Init) @07cb51c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_SetErrIntCmd/59 (FlexCAN_SetErrIntCmd) @07cad8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_Disable/58 (FlexCAN_Disable) @07cadb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ExitFreezeMode/57 (FlexCAN_ExitFreezeMode) @07cad7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_Enable/56 (FlexCAN_Enable) @07cad380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_EnterFreezeMode/55 (FlexCAN_EnterFreezeMode) @07cad0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetMaxMbNum/54 (FlexCAN_GetMaxMbNum) @07d45700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_GetMsgBuffRegion/53 (FlexCAN_GetMsgBuffRegion) @07d45380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ComputePayloadSize/52 (FlexCAN_ComputePayloadSize) @07d45d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ClearRAM/51 (FlexCAN_ClearRAM) @07d45a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_ComputeDLCValue/50 (FlexCAN_ComputeDLCValue) @07d45620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+FlexCAN_Ip_au32ImaskBuff/49 (FlexCAN_Ip_au32ImaskBuff) @06945438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @07d8f0d8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+FlexCAN_CanBitSampling/36 (FlexCAN_CanBitSampling) @07c940e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+FlexCAN_SetEdgeFilter/35 (FlexCAN_SetEdgeFilter) @07c91d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+FlexCAN_SetBusOffAutorecovery/34 (FlexCAN_SetBusOffAutorecovery) @07c919a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+FlexCAN_SetRemoteReqStore/33 (FlexCAN_SetRemoteReqStore) @07c91620
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+FlexCAN_SetProtocolException/32 (FlexCAN_SetProtocolException) @07c912a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+FlexCAN_SetEntireFrameArbitrationFieldComparison/31 (FlexCAN_SetEntireFrameArbitrationFieldComparison) @07c8dee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+FlexCAN_SetIsoCan/30 (FlexCAN_SetIsoCan) @07c8db60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+FlexCAN_IsFDEnabled/27 (FlexCAN_IsFDEnabled) @07c8d0e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+FlexCAN_SetSelfReception/26 (FlexCAN_SetSelfReception) @07c8ae00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+DevAssert/0 (DevAssert) @07bb57e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
