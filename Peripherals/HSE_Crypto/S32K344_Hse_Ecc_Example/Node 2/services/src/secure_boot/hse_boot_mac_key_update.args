@@ -1,0 +1,60 @@
+-DINIT_STDBY_RAM
+-DARMCM7_SP
+-DAUTOSAR_OS_NOT_USED
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/include"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/interface"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/interface/config"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/interface/inc_common"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/interface/inc_custom"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/interface/inc_services"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/drivers"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/drivers/dcm_register"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/drivers/flash"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/drivers/mu"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/drivers/nvic"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/drivers/stm"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/framework"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/framework/host_crypto_helper"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/framework/host_hse"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/framework/host_hse/hse_b"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/framework/host_keymgmt"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/plugins"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/plugins/Base_TS_T40D11M4I0R0"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/plugins/Base_TS_T40D11M4I0R0/include"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/inc"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/inc/host_flash"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/inc/host_flash/S32K3x4"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/inc/standard"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/common"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/fw_attribute"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/fw_attribute/non-otp"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/fw_attribute/otp"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/fw_crypto"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/fw_update"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/fw_update/standard"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/monotonic_cnt"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/secure_boot"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/shecommandapp"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/standard"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/services/src/utest"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target/m7"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target/m7/include"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target/m7/S32DS"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target/m7/S32DS/Debugger"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target/m7/S32DS/Linker_Files"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target/m7/S32DS/Linker_Files/standard"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target/m7/S32DS/Startup_Code"
+-I"C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric Algorithms/S32K344_Hse_Ecc_Example/src/target/m7/src"
+-O0
+-g3
+-Wall
+-c
+-fmessage-length=0
+-ffunction-sections
+-fdata-sections
+-mcpu=cortex-m7
+-specs=nosys.specs
