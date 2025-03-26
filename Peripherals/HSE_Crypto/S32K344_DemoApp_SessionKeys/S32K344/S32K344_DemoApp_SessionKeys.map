@@ -590,10 +590,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./drivers/mu/hse_mu.o
  .data          0x00000000        0x0 ./drivers/mu/hse_mu.o
  .bss           0x00000000        0x0 ./drivers/mu/hse_mu.o
- .bss.u8ChannelRef
-                0x00000000        0x2 ./drivers/mu/hse_mu.o
- .text.HSE_MU_GetFreeChannel
-                0x00000000       0xb8 ./drivers/mu/hse_mu.o
  .text.HSE_MU_GetChannelStatus
                 0x00000000       0x7c ./drivers/mu/hse_mu.o
  .text.HSE_MU_IsAckPending
@@ -1421,14 +1417,6 @@ Discarded input sections
                 0x00000000        0x1 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .rodata.muChIdx
                 0x00000000        0x1 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .text.CmacWithCounter
-                0x00000000       0xb0 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .debug_info    0x00000000     0x2418 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .debug_abbrev  0x00000000      0x191 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .debug_aranges
-                0x00000000       0x20 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .debug_ranges  0x00000000       0x10 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .debug_macro   0x00000000      0x53d ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .debug_macro   0x00000000      0xa6c ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .debug_macro   0x00000000       0x22 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .debug_macro   0x00000000       0x52 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
@@ -1495,12 +1483,6 @@ Discarded input sections
  .debug_macro   0x00000000       0xac ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .debug_macro   0x00000000       0x16 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .debug_macro   0x00000000       0x10 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .debug_line    0x00000000      0x948 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .debug_str     0x00000000     0xf0f4 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .comment       0x00000000       0x89 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .debug_frame   0x00000000       0x38 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
- .ARM.attributes
-                0x00000000       0x2e ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .group         0x00000000        0xc ./framework/host_crypto_helper/hse_host_ecc.o
  .group         0x00000000        0xc ./framework/host_crypto_helper/hse_host_ecc.o
  .group         0x00000000        0xc ./framework/host_crypto_helper/hse_host_ecc.o
@@ -2645,10 +2627,6 @@ Discarded input sections
  .rodata.muIf   0x00000000        0x1 ./framework/host_crypto_helper/hse_host_mac.o
  .rodata.muChannelIdx
                 0x00000000        0x1 ./framework/host_crypto_helper/hse_host_mac.o
- .text.MacSignSrv
-                0x00000000       0xc0 ./framework/host_crypto_helper/hse_host_mac.o
- .text.MacVerSrv
-                0x00000000       0xc0 ./framework/host_crypto_helper/hse_host_mac.o
  .text.AesKmCmacGen
                 0x00000000       0xc4 ./framework/host_crypto_helper/hse_host_mac.o
  .text.AesXCbcmacGenerate
@@ -2671,10 +2649,6 @@ Discarded input sections
                 0x00000000       0x8c ./framework/host_crypto_helper/hse_host_mac.o
  .text.AesFastCmacVerify
                 0x00000000       0x8c ./framework/host_crypto_helper/hse_host_mac.o
- .text.AesCmacGenerate
-                0x00000000       0x4c ./framework/host_crypto_helper/hse_host_mac.o
- .text.AesCmacVerify
-                0x00000000       0x4c ./framework/host_crypto_helper/hse_host_mac.o
  .text.AesCmacGenerateStreamStart
                 0x00000000       0x4c ./framework/host_crypto_helper/hse_host_mac.o
  .text.AesCmacGenerateStreamUpdate
@@ -2719,12 +2693,6 @@ Discarded input sections
                 0x00000000       0x4c ./framework/host_crypto_helper/hse_host_mac.o
  .text.HmacVerifyFinishStream
                 0x00000000       0x4c ./framework/host_crypto_helper/hse_host_mac.o
- .debug_info    0x00000000     0x36c9 ./framework/host_crypto_helper/hse_host_mac.o
- .debug_abbrev  0x00000000      0x21e ./framework/host_crypto_helper/hse_host_mac.o
- .debug_aranges
-                0x00000000      0x140 ./framework/host_crypto_helper/hse_host_mac.o
- .debug_ranges  0x00000000      0x130 ./framework/host_crypto_helper/hse_host_mac.o
- .debug_macro   0x00000000      0x543 ./framework/host_crypto_helper/hse_host_mac.o
  .debug_macro   0x00000000      0xa6c ./framework/host_crypto_helper/hse_host_mac.o
  .debug_macro   0x00000000       0x22 ./framework/host_crypto_helper/hse_host_mac.o
  .debug_macro   0x00000000       0x8e ./framework/host_crypto_helper/hse_host_mac.o
@@ -2791,12 +2759,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./framework/host_crypto_helper/hse_host_mac.o
  .debug_macro   0x00000000       0x35 ./framework/host_crypto_helper/hse_host_mac.o
  .debug_macro   0x00000000       0x10 ./framework/host_crypto_helper/hse_host_mac.o
- .debug_line    0x00000000      0xe2d ./framework/host_crypto_helper/hse_host_mac.o
- .debug_str     0x00000000     0xf428 ./framework/host_crypto_helper/hse_host_mac.o
- .comment       0x00000000       0x89 ./framework/host_crypto_helper/hse_host_mac.o
- .debug_frame   0x00000000      0x560 ./framework/host_crypto_helper/hse_host_mac.o
- .ARM.attributes
-                0x00000000       0x2e ./framework/host_crypto_helper/hse_host_mac.o
  .group         0x00000000        0xc ./framework/host_crypto_helper/hse_host_monotonic_counters.o
  .group         0x00000000        0xc ./framework/host_crypto_helper/hse_host_monotonic_counters.o
  .group         0x00000000        0xc ./framework/host_crypto_helper/hse_host_monotonic_counters.o
@@ -6530,22 +6492,12 @@ Discarded input sections
                 0x00000000        0x1 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .data.MonotonicCntResponse
                 0x00000000        0x4 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .text.MonotonicCnt_Increment
-                0x00000000       0x98 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .text.MonotonicCnt_Read
                 0x00000000       0x98 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .text.MonotonicCnt_Config
-                0x00000000       0xb4 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .text.monotonicCounterService
                 0x00000000       0x3c ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .text.monotonicCounterserviceSelect
                 0x00000000       0xa8 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .debug_info    0x00000000     0x2615 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .debug_abbrev  0x00000000      0x220 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .debug_aranges
-                0x00000000       0x40 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .debug_ranges  0x00000000       0x30 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .debug_macro   0x00000000      0x57b ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .debug_macro   0x00000000      0xa6c ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .debug_macro   0x00000000       0x22 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .debug_macro   0x00000000       0x8e ./services/src/monotonic_cnt/hse_monotonic_cnt.o
@@ -6614,12 +6566,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x35 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .debug_macro   0x00000000       0x94 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .debug_macro   0x00000000       0x8e ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .debug_line    0x00000000      0xbae ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .debug_str     0x00000000     0xfdc3 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .comment       0x00000000       0x89 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .debug_frame   0x00000000       0xc0 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
- .ARM.attributes
-                0x00000000       0x2e ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .group         0x00000000        0xc ./services/src/secure_boot/hse_boot_mac_key_update.o
  .group         0x00000000        0xc ./services/src/secure_boot/hse_boot_mac_key_update.o
  .group         0x00000000        0xc ./services/src/secure_boot/hse_boot_mac_key_update.o
@@ -8698,6 +8644,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
+ .rodata.demoapp_msg
+                0x00000000       0x54 ./src/main.o
  .debug_macro   0x00000000      0xa6c ./src/main.o
  .debug_macro   0x00000000       0x16 ./src/main.o
  .debug_macro   0x00000000       0x22 ./src/main.o
@@ -9253,7 +9201,7 @@ LOAD c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../l
                 0x00001000                __STACK_SIZE = 0x1000
                 0x00001000                __HEAP_SIZE = 0x1000
 
-.text           0x00400000     0x24dc
+.text           0x00400000     0x2908
  *(.vectors)
  .vectors       0x00400000      0x3c0 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
                 0x00400000                __Vectors
@@ -9263,332 +9211,356 @@ LOAD c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../l
                 0x00400448                _stack_init
                 0x00400450                _start
                 0x00400450                _mainCRTStartup
+ .text.HSE_MU_GetFreeChannel
+                0x004004c4       0xb8 ./drivers/mu/hse_mu.o
+                0x004004c4                HSE_MU_GetFreeChannel
  .text.HSE_MU_IsResponseReady
-                0x004004c4       0x40 ./drivers/mu/hse_mu.o
-                0x004004c4                HSE_MU_IsResponseReady
+                0x0040057c       0x40 ./drivers/mu/hse_mu.o
+                0x0040057c                HSE_MU_IsResponseReady
  .text.HSE_MU_GetHseStatus
-                0x00400504       0x38 ./drivers/mu/hse_mu.o
-                0x00400504                HSE_MU_GetHseStatus
+                0x004005bc       0x38 ./drivers/mu/hse_mu.o
+                0x004005bc                HSE_MU_GetHseStatus
  .text.HSE_MU_ReceiveResponse
-                0x0040053c       0x38 ./drivers/mu/hse_mu.o
-                0x0040053c                HSE_MU_ReceiveResponse
- .text.AeadReq  0x00400574       0xe0 ./framework/host_crypto_helper/hse_host_aead.o
+                0x004005f4       0x38 ./drivers/mu/hse_mu.o
+                0x004005f4                HSE_MU_ReceiveResponse
+ .text.AeadReq  0x0040062c       0xe0 ./framework/host_crypto_helper/hse_host_aead.o
  .text.AesGcmEncrypt
-                0x00400654       0x52 ./framework/host_crypto_helper/hse_host_aead.o
-                0x00400654                AesGcmEncrypt
+                0x0040070c       0x52 ./framework/host_crypto_helper/hse_host_aead.o
+                0x0040070c                AesGcmEncrypt
  .text.AesGcmDecrypt
-                0x004006a6       0x52 ./framework/host_crypto_helper/hse_host_aead.o
-                0x004006a6                AesGcmDecrypt
+                0x0040075e       0x52 ./framework/host_crypto_helper/hse_host_aead.o
+                0x0040075e                AesGcmDecrypt
+ .text.CmacWithCounter
+                0x004007b0       0xb0 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
+                0x004007b0                CmacWithCounter
  .text.GenerateEccKeyReq
-                0x004006f8       0xb0 ./framework/host_crypto_helper/hse_host_ecc.o
+                0x00400860       0xb0 ./framework/host_crypto_helper/hse_host_ecc.o
  .text.KeyBitLen
-                0x004007a8       0x84 ./framework/host_crypto_helper/hse_host_ecc.o
-                0x004007a8                KeyBitLen
+                0x00400910       0x84 ./framework/host_crypto_helper/hse_host_ecc.o
+                0x00400910                KeyBitLen
  .text.GenerateEccKeyAndExportPublic
-                0x0040082c       0x3c ./framework/host_crypto_helper/hse_host_ecc.o
-                0x0040082c                GenerateEccKeyAndExportPublic
+                0x00400994       0x3c ./framework/host_crypto_helper/hse_host_ecc.o
+                0x00400994                GenerateEccKeyAndExportPublic
  .text.FormatKeyCatalogs
-                0x00400868       0x80 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
-                0x00400868                FormatKeyCatalogs
+                0x004009d0       0x80 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+                0x004009d0                FormatKeyCatalogs
  .text.MustCopyKeyInfoInAuthContainer
-                0x004008e8       0x4c ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00400a50       0x4c ./framework/host_crypto_helper/hse_host_import_key.o
  .text.SetupAuthRawKey
-                0x00400934      0x174 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00400a9c      0x174 ./framework/host_crypto_helper/hse_host_import_key.o
  .text.CleanUpAuthRawKey
-                0x00400aa8       0xa0 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00400c10       0xa0 ./framework/host_crypto_helper/hse_host_import_key.o
  .text.ImportKeyReq
-                0x00400b48       0x2c ./framework/host_crypto_helper/hse_host_import_key.o
-                0x00400b48                ImportKeyReq
+                0x00400cb0       0x2c ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00400cb0                ImportKeyReq
  .text.ImportKeyReqMuChannel
-                0x00400b74       0x68 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x00400b74                ImportKeyReqMuChannel
+                0x00400cdc       0x68 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00400cdc                ImportKeyReqMuChannel
  .text.ImportKeyReqMuChannelWithoutErase
-                0x00400bdc      0x1ec ./framework/host_crypto_helper/hse_host_import_key.o
-                0x00400bdc                ImportKeyReqMuChannelWithoutErase
+                0x00400d44      0x1ec ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00400d44                ImportKeyReqMuChannelWithoutErase
  .text.ImportFormattedEccKeyReq
-                0x00400dc8      0x16c ./framework/host_crypto_helper/hse_host_import_key.o
-                0x00400dc8                ImportFormattedEccKeyReq
+                0x00400f30      0x16c ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00400f30                ImportFormattedEccKeyReq
  .text.EraseKeyReq
-                0x00400f34       0x7c ./framework/host_crypto_helper/hse_host_import_key.o
-                0x00400f34                EraseKeyReq
+                0x0040109c       0x7c ./framework/host_crypto_helper/hse_host_import_key.o
+                0x0040109c                EraseKeyReq
  .text.GetKeyInfo
-                0x00400fb0       0x2c ./framework/host_crypto_helper/hse_host_import_key.o
-                0x00400fb0                GetKeyInfo
+                0x00401118       0x2c ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00401118                GetKeyInfo
  .text.GetKeyInfoMuChannel
-                0x00400fdc       0x74 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x00400fdc                GetKeyInfoMuChannel
+                0x00401144       0x74 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00401144                GetKeyInfoMuChannel
  .text.ImportEccKeyReq
-                0x00401050       0x42 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x00401050                ImportEccKeyReq
- *fill*         0x00401092        0x2 
+                0x004011b8       0x42 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x004011b8                ImportEccKeyReq
+ *fill*         0x004011fa        0x2 
  .text.HSEKeyDeriveExtractKeyReq
-                0x00401094       0xdc ./framework/host_crypto_helper/hse_host_kdf.o
-                0x00401094                HSEKeyDeriveExtractKeyReq
+                0x004011fc       0xdc ./framework/host_crypto_helper/hse_host_kdf.o
+                0x004011fc                HSEKeyDeriveExtractKeyReq
  .text.HSEKdfSP800_108Req
-                0x00401170       0x84 ./framework/host_crypto_helper/hse_host_kdf.o
-                0x00401170                HSEKdfSP800_108Req
+                0x004012d8       0x84 ./framework/host_crypto_helper/hse_host_kdf.o
+                0x004012d8                HSEKdfSP800_108Req
+ .text.MacSignSrv
+                0x0040135c       0xc0 ./framework/host_crypto_helper/hse_host_mac.o
+                0x0040135c                MacSignSrv
+ .text.MacVerSrv
+                0x0040141c       0xc0 ./framework/host_crypto_helper/hse_host_mac.o
+                0x0040141c                MacVerSrv
+ .text.AesCmacGenerate
+                0x004014dc       0x4c ./framework/host_crypto_helper/hse_host_mac.o
+                0x004014dc                AesCmacGenerate
+ .text.AesCmacVerify
+                0x00401528       0x4c ./framework/host_crypto_helper/hse_host_mac.o
+                0x00401528                AesCmacVerify
  .text.DHSharedSecretCompute
-                0x004011f4       0xc4 ./framework/host_crypto_helper/hse_host_sign.o
-                0x004011f4                DHSharedSecretCompute
+                0x00401574       0xc4 ./framework/host_crypto_helper/hse_host_sign.o
+                0x00401574                DHSharedSecretCompute
  .text.HSE_MU_ReceiveResponseBlocking
-                0x004012b8       0x80 ./framework/host_hse/hse_host.o
+                0x00401638       0x80 ./framework/host_hse/hse_host.o
  .text.HSE_Send
-                0x00401338      0x158 ./framework/host_hse/hse_host.o
-                0x00401338                HSE_Send
+                0x004016b8      0x158 ./framework/host_hse/hse_host.o
+                0x004016b8                HSE_Send
  .text.HKF_ParseCatalog
-                0x00401490      0x154 ./framework/host_keymgmt/hse_keys_allocator.o
+                0x00401810      0x154 ./framework/host_keymgmt/hse_keys_allocator.o
  .text.verifyGroupMuFlags
-                0x004015e4       0x50 ./framework/host_keymgmt/hse_keys_allocator.o
+                0x00401964       0x50 ./framework/host_keymgmt/hse_keys_allocator.o
  .text.HKF_Init
-                0x00401634       0x50 ./framework/host_keymgmt/hse_keys_allocator.o
-                0x00401634                HKF_Init
+                0x004019b4       0x50 ./framework/host_keymgmt/hse_keys_allocator.o
+                0x004019b4                HKF_Init
  .text.HKF_AllocKeySlotAdvanced
-                0x00401684      0x228 ./framework/host_keymgmt/hse_keys_allocator.o
-                0x00401684                HKF_AllocKeySlotAdvanced
+                0x00401a04      0x228 ./framework/host_keymgmt/hse_keys_allocator.o
+                0x00401a04                HKF_AllocKeySlotAdvanced
  .text.HKF_AllocKeySlot
-                0x004018ac       0x46 ./framework/host_keymgmt/hse_keys_allocator.o
-                0x004018ac                HKF_AllocKeySlot
- *fill*         0x004018f2        0x2 
+                0x00401c2c       0x46 ./framework/host_keymgmt/hse_keys_allocator.o
+                0x00401c2c                HKF_AllocKeySlot
+ *fill*         0x00401c72        0x2 
  .text.HKF_FreeKeySlot
-                0x004018f4       0x90 ./framework/host_keymgmt/hse_keys_allocator.o
-                0x004018f4                HKF_FreeKeySlot
+                0x00401c74       0x90 ./framework/host_keymgmt/hse_keys_allocator.o
+                0x00401c74                HKF_FreeKeySlot
  .text.WaitForHSEFWInitToFinish
-                0x00401984       0x2c ./services/src/hse_demo_app_config.o
-                0x00401984                WaitForHSEFWInitToFinish
- .text.main     0x004019b0      0x3a0 ./src/main.o
-                0x004019b0                main
+                0x00401d04       0x2c ./services/src/hse_demo_app_config.o
+                0x00401d04                WaitForHSEFWInitToFinish
+ .text.MonotonicCnt_Increment
+                0x00401d30       0x98 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+                0x00401d30                MonotonicCnt_Increment
+ .text.MonotonicCnt_Config
+                0x00401dc8       0xb4 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+                0x00401dc8                MonotonicCnt_Config
+ .text.main     0x00401e7c      0x344 ./src/main.o
+                0x00401e7c                main
  .text.KdfSP800_108ReqTest_demo
-                0x00401d50       0x70 ./src/main.o
-                0x00401d50                KdfSP800_108ReqTest_demo
+                0x004021c0       0x70 ./src/main.o
+                0x004021c0                KdfSP800_108ReqTest_demo
  .text.KdfSP800_108Test_0
-                0x00401dc0       0x48 ./src/main.o
+                0x00402230       0x48 ./src/main.o
  .text.Reset_Handler
-                0x00401e08      0x108 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
-                0x00401e08                Reset_Handler
+                0x00402278      0x108 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+                0x00402278                Reset_Handler
  .text.Default_Handler
-                0x00401f10        0x6 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
-                0x00401f10                DMATCD7_Handler
-                0x00401f10                FlexCAN3_0_Handler
-                0x00401f10                FlexCAN1_1_Handler
-                0x00401f10                LPUART14_Handler
-                0x00401f10                FlexCAN0_0_Handler
-                0x00401f10                DMATCD24_Handler
-                0x00401f10                SIUL_2_Handler
-                0x00401f10                ENET_1_Handler
-                0x00401f10                PIT2_Handler
-                0x00401f10                LPUART13_Handler
-                0x00401f10                INT0_Handler
-                0x00401f10                DMATCD11_Handler
-                0x00401f10                SAI1_Handler
-                0x00401f10                DMATCD21_Handler
-                0x00401f10                LPCMP0_Handler
-                0x00401f10                ENET_3_Handler
-                0x00401f10                EMIOS2_5_Handler
-                0x00401f10                LPI2C1_Handler
-                0x00401f10                DMATCD15_Handler
-                0x00401f10                QSPI_Handler
-                0x00401f10                HSE_B_4_Handler
-                0x00401f10                FlexCAN0_3_Handler
-                0x00401f10                EMIOS0_5_Handler
-                0x00401f10                CMU0_Handler
-                0x00401f10                EMIOS2_4_Handler
-                0x00401f10                DMATCD16_Handler
-                0x00401f10                WKPU_Handler
-                0x00401f10                SIUL_3_Handler
-                0x00401f10                DMATCD19_Handler
-                0x00401f10                LPUART4_Handler
-                0x00401f10                LPUART5_Handler
-                0x00401f10                LCU0_Handler
-                0x00401f10                BCTU_Handler
-                0x00401f10                HSE_B_1_Handler
-                0x00401f10                DMATCD20_Handler
-                0x00401f10                PIT1_Handler
-                0x00401f10                FlexCAN2_1_Handler
-                0x00401f10                FlexCAN3_1_Handler
-                0x00401f10                ERM_0_Handler
-                0x00401f10                EMIOS1_2_Handler
-                0x00401f10                RTC_Handler
-                0x00401f10                ADC1_Handler
-                0x00401f10                DMATCD23_Handler
-                0x00401f10                DMATCD26_Handler
-                0x00401f10                EMIOS1_6_Handler
-                0x00401f10                FLASH_1_Handler
-                0x00401f10                LPUART9_Handler
-                0x00401f10                HSE_B_3_Handler
-                0x00401f10                LPSPI2_Handler
-                0x00401f10                FCCU_0_Handler
-                0x00401f10                DMATCD1_Handler
-                0x00401f10                CMU1_Handler
-                0x00401f10                DMATCD9_Handler
-                0x00401f10                LPSPI3_Handler
-                0x00401f10                HSE_B_2_Handler
-                0x00401f10                LPUART8_Handler
-                0x00401f10                DMATCD30_Handler
-                0x00401f10                DMATCD8_Handler
-                0x00401f10                DMATCD5_Handler
-                0x00401f10                LPUART6_Handler
-                0x00401f10                EMIOS0_2_Handler
-                0x00401f10                DMATCD10_Handler
-                0x00401f10                EMIOS1_7_Handler
-                0x00401f10                EMIOS1_3_Handler
-                0x00401f10                STM1_Handler
-                0x00401f10                LPUART3_Handler
-                0x00401f10                DMATCD0_Handler
-                0x00401f10                FLEXIO_Handler
-                0x00401f10                PIT0_Handler
-                0x00401f10                DMATCD2_Handler
-                0x00401f10                LPUART10_Handler
-                0x00401f10                EMIOS0_3_Handler
-                0x00401f10                Default_Handler
-                0x00401f10                LPUART1_Handler
-                0x00401f10                CMU2_Handler
-                0x00401f10                INT2_Handler
-                0x00401f10                EMIOS0_6_Handler
-                0x00401f10                FlexCAN5_1_Handler
-                0x00401f10                PMC_Handler
-                0x00401f10                SWT1_Handler
-                0x00401f10                FlexCAN4_0_Handler
-                0x00401f10                ENET_2_Handler
-                0x00401f10                LPUART15_Handler
-                0x00401f10                DMATCD28_Handler
-                0x00401f10                FCCU_1_Handler
-                0x00401f10                EMIOS1_4_Handler
-                0x00401f10                DMATCD4_Handler
-                0x00401f10                DMATCD22_Handler
-                0x00401f10                STM0_Handler
-                0x00401f10                ADC0_Handler
-                0x00401f10                DMATCD13_Handler
-                0x00401f10                DMATCD12_Handler
-                0x00401f10                HSE_B_0_Handler
-                0x00401f10                EMIOS1_5_Handler
-                0x00401f10                LCU1_Handler
-                0x00401f10                FlexCAN4_1_Handler
-                0x00401f10                INT1_Handler
-                0x00401f10                FLASH_0_Handler
-                0x00401f10                MCM_Handler
-                0x00401f10                MU_A_2_Handler
-                0x00401f10                SWT0_Handler
-                0x00401f10                EMIOS0_4_Handler
-                0x00401f10                LPCMP1_Handler
-                0x00401f10                EMIOS2_6_Handler
-                0x00401f10                LPUART0_Handler
-                0x00401f10                LPUART12_Handler
-                0x00401f10                FlexCAN0_1_Handler
-                0x00401f10                DMATCD18_Handler
-                0x00401f10                MU_A_0_Handler
-                0x00401f10                MU_A_1_Handler
-                0x00401f10                DMATCD31_Handler
-                0x00401f10                SAI0_Handler
-                0x00401f10                MU_B_2_Handler
-                0x00401f10                SIUL_0_Handler
-                0x00401f10                MU_B_0_Handler
-                0x00401f10                JDC_Handler
-                0x00401f10                DMATCD27_Handler
-                0x00401f10                LPUART11_Handler
-                0x00401f10                FlexCAN0_2_Handler
-                0x00401f10                DMATCD14_Handler
-                0x00401f10                HSE_B_5_Handler
-                0x00401f10                EMIOS2_7_Handler
-                0x00401f10                DMATCD6_Handler
-                0x00401f10                DMATCD17_Handler
-                0x00401f10                LPI2C0_Handler
-                0x00401f10                LPUART2_Handler
-                0x00401f10                ERM_1_Handler
-                0x00401f10                LPUART7_Handler
-                0x00401f10                FlexCAN2_0_Handler
-                0x00401f10                DMATCD29_Handler
-                0x00401f10                LPSPI5_Handler
-                0x00401f10                EMIOS2_3_Handler
-                0x00401f10                DMATCD25_Handler
-                0x00401f10                LPSPI4_Handler
-                0x00401f10                LPSPI0_Handler
-                0x00401f10                FlexCAN1_0_Handler
-                0x00401f10                MU_B_1_Handler
-                0x00401f10                EMIOS2_2_Handler
-                0x00401f10                INT3_Handler
-                0x00401f10                RGM_Handler
-                0x00401f10                FlexCAN2_2_Handler
-                0x00401f10                FLASH_2_Handler
-                0x00401f10                LPSPI1_Handler
-                0x00401f10                FlexCAN5_0_Handler
-                0x00401f10                ADC2_Handler
-                0x00401f10                EMIOS0_7_Handler
-                0x00401f10                ENET_0_Handler
-                0x00401f10                FlexCAN1_2_Handler
-                0x00401f10                LPCMP2_Handler
-                0x00401f10                DMATCD3_Handler
-                0x00401f10                SIUL_1_Handler
- *fill*         0x00401f16        0x2 
+                0x00402380        0x6 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+                0x00402380                DMATCD7_Handler
+                0x00402380                FlexCAN3_0_Handler
+                0x00402380                FlexCAN1_1_Handler
+                0x00402380                LPUART14_Handler
+                0x00402380                FlexCAN0_0_Handler
+                0x00402380                DMATCD24_Handler
+                0x00402380                SIUL_2_Handler
+                0x00402380                ENET_1_Handler
+                0x00402380                PIT2_Handler
+                0x00402380                LPUART13_Handler
+                0x00402380                INT0_Handler
+                0x00402380                DMATCD11_Handler
+                0x00402380                SAI1_Handler
+                0x00402380                DMATCD21_Handler
+                0x00402380                LPCMP0_Handler
+                0x00402380                ENET_3_Handler
+                0x00402380                EMIOS2_5_Handler
+                0x00402380                LPI2C1_Handler
+                0x00402380                DMATCD15_Handler
+                0x00402380                QSPI_Handler
+                0x00402380                HSE_B_4_Handler
+                0x00402380                FlexCAN0_3_Handler
+                0x00402380                EMIOS0_5_Handler
+                0x00402380                CMU0_Handler
+                0x00402380                EMIOS2_4_Handler
+                0x00402380                DMATCD16_Handler
+                0x00402380                WKPU_Handler
+                0x00402380                SIUL_3_Handler
+                0x00402380                DMATCD19_Handler
+                0x00402380                LPUART4_Handler
+                0x00402380                LPUART5_Handler
+                0x00402380                LCU0_Handler
+                0x00402380                BCTU_Handler
+                0x00402380                HSE_B_1_Handler
+                0x00402380                DMATCD20_Handler
+                0x00402380                PIT1_Handler
+                0x00402380                FlexCAN2_1_Handler
+                0x00402380                FlexCAN3_1_Handler
+                0x00402380                ERM_0_Handler
+                0x00402380                EMIOS1_2_Handler
+                0x00402380                RTC_Handler
+                0x00402380                ADC1_Handler
+                0x00402380                DMATCD23_Handler
+                0x00402380                DMATCD26_Handler
+                0x00402380                EMIOS1_6_Handler
+                0x00402380                FLASH_1_Handler
+                0x00402380                LPUART9_Handler
+                0x00402380                HSE_B_3_Handler
+                0x00402380                LPSPI2_Handler
+                0x00402380                FCCU_0_Handler
+                0x00402380                DMATCD1_Handler
+                0x00402380                CMU1_Handler
+                0x00402380                DMATCD9_Handler
+                0x00402380                LPSPI3_Handler
+                0x00402380                HSE_B_2_Handler
+                0x00402380                LPUART8_Handler
+                0x00402380                DMATCD30_Handler
+                0x00402380                DMATCD8_Handler
+                0x00402380                DMATCD5_Handler
+                0x00402380                LPUART6_Handler
+                0x00402380                EMIOS0_2_Handler
+                0x00402380                DMATCD10_Handler
+                0x00402380                EMIOS1_7_Handler
+                0x00402380                EMIOS1_3_Handler
+                0x00402380                STM1_Handler
+                0x00402380                LPUART3_Handler
+                0x00402380                DMATCD0_Handler
+                0x00402380                FLEXIO_Handler
+                0x00402380                PIT0_Handler
+                0x00402380                DMATCD2_Handler
+                0x00402380                LPUART10_Handler
+                0x00402380                EMIOS0_3_Handler
+                0x00402380                Default_Handler
+                0x00402380                LPUART1_Handler
+                0x00402380                CMU2_Handler
+                0x00402380                INT2_Handler
+                0x00402380                EMIOS0_6_Handler
+                0x00402380                FlexCAN5_1_Handler
+                0x00402380                PMC_Handler
+                0x00402380                SWT1_Handler
+                0x00402380                FlexCAN4_0_Handler
+                0x00402380                ENET_2_Handler
+                0x00402380                LPUART15_Handler
+                0x00402380                DMATCD28_Handler
+                0x00402380                FCCU_1_Handler
+                0x00402380                EMIOS1_4_Handler
+                0x00402380                DMATCD4_Handler
+                0x00402380                DMATCD22_Handler
+                0x00402380                STM0_Handler
+                0x00402380                ADC0_Handler
+                0x00402380                DMATCD13_Handler
+                0x00402380                DMATCD12_Handler
+                0x00402380                HSE_B_0_Handler
+                0x00402380                EMIOS1_5_Handler
+                0x00402380                LCU1_Handler
+                0x00402380                FlexCAN4_1_Handler
+                0x00402380                INT1_Handler
+                0x00402380                FLASH_0_Handler
+                0x00402380                MCM_Handler
+                0x00402380                MU_A_2_Handler
+                0x00402380                SWT0_Handler
+                0x00402380                EMIOS0_4_Handler
+                0x00402380                LPCMP1_Handler
+                0x00402380                EMIOS2_6_Handler
+                0x00402380                LPUART0_Handler
+                0x00402380                LPUART12_Handler
+                0x00402380                FlexCAN0_1_Handler
+                0x00402380                DMATCD18_Handler
+                0x00402380                MU_A_0_Handler
+                0x00402380                MU_A_1_Handler
+                0x00402380                DMATCD31_Handler
+                0x00402380                SAI0_Handler
+                0x00402380                MU_B_2_Handler
+                0x00402380                SIUL_0_Handler
+                0x00402380                MU_B_0_Handler
+                0x00402380                JDC_Handler
+                0x00402380                DMATCD27_Handler
+                0x00402380                LPUART11_Handler
+                0x00402380                FlexCAN0_2_Handler
+                0x00402380                DMATCD14_Handler
+                0x00402380                HSE_B_5_Handler
+                0x00402380                EMIOS2_7_Handler
+                0x00402380                DMATCD6_Handler
+                0x00402380                DMATCD17_Handler
+                0x00402380                LPI2C0_Handler
+                0x00402380                LPUART2_Handler
+                0x00402380                ERM_1_Handler
+                0x00402380                LPUART7_Handler
+                0x00402380                FlexCAN2_0_Handler
+                0x00402380                DMATCD29_Handler
+                0x00402380                LPSPI5_Handler
+                0x00402380                EMIOS2_3_Handler
+                0x00402380                DMATCD25_Handler
+                0x00402380                LPSPI4_Handler
+                0x00402380                LPSPI0_Handler
+                0x00402380                FlexCAN1_0_Handler
+                0x00402380                MU_B_1_Handler
+                0x00402380                EMIOS2_2_Handler
+                0x00402380                INT3_Handler
+                0x00402380                RGM_Handler
+                0x00402380                FlexCAN2_2_Handler
+                0x00402380                FLASH_2_Handler
+                0x00402380                LPSPI1_Handler
+                0x00402380                FlexCAN5_0_Handler
+                0x00402380                ADC2_Handler
+                0x00402380                EMIOS0_7_Handler
+                0x00402380                ENET_0_Handler
+                0x00402380                FlexCAN1_2_Handler
+                0x00402380                LPCMP2_Handler
+                0x00402380                DMATCD3_Handler
+                0x00402380                SIUL_1_Handler
+ *fill*         0x00402386        0x2 
  .text.SystemInit
-                0x00401f18       0x28 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
-                0x00401f18                SystemInit
+                0x00402388       0x28 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+                0x00402388                SystemInit
  .text.sys_enableAllInterrupts
-                0x00401f40        0xe ./src/target/m7/src/sys_init.o
-                0x00401f40                sys_enableAllInterrupts
+                0x004023b0        0xe ./src/target/m7/src/sys_init.o
+                0x004023b0                sys_enableAllInterrupts
  .text.sys_disableAllInterrupts
-                0x00401f4e        0xe ./src/target/m7/src/sys_init.o
-                0x00401f4e                sys_disableAllInterrupts
+                0x004023be        0xe ./src/target/m7/src/sys_init.o
+                0x004023be                sys_disableAllInterrupts
  .text.NMI_Handler
-                0x00401f5c        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f5c                NMI_Handler
+                0x004023cc        0x6 ./src/target/m7/src/sys_init.o
+                0x004023cc                NMI_Handler
  .text.HardFault_Handler
-                0x00401f62        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f62                HardFault_Handler
+                0x004023d2        0x6 ./src/target/m7/src/sys_init.o
+                0x004023d2                HardFault_Handler
  .text.MemManage_Handler
-                0x00401f68        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f68                MemManage_Handler
+                0x004023d8        0x6 ./src/target/m7/src/sys_init.o
+                0x004023d8                MemManage_Handler
  .text.BusFault_Handler
-                0x00401f6e        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f6e                BusFault_Handler
+                0x004023de        0x6 ./src/target/m7/src/sys_init.o
+                0x004023de                BusFault_Handler
  .text.UsageFault_Handler
-                0x00401f74        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f74                UsageFault_Handler
+                0x004023e4        0x6 ./src/target/m7/src/sys_init.o
+                0x004023e4                UsageFault_Handler
  .text.SVC_Handler
-                0x00401f7a        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f7a                SVC_Handler
+                0x004023ea        0x6 ./src/target/m7/src/sys_init.o
+                0x004023ea                SVC_Handler
  .text.DebugMon_Handler
-                0x00401f80        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f80                DebugMon_Handler
+                0x004023f0        0x6 ./src/target/m7/src/sys_init.o
+                0x004023f0                DebugMon_Handler
  .text.PendSV_Handler
-                0x00401f86        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f86                PendSV_Handler
+                0x004023f6        0x6 ./src/target/m7/src/sys_init.o
+                0x004023f6                PendSV_Handler
  .text.SysTick_Handler
-                0x00401f8c        0x6 ./src/target/m7/src/sys_init.o
-                0x00401f8c                SysTick_Handler
- *fill*         0x00401f92        0x2 
- .text.exit     0x00401f94       0x20 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-exit.o)
-                0x00401f94                exit
+                0x004023fc        0x6 ./src/target/m7/src/sys_init.o
+                0x004023fc                SysTick_Handler
+ *fill*         0x00402402        0x2 
+ .text.exit     0x00402404       0x20 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-exit.o)
+                0x00402404                exit
  .text.__libc_init_array
-                0x00401fb4       0x48 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-init.o)
-                0x00401fb4                __libc_init_array
- .text.memcpy   0x00401ffc       0x1c c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-memcpy-stub.o)
-                0x00401ffc                memcpy
- .text.memset   0x00402018       0x10 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-memset.o)
-                0x00402018                memset
+                0x00402424       0x48 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-init.o)
+                0x00402424                __libc_init_array
+ .text.memcpy   0x0040246c       0x1c c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-memcpy-stub.o)
+                0x0040246c                memcpy
+ .text.memset   0x00402488       0x10 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-memset.o)
+                0x00402488                memset
  .text.startup.register_fini
-                0x00402028       0x14 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__call_atexit.o)
+                0x00402498       0x14 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__call_atexit.o)
  .text.__call_exitprocs
-                0x0040203c       0xa4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__call_atexit.o)
-                0x0040203c                __call_exitprocs
+                0x004024ac       0xa4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__call_atexit.o)
+                0x004024ac                __call_exitprocs
  .text.__libc_fini_array
-                0x004020e0       0x28 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-fini.o)
-                0x004020e0                __libc_fini_array
- .text.atexit   0x00402108        0xc c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-atexit.o)
-                0x00402108                atexit
+                0x00402550       0x28 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-fini.o)
+                0x00402550                __libc_fini_array
+ .text.atexit   0x00402578        0xc c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-atexit.o)
+                0x00402578                atexit
  .text.__register_exitproc
-                0x00402114       0x64 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__atexit.o)
-                0x00402114                __register_exitproc
- .text._exit    0x00402178        0x2 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libnosys.a(_exit.o)
-                0x00402178                _exit
+                0x00402584       0x64 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__atexit.o)
+                0x00402584                __register_exitproc
+ .text._exit    0x004025e8        0x2 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libnosys.a(_exit.o)
+                0x004025e8                _exit
  *(.init)
- *fill*         0x0040217a        0x2 
- .init          0x0040217c        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crti.o
-                0x0040217c                _init
- .init          0x00402180        0x8 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtn.o
+ *fill*         0x004025ea        0x2 
+ .init          0x004025ec        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crti.o
+                0x004025ec                _init
+ .init          0x004025f0        0x8 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtn.o
  *(.fini)
- .fini          0x00402188        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crti.o
-                0x00402188                _fini
- .fini          0x0040218c        0x8 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtn.o
+ .fini          0x004025f8        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crti.o
+                0x004025f8                _fini
+ .fini          0x004025fc        0x8 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -9601,103 +9573,103 @@ LOAD c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../l
  *(.dtors)
  *(.rodata*)
  .rodata.gHseSrvDesc
-                0x00402194        0x8 ./framework/host_hse/hse_host.o
-                0x00402194                gHseSrvDesc
+                0x00402604        0x8 ./framework/host_hse/hse_host.o
+                0x00402604                gHseSrvDesc
  .rodata.gSyncTxOption
-                0x0040219c        0xc ./framework/host_hse/hse_host.o
-                0x0040219c                gSyncTxOption
+                0x0040260c        0xc ./framework/host_hse/hse_host.o
+                0x0040260c                gSyncTxOption
  .rodata.eccP256PubKey
-                0x004021a8       0x40 ./services/src/fw_crypto/hse_crypto.o
-                0x004021a8                eccP256PubKey
- .rodata.demoapp_msg
-                0x004021e8       0x54 ./src/main.o
-                0x004021e8                demoapp_msg
+                0x00402618       0x40 ./services/src/fw_crypto/hse_crypto.o
+                0x00402618                eccP256PubKey
  .rodata.demoapp_msg_2
-                0x0040223c       0x25 ./src/main.o
-                0x0040223c                demoapp_msg_2
- *fill*         0x00402261        0x3 
+                0x00402658       0x25 ./src/main.o
+                0x00402658                demoapp_msg_2
+ *fill*         0x0040267d        0x3 
  .rodata.iv_demo
-                0x00402264       0x10 ./src/main.o
+                0x00402680       0x10 ./src/main.o
  .rodata.KdfSP800_108_FixedInfo_1_0
-                0x00402274       0x3c ./src/main.o
-                0x00402274                KdfSP800_108_FixedInfo_1_0
+                0x00402690       0x3c ./src/main.o
+                0x00402690                KdfSP800_108_FixedInfo_1_0
  .rodata.KdfSP800_108_SrcKey_1_0
-                0x004022b0       0x10 ./src/main.o
-                0x004022b0                KdfSP800_108_SrcKey_1_0
+                0x004026cc       0x10 ./src/main.o
+                0x004026cc                KdfSP800_108_SrcKey_1_0
  .rodata.NVM_Catalog
-                0x004022c0       0xa8 ./src/main.o
-                0x004022c0                NVM_Catalog
+                0x004026dc       0xa8 ./src/main.o
+                0x004026dc                NVM_Catalog
  .rodata.RAM_Catalog
-                0x00402368       0x58 ./src/main.o
-                0x00402368                RAM_Catalog
+                0x00402784       0x58 ./src/main.o
+                0x00402784                RAM_Catalog
+ .rodata.CMAC_Plaintext
+                0x004027dc       0x10 ./src/main.o
+                0x004027dc                CMAC_Plaintext
  .rodata.lc_config
-                0x004023c0        0x4 ./src/target/m7/S32DS/Startup_Code/boot_header.o
-                0x004023c0                lc_config
+                0x004027ec        0x4 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+                0x004027ec                lc_config
  .rodata.xrdc_config
-                0x004023c4      0x110 ./src/target/m7/S32DS/Startup_Code/boot_header.o
-                0x004023c4                xrdc_config
+                0x004027f0      0x110 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+                0x004027f0                xrdc_config
  .rodata._global_impure_ptr
-                0x004024d4        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-impure.o)
-                0x004024d4                _global_impure_ptr
+                0x00402900        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-impure.o)
+                0x00402900                _global_impure_ptr
  *(.eh_frame*)
- .eh_frame      0x004024d8        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
- .eh_frame      0x004024d8        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtend.o
+ .eh_frame      0x00402904        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
+ .eh_frame      0x00402904        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtend.o
 
-.glue_7         0x004024dc        0x0
- .glue_7        0x004024dc        0x0 linker stubs
+.glue_7         0x00402908        0x0
+ .glue_7        0x00402908        0x0 linker stubs
 
-.glue_7t        0x004024dc        0x0
- .glue_7t       0x004024dc        0x0 linker stubs
+.glue_7t        0x00402908        0x0
+ .glue_7t       0x00402908        0x0 linker stubs
 
-.vfp11_veneer   0x004024dc        0x0
- .vfp11_veneer  0x004024dc        0x0 linker stubs
+.vfp11_veneer   0x00402908        0x0
+ .vfp11_veneer  0x00402908        0x0 linker stubs
 
-.v4_bx          0x004024dc        0x0
- .v4_bx         0x004024dc        0x0 linker stubs
+.v4_bx          0x00402908        0x0
+ .v4_bx         0x00402908        0x0 linker stubs
 
-.iplt           0x004024dc        0x0
- .iplt          0x004024dc        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
+.iplt           0x00402908        0x0
+ .iplt          0x00402908        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x004024dc                __exidx_start = .
+                0x00402908                __exidx_start = .
 
-.ARM.exidx      0x004024dc        0x8
+.ARM.exidx      0x00402908        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x004024dc        0x8 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
+ .ARM.exidx     0x00402908        0x8 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
                                  0x10 (size before relaxing)
-                0x004024e4                __exidx_end = .
+                0x00402910                __exidx_end = .
 
-.ecc.table      0x004024e4       0x60
-                0x004024e4                . = ALIGN (0x4)
-                0x004024e4                __ecc_table_start__ = .
-                0x004024e4        0x8 QUAD 0x20408000 __data_start__
-                0x004024ec        0x8 QUAD 0x9a ((__data_end__ - __data_start__) / 0x8)
-                0x004024f4        0x8 QUAD 0x204084d0 __bss_start__
-                0x004024fc        0x8 QUAD 0xd94 ((__bss_end__ - __bss_start__) / 0x8)
-                0x00402504        0x8 QUAD 0x2040f170 __HeapTop
-                0x0040250c        0x8 QUAD 0x200 ((__HeapLimit - __HeapTop) / 0x8)
-                0x00402514        0x8 QUAD 0x2044f000 __StackLimit
-                0x0040251c        0x8 QUAD 0x200 ((__StackTop - __StackLimit) / 0x8)
-                0x00402524        0x8 QUAD 0x0 ORIGIN (ITCM)
-                0x0040252c        0x8 QUAD 0x2000 (LENGTH (ITCM) / 0x8)
-                0x00402534        0x8 QUAD 0x20000000 ORIGIN (DTCM)
-                0x0040253c        0x8 QUAD 0x4000 (LENGTH (DTCM) / 0x8)
-                0x00402544                __ecc_table_end__ = .
+.ecc.table      0x00402910       0x60
+                0x00402910                . = ALIGN (0x4)
+                0x00402910                __ecc_table_start__ = .
+                0x00402910        0x8 QUAD 0x20408000 __data_start__
+                0x00402918        0x8 QUAD 0x9b ((__data_end__ - __data_start__) / 0x8)
+                0x00402920        0x8 QUAD 0x204084d8 __bss_start__
+                0x00402928        0x8 QUAD 0xdd5 ((__bss_end__ - __bss_start__) / 0x8)
+                0x00402930        0x8 QUAD 0x2040f380 __HeapTop
+                0x00402938        0x8 QUAD 0x200 ((__HeapLimit - __HeapTop) / 0x8)
+                0x00402940        0x8 QUAD 0x2044f000 __StackLimit
+                0x00402948        0x8 QUAD 0x200 ((__StackTop - __StackLimit) / 0x8)
+                0x00402950        0x8 QUAD 0x0 ORIGIN (ITCM)
+                0x00402958        0x8 QUAD 0x2000 (LENGTH (ITCM) / 0x8)
+                0x00402960        0x8 QUAD 0x20000000 ORIGIN (DTCM)
+                0x00402968        0x8 QUAD 0x4000 (LENGTH (DTCM) / 0x8)
+                0x00402970                __ecc_table_end__ = .
 
-.copy.table     0x00402544        0xc
-                0x00402544                . = ALIGN (0x4)
-                0x00402544                __copy_table_start__ = .
-                0x00402544        0x4 LONG 0x402550 __etext
-                0x00402548        0x4 LONG 0x20408000 __data_start__
-                0x0040254c        0x4 LONG 0x134 ((__data_end__ - __data_start__) / 0x4)
-                0x00402550                __copy_table_end__ = .
+.copy.table     0x00402970        0xc
+                0x00402970                . = ALIGN (0x4)
+                0x00402970                __copy_table_start__ = .
+                0x00402970        0x4 LONG 0x402980 __etext
+                0x00402974        0x4 LONG 0x20408000 __data_start__
+                0x00402978        0x4 LONG 0x136 ((__data_end__ - __data_start__) / 0x4)
+                0x0040297c                __copy_table_end__ = .
 
-.zero.table     0x00402550        0x0
-                0x00402550                . = ALIGN (0x4)
-                0x00402550                __zero_table_start__ = .
-                0x00402550                __zero_table_end__ = .
-                0x00402550                __etext = ALIGN (0x8)
+.zero.table     0x0040297c        0x0
+                0x0040297c                . = ALIGN (0x4)
+                0x0040297c                __zero_table_start__ = .
+                0x0040297c                __zero_table_end__ = .
+                0x00402980                __etext = ALIGN (0x8)
 
 .boot_header    0x10000000      0x100
  *(.boot_header)
@@ -9710,7 +9682,7 @@ LOAD c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../l
 .standby_ram
  *(.standby_ram)
 
-.data           0x20408000      0x4d0 load address 0x00402550
+.data           0x20408000      0x4d8 load address 0x00402980
                 0x20408000                . = ALIGN (0x8)
                 0x20408000                __data_start__ = .
  *(vtable)
@@ -9744,116 +9716,127 @@ LOAD c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../l
  .data.KdfSP800_108_Scheme_1_0
                 0x20408078       0x24 ./src/main.o
                 0x20408078                KdfSP800_108_Scheme_1_0
- .data.srcKey_0
+ .data.CMAC_Tag_length
                 0x2040809c        0x4 ./src/main.o
-                0x2040809c                srcKey_0
- .data.targetSharedSecretKey_0
+                0x2040809c                CMAC_Tag_length
+ .data.srcKey_0
                 0x204080a0        0x4 ./src/main.o
-                0x204080a0                targetSharedSecretKey_0
+                0x204080a0                srcKey_0
+ .data.targetSharedSecretKey_0
+                0x204080a4        0x4 ./src/main.o
+                0x204080a4                targetSharedSecretKey_0
  .data.SystemCoreClock
-                0x204080a4        0x4 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
-                0x204080a4                SystemCoreClock
+                0x204080a8        0x4 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+                0x204080a8                SystemCoreClock
+ *fill*         0x204080ac        0x4 
  .data.impure_data
-                0x204080a8      0x418 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-impure.o)
-                0x204084c0                . = ALIGN (0x4)
-                0x204084c0                PROVIDE (__preinit_array_start = .)
+                0x204080b0      0x418 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-impure.o)
+                0x204084c8                . = ALIGN (0x4)
+                0x204084c8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x204084c0                PROVIDE (__preinit_array_end = .)
-                0x204084c0                . = ALIGN (0x4)
-                0x204084c0                PROVIDE (__init_array_start = .)
+                0x204084c8                PROVIDE (__preinit_array_end = .)
+                0x204084c8                . = ALIGN (0x4)
+                0x204084c8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x204084c0        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__call_atexit.o)
+                0x204084c8        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__call_atexit.o)
  *(.init_array)
- .init_array    0x204084c4        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
-                0x204084c8                PROVIDE (__init_array_end = .)
-                0x204084c8                . = ALIGN (0x4)
-                0x204084c8                PROVIDE (__fini_array_start = .)
+ .init_array    0x204084cc        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
+                0x204084d0                PROVIDE (__init_array_end = .)
+                0x204084d0                . = ALIGN (0x4)
+                0x204084d0                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x204084c8        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
-                0x204084cc                PROVIDE (__fini_array_end = .)
+ .fini_array    0x204084d0        0x4 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
+                0x204084d4                PROVIDE (__fini_array_end = .)
  *(.jcr*)
-                0x204084d0                . = ALIGN (0x8)
- *fill*         0x204084cc        0x4 
-                0x204084d0                __data_end__ = .
+                0x204084d8                . = ALIGN (0x8)
+ *fill*         0x204084d4        0x4 
+                0x204084d8                __data_end__ = .
 
 .tm_clone_table
-                0x204084d0        0x0 load address 0x00402a20
+                0x204084d8        0x0 load address 0x00402e58
  .tm_clone_table
-                0x204084d0        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
+                0x204084d8        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
  .tm_clone_table
-                0x204084d0        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtend.o
+                0x204084d8        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtend.o
 
-.igot.plt       0x204084d0        0x0 load address 0x00402a20
- .igot.plt      0x204084d0        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
+.igot.plt       0x204084d8        0x0 load address 0x00402e58
+ .igot.plt      0x204084d8        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
 
-.bss            0x204084d0     0x6ca0 load address 0x00402a20
-                0x204084d0                . = ALIGN (0x8)
-                0x204084d0                __bss_start__ = .
+.bss            0x204084d8     0x6ea8 load address 0x00402e58
+                0x204084d8                . = ALIGN (0x8)
+                0x204084d8                __bss_start__ = .
  *(.bss)
- .bss           0x204084d0       0x1c c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
+ .bss           0x204084d8       0x1c c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
  *(.bss.*)
+ .bss.u8ChannelRef
+                0x204084f4        0x2 ./drivers/mu/hse_mu.o
+ *fill*         0x204084f6        0x2 
  .bss.muRxEnabledInterruptMask
-                0x204084ec        0x8 ./drivers/mu/hse_mu.o
-                0x204084ec                muRxEnabledInterruptMask
- .bss.muIf      0x204084f4        0x1 ./framework/host_crypto_helper/hse_host_aead.o
- .bss.muIf      0x204084f5        0x1 ./framework/host_crypto_helper/hse_host_ecc.o
- .bss.muIf      0x204084f6        0x1 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
- .bss.muIf      0x204084f7        0x1 ./framework/host_crypto_helper/hse_host_import_key.o
- .bss.bSetup    0x204084f8        0x1 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x204084f8                bSetup
- *fill*         0x204084f9        0x3 
+                0x204084f8        0x8 ./drivers/mu/hse_mu.o
+                0x204084f8                muRxEnabledInterruptMask
+ .bss.muIf      0x20408500        0x1 ./framework/host_crypto_helper/hse_host_aead.o
+ .bss.muIf      0x20408501        0x1 ./framework/host_crypto_helper/hse_host_ecc.o
+ .bss.muIf      0x20408502        0x1 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .bss.muIf      0x20408503        0x1 ./framework/host_crypto_helper/hse_host_import_key.o
+ .bss.bSetup    0x20408504        0x1 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x20408504                bSetup
+ *fill*         0x20408505        0x3 
  .bss.keyContainer
-                0x204084fc      0x5dc ./framework/host_crypto_helper/hse_host_import_key.o
-                0x204084fc                keyContainer
- .bss.pKey0     0x20408ad8        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x20408ad8                pKey0
- .bss.pKey1     0x20408adc        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x20408adc                pKey1
- .bss.pKey2     0x20408ae0        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x20408ae0                pKey2
+                0x20408508      0x5dc ./framework/host_crypto_helper/hse_host_import_key.o
+                0x20408508                keyContainer
+ .bss.pKey0     0x20408ae4        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x20408ae4                pKey0
+ .bss.pKey1     0x20408ae8        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x20408ae8                pKey1
+ .bss.pKey2     0x20408aec        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x20408aec                pKey2
  .bss.gpKeyInfo
-                0x20408ae4        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x20408ae4                gpKeyInfo
- .bss.keyInfo   0x20408ae8       0x10 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x20408ae8                keyInfo
+                0x20408af0        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x20408af0                gpKeyInfo
+ .bss.keyInfo   0x20408af4       0x10 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x20408af4                keyInfo
  .bss.gKeySecCount
-                0x20408af8        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
-                0x20408af8                gKeySecCount
- .bss.muIf      0x20408afc        0x1 ./framework/host_crypto_helper/hse_host_kdf.o
+                0x20408b04        0x4 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x20408b04                gKeySecCount
+ .bss.muIf      0x20408b08        0x1 ./framework/host_crypto_helper/hse_host_kdf.o
  .bss.localMuIf
-                0x20408afd        0x1 ./framework/host_crypto_helper/hse_host_sign.o
- *fill*         0x20408afe        0x2 
+                0x20408b09        0x1 ./framework/host_crypto_helper/hse_host_sign.o
+ *fill*         0x20408b0a        0x2 
  .bss.hseCallbackInfo
-                0x20408b00       0x60 ./framework/host_hse/hse_host.o
+                0x20408b0c       0x60 ./framework/host_hse/hse_host.o
  .bss.hseBusyChannel
-                0x20408b60        0x8 ./framework/host_hse/hse_host.o
+                0x20408b6c        0x8 ./framework/host_hse/hse_host.o
  .bss.hseSrvDescMu
-                0x20408b68      0x380 ./framework/host_hse/hse_host.o
+                0x20408b74      0x380 ./framework/host_hse/hse_host.o
  .bss.allocatorCtx
-                0x20408ee8     0x6246 ./framework/host_keymgmt/hse_keys_allocator.o
+                0x20408ef4     0x6246 ./framework/host_keymgmt/hse_keys_allocator.o
  .bss.gInstallHSEFwTest
-                0x2040f12e        0x1 ./services/src/hse_demo_app_config.o
-                0x2040f12e                gInstallHSEFwTest
- *fill*         0x2040f12f        0x1 
+                0x2040f13a        0x1 ./services/src/hse_demo_app_config.o
+                0x2040f13a                gInstallHSEFwTest
+ *fill*         0x2040f13b        0x1 
  .bss.ECC_Public_key
-                0x2040f130       0x40 ./src/main.o
-                0x2040f130                ECC_Public_key
+                0x2040f13c       0x40 ./src/main.o
+                0x2040f13c                ECC_Public_key
+ .bss.CMAC_Tag_OutPut
+                0x2040f17c      0x200 ./src/main.o
+                0x2040f17c                CMAC_Tag_OutPut
  *(COMMON)
-                0x2040f170                . = ALIGN (0x8)
-                0x2040f170                __bss_end__ = .
+                0x2040f380                . = ALIGN (0x8)
+ *fill*         0x2040f37c        0x4 
+                0x2040f380                __bss_end__ = .
 
-.heap           0x2040f170     0x1000
-                0x2040f170                . = ALIGN (0x8)
-                0x2040f170                __HeapTop = .
-                0x2040f170                __end__ = .
-                0x2040f170                _end = .
+.heap           0x2040f380     0x1000
+                0x2040f380                . = ALIGN (0x8)
+                0x2040f380                __HeapTop = .
+                0x2040f380                __end__ = .
+                0x2040f380                _end = .
                 [!provide]                PROVIDE (end = .)
-                0x20410170                . = (. + __HEAP_SIZE)
- *fill*         0x2040f170     0x1000 
-                0x20410170                . = ALIGN (0x8)
-                0x20410170                __HeapLimit = .
+                0x20410380                . = (. + __HEAP_SIZE)
+ *fill*         0x2040f380     0x1000 
+                0x20410380                . = ALIGN (0x8)
+                0x20410380                __HeapLimit = .
 
 .stack          0x2044f000     0x1000
                 0x2044f000                . = ALIGN (0x8)
@@ -9883,72 +9866,81 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000096       0x2e ./framework/host_crypto_helper/hse_host_aead.o
  .ARM.attributes
-                0x000000c4       0x2e ./framework/host_crypto_helper/hse_host_ecc.o
+                0x000000c4       0x2e ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .ARM.attributes
-                0x000000f2       0x2e ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+                0x000000f2       0x2e ./framework/host_crypto_helper/hse_host_ecc.o
  .ARM.attributes
-                0x00000120       0x2e ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00000120       0x2e ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
  .ARM.attributes
-                0x0000014e       0x2e ./framework/host_crypto_helper/hse_host_kdf.o
+                0x0000014e       0x2e ./framework/host_crypto_helper/hse_host_import_key.o
  .ARM.attributes
-                0x0000017c       0x2e ./framework/host_crypto_helper/hse_host_sign.o
+                0x0000017c       0x2e ./framework/host_crypto_helper/hse_host_kdf.o
  .ARM.attributes
-                0x000001aa       0x2e ./framework/host_hse/hse_host.o
+                0x000001aa       0x2e ./framework/host_crypto_helper/hse_host_mac.o
  .ARM.attributes
-                0x000001d8       0x2e ./framework/host_keymgmt/hse_keys_allocator.o
+                0x000001d8       0x2e ./framework/host_crypto_helper/hse_host_sign.o
  .ARM.attributes
-                0x00000206       0x2e ./services/src/fw_crypto/hse_crypto.o
+                0x00000206       0x2e ./framework/host_hse/hse_host.o
  .ARM.attributes
-                0x00000234       0x2e ./services/src/hse_demo_app_config.o
+                0x00000234       0x2e ./framework/host_keymgmt/hse_keys_allocator.o
  .ARM.attributes
-                0x00000262       0x2e ./src/main.o
+                0x00000262       0x2e ./services/src/fw_crypto/hse_crypto.o
  .ARM.attributes
-                0x00000290       0x33 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+                0x00000290       0x2e ./services/src/hse_demo_app_config.o
  .ARM.attributes
-                0x000002c3       0x2e ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+                0x000002be       0x2e ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .ARM.attributes
-                0x000002f1       0x2e ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+                0x000002ec       0x2e ./src/main.o
  .ARM.attributes
-                0x0000031f       0x2e ./src/target/m7/src/sys_init.o
+                0x0000031a       0x33 ./src/target/m7/S32DS/Startup_Code/boot_header.o
  .ARM.attributes
-                0x0000034d       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-exit.o)
+                0x0000034d       0x2e ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
  .ARM.attributes
-                0x0000037b       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-impure.o)
+                0x0000037b       0x2e ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
  .ARM.attributes
-                0x000003a9       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-init.o)
+                0x000003a9       0x2e ./src/target/m7/src/sys_init.o
  .ARM.attributes
-                0x000003d7       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-memcpy-stub.o)
+                0x000003d7       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-exit.o)
  .ARM.attributes
-                0x00000405       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-memset.o)
+                0x00000405       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000433       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__call_atexit.o)
+                0x00000433       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-init.o)
  .ARM.attributes
-                0x00000461       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-fini.o)
+                0x00000461       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x0000048f       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-atexit.o)
+                0x0000048f       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-memset.o)
  .ARM.attributes
-                0x000004bd       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__atexit.o)
+                0x000004bd       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__call_atexit.o)
  .ARM.attributes
-                0x000004eb       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libnosys.a(_exit.o)
+                0x000004eb       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-fini.o)
  .ARM.attributes
-                0x00000519       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtend.o
+                0x00000519       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-atexit.o)
  .ARM.attributes
-                0x00000547       0x1e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtn.o
+                0x00000547       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x00000575       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libnosys.a(_exit.o)
+ .ARM.attributes
+                0x000005a3       0x2e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtend.o
+ .ARM.attributes
+                0x000005d1       0x1e c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtn.o
 
 .comment        0x00000000       0x88
  .comment       0x00000000       0x88 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtbegin.o
                                  0x89 (size before relaxing)
  .comment       0x00000088       0x89 ./drivers/mu/hse_mu.o
  .comment       0x00000088       0x89 ./framework/host_crypto_helper/hse_host_aead.o
+ .comment       0x00000088       0x89 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .comment       0x00000088       0x89 ./framework/host_crypto_helper/hse_host_ecc.o
  .comment       0x00000088       0x89 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
  .comment       0x00000088       0x89 ./framework/host_crypto_helper/hse_host_import_key.o
  .comment       0x00000088       0x89 ./framework/host_crypto_helper/hse_host_kdf.o
+ .comment       0x00000088       0x89 ./framework/host_crypto_helper/hse_host_mac.o
  .comment       0x00000088       0x89 ./framework/host_crypto_helper/hse_host_sign.o
  .comment       0x00000088       0x89 ./framework/host_hse/hse_host.o
  .comment       0x00000088       0x89 ./framework/host_keymgmt/hse_keys_allocator.o
  .comment       0x00000088       0x89 ./services/src/fw_crypto/hse_crypto.o
  .comment       0x00000088       0x89 ./services/src/hse_demo_app_config.o
+ .comment       0x00000088       0x89 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .comment       0x00000088       0x89 ./src/main.o
  .comment       0x00000088       0x89 ./src/target/m7/S32DS/Startup_Code/boot_header.o
  .comment       0x00000088       0x89 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
@@ -9966,150 +9958,174 @@ LOAD linker stubs
  .comment       0x00000088       0x89 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libnosys.a(_exit.o)
  .comment       0x00000088       0x89 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtend.o
 
-.debug_line     0x00000000     0xd31c
+.debug_line     0x00000000     0xf6da
  .debug_line    0x00000000       0x93 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
  .debug_line    0x00000093      0x964 ./drivers/mu/hse_mu.o
  .debug_line    0x000009f7      0xb3c ./framework/host_crypto_helper/hse_host_aead.o
- .debug_line    0x00001533      0xb7b ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_line    0x000020ae      0xaf3 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
- .debug_line    0x00002ba1     0x2508 ./framework/host_crypto_helper/hse_host_import_key.o
- .debug_line    0x000050a9      0xbf2 ./framework/host_crypto_helper/hse_host_kdf.o
- .debug_line    0x00005c9b      0xdd3 ./framework/host_crypto_helper/hse_host_sign.o
- .debug_line    0x00006a6e      0xbd3 ./framework/host_hse/hse_host.o
- .debug_line    0x00007641      0xb6e ./framework/host_keymgmt/hse_keys_allocator.o
- .debug_line    0x000081af     0x17ce ./services/src/fw_crypto/hse_crypto.o
- .debug_line    0x0000997d      0xcfb ./services/src/hse_demo_app_config.o
- .debug_line    0x0000a678     0x1313 ./src/main.o
- .debug_line    0x0000b98b      0x2b8 ./src/target/m7/S32DS/Startup_Code/boot_header.o
- .debug_line    0x0000bc43      0x8c7 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_line    0x0000c50a      0x36f ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
- .debug_line    0x0000c879      0xaa3 ./src/target/m7/src/sys_init.o
+ .debug_line    0x00001533      0x948 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
+ .debug_line    0x00001e7b      0xb7b ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_line    0x000029f6      0xaf3 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .debug_line    0x000034e9     0x2508 ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_line    0x000059f1      0xbf2 ./framework/host_crypto_helper/hse_host_kdf.o
+ .debug_line    0x000065e3      0xe2d ./framework/host_crypto_helper/hse_host_mac.o
+ .debug_line    0x00007410      0xdd3 ./framework/host_crypto_helper/hse_host_sign.o
+ .debug_line    0x000081e3      0xbd3 ./framework/host_hse/hse_host.o
+ .debug_line    0x00008db6      0xb6e ./framework/host_keymgmt/hse_keys_allocator.o
+ .debug_line    0x00009924     0x17ce ./services/src/fw_crypto/hse_crypto.o
+ .debug_line    0x0000b0f2      0xcfb ./services/src/hse_demo_app_config.o
+ .debug_line    0x0000bded      0xbae ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+ .debug_line    0x0000c99b     0x13ae ./src/main.o
+ .debug_line    0x0000dd49      0x2b8 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+ .debug_line    0x0000e001      0x8c7 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_line    0x0000e8c8      0x36f ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+ .debug_line    0x0000ec37      0xaa3 ./src/target/m7/src/sys_init.o
 
-.debug_info     0x00000000    0x23cf6
+.debug_info     0x00000000    0x2be7e
  .debug_info    0x00000000       0x26 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
  .debug_info    0x00000026      0x4fd ./drivers/mu/hse_mu.o
  .debug_info    0x00000523     0x3086 ./framework/host_crypto_helper/hse_host_aead.o
- .debug_info    0x000035a9     0x25b5 ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_info    0x00005b5e     0x2609 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
- .debug_info    0x00008167     0x4fe4 ./framework/host_crypto_helper/hse_host_import_key.o
- .debug_info    0x0000d14b     0x274d ./framework/host_crypto_helper/hse_host_kdf.o
- .debug_info    0x0000f898     0x343f ./framework/host_crypto_helper/hse_host_sign.o
- .debug_info    0x00012cd7     0x276c ./framework/host_hse/hse_host.o
- .debug_info    0x00015443      0x78b ./framework/host_keymgmt/hse_keys_allocator.o
- .debug_info    0x00015bce     0x3c57 ./services/src/fw_crypto/hse_crypto.o
- .debug_info    0x00019825     0x26f6 ./services/src/hse_demo_app_config.o
- .debug_info    0x0001bf1b      0xe80 ./src/main.o
- .debug_info    0x0001cd9b      0x2e9 ./src/target/m7/S32DS/Startup_Code/boot_header.o
- .debug_info    0x0001d084      0x4cb ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_info    0x0001d54f      0x489 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
- .debug_info    0x0001d9d8     0x631e ./src/target/m7/src/sys_init.o
+ .debug_info    0x000035a9     0x2418 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
+ .debug_info    0x000059c1     0x25b5 ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_info    0x00007f76     0x2609 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .debug_info    0x0000a57f     0x4fe4 ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_info    0x0000f563     0x274d ./framework/host_crypto_helper/hse_host_kdf.o
+ .debug_info    0x00011cb0     0x36c9 ./framework/host_crypto_helper/hse_host_mac.o
+ .debug_info    0x00015379     0x343f ./framework/host_crypto_helper/hse_host_sign.o
+ .debug_info    0x000187b8     0x276c ./framework/host_hse/hse_host.o
+ .debug_info    0x0001af24      0x78b ./framework/host_keymgmt/hse_keys_allocator.o
+ .debug_info    0x0001b6af     0x3c57 ./services/src/fw_crypto/hse_crypto.o
+ .debug_info    0x0001f306     0x26f6 ./services/src/hse_demo_app_config.o
+ .debug_info    0x000219fc     0x2615 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+ .debug_info    0x00024011      0xf12 ./src/main.o
+ .debug_info    0x00024f23      0x2e9 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+ .debug_info    0x0002520c      0x4cb ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_info    0x000256d7      0x489 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+ .debug_info    0x00025b60     0x631e ./src/target/m7/src/sys_init.o
 
-.debug_abbrev   0x00000000     0x1f49
+.debug_abbrev   0x00000000     0x2521
  .debug_abbrev  0x00000000       0x14 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
  .debug_abbrev  0x00000014      0x170 ./drivers/mu/hse_mu.o
  .debug_abbrev  0x00000184      0x1fe ./framework/host_crypto_helper/hse_host_aead.o
- .debug_abbrev  0x00000382      0x1fc ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_abbrev  0x0000057e      0x1b8 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
- .debug_abbrev  0x00000736      0x289 ./framework/host_crypto_helper/hse_host_import_key.o
- .debug_abbrev  0x000009bf      0x1e0 ./framework/host_crypto_helper/hse_host_kdf.o
- .debug_abbrev  0x00000b9f      0x227 ./framework/host_crypto_helper/hse_host_sign.o
- .debug_abbrev  0x00000dc6      0x250 ./framework/host_hse/hse_host.o
- .debug_abbrev  0x00001016      0x211 ./framework/host_keymgmt/hse_keys_allocator.o
- .debug_abbrev  0x00001227      0x303 ./services/src/fw_crypto/hse_crypto.o
- .debug_abbrev  0x0000152a      0x243 ./services/src/hse_demo_app_config.o
- .debug_abbrev  0x0000176d      0x1df ./src/main.o
- .debug_abbrev  0x0000194c       0xb1 ./src/target/m7/S32DS/Startup_Code/boot_header.o
- .debug_abbrev  0x000019fd      0x1f9 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_abbrev  0x00001bf6       0xe9 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
- .debug_abbrev  0x00001cdf      0x26a ./src/target/m7/src/sys_init.o
+ .debug_abbrev  0x00000382      0x191 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
+ .debug_abbrev  0x00000513      0x1fc ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_abbrev  0x0000070f      0x1b8 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .debug_abbrev  0x000008c7      0x289 ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_abbrev  0x00000b50      0x1e0 ./framework/host_crypto_helper/hse_host_kdf.o
+ .debug_abbrev  0x00000d30      0x21e ./framework/host_crypto_helper/hse_host_mac.o
+ .debug_abbrev  0x00000f4e      0x227 ./framework/host_crypto_helper/hse_host_sign.o
+ .debug_abbrev  0x00001175      0x250 ./framework/host_hse/hse_host.o
+ .debug_abbrev  0x000013c5      0x211 ./framework/host_keymgmt/hse_keys_allocator.o
+ .debug_abbrev  0x000015d6      0x303 ./services/src/fw_crypto/hse_crypto.o
+ .debug_abbrev  0x000018d9      0x243 ./services/src/hse_demo_app_config.o
+ .debug_abbrev  0x00001b1c      0x220 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+ .debug_abbrev  0x00001d3c      0x1e8 ./src/main.o
+ .debug_abbrev  0x00001f24       0xb1 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+ .debug_abbrev  0x00001fd5      0x1f9 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_abbrev  0x000021ce       0xe9 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+ .debug_abbrev  0x000022b7      0x26a ./src/target/m7/src/sys_init.o
 
-.debug_str      0x00000000   0x24d55d
+.debug_str      0x00000000   0x24dc0e
  .debug_str     0x00000000       0xb9 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
  .debug_str     0x000000b9     0xb40f ./drivers/mu/hse_mu.o
                                0xb589 (size before relaxing)
- .debug_str     0x0000b4c8     0x3f94 ./framework/host_crypto_helper/hse_host_aead.o
+ .debug_str     0x0000b4c8     0x3f8a ./framework/host_crypto_helper/hse_host_aead.o
                                0xf219 (size before relaxing)
- .debug_str     0x0000f45c     0x2819 ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_str     0x0000f452       0xc2 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
+                               0xf0f4 (size before relaxing)
+ .debug_str     0x0000f514     0x2819 ./framework/host_crypto_helper/hse_host_ecc.o
                               0x1185c (size before relaxing)
- .debug_str     0x00011c75      0x182 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .debug_str     0x00011d2d      0x182 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
                               0x1165c (size before relaxing)
- .debug_str     0x00011df7      0xd59 ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_str     0x00011eaf      0xd4e ./framework/host_crypto_helper/hse_host_import_key.o
                               0x12519 (size before relaxing)
- .debug_str     0x00012b50      0x153 ./framework/host_crypto_helper/hse_host_kdf.o
+ .debug_str     0x00012bfd      0x153 ./framework/host_crypto_helper/hse_host_kdf.o
                                0xf19c (size before relaxing)
- .debug_str     0x00012ca3      0x36c ./framework/host_crypto_helper/hse_host_sign.o
+ .debug_str     0x00012d50      0x3a3 ./framework/host_crypto_helper/hse_host_mac.o
+                               0xf428 (size before relaxing)
+ .debug_str     0x000130f3      0x36c ./framework/host_crypto_helper/hse_host_sign.o
                                0xf3bd (size before relaxing)
- .debug_str     0x0001300f    0x4c07d ./framework/host_hse/hse_host.o
+ .debug_str     0x0001345f    0x4c07d ./framework/host_hse/hse_host.o
                               0x5b149 (size before relaxing)
- .debug_str     0x0005f08c      0x212 ./framework/host_keymgmt/hse_keys_allocator.o
+ .debug_str     0x0005f4dc      0x212 ./framework/host_keymgmt/hse_keys_allocator.o
                                0xadf2 (size before relaxing)
- .debug_str     0x0005f29e     0x321f ./services/src/fw_crypto/hse_crypto.o
+ .debug_str     0x0005f6ee     0x31fa ./services/src/fw_crypto/hse_crypto.o
                               0x12915 (size before relaxing)
- .debug_str     0x000624bd      0x45b ./services/src/hse_demo_app_config.o
+ .debug_str     0x000628e8      0x45b ./services/src/hse_demo_app_config.o
                               0x117de (size before relaxing)
- .debug_str     0x00062918   0x1df0a5 ./src/main.o
-                             0x1ef6c7 (size before relaxing)
- .debug_str     0x002419bd      0x1fd ./src/target/m7/S32DS/Startup_Code/boot_header.o
+ .debug_str     0x00062d43      0x1df ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+                               0xfdc3 (size before relaxing)
+ .debug_str     0x00062f22   0x1df14c ./src/main.o
+                             0x1ef777 (size before relaxing)
+ .debug_str     0x0024206e      0x1fd ./src/target/m7/S32DS/Startup_Code/boot_header.o
                                0x3ebf (size before relaxing)
- .debug_str     0x00241bba     0x8111 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_str     0x0024226b     0x8111 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
                              0x1ead96 (size before relaxing)
- .debug_str     0x00249ccb      0x1df ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+ .debug_str     0x0024a37c      0x1df ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
                                0xc0f6 (size before relaxing)
- .debug_str     0x00249eaa     0x36b3 ./src/target/m7/src/sys_init.o
+ .debug_str     0x0024a55b     0x36b3 ./src/target/m7/src/sys_init.o
                               0x5469e (size before relaxing)
 
-.debug_aranges  0x00000000      0x8b8
+.debug_aranges  0x00000000      0xa58
  .debug_aranges
                 0x00000000       0x78 ./drivers/mu/hse_mu.o
  .debug_aranges
                 0x00000078       0xc0 ./framework/host_crypto_helper/hse_host_aead.o
  .debug_aranges
-                0x00000138       0x40 ./framework/host_crypto_helper/hse_host_ecc.o
+                0x00000138       0x20 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
  .debug_aranges
-                0x00000178       0x38 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+                0x00000158       0x40 ./framework/host_crypto_helper/hse_host_ecc.o
  .debug_aranges
-                0x000001b0      0x250 ./framework/host_crypto_helper/hse_host_import_key.o
+                0x00000198       0x38 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
  .debug_aranges
-                0x00000400       0x78 ./framework/host_crypto_helper/hse_host_kdf.o
+                0x000001d0      0x250 ./framework/host_crypto_helper/hse_host_import_key.o
  .debug_aranges
-                0x00000478      0x100 ./framework/host_crypto_helper/hse_host_sign.o
+                0x00000420       0x78 ./framework/host_crypto_helper/hse_host_kdf.o
  .debug_aranges
-                0x00000578       0x50 ./framework/host_hse/hse_host.o
+                0x00000498      0x140 ./framework/host_crypto_helper/hse_host_mac.o
  .debug_aranges
-                0x000005c8       0x60 ./framework/host_keymgmt/hse_keys_allocator.o
+                0x000005d8      0x100 ./framework/host_crypto_helper/hse_host_sign.o
  .debug_aranges
-                0x00000628       0xd8 ./services/src/fw_crypto/hse_crypto.o
+                0x000006d8       0x50 ./framework/host_hse/hse_host.o
  .debug_aranges
-                0x00000700       0x48 ./services/src/hse_demo_app_config.o
+                0x00000728       0x60 ./framework/host_keymgmt/hse_keys_allocator.o
  .debug_aranges
-                0x00000748       0x30 ./src/main.o
+                0x00000788       0xd8 ./services/src/fw_crypto/hse_crypto.o
  .debug_aranges
-                0x00000778       0x18 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+                0x00000860       0x48 ./services/src/hse_demo_app_config.o
  .debug_aranges
-                0x00000790       0x28 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+                0x000008a8       0x40 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
  .debug_aranges
-                0x000007b8       0x28 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+                0x000008e8       0x30 ./src/main.o
  .debug_aranges
-                0x000007e0       0xd8 ./src/target/m7/src/sys_init.o
+                0x00000918       0x18 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+ .debug_aranges
+                0x00000930       0x28 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_aranges
+                0x00000958       0x28 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+ .debug_aranges
+                0x00000980       0xd8 ./src/target/m7/src/sys_init.o
 
-.debug_ranges   0x00000000      0x828
+.debug_ranges   0x00000000      0x998
  .debug_ranges  0x00000000       0x68 ./drivers/mu/hse_mu.o
  .debug_ranges  0x00000068       0xb0 ./framework/host_crypto_helper/hse_host_aead.o
- .debug_ranges  0x00000118       0x30 ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_ranges  0x00000148       0x28 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
- .debug_ranges  0x00000170      0x258 ./framework/host_crypto_helper/hse_host_import_key.o
- .debug_ranges  0x000003c8       0x68 ./framework/host_crypto_helper/hse_host_kdf.o
- .debug_ranges  0x00000430       0xf0 ./framework/host_crypto_helper/hse_host_sign.o
- .debug_ranges  0x00000520       0x40 ./framework/host_hse/hse_host.o
- .debug_ranges  0x00000560       0x50 ./framework/host_keymgmt/hse_keys_allocator.o
- .debug_ranges  0x000005b0      0x128 ./services/src/fw_crypto/hse_crypto.o
- .debug_ranges  0x000006d8       0x38 ./services/src/hse_demo_app_config.o
- .debug_ranges  0x00000710       0x20 ./src/main.o
- .debug_ranges  0x00000730       0x18 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_ranges  0x00000748       0x18 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
- .debug_ranges  0x00000760       0xc8 ./src/target/m7/src/sys_init.o
+ .debug_ranges  0x00000118       0x10 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
+ .debug_ranges  0x00000128       0x30 ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_ranges  0x00000158       0x28 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .debug_ranges  0x00000180      0x258 ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_ranges  0x000003d8       0x68 ./framework/host_crypto_helper/hse_host_kdf.o
+ .debug_ranges  0x00000440      0x130 ./framework/host_crypto_helper/hse_host_mac.o
+ .debug_ranges  0x00000570       0xf0 ./framework/host_crypto_helper/hse_host_sign.o
+ .debug_ranges  0x00000660       0x40 ./framework/host_hse/hse_host.o
+ .debug_ranges  0x000006a0       0x50 ./framework/host_keymgmt/hse_keys_allocator.o
+ .debug_ranges  0x000006f0      0x128 ./services/src/fw_crypto/hse_crypto.o
+ .debug_ranges  0x00000818       0x38 ./services/src/hse_demo_app_config.o
+ .debug_ranges  0x00000850       0x30 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+ .debug_ranges  0x00000880       0x20 ./src/main.o
+ .debug_ranges  0x000008a0       0x18 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_ranges  0x000008b8       0x18 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+ .debug_ranges  0x000008d0       0xc8 ./src/target/m7/src/sys_init.o
 
-.debug_macro    0x00000000    0x1d842
+.debug_macro    0x00000000    0x1e862
  .debug_macro   0x00000000      0x47a ./drivers/mu/hse_mu.o
  .debug_macro   0x0000047a       0x10 ./drivers/mu/hse_mu.o
  .debug_macro   0x0000048a      0x1a0 ./drivers/mu/hse_mu.o
@@ -10162,56 +10178,62 @@ LOAD linker stubs
  .debug_macro   0x00001d62       0x10 ./framework/host_crypto_helper/hse_host_aead.o
  .debug_macro   0x00001d72       0x35 ./framework/host_crypto_helper/hse_host_aead.o
  .debug_macro   0x00001da7       0x10 ./framework/host_crypto_helper/hse_host_aead.o
- .debug_macro   0x00001db7      0x577 ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_macro   0x0000232e      0x22d ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_macro   0x0000255b       0x3a ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_macro   0x00002595       0x16 ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_macro   0x000025ab      0x54c ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
- .debug_macro   0x00002af7      0x233 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
- .debug_macro   0x00002d2a      0x59d ./framework/host_crypto_helper/hse_host_import_key.o
- .debug_macro   0x000032c7       0x10 ./framework/host_crypto_helper/hse_host_import_key.o
- .debug_macro   0x000032d7       0x40 ./framework/host_crypto_helper/hse_host_import_key.o
- .debug_macro   0x00003317      0x543 ./framework/host_crypto_helper/hse_host_kdf.o
- .debug_macro   0x0000385a      0x543 ./framework/host_crypto_helper/hse_host_sign.o
- .debug_macro   0x00003d9d      0x594 ./framework/host_hse/hse_host.o
- .debug_macro   0x00004331    0x10c0b ./framework/host_hse/hse_host.o
- .debug_macro   0x00014f3c      0x46e ./framework/host_keymgmt/hse_keys_allocator.o
- .debug_macro   0x000153aa      0x661 ./services/src/fw_crypto/hse_crypto.o
- .debug_macro   0x00015a0b       0x10 ./services/src/fw_crypto/hse_crypto.o
- .debug_macro   0x00015a1b       0x6a ./services/src/fw_crypto/hse_crypto.o
- .debug_macro   0x00015a85      0x594 ./services/src/hse_demo_app_config.o
- .debug_macro   0x00016019       0x2e ./services/src/hse_demo_app_config.o
- .debug_macro   0x00016047      0x870 ./src/main.o
- .debug_macro   0x000168b7      0x11d ./src/main.o
- .debug_macro   0x000169d4       0x10 ./src/main.o
- .debug_macro   0x000169e4       0x72 ./src/target/m7/S32DS/Startup_Code/boot_header.o
- .debug_macro   0x00016a56       0x10 ./src/target/m7/S32DS/Startup_Code/boot_header.o
- .debug_macro   0x00016a66      0x33d ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x00016da3       0x1c ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x00016dbf       0x1c ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x00016ddb       0x22 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x00016dfd      0x116 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x00016f13     0x1305 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x00018218      0x11f ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x00018337       0x27 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x0001835e     0x51ef ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_macro   0x0001d54d       0xd6 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
- .debug_macro   0x0001d623      0x179 ./src/target/m7/src/sys_init.o
- .debug_macro   0x0001d79c       0xa6 ./src/target/m7/src/sys_init.o
+ .debug_macro   0x00001db7      0x53d ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
+ .debug_macro   0x000022f4      0x577 ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_macro   0x0000286b      0x22d ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_macro   0x00002a98       0x3a ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_macro   0x00002ad2       0x16 ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_macro   0x00002ae8      0x54c ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .debug_macro   0x00003034      0x233 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .debug_macro   0x00003267      0x59d ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_macro   0x00003804       0x10 ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_macro   0x00003814       0x40 ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_macro   0x00003854      0x543 ./framework/host_crypto_helper/hse_host_kdf.o
+ .debug_macro   0x00003d97      0x543 ./framework/host_crypto_helper/hse_host_mac.o
+ .debug_macro   0x000042da      0x543 ./framework/host_crypto_helper/hse_host_sign.o
+ .debug_macro   0x0000481d      0x594 ./framework/host_hse/hse_host.o
+ .debug_macro   0x00004db1    0x10c0b ./framework/host_hse/hse_host.o
+ .debug_macro   0x000159bc      0x46e ./framework/host_keymgmt/hse_keys_allocator.o
+ .debug_macro   0x00015e2a      0x661 ./services/src/fw_crypto/hse_crypto.o
+ .debug_macro   0x0001648b       0x10 ./services/src/fw_crypto/hse_crypto.o
+ .debug_macro   0x0001649b       0x6a ./services/src/fw_crypto/hse_crypto.o
+ .debug_macro   0x00016505      0x594 ./services/src/hse_demo_app_config.o
+ .debug_macro   0x00016a99       0x2e ./services/src/hse_demo_app_config.o
+ .debug_macro   0x00016ac7      0x57b ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+ .debug_macro   0x00017042      0x895 ./src/main.o
+ .debug_macro   0x000178d7      0x11d ./src/main.o
+ .debug_macro   0x000179f4       0x10 ./src/main.o
+ .debug_macro   0x00017a04       0x72 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+ .debug_macro   0x00017a76       0x10 ./src/target/m7/S32DS/Startup_Code/boot_header.o
+ .debug_macro   0x00017a86      0x33d ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x00017dc3       0x1c ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x00017ddf       0x1c ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x00017dfb       0x22 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x00017e1d      0x116 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x00017f33     0x1305 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x00019238      0x11f ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x00019357       0x27 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x0001937e     0x51ef ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_macro   0x0001e56d       0xd6 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+ .debug_macro   0x0001e643      0x179 ./src/target/m7/src/sys_init.o
+ .debug_macro   0x0001e7bc       0xa6 ./src/target/m7/src/sys_init.o
 
-.debug_frame    0x00000000     0x22a4
+.debug_frame    0x00000000     0x28fc
  .debug_frame   0x00000000      0x1f0 ./drivers/mu/hse_mu.o
  .debug_frame   0x000001f0      0x308 ./framework/host_crypto_helper/hse_host_aead.o
- .debug_frame   0x000004f8       0xdc ./framework/host_crypto_helper/hse_host_ecc.o
- .debug_frame   0x000005d4       0xa0 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
- .debug_frame   0x00000674      0xaac ./framework/host_crypto_helper/hse_host_import_key.o
- .debug_frame   0x00001120      0x1c4 ./framework/host_crypto_helper/hse_host_kdf.o
- .debug_frame   0x000012e4      0x49c ./framework/host_crypto_helper/hse_host_sign.o
- .debug_frame   0x00001780      0x118 ./framework/host_hse/hse_host.o
- .debug_frame   0x00001898      0x170 ./framework/host_keymgmt/hse_keys_allocator.o
- .debug_frame   0x00001a08      0x3d0 ./services/src/fw_crypto/hse_crypto.o
- .debug_frame   0x00001dd8       0xdc ./services/src/hse_demo_app_config.o
- .debug_frame   0x00001eb4       0x80 ./src/main.o
- .debug_frame   0x00001f34       0x38 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
- .debug_frame   0x00001f6c       0x50 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
- .debug_frame   0x00001fbc      0x2e8 ./src/target/m7/src/sys_init.o
+ .debug_frame   0x000004f8       0x38 ./framework/host_crypto_helper/hse_host_cmac_with_counter.o
+ .debug_frame   0x00000530       0xdc ./framework/host_crypto_helper/hse_host_ecc.o
+ .debug_frame   0x0000060c       0xa0 ./framework/host_crypto_helper/hse_host_format_key_catalogs.o
+ .debug_frame   0x000006ac      0xaac ./framework/host_crypto_helper/hse_host_import_key.o
+ .debug_frame   0x00001158      0x1c4 ./framework/host_crypto_helper/hse_host_kdf.o
+ .debug_frame   0x0000131c      0x560 ./framework/host_crypto_helper/hse_host_mac.o
+ .debug_frame   0x0000187c      0x49c ./framework/host_crypto_helper/hse_host_sign.o
+ .debug_frame   0x00001d18      0x118 ./framework/host_hse/hse_host.o
+ .debug_frame   0x00001e30      0x170 ./framework/host_keymgmt/hse_keys_allocator.o
+ .debug_frame   0x00001fa0      0x3d0 ./services/src/fw_crypto/hse_crypto.o
+ .debug_frame   0x00002370       0xdc ./services/src/hse_demo_app_config.o
+ .debug_frame   0x0000244c       0xc0 ./services/src/monotonic_cnt/hse_monotonic_cnt.o
+ .debug_frame   0x0000250c       0x80 ./src/main.o
+ .debug_frame   0x0000258c       0x38 ./src/target/m7/S32DS/Startup_Code/startup_ARMCM7.o
+ .debug_frame   0x000025c4       0x50 ./src/target/m7/S32DS/Startup_Code/system_ARMCM7.o
+ .debug_frame   0x00002614      0x2e8 ./src/target/m7/src/sys_init.o

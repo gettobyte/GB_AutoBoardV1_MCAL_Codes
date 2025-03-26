@@ -40,6 +40,9 @@
 #include "hse_host_ecc.h"
 #include "hse_host_kdf.h"
 #include "hse_host_aead.h"
+#include "hse_monotonic_cnt.h"
+#include "hse_host_cmac_with_counter.h"
+#include "hse_host_mac.h"
 #include <string.h>
 /*==================================================================================================
 *                                       LOCAL MACROS
@@ -127,7 +130,7 @@ const hseKeyGroupCfgEntry_t RAM_Catalog [] =
   hseKeyInfo_t KdfSP800_108_SECRET_KEY_INFO_1_0 =
 {
     .keyType = HSE_KEY_TYPE_AES,
-    .keyBitLen = 128UL,
+    .keyBitLen = 256UL,
     .keyFlags = (HSE_KF_USAGE_DERIVE | HSE_KF_ACCESS_EXPORTABLE)
 };
 
@@ -168,6 +171,15 @@ hseSrvResponse_t KdfSP800_108ReqTest_demo();
 static hseSrvResponse_t KdfSP800_108Test_0(hseKeyImportParams_t *pImportSecretParams, hseKdfSP800_108Scheme_t *pKdfScheme);
 
 uint8_t ECC_Public_key[64];
+
+const uint8_t CMAC_Plaintext[] =
+{ 0x6b, 0xc1, 0xbe, 0xe2, 0x2e, 0x40, 0x9f, 0x96, 0xe9, 0x3d, 0x7e, 0x11, 0x73,
+        0x93, 0x17, 0x2a
+};
+
+uint8_t CMAC_Tag_OutPut[512] = {0};
+uint32_t CMAC_Tag_length = 16;
+
 int main(void) {
 	/*Check Fw Install Status*/
 	WaitForHSEFWInitToFinish();
@@ -184,7 +196,9 @@ int main(void) {
     hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PAIR_KEY_HANDLE;
 	//hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE;
     hseKeyHandle_t DHSharedSecretRAMKeyHandle = HSE_DEMO_DH_SHARED_SECRET_HANDLE;
-    hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_RAM_AES256_KEY1;
+   // hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_RAM_AES256_KEY1;
+    hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_NVM_AES256_KEY2;
+
     hseKeyHandle_t AESDerivedKeyInfoHandle0 = HSE_DEMO_RAM_AES256_KEY0;
 
 
@@ -192,12 +206,13 @@ int main(void) {
 //    HseResponse = GenerateEccKey( &eccRAMKeyHandle, RAM_KEY, HSE_EC_SEC_SECP256R1, HSE_KF_USAGE_EXCHANGE);
 //    ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
-    // generate the ecc private - public key and export the public key to application
+
+    // Key Exchange via ECDH protocol
+    //generate the ecc private - public key and export the public key to application
     HseResponse = GenerateEccKeyAndExportPublic( eccRAMKeyHandle, HSE_EC_SEC_SECP256R1, HSE_KF_USAGE_EXCHANGE, ECC_Public_key);
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
-    // transmit the exported public key to the other node via can
-
+    // transmit the exported public key to the other node via can and also receive the exported public key of other node and use that in next step to import it in public key handle
 
     /* Import ECC Key */
     // import the received public key from other node to the ecc key pair handle
@@ -215,18 +230,7 @@ int main(void) {
     /* Derive Key using SP800_108 KDF */
     //HSEKdfSP800
     HseResponse = KdfSP800_108ReqTest_demo();
-    //Declare the information about the 192 bits AES key to be extracted
-    hseKeyInfo_t aes192KeyInfo = {
-        .keyType = HSE_KEY_TYPE_AES,      //Will generate an AES key
-        .keyFlags = (HSE_KF_USAGE_ENCRYPT|HSE_KF_USAGE_DECRYPT),//Usage flags for this key - Encrypt/Decrypt
-        .keyBitLen = 192U,                //192 bits key
-    };
-    //Declare the information about the HMAC key to be extracted
-    hseKeyInfo_t hmacKeyInfo = {
-        .keyType = HSE_KEY_TYPE_HMAC,                        //Will generate a HMAC key
-        .keyFlags = (HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY), //Usage flags for this key - Sign/Verify
-        .keyBitLen = 512U,                                   //512 bits key
-    };
+
     //Declare the information about the 256 bits AES key to be extracted
     hseKeyInfo_t aes256KeyInfo = {
         .keyType = HSE_KEY_TYPE_AES,                             //Will generate an AES key
@@ -234,75 +238,64 @@ int main(void) {
             HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY),
         .keyBitLen = 256U,                                       //256 bits key
     };
-    //Extract the 192 bits AES key from the beginning of the derived key
-    HseResponse = HSEKeyDeriveExtractKeyReq
-            (
-            KdfSP800_108_Scheme_1_0.kdfCommon.targetKeyHandle,
-            0U,
-            &AESDerivedKeyInfoHandle1,
-            RAM_KEY,
-            aes192KeyInfo
-            );
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-    //Extract the HMAC key from the remaining derived key material
-    HseResponse = HSEKeyDeriveExtractKeyReq
-            (
-                    KdfSP800_108_Scheme_1_0.kdfCommon.targetKeyHandle,
-                    0U,
-                    &AESDerivedKeyInfoHandle0,
-                    RAM_KEY,
-                    hmacKeyInfo
-            );
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
     //Extract the 256 bits AES key from the remaining derived key material
     HseResponse = HSEKeyDeriveExtractKeyReq
             (
-                    KdfSP800_108_Scheme_1_0.kdfCommon.targetKeyHandle,
-                    BITS_TO_BYTES(aes192KeyInfo.keyBitLen),
+                   KdfSP800_108_Scheme_1_0.kdfCommon.targetKeyHandle,
+            	//	DHSharedSecretRAMKeyHandle,
+            		BITS_TO_BYTES(aes256KeyInfo.keyBitLen),
                     &AESDerivedKeyInfoHandle1,
-                    RAM_KEY,
+					NVM_KEY,
+					// RAM_KEY,
                     aes256KeyInfo
             );
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
+    //CMAC Generation using CMAC_Plaintext and AESDerivedKeyInfoHandle1 key handle( which is derived from KDF function).
+    hseMacScheme_t macScheme;
+    macScheme.macAlgo = HSE_MAC_ALGO_CMAC;
+    macScheme.sch.cmac.cipherAlgo = HSE_CIPHER_ALGO_AES;
+    HseResponse = AesCmacGenerate(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
+  		  //MacSignSrv(HSE_ACCESS_MODE_ONE_PASS, 0, macScheme, AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
+
+    // Master will transmit the CMAC_PlainText & CMAC_Tag_OutPut to receiver and also AES Derived Key value to receiver.
+    // Receiver will received the derived key handle and will import that into it for AES key handle in NVM.
+
+
+   HseResponse = AesCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
+
+
+
+
+
 
     /* Check the keys sanity, will encrypt/decrypt using AES and HMAC sign/verify */
     uint8_t cipherText[NUM_OF_ELEMS(demoapp_msg)] = {0U};
     uint8_t plainText[NUM_OF_ELEMS(demoapp_msg)] = {0U};
     uint8_t tag[64] = {0U};
     uint32_t tagLen = 16UL;
+    uint32_t volatileCnt       = 0xFFFFFFFFUL;
 
+    uint32_t rpBitSize          = 40UL;
+    uint32_t TxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 3UL;
+    uint32_t RxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 2UL;
 
-    //Using 2 calls - AEAD GCM Encrypt/Decrypt
-
-    HseResponse = AesGcmEncrypt(
-            HSE_DEMO_RAM_AES256_KEY1,
-            NUM_OF_ELEMS(iv_demo),
-            iv_demo,
-            0UL,
-            NULL,
-            NUM_OF_ELEMS(demoapp_msg),
-			demoapp_msg,
-            tagLen,
-            tag,
-            cipherText,
-            0U );
+    HseResponse =  MonotonicCnt_Config(TxnodecntIdx,rpBitSize);
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
-    HseResponse = AesGcmDecrypt(
-            HSE_DEMO_RAM_AES256_KEY1,
-            NUM_OF_ELEMS(iv_demo),
-            iv_demo,
-            0UL,
-            NULL,
-            NUM_OF_ELEMS(cipherText),
-            cipherText,
-            tagLen,
-            tag,
-            plainText,
-            0U );
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+    /* Configure Node A Counter as a default value */
+    HseResponse = MonotonicCnt_Increment(TxnodecntIdx, 0x800000UL);
+      ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+    HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_GENERATE,TxnodecntIdx, 0,
+    		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
+
+
+    uint8_t ciphermsg[NUM_OF_ELEMS(demoapp_msg)] = {0U};
 
     //Encrypt and decrypt using derived KEY0
-    uint8_t ciphermsg[NUM_OF_ELEMS(demoapp_msg)] = {0U};
     uint8_t decryptedmsg[NUM_OF_ELEMS(demoapp_msg)] = {0U};
     uint8_t tag_2[64] = {0U};
 
@@ -348,9 +341,12 @@ hseKeyHandle_t targetSharedSecretKey_0 = HSE_INVALID_KEY_HANDLE;
 hseSrvResponse_t KdfSP800_108ReqTest_demo()
 {
     hseSrvResponse_t hseResponse;
+
     HKF_AllocKeySlot(RAM_KEY, KdfSP800_108_ImportSecret_1_0.pKey->pKeyInfo->keyType,
                      KdfSP800_108_ImportSecret_1_0.pKey->pKeyInfo->keyBitLen, &srcKey_0);
+
     HKF_AllocKeySlot(RAM_KEY, HSE_KEY_TYPE_SHARED_SECRET, KdfSP800_108_Scheme_1_0.kdfCommon.keyMatLen * 8U, &targetSharedSecretKey_0);
+
     KdfSP800_108_ImportSecret_1_0.pKey->keyHandle = srcKey_0;
     KdfSP800_108_Scheme_1_0.kdfCommon.srcKeyHandle = srcKey_0;
     KdfSP800_108_Scheme_1_0.kdfCommon.targetKeyHandle = targetSharedSecretKey_0;
