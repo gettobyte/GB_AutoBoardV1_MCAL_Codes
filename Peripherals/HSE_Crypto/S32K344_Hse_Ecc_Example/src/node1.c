@@ -118,16 +118,16 @@ int main(void) {
 	init_indicators();
 
 	/*Formats the Key catalogs */
-	//gStatus = FormatKeyCatalogs(nvmKeyCatalog_ecc,ramKeyCatalog_ecc);
+	gStatus = FormatKeyCatalogs(nvmKeyCatalog_ecc,ramKeyCatalog_ecc);
 
 	/*Initializes the Key Allocator Driver for Hanfdling Keys in the framework*/
 	gStatus = HKF_Init(nvmKeyCatalog_ecc, ramKeyCatalog_ecc);
 
 	/*Generates ECC Key in the NVM Catalog and exports the public Key into the Q array*/
-	//gStatus = GenerateEccKeyAndExportPublic(keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE),Q);
+	gStatus = GenerateEccKeyAndExportPublic(keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE),Q);
 
 	/*Loads ECC Public Key stored in the Q array in the RAM catalog*/
-	gStatus = LoadEccPublicKey(&keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,ECC_Public_Q);
+	gStatus = LoadEccPublicKey(&keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,Q);
 
 	/* Signs the message using the Key Pair in the NVM catalog with SHA256 algorithm
 	 * The signature is stored in the signR and signS arrays*/
@@ -136,6 +136,8 @@ int main(void) {
 
 	// after this transmit the signature's signR, signS, public key(Q) and original message to other node.
 
+
+	// Receiving Node will receive the Exported public key(Q) and import it inside HSE just like LoadECCPublicKey at line 130
 	/* Verifies the signature with the public Key stored inn the RAM catalog using the signature generated above*/
 	gStatus = EcdsaVerify(keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&signRLen, signR, &signSLen, signS);
 

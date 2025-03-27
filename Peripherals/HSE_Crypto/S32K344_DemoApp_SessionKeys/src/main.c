@@ -130,7 +130,7 @@ const hseKeyGroupCfgEntry_t RAM_Catalog [] =
   hseKeyInfo_t KdfSP800_108_SECRET_KEY_INFO_1_0 =
 {
     .keyType = HSE_KEY_TYPE_AES,
-    .keyBitLen = 256UL,
+    .keyBitLen = 128UL,
     .keyFlags = (HSE_KF_USAGE_DERIVE | HSE_KF_ACCESS_EXPORTABLE)
 };
 
@@ -180,7 +180,9 @@ const uint8_t CMAC_Plaintext[] =
 uint8_t CMAC_Tag_OutPut[512] = {0};
 uint32_t CMAC_Tag_length = 16;
 
-int main(void) {
+int main(void)
+{
+
 	/*Check Fw Install Status*/
 	WaitForHSEFWInitToFinish();
 	hseSrvResponse_t HseResponse;
@@ -199,13 +201,9 @@ int main(void) {
    // hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_RAM_AES256_KEY1;
     hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_NVM_AES256_KEY2;
 
-    hseKeyHandle_t AESDerivedKeyInfoHandle0 = HSE_DEMO_RAM_AES256_KEY0;
 
 
-//    /* Generate ECC key pair in RAM */
-//    HseResponse = GenerateEccKey( &eccRAMKeyHandle, RAM_KEY, HSE_EC_SEC_SECP256R1, HSE_KF_USAGE_EXCHANGE);
-//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
+    /********* Key Exchange protocol ECDH for Shared Secret Key */
 
     // Key Exchange via ECDH protocol
     //generate the ecc private - public key and export the public key to application
@@ -227,7 +225,8 @@ int main(void) {
 
 
 
-    /* Derive Key using SP800_108 KDF */
+  /***** Derive Key using SP800_108 KDF for AES Key*********/
+
     //HSEKdfSP800
     HseResponse = KdfSP800_108ReqTest_demo();
 
@@ -253,6 +252,9 @@ int main(void) {
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
+
+    /****** MAC Generation and Verification ****************/
+
     //CMAC Generation using CMAC_Plaintext and AESDerivedKeyInfoHandle1 key handle( which is derived from KDF function).
     hseMacScheme_t macScheme;
     macScheme.macAlgo = HSE_MAC_ALGO_CMAC;
@@ -267,16 +269,9 @@ int main(void) {
    HseResponse = AesCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
 
 
+   /********* CMAC With Counter Demo Code ********************/
 
-
-
-
-    /* Check the keys sanity, will encrypt/decrypt using AES and HMAC sign/verify */
-    uint8_t cipherText[NUM_OF_ELEMS(demoapp_msg)] = {0U};
-    uint8_t plainText[NUM_OF_ELEMS(demoapp_msg)] = {0U};
-    uint8_t tag[64] = {0U};
-    uint32_t tagLen = 16UL;
-    uint32_t volatileCnt       = 0xFFFFFFFFUL;
+   uint32_t volatileCnt       = 0xFFFFFFFFUL;
 
     uint32_t rpBitSize          = 40UL;
     uint32_t TxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 3UL;
@@ -285,46 +280,31 @@ int main(void) {
     HseResponse =  MonotonicCnt_Config(TxnodecntIdx,rpBitSize);
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
+    /* Configure Node B */
+    HseResponse = MonotonicCnt_Config(RxnodecntIdx, rpBitSize);
+    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
     /* Configure Node A Counter as a default value */
     HseResponse = MonotonicCnt_Increment(TxnodecntIdx, 0x800000UL);
       ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+      /* Configure Node B Counter as a default value */
+      HseResponse = MonotonicCnt_Increment(RxnodecntIdx, 0x800000UL);
+      ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
 
     HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_GENERATE,TxnodecntIdx, 0,
     		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
 
 
+    HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_VERIFY,RxnodecntIdx, 0,
+    		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
+
+
     uint8_t ciphermsg[NUM_OF_ELEMS(demoapp_msg)] = {0U};
 
-    //Encrypt and decrypt using derived KEY0
-    uint8_t decryptedmsg[NUM_OF_ELEMS(demoapp_msg)] = {0U};
-    uint8_t tag_2[64] = {0U};
 
-    HseResponse = AesGcmEncrypt(
-            HSE_DEMO_RAM_AES256_KEY0,
-            NUM_OF_ELEMS(iv_demo),
-            iv_demo,
-            0UL,
-            NULL,
-            NUM_OF_ELEMS(demoapp_msg_2),
-			demoapp_msg_2,
-            tagLen,
-            tag_2,
-			ciphermsg,
-            0U );
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-    HseResponse = AesGcmDecrypt(
-            HSE_DEMO_RAM_AES256_KEY0,
-            NUM_OF_ELEMS(iv_demo),
-            iv_demo,
-            0UL,
-            NULL,
-            NUM_OF_ELEMS(ciphermsg),
-			ciphermsg,
-            tagLen,
-            tag_2,
-			decryptedmsg,
-            0U );
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
     /* Finished session keys related example */
     for (;;) {

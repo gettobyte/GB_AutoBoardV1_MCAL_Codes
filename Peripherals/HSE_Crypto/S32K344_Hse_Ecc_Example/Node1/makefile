@@ -52,7 +52,7 @@ S32K344_Hse_Ecc_Example.siz \
 all: S32K344_Hse_Ecc_Example.elf secondary-outputs
 
 # Tool invocations
-S32K344_Hse_Ecc_Example.elf: $(OBJS) C:/NXP/S32K3_HSE_DemoExamples_1_0_0_2/S32K3_HSE_DemoExamples/Asymmetric\ Algorithms/S32K344_Hse_Ecc_Example/Project_Settings/Linker_Files/S32K344_flash.ld $(USER_OBJS)
+S32K344_Hse_Ecc_Example.elf: $(OBJS) C:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/HSE_Crypto/S32K344_Hse_Ecc_Example/Project_Settings/Linker_Files/S32K344_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "S32K344_Hse_Ecc_Example.elf" "@S32K344_Hse_Ecc_Example.args"  $(USER_OBJS) $(LIBS)
