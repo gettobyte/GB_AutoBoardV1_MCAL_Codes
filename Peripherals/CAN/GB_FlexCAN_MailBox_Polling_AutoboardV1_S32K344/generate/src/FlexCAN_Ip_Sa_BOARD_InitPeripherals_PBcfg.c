@@ -103,6 +103,9 @@ extern "C"{
 /* FlexCAN State Structure used By driver
 User should not modify this structure */
 Flexcan_Ip_StateType FlexCAN_State0;
+/* FlexCAN State Structure used By driver
+User should not modify this structure */
+Flexcan_Ip_StateType FlexCAN_State1;
 #define CAN_STOP_SEC_VAR_CLEARED_UNSPECIFIED
 #include "Can_MemMap.h"
 /*==================================================================================================
@@ -112,6 +115,91 @@ Flexcan_Ip_StateType FlexCAN_State0;
 #include "Can_MemMap.h"
 
 const Flexcan_Ip_ConfigType FlexCAN_Config0  = {
+    /* Number Of Message Buffer used .max_num_mb  */
+    (uint8)16,
+    /*Can Hw filter count* .num_id_filters*- aici exista variatna sa generez toate filtrele si sa referentiezi tu in cod */
+    FLEXCAN_RX_FIFO_ID_FILTERS_8,
+    /* Legacy FIFO ENABLED .is_rx_fifo_needed*/
+    (boolean)FALSE,
+#if (FLEXCAN_IP_FEATURE_HAS_ENHANCED_RX_FIFO == STD_ON)
+    /* The number of standard ID filter elements */
+    0U,
+    /* The number of extended ID filter elements */
+    0U,
+    /* The number of enhanced Rx FIFO watermark */
+    0U,
+    /* The Enhanced Rx FIFO feature is enabled or not. */
+    (boolean)FALSE,
+#endif
+#if (FLEXCAN_IP_FEATURE_HAS_TS_ENABLE == STD_ON)
+    /* TimeStamp Structure Configuration */
+    {
+        /* timeStampSurce Timer Source */
+        FLEXCAN_CAN_CLK_TIMESTAMP_SRC
+        #if (FLEXCAN_IP_FEATURE_HAS_HR_TIMER == STD_ON)
+        /* msgBuffTimeStampType Timestamp MB Type  */
+        ,FLEXCAN_MSGBUFFTIMESTAMP_TIMER
+        /* hrConfigType Timestamp HR capture configuration */
+        ,FLEXCAN_TIMESTAMPCAPTURE_DISABLE
+        /* hrSrc HT Timer Source */
+        ,FLEXCAN_HRTIMERSRC_EMAC
+        #endif
+    },
+#endif /* (FLEXCAN_IP_FEATURE_HAS_TS_ENABLE == STD_ON) */
+    FLEXCAN_NORMAL_MODE,
+     /*ctrlOptions*/
+    (uint32)(\
+    FLEXCAN_IP_BUSOFF_RECOVERY_U32 | \
+    \
+    0U),
+     /* Can FD RamBlock specified *//*.payload*/
+    {
+      FLEXCAN_PAYLOAD_SIZE_8,
+      FLEXCAN_PAYLOAD_SIZE_8,
+      FLEXCAN_PAYLOAD_SIZE_8
+    },
+        /*Can FD enabled .fd_enable*/
+        (boolean)FALSE,
+        /*Enhance CBT support . extCbtEnable*/
+        (boolean)FALSE,
+        /*BRS for FD .bitRateSwitch*/
+        (boolean)FALSE,
+        /*values for normal baudrate .bitrate*/
+        {   /* Prop Seg */
+            (7U),
+            /* Phase Seg 1 */
+            (4U),
+            /* Phase Seg 2*/
+            (1U),
+            /* Pre Divider */
+            (5U),
+            /* Resync jump width */
+            (1U)
+        },
+            /*values for FD baudrate .bitrate*/
+        {   /* Prop Seg */
+            (7U),
+            /* Phase Seg 1 */
+            (5U),
+            /* Phase Seg 2*/
+            (1U),
+            /* Pre Divider */
+            (4U),
+            /* Resync jump width */
+            (1U)
+        },
+        /*transfer_type*/
+        FLEXCAN_RXFIFO_USING_INTERRUPTS,
+#if (FLEXCAN_IP_FEATURE_HAS_DMA_ENABLE == STD_ON)
+     /* DMA channel number used for transfers. */
+        0,
+  #endif
+    /* Controller Callback */
+    NULL_PTR,
+    /* Error Callback */
+    NULL_PTR
+    };
+    const Flexcan_Ip_ConfigType FlexCAN_Config1  = {
     /* Number Of Message Buffer used .max_num_mb  */
     (uint8)16,
     /*Can Hw filter count* .num_id_filters*- aici exista variatna sa generez toate filtrele si sa referentiezi tu in cod */

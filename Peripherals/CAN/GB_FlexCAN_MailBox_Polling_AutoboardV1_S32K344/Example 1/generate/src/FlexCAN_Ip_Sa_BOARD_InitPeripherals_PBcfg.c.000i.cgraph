@@ -1,9 +1,9 @@
-Trivially needed symbols: FlexCAN_Config0/1 FlexCAN_State0/0
+Trivially needed symbols: FlexCAN_Config1/3 FlexCAN_Config0/2 FlexCAN_State1/1 FlexCAN_State0/0
 
 
 Initial Symbol table:
 
-FlexCAN_Config0/1 (FlexCAN_Config0) @06a86b88
+FlexCAN_Config1/3 (FlexCAN_Config1) @06ba2d80
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   Aux: @01981040
@@ -11,10 +11,26 @@ FlexCAN_Config0/1 (FlexCAN_Config0) @06a86b88
   Referring: 
   Availability: not-ready
   Varpool flags: initialized read-only const-value-known
-FlexCAN_State0/0 (FlexCAN_State0) @06a86a20
+FlexCAN_Config0/2 (FlexCAN_Config0) @06ba2c60
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @06a86b88
+  Aux: @06ba2d80
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_State1/1 (FlexCAN_State1) @06ba2af8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ba2c60
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags:
+FlexCAN_State0/0 (FlexCAN_State0) @06ba2ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ba2af8
   References: 
   Referring: 
   Availability: not-ready
@@ -24,14 +40,28 @@ Removing unused symbols:
 
 Reclaimed Symbol table:
 
-FlexCAN_Config0/1 (FlexCAN_Config0) @06a86b88
+FlexCAN_Config1/3 (FlexCAN_Config1) @06ba2d80
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
   Referring: 
   Availability: not-ready
   Varpool flags: initialized read-only const-value-known
-FlexCAN_State0/0 (FlexCAN_State0) @06a86a20
+FlexCAN_Config0/2 (FlexCAN_Config0) @06ba2c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_State1/1 (FlexCAN_State1) @06ba2af8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags:
+FlexCAN_State0/0 (FlexCAN_State0) @06ba2ab0
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -42,14 +72,28 @@ FlexCAN_State0/0 (FlexCAN_State0) @06a86a20
 
 Initial Symbol table:
 
-FlexCAN_Config0/1 (FlexCAN_Config0) @06a86b88
+FlexCAN_Config1/3 (FlexCAN_Config1) @06ba2d80
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
   Referring: 
   Availability: not-ready
   Varpool flags: initialized read-only const-value-known
-FlexCAN_State0/0 (FlexCAN_State0) @06a86a20
+FlexCAN_Config0/2 (FlexCAN_Config0) @06ba2c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_State1/1 (FlexCAN_State1) @06ba2af8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags:
+FlexCAN_State0/0 (FlexCAN_State0) @06ba2ab0
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -61,14 +105,28 @@ Removing unused symbols:
 
 Reclaimed Symbol table:
 
-FlexCAN_Config0/1 (FlexCAN_Config0) @06a86b88
+FlexCAN_Config1/3 (FlexCAN_Config1) @06ba2d80
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
   Referring: 
   Availability: not-ready
   Varpool flags: initialized read-only const-value-known
-FlexCAN_State0/0 (FlexCAN_State0) @06a86a20
+FlexCAN_Config0/2 (FlexCAN_Config0) @06ba2c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_State1/1 (FlexCAN_State1) @06ba2af8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags:
+FlexCAN_State0/0 (FlexCAN_State0) @06ba2ab0
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -81,14 +139,28 @@ Reclaiming variables:
 Clearing address taken flags:
 Optimized Symbol table:
 
-FlexCAN_Config0/1 (FlexCAN_Config0) @06a86b88
+FlexCAN_Config1/3 (FlexCAN_Config1) @06ba2d80
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
   Referring: 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-FlexCAN_State0/0 (FlexCAN_State0) @06a86a20
+FlexCAN_Config0/2 (FlexCAN_Config0) @06ba2c60
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_State1/1 (FlexCAN_State1) @06ba2af8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+FlexCAN_State0/0 (FlexCAN_State0) @06ba2ab0
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -101,12 +173,12 @@ Materialization Call site updates done.
 Reclaiming functions:
 Reclaiming variables:
 Clearing address taken flags:
-Trivially needed variables: FlexCAN_Config0/1 FlexCAN_State0/0
+Trivially needed variables: FlexCAN_Config1/3 FlexCAN_Config0/2 FlexCAN_State1/1 FlexCAN_State0/0
 Removing variables:
 
 Final Symbol table:
 
-FlexCAN_Config0/1 (FlexCAN_Config0) @06a86b88
+FlexCAN_Config1/3 (FlexCAN_Config1) @06ba2d80
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   Aux: @00000001
@@ -114,10 +186,26 @@ FlexCAN_Config0/1 (FlexCAN_Config0) @06a86b88
   Referring: 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-FlexCAN_State0/0 (FlexCAN_State0) @06a86a20
+FlexCAN_Config0/2 (FlexCAN_Config0) @06ba2c60
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
-  Aux: @06a86b88
+  Aux: @06ba2d80
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_State1/1 (FlexCAN_State1) @06ba2af8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06ba2c60
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+FlexCAN_State0/0 (FlexCAN_State0) @06ba2ab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06ba2af8
   References: 
   Referring: 
   Availability: available

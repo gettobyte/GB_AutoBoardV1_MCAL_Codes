@@ -1,8 +1,8 @@
 RTD/src/OsIf_Timer_System_Internal_Systick.o: \
  ../RTD/src/OsIf_Timer_System_Internal_Systick.c \
  ../RTD/include/OsIf_DeviceRegisters.h \
- C\:/Users/gettobyte_kunal/Documents/AutoBoardV1_AutosarMCAL_Workspace/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/generate/include/OsIf_Cfg.h \
- C\:/Users/gettobyte_kunal/Documents/AutoBoardV1_AutosarMCAL_Workspace/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/generate/include/OsIf_ArchCfg.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/generate/include/OsIf_Cfg.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/generate/include/OsIf_ArchCfg.h \
  C\:/NXP/S32DS.3.4/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/StandardTypes.h \
  C\:/NXP/S32DS.3.4/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Platform_Types.h \
  C\:/NXP/S32DS.3.4/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/PlatformTypes.h \
@@ -15,8 +15,8 @@ RTD/src/OsIf_Timer_System_Internal_Systick.o: \
  ../RTD/include/OsIf_Timer_System_Internal_Systick.h \
  C\:/NXP/S32DS.3.4/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Base_MemMap.h
 ../RTD/include/OsIf_DeviceRegisters.h:
-C\:/Users/gettobyte_kunal/Documents/AutoBoardV1_AutosarMCAL_Workspace/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/generate/include/OsIf_Cfg.h:
-C\:/Users/gettobyte_kunal/Documents/AutoBoardV1_AutosarMCAL_Workspace/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/generate/include/OsIf_ArchCfg.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/generate/include/OsIf_Cfg.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/generate/include/OsIf_ArchCfg.h:
 C\:/NXP/S32DS.3.4/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/StandardTypes.h:
 C\:/NXP/S32DS.3.4/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Platform_Types.h:
 C\:/NXP/S32DS.3.4/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/PlatformTypes.h:

@@ -33,7 +33,7 @@ GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344.siz \
 all: GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344.elf secondary-outputs
 
 # Tool invocations
-GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344.elf: $(OBJS) C:/Users/gettobyte_kunal/Documents/AutoBoardV1_AutosarMCAL_Workspace/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/Project_Settings/Linker_Files/linker_flash_s32k344.ld $(USER_OBJS)
+GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344.elf: $(OBJS) C:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344/Project_Settings/Linker_Files/linker_flash_s32k344.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344.elf" "@GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344.args"  $(USER_OBJS)

@@ -61,13 +61,21 @@ int main(void)
             .is_remote = FALSE
     };
 
-    FlexCAN_Ip_Init(INST_FLEXCAN_4, &FlexCAN_State0, &FlexCAN_Config0);
+    FlexCAN_Api_Status =  FlexCAN_Ip_Init(INST_FLEXCAN_4, &FlexCAN_State0, &FlexCAN_Config0);
 
     FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+
+    FlexCAN_Api_Status=   FlexCAN_Ip_Init(INST_FLEXCAN_0, &FlexCAN_State1, &FlexCAN_Config1);
+
+    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_0);
+
 
    for(;;)
    {
 	   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, TX_MB_IDX, &rx_info, MSG_ID, (uint8 *)&dummyData, 1000);
+//
+	   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_0, TX_MB_IDX, &rx_info, MSG_ID, (uint8 *)&dummyData, 1000);
+
 	   TestDelay(2000000);
    }
 

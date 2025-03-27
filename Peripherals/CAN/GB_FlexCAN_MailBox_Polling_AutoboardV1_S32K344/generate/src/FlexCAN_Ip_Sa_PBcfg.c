@@ -52,9 +52,9 @@ extern "C"{
 ==================================================================================================*/
 #define FLEXCAN_IP_SA_VENDOR_ID_PBCFG_C                     43
 #define FLEXCAN_IP_SA_AR_RELEASE_MAJOR_VERSION_PBCFG_C      4
-#define FLEXCAN_IP_SA_AR_RELEASE_MINOR_VERSION_PBCFG_C      7
+#define FLEXCAN_IP_SA_AR_RELEASE_MINOR_VERSION_PBCFG_C      4
 #define FLEXCAN_IP_SA_AR_RELEASE_REVISION_VERSION_PBCFG_C   0
-#define FLEXCAN_IP_SA_SW_MAJOR_VERSION_PBCFG_C              4
+#define FLEXCAN_IP_SA_SW_MAJOR_VERSION_PBCFG_C              2
 #define FLEXCAN_IP_SA_SW_MINOR_VERSION_PBCFG_C              0
 #define FLEXCAN_IP_SA_SW_PATCH_VERSION_PBCFG_C              0
 /*==================================================================================================

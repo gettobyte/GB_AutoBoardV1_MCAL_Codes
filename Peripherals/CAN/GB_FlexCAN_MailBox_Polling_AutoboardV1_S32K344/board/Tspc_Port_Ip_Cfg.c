@@ -108,6 +108,8 @@ BOARD_InitPins:
 - pin_list:
   - {pin_num: N1, peripheral: FlexCAN_4, signal: txd, pin_signal: PTE3}
   - {pin_num: L3, peripheral: FlexCAN_4, signal: rxd, pin_signal: PTE14}
+  - {pin_num: M15, peripheral: FlexCAN_0, signal: rxd, pin_signal: PTA6}
+  - {pin_num: M16, peripheral: FlexCAN_0, signal: txd, pin_signal: PTA7}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */

@@ -5,8 +5,8 @@ FlexCAN_Ip_ManualBusOffRecovery (uint8 Instance)
   uint32 timeElapsed;
   uint32 timeStart;
   struct FLEXCAN_Type * Base;
-  Flexcan_Ip_StatusType D.11352;
-  long unsigned int D.11349;
+  Flexcan_Ip_StatusType D.11354;
+  long unsigned int D.11351;
   int _1;
   _Bool _2;
   long unsigned int _3;
@@ -97,7 +97,7 @@ FlexCAN_Ip_ManualBusOffRecovery (uint8 Instance)
 FlexCAN_Ip_GetListenOnlyMode (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  boolean D.11343;
+  boolean D.11345;
   int _1;
   boolean _6;
 
@@ -120,7 +120,7 @@ FlexCAN_Ip_SetListenOnlyMode_Privileged (uint8 instance, const boolean enable)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11337;
+  Flexcan_Ip_StatusType D.11339;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -216,7 +216,7 @@ FlexCAN_Ip_SetRxMb15Mask_Privileged (uint8 instance, uint32 mask)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11323;
+  Flexcan_Ip_StatusType D.11325;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -311,7 +311,7 @@ FlexCAN_Ip_SetRxMb14Mask_Privileged (uint8 instance, uint32 mask)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11309;
+  Flexcan_Ip_StatusType D.11311;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -404,7 +404,7 @@ FlexCAN_Ip_AbortTransfer (uint8 u8Instance, uint8 mb_idx)
   Flexcan_Ip_StatusType result;
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11295;
+  Flexcan_Ip_StatusType D.11297;
   int iftmp.9;
   _Bool _1;
   _Bool _2;
@@ -513,7 +513,7 @@ FlexCAN_Ip_SetErrorInt_Privileged (uint8 u8Instance, Flexcan_Ip_ErrorIntType typ
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11279;
+  Flexcan_Ip_StatusType D.11281;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -650,7 +650,7 @@ FlexCAN_Ip_DisableInterrupts_Privileged (uint8 u8Instance)
   struct Flexcan_Ip_StateType * state;
   Flexcan_Ip_StatusType result;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11263;
+  Flexcan_Ip_StatusType D.11265;
   int _1;
   int _2;
   _Bool _3;
@@ -711,7 +711,7 @@ FlexCAN_Ip_EnableInterrupts_Privileged (uint8 u8Instance)
   struct Flexcan_Ip_StateType * state;
   Flexcan_Ip_StatusType result;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11255;
+  Flexcan_Ip_StatusType D.11257;
   int _1;
   int _2;
   _Bool _3;
@@ -812,7 +812,7 @@ FlexCAN_Ip_GetBuffStatusFlag (uint8 instance, uint8 msgBuffIdx)
 {
   const struct FLEXCAN_Type * pBase;
   boolean returnResult;
-  boolean D.11242;
+  boolean D.11244;
   _Bool _1;
   int _2;
   unsigned char _3;
@@ -859,7 +859,7 @@ FlexCAN_Ip_SetTxArbitrationStartDelay_Privileged (uint8 instance, uint8 value)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11237;
+  Flexcan_Ip_StatusType D.11239;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -955,7 +955,7 @@ FlexCAN_Ip_SetTDCOffset_Privileged (uint8 instance, boolean enable, uint8 offset
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11219;
+  Flexcan_Ip_StatusType D.11221;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -1064,7 +1064,7 @@ FlexCAN_Ip_GetBitrateFD (uint8 instance, struct Flexcan_Ip_TimeSegmentType * bit
 {
   boolean enhCbt;
   const struct FLEXCAN_Type * pBase;
-  boolean D.11202;
+  boolean D.11204;
   _Bool _1;
   _Bool _2;
   int _3;
@@ -1110,7 +1110,7 @@ FlexCAN_Ip_SetBitrateCbt_Privileged (uint8 instance, const struct Flexcan_Ip_Tim
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11195;
+  Flexcan_Ip_StatusType D.11197;
   _Bool _1;
   _Bool _2;
   int _3;
@@ -1227,7 +1227,7 @@ FlexCAN_Ip_GetTDCValue (uint8 u8Instance)
 {
   const struct FLEXCAN_Type * pBase;
   uint8 value;
-  uint8 D.11178;
+  uint8 D.11180;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -1273,7 +1273,7 @@ FlexCAN_Ip_GetTDCFail (uint8 u8Instance)
 {
   const struct FLEXCAN_Type * pBase;
   boolean value;
-  boolean D.11173;
+  boolean D.11175;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -1362,7 +1362,7 @@ FlexCAN_Ip_GetBitrate (uint8 instance, struct Flexcan_Ip_TimeSegmentType * bitra
 {
   boolean enhCbt;
   const struct FLEXCAN_Type * pBase;
-  boolean D.11163;
+  boolean D.11165;
   _Bool _1;
   _Bool _2;
   int _3;
@@ -1418,7 +1418,7 @@ FlexCAN_Ip_SetBitrate_Privileged (uint8 instance, const struct Flexcan_Ip_TimeSe
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11149;
+  Flexcan_Ip_StatusType D.11151;
   _Bool _1;
   _Bool _2;
   int _3;
@@ -1540,7 +1540,7 @@ FlexCAN_Ip_SetRxMaskType_Privileged (uint8 instance, Flexcan_Ip_RxMaskType type)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11126;
+  Flexcan_Ip_StatusType D.11128;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -1633,7 +1633,7 @@ FlexCAN_Ip_SetStopMode_Privileged (uint8 instance)
 {
   Flexcan_Ip_StatusType status;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11112;
+  Flexcan_Ip_StatusType D.11114;
   _Bool _1;
   int _2;
   Flexcan_Ip_StatusType _13;
@@ -1666,7 +1666,7 @@ FlexCAN_Ip_SetStopMode_Privileged (uint8 instance)
 FlexCAN_Ip_SetStartMode_Privileged (uint8 instance)
 {
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11108;
+  Flexcan_Ip_StatusType D.11110;
   _Bool _1;
   int _2;
   long unsigned int _3;
@@ -1695,7 +1695,7 @@ FlexCAN_Ip_SetStartMode_Privileged (uint8 instance)
 FlexCAN_Ip_GetStartMode_Privileged (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  boolean D.11106;
+  boolean D.11108;
   int _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -1718,7 +1718,7 @@ FlexCAN_Ip_GetStartMode_Privileged (uint8 instance)
 FlexCAN_Ip_GetStopMode_Privileged (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  boolean D.11104;
+  boolean D.11106;
   int _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -1859,7 +1859,7 @@ FlexCAN_Ip_MainFunctionBusOff_Privileged (uint8 instance)
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType eRetVal;
-  Flexcan_Ip_StatusType D.11091;
+  Flexcan_Ip_StatusType D.11093;
   int _1;
   int _2;
   _Bool _3;
@@ -2054,7 +2054,7 @@ FlexCAN_Ip_Deinit_Privileged (uint8 instance)
 {
   Flexcan_Ip_StatusType result;
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.11053;
+  Flexcan_Ip_StatusType D.11055;
   int _1;
   _Bool _2;
   int _3;
@@ -2095,7 +2095,7 @@ FlexCAN_Ip_SetRxFifoGlobalMask_Privileged (uint8 instance, uint32 mask)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11049;
+  Flexcan_Ip_StatusType D.11051;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -2189,7 +2189,7 @@ FlexCAN_Ip_SetRxIndividualMask_Privileged (uint8 instance, uint8 mb_idx, uint32 
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11035;
+  Flexcan_Ip_StatusType D.11037;
   int _1;
   _Bool _2;
   long unsigned int _3;
@@ -2304,7 +2304,7 @@ FlexCAN_Ip_SetRxIndividualMask_Privileged (uint8 instance, uint8 mb_idx, uint32 
 FlexCAN_Ip_ExitFreezeMode_Privileged (uint8 instance)
 {
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.11017;
+  Flexcan_Ip_StatusType D.11019;
   int _1;
   Flexcan_Ip_StatusType _6;
 
@@ -2323,7 +2323,7 @@ FlexCAN_Ip_ExitFreezeMode_Privileged (uint8 instance)
 FlexCAN_Ip_EnterFreezeMode_Privileged (uint8 instance)
 {
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.11015;
+  Flexcan_Ip_StatusType D.11017;
   int _1;
   Flexcan_Ip_StatusType _6;
 
@@ -2346,7 +2346,7 @@ FlexCAN_Ip_SetRxMbGlobalMask_Privileged (uint8 instance, uint32 mask)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11013;
+  Flexcan_Ip_StatusType D.11015;
   int _1;
   _Bool _2;
   _Bool _3;
@@ -2445,9 +2445,9 @@ FlexCAN_Ip_SendBlocking (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_D
   struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10998;
-  long unsigned int D.10991;
-  long unsigned int D.10984;
+  Flexcan_Ip_StatusType D.11000;
+  long unsigned int D.10993;
+  long unsigned int D.10986;
   int _1;
   int _2;
   long unsigned int _3;
@@ -2851,7 +2851,7 @@ FlexCAN_Busoff_Error_IRQHandler (uint8 instance)
 FlexCAN_Ip_GetControllerRxErrorCounter (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  uint8 D.10946;
+  uint8 D.10948;
   int _1;
   _Bool _2;
   long unsigned int _3;
@@ -2877,7 +2877,7 @@ FlexCAN_Ip_GetControllerRxErrorCounter (uint8 instance)
 FlexCAN_Ip_GetControllerTxErrorCounter (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  uint8 D.10944;
+  uint8 D.10946;
   int _1;
   _Bool _2;
   long unsigned int _3;
@@ -2901,7 +2901,7 @@ FlexCAN_Ip_GetControllerTxErrorCounter (uint8 instance)
 FlexCAN_Ip_GetErrorStatus (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  uint32 D.10942;
+  uint32 D.10944;
   int _1;
   _Bool _2;
   uint32 _7;
@@ -3178,7 +3178,7 @@ FlexCAN_Ip_GetTransferStatus (uint8 instance, uint8 mb_idx)
 {
   Flexcan_Ip_StatusType status;
   const struct Flexcan_Ip_StateType * state;
-  Flexcan_Ip_StatusType D.10862;
+  Flexcan_Ip_StatusType D.10864;
   int iftmp.6;
   int _1;
   _Bool _2;
@@ -3272,7 +3272,7 @@ FlexCAN_Ip_ConfigRemoteResponseMb (uint8 instance, uint8 mb_idx, const struct Fl
   struct FLEXCAN_Type * pBase;
   struct Flexcan_Ip_MsbuffCodeStatusType cs;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10845;
+  Flexcan_Ip_StatusType D.10847;
   int _1;
   int _2;
   _Bool _3;
@@ -3384,7 +3384,7 @@ FlexCAN_Ip_ConfigEnhancedRxFifo_Privileged (uint8 instance, const struct Flexcan
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10837;
+  Flexcan_Ip_StatusType D.10839;
   int _1;
   _Bool _2;
   int _3;
@@ -3484,7 +3484,7 @@ FlexCAN_Ip_ConfigRxFifo_Privileged (uint8 instance, Flexcan_Ip_RxFifoIdElementFo
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10821;
+  Flexcan_Ip_StatusType D.10823;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -3575,7 +3575,7 @@ FlexCAN_Ip_RxFifoBlocking (uint8 instance, struct Flexcan_Ip_MsgBuffType * data,
 {
   const struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10807;
+  Flexcan_Ip_StatusType D.10809;
   int _1;
   _Bool _2;
   _Bool _3;
@@ -3648,7 +3648,7 @@ FlexCAN_Ip_RxFifo (uint8 instance, struct Flexcan_Ip_MsgBuffType * data)
 {
   const struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10791;
+  Flexcan_Ip_StatusType D.10793;
   _Bool _1;
   int _2;
   _Bool _3;
@@ -3704,8 +3704,8 @@ FlexCAN_Ip_ReceiveBlocking (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgB
   uint32 timeElapsed;
   uint32 timeStart;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10782;
-  long unsigned int D.10768;
+  Flexcan_Ip_StatusType D.10784;
+  long unsigned int D.10770;
   long unsigned int _1;
   _Bool _2;
   int _3;
@@ -3873,7 +3873,7 @@ FlexCAN_Ip_Receive (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgBuffType 
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10756;
+  Flexcan_Ip_StatusType D.10758;
   int _1;
   int _2;
   _Bool _3;
@@ -3924,7 +3924,7 @@ FlexCAN_Ip_ConfigRxMb (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_Dat
   struct FLEXCAN_Type * base;
   struct Flexcan_Ip_MsbuffCodeStatusType cs;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10749;
+  Flexcan_Ip_StatusType D.10751;
   int _1;
   int _2;
   _Bool _3;
@@ -3999,7 +3999,7 @@ FlexCAN_Ip_Send (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_DataInfoT
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10742;
+  Flexcan_Ip_StatusType D.10744;
   int _1;
   int _2;
   _Bool _3;
@@ -4065,7 +4065,7 @@ FlexCAN_Ip_Init_Privileged (uint8 Flexcan_Ip_u8Instance, struct Flexcan_Ip_State
   uint32 i;
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10734;
+  Flexcan_Ip_StatusType D.10736;
   int _1;
   _Bool _2;
   _Bool _3;
@@ -4244,8 +4244,8 @@ FlexCAN_AbortTxTransfer (uint8 u8Instance, uint8 mb_idx)
   Flexcan_Ip_StatusType result;
   struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.10720;
-  long unsigned int D.10711;
+  Flexcan_Ip_StatusType D.10722;
+  long unsigned int D.10713;
   int _1;
   int _2;
   long unsigned int _3;
@@ -4490,7 +4490,7 @@ FlexCAN_ProcessIRQHandlerEnhancedRxFIFO (uint8 u8Instance, boolean bIsSpuriousIn
   uint32 u32intType;
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
-  boolean D.10915;
+  boolean D.10917;
   int _1;
   int _2;
   unsigned char _3;
@@ -4976,7 +4976,7 @@ FlexCAN_StartRxMessageFifoData (uint8 instance, struct Flexcan_Ip_MsgBuffType * 
   Flexcan_Ip_StatusType eResult;
   struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.10668;
+  Flexcan_Ip_StatusType D.10670;
   _Bool _1;
   int _2;
   int _3;
@@ -5068,7 +5068,7 @@ FlexCAN_StartSendData (uint8 Flexcan_Ip_u8Instance, uint8 mb_idx, const struct F
   struct Flexcan_Ip_StateType * state;
   struct Flexcan_Ip_MsbuffCodeStatusType cs;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10655;
+  Flexcan_Ip_StatusType D.10657;
   int _1;
   int _2;
   _Bool _3;
@@ -5198,7 +5198,7 @@ FlexCAN_StartRxMessageBufferData (uint8 instance, uint8 mb_idx, struct Flexcan_I
   struct Flexcan_Ip_StateType * state;
   const struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10644;
+  Flexcan_Ip_StatusType D.10646;
   int _1;
   int _2;
   _Bool _3;
@@ -5272,8 +5272,8 @@ FlexCAN_ProccessLegacyRxFIFO (uint8 u8Instance, uint32 u32TimeoutMs)
   struct FLEXCAN_Type * pBase;
   struct Flexcan_Ip_StateType * pState;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10603;
-  long unsigned int D.10596;
+  Flexcan_Ip_StatusType D.10605;
+  long unsigned int D.10598;
   int _1;
   int _2;
   long unsigned int _3;
@@ -5416,8 +5416,8 @@ FlexCAN_ProccessEnhancedRxFifo (uint8 u8Instance, uint32 u32TimeoutMs)
   struct FLEXCAN_Type * pBase;
   struct Flexcan_Ip_StateType * pState;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10587;
-  long unsigned int D.10580;
+  Flexcan_Ip_StatusType D.10589;
+  long unsigned int D.10582;
   int _1;
   int _2;
   long unsigned int _3;
@@ -5548,7 +5548,7 @@ FlexCAN_StartRxMessageEnhancedFifoData (uint8 instance, struct Flexcan_Ip_MsgBuf
   Flexcan_Ip_StatusType eResult;
   struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.10574;
+  Flexcan_Ip_StatusType D.10576;
   int _1;
   int _2;
   _Bool _3;
@@ -5728,7 +5728,7 @@ FlexCAN_InitBaudrate (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_Confi
 FlexCAN_InitController (uint8 Instance, struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
 {
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10533;
+  Flexcan_Ip_StatusType D.10535;
   _Bool _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -5801,7 +5801,7 @@ FlexCAN_InitController (uint8 Instance, struct FLEXCAN_Type * pBase, const struc
 FlexCAN_InitCtroll (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
 {
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10518;
+  Flexcan_Ip_StatusType D.10520;
   <unnamed type> _1;
   const struct Flexcan_Ip_PayloadSizeType * _2;
   long unsigned int _3;
@@ -5858,7 +5858,7 @@ FlexCAN_InitCtroll (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigT
 FlexCAN_InitRxFifo (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
 {
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10509;
+  Flexcan_Ip_StatusType D.10511;
   _Bool _1;
   <unnamed type> _2;
   _Bool _3;
@@ -5998,7 +5998,7 @@ FlexCAN_SetRegDefaultVal (struct FLEXCAN_Type * base)
 
 FlexCAN_GetEnhancedRxFIFOIntStatusFlag (const struct FLEXCAN_Type * base, uint32 intFlag)
 {
-  uint8 D.10917;
+  uint8 D.10919;
   long unsigned int _1;
   unsigned char _2;
   int _3;
@@ -6045,7 +6045,7 @@ FlexCAN_ClearEnhancedRxFifoIntStatusFlag (struct FLEXCAN_Type * base, uint32 int
 
 FlexCAN_GetEnhancedRxFIFOStatusFlag (const struct FLEXCAN_Type * base, uint32 intFlag)
 {
-  uint8 D.10590;
+  uint8 D.10592;
   long unsigned int _1;
   unsigned char _2;
   int _3;
@@ -6101,7 +6101,7 @@ FlexCAN_SetEnhancedRxFifoIntAll (struct FLEXCAN_Type * base, boolean enable)
 
 FlexCAN_IsEnhancedRxFifoEnabled (const struct FLEXCAN_Type * base)
 {
-  boolean D.10793;
+  boolean D.10795;
   long unsigned int _1;
   signed int _2;
   boolean _5;
@@ -6172,7 +6172,7 @@ FlexCAN_SetTxArbitrationStartDelay (struct FLEXCAN_Type * base, uint8 tasd)
 
 FlexCAN_IsFreezeMode (const struct FLEXCAN_Type * base)
 {
-  boolean D.10823;
+  boolean D.10825;
   long unsigned int _1;
   long unsigned int _2;
   boolean _5;
@@ -6211,7 +6211,7 @@ FlexCAN_GetMsgBuffIntStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuf
 {
   uint32 mask;
   uint8 flag;
-  uint8 D.10903;
+  uint8 D.10905;
   long unsigned int _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -6290,7 +6290,7 @@ FlexCAN_GetMsgBuffIntStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuf
 
 RxFifoOcuppiedLastMsgBuff (uint32 x)
 {
-  uint32 D.10730;
+  uint32 D.10732;
   long unsigned int _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -6311,7 +6311,7 @@ RxFifoOcuppiedLastMsgBuff (uint32 x)
 
 FlexCAN_IsListenOnlyModeEnabled (const struct FLEXCAN_Type * base)
 {
-  boolean D.10744;
+  boolean D.10746;
   long unsigned int _1;
   long unsigned int _2;
   boolean _5;
@@ -6330,7 +6330,7 @@ FlexCAN_IsListenOnlyModeEnabled (const struct FLEXCAN_Type * base)
 
 FlexCAN_IsFDEnabled (const struct FLEXCAN_Type * base)
 {
-  boolean D.11197;
+  boolean D.11199;
   long unsigned int _1;
   long unsigned int _2;
   boolean _5;
@@ -6451,7 +6451,7 @@ FlexCAN_EnhCbtEnable (struct FLEXCAN_Type * base, boolean enableCBT)
 
 FlexCAN_IsEnhCbtEnabled (const struct FLEXCAN_Type * pBase)
 {
-  boolean D.11165;
+  boolean D.11167;
   long unsigned int _1;
   long unsigned int _2;
   boolean _5;
@@ -6470,7 +6470,7 @@ FlexCAN_IsEnhCbtEnabled (const struct FLEXCAN_Type * pBase)
 
 FlexCAN_IsExCbtEnabled (const struct FLEXCAN_Type * pBase)
 {
-  boolean D.11155;
+  boolean D.11157;
   long unsigned int _1;
   signed int _2;
   boolean _5;
@@ -6985,7 +6985,7 @@ FlexCAN_SetFDTimeSegments (struct FLEXCAN_Type * base, const struct Flexcan_Ip_T
 FlexCAN_GetBuffStatusImask (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
 {
   uint32 u32Imask;
-  uint8 D.10940;
+  uint8 D.10942;
   long unsigned int _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -7062,7 +7062,7 @@ FlexCAN_GetBuffStatusImask (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
 FlexCAN_GetBuffStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
 {
   uint32 flag;
-  uint8 D.10615;
+  uint8 D.10617;
   long unsigned int _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -7316,7 +7316,7 @@ FlexCAN_DisableMemErrorDetection (struct FLEXCAN_Type * base)
 
 FlexCAN_IsEnabled (const struct FLEXCAN_Type * pBase)
 {
-  boolean D.10535;
+  boolean D.10537;
   long unsigned int _1;
   signed int _2;
   boolean _5;

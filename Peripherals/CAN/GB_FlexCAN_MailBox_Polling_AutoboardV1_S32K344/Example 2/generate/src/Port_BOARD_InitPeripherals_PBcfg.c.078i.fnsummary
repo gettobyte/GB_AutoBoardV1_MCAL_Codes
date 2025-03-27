@@ -1,6 +1,6 @@
 Symbol table:
 
-aTspc_InitConfigArr_BOARD_InitPeripherals/9 (aTspc_InitConfigArr_BOARD_InitPeripherals) @0639e000
+aTspc_InitConfigArr_BOARD_InitPeripherals/9 (aTspc_InitConfigArr_BOARD_InitPeripherals) @0701f090
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -8,7 +8,7 @@ aTspc_InitConfigArr_BOARD_InitPeripherals/9 (aTspc_InitConfigArr_BOARD_InitPerip
   Referring: Port_Config/7 (addr) 
   Availability: not_available
   Varpool flags: read-only
-g_pin_mux_InitConfigArr_BOARD_InitPeripherals/8 (g_pin_mux_InitConfigArr_BOARD_InitPeripherals) @061ebf30
+g_pin_mux_InitConfigArr_BOARD_InitPeripherals/8 (g_pin_mux_InitConfigArr_BOARD_InitPeripherals) @0701f048
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -16,49 +16,49 @@ g_pin_mux_InitConfigArr_BOARD_InitPeripherals/8 (g_pin_mux_InitConfigArr_BOARD_I
   Referring: Port_Config/7 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Port_Config/7 (Port_Config) @061ebf78
+Port_Config/7 (Port_Config) @06a88e58
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: Port_aUnusedPads_BOARD_InitPeripherals/3 (addr) Port_UnusedPinConfig_BOARD_InitPeripherals/4 (addr) Port_aUsedPinConfigs_BOARD_InitPeripherals/5 (addr) Port_aSIUL2_0_ImcrInitConfig_BOARD_InitPeripherals/6 (addr) au32Port_PinToPartitionMap_BOARD_InitPeripherals/2 (addr) au8Port_PartitionList_BOARD_InitPeripherals/1 (addr) g_pin_mux_InitConfigArr_BOARD_InitPeripherals/8 (addr) aTspc_InitConfigArr_BOARD_InitPeripherals/9 (addr) 
   Referring: 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-Port_aSIUL2_0_ImcrInitConfig_BOARD_InitPeripherals/6 (Port_aSIUL2_0_ImcrInitConfig_BOARD_InitPeripherals) @061ebea0
+Port_aSIUL2_0_ImcrInitConfig_BOARD_InitPeripherals/6 (Port_aSIUL2_0_ImcrInitConfig_BOARD_InitPeripherals) @06a88ca8
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
   Referring: Port_Config/7 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-Port_aUsedPinConfigs_BOARD_InitPeripherals/5 (Port_aUsedPinConfigs_BOARD_InitPeripherals) @061ebdc8
+Port_aUsedPinConfigs_BOARD_InitPeripherals/5 (Port_aUsedPinConfigs_BOARD_InitPeripherals) @06a88ee8
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
   Referring: Port_Config/7 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-Port_UnusedPinConfig_BOARD_InitPeripherals/4 (Port_UnusedPinConfig_BOARD_InitPeripherals) @061ebca8
+Port_UnusedPinConfig_BOARD_InitPeripherals/4 (Port_UnusedPinConfig_BOARD_InitPeripherals) @06a88d38
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
   Referring: Port_Config/7 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-Port_aUnusedPads_BOARD_InitPeripherals/3 (Port_aUnusedPads_BOARD_InitPeripherals) @0633da20
+Port_aUnusedPads_BOARD_InitPeripherals/3 (Port_aUnusedPads_BOARD_InitPeripherals) @06ffeab0
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
   Referring: Port_Config/7 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-au32Port_PinToPartitionMap_BOARD_InitPeripherals/2 (au32Port_PinToPartitionMap_BOARD_InitPeripherals) @061ebb88
+au32Port_PinToPartitionMap_BOARD_InitPeripherals/2 (au32Port_PinToPartitionMap_BOARD_InitPeripherals) @06a88c18
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
   Referring: Port_Config/7 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-au8Port_PartitionList_BOARD_InitPeripherals/1 (au8Port_PartitionList_BOARD_InitPeripherals) @061ebaf8
+au8Port_PartitionList_BOARD_InitPeripherals/1 (au8Port_PartitionList_BOARD_InitPeripherals) @06a88b88
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 

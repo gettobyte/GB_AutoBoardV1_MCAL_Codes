@@ -22,7 +22,7 @@ IPA summary for Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 is missing.
 IPA summary for Clock_Ip_Callback_DividerTriggerEmpty/0 is missing.
 Symbol table:
 
-Clock_Ip_ReportClockErrors/8 (Clock_Ip_ReportClockErrors) @06dde620
+Clock_Ip_ReportClockErrors/8 (Clock_Ip_ReportClockErrors) @06e5e620
   Type: function
   Visibility: external public
   References: 
@@ -31,7 +31,7 @@ Clock_Ip_ReportClockErrors/8 (Clock_Ip_ReportClockErrors) @06dde620
   Function flags:
   Called by: Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 
   Calls: 
-Clock_Ip_TimeoutExpired/7 (Clock_Ip_TimeoutExpired) @06dde540
+Clock_Ip_TimeoutExpired/7 (Clock_Ip_TimeoutExpired) @06e5e540
   Type: function
   Visibility: external public
   References: 
@@ -40,7 +40,7 @@ Clock_Ip_TimeoutExpired/7 (Clock_Ip_TimeoutExpired) @06dde540
   Function flags:
   Called by: Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 
   Calls: 
-Clock_Ip_StartTimeout/6 (Clock_Ip_StartTimeout) @06dde460
+Clock_Ip_StartTimeout/6 (Clock_Ip_StartTimeout) @06e5e460
   Type: function
   Visibility: external public
   References: 
@@ -49,7 +49,7 @@ Clock_Ip_StartTimeout/6 (Clock_Ip_StartTimeout) @06dde460
   Function flags:
   Called by: Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 
   Calls: 
-Clock_Ip_apxCgm/5 (Clock_Ip_apxCgm) @06d00750
+Clock_Ip_apxCgm/5 (Clock_Ip_apxCgm) @06d80750
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -57,7 +57,7 @@ Clock_Ip_apxCgm/5 (Clock_Ip_apxCgm) @06d00750
   Referring: Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (read) Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (read) Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (read) Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 (read) Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 (read) 
   Availability: not_available
   Varpool flags: read-only
-Clock_Ip_au8ClockFeatures/4 (Clock_Ip_au8ClockFeatures) @06d00708
+Clock_Ip_au8ClockFeatures/4 (Clock_Ip_au8ClockFeatures) @06d80708
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -65,14 +65,14 @@ Clock_Ip_au8ClockFeatures/4 (Clock_Ip_au8ClockFeatures) @06d00708
   Referring: Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (read) Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (read) Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 (read) Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 (read) 
   Availability: not_available
   Varpool flags: read-only
-Clock_Ip_axDividerTriggerCallbacks/3 (Clock_Ip_axDividerTriggerCallbacks) @06d00240
+Clock_Ip_axDividerTriggerCallbacks/3 (Clock_Ip_axDividerTriggerCallbacks) @06d80240
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: Clock_Ip_Callback_DividerTriggerEmpty/0 (addr) Clock_Ip_Callback_DividerTriggerEmpty/0 (addr) Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (addr) Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 (addr) 
   Referring: 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 (Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat) @06cfdee0
+Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 (Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat) @06d7dee0
   Type: function definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   Address is taken.
@@ -82,7 +82,7 @@ Clock_Ip_TriggerUpdateCgmXDivTrigCtrlTctlHhenUpdStat/2 (Clock_Ip_TriggerUpdateCg
   Function flags: body
   Called by: 
   Calls: Clock_Ip_ReportClockErrors/8 Clock_Ip_TimeoutExpired/7 Clock_Ip_StartTimeout/6 
-Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat) @06cfdb60
+Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat) @06d7db60
   Type: function definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   Address is taken.
@@ -92,7 +92,7 @@ Clock_Ip_ConfigureCgmXDivTrigCtrlTctlHhenUpdStat/1 (Clock_Ip_ConfigureCgmXDivTri
   Function flags: body
   Called by: 
   Calls: 
-Clock_Ip_Callback_DividerTriggerEmpty/0 (Clock_Ip_Callback_DividerTriggerEmpty) @06cfd8c0
+Clock_Ip_Callback_DividerTriggerEmpty/0 (Clock_Ip_Callback_DividerTriggerEmpty) @06d7d8c0
   Type: function definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   Address is taken.

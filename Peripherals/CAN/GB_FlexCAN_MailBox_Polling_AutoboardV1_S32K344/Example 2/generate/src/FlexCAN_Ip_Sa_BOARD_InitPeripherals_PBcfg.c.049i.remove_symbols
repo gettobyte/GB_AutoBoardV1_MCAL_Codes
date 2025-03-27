@@ -4,14 +4,28 @@ Reclaiming variables:
 Clearing address taken flags:
 Symbol table:
 
-FlexCAN_Config0/1 (FlexCAN_Config0) @05d96b88
+FlexCAN_Config1/3 (FlexCAN_Config1) @06b10d80
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
   Referring: 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-FlexCAN_State0/0 (FlexCAN_State0) @05d96a20
+FlexCAN_Config0/2 (FlexCAN_Config0) @06b10c60
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+FlexCAN_State1/1 (FlexCAN_State1) @06b10af8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+FlexCAN_State0/0 (FlexCAN_State0) @06b10ab0
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 

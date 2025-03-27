@@ -2,7 +2,7 @@ main ()
 {
   struct Flexcan_Ip_DataInfoType rx_info;
   Flexcan_Ip_StatusType FlexCAN_Api_Status;
-  int D.9977;
+  int D.9979;
 
   <bb 2> :
   Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
@@ -10,11 +10,14 @@ main ()
   rx_info = {};
   rx_info.data_length = 8;
   rx_info.is_polling = 1;
-  FlexCAN_Ip_Init_Privileged (4, &FlexCAN_State0, &FlexCAN_Config0);
+  FlexCAN_Api_Status = FlexCAN_Ip_Init_Privileged (4, &FlexCAN_State0, &FlexCAN_Config0);
   FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode_Privileged (4);
+  FlexCAN_Api_Status = FlexCAN_Ip_Init_Privileged (0, &FlexCAN_State1, &FlexCAN_Config1);
+  FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode_Privileged (0);
 
   <bb 3> :
   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking (4, 0, &rx_info, 800, &dummyData, 1000);
+  FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking (0, 0, &rx_info, 800, &dummyData, 1000);
   TestDelay (2000000);
   goto <bb 3>; [INV]
 

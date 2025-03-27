@@ -380,7 +380,7 @@ FlexCAN_EnableEnhancedRxFifo (struct FLEXCAN_Type * base, uint32 numOfStdIDFilte
 {
   uint32 NumOfEnhancedFilters;
   Flexcan_Ip_StatusType Stat;
-  Flexcan_Ip_StatusType D.10506;
+  Flexcan_Ip_StatusType D.10508;
 
   <bb 2> :
   Stat = 0;
@@ -469,11 +469,11 @@ FlexCAN_EnableEnhancedRxFifo (struct FLEXCAN_Type * base, uint32 numOfStdIDFilte
   Stat = 1;
 
   <bb 13> :
-  D.10506 = Stat;
+  D.10508 = Stat;
 
   <bb 14> :
 <L13>:
-  return D.10506;
+  return D.10508;
 
 }
 
@@ -483,7 +483,7 @@ FlexCAN_IsEnhancedRxFifoAvailable (const struct FLEXCAN_Type * base)
   boolean ReturnValue;
   static struct FLEXCAN_Type * const FlexcanBase[1] = {1076903936B};
   uint32 i;
-  boolean D.10491;
+  boolean D.10493;
 
   <bb 2> :
   i = 0;
@@ -512,11 +512,11 @@ FlexCAN_IsEnhancedRxFifoAvailable (const struct FLEXCAN_Type * base)
     goto <bb 7>; [INV]
 
   <bb 7> :
-  D.10491 = ReturnValue;
+  D.10493 = ReturnValue;
 
   <bb 8> :
 <L5>:
-  return D.10491;
+  return D.10493;
 
 }
 
@@ -526,7 +526,7 @@ FlexCAN_IsMbOutOfRange (const struct FLEXCAN_Type * pBase, uint8 u8MbIndex, bool
   uint32 u32NumOfMbOccupiedByFiFo;
   uint32 u32NumOfFiFoElement;
   boolean ReturnValue;
-  boolean D.10487;
+  boolean D.10489;
 
   <bb 2> :
   ReturnValue = 0;
@@ -570,11 +570,11 @@ FlexCAN_IsMbOutOfRange (const struct FLEXCAN_Type * pBase, uint8 u8MbIndex, bool
   ReturnValue = 0;
 
   <bb 8> :
-  D.10487 = ReturnValue;
+  D.10489 = ReturnValue;
 
   <bb 9> :
 <L8>:
-  return D.10487;
+  return D.10489;
 
 }
 
@@ -1310,7 +1310,7 @@ FlexCAN_SetMaxMsgBuffNum (struct FLEXCAN_Type * base, uint32 maxMsgBuffNum)
   const uint32 * RAM;
   uint32 DataByte;
   uint8 MsgBuffIdx;
-  Flexcan_Ip_StatusType D.10427;
+  Flexcan_Ip_StatusType D.10429;
 
   <bb 2> :
   base.11_1 = (long unsigned int) base;
@@ -1414,11 +1414,11 @@ FlexCAN_SetMaxMsgBuffNum (struct FLEXCAN_Type * base, uint32 maxMsgBuffNum)
     goto <bb 13>; [INV]
 
   <bb 13> :
-  D.10427 = Status;
+  D.10429 = Status;
 
   <bb 14> :
 <L13>:
-  return D.10427;
+  return D.10429;
 
 }
 
@@ -1768,18 +1768,18 @@ FlexCAN_GetMsgBuffTimestamp (const struct FLEXCAN_Type * base, uint32 msgBuffIdx
 {
   const uint32 * Flexcan_Mb;
   uint32 TimeStamp;
-  uint32 D.10395;
+  uint32 D.10397;
 
   <bb 2> :
   TimeStamp = 0;
   Flexcan_Mb = FlexCAN_GetMsgBuffRegion (base, msgBuffIdx);
   _1 = *Flexcan_Mb;
   TimeStamp = _1 & 65535;
-  D.10395 = TimeStamp;
+  D.10397 = TimeStamp;
 
   <bb 3> :
 <L0>:
-  return D.10395;
+  return D.10397;
 
 }
 
@@ -2033,7 +2033,7 @@ FlexCAN_SetMsgBuffIntCmd (struct FLEXCAN_Type * base, uint8 u8Instance, uint32 m
 {
   Flexcan_Ip_StatusType stat;
   uint32 temp;
-  Flexcan_Ip_StatusType D.10363;
+  Flexcan_Ip_StatusType D.10365;
 
   <bb 2> :
   stat = 0;
@@ -2189,11 +2189,11 @@ FlexCAN_SetMsgBuffIntCmd (struct FLEXCAN_Type * base, uint8 u8Instance, uint32 m
   SchM_Exit_Can_CAN_EXCLUSIVE_AREA_18 ();
 
   <bb 22> :
-  D.10363 = stat;
+  D.10365 = stat;
 
   <bb 23> :
 <L25>:
-  return D.10363;
+  return D.10365;
 
 }
 
@@ -2219,7 +2219,7 @@ FlexCAN_GetMbPayloadSize (const struct FLEXCAN_Type * base, uint32 maxMsgBuffNum
   uint8 can_real_payload;
   uint32 ramBlockSize;
   uint8 arbitration_field_size;
-  uint8 D.10335;
+  uint8 D.10337;
 
   <bb 2> :
   arbitration_field_size = 8;
@@ -2258,11 +2258,11 @@ FlexCAN_GetMbPayloadSize (const struct FLEXCAN_Type * base, uint32 maxMsgBuffNum
     goto <bb 7>; [INV]
 
   <bb 7> :
-  D.10335 = can_real_payload;
+  D.10337 = can_real_payload;
 
   <bb 8> :
 <L5>:
-  return D.10335;
+  return D.10337;
 
 }
 
@@ -2270,7 +2270,7 @@ FlexCAN_GetMbPayloadSize (const struct FLEXCAN_Type * base, uint32 maxMsgBuffNum
 FlexCAN_GetPayloadSize (const struct FLEXCAN_Type * base, uint8 mbdsrIdx)
 {
   uint32 payloadSize;
-  uint8 D.10331;
+  uint8 D.10333;
 
   <bb 2> :
   payloadSize = 8;
@@ -2309,11 +2309,11 @@ FlexCAN_GetPayloadSize (const struct FLEXCAN_Type * base, uint8 mbdsrIdx)
   payloadSize = 8 << _13;
 
   <bb 7> :
-  D.10331 = (uint8) payloadSize;
+  D.10333 = (uint8) payloadSize;
 
   <bb 8> :
 <L5>:
-  return D.10331;
+  return D.10333;
 
 }
 
@@ -2428,7 +2428,7 @@ FlexCAN_EnableRxFifo (struct FLEXCAN_Type * base, uint32 numOfFilters)
   Flexcan_Ip_StatusType stat;
   uint16 noOfMbx;
   uint32 i;
-  Flexcan_Ip_StatusType D.10307;
+  Flexcan_Ip_StatusType D.10309;
 
   <bb 2> :
   _1 = FlexCAN_GetMaxMbNum (base);
@@ -2476,11 +2476,11 @@ FlexCAN_EnableRxFifo (struct FLEXCAN_Type * base, uint32 numOfFilters)
     goto <bb 8>; [INV]
 
   <bb 8> :
-  D.10307 = stat;
+  D.10309 = stat;
 
   <bb 9> :
 <L7>:
-  return D.10307;
+  return D.10309;
 
 }
 
@@ -2491,8 +2491,8 @@ FlexCAN_Init (struct FLEXCAN_Type * base)
   uint32 uS2Ticks;
   uint32 timeElapsed;
   uint32 timeStart;
-  Flexcan_Ip_StatusType D.10300;
-  long unsigned int D.10291;
+  Flexcan_Ip_StatusType D.10302;
+  long unsigned int D.10293;
 
   <bb 2> :
   timeStart = 0;
@@ -2507,8 +2507,8 @@ FlexCAN_Init (struct FLEXCAN_Type * base)
   goto <bb 5>; [INV]
 
   <bb 3> :
-  D.10291 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10291 + timeElapsed;
+  D.10293 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10293 + timeElapsed;
   if (timeElapsed >= uS2Ticks)
     goto <bb 4>; [INV]
   else
@@ -2576,12 +2576,12 @@ FlexCAN_Init (struct FLEXCAN_Type * base)
   base->FDCTRL = 2147500288;
 
   <bb 12> :
-  D.10300 = returnResult;
+  D.10302 = returnResult;
   timeStart = {CLOBBER};
 
   <bb 13> :
 <L12>:
-  return D.10300;
+  return D.10302;
 
 }
 
@@ -2682,8 +2682,8 @@ FlexCAN_Disable (struct FLEXCAN_Type * base)
   uint32 uS2Ticks;
   uint32 timeElapsed;
   uint32 timeStart;
-  Flexcan_Ip_StatusType D.10272;
-  long unsigned int D.10269;
+  Flexcan_Ip_StatusType D.10274;
+  long unsigned int D.10271;
 
   <bb 2> :
   timeStart = 0;
@@ -2708,8 +2708,8 @@ FlexCAN_Disable (struct FLEXCAN_Type * base)
   goto <bb 6>; [INV]
 
   <bb 4> :
-  D.10269 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10269 + timeElapsed;
+  D.10271 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10271 + timeElapsed;
   if (timeElapsed >= uS2Ticks)
     goto <bb 5>; [INV]
   else
@@ -2728,12 +2728,12 @@ FlexCAN_Disable (struct FLEXCAN_Type * base)
     goto <bb 7>; [INV]
 
   <bb 7> :
-  D.10272 = returnResult;
+  D.10274 = returnResult;
   timeStart = {CLOBBER};
 
   <bb 8> :
 <L8>:
-  return D.10272;
+  return D.10274;
 
 }
 
@@ -2744,8 +2744,8 @@ FlexCAN_ExitFreezeMode (struct FLEXCAN_Type * base)
   uint32 uS2Ticks;
   uint32 timeElapsed;
   uint32 timeStart;
-  Flexcan_Ip_StatusType D.10264;
-  long unsigned int D.10261;
+  Flexcan_Ip_StatusType D.10266;
+  long unsigned int D.10263;
 
   <bb 2> :
   timeStart = 0;
@@ -2765,8 +2765,8 @@ FlexCAN_ExitFreezeMode (struct FLEXCAN_Type * base)
   goto <bb 5>; [INV]
 
   <bb 3> :
-  D.10261 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10261 + timeElapsed;
+  D.10263 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10263 + timeElapsed;
   if (timeElapsed >= uS2Ticks)
     goto <bb 4>; [INV]
   else
@@ -2785,12 +2785,12 @@ FlexCAN_ExitFreezeMode (struct FLEXCAN_Type * base)
     goto <bb 6>; [INV]
 
   <bb 6> :
-  D.10264 = returnValue;
+  D.10266 = returnValue;
   timeStart = {CLOBBER};
 
   <bb 7> :
 <L6>:
-  return D.10264;
+  return D.10266;
 
 }
 
@@ -2801,8 +2801,8 @@ FlexCAN_Enable (struct FLEXCAN_Type * base)
   uint32 uS2Ticks;
   uint32 timeElapsed;
   uint32 timeStart;
-  Flexcan_Ip_StatusType D.10258;
-  long unsigned int D.10255;
+  Flexcan_Ip_StatusType D.10260;
+  long unsigned int D.10257;
 
   <bb 2> :
   timeStart = 0;
@@ -2819,8 +2819,8 @@ FlexCAN_Enable (struct FLEXCAN_Type * base)
   goto <bb 5>; [INV]
 
   <bb 3> :
-  D.10255 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10255 + timeElapsed;
+  D.10257 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10257 + timeElapsed;
   if (timeElapsed >= uS2Ticks)
     goto <bb 4>; [INV]
   else
@@ -2839,12 +2839,12 @@ FlexCAN_Enable (struct FLEXCAN_Type * base)
     goto <bb 6>; [INV]
 
   <bb 6> :
-  D.10258 = returnValue;
+  D.10260 = returnValue;
   timeStart = {CLOBBER};
 
   <bb 7> :
 <L6>:
-  return D.10258;
+  return D.10260;
 
 }
 
@@ -2855,8 +2855,8 @@ FlexCAN_EnterFreezeMode (struct FLEXCAN_Type * base)
   uint32 uS2Ticks;
   uint32 timeElapsed;
   uint32 timeStart;
-  Flexcan_Ip_StatusType D.10252;
-  long unsigned int D.10249;
+  Flexcan_Ip_StatusType D.10254;
+  long unsigned int D.10251;
 
   <bb 2> :
   timeStart = 0;
@@ -2889,8 +2889,8 @@ FlexCAN_EnterFreezeMode (struct FLEXCAN_Type * base)
   goto <bb 7>; [INV]
 
   <bb 5> :
-  D.10249 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10249 + timeElapsed;
+  D.10251 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10251 + timeElapsed;
   if (timeElapsed >= uS2Ticks)
     goto <bb 6>; [INV]
   else
@@ -2909,12 +2909,12 @@ FlexCAN_EnterFreezeMode (struct FLEXCAN_Type * base)
     goto <bb 8>; [INV]
 
   <bb 8> :
-  D.10252 = returnResult;
+  D.10254 = returnResult;
   timeStart = {CLOBBER};
 
   <bb 9> :
 <L8>:
-  return D.10252;
+  return D.10254;
 
 }
 
@@ -2925,7 +2925,7 @@ FlexCAN_GetMaxMbNum (const struct FLEXCAN_Type * base)
   static struct FLEXCAN_Type * const flexcanBase[6] = {1076903936B, 1076920320B, 1076936704B, 1076953088B, 1076969472B, 1076985856B};
   uint32 ret;
   uint32 i;
-  uint32 D.10245;
+  uint32 D.10247;
 
   <bb 2> :
   ret = 0;
@@ -2952,11 +2952,11 @@ FlexCAN_GetMaxMbNum (const struct FLEXCAN_Type * base)
     goto <bb 7>; [INV]
 
   <bb 7> :
-  D.10245 = ret;
+  D.10247 = ret;
 
   <bb 8> :
 <L5>:
-  return D.10245;
+  return D.10247;
 
 }
 
@@ -2974,7 +2974,7 @@ FlexCAN_GetMsgBuffRegion (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
   uint32 ramBlockSize;
   uint8 mb_size;
   uint8 arbitration_field_size;
-  volatile uint32 * D.10241;
+  volatile uint32 * D.10243;
 
   <bb 2> :
   arbitration_field_size = 8;
@@ -3030,11 +3030,11 @@ FlexCAN_GetMsgBuffRegion (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
   mb_index = ramBlockOffset + _12;
   _13 = mb_index * 4;
   pAddressRet = RAM + _13;
-  D.10241 = pAddressRet;
+  D.10243 = pAddressRet;
 
   <bb 8> :
 <L5>:
-  return D.10241;
+  return D.10243;
 
 }
 
@@ -3042,7 +3042,7 @@ FlexCAN_GetMsgBuffRegion (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
 FlexCAN_ComputePayloadSize (uint8 dlcValue)
 {
   uint8 ret;
-  uint8 D.10237;
+  uint8 D.10239;
 
   <bb 2> :
   ret = 8;
@@ -3098,11 +3098,11 @@ FlexCAN_ComputePayloadSize (uint8 dlcValue)
 <L9>:
 
   <bb 13> :
-  D.10237 = ret;
+  D.10239 = ret;
 
   <bb 14> :
 <L12>:
-  return D.10237;
+  return D.10239;
 
 }
 
@@ -3193,7 +3193,7 @@ FlexCAN_ComputeDLCValue (uint8 payloadSize)
 {
   static const uint8 payload_code[65] = "\x00\x01\x02\x03\x04\x05\x06\x07\b\t\t\t\t\n\n\n\n\v\v\v\v\f\f\f\f\r\r\r\r\r\r\r\r\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f";
   uint32 ret;
-  uint8 D.10232;
+  uint8 D.10234;
 
   <bb 2> :
   ret = 255;
@@ -3208,11 +3208,11 @@ FlexCAN_ComputeDLCValue (uint8 payloadSize)
   ret = (uint32) _2;
 
   <bb 4> :
-  D.10232 = (uint8) ret;
+  D.10234 = (uint8) ret;
 
   <bb 5> :
 <L3>:
-  return D.10232;
+  return D.10234;
 
 }
 
@@ -3408,16 +3408,16 @@ FlexCAN_SetIsoCan (struct FLEXCAN_Type * base, boolean enable)
 
 FlexCAN_IsFDEnabled (const struct FLEXCAN_Type * base)
 {
-  boolean D.10329;
+  boolean D.10331;
 
   <bb 2> :
   _1 = base->MCR;
   _2 = _1 & 2048;
-  D.10329 = _2 != 0;
+  D.10331 = _2 != 0;
 
   <bb 3> :
 <L0>:
-  return D.10329;
+  return D.10331;
 
 }
 

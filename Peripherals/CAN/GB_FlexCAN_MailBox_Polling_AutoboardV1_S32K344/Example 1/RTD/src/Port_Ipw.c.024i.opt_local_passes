@@ -1189,7 +1189,7 @@ Port_Ipw_Init (const struct Port_ConfigType * pConfigPtr)
 
   <bb 13> :
   _12 = pConfigPtr_33(D)->IpConfigPtr;
-  Siul2_Port_Ip_Init (2, _12);
+  Siul2_Port_Ip_Init (4, _12);
   Port_Ipw_Init_UnusedPins (pConfigPtr_33(D));
   u8ImcrSiulInstance_36 = 0;
   goto <bb 18>; [INV]

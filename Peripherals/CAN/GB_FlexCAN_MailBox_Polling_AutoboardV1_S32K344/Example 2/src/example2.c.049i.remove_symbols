@@ -4,109 +4,97 @@ Reclaiming variables:
 Clearing address taken flags:
 Symbol table:
 
-memset/11 (memset) @073f68c0
+FlexCAN_Ip_SendBlocking/10 (FlexCAN_Ip_SendBlocking) @0807db60
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/1 
+  Called by: main/2 
   Calls: 
-FlexCAN_Ip_ReceiveBlocking/10 (FlexCAN_Ip_ReceiveBlocking) @073f67e0
+FlexCAN_Ip_SetStartMode_Privileged/9 (FlexCAN_Ip_SetStartMode_Privileged) @0807da80
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/1 
+  Called by: main/2 
   Calls: 
-FlexCAN_Ip_ConfigRxMb/9 (FlexCAN_Ip_ConfigRxMb) @073f6700
-  Type: function
-  Visibility: external public
-  References: 
-  Referring: 
-  Availability: not_available
-  Function flags:
-  Called by: main/1 
-  Calls: 
-FlexCAN_Ip_SetStartMode_Privileged/8 (FlexCAN_Ip_SetStartMode_Privileged) @073f6620
-  Type: function
-  Visibility: external public
-  References: 
-  Referring: 
-  Availability: not_available
-  Function flags:
-  Called by: main/1 
-  Calls: 
-FlexCAN_Config0/7 (FlexCAN_Config0) @073f82d0
+FlexCAN_Config0/8 (FlexCAN_Config0) @0807f4c8
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/1 (addr) 
+  Referring: main/2 (addr) 
   Availability: not_available
   Varpool flags: read-only
-FlexCAN_State0/6 (FlexCAN_State0) @073f8288
+FlexCAN_State0/7 (FlexCAN_State0) @0807f480
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/1 (addr) 
+  Referring: main/2 (addr) 
   Availability: not_available
   Varpool flags:
-FlexCAN_Ip_Init_Privileged/5 (FlexCAN_Ip_Init_Privileged) @073f6540
+FlexCAN_Ip_Init_Privileged/6 (FlexCAN_Ip_Init_Privileged) @0807d9a0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/1 
+  Called by: main/2 
   Calls: 
-Port_Init/4 (Port_Init) @073f6460
+Port_Init/5 (Port_Init) @0807d8c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/1 
+  Called by: main/2 
   Calls: 
-Clock_Ip_aClockConfig/3 (Clock_Ip_aClockConfig) @073f81b0
+Clock_Ip_aClockConfig/4 (Clock_Ip_aClockConfig) @0807f3a8
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/1 (addr) 
+  Referring: main/2 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Clock_Ip_Init/2 (Clock_Ip_Init) @073f6380
+Clock_Ip_Init/3 (Clock_Ip_Init) @0807d7e0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/1 
+  Called by: main/2 
   Calls: 
-main/1 (main) @073ebe00
+main/2 (main) @0807d380
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
-  References: Clock_Ip_aClockConfig/3 (addr) FlexCAN_State0/6 (addr) FlexCAN_Config0/7 (addr) 
+  References: Clock_Ip_aClockConfig/4 (addr) FlexCAN_State0/7 (addr) FlexCAN_Config0/8 (addr) dummyData/1 (addr) 
   Referring: 
   Availability: available
   Function flags: body
   Called by: 
-  Calls: memset/11 FlexCAN_Ip_ReceiveBlocking/10 FlexCAN_Ip_ConfigRxMb/9 FlexCAN_Ip_SetStartMode_Privileged/8 FlexCAN_Ip_Init_Privileged/5 Port_Init/4 Clock_Ip_Init/2 
+  Calls: FlexCAN_Ip_SendBlocking/10 FlexCAN_Ip_SetStartMode_Privileged/9 FlexCAN_Ip_Init_Privileged/6 Port_Init/5 Clock_Ip_Init/3 
+dummyData/1 (dummyData) @08078d80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: main/2 (addr) 
+  Availability: available
+  Varpool flags: initialized
 main ()
 {
   struct Flexcan_Ip_MsgBuffType rxData;
   struct Flexcan_Ip_DataInfoType rx_info;
   Flexcan_Ip_StatusType FlexCAN_Api_Status;
   int D.10237;
-  <unnamed type> _1;
 
   <bb 2> :
   Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
@@ -115,20 +103,10 @@ main ()
   rx_info.data_length = 8;
   rx_info.is_polling = 1;
   FlexCAN_Ip_Init_Privileged (4, &FlexCAN_State0, &FlexCAN_Config0);
-  FlexCAN_Api_Status_12 = FlexCAN_Ip_SetStartMode_Privileged (4);
+  FlexCAN_Api_Status_10 = FlexCAN_Ip_SetStartMode_Privileged (4);
 
   <bb 3> :
-  FlexCAN_Api_Status_14 = FlexCAN_Ip_ConfigRxMb (4, 1, &rx_info, 801);
-
-  <bb 4> :
-  _1 = FlexCAN_Ip_ReceiveBlocking (4, 1, &rxData, 1, 1000);
-  if (_1 == 3)
-    goto <bb 4>; [INV]
-  else
-    goto <bb 5>; [INV]
-
-  <bb 5> :
-  memset (&rxData.data, 0, 64);
+  FlexCAN_Api_Status_12 = FlexCAN_Ip_SendBlocking (4, 0, &rx_info, 800, &dummyData, 1000);
   goto <bb 3>; [INV]
 
 }

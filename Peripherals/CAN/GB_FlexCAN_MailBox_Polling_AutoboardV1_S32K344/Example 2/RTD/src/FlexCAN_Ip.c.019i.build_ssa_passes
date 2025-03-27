@@ -5,8 +5,8 @@ FlexCAN_Ip_ManualBusOffRecovery (uint8 Instance)
   uint32 timeElapsed;
   uint32 timeStart;
   struct FLEXCAN_Type * Base;
-  Flexcan_Ip_StatusType D.11352;
-  long unsigned int D.11349;
+  Flexcan_Ip_StatusType D.11354;
+  long unsigned int D.11351;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -47,8 +47,8 @@ FlexCAN_Ip_ManualBusOffRecovery (uint8 Instance)
   goto <bb 7>; [INV]
 
   <bb 5> :
-  D.11349 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.11349 + timeElapsed;
+  D.11351 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.11351 + timeElapsed;
   if (timeElapsed >= uS2Ticks)
     goto <bb 6>; [INV]
   else
@@ -67,12 +67,12 @@ FlexCAN_Ip_ManualBusOffRecovery (uint8 Instance)
     goto <bb 8>; [INV]
 
   <bb 8> :
-  D.11352 = RetVal;
+  D.11354 = RetVal;
   timeStart = {CLOBBER};
 
   <bb 9> :
 <L10>:
-  return D.11352;
+  return D.11354;
 
 }
 
@@ -80,16 +80,16 @@ FlexCAN_Ip_ManualBusOffRecovery (uint8 Instance)
 FlexCAN_Ip_GetListenOnlyMode (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  boolean D.11343;
+  boolean D.11345;
 
   <bb 2> :
   _1 = (int) instance;
   base = Flexcan_Ip_apxBase[_1];
-  D.11343 = FlexCAN_IsListenOnlyModeEnabled (base);
+  D.11345 = FlexCAN_IsListenOnlyModeEnabled (base);
 
   <bb 3> :
 <L0>:
-  return D.11343;
+  return D.11345;
 
 }
 
@@ -101,7 +101,7 @@ FlexCAN_Ip_SetListenOnlyMode_Privileged (uint8 instance, const boolean enable)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11337;
+  Flexcan_Ip_StatusType D.11339;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -169,11 +169,11 @@ FlexCAN_Ip_SetListenOnlyMode_Privileged (uint8 instance, const boolean enable)
   result = status;
 
   <bb 12> :
-  D.11337 = result;
+  D.11339 = result;
 
   <bb 13> :
 <L12>:
-  return D.11337;
+  return D.11339;
 
 }
 
@@ -185,7 +185,7 @@ FlexCAN_Ip_SetRxMb15Mask_Privileged (uint8 instance, uint32 mask)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11323;
+  Flexcan_Ip_StatusType D.11325;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -252,11 +252,11 @@ FlexCAN_Ip_SetRxMb15Mask_Privileged (uint8 instance, uint32 mask)
   result = status;
 
   <bb 12> :
-  D.11323 = result;
+  D.11325 = result;
 
   <bb 13> :
 <L12>:
-  return D.11323;
+  return D.11325;
 
 }
 
@@ -268,7 +268,7 @@ FlexCAN_Ip_SetRxMb14Mask_Privileged (uint8 instance, uint32 mask)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11309;
+  Flexcan_Ip_StatusType D.11311;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -335,11 +335,11 @@ FlexCAN_Ip_SetRxMb14Mask_Privileged (uint8 instance, uint32 mask)
   result = status;
 
   <bb 12> :
-  D.11309 = result;
+  D.11311 = result;
 
   <bb 13> :
 <L12>:
-  return D.11309;
+  return D.11311;
 
 }
 
@@ -349,7 +349,7 @@ FlexCAN_Ip_AbortTransfer (uint8 u8Instance, uint8 mb_idx)
   Flexcan_Ip_StatusType result;
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11295;
+  Flexcan_Ip_StatusType D.11297;
   int iftmp.9;
 
   <bb 2> :
@@ -424,11 +424,11 @@ FlexCAN_Ip_AbortTransfer (uint8 u8Instance, uint8 mb_idx)
   FlexCAN_AbortRxTransfer (u8Instance, mb_idx);
 
   <bb 13> :
-  D.11295 = result;
+  D.11297 = result;
 
   <bb 14> :
 <L13>:
-  return D.11295;
+  return D.11297;
 
 }
 
@@ -439,7 +439,7 @@ FlexCAN_Ip_SetErrorInt_Privileged (uint8 u8Instance, Flexcan_Ip_ErrorIntType typ
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11279;
+  Flexcan_Ip_StatusType D.11281;
 
   <bb 2> :
   _1 = u8Instance <= 5;
@@ -545,11 +545,11 @@ FlexCAN_Ip_SetErrorInt_Privileged (uint8 u8Instance, Flexcan_Ip_ErrorIntType typ
   result = status;
 
   <bb 21> :
-  D.11279 = result;
+  D.11281 = result;
 
   <bb 22> :
 <L21>:
-  return D.11279;
+  return D.11281;
 
 }
 
@@ -559,7 +559,7 @@ FlexCAN_Ip_DisableInterrupts_Privileged (uint8 u8Instance)
   struct Flexcan_Ip_StateType * state;
   Flexcan_Ip_StatusType result;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11263;
+  Flexcan_Ip_StatusType D.11265;
 
   <bb 2> :
   _1 = (int) u8Instance;
@@ -598,11 +598,11 @@ FlexCAN_Ip_DisableInterrupts_Privileged (uint8 u8Instance)
   result = 0;
 
   <bb 7> :
-  D.11263 = result;
+  D.11265 = result;
 
   <bb 8> :
 <L6>:
-  return D.11263;
+  return D.11265;
 
 }
 
@@ -612,7 +612,7 @@ FlexCAN_Ip_EnableInterrupts_Privileged (uint8 u8Instance)
   struct Flexcan_Ip_StateType * state;
   Flexcan_Ip_StatusType result;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11255;
+  Flexcan_Ip_StatusType D.11257;
 
   <bb 2> :
   _1 = (int) u8Instance;
@@ -659,11 +659,11 @@ FlexCAN_Ip_EnableInterrupts_Privileged (uint8 u8Instance)
   result = 0;
 
   <bb 8> :
-  D.11255 = result;
+  D.11257 = result;
 
   <bb 9> :
 <L8>:
-  return D.11255;
+  return D.11257;
 
 }
 
@@ -700,7 +700,7 @@ FlexCAN_Ip_GetBuffStatusFlag (uint8 instance, uint8 msgBuffIdx)
 {
   const struct FLEXCAN_Type * pBase;
   boolean returnResult;
-  boolean D.11242;
+  boolean D.11244;
 
   <bb 2> :
   returnResult = 1;
@@ -724,11 +724,11 @@ FlexCAN_Ip_GetBuffStatusFlag (uint8 instance, uint8 msgBuffIdx)
   returnResult = _5 == 1;
 
   <bb 5> :
-  D.11242 = returnResult;
+  D.11244 = returnResult;
 
   <bb 6> :
 <L3>:
-  return D.11242;
+  return D.11244;
 
 }
 
@@ -740,7 +740,7 @@ FlexCAN_Ip_SetTxArbitrationStartDelay_Privileged (uint8 instance, uint8 value)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11237;
+  Flexcan_Ip_StatusType D.11239;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -808,11 +808,11 @@ FlexCAN_Ip_SetTxArbitrationStartDelay_Privileged (uint8 instance, uint8 value)
   result = status;
 
   <bb 12> :
-  D.11237 = result;
+  D.11239 = result;
 
   <bb 13> :
 <L12>:
-  return D.11237;
+  return D.11239;
 
 }
 
@@ -824,7 +824,7 @@ FlexCAN_Ip_SetTDCOffset_Privileged (uint8 instance, boolean enable, uint8 offset
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11219;
+  Flexcan_Ip_StatusType D.11221;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -906,11 +906,11 @@ FlexCAN_Ip_SetTDCOffset_Privileged (uint8 instance, boolean enable, uint8 offset
   result = status;
 
   <bb 15> :
-  D.11219 = result;
+  D.11221 = result;
 
   <bb 16> :
 <L15>:
-  return D.11219;
+  return D.11221;
 
 }
 
@@ -919,7 +919,7 @@ FlexCAN_Ip_GetBitrateFD (uint8 instance, struct Flexcan_Ip_TimeSegmentType * bit
 {
   boolean enhCbt;
   const struct FLEXCAN_Type * pBase;
-  boolean D.11202;
+  boolean D.11204;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -943,11 +943,11 @@ FlexCAN_Ip_GetBitrateFD (uint8 instance, struct Flexcan_Ip_TimeSegmentType * bit
   FlexCAN_GetFDTimeSegments (pBase, bitrate);
 
   <bb 5> :
-  D.11202 = enhCbt;
+  D.11204 = enhCbt;
 
   <bb 6> :
 <L3>:
-  return D.11202;
+  return D.11204;
 
 }
 
@@ -961,7 +961,7 @@ FlexCAN_Ip_SetBitrateCbt_Privileged (uint8 instance, const struct Flexcan_Ip_Tim
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11195;
+  Flexcan_Ip_StatusType D.11197;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -1052,11 +1052,11 @@ FlexCAN_Ip_SetBitrateCbt_Privileged (uint8 instance, const struct Flexcan_Ip_Tim
   result = status;
 
   <bb 16> :
-  D.11195 = result;
+  D.11197 = result;
 
   <bb 17> :
 <L15>:
-  return D.11195;
+  return D.11197;
 
 }
 
@@ -1065,7 +1065,7 @@ FlexCAN_Ip_GetTDCValue (uint8 u8Instance)
 {
   const struct FLEXCAN_Type * pBase;
   uint8 value;
-  uint8 D.11178;
+  uint8 D.11180;
 
   <bb 2> :
   value = 0;
@@ -1090,11 +1090,11 @@ FlexCAN_Ip_GetTDCValue (uint8 u8Instance)
   value = _6 & 63;
 
   <bb 5> :
-  D.11178 = value;
+  D.11180 = value;
 
   <bb 6> :
 <L3>:
-  return D.11178;
+  return D.11180;
 
 }
 
@@ -1103,7 +1103,7 @@ FlexCAN_Ip_GetTDCFail (uint8 u8Instance)
 {
   const struct FLEXCAN_Type * pBase;
   boolean value;
-  boolean D.11173;
+  boolean D.11175;
 
   <bb 2> :
   value = 0;
@@ -1129,11 +1129,11 @@ FlexCAN_Ip_GetTDCFail (uint8 u8Instance)
   value = _7 == 16384;
 
   <bb 5> :
-  D.11173 = value;
+  D.11175 = value;
 
   <bb 6> :
 <L3>:
-  return D.11173;
+  return D.11175;
 
 }
 
@@ -1176,7 +1176,7 @@ FlexCAN_Ip_GetBitrate (uint8 instance, struct Flexcan_Ip_TimeSegmentType * bitra
 {
   boolean enhCbt;
   const struct FLEXCAN_Type * pBase;
-  boolean D.11163;
+  boolean D.11165;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -1211,11 +1211,11 @@ FlexCAN_Ip_GetBitrate (uint8 instance, struct Flexcan_Ip_TimeSegmentType * bitra
   FlexCAN_GetTimeSegments (pBase, bitrate);
 
   <bb 7> :
-  D.11163 = enhCbt;
+  D.11165 = enhCbt;
 
   <bb 8> :
 <L6>:
-  return D.11163;
+  return D.11165;
 
 }
 
@@ -1227,7 +1227,7 @@ FlexCAN_Ip_SetBitrate_Privileged (uint8 instance, const struct Flexcan_Ip_TimeSe
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11149;
+  Flexcan_Ip_StatusType D.11151;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -1320,11 +1320,11 @@ FlexCAN_Ip_SetBitrate_Privileged (uint8 instance, const struct Flexcan_Ip_TimeSe
   result = status;
 
   <bb 17> :
-  D.11149 = result;
+  D.11151 = result;
 
   <bb 18> :
 <L18>:
-  return D.11149;
+  return D.11151;
 
 }
 
@@ -1336,7 +1336,7 @@ FlexCAN_Ip_SetRxMaskType_Privileged (uint8 instance, Flexcan_Ip_RxMaskType type)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11126;
+  Flexcan_Ip_StatusType D.11128;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -1404,11 +1404,11 @@ FlexCAN_Ip_SetRxMaskType_Privileged (uint8 instance, Flexcan_Ip_RxMaskType type)
   result = status;
 
   <bb 12> :
-  D.11126 = result;
+  D.11128 = result;
 
   <bb 13> :
 <L12>:
-  return D.11126;
+  return D.11128;
 
 }
 
@@ -1417,7 +1417,7 @@ FlexCAN_Ip_SetStopMode_Privileged (uint8 instance)
 {
   Flexcan_Ip_StatusType status;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11112;
+  Flexcan_Ip_StatusType D.11114;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -1434,11 +1434,11 @@ FlexCAN_Ip_SetStopMode_Privileged (uint8 instance)
   status = FlexCAN_Disable (pBase);
 
   <bb 4> :
-  D.11112 = status;
+  D.11114 = status;
 
   <bb 5> :
 <L2>:
-  return D.11112;
+  return D.11114;
 
 }
 
@@ -1446,7 +1446,7 @@ FlexCAN_Ip_SetStopMode_Privileged (uint8 instance)
 FlexCAN_Ip_SetStartMode_Privileged (uint8 instance)
 {
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.11108;
+  Flexcan_Ip_StatusType D.11110;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -1458,7 +1458,26 @@ FlexCAN_Ip_SetStartMode_Privileged (uint8 instance)
   _4 = _3 & 2147483647;
   pBase->MCR = _4;
   SchM_Exit_Can_CAN_EXCLUSIVE_AREA_07 ();
-  D.11108 = FlexCAN_ExitFreezeMode (pBase);
+  D.11110 = FlexCAN_ExitFreezeMode (pBase);
+
+  <bb 3> :
+<L0>:
+  return D.11110;
+
+}
+
+
+FlexCAN_Ip_GetStartMode_Privileged (uint8 instance)
+{
+  const struct FLEXCAN_Type * base;
+  boolean D.11108;
+
+  <bb 2> :
+  _1 = (int) instance;
+  base = Flexcan_Ip_apxBase[_1];
+  _2 = base->MCR;
+  _3 = _2 & 17825792;
+  D.11108 = _3 == 0;
 
   <bb 3> :
 <L0>:
@@ -1467,7 +1486,7 @@ FlexCAN_Ip_SetStartMode_Privileged (uint8 instance)
 }
 
 
-FlexCAN_Ip_GetStartMode_Privileged (uint8 instance)
+FlexCAN_Ip_GetStopMode_Privileged (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
   boolean D.11106;
@@ -1476,31 +1495,12 @@ FlexCAN_Ip_GetStartMode_Privileged (uint8 instance)
   _1 = (int) instance;
   base = Flexcan_Ip_apxBase[_1];
   _2 = base->MCR;
-  _3 = _2 & 17825792;
-  D.11106 = _3 == 0;
+  _3 = _2 & 1048576;
+  D.11106 = _3 == 1048576;
 
   <bb 3> :
 <L0>:
   return D.11106;
-
-}
-
-
-FlexCAN_Ip_GetStopMode_Privileged (uint8 instance)
-{
-  const struct FLEXCAN_Type * base;
-  boolean D.11104;
-
-  <bb 2> :
-  _1 = (int) instance;
-  base = Flexcan_Ip_apxBase[_1];
-  _2 = base->MCR;
-  _3 = _2 & 1048576;
-  D.11104 = _3 == 1048576;
-
-  <bb 3> :
-<L0>:
-  return D.11104;
 
 }
 
@@ -1601,7 +1601,7 @@ FlexCAN_Ip_MainFunctionBusOff_Privileged (uint8 instance)
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType eRetVal;
-  Flexcan_Ip_StatusType D.11091;
+  Flexcan_Ip_StatusType D.11093;
 
   <bb 2> :
   eRetVal = 1;
@@ -1635,11 +1635,11 @@ FlexCAN_Ip_MainFunctionBusOff_Privileged (uint8 instance)
   eRetVal = 0;
 
   <bb 6> :
-  D.11091 = eRetVal;
+  D.11093 = eRetVal;
 
   <bb 7> :
 <L4>:
-  return D.11091;
+  return D.11093;
 
 }
 
@@ -1770,7 +1770,7 @@ FlexCAN_Ip_Deinit_Privileged (uint8 instance)
 {
   Flexcan_Ip_StatusType result;
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.11053;
+  Flexcan_Ip_StatusType D.11055;
 
   <bb 2> :
   _1 = (int) instance;
@@ -1791,11 +1791,11 @@ FlexCAN_Ip_Deinit_Privileged (uint8 instance)
   Flexcan_Ip_apxState[_3] = 0B;
 
   <bb 4> :
-  D.11053 = result;
+  D.11055 = result;
 
   <bb 5> :
 <L2>:
-  return D.11053;
+  return D.11055;
 
 }
 
@@ -1807,7 +1807,7 @@ FlexCAN_Ip_SetRxFifoGlobalMask_Privileged (uint8 instance, uint32 mask)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11049;
+  Flexcan_Ip_StatusType D.11051;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -1873,11 +1873,11 @@ FlexCAN_Ip_SetRxFifoGlobalMask_Privileged (uint8 instance, uint32 mask)
   result = status;
 
   <bb 12> :
-  D.11049 = result;
+  D.11051 = result;
 
   <bb 13> :
 <L12>:
-  return D.11049;
+  return D.11051;
 
 }
 
@@ -1889,7 +1889,7 @@ FlexCAN_Ip_SetRxIndividualMask_Privileged (uint8 instance, uint8 mb_idx, uint32 
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11035;
+  Flexcan_Ip_StatusType D.11037;
 
   <bb 2> :
   result = 0;
@@ -1976,11 +1976,11 @@ FlexCAN_Ip_SetRxIndividualMask_Privileged (uint8 instance, uint8 mb_idx, uint32 
   result = status;
 
   <bb 15> :
-  D.11035 = result;
+  D.11037 = result;
 
   <bb 16> :
 <L16>:
-  return D.11035;
+  return D.11037;
 
 }
 
@@ -1988,16 +1988,16 @@ FlexCAN_Ip_SetRxIndividualMask_Privileged (uint8 instance, uint8 mb_idx, uint32 
 FlexCAN_Ip_ExitFreezeMode_Privileged (uint8 instance)
 {
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.11017;
+  Flexcan_Ip_StatusType D.11019;
 
   <bb 2> :
   _1 = (int) instance;
   base = Flexcan_Ip_apxBase[_1];
-  D.11017 = FlexCAN_ExitFreezeMode (base);
+  D.11019 = FlexCAN_ExitFreezeMode (base);
 
   <bb 3> :
 <L0>:
-  return D.11017;
+  return D.11019;
 
 }
 
@@ -2005,16 +2005,16 @@ FlexCAN_Ip_ExitFreezeMode_Privileged (uint8 instance)
 FlexCAN_Ip_EnterFreezeMode_Privileged (uint8 instance)
 {
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.11015;
+  Flexcan_Ip_StatusType D.11017;
 
   <bb 2> :
   _1 = (int) instance;
   base = Flexcan_Ip_apxBase[_1];
-  D.11015 = FlexCAN_EnterFreezeMode (base);
+  D.11017 = FlexCAN_EnterFreezeMode (base);
 
   <bb 3> :
 <L0>:
-  return D.11015;
+  return D.11017;
 
 }
 
@@ -2026,7 +2026,7 @@ FlexCAN_Ip_SetRxMbGlobalMask_Privileged (uint8 instance, uint32 mask)
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.11013;
+  Flexcan_Ip_StatusType D.11015;
 
   <bb 2> :
   result = 0;
@@ -2093,11 +2093,11 @@ FlexCAN_Ip_SetRxMbGlobalMask_Privileged (uint8 instance, uint32 mask)
   result = status;
 
   <bb 12> :
-  D.11013 = result;
+  D.11015 = result;
 
   <bb 13> :
 <L12>:
-  return D.11013;
+  return D.11015;
 
 }
 
@@ -2113,9 +2113,9 @@ FlexCAN_Ip_SendBlocking (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_D
   struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10998;
-  long unsigned int D.10991;
-  long unsigned int D.10984;
+  Flexcan_Ip_StatusType D.11000;
+  long unsigned int D.10993;
+  long unsigned int D.10986;
 
   <bb 2> :
   _1 = (int) instance;
@@ -2145,8 +2145,8 @@ FlexCAN_Ip_SendBlocking (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_D
   goto <bb 6>; [INV]
 
   <bb 4> :
-  D.10984 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10984 + timeElapsed;
+  D.10986 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10986 + timeElapsed;
   if (timeElapsed >= mS2Ticks)
     goto <bb 5>; [INV]
   else
@@ -2194,8 +2194,8 @@ FlexCAN_Ip_SendBlocking (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_D
   goto <bb 12>; [INV]
 
   <bb 10> :
-  D.10991 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10991 + timeElapsed;
+  D.10993 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10993 + timeElapsed;
   if (timeElapsed >= uS2Ticks)
     goto <bb 11>; [INV]
   else
@@ -2243,12 +2243,12 @@ FlexCAN_Ip_SendBlocking (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_D
   state->mbs[_21].state = 0;
 
   <bb 18> :
-  D.10998 = result;
+  D.11000 = result;
   timeStart = {CLOBBER};
 
   <bb 19> :
 <L21>:
-  return D.10998;
+  return D.11000;
 
 }
 
@@ -2447,7 +2447,7 @@ FlexCAN_Busoff_Error_IRQHandler (uint8 instance)
 FlexCAN_Ip_GetControllerRxErrorCounter (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  uint8 D.10946;
+  uint8 D.10948;
 
   <bb 2> :
   _1 = (int) instance;
@@ -2456,7 +2456,27 @@ FlexCAN_Ip_GetControllerRxErrorCounter (uint8 instance)
   DevAssert (_2);
   _3 = base->ECR;
   _4 = _3 >> 8;
-  D.10946 = (uint8) _4;
+  D.10948 = (uint8) _4;
+
+  <bb 3> :
+<L0>:
+  return D.10948;
+
+}
+
+
+FlexCAN_Ip_GetControllerTxErrorCounter (uint8 instance)
+{
+  const struct FLEXCAN_Type * base;
+  uint8 D.10946;
+
+  <bb 2> :
+  _1 = (int) instance;
+  base = Flexcan_Ip_apxBase[_1];
+  _2 = instance <= 5;
+  DevAssert (_2);
+  _3 = base->ECR;
+  D.10946 = (uint8) _3;
 
   <bb 3> :
 <L0>:
@@ -2465,41 +2485,21 @@ FlexCAN_Ip_GetControllerRxErrorCounter (uint8 instance)
 }
 
 
-FlexCAN_Ip_GetControllerTxErrorCounter (uint8 instance)
+FlexCAN_Ip_GetErrorStatus (uint8 instance)
 {
   const struct FLEXCAN_Type * base;
-  uint8 D.10944;
+  uint32 D.10944;
 
   <bb 2> :
   _1 = (int) instance;
   base = Flexcan_Ip_apxBase[_1];
   _2 = instance <= 5;
   DevAssert (_2);
-  _3 = base->ECR;
-  D.10944 = (uint8) _3;
+  D.10944 = base->ESR1;
 
   <bb 3> :
 <L0>:
   return D.10944;
-
-}
-
-
-FlexCAN_Ip_GetErrorStatus (uint8 instance)
-{
-  const struct FLEXCAN_Type * base;
-  uint32 D.10942;
-
-  <bb 2> :
-  _1 = (int) instance;
-  base = Flexcan_Ip_apxBase[_1];
-  _2 = instance <= 5;
-  DevAssert (_2);
-  D.10942 = base->ESR1;
-
-  <bb 3> :
-<L0>:
-  return D.10942;
 
 }
 
@@ -2734,7 +2734,7 @@ FlexCAN_Ip_GetTransferStatus (uint8 instance, uint8 mb_idx)
 {
   Flexcan_Ip_StatusType status;
   const struct Flexcan_Ip_StateType * state;
-  Flexcan_Ip_StatusType D.10862;
+  Flexcan_Ip_StatusType D.10864;
   int iftmp.6;
 
   <bb 2> :
@@ -2800,11 +2800,11 @@ FlexCAN_Ip_GetTransferStatus (uint8 instance, uint8 mb_idx)
   status = 2;
 
   <bb 13> :
-  D.10862 = status;
+  D.10864 = status;
 
   <bb 14> :
 <L13>:
-  return D.10862;
+  return D.10864;
 
 }
 
@@ -2816,7 +2816,7 @@ FlexCAN_Ip_ConfigRemoteResponseMb (uint8 instance, uint8 mb_idx, const struct Fl
   struct FLEXCAN_Type * pBase;
   struct Flexcan_Ip_MsbuffCodeStatusType cs;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10845;
+  Flexcan_Ip_StatusType D.10847;
 
   <bb 2> :
   result = 0;
@@ -2884,12 +2884,12 @@ FlexCAN_Ip_ConfigRemoteResponseMb (uint8 instance, uint8 mb_idx, const struct Fl
   result = FlexCAN_SetMsgBuffIntCmd (pBase, instance, _23, 1, _24);
 
   <bb 7> :
-  D.10845 = result;
+  D.10847 = result;
   cs = {CLOBBER};
 
   <bb 8> :
 <L7>:
-  return D.10845;
+  return D.10847;
 
 }
 
@@ -2901,7 +2901,7 @@ FlexCAN_Ip_ConfigEnhancedRxFifo_Privileged (uint8 instance, const struct Flexcan
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10837;
+  Flexcan_Ip_StatusType D.10839;
 
   <bb 2> :
   result = 0;
@@ -2971,11 +2971,11 @@ FlexCAN_Ip_ConfigEnhancedRxFifo_Privileged (uint8 instance, const struct Flexcan
   result = status;
 
   <bb 12> :
-  D.10837 = result;
+  D.10839 = result;
 
   <bb 13> :
 <L12>:
-  return D.10837;
+  return D.10839;
 
 }
 
@@ -2987,7 +2987,7 @@ FlexCAN_Ip_ConfigRxFifo_Privileged (uint8 instance, Flexcan_Ip_RxFifoIdElementFo
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType status;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10821;
+  Flexcan_Ip_StatusType D.10823;
 
   <bb 2> :
   _1 = instance <= 5;
@@ -3053,11 +3053,11 @@ FlexCAN_Ip_ConfigRxFifo_Privileged (uint8 instance, Flexcan_Ip_RxFifoIdElementFo
   result = status;
 
   <bb 12> :
-  D.10821 = result;
+  D.10823 = result;
 
   <bb 13> :
 <L12>:
-  return D.10821;
+  return D.10823;
 
 }
 
@@ -3066,7 +3066,7 @@ FlexCAN_Ip_RxFifoBlocking (uint8 instance, struct Flexcan_Ip_MsgBuffType * data,
 {
   const struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10807;
+  Flexcan_Ip_StatusType D.10809;
 
   <bb 2> :
   result = 0;
@@ -3120,11 +3120,11 @@ FlexCAN_Ip_RxFifoBlocking (uint8 instance, struct Flexcan_Ip_MsgBuffType * data,
   result = FlexCAN_ProccessLegacyRxFIFO (instance, timeout);
 
   <bb 10> :
-  D.10807 = result;
+  D.10809 = result;
 
   <bb 11> :
 <L12>:
-  return D.10807;
+  return D.10809;
 
 }
 
@@ -3133,7 +3133,7 @@ FlexCAN_Ip_RxFifo (uint8 instance, struct Flexcan_Ip_MsgBuffType * data)
 {
   const struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10791;
+  Flexcan_Ip_StatusType D.10793;
 
   <bb 2> :
   result = 0;
@@ -3166,11 +3166,11 @@ FlexCAN_Ip_RxFifo (uint8 instance, struct Flexcan_Ip_MsgBuffType * data)
   result = FlexCAN_StartRxMessageFifoData (instance, data);
 
   <bb 7> :
-  D.10791 = result;
+  D.10793 = result;
 
   <bb 8> :
 <L6>:
-  return D.10791;
+  return D.10793;
 
 }
 
@@ -3183,8 +3183,8 @@ FlexCAN_Ip_ReceiveBlocking (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgB
   uint32 timeElapsed;
   uint32 timeStart;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10782;
-  long unsigned int D.10768;
+  Flexcan_Ip_StatusType D.10784;
+  long unsigned int D.10770;
 
   <bb 2> :
   timeStart = 0;
@@ -3245,8 +3245,8 @@ FlexCAN_Ip_ReceiveBlocking (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgB
   FlexCAN_IRQHandlerRxMB (instance, _11);
 
   <bb 10> :
-  D.10768 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10768 + timeElapsed;
+  D.10770 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10770 + timeElapsed;
   if (timeElapsed >= mS2Ticks)
     goto <bb 11>; [INV]
   else
@@ -3312,12 +3312,12 @@ FlexCAN_Ip_ReceiveBlocking (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgB
   result = 3;
 
   <bb 21> :
-  D.10782 = result;
+  D.10784 = result;
   timeStart = {CLOBBER};
 
   <bb 22> :
 <L27>:
-  return D.10782;
+  return D.10784;
 
 }
 
@@ -3327,7 +3327,7 @@ FlexCAN_Ip_Receive (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgBuffType 
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10756;
+  Flexcan_Ip_StatusType D.10758;
 
   <bb 2> :
   _1 = (int) instance;
@@ -3355,11 +3355,11 @@ FlexCAN_Ip_Receive (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgBuffType 
   result = FlexCAN_SetMsgBuffIntCmd (base, instance, _5, 1, _6);
 
   <bb 5> :
-  D.10756 = result;
+  D.10758 = result;
 
   <bb 6> :
 <L4>:
-  return D.10756;
+  return D.10758;
 
 }
 
@@ -3370,7 +3370,7 @@ FlexCAN_Ip_ConfigRxMb (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_Dat
   struct FLEXCAN_Type * base;
   struct Flexcan_Ip_MsbuffCodeStatusType cs;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10749;
+  Flexcan_Ip_StatusType D.10751;
 
   <bb 2> :
   eResult = 0;
@@ -3414,12 +3414,12 @@ FlexCAN_Ip_ConfigRxMb (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_Dat
   FlexCAN_SetRxMsgBuff (base, _14, &cs, msg_id);
 
   <bb 5> :
-  D.10749 = eResult;
+  D.10751 = eResult;
   cs = {CLOBBER};
 
   <bb 6> :
 <L4>:
-  return D.10749;
+  return D.10751;
 
 }
 
@@ -3429,7 +3429,7 @@ FlexCAN_Ip_Send (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_DataInfoT
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10742;
+  Flexcan_Ip_StatusType D.10744;
 
   <bb 2> :
   result = 1;
@@ -3469,11 +3469,11 @@ FlexCAN_Ip_Send (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_DataInfoT
   result = FlexCAN_SetMsgBuffIntCmd (base, instance, _9, 1, _10);
 
   <bb 6> :
-  D.10742 = result;
+  D.10744 = result;
 
   <bb 7> :
 <L6>:
-  return D.10742;
+  return D.10744;
 
 }
 
@@ -3483,7 +3483,7 @@ FlexCAN_Ip_Init_Privileged (uint8 Flexcan_Ip_u8Instance, struct Flexcan_Ip_State
   uint32 i;
   struct FLEXCAN_Type * pBase;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10734;
+  Flexcan_Ip_StatusType D.10736;
 
   <bb 2> :
   eResult = 0;
@@ -3541,11 +3541,11 @@ FlexCAN_Ip_Init_Privileged (uint8 Flexcan_Ip_u8Instance, struct Flexcan_Ip_State
   Flexcan_Ip_apxState[_11] = Flexcan_Ip_pState;
 
   <bb 7> :
-  D.10734 = eResult;
+  D.10736 = eResult;
 
   <bb 8> :
 <L5>:
-  return D.10734;
+  return D.10736;
 
 }
 
@@ -3638,8 +3638,8 @@ FlexCAN_AbortTxTransfer (uint8 u8Instance, uint8 mb_idx)
   Flexcan_Ip_StatusType result;
   struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * pBase;
-  Flexcan_Ip_StatusType D.10720;
-  long unsigned int D.10711;
+  Flexcan_Ip_StatusType D.10722;
+  long unsigned int D.10713;
 
   <bb 2> :
   _1 = (int) u8Instance;
@@ -3664,8 +3664,8 @@ FlexCAN_AbortTxTransfer (uint8 u8Instance, uint8 mb_idx)
   goto <bb 5>; [INV]
 
   <bb 3> :
-  D.10711 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10711 + timeElapsed;
+  D.10713 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10713 + timeElapsed;
   if (timeElapsed >= uS2Ticks)
     goto <bb 4>; [INV]
   else
@@ -3717,12 +3717,12 @@ FlexCAN_AbortTxTransfer (uint8 u8Instance, uint8 mb_idx)
   FlexCAN_ClearMsgBuffIntStatusFlag (pBase, _11);
   _12 = (int) mb_idx;
   state->mbs[_12].state = 0;
-  D.10720 = result;
+  D.10722 = result;
   timeStart = {CLOBBER};
 
   <bb 12> :
 <L12>:
-  return D.10720;
+  return D.10722;
 
 }
 
@@ -3852,7 +3852,7 @@ FlexCAN_ProcessIRQHandlerEnhancedRxFIFO (uint8 u8Instance, boolean bIsSpuriousIn
   uint32 u32intType;
   const struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
-  boolean D.10915;
+  boolean D.10917;
 
   <bb 2> :
   _1 = (int) u8Instance;
@@ -3910,11 +3910,11 @@ FlexCAN_ProcessIRQHandlerEnhancedRxFIFO (uint8 u8Instance, boolean bIsSpuriousIn
     goto <bb 11>; [INV]
 
   <bb 11> :
-  D.10915 = bIsSpuriousInt;
+  D.10917 = bIsSpuriousInt;
 
   <bb 12> :
 <L13>:
-  return D.10915;
+  return D.10917;
 
 }
 
@@ -4279,7 +4279,7 @@ FlexCAN_StartRxMessageFifoData (uint8 instance, struct Flexcan_Ip_MsgBuffType * 
   Flexcan_Ip_StatusType eResult;
   struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.10668;
+  Flexcan_Ip_StatusType D.10670;
 
   <bb 2> :
   base = 0B;
@@ -4342,11 +4342,11 @@ FlexCAN_StartRxMessageFifoData (uint8 instance, struct Flexcan_Ip_MsgBuffType * 
   FlexCAN_SetMsgBuffIntCmd (base, instance, 5, 1, _11);
 
   <bb 10> :
-  D.10668 = eResult;
+  D.10670 = eResult;
 
   <bb 11> :
 <L10>:
-  return D.10668;
+  return D.10670;
 
 }
 
@@ -4358,7 +4358,7 @@ FlexCAN_StartSendData (uint8 Flexcan_Ip_u8Instance, uint8 mb_idx, const struct F
   struct Flexcan_Ip_StateType * state;
   struct Flexcan_Ip_MsbuffCodeStatusType cs;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10655;
+  Flexcan_Ip_StatusType D.10657;
 
   <bb 2> :
   eResult = 0;
@@ -4443,12 +4443,12 @@ FlexCAN_StartSendData (uint8 Flexcan_Ip_u8Instance, uint8 mb_idx, const struct F
   FlexCAN_SetTxMsgBuff (pMbAddr, &cs, msg_id, mb_data, 0);
 
   <bb 10> :
-  D.10655 = eResult;
+  D.10657 = eResult;
   cs = {CLOBBER};
 
   <bb 11> :
 <L10>:
-  return D.10655;
+  return D.10657;
 
 }
 
@@ -4458,7 +4458,7 @@ FlexCAN_StartRxMessageBufferData (uint8 instance, uint8 mb_idx, struct Flexcan_I
   struct Flexcan_Ip_StateType * state;
   const struct FLEXCAN_Type * base;
   Flexcan_Ip_StatusType result;
-  Flexcan_Ip_StatusType D.10644;
+  Flexcan_Ip_StatusType D.10646;
 
   <bb 2> :
   result = 0;
@@ -4501,11 +4501,11 @@ FlexCAN_StartRxMessageBufferData (uint8 instance, uint8 mb_idx, struct Flexcan_I
   state->mbs[_11].isPolling = isPolling;
 
   <bb 7> :
-  D.10644 = result;
+  D.10646 = result;
 
   <bb 8> :
 <L6>:
-  return D.10644;
+  return D.10646;
 
 }
 
@@ -4519,8 +4519,8 @@ FlexCAN_ProccessLegacyRxFIFO (uint8 u8Instance, uint32 u32TimeoutMs)
   struct FLEXCAN_Type * pBase;
   struct Flexcan_Ip_StateType * pState;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10603;
-  long unsigned int D.10596;
+  Flexcan_Ip_StatusType D.10605;
+  long unsigned int D.10598;
 
   <bb 2> :
   eResult = 0;
@@ -4568,8 +4568,8 @@ FlexCAN_ProccessLegacyRxFIFO (uint8 u8Instance, uint32 u32TimeoutMs)
     goto <bb 9>; [INV]
 
   <bb 9> :
-  D.10596 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10596 + timeElapsed;
+  D.10598 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10598 + timeElapsed;
   if (timeElapsed >= mS2Ticks)
     goto <bb 10>; [INV]
   else
@@ -4626,12 +4626,12 @@ FlexCAN_ProccessLegacyRxFIFO (uint8 u8Instance, uint32 u32TimeoutMs)
   eResult = 1;
 
   <bb 19> :
-  D.10603 = eResult;
+  D.10605 = eResult;
   timeStart = {CLOBBER};
 
   <bb 20> :
 <L21>:
-  return D.10603;
+  return D.10605;
 
 }
 
@@ -4645,8 +4645,8 @@ FlexCAN_ProccessEnhancedRxFifo (uint8 u8Instance, uint32 u32TimeoutMs)
   struct FLEXCAN_Type * pBase;
   struct Flexcan_Ip_StateType * pState;
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10587;
-  long unsigned int D.10580;
+  Flexcan_Ip_StatusType D.10589;
+  long unsigned int D.10582;
 
   <bb 2> :
   eResult = 0;
@@ -4694,8 +4694,8 @@ FlexCAN_ProccessEnhancedRxFifo (uint8 u8Instance, uint32 u32TimeoutMs)
     goto <bb 9>; [INV]
 
   <bb 9> :
-  D.10580 = OsIf_GetElapsed (&timeStart, 0);
-  timeElapsed = D.10580 + timeElapsed;
+  D.10582 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed = D.10582 + timeElapsed;
   if (timeElapsed >= mS2Ticks)
     goto <bb 10>; [INV]
   else
@@ -4747,12 +4747,12 @@ FlexCAN_ProccessEnhancedRxFifo (uint8 u8Instance, uint32 u32TimeoutMs)
   eResult = 1;
 
   <bb 19> :
-  D.10587 = eResult;
+  D.10589 = eResult;
   timeStart = {CLOBBER};
 
   <bb 20> :
 <L21>:
-  return D.10587;
+  return D.10589;
 
 }
 
@@ -4762,7 +4762,7 @@ FlexCAN_StartRxMessageEnhancedFifoData (uint8 instance, struct Flexcan_Ip_MsgBuf
   Flexcan_Ip_StatusType eResult;
   struct Flexcan_Ip_StateType * state;
   struct FLEXCAN_Type * base;
-  Flexcan_Ip_StatusType D.10574;
+  Flexcan_Ip_StatusType D.10576;
 
   <bb 2> :
   _1 = (int) instance;
@@ -4813,11 +4813,11 @@ FlexCAN_StartRxMessageEnhancedFifoData (uint8 instance, struct Flexcan_Ip_MsgBuf
   state->enhancedFifoOutput.isPolling = 1;
 
   <bb 9> :
-  D.10574 = eResult;
+  D.10576 = eResult;
 
   <bb 10> :
 <L9>:
-  return D.10574;
+  return D.10576;
 
 }
 
@@ -4913,7 +4913,7 @@ FlexCAN_InitBaudrate (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_Confi
 FlexCAN_InitController (uint8 Instance, struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
 {
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10533;
+  Flexcan_Ip_StatusType D.10535;
 
   <bb 2> :
   eResult = 0;
@@ -4965,11 +4965,11 @@ FlexCAN_InitController (uint8 Instance, struct FLEXCAN_Type * pBase, const struc
   eResult = FlexCAN_InitCtroll (pBase, Flexcan_Ip_pData);
 
   <bb 9> :
-  D.10533 = eResult;
+  D.10535 = eResult;
 
   <bb 10> :
 <L9>:
-  return D.10533;
+  return D.10535;
 
 }
 
@@ -4977,7 +4977,7 @@ FlexCAN_InitController (uint8 Instance, struct FLEXCAN_Type * pBase, const struc
 FlexCAN_InitCtroll (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
 {
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10518;
+  Flexcan_Ip_StatusType D.10520;
 
   <bb 2> :
   eResult = 0;
@@ -5017,11 +5017,11 @@ FlexCAN_InitCtroll (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigT
   FlexCAN_Disable (pBase);
 
   <bb 8> :
-  D.10518 = eResult;
+  D.10520 = eResult;
 
   <bb 9> :
 <L7>:
-  return D.10518;
+  return D.10520;
 
 }
 
@@ -5029,7 +5029,7 @@ FlexCAN_InitCtroll (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigT
 FlexCAN_InitRxFifo (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
 {
   Flexcan_Ip_StatusType eResult;
-  Flexcan_Ip_StatusType D.10509;
+  Flexcan_Ip_StatusType D.10511;
 
   <bb 2> :
   eResult = 0;
@@ -5063,11 +5063,11 @@ FlexCAN_InitRxFifo (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigT
   eResult = FlexCAN_EnableEnhancedRxFifo (pBase, _4, _5, _6);
 
   <bb 7> :
-  D.10509 = eResult;
+  D.10511 = eResult;
 
   <bb 8> :
 <L6>:
-  return D.10509;
+  return D.10511;
 
 }
 
@@ -5148,7 +5148,7 @@ FlexCAN_SetRegDefaultVal (struct FLEXCAN_Type * base)
 
 FlexCAN_GetEnhancedRxFIFOIntStatusFlag (const struct FLEXCAN_Type * base, uint32 intFlag)
 {
-  uint8 D.10917;
+  uint8 D.10919;
 
   <bb 2> :
   _1 = base->ERFIER;
@@ -5161,11 +5161,11 @@ FlexCAN_GetEnhancedRxFIFOIntStatusFlag (const struct FLEXCAN_Type * base, uint32
   _8 = (int) _7;
   _9 = _8 & 31;
   _10 = _6 >> _9;
-  D.10917 = (uint8) _10;
+  D.10919 = (uint8) _10;
 
   <bb 3> :
 <L0>:
-  return D.10917;
+  return D.10919;
 
 }
 
@@ -5182,7 +5182,7 @@ FlexCAN_ClearEnhancedRxFifoIntStatusFlag (struct FLEXCAN_Type * base, uint32 int
 
 FlexCAN_GetEnhancedRxFIFOStatusFlag (const struct FLEXCAN_Type * base, uint32 intFlag)
 {
-  uint8 D.10590;
+  uint8 D.10592;
 
   <bb 2> :
   _1 = base->ERFSR;
@@ -5195,11 +5195,11 @@ FlexCAN_GetEnhancedRxFIFOStatusFlag (const struct FLEXCAN_Type * base, uint32 in
   _8 = (int) _7;
   _9 = _8 & 31;
   _10 = _6 >> _9;
-  D.10590 = (uint8) _10;
+  D.10592 = (uint8) _10;
 
   <bb 3> :
 <L0>:
-  return D.10590;
+  return D.10592;
 
 }
 
@@ -5227,16 +5227,16 @@ FlexCAN_SetEnhancedRxFifoIntAll (struct FLEXCAN_Type * base, boolean enable)
 
 FlexCAN_IsEnhancedRxFifoEnabled (const struct FLEXCAN_Type * base)
 {
-  boolean D.10793;
+  boolean D.10795;
 
   <bb 2> :
   _1 = base->ERFCR;
   _2 = (signed int) _1;
-  D.10793 = _2 < 0;
+  D.10795 = _2 < 0;
 
   <bb 3> :
 <L0>:
-  return D.10793;
+  return D.10795;
 
 }
 
@@ -5283,16 +5283,16 @@ FlexCAN_SetTxArbitrationStartDelay (struct FLEXCAN_Type * base, uint8 tasd)
 
 FlexCAN_IsFreezeMode (const struct FLEXCAN_Type * base)
 {
-  boolean D.10823;
+  boolean D.10825;
 
   <bb 2> :
   _1 = base->MCR;
   _2 = _1 & 16777216;
-  D.10823 = _2 != 0;
+  D.10825 = _2 != 0;
 
   <bb 3> :
 <L0>:
-  return D.10823;
+  return D.10825;
 
 }
 
@@ -5319,7 +5319,7 @@ FlexCAN_GetMsgBuffIntStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuf
 {
   uint32 mask;
   uint8 flag;
-  uint8 D.10903;
+  uint8 D.10905;
 
   <bb 2> :
   flag = 0;
@@ -5370,60 +5370,60 @@ FlexCAN_GetMsgBuffIntStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuf
   flag = _15 & 1;
 
   <bb 8> :
-  D.10903 = flag;
+  D.10905 = flag;
 
   <bb 9> :
 <L9>:
-  return D.10903;
+  return D.10905;
 
 }
 
 
 RxFifoOcuppiedLastMsgBuff (uint32 x)
 {
-  uint32 D.10730;
+  uint32 D.10732;
 
   <bb 2> :
   _1 = x + 1;
   _2 = _1 * 8;
   _3 = _2 / 4;
-  D.10730 = _3 + 5;
+  D.10732 = _3 + 5;
 
   <bb 3> :
 <L0>:
-  return D.10730;
+  return D.10732;
 
 }
 
 
 FlexCAN_IsListenOnlyModeEnabled (const struct FLEXCAN_Type * base)
 {
-  boolean D.10744;
+  boolean D.10746;
 
   <bb 2> :
   _1 = base->CTRL1;
   _2 = _1 & 8;
-  D.10744 = _2 != 0;
+  D.10746 = _2 != 0;
 
   <bb 3> :
 <L0>:
-  return D.10744;
+  return D.10746;
 
 }
 
 
 FlexCAN_IsFDEnabled (const struct FLEXCAN_Type * base)
 {
-  boolean D.11197;
+  boolean D.11199;
 
   <bb 2> :
   _1 = base->MCR;
   _2 = _1 & 2048;
-  D.11197 = _2 != 0;
+  D.11199 = _2 != 0;
 
   <bb 3> :
 <L0>:
-  return D.11197;
+  return D.11199;
 
 }
 
@@ -5511,32 +5511,32 @@ FlexCAN_EnhCbtEnable (struct FLEXCAN_Type * base, boolean enableCBT)
 
 FlexCAN_IsEnhCbtEnabled (const struct FLEXCAN_Type * pBase)
 {
-  boolean D.11165;
+  boolean D.11167;
 
   <bb 2> :
   _1 = pBase->CTRL2;
   _2 = _1 & 8192;
-  D.11165 = _2 != 0;
+  D.11167 = _2 != 0;
 
   <bb 3> :
 <L0>:
-  return D.11165;
+  return D.11167;
 
 }
 
 
 FlexCAN_IsExCbtEnabled (const struct FLEXCAN_Type * pBase)
 {
-  boolean D.11155;
+  boolean D.11157;
 
   <bb 2> :
   _1 = pBase->CBT;
   _2 = (signed int) _1;
-  D.11155 = _2 < 0;
+  D.11157 = _2 < 0;
 
   <bb 3> :
 <L0>:
-  return D.11155;
+  return D.11157;
 
 }
 
@@ -5849,7 +5849,7 @@ FlexCAN_SetFDTimeSegments (struct FLEXCAN_Type * base, const struct Flexcan_Ip_T
 FlexCAN_GetBuffStatusImask (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
 {
   uint32 u32Imask;
-  uint8 D.10940;
+  uint8 D.10942;
 
   <bb 2> :
   u32Imask = 0;
@@ -5897,11 +5897,11 @@ FlexCAN_GetBuffStatusImask (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
   u32Imask = _14 >> _15;
 
   <bb 8> :
-  D.10940 = (uint8) u32Imask;
+  D.10942 = (uint8) u32Imask;
 
   <bb 9> :
 <L9>:
-  return D.10940;
+  return D.10942;
 
 }
 
@@ -5909,7 +5909,7 @@ FlexCAN_GetBuffStatusImask (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
 FlexCAN_GetBuffStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
 {
   uint32 flag;
-  uint8 D.10615;
+  uint8 D.10617;
 
   <bb 2> :
   flag = 0;
@@ -5957,11 +5957,11 @@ FlexCAN_GetBuffStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
   flag = _14 >> _15;
 
   <bb 8> :
-  D.10615 = (uint8) flag;
+  D.10617 = (uint8) flag;
 
   <bb 9> :
 <L9>:
-  return D.10615;
+  return D.10617;
 
 }
 
@@ -6114,16 +6114,16 @@ FlexCAN_DisableMemErrorDetection (struct FLEXCAN_Type * base)
 
 FlexCAN_IsEnabled (const struct FLEXCAN_Type * pBase)
 {
-  boolean D.10535;
+  boolean D.10537;
 
   <bb 2> :
   _1 = pBase->MCR;
   _2 = (signed int) _1;
-  D.10535 = _2 >= 0;
+  D.10537 = _2 >= 0;
 
   <bb 3> :
 <L0>:
-  return D.10535;
+  return D.10537;
 
 }
 

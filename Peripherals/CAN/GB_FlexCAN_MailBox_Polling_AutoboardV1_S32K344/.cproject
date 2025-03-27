@@ -176,7 +176,7 @@
 						<entry excluding="Debugger|Linker_Files" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTD"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="board"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="generate"/>
+						<entry excluding="src/FlexCAN_Ip_Sa_PBcfg.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="generate"/>
 						<entry excluding="example2.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
@@ -358,7 +358,7 @@
 						<entry excluding="Debugger|Linker_Files" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTD"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="board"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="generate"/>
+						<entry excluding="src/FlexCAN_Ip_Sa_PBcfg.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="generate"/>
 						<entry excluding="example1.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
@@ -373,7 +373,7 @@
 	<storageModule moduleId="org.eclipse.embsys" parent_project="true" register_architecture="" register_board="---  none ---" register_chip="" register_core="" register_vendor=""/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.core">
-		<sdkComponents>platform.driver.port;platform.driver.rte_port;platform.driver.clock;platform.driver.rte_mcu;platform.driver.det;platform.driver.osif;platform.driver.siul2_port;platform.driver.FlexCAN;platform.driver.rte_can</sdkComponents>
+		<sdkComponents>platform.driver.clock;platform.driver.rte_mcu;platform.driver.det;platform.driver.osif;platform.driver.port;platform.driver.rte_port;platform.driver.FlexCAN;platform.driver.rte_can;platform.driver.siul2_port</sdkComponents>
 	</storageModule>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.internal.core.toolchainSettings">
 		<COND_TOOLCHAIN_LIBRARIES/>
@@ -389,10 +389,10 @@
 		<configuration configurationName="Release_FLASH">
 			<resource resourceType="PROJECT" workspacePath="/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344"/>
 		</configuration>
-		<configuration configurationName="Release_RAM">
+		<configuration configurationName="Example 1">
 			<resource resourceType="PROJECT" workspacePath="/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344"/>
 		</configuration>
-		<configuration configurationName="Example 1">
+		<configuration configurationName="Release_RAM">
 			<resource resourceType="PROJECT" workspacePath="/GB_FlexCAN_MailBox_Polling_AutoboardV1_S32K344"/>
 		</configuration>
 		<configuration configurationName="Example 2">

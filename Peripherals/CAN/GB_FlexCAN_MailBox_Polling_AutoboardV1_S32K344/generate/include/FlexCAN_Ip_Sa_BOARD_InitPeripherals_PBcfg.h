@@ -72,10 +72,13 @@ extern "C"{
 *                                      DEFINES AND MACROS
 ==================================================================================================*/
 #define FLEXCAN_IP_SA_PB_CFG \
-extern const Flexcan_Ip_ConfigType FlexCAN_Config0; 
+extern const Flexcan_Ip_ConfigType FlexCAN_Config0; \
+extern const Flexcan_Ip_ConfigType FlexCAN_Config1; 
 #define INST_FLEXCAN_4 4U
+#define INST_FLEXCAN_0 0U
 #define FLEXCAN_IP_SA_STATE_PB_CFG \
-extern Flexcan_Ip_StateType FlexCAN_State0; 
+extern Flexcan_Ip_StateType FlexCAN_State0; \
+extern Flexcan_Ip_StateType FlexCAN_State1; 
 
 #ifdef __cplusplus
 }

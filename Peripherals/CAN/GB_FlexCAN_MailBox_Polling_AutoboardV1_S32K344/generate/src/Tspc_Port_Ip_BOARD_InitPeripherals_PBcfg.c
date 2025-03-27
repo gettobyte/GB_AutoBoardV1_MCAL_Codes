@@ -112,6 +112,14 @@ const Tspc_Port_Ip_ObeGroupConfig aTspc_InitConfigArr_BOARD_InitPeripherals[NUM_
     {
         .obeGroupSelect = 0,
         .obeGroupIndex  = 65535
+    },
+    {
+        .obeGroupSelect = 0,
+        .obeGroupIndex  = 65535
+    },
+    {
+        .obeGroupSelect = 0,
+        .obeGroupIndex  = 65535
     }
 };
 #define PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
