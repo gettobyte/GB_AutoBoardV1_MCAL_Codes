@@ -33,7 +33,7 @@ G2B_CAN_S32K344.siz \
 all: G2B_CAN_S32K344.elf secondary-outputs
 
 # Tool invocations
-G2B_CAN_S32K344.elf: $(OBJS) C:/Users/gettobyte_kunal/workspaceS32DS.3.5_2/G2B_CAN_S32K344/Project_Settings/Linker_Files/linker_flash_s32k344.ld $(USER_OBJS)
+G2B_CAN_S32K344.elf: $(OBJS) C:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/Project_Settings/Linker_Files/linker_flash_s32k344.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "G2B_CAN_S32K344.elf" "@G2B_CAN_S32K344.args"  $(USER_OBJS)

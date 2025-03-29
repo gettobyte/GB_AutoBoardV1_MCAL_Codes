@@ -360,6 +360,16 @@
                   <data type="Version">0.1.0</data>
                </feature>
             </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.IntCtrl_Ip" description="IntCtrl_Ip is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.IntCtrl_Ip" description="An unsupported version of the IntCtrl_Ip in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
          </dependencies>
          <generated_project_files>
             <file path="board/Siul2_Port_Ip_Cfg.c" update_enabled="true"/>
@@ -371,6 +381,8 @@
             <file path="generate/include/FlexCAN_Ip_Sa_PBcfg.h" update_enabled="true"/>
             <file path="generate/include/Igf_Port_Ip_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Igf_Port_Ip_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/IntCtrl_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/IntCtrl_Ip_CfgDefines.h" update_enabled="true"/>
             <file path="generate/include/OsIf_ArchCfg.h" update_enabled="true"/>
             <file path="generate/include/OsIf_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Port_Cfg.h" update_enabled="true"/>
@@ -382,6 +394,7 @@
             <file path="generate/include/modules.h" update_enabled="true"/>
             <file path="generate/src/FlexCAN_Ip_Sa_PBcfg.c" update_enabled="true"/>
             <file path="generate/src/Igf_Port_Ip_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/IntCtrl_Ip_Cfg.c" update_enabled="true"/>
             <file path="generate/src/OsIf_Cfg.c" update_enabled="true"/>
             <file path="generate/src/Port_Cfg.c" update_enabled="true"/>
             <file path="generate/src/Port_PBcfg.c" update_enabled="true"/>
@@ -570,17 +583,17 @@
                            <struct name="0">
                               <setting name="CanHwChannel" value="FLEXCAN_4"/>
                               <setting name="Name" value="FlexCAN_Config0"/>
-                              <setting name="max_num_mb" value="16"/>
+                              <setting name="max_num_mb" value="7"/>
                               <setting name="num_id_filters" value="FLEXCAN_RX_FIFO_ID_FILTERS_8"/>
                               <setting name="is_rx_fifo_needed" value="false"/>
-                              <setting name="fd_enable" value="false"/>
+                              <setting name="fd_enable" value="true"/>
                               <setting name="flexcanMode" value="FLEXCAN_NORMAL_MODE"/>
-                              <setting name="payload" value="FLEXCAN_PAYLOAD_SIZE_8"/>
+                              <setting name="payload" value="FLEXCAN_PAYLOAD_SIZE_64"/>
                               <setting name="transfer_type" value="FLEXCAN_RXFIFO_USING_INTERRUPTS"/>
                               <setting name="rxFifoDMAChannel" value="0"/>
                               <setting name="extCbtEnable" value="false"/>
                               <setting name="bitRateSwitch" value="false"/>
-                              <setting name="CanControllerFdISO" value="false"/>
+                              <setting name="CanControllerFdISO" value="true"/>
                               <setting name="CanControllerAutoBusOff" value="true"/>
                               <setting name="CanRemoteRequestStore" value="false"/>
                               <setting name="timeStampSurce" value="FLEXCAN_CAN_CLK_TIMESTAMP_SRC"/>
@@ -603,7 +616,7 @@
                                  <setting name="flexcan_cfg_preDivider" value="5"/>
                                  <setting name="flexcan_cfg_rJumpwidth" value="2"/>
                               </struct>
-                              <setting name="FlexCanCallback" value="NULL_PTR"/>
+                              <setting name="FlexCanCallback" value="GB_MailBox_CallBack"/>
                               <setting name="FlexCanErrorCallback" value="NULL_PTR"/>
                               <setting name="num_enhanced_std_id_filters" value="0"/>
                               <setting name="num_enhanced_ext_id_filters" value="0"/>
@@ -627,6 +640,34 @@
                            <setting name="timeout_type" value="OSIF_COUNTER_DUMMY"/>
                            <setting name="timeout_value" value="10000"/>
                         </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="IntCtrl_Ip" uuid="81c3c7a0-be9c-4e3c-a465-14982a628872" type="IntCtrl_Ip" type_id="IntCtrl_Ip" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="IntCtrl_Ip">
+                        <setting name="Name" value="IntCtrl_Ip"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="IntCtrlConfigGeneral">
+                           <setting name="Name" value="IntCtrlConfigGeneral"/>
+                           <setting name="IntCtrlDevErrorDetect" value="true"/>
+                           <setting name="PlatformEnableUserModeSupport" value="false"/>
+                        </struct>
+                        <array name="IntCtrlConfig">
+                           <struct name="0">
+                              <setting name="Name" value="IntCtrlConfig_0"/>
+                              <array name="PlatformIsrConfig">
+                                 <struct name="0">
+                                    <setting name="Name" value="PlatformIsrConfig_0"/>
+                                    <setting name="IsrName" value="FlexCAN4_1_IRQn"/>
+                                    <setting name="IsrEnabled" value="true"/>
+                                    <setting name="IsrPriority" value="0"/>
+                                    <setting name="IsrHandler" value="undefined_handler"/>
+                                 </struct>
+                              </array>
+                           </struct>
+                        </array>
                      </config_set>
                   </instance>
                </instances>

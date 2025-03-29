@@ -18,6 +18,10 @@
 #include "FlexCAN_Ip.h"
 #include "Port.h"
 
+#include "IntCtrl_Ip.h"
+
+extern void CAN4_ORED_0_31_MB_IRQHandler(void);
+
 
 #define MSG_ID 800u
 #define TX_MB_IDX 0
@@ -36,6 +40,19 @@ void TestDelay(uint32 delay)
    DelayTimer=0;
 }
 
+GB_MailBox_CallBack(uint8 instance, Flexcan_Ip_EventType eventType,
+                  uint32 buffIdx, const Flexcan_Ip_StateType * flexcanState)
+{
+#if GB_RxMailBox_CALLBACK
+	Flexcan_Ip_StateType * state = flexcanState;
+	state->mbs[buffIdx].state = FLEXCAN_MB_RX_BUSY;
+#else
+
+	uint8_t callback = 0;
+	/* Do Nothing */
+#endif
+}
+
 
 int main(void)
 {
@@ -51,13 +68,40 @@ int main(void)
     Clock_Ip_DistributePll();
 #endif
 
+
+    IntCtrl_Ip_EnableIrq(FlexCAN4_1_IRQn);
+    IntCtrl_Ip_InstallHandler(FlexCAN4_1_IRQn, CAN4_ORED_0_31_MB_IRQHandler, NULL_PTR);
+
+
     /* Initialize all pins using the Port driver */
     Port_Init(NULL_PTR);
 
-    Flexcan_Ip_DataInfoType rx_info = {
+
+    Flexcan_Ip_DataInfoType tx_info_polling_std = {
             .msg_id_type = FLEXCAN_MSG_ID_STD,
             .data_length = 8u,
             .is_polling = TRUE,
+            .is_remote = FALSE
+    };
+
+    Flexcan_Ip_DataInfoType tx_info_inter_std = {
+            .msg_id_type = FLEXCAN_MSG_ID_STD,
+            .data_length = 8u,
+            .is_polling = FALSE,
+            .is_remote = FALSE
+    };
+
+    Flexcan_Ip_DataInfoType tx_info_polling_ext = {
+            .msg_id_type = FLEXCAN_MSG_ID_EXT,
+            .data_length = 64u,
+            .is_polling = TRUE,
+            .is_remote = FALSE
+    };
+
+    Flexcan_Ip_DataInfoType tx_info_inter_ext = {
+            .msg_id_type = FLEXCAN_MSG_ID_EXT,
+            .data_length = 64u,
+            .is_polling = FALSE,
             .is_remote = FALSE
     };
 
@@ -67,8 +111,13 @@ int main(void)
 
    for(;;)
    {
-	   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, TX_MB_IDX, &rx_info, MSG_ID, (uint8 *)&dummyData, 2000);
-	   TestDelay(2000000);
+//	   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_polling_std, MSG_ID, (uint8 *)&dummyData, 2000);
+//	   TestDelay(2000000);
+//
+	   FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_inter_std, MSG_ID, (uint8 *)&dummyData);
+		   TestDelay(2000000);
+
+
    }
 
     return 0;

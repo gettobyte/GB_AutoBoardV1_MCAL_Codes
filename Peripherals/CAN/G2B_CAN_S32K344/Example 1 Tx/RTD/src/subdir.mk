@@ -25,6 +25,7 @@ C_SRCS += \
 ../RTD/src/FlexCAN_Ip_HwAccess.c \
 ../RTD/src/FlexCAN_Ip_Irq.c \
 ../RTD/src/Igf_Port_Ip.c \
+../RTD/src/IntCtrl_Ip.c \
 ../RTD/src/OsIf_Interrupts.c \
 ../RTD/src/OsIf_Timer.c \
 ../RTD/src/OsIf_Timer_System.c \
@@ -59,6 +60,7 @@ OBJS += \
 ./RTD/src/FlexCAN_Ip_HwAccess.o \
 ./RTD/src/FlexCAN_Ip_Irq.o \
 ./RTD/src/Igf_Port_Ip.o \
+./RTD/src/IntCtrl_Ip.o \
 ./RTD/src/OsIf_Interrupts.o \
 ./RTD/src/OsIf_Timer.o \
 ./RTD/src/OsIf_Timer_System.o \
@@ -93,6 +95,7 @@ C_DEPS += \
 ./RTD/src/FlexCAN_Ip_HwAccess.d \
 ./RTD/src/FlexCAN_Ip_Irq.d \
 ./RTD/src/Igf_Port_Ip.d \
+./RTD/src/IntCtrl_Ip.d \
 ./RTD/src/OsIf_Interrupts.d \
 ./RTD/src/OsIf_Timer.d \
 ./RTD/src/OsIf_Timer_System.d \

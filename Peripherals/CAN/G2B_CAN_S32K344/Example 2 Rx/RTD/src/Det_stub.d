@@ -6,13 +6,13 @@ RTD/src/Det_stub.o: ../RTD/src/Det_stub.c \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/StandardTypes.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/PlatformTypes.h \
- C\:/Users/gettobyte_kunal/workspaceS32DS.3.5_2/G2B_CAN_S32K344/generate/include/Soc_Ips.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Soc_Ips.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/IpVersionMacros.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Reg_eSys.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/OsIf_Internal.h \
- C\:/Users/gettobyte_kunal/workspaceS32DS.3.5_2/G2B_CAN_S32K344/generate/include/OsIf_Cfg.h \
- C\:/Users/gettobyte_kunal/workspaceS32DS.3.5_2/G2B_CAN_S32K344/generate/include/OsIf_ArchCfg.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/OsIf_Cfg.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/OsIf_ArchCfg.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/StandardTypes.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_SYSTICK.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_COMMON.h \
@@ -29,13 +29,13 @@ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/StandardTypes.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/PlatformTypes.h:
-C\:/Users/gettobyte_kunal/workspaceS32DS.3.5_2/G2B_CAN_S32K344/generate/include/Soc_Ips.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Soc_Ips.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/IpVersionMacros.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Reg_eSys.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/OsIf_Internal.h:
-C\:/Users/gettobyte_kunal/workspaceS32DS.3.5_2/G2B_CAN_S32K344/generate/include/OsIf_Cfg.h:
-C\:/Users/gettobyte_kunal/workspaceS32DS.3.5_2/G2B_CAN_S32K344/generate/include/OsIf_ArchCfg.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/OsIf_Cfg.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/OsIf_ArchCfg.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/StandardTypes.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_SYSTICK.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_COMMON.h:
