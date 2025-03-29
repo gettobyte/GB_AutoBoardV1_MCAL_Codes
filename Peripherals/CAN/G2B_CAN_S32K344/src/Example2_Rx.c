@@ -20,6 +20,39 @@
 
 #include "IntCtrl_Ip.h"
 
+  Flexcan_Ip_DataInfoType rx_info_polling_std = {
+               .msg_id_type = FLEXCAN_MSG_ID_STD,
+               .data_length = 8u,
+               .is_polling = TRUE,
+               .is_remote = FALSE
+       };
+
+       Flexcan_Ip_DataInfoType rx_info_inter_std = {
+               .msg_id_type = FLEXCAN_MSG_ID_STD,
+               .data_length = 8u,
+               .is_polling = FALSE,
+               .is_remote = FALSE
+       };
+
+       Flexcan_Ip_DataInfoType rx_info_polling_canfd = {
+   				.msg_id_type = FLEXCAN_MSG_ID_STD,
+   				.data_length = 64u,
+   				.fd_enable = TRUE,
+   				.fd_padding = 0xAA,
+   				.enable_brs = TRUE,
+   				.is_polling = TRUE,
+   				.is_remote = FALSE,
+   	};
+
+       Flexcan_Ip_DataInfoType rx_info_inter_canfd = {
+   				.msg_id_type = FLEXCAN_MSG_ID_STD,
+   				.data_length = 64u,
+   				.fd_enable = TRUE,
+   				.fd_padding = 0xAA,
+   				.enable_brs = TRUE,
+   				.is_polling = FALSE,
+   				.is_remote = FALSE,
+   	};
 extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 #define GB_RxMailBox_CALLBACK 1
 
@@ -62,48 +95,18 @@ int main(void)
     /* Initialize all pins using the Port driver */
     Port_Init(NULL_PTR);
 
-    Flexcan_Ip_DataInfoType rx_info_polling_std = {
-               .msg_id_type = FLEXCAN_MSG_ID_STD,
-               .data_length = 8u,
-               .is_polling = TRUE,
-               .is_remote = FALSE
-       };
-
-       Flexcan_Ip_DataInfoType rx_info_inter_std = {
-               .msg_id_type = FLEXCAN_MSG_ID_STD,
-               .data_length = 8u,
-               .is_polling = FALSE,
-               .is_remote = FALSE
-       };
-
-       Flexcan_Ip_DataInfoType rx_info_polling_ext = {
-               .msg_id_type = FLEXCAN_MSG_ID_EXT,
-               .data_length = 64u,
-               .is_polling = TRUE,
-               .is_remote = FALSE
-       };
-
-       Flexcan_Ip_DataInfoType rx_info_inter_ext = {
-               .msg_id_type = FLEXCAN_MSG_ID_EXT,
-               .data_length = 64u,
-               .is_polling = FALSE,
-               .is_remote = FALSE
-       };
-
-
     Flexcan_Ip_MsgBuffType rxData;
 
     FlexCAN_Ip_Init(INST_FLEXCAN_4, &FlexCAN_State0, &FlexCAN_Config0);
 
     FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
-    FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_inter_std, MSG_ID);
+    FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_inter_canfd, MSG_ID);
 
     FlexCAN_Ip_Receive(INST_FLEXCAN_4, RX_MB_IDX, &rxData, false);
 
    for(;;)
    {
 
-//
 //	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_polling_std, MSG_ID);
 //	 while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX, &rxData, true,1000));
 //     // clear the data received in rx buffer to Null
