@@ -33,6 +33,7 @@ src/Example2_Rx.o: ../src/Example2_Rx.c \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_RTC.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_CONFIGURATION_GPR.h \
  C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Clock_Ip_Cfg.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Clock_Ip_PBcfg.h \
  ../RTD/include/Clock_Ip_Types.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Mcu_MemMap.h \
  ../RTD/include/FlexCAN_Ip.h ../RTD/include/FlexCAN_Ip_DeviceReg.h \
@@ -131,6 +132,14 @@ src/Example2_Rx.o: ../src/Example2_Rx.c \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Devassert.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Mcal.h \
  ../RTD/include/Tspc_Port_Ip.h ../RTD/include/Tspc_Port_Ip_Types.h \
+ ../RTD/include/Lpspi_Ip.h ../RTD/include/Lpspi_Ip_Types.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Lpspi_Ip_Cfg.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Lpspi_Ip_Sa_PBcfg.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_LPSPI.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Spi_MemMap.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/S&M_Driv/inc/ST7789_low_level.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/S&M_Driv/inc/fonts.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/S&M_Driv/inc/ST7789_low_level.h \
  ../RTD/include/IntCtrl_Ip.h \
  C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/IntCtrl_Ip_Cfg.h \
  ../RTD/include/IntCtrl_Ip_TypesDef.h \
@@ -174,6 +183,7 @@ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_RTC.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_CONFIGURATION_GPR.h:
 C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Clock_Ip_Cfg.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Clock_Ip_PBcfg.h:
 ../RTD/include/Clock_Ip_Types.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Mcu_MemMap.h:
 ../RTD/include/FlexCAN_Ip.h:
@@ -276,6 +286,15 @@ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Mcal.h:
 ../RTD/include/Tspc_Port_Ip.h:
 ../RTD/include/Tspc_Port_Ip_Types.h:
+../RTD/include/Lpspi_Ip.h:
+../RTD/include/Lpspi_Ip_Types.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Lpspi_Ip_Cfg.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Lpspi_Ip_Sa_PBcfg.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_LPSPI.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Spi_MemMap.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/S&M_Driv/inc/ST7789_low_level.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/S&M_Driv/inc/fonts.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/S&M_Driv/inc/ST7789_low_level.h:
 ../RTD/include/IntCtrl_Ip.h:
 C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/IntCtrl_Ip_Cfg.h:
 ../RTD/include/IntCtrl_Ip_TypesDef.h:

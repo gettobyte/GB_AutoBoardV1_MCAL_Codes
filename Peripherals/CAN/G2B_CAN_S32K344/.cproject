@@ -36,6 +36,7 @@
 								<option id="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.libraries.2108164612" name="Libraries support" superClass="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.libraries" useByScannerDiscovery="false" value="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.libraries.newlib_nano_noio" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.2078144031" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../RTD/include"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/S&amp;M_Driv/inc&quot;"/>
 									<listOptionValue builtIn="false" value="${ProjDirPath}/generate/include"/>
 									<listOptionValue builtIn="false" value="${ProjDirPath}/RTD/include"/>
 									<listOptionValue builtIn="false" value="&quot;${PLATFORMSDK_S32K3_S32K344_M7_4.0.0_PATH}/RTD/BaseNXP_TS_T40D34M40I0R0/header&quot;"/>
@@ -168,6 +169,7 @@
 					<sourceEntries>
 						<entry excluding="Linker_Files|Debugger" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTD"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="S&amp;M_Driv"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="board"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="generate"/>
 						<entry excluding="Example2_Rx.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
@@ -733,6 +735,7 @@
 								<option id="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.libraries.25249839" name="Libraries support" superClass="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.libraries" useByScannerDiscovery="false" value="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.libraries.newlib_nano_noio" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1724616771" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../RTD/include"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/S&amp;M_Driv/inc&quot;"/>
 									<listOptionValue builtIn="false" value="${ProjDirPath}/generate/include"/>
 									<listOptionValue builtIn="false" value="${ProjDirPath}/RTD/include"/>
 									<listOptionValue builtIn="false" value="&quot;${PLATFORMSDK_S32K3_S32K344_M7_4.0.0_PATH}/RTD/BaseNXP_TS_T40D34M40I0R0/header&quot;"/>
@@ -865,6 +868,7 @@
 					<sourceEntries>
 						<entry excluding="Linker_Files|Debugger" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTD"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="S&amp;M_Driv"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="board"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="generate"/>
 						<entry excluding="Example1_Tx.c|main.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
@@ -904,7 +908,7 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.core">
-		<sdkComponents>platform.driver.osif;platform.driver.det;platform.driver.port;platform.driver.rte_port;platform.driver.FlexCAN;platform.driver.rte_can;platform.driver.clock;platform.driver.rte_mcu;platform.driver.IntCtrl_Ip</sdkComponents>
+		<sdkComponents>platform.driver.osif;platform.driver.det;platform.driver.port;platform.driver.rte_port;platform.driver.FlexCAN;platform.driver.rte_can;platform.driver.clock;platform.driver.rte_mcu;platform.driver.IntCtrl_Ip;platform.driver.lpspi;platform.driver.rte_spi;platform.driver.mcu;platform.driver.dio;platform.driver.rte_dio</sdkComponents>
 	</storageModule>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.internal.core.toolchainSettings">
 		<COND_TOOLCHAIN_LIBRARIES/>
@@ -914,14 +918,11 @@
 		<COND_TOOLCHAIN_CUSTOM_OPTION/>
 	</storageModule>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.internal.core.toolchainScriptProfile">
-		<COND_TOOLCHAIN_COMPONENTS_OPTION>COPY=platform.driver.clock;platform.driver.osif;platform.driver.port;platform.driver.FlexCAN;platform.driver.IntCtrl_Ip</COND_TOOLCHAIN_COMPONENTS_OPTION>
+		<COND_TOOLCHAIN_COMPONENTS_OPTION>COPY=platform.driver.clock;platform.driver.osif;platform.driver.mcu;platform.driver.port;platform.driver.FlexCAN;platform.driver.IntCtrl_Ip;platform.driver.lpspi;platform.driver.dio</COND_TOOLCHAIN_COMPONENTS_OPTION>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		<scannerConfigBuildInfo instanceId="com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.10.2.exe.debug.882774253;com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.10.2.exe.debug.882774253.;com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.9.2.tool.c.compiler.1669589319;cdt.managedbuild.tool.gnu.c.compiler.input.2045607763">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.10.2.exe.debug.882774253.239893348;com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.10.2.exe.debug.882774253.239893348.;com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.9.2.tool.c.compiler.418396719;cdt.managedbuild.tool.gnu.c.compiler.input.1247388765">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.10.2.exe.release.ram.319069304;com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.10.2.exe.release.ram.319069304.;com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.9.2.tool.c.compiler.585243176;cdt.managedbuild.tool.gnu.c.compiler.input.1960495574">

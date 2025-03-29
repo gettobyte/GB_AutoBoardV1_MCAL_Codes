@@ -22,6 +22,7 @@ C_DEPS :=
 SUBDIRS := \
 Project_Settings/Startup_Code \
 RTD/src \
+S&M_Driv/src \
 board \
 generate/src \
 src \

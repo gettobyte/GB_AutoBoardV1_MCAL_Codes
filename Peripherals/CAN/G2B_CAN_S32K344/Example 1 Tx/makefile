@@ -11,6 +11,7 @@ RM := rm -rf
 -include src/subdir.mk
 -include generate/src/subdir.mk
 -include board/subdir.mk
+-include S&M_Driv/src/subdir.mk
 -include RTD/src/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
 -include subdir.mk

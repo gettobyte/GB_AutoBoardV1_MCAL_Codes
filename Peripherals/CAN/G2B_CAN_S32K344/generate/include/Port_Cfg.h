@@ -3317,16 +3317,20 @@ extern "C" {
 */
 #define PortConf_PortPin_PortPin_0 0
 #define PortConf_PortPin_PortPin_1 1
+#define PortConf_PortPin_ST7789_MOSI 2
+#define PortConf_PortPin_ST7789_CLK 3
+#define PortConf_PortPin_ST7789_CS 4
+#define PortConf_PortPin_ST7789_DC 5
 
 /**
 * @brief The maximum number of configured pins
 */
-#define PORT_MAX_CONFIGURED_PADS_U16   ((uint16)2)
+#define PORT_MAX_CONFIGURED_PADS_U16   ((uint16)6)
 
 /**
 * @brief Number of UnUsed pin array
 */
-#define PORT_MAX_UNUSED_PADS_U16    (212U)
+#define PORT_MAX_UNUSED_PADS_U16    (208U)
 /**
 * @brief Port driver Pre-Compile configuration switch
 */

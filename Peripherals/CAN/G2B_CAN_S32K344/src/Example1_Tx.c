@@ -17,8 +17,14 @@
 #include "Clock_Ip.h"
 #include "FlexCAN_Ip.h"
 #include "Port.h"
-
+#include "Lpspi_Ip.h"
+#include "ST7789_low_level.h"
+#include "fonts.h"
 #include "IntCtrl_Ip.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+
 
 extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 
@@ -42,6 +48,33 @@ void TestDelay(uint32 delay)
    }
    DelayTimer=0;
 }
+
+const char* uint8_to_stringhex(uint8 uint8_val[], size_t len)
+{
+//	char formattedString[len * 5];
+
+	char* formattedString = (char*) malloc(len *5);
+
+	char* ptr = formattedString;
+	for(size_t i = 0; i<len; i++)
+	{
+		if(i < len -1)
+		{
+			ptr += sprintf(ptr, "0x%02x, ", uint8_val[i]);
+		} else {
+			ptr += sprintf(ptr, "0x%02X", uint8_val[i]);
+		}
+	}
+
+	const char* constFormattedString = formattedString;
+
+	free(formattedString);
+
+	return constFormattedString;
+
+
+}
+
 
 Flexcan_Ip_DataInfoType tx_info_polling_std = {
         .msg_id_type = FLEXCAN_MSG_ID_STD,
@@ -91,21 +124,13 @@ GB_MailBox_CallBack(uint8 instance, Flexcan_Ip_EventType eventType,
 #endif
 }
 
+const char* string1;
 
 int main(void)
 {
 	Flexcan_Ip_StatusType FlexCAN_Api_Status;
     /* Write your code here */
-    Clock_Ip_Init(&Clock_Ip_aClockConfig[0]);
-
-#if defined (FEATURE_CLOCK_IP_HAS_SPLL_CLK)
-    while ( CLOCK_IP_PLL_LOCKED != Clock_Ip_GetPllStatus() )
-    {
-        /* Busy wait until the System PLL is locked */
-    }
-    Clock_Ip_DistributePll();
-#endif
-
+    Clock_Ip_Init(&Mcu_aClockConfigPB[0]);
 
     IntCtrl_Ip_EnableIrq(FlexCAN4_1_IRQn);
     IntCtrl_Ip_InstallHandler(FlexCAN4_1_IRQn, CAN4_ORED_0_31_MB_IRQHandler, NULL_PTR);
@@ -118,11 +143,28 @@ int main(void)
 
     FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
 
+
+    Lpspi_Ip_Init(&Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0_Instance_3);
+  	GB_ST7789_Init();
+
+  	TestDelay(700000);
+  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+  	ST7789_Fill_Color(ST77XX_RED);
+  	TestDelay(700000);
+
+
+    ST7789_WriteString(0, 80, "BMS VCU: MAster Sending Data", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
    for(;;)
    {
 //	   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_polling_std, MSG_ID, (uint8 *)&dummyData, 2000);
 //	   TestDelay(2000000);
 //
+
+		string1 = uint8_to_stringhex(dummyData_canfd, 20);
+		    ST7789_WriteString(0, 140, string1 , Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+
 	   FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_inter_canfd, MSG_ID, (uint8 *)&dummyData_canfd);
 		   TestDelay(2000000);
 

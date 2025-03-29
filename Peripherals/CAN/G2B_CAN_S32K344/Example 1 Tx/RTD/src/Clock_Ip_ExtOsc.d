@@ -34,6 +34,7 @@ RTD/src/Clock_Ip_ExtOsc.o: ../RTD/src/Clock_Ip_ExtOsc.c \
  C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/OsIf_Cfg.h \
  C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/OsIf_ArchCfg.h \
  C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Clock_Ip_Cfg.h \
+ C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Clock_Ip_PBcfg.h \
  ../RTD/include/Clock_Ip_Types.h \
  C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Mcu_MemMap.h \
  ../RTD/include/Clock_Ip_Specific.h \
@@ -74,6 +75,7 @@ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R
 C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/OsIf_Cfg.h:
 C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/OsIf_ArchCfg.h:
 C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Clock_Ip_Cfg.h:
+C\:/Users/gettobyte_kunal/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/CAN/G2B_CAN_S32K344/generate/include/Clock_Ip_PBcfg.h:
 ../RTD/include/Clock_Ip_Types.h:
 C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Mcu_MemMap.h:
 ../RTD/include/Clock_Ip_Specific.h:
