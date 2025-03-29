@@ -118,7 +118,7 @@ GB_MailBox_CallBack(uint8 instance, Flexcan_Ip_EventType eventType,
 				   	   if(FlexCAN_State0.mbs[RX_MB_IDX].pMBmessage->msgId == 800)
 				   		   {
 				   		      string1 = uint8_to_stringhex(&(FlexCAN_State0.mbs[RX_MB_IDX].pMBmessage->data), FlexCAN_State0.mbs[RX_MB_IDX].pMBmessage->dataLen);
-				   	           ST7789_WriteString(0, 150, string1 , Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+				   	           ST7789_WriteString(0, 150, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
 				   		   }
 				   	   memset(&FlexCAN_State0.mbs[MSG_ID].pMBmessage->cs, 0x0, sizeof(FlexCAN_State0.mbs[MSG_ID].pMBmessage->cs));
 			   	   }

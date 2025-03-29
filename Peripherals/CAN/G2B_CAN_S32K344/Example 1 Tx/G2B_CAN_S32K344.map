@@ -8302,22 +8302,21 @@ END GROUP
  .text          0x0040366c        0x0 ./generate/src/Ram_Ip_PBcfg.o
  .text          0x0040366c        0x0 ./generate/src/Siul2_Port_Ip_PBcfg.o
  .text          0x0040366c        0x0 ./generate/src/Tspc_Port_Ip_PBcfg.o
- .text          0x0040366c      0x1d0 ./src/Example1_Tx.o
+ .text          0x0040366c      0x1d4 ./src/Example1_Tx.o
                 0x0040366c                TestDelay
                 0x00403698                uint8_to_stringhex
                 0x0040372c                GB_MailBox_CallBack
                 0x00403748                main
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-malloc.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-freer.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-mallocr.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sbrkr.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sprintf.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-impure.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-mlock.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-vfprintf_i.o)
- .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
- *fill*         0x0040383c        0x4 
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-malloc.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-freer.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-mallocr.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sbrkr.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sprintf.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-impure.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-mlock.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .text          0x00403840        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
  .text          0x00403840       0xa0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memchr.o)
                 0x00403840                memchr
  .text          0x004038e0        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memcpy-stub.o)
@@ -9885,7 +9884,7 @@ LOAD linker stubs
  .comment       0x00000088       0x89 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-msizer.o)
  .comment       0x00000088       0x89 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
 
-.debug_info     0x00000000    0x3228e
+.debug_info     0x00000000    0x3229a
  .debug_info    0x00000000      0x139 ./Project_Settings/Startup_Code/exceptions.o
  .debug_info    0x00000139      0x753 ./Project_Settings/Startup_Code/nvic.o
  .debug_info    0x0000088c      0x32f ./Project_Settings/Startup_Code/startup.o
@@ -9969,8 +9968,8 @@ LOAD linker stubs
  .debug_info    0x0002e440       0x7d ./generate/src/Ram_Ip_PBcfg.o
  .debug_info    0x0002e4bd     0x22f4 ./generate/src/Siul2_Port_Ip_PBcfg.o
  .debug_info    0x000307b1      0x129 ./generate/src/Tspc_Port_Ip_PBcfg.o
- .debug_info    0x000308da     0x198e ./src/Example1_Tx.o
- .debug_info    0x00032268       0x26 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x000308da     0x199a ./src/Example1_Tx.o
+ .debug_info    0x00032274       0x26 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
 
 .debug_abbrev   0x00000000     0x5ac0
  .debug_abbrev  0x00000000       0x47 ./Project_Settings/Startup_Code/exceptions.o
@@ -10954,7 +10953,7 @@ LOAD linker stubs
  .debug_str     0x00256eb5      0x152 ./generate/src/Tspc_Port_Ip_PBcfg.o
                               0x5b50e (size before relaxing)
  .debug_str     0x00257007      0x1c2 ./src/Example1_Tx.o
-                             0x2333e5 (size before relaxing)
+                             0x2333ef (size before relaxing)
  .debug_str     0x002571c9       0x9b c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
                                  0xa7 (size before relaxing)
 
