@@ -76,7 +76,7 @@ static void TestDelay(uint32 delay)
 // For ST7789 Driver IC and we are using 240*240 pixel and 1.3 inch display
 
 #define ST7789_WIDTH 240
-#define ST7789_HEIGHT 240
+#define ST7789_HEIGHT 320
 #define GB_ST7789_TimeOut 1000
 
 /*

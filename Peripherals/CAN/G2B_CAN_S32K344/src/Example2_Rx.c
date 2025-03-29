@@ -113,12 +113,12 @@ GB_MailBox_CallBack(uint8 instance, Flexcan_Ip_EventType eventType,
 	Flexcan_Ip_StateType * state = flexcanState;
 	state->mbs[buffIdx].state = FLEXCAN_MB_RX_BUSY;
 	   {
-			   if(FlexCAN_State0.mbs[MSG_ID].pMBmessage->cs != 0)
+			   if(FlexCAN_State0.mbs[RX_MB_IDX].pMBmessage->cs != 0)
 			   	   {
-				   	   if(FlexCAN_State0.mbs[MSG_ID].pMBmessage->msgId == 800)
+				   	   if(FlexCAN_State0.mbs[RX_MB_IDX].pMBmessage->msgId == 800)
 				   		   {
-				   		      string1 = uint8_to_stringhex(&(FlexCAN_State0.mbs[MSG_ID].pMBmessage->data), FlexCAN_State0.mbs[MSG_ID].pMBmessage->dataLen);
-				   	           ST7789_WriteString(0, 140, string1 , Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+				   		      string1 = uint8_to_stringhex(&(FlexCAN_State0.mbs[RX_MB_IDX].pMBmessage->data), FlexCAN_State0.mbs[RX_MB_IDX].pMBmessage->dataLen);
+				   	           ST7789_WriteString(0, 150, string1 , Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 				   		   }
 				   	   memset(&FlexCAN_State0.mbs[MSG_ID].pMBmessage->cs, 0x0, sizeof(FlexCAN_State0.mbs[MSG_ID].pMBmessage->cs));
 			   	   }
@@ -162,9 +162,10 @@ int main(void)
     FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_inter_canfd, MSG_ID);
 
- 	ST7789_Fill_Color(ST77XX_BLACK);
+
     ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-    ST7789_WriteString(0, 80, "Receiving CAN Data", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    ST7789_Fill_Color(ST77XX_BLACK);
+    ST7789_WriteString(0, 120, "Receiving CAN Data", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
     FlexCAN_Ip_Receive(INST_FLEXCAN_4, RX_MB_IDX, &rxData, false);
 

@@ -149,7 +149,7 @@ int main(void)
 
   	TestDelay(700000);
   	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-  	ST7789_Fill_Color(ST77XX_RED);
+  	ST7789_Fill_Color(ST77XX_BLACK);
   	TestDelay(700000);
 
 

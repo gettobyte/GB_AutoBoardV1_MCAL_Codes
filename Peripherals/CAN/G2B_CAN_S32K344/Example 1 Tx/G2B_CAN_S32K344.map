@@ -8262,7 +8262,7 @@ END GROUP
  .text          0x00402d56        0x0 ./RTD/src/Siul2_Port_Ip.o
  .text          0x00402d56        0x0 ./RTD/src/Tspc_Port_Ip.o
  *fill*         0x00402d56        0x2 
- .text          0x00402d58      0x90c ./S&M_Driv/src/ST7789_low_level.o
+ .text          0x00402d58      0x914 ./S&M_Driv/src/ST7789_low_level.o
                 0x00402d84                GB_MA_SPI_send_byte_conti
                 0x00402db4                GB_MA_SPI_exchange_byte
                 0x00402de8                GB_STT7789_SPI_CS_low
@@ -8277,47 +8277,47 @@ END GROUP
                 0x004031d4                ST7789DrawPixel
                 0x00403238                ST7789_WriteChar
                 0x00403354                ST7789_WriteString
-                0x004033fe                ST7789_WriteStringBox
-                0x00403500                ST7789_WriteDec
-                0x00403608                ST7789_Float
- .text          0x00403664        0x0 ./S&M_Driv/src/fonts.o
- .text          0x00403664        0x0 ./board/Siul2_Port_Ip_Cfg.o
- .text          0x00403664        0x0 ./board/Tspc_Port_Ip_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Clock_Ip_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Clock_Ip_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/Dio_Cfg.o
- .text          0x00403664        0x0 ./generate/src/FlexCAN_Ip_Sa_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/Igf_Port_Ip_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Igf_Port_Ip_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/IntCtrl_Ip_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Lpspi_Ip_Sa_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/Mcu_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Mcu_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/OsIf_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Port_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Port_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/Power_Ip_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Power_Ip_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/Ram_Ip_Cfg.o
- .text          0x00403664        0x0 ./generate/src/Ram_Ip_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/Siul2_Port_Ip_PBcfg.o
- .text          0x00403664        0x0 ./generate/src/Tspc_Port_Ip_PBcfg.o
- .text          0x00403664      0x1d0 ./src/Example1_Tx.o
-                0x00403664                TestDelay
-                0x00403690                uint8_to_stringhex
-                0x00403724                GB_MailBox_CallBack
-                0x00403740                main
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-malloc.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-freer.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-mallocr.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sbrkr.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sprintf.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-impure.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-mlock.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-vfprintf_i.o)
- .text          0x00403834        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
- *fill*         0x00403834        0xc 
+                0x00403400                ST7789_WriteStringBox
+                0x00403504                ST7789_WriteDec
+                0x00403610                ST7789_Float
+ .text          0x0040366c        0x0 ./S&M_Driv/src/fonts.o
+ .text          0x0040366c        0x0 ./board/Siul2_Port_Ip_Cfg.o
+ .text          0x0040366c        0x0 ./board/Tspc_Port_Ip_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Clock_Ip_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Clock_Ip_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/Dio_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/FlexCAN_Ip_Sa_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/Igf_Port_Ip_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Igf_Port_Ip_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/IntCtrl_Ip_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Lpspi_Ip_Sa_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/Mcu_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Mcu_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/OsIf_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Port_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Port_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/Power_Ip_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Power_Ip_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/Ram_Ip_Cfg.o
+ .text          0x0040366c        0x0 ./generate/src/Ram_Ip_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/Siul2_Port_Ip_PBcfg.o
+ .text          0x0040366c        0x0 ./generate/src/Tspc_Port_Ip_PBcfg.o
+ .text          0x0040366c      0x1d0 ./src/Example1_Tx.o
+                0x0040366c                TestDelay
+                0x00403698                uint8_to_stringhex
+                0x0040372c                GB_MailBox_CallBack
+                0x00403748                main
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-malloc.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-freer.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-mallocr.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sbrkr.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sprintf.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-impure.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-mlock.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .text          0x0040383c        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
+ *fill*         0x0040383c        0x4 
  .text          0x00403840       0xa0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memchr.o)
                 0x00403840                memchr
  .text          0x004038e0        0x0 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memcpy-stub.o)
