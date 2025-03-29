@@ -180,6 +180,9 @@ const uint8_t CMAC_Plaintext[] =
 uint8_t CMAC_Tag_OutPut[512] = {0};
 uint32_t CMAC_Tag_length = 16;
 
+uint8_t Fast_CMAC_Tag_OutPut[512] = {0};
+uint8_t Fast_CMAC_Tag_length = 16;
+
 int main(void)
 {
 
@@ -204,7 +207,6 @@ int main(void)
 
 
     /********* Key Exchange protocol ECDH for Shared Secret Key */
-
     // Key Exchange via ECDH protocol
     //generate the ecc private - public key and export the public key to application
     HseResponse = GenerateEccKeyAndExportPublic( eccRAMKeyHandle, HSE_EC_SEC_SECP256R1, HSE_KF_USAGE_EXCHANGE, ECC_Public_key);
@@ -300,6 +302,22 @@ int main(void)
 
     HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_VERIFY,RxnodecntIdx, 0,
     		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
+
+
+
+
+
+
+    /***************Fast CMAC ***************************/
+
+    HseResponse = AesFastCmacGenerate(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
+    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
+    //Sender will send, plaintext, aesderivekey info and
+    HseResponse = AesFastCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
+    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
 
 
     uint8_t ciphermsg[NUM_OF_ELEMS(demoapp_msg)] = {0U};
