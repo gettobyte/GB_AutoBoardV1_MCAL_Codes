@@ -162,7 +162,7 @@ int main(void)
 //
 
 		string1 = uint8_to_stringhex(dummyData_canfd, 20);
-		    ST7789_WriteString(0, 140, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
+		    ST7789_WriteString(0, 140, string1 , Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
 	   FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_inter_canfd, MSG_ID, (uint8 *)&dummyData_canfd);

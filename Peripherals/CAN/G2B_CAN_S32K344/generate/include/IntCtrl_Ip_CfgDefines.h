@@ -82,7 +82,7 @@
 #define INT_CTRL_IP_DIRECTED_CPU_INT_MAX           (INT3_IRQn)
 #endif
 /* IP standalone APIs  */
-#define INT_CTRL_IP_STANDALONE_APIS               (STD_ON)
+#define INT_CTRL_IP_STANDALONE_APIS               (STD_OFF)
 
 
 /* VTOR address configuration enable */

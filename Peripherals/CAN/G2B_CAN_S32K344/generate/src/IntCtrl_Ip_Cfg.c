@@ -67,13 +67,14 @@ extern "C" {
 #define PLATFORM_START_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Platform_MemMap.h"
 
-/* List of configuration for interrupts #1 */
-static const IntCtrl_Ip_IrqConfigType aIrqConfiguration1[] = {
+/* List of configurations for interrupts  */
+static const IntCtrl_Ip_IrqConfigType aIrqConfiguration[] = {
     {FlexCAN4_1_IRQn, (boolean)TRUE, 0U, undefined_handler},
 };
-const IntCtrl_Ip_CtrlConfigType IntCtrlConfig_0 = {
+/* Configuration structure for interrupt controller */
+const IntCtrl_Ip_CtrlConfigType intCtrlConfig = {
     1U,
-    aIrqConfiguration1
+    aIrqConfiguration
 };
 
 #define PLATFORM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
