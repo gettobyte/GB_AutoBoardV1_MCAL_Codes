@@ -7,28 +7,28 @@
 #include "string.h"
 #include "hse_b_catalog_formatting.h"
 
-extern volatile hseSrvResponse_t gsrvResponse;
-extern volatile eHSEFWAttributes gProgramAttributes;
-extern volatile eHSEFWAttributes gEnableIVTAuthBit;
+volatile hseSrvResponse_t gsrvResponse;
+volatile eHSEFWAttributes gProgramAttributes;
+volatile eHSEFWAttributes gEnableIVTAuthBit;
 volatile fwteststatus_t gInstallHSEFwTest = FW_NOT_INSTALLED;
 hseSrvResponse_t formatkey_srvResponse = HSE_SRV_RSP_GENERAL_ERROR;
 volatile uint8_t ghseCapabilites[8] = {0U};
 
 /*check if HSE FW usage flag is already enabled,
  * if not enabled then do not proceed */
-void WaitandSetFWEnablefeatureflag()
-{
-    while (FALSE == checkHseFwFeatureFlagEnabled())
-    {
-        /*user has requested to program HSE FW feature flag*/
-        if (UTEST_PROGRAM == gProgramAttributes)
-        {
-            gsrvResponse = EnableHSEFWUsage();
-        }
-    }
-    /*hse fw flag is enabled either already programmed or requested by user*/
-    testStatus |= HSE_FW_USAGE_ENABLED;
-}
+//void WaitandSetFWEnablefeatureflag()
+//{
+//    while (FALSE == checkHseFwFeatureFlagEnabled())
+//    {
+//        /*user has requested to program HSE FW feature flag*/
+//        if (UTEST_PROGRAM == gProgramAttributes)
+//        {
+//            gsrvResponse = EnableHSEFWUsage();
+//        }
+//    }
+//    /*hse fw flag is enabled either already programmed or requested by user*/
+//    testStatus |= HSE_FW_USAGE_ENABLED;
+//}
 
 void WaitForHSEFWInitToFinish()
 {
@@ -57,25 +57,25 @@ void HSE_DemoAppConfigKeys()
     if (srvResponse != HSE_SRV_RSP_OK)
         gCryptoServicesExecuted = CRYPTO_SERVICE_SUCCESS_NONE;
 }
-
-void CopyFlashToSRAMHseHost(void)
-{
-    volatile uint32_t *FlashRamAddr = 0U;
-    volatile uint32_t *FlashSrcAddr = 0U;
-    volatile uint32_t *FlashSrcEndAddr = 0U;
-    uint32_t i = 0U;
-
-    FlashRamAddr = HSE_HOST_RAM_DST_START_ADDR;
-    FlashSrcAddr = HSE_HOST_FLASH_SRC_START_ADDR;
-    FlashSrcEndAddr = HSE_HOST_FLASH_SRC_END_ADDR;
-
-    /*Copying the UnsecureBAF Code from flash to RAM to avoid read while write
-     *  violation */
-    for (i = 0U; i < (((uint32_t)FlashSrcEndAddr - (uint32_t)FlashSrcAddr) / 4U); i++)
-    {
-        FlashRamAddr[i] = FlashSrcAddr[i];
-    }
-}
+//
+//void CopyFlashToSRAMHseHost(void)
+//{
+//    volatile uint32_t *FlashRamAddr = 0U;
+//    volatile uint32_t *FlashSrcAddr = 0U;
+//    volatile uint32_t *FlashSrcEndAddr = 0U;
+//    uint32_t i = 0U;
+//
+//    FlashRamAddr = HSE_HOST_RAM_DST_START_ADDR;
+//    FlashSrcAddr = HSE_HOST_FLASH_SRC_START_ADDR;
+//    FlashSrcEndAddr = HSE_HOST_FLASH_SRC_END_ADDR;
+//
+//    /*Copying the UnsecureBAF Code from flash to RAM to avoid read while write
+//     *  violation */
+//    for (i = 0U; i < (((uint32_t)FlashSrcEndAddr - (uint32_t)FlashSrcAddr) / 4U); i++)
+//    {
+//        FlashRamAddr[i] = FlashSrcAddr[i];
+//    }
+//}
 
 /*******************************************************************************
  * Function:    Get_Attr
@@ -113,60 +113,60 @@ failed:
     return hseSrvResponse;
 }
 
-
-void attributeProgrammingService(eHSEFWAttributes gProgramAttribute)
-{
-   /* read hse fw version */
-        if (READ_HSE_VERSION == gProgramAttribute)
-        {
-          getFwVersionService();
-        }
-        /* read hse fw capabilities */
-        if (READ_HSE_CAPABILITIES == gProgramAttribute)
-        {
-          HSE_GetCapabilities_Example((uint8_t *)&ghseCapabilites);
-        }
-        /* program adkp key */
-        if (PROGRAM_APPLICATION_DEBUG_AUTH_KEY == gProgramAttribute)
-        {
-          ProgramADKPService();
-        }
-        /*user requested debug authorization or debug auth mode change*/
-        if ((PROGRAM_DEBUG_AUTH == gProgramAttribute))
-        {
-          Debug_Auth_Service();
-        }
-        /*
-         *  User has request ADKP master bit to be set i.e.
-         *  password generated for debug authorization will always be unique.
-         *  Note: ADKP Key shall be programmed prior to this operation
-         *  This is one-time programmable only and cannot be revered
-         */
-        if (PROGRAM_EXTEND_CUST_SECURITY_POLICY == gProgramAttribute)
-        {
-          ExtendCustomerSecurityPolicyService();
-        }
-        /*user has requested life cycle advancement*/
-        if (ADVANCE_LC == gProgramAttribute)
-        {
-          Advance_LifeCycle_Service();
-        }
-        /*
-         * user can requested IVT auth bit to be set by two ways
-         * either by attribute programming option
-         * or by enabling boot authentication.
-         * Note: ADKP shall be programmed prior to this operation
-         * and this is one-time programmable and operation cannot be reversed
-         * back i.e. before HSE or app boot, IVT will always be authenticated
-         */
-        if ((ENABLE_AUTH_MODE == gProgramAttribute) || (ENABLE_AUTH_MODE == gEnableIVTAuthBit))
-        {
-          IVT_Auth_Service();
-        }
-        /*user requested second MU to be enabled*/
-        if (CONFIG_MU == gProgramAttribute)
-        {
-          MU_EnablementService();
-        }
-}
-
+//
+//void attributeProgrammingService(eHSEFWAttributes gProgramAttribute)
+//{
+//   /* read hse fw version */
+//        if (READ_HSE_VERSION == gProgramAttribute)
+//        {
+//          getFwVersionService();
+//        }
+//        /* read hse fw capabilities */
+//        if (READ_HSE_CAPABILITIES == gProgramAttribute)
+//        {
+//          HSE_GetCapabilities_Example((uint8_t *)&ghseCapabilites);
+//        }
+//        /* program adkp key */
+//        if (PROGRAM_APPLICATION_DEBUG_AUTH_KEY == gProgramAttribute)
+//        {
+//          ProgramADKPService();
+//        }
+//        /*user requested debug authorization or debug auth mode change*/
+//        if ((PROGRAM_DEBUG_AUTH == gProgramAttribute))
+//        {
+//          Debug_Auth_Service();
+//        }
+//        /*
+//         *  User has request ADKP master bit to be set i.e.
+//         *  password generated for debug authorization will always be unique.
+//         *  Note: ADKP Key shall be programmed prior to this operation
+//         *  This is one-time programmable only and cannot be revered
+//         */
+//        if (PROGRAM_EXTEND_CUST_SECURITY_POLICY == gProgramAttribute)
+//        {
+//          ExtendCustomerSecurityPolicyService();
+//        }
+//        /*user has requested life cycle advancement*/
+//        if (ADVANCE_LC == gProgramAttribute)
+//        {
+//          Advance_LifeCycle_Service();
+//        }
+//        /*
+//         * user can requested IVT auth bit to be set by two ways
+//         * either by attribute programming option
+//         * or by enabling boot authentication.
+//         * Note: ADKP shall be programmed prior to this operation
+//         * and this is one-time programmable and operation cannot be reversed
+//         * back i.e. before HSE or app boot, IVT will always be authenticated
+//         */
+//        if ((ENABLE_AUTH_MODE == gProgramAttribute) || (ENABLE_AUTH_MODE == gEnableIVTAuthBit))
+//        {
+//          IVT_Auth_Service();
+//        }
+//        /*user requested second MU to be enabled*/
+//        if (CONFIG_MU == gProgramAttribute)
+//        {
+//          MU_EnablementService();
+//        }
+//}
+//
