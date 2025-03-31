@@ -1627,7 +1627,8 @@ hseSrvResponse_t GetKeyInfoMuChannel(uint8_t u8MuInstance, uint8_t u8MuChannel,
     memset(pHseSrvDesc, 0, sizeof(hseSrvDescriptor_t));
     pHseSrvDesc->srvId = HSE_SRV_ID_GET_KEY_INFO;
     pGetKeyInfoReq->keyHandle = keyHandle;
-    pGetKeyInfoReq->pKeyInfo = (HOST_ADDR)reqKeyInfo;
+   // pGetKeyInfoReq->pKeyInfo = (HOST_ADDR)reqKeyInfo;
+    pGetKeyInfoReq->pKeyInfo = MAP_ADDRESS(reqKeyInfo);
     return HSE_Send(u8MuInstance, u8MuChannel, gSyncTxOption, pHseSrvDesc);
     #else
     (void)u8MuInstance;

@@ -97,6 +97,9 @@ extern "C"{
 /** @brief Host address size */
 #ifndef HSE_SPT_64BIT_ADDR
     #define HOST_ADDR                     uint32_t
+
+#define MAP_ADDRESS(addr) (((uintptr_t)(addr) >= 0x20000000 && (uintptr_t)(addr) <= 0x2001FFFF) ? \
+                           (void *)((uintptr_t)(addr) + 0x00400000) : NULL)
 #else
     #define HOST_ADDR                     uint64_t
 #endif

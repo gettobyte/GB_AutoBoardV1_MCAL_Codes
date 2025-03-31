@@ -114,10 +114,10 @@ Flexcan_Ip_DataInfoType tx_info_inter_canfd = {
 GB_MailBox_CallBack(uint8 instance, Flexcan_Ip_EventType eventType,
                   uint32 buffIdx, const Flexcan_Ip_StateType * flexcanState)
 {
-#if GB_RxMailBox_CALLBACK
+//#if GB_RxMailBox_CALLBACK
 	Flexcan_Ip_StateType * state = flexcanState;
 	state->mbs[buffIdx].state = FLEXCAN_MB_RX_BUSY;
-#else
+//#else
 
 	uint8_t callback = 0;
 	/* Do Nothing */

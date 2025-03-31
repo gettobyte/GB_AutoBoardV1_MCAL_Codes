@@ -66,6 +66,7 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 #define ECDH_Rx_Pub_Key_MSG_ID 801u
 
 #define TX_MB_IDX 0
+#define RX_MB_IDX 1
 
 
 /* User includes */
@@ -103,7 +104,7 @@ const char* uint8_to_stringhex(uint8 uint8_val[], size_t len)
 
 	const char* constFormattedString = formattedString;
 
-	free(formattedString);
+	//free(formattedString);
 
 	return constFormattedString;
 
@@ -297,8 +298,14 @@ hseKeyHandle_t targetSharedSecretKey_1 = HSE_INVALID_KEY_HANDLE;
 uint8_t aes_exported[64];
 uint16_t aes_exported_len;
 
+uint16_t recv_pub_key_length_ecdh;
+const uint8_t* recv_pub_key_value;
+
+
 int main(void)
 {
+	uint8_t x;
+
 	/*Check Fw Install Status*/
 	WaitForHSEFWInitToFinish();
 	hseSrvResponse_t HseResponse;
@@ -359,21 +366,24 @@ int main(void)
     ST7789_WriteString(0, 130, "Transmit Public Key of Master for Key exchange protocol", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 	string1 = uint8_to_stringhex(ECC_Public_key, 64);
+	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 	ST7789_WriteString(0, 160, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
     FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_inter_canfd, ECDH_Tx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
     TestDelay(2000000);
 
 	ST7789_WriteString(0, 170, "Receive Public Key of Slave for Key exchange protocol", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
-	FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_polling_std, ECDH_Rx_Pub_Key_MSG_ID);
-	while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, TX_MB_IDX, &rxData, true,1000));
+	FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &tx_info_polling_std, ECDH_Rx_Pub_Key_MSG_ID);
+	while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX, &rxData, true,1000));
 	string1 = uint8_to_stringhex(rxData.data, rxData.dataLen );
     ST7789_WriteString(0, 200, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
+    recv_pub_key_length_ecdh =  rxData.dataLen;
+    recv_pub_key_value = rxData.data;
 
     /* Import ECC Key */
     // import the received public key from other node to the ecc key pair handle
-    HseResponse = ImportEccKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, HSE_KEY_TYPE_ECC_PUB,HSE_KF_USAGE_EXCHANGE, HSE_EC_SEC_SECP256R1, KeyBitLen(rxData.dataLen), rxData.data, NULL);
+    HseResponse = ImportEccKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, HSE_KEY_TYPE_ECC_PUB,HSE_KF_USAGE_EXCHANGE | HSE_KF_ACCESS_EXPORTABLE, HSE_EC_SEC_SECP256R1, KeyBitLen(HSE_EC_SEC_SECP256R1), recv_pub_key_value, NULL);
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
     // now compute the shared secret from the public( having new public key from other node) and private key handles
@@ -399,13 +409,13 @@ int main(void)
 
 
     //HSEKdfSP800
-    HseResponse = KdfSP800_108ReqTest_demo();
+  //  HseResponse = KdfSP800_108ReqTest_demo();
 
     //Declare the information about the 256 bits AES key to be extracted
     hseKeyInfo_t aes256KeyInfo = {
         .keyType = HSE_KEY_TYPE_AES,                             //Will generate an AES key
         .keyFlags = (HSE_KF_USAGE_ENCRYPT |HSE_KF_USAGE_DECRYPT| //Usage flags for this key - Encrypt/Decrypt/Sign/Verify - AEAD
-            HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY),
+            HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE ),
         .keyBitLen = 256U,                                       //256 bits key
     };
 
@@ -416,14 +426,14 @@ int main(void)
             	//	DHSharedSecretRAMKeyHandle,
             		BITS_TO_BYTES(aes256KeyInfo.keyBitLen),
                     &AESDerivedKeyInfoHandle1,
-					NVM_KEY,
-					// RAM_KEY,
+					//NVM_KEY,
+					RAM_KEY,
                     aes256KeyInfo
             );
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
-    HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1,&aes256KeyInfo, aes_exported, &aes_exported_len);
+    HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1, &aes256KeyInfo, aes_exported, &aes_exported_len);
 
 
 

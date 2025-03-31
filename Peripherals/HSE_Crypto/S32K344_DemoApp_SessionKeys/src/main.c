@@ -205,13 +205,10 @@ int main(void)
 	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 	hseKeyInfo_t keyInfo;
 
-	// uint8_t keyBuf[2 * BITS_TO_BYTES(HSE_MAX_ECC_KEY_BITS_LEN)];//132
-
-
 	HseResponse = HKF_Init(NVM_Catalog, RAM_Catalog);
 	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
-		HseResponse = HSE_ReadLifecycle(&lifecycle);
+	HseResponse = HSE_ReadLifecycle(&lifecycle);
 
 	//For Session Keys example
     hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PAIR_KEY_HANDLE;
@@ -236,7 +233,7 @@ int main(void)
     HseResponse = ExportPlainFormattedEccPubKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, &keyInfo, &keyBufLen, keyBuf,  HSE_KEY_FORMAT_ECC_PUB_RAW);
 
     // now compute the shared secret from the public( having new public key from other node) and private key handles
-    /* Compute DH Shared Secret (ECDH) */
+    /*Compute DH Shared Secret (ECDH)*/
     HseResponse = DHSharedSecretCompute(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE,HSE_DEMO_RAM_ECC_PAIR_KEY_HANDLE,&DHSharedSecretRAMKeyHandle,RAM_KEY,KeyBitLen(HSE_EC_SEC_SECP256R1));
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
