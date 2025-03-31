@@ -480,14 +480,14 @@ hseSrvResponse_t ExportKeyReqMuChannel(uint8_t muInstance, uint8_t muChannel, hs
     hseSrvDesc.srvId = HSE_SRV_ID_EXPORT_KEY;
 
     pExportKeyReq->targetKeyHandle = pExportKeyParams->pKey->keyHandle;
-    pExportKeyReq->pKeyInfo = (HOST_ADDR)pExportKeyParams->pKey->pKeyInfo;
+    pExportKeyReq->pKeyInfo = MAP_ADDRESS(pExportKeyParams->pKey->pKeyInfo);
 
-    pExportKeyReq->pKey[0] = (HOST_ADDR)pExportKeyParams->pKey->keyValue.pKey0;
-    pExportKeyReq->pKeyLen[0] = (HOST_ADDR)&pExportKeyParams->pKey->keyValue.keyLen0;
-    pExportKeyReq->pKey[1] = (HOST_ADDR)pExportKeyParams->pKey->keyValue.pKey1;
-    pExportKeyReq->pKeyLen[1] = (HOST_ADDR)&pExportKeyParams->pKey->keyValue.keyLen1;
-    pExportKeyReq->pKey[2] = (HOST_ADDR)pExportKeyParams->pKey->keyValue.pKey2;
-    pExportKeyReq->pKeyLen[2] = (HOST_ADDR)&pExportKeyParams->pKey->keyValue.keyLen2;
+    pExportKeyReq->pKey[0] = MAP_ADDRESS(pExportKeyParams->pKey->keyValue.pKey0);
+    pExportKeyReq->pKeyLen[0] = MAP_ADDRESS(&pExportKeyParams->pKey->keyValue.keyLen0);
+    pExportKeyReq->pKey[1] = MAP_ADDRESS(pExportKeyParams->pKey->keyValue.pKey1);
+    pExportKeyReq->pKeyLen[1] = MAP_ADDRESS(&pExportKeyParams->pKey->keyValue.keyLen1);
+    pExportKeyReq->pKey[2] = MAP_ADDRESS(pExportKeyParams->pKey->keyValue.pKey2);
+    pExportKeyReq->pKeyLen[2] = MAP_ADDRESS(&pExportKeyParams->pKey->keyValue.keyLen2);
 
     /* Complete cipher parameters */
     pExportKeyReq->cipher.cipherKeyHandle = HSE_INVALID_KEY_HANDLE;
