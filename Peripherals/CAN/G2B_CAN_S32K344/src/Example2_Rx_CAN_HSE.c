@@ -285,6 +285,17 @@ uint8_t Fast_CMAC_Tag_length = 16;
 
 Flexcan_Ip_MsgBuffType rxData;
 
+uint8_t keyBuf[2 * BITS_TO_BYTES(HSE_MAX_ECC_KEY_BITS_LEN)] = {0};//132
+uint16_t keyBufLen = sizeof(keyBuf);//132
+
+hseKdfSP800_108Scheme_t key_Derive_info;
+hseKeyHandle_t targetSharedSecretKey_1 = HSE_INVALID_KEY_HANDLE;
+
+
+
+
+uint8_t aes_exported[64];
+uint16_t aes_exported_len;
 
 int main(void)
 {
@@ -314,7 +325,7 @@ int main(void)
 	  	TestDelay(700000);
 
 
-	    ST7789_WriteString(0, 80, "BMS VCU: MAster Sending Data", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    ST7789_WriteString(0, 80, "VCU ECU: Slave Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
 	/*Check Fw Install Status*/
@@ -345,26 +356,26 @@ int main(void)
 
     // transmit the exported public key to the other node via can and also receive the exported public key of other node and use that in next step to import it in public key handle
 
-    ST7789_WriteString(0, 130, "Receive Public Key of Master for Key exchange protocol", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    ST7789_WriteString(0, 130, "Receive Public Key of Master for Key exchange protocol", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
     FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_polling_std, ECDH_Tx_Pub_Key_MSG_ID);
     while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX, &rxData, true,1000));
+	string1 = uint8_to_stringhex(rxData.data, rxData.dataLen );
+	ST7789_WriteString(0, 160, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
 
     ST7789_WriteString(0, 170, "Transmit Public Key of Slave for Key exchange protocol", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 	string1 = uint8_to_stringhex(ECC_Public_key, 64);
-	ST7789_WriteString(0, 140, string1 , Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-
-   FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_inter_canfd, ECDH_Rx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
-	   TestDelay(2000000);
+	ST7789_WriteString(0, 200, string1 , Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_inter_canfd, ECDH_Rx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
+	TestDelay(2000000);
 
 
     /* Import ECC Key */
     // import the received public key from other node to the ecc key pair handle
-    HseResponse = ImportEccKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, HSE_KEY_TYPE_ECC_PUB,HSE_KF_USAGE_EXCHANGE, HSE_EC_SEC_SECP256R1, KeyBitLen(HSE_EC_SEC_SECP256R1), eccP256PubKey, NULL);
+    HseResponse = ImportEccKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, HSE_KEY_TYPE_ECC_PUB,HSE_KF_USAGE_EXCHANGE, HSE_EC_SEC_SECP256R1, KeyBitLen(rxData.dataLen), rxData.data, NULL);
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
     // now compute the shared secret from the public( having new public key from other node) and private key handles
@@ -376,6 +387,17 @@ int main(void)
 
 
   /***** Derive Key using SP800_108 KDF for AES Key*********/
+
+
+    HKF_AllocKeySlot(RAM_KEY, HSE_KEY_TYPE_SHARED_SECRET, KdfSP800_108_Scheme_1_0.kdfCommon.keyMatLen * 8U, &targetSharedSecretKey_1);
+
+       KdfSP800_108_Scheme_1_0.kdfCommon.srcKeyHandle = DHSharedSecretRAMKeyHandle ;
+       KdfSP800_108_Scheme_1_0.kdfCommon.targetKeyHandle = targetSharedSecretKey_1;
+
+
+       HseResponse =  HSEKdfSP800_108Req(&KdfSP800_108_Scheme_1_0);
+
+
 
     //HSEKdfSP800
     HseResponse = KdfSP800_108ReqTest_demo();
@@ -400,6 +422,9 @@ int main(void)
                     aes256KeyInfo
             );
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
+    HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1,&aes256KeyInfo, aes_exported, &aes_exported_len  );
 
 
 
