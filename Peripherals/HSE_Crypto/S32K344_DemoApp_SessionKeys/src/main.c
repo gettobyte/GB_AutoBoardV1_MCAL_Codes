@@ -199,6 +199,7 @@ int main(void)
 	/*Check Fw Install Status*/
 	WaitForHSEFWInitToFinish();
 	hseSrvResponse_t HseResponse;
+
 	//Format the key catalog
 	HseResponse = FormatKeyCatalogs(NVM_Catalog, RAM_Catalog);
 	ASSERT(HSE_SRV_RSP_OK == HseResponse);
@@ -240,7 +241,7 @@ int main(void)
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
-   // HseResponse = ExportPlainFormattedEccPubKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, &keyInfo, &keyBufLen, keyBuf,  HSE_KEY_FORMAT_ECC_PUB_RAW);
+    //HseResponse = ExportPlainFormattedEccPubKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, &keyInfo, &keyBufLen, keyBuf,  HSE_KEY_FORMAT_ECC_PUB_RAW);
 
     HKF_AllocKeySlot(RAM_KEY, HSE_KEY_TYPE_SHARED_SECRET, KdfSP800_108_Scheme_1_0.kdfCommon.keyMatLen * 8U, &targetSharedSecretKey_1);
 
@@ -269,7 +270,7 @@ int main(void)
     HseResponse = HSEKeyDeriveExtractKeyReq
             (
                    KdfSP800_108_Scheme_1_0.kdfCommon.targetKeyHandle,
-            	//	DHSharedSecretRAMKeyHandle,
+            	  //DHSharedSecretRAMKeyHandle,
             		BITS_TO_BYTES(aes256KeyInfo.keyBitLen),
                     &AESDerivedKeyInfoHandle1,
 					//NVM_KEY,

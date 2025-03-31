@@ -297,10 +297,6 @@ int main(void)
 	HseResponse = HKF_Init(NVM_Catalog, RAM_Catalog);
 	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
-
-//	HseResponse = HSE_ReadLifecycle(&lifecycle);
-
-
 	Flexcan_Ip_StatusType FlexCAN_Api_Status;
 	    /* Write your code here */
 	    Clock_Ip_Init(&Mcu_aClockConfigPB[0]);
