@@ -66,7 +66,7 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 #define ECDH_Rx_Pub_Key_MSG_ID 801u
 
 #define RX_MB_IDX 0
-
+#define TX_MB_IDX 1
 
 /* User includes */
 uint8 dummyData[8] = {1,2,3,4,5,6,7};
@@ -103,7 +103,7 @@ const char* uint8_to_stringhex(uint8 uint8_val[], size_t len)
 
 	const char* constFormattedString = formattedString;
 
-	free(formattedString);
+//	free(formattedString);
 
 	return constFormattedString;
 
@@ -368,14 +368,14 @@ int main(void)
     ST7789_WriteString(0, 170, "Transmit Public Key of Slave for Key exchange protocol", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 	string1 = uint8_to_stringhex(ECC_Public_key, 64);
-	ST7789_WriteString(0, 200, string1 , Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
-    FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_inter_canfd, ECDH_Rx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
+	ST7789_WriteString(0, 200, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &rx_info_inter_canfd, ECDH_Rx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
 	TestDelay(2000000);
 
 
     /* Import ECC Key */
     // import the received public key from other node to the ecc key pair handle
-    HseResponse = ImportEccKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, HSE_KEY_TYPE_ECC_PUB,HSE_KF_USAGE_EXCHANGE, HSE_EC_SEC_SECP256R1, KeyBitLen(rxData.dataLen), rxData.data, NULL);
+    HseResponse = ImportEccKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, HSE_KEY_TYPE_ECC_PUB,HSE_KF_USAGE_EXCHANGE | HSE_KF_ACCESS_EXPORTABLE, HSE_EC_SEC_SECP256R1, KeyBitLen(HSE_EC_SEC_SECP256R1), rxData.data, NULL);
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
     // now compute the shared secret from the public( having new public key from other node) and private key handles
@@ -400,13 +400,13 @@ int main(void)
 
 
     //HSEKdfSP800
-    HseResponse = KdfSP800_108ReqTest_demo();
+//    HseResponse = KdfSP800_108ReqTest_demo();
 
     //Declare the information about the 256 bits AES key to be extracted
     hseKeyInfo_t aes256KeyInfo = {
         .keyType = HSE_KEY_TYPE_AES,                             //Will generate an AES key
         .keyFlags = (HSE_KF_USAGE_ENCRYPT |HSE_KF_USAGE_DECRYPT| //Usage flags for this key - Encrypt/Decrypt/Sign/Verify - AEAD
-            HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY),
+            HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE),
         .keyBitLen = 256U,                                       //256 bits key
     };
 
@@ -417,8 +417,8 @@ int main(void)
             	//	DHSharedSecretRAMKeyHandle,
             		BITS_TO_BYTES(aes256KeyInfo.keyBitLen),
                     &AESDerivedKeyInfoHandle1,
-					NVM_KEY,
-					// RAM_KEY,
+					//NVM_KEY,
+					 RAM_KEY,
                     aes256KeyInfo
             );
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
