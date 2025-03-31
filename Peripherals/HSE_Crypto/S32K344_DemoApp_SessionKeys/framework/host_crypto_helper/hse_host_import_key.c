@@ -929,7 +929,6 @@ hseSrvResponse_t ExportPlainClassicDhPubKeyReq(hseKeyHandle_t targetKeyHandle,
 
 hseSrvResponse_t ExportPlainFormattedEccPubKeyReq(hseKeyHandle_t targetKeyHandle, hseKeyInfo_t* pKeyInfo,
                                          uint16_t* pPubKeyLength, uint8_t* pPubKey, hseEccKeyFormat_t eccKeyFormat)
-
 {
     #if defined(HSE_SPT_EXPORT_KEY)
     hseSrvDescriptor_t* pHseSrvDesc = &gHseSrvDesc[muIf][muChannelIdx];

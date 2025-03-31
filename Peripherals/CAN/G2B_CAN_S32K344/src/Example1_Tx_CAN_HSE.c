@@ -284,7 +284,7 @@ uint8_t Fast_CMAC_Tag_OutPut[512] = {0};
 uint8_t Fast_CMAC_Tag_length = 16;
 
 Flexcan_Ip_MsgBuffType rxData;
-
+//hseAttrSecureLifecycle_t lifecycle;
 int main(void)
 {
 	/*Check Fw Install Status*/
@@ -297,6 +297,8 @@ int main(void)
 	HseResponse = HKF_Init(NVM_Catalog, RAM_Catalog);
 	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
+
+//	HseResponse = HSE_ReadLifecycle(&lifecycle);
 
 
 	Flexcan_Ip_StatusType FlexCAN_Api_Status;

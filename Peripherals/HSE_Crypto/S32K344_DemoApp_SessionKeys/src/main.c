@@ -163,6 +163,8 @@ hseKdfSP800_108Scheme_t KdfSP800_108_Scheme_1_0 =
     }
 };
 
+uint8_t aes_exported[64];
+uint16_t aes_exported_len;
 #endif
 /*==================================================================================================
 *                                     FUNCTION PROTOTYPES
@@ -183,19 +185,32 @@ uint32_t CMAC_Tag_length = 16;
 uint8_t Fast_CMAC_Tag_OutPut[512] = {0};
 uint8_t Fast_CMAC_Tag_length = 16;
 
+hseAttrSecureLifecycle_t lifecycle;
+
+uint8_t keyBuf[2 * BITS_TO_BYTES(HSE_MAX_ECC_KEY_BITS_LEN)] = {0};//132
+uint16_t keyBufLen = sizeof(keyBuf);//132
+
+hseKdfSP800_108Scheme_t key_Derive_info;
+hseKeyHandle_t targetSharedSecretKey_1 = HSE_INVALID_KEY_HANDLE;
+
+
 int main(void)
 {
-
 	/*Check Fw Install Status*/
 	WaitForHSEFWInitToFinish();
 	hseSrvResponse_t HseResponse;
 	//Format the key catalog
 	HseResponse = FormatKeyCatalogs(NVM_Catalog, RAM_Catalog);
 	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+	hseKeyInfo_t keyInfo;
+
+	// uint8_t keyBuf[2 * BITS_TO_BYTES(HSE_MAX_ECC_KEY_BITS_LEN)];//132
+
 
 	HseResponse = HKF_Init(NVM_Catalog, RAM_Catalog);
 	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
+		HseResponse = HSE_ReadLifecycle(&lifecycle);
 
 	//For Session Keys example
     hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PAIR_KEY_HANDLE;
@@ -203,8 +218,6 @@ int main(void)
     hseKeyHandle_t DHSharedSecretRAMKeyHandle = HSE_DEMO_DH_SHARED_SECRET_HANDLE;
    // hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_RAM_AES256_KEY1;
     hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_NVM_AES256_KEY2;
-
-
 
     /********* Key Exchange protocol ECDH for Shared Secret Key */
     // Key Exchange via ECDH protocol
@@ -216,8 +229,10 @@ int main(void)
 
     /* Import ECC Key */
     // import the received public key from other node to the ecc key pair handle
-    HseResponse = ImportEccKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, HSE_KEY_TYPE_ECC_PUB,HSE_KF_USAGE_EXCHANGE, HSE_EC_SEC_SECP256R1, KeyBitLen(HSE_EC_SEC_SECP256R1), eccP256PubKey, NULL);
+    HseResponse = ImportEccKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, HSE_KEY_TYPE_ECC_PUB,(HSE_KF_USAGE_EXCHANGE | HSE_KF_ACCESS_EXPORTABLE), HSE_EC_SEC_SECP256R1, KeyBitLen(HSE_EC_SEC_SECP256R1), ECC_Public_key, NULL);
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+    HseResponse = ExportPlainFormattedEccPubKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, &keyInfo, &keyBufLen, keyBuf,  HSE_KEY_FORMAT_ECC_PUB_RAW);
 
     // now compute the shared secret from the public( having new public key from other node) and private key handles
     /* Compute DH Shared Secret (ECDH) */
@@ -225,18 +240,28 @@ int main(void)
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
+   // HseResponse = ExportPlainFormattedEccPubKeyReq(HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE, &keyInfo, &keyBufLen, keyBuf,  HSE_KEY_FORMAT_ECC_PUB_RAW);
+
+    HKF_AllocKeySlot(RAM_KEY, HSE_KEY_TYPE_SHARED_SECRET, KdfSP800_108_Scheme_1_0.kdfCommon.keyMatLen * 8U, &targetSharedSecretKey_1);
+
+    KdfSP800_108_Scheme_1_0.kdfCommon.srcKeyHandle = DHSharedSecretRAMKeyHandle ;
+    KdfSP800_108_Scheme_1_0.kdfCommon.targetKeyHandle = targetSharedSecretKey_1;
+
+
+    HseResponse =  HSEKdfSP800_108Req(&KdfSP800_108_Scheme_1_0);
+
 
 
   /***** Derive Key using SP800_108 KDF for AES Key*********/
 
     //HSEKdfSP800
-    HseResponse = KdfSP800_108ReqTest_demo();
+   // HseResponse = KdfSP800_108ReqTest_demo();
 
     //Declare the information about the 256 bits AES key to be extracted
     hseKeyInfo_t aes256KeyInfo = {
         .keyType = HSE_KEY_TYPE_AES,                             //Will generate an AES key
         .keyFlags = (HSE_KF_USAGE_ENCRYPT |HSE_KF_USAGE_DECRYPT| //Usage flags for this key - Encrypt/Decrypt/Sign/Verify - AEAD
-            HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY),
+            HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE ),
         .keyBitLen = 256U,                                       //256 bits key
     };
 
@@ -247,11 +272,14 @@ int main(void)
             	//	DHSharedSecretRAMKeyHandle,
             		BITS_TO_BYTES(aes256KeyInfo.keyBitLen),
                     &AESDerivedKeyInfoHandle1,
-					NVM_KEY,
-					// RAM_KEY,
+					//NVM_KEY,
+					 RAM_KEY,
                     aes256KeyInfo
             );
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
+    HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1,&aes256KeyInfo, aes_exported, aes_exported_len  );
 
 
 
