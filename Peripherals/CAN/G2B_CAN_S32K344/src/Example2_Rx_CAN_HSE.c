@@ -348,7 +348,7 @@ int main(void)
     ST7789_WriteString(0, 130, "Receive Public Key of Master for Key exchange protocol", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
     FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_polling_std, ECDH_Tx_Pub_Key_MSG_ID);
-    while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, ECDH_Tx_Pub_Key_MSG_ID, &rxData, true,1000));
+    while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX, &rxData, true,1000));
 
 
 

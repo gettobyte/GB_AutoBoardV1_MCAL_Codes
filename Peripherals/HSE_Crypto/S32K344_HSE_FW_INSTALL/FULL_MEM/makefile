@@ -32,7 +32,7 @@ S32K344_HSE_FW_INSTALL.siz \
 all: S32K344_HSE_FW_INSTALL.elf secondary-outputs
 
 # Tool invocations
-S32K344_HSE_FW_INSTALL.elf: $(OBJS) C:\NXP\S32K3_HSE_DemoExamples_1_0_0\S32K3_HSE_DemoExamples\Device_Configuration\S32K344_HSE_FW_INSTALL\Project_Settings\Linker_Files\S32K344_flash_full_mem.ld $(USER_OBJS)
+S32K344_HSE_FW_INSTALL.elf: $(OBJS) C:\Users\gettobyte_kunal\Documents\GB_AutoBoardV1_MCAL_Codes\Peripherals\HSE_Crypto\S32K344_HSE_FW_INSTALL\Project_Settings\Linker_Files\S32K344_flash_full_mem.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "S32K344_HSE_FW_INSTALL.elf" "@S32K344_HSE_FW_INSTALL.args"  $(USER_OBJS) $(LIBS)

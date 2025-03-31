@@ -234,8 +234,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x569 ./src/Flash/pflash.o
  .debug_macro   0x00000000       0x8e ./src/Flash/pflash.o
  .debug_macro   0x00000000      0x1a3 ./src/Flash/pflash.o
- .debug_line    0x00000000      0x33a ./src/Flash/pflash.o
- .debug_str     0x00000000     0x8112 ./src/Flash/pflash.o
+ .debug_line    0x00000000      0x33e ./src/Flash/pflash.o
+ .debug_str     0x00000000     0x8116 ./src/Flash/pflash.o
  .comment       0x00000000       0x89 ./src/Flash/pflash.o
  .debug_frame   0x00000000       0x38 ./src/Flash/pflash.o
  .ARM.attributes
@@ -1424,16 +1424,16 @@ LOAD linker stubs
  .comment       0x00000088       0x89 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libnosys.a(_exit.o)
  .comment       0x00000088       0x89 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m/nofp/crtend.o
 
-.debug_line     0x00000000     0x406f
+.debug_line     0x00000000     0x40d7
  .debug_line    0x00000000       0x93 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
- .debug_line    0x00000093      0x2b4 ./Project_Settings/Startup_Code/boot_header.o
- .debug_line    0x00000347      0x8c3 ./Project_Settings/Startup_Code/startup_ARMCM7.o
- .debug_line    0x00000c0a      0x36b ./Project_Settings/Startup_Code/system_ARMCM7.o
- .debug_line    0x00000f75      0x54a ./src/Flash/flash.o
- .debug_line    0x000014bf      0xb50 ./src/hse_host.o
- .debug_line    0x0000200f      0x8a6 ./src/hse_host_attrs.o
- .debug_line    0x000028b5      0xe8d ./src/main.o
- .debug_line    0x00003742      0x92d ./src/mu/hse_mu.o
+ .debug_line    0x00000093      0x2b8 ./Project_Settings/Startup_Code/boot_header.o
+ .debug_line    0x0000034b      0x8c7 ./Project_Settings/Startup_Code/startup_ARMCM7.o
+ .debug_line    0x00000c12      0x36f ./Project_Settings/Startup_Code/system_ARMCM7.o
+ .debug_line    0x00000f81      0x54e ./src/Flash/flash.o
+ .debug_line    0x000014cf      0xb68 ./src/hse_host.o
+ .debug_line    0x00002037      0x8ba ./src/hse_host_attrs.o
+ .debug_line    0x000028f1      0xea9 ./src/main.o
+ .debug_line    0x0000379a      0x93d ./src/mu/hse_mu.o
 
 .debug_info     0x00000000     0x6c0e
  .debug_info    0x00000000       0x26 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
@@ -1457,24 +1457,24 @@ LOAD linker stubs
  .debug_abbrev  0x0000098a      0x163 ./src/main.o
  .debug_abbrev  0x00000aed      0x177 ./src/mu/hse_mu.o
 
-.debug_str      0x00000000   0x1ff274
+.debug_str      0x00000000   0x1ff278
  .debug_str     0x00000000       0xb9 c:/nxp/s32ds.3.5_2/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
- .debug_str     0x000000b9     0x3d29 ./Project_Settings/Startup_Code/boot_header.o
-                               0x3ea3 (size before relaxing)
- .debug_str     0x00003de2   0x1ee9e2 ./Project_Settings/Startup_Code/startup_ARMCM7.o
-                             0x1f2718 (size before relaxing)
- .debug_str     0x001f27c4      0x1dc ./Project_Settings/Startup_Code/system_ARMCM7.o
-                               0xc0dd (size before relaxing)
- .debug_str     0x001f29a0      0xa83 ./src/Flash/flash.o
-                              0x13789 (size before relaxing)
- .debug_str     0x001f3423     0xa5fb ./src/hse_host.o
-                              0x16590 (size before relaxing)
- .debug_str     0x001fda1e       0x60 ./src/hse_host_attrs.o
-                               0xe07f (size before relaxing)
- .debug_str     0x001fda7e     0x1477 ./src/main.o
-                             0x1f51c9 (size before relaxing)
- .debug_str     0x001feef5      0x37f ./src/mu/hse_mu.o
-                               0xa7ff (size before relaxing)
+ .debug_str     0x000000b9     0x3d2d ./Project_Settings/Startup_Code/boot_header.o
+                               0x3ea7 (size before relaxing)
+ .debug_str     0x00003de6   0x1ee9e2 ./Project_Settings/Startup_Code/startup_ARMCM7.o
+                             0x1f271c (size before relaxing)
+ .debug_str     0x001f27c8      0x1dc ./Project_Settings/Startup_Code/system_ARMCM7.o
+                               0xc0e1 (size before relaxing)
+ .debug_str     0x001f29a4      0xa83 ./src/Flash/flash.o
+                              0x1378d (size before relaxing)
+ .debug_str     0x001f3427     0xa5fb ./src/hse_host.o
+                              0x16594 (size before relaxing)
+ .debug_str     0x001fda22       0x60 ./src/hse_host_attrs.o
+                               0xe083 (size before relaxing)
+ .debug_str     0x001fda82     0x1477 ./src/main.o
+                             0x1f51cd (size before relaxing)
+ .debug_str     0x001feef9      0x37f ./src/mu/hse_mu.o
+                               0xa803 (size before relaxing)
 
 .debug_aranges  0x00000000      0x1d8
  .debug_aranges

@@ -287,6 +287,17 @@ Flexcan_Ip_MsgBuffType rxData;
 
 int main(void)
 {
+	/*Check Fw Install Status*/
+	WaitForHSEFWInitToFinish();
+	hseSrvResponse_t HseResponse;
+	//Format the key catalog
+	HseResponse = FormatKeyCatalogs(NVM_Catalog, RAM_Catalog);
+	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+	HseResponse = HKF_Init(NVM_Catalog, RAM_Catalog);
+	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
 
 	Flexcan_Ip_StatusType FlexCAN_Api_Status;
 	    /* Write your code here */
@@ -313,18 +324,9 @@ int main(void)
 	  	TestDelay(700000);
 
 
-	    ST7789_WriteString(0, 80, "BMS VCU: MAster Sending Data", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    ST7789_WriteString(0, 80, "BMS: Master Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
-	/*Check Fw Install Status*/
-	WaitForHSEFWInitToFinish();
-	hseSrvResponse_t HseResponse;
-	//Format the key catalog
-	HseResponse = FormatKeyCatalogs(NVM_Catalog, RAM_Catalog);
-	ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-	HseResponse = HKF_Init(NVM_Catalog, RAM_Catalog);
-	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
 	//For Session Keys example
@@ -356,7 +358,7 @@ int main(void)
 	    ST7789_WriteString(0, 170, "Receive Public Key of Slave for Key exchange protocol", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 	    FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_polling_std, ECDH_Rx_Pub_Key_MSG_ID);
-	    while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, ECDH_Rx_Pub_Key_MSG_ID, &rxData, true,1000));
+	    while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, TX_MB_IDX, &rxData, true,1000));
 
 
     /* Import ECC Key */
