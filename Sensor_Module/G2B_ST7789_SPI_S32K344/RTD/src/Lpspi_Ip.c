@@ -2080,7 +2080,7 @@ Lpspi_Ip_StatusType Lpspi_Ip_SyncTransmit(const Lpspi_Ip_ExternalDeviceType *Ext
 {
     LPSPI_Type *Base;
     Lpspi_Ip_StateStructureType *State;
-    uint8 NumberOfWrites, NumberOfReads;
+    uint32 NumberOfWrites, NumberOfReads;
     Lpspi_Ip_StatusType Status = LPSPI_IP_STATUS_SUCCESS;
     uint32 TimeoutTicks = OsIf_MicrosToTicks(TimeOut, LPSPI_IP_TIMEOUT_METHOD);
     uint32 CurrentTicks = 0u; /* initialize current counter */
