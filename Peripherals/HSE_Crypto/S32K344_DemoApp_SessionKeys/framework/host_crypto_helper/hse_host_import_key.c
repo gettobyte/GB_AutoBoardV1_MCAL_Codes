@@ -459,12 +459,15 @@ hseSrvResponse_t ExportKeyReq(hseKeyExportParams_t *pExportKeyParams)
     return ExportKeyReqMuChannel(muIf, muChannelIdx, pExportKeyParams);
 }
 
+hseSrvDescriptor_t hseSrvDesc = {0};
+hseExportKeySrv_t *pExportKeyReq = &hseSrvDesc.hseSrv.exportKeyReq;
+
 hseSrvResponse_t ExportKeyReqMuChannel(uint8_t muInstance, uint8_t muChannel, hseKeyExportParams_t *pExportKeyParams)
 {
     #if defined(HSE_SPT_EXPORT_KEY)
-    hseSrvDescriptor_t hseSrvDesc = {0};
+   // hseSrvDescriptor_t hseSrvDesc = {0};
 
-    hseExportKeySrv_t *pExportKeyReq = &hseSrvDesc.hseSrv.exportKeyReq;
+   // hseExportKeySrv_t *pExportKeyReq = &hseSrvDesc.hseSrv.exportKeyReq;
     hseSrvResponse_t hseSrvResponse;
     bool_t bIsSymNotEncrypted = FALSE, bIsSymNotAuthenticated = FALSE;
     hseKeyInfo_t lKeyInfo = {0};
