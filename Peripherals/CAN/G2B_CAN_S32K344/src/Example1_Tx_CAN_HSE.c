@@ -301,6 +301,19 @@ uint16_t aes_exported_len;
 uint16_t recv_pub_key_length_ecdh;
 const uint8_t* recv_pub_key_value;
 
+hseKeyInfo_t aes256KeyInfo = {
+    .keyType = HSE_KEY_TYPE_AES,                             //Will generate an AES key
+    .keyFlags = (HSE_KF_USAGE_ENCRYPT |HSE_KF_USAGE_DECRYPT| //Usage flags for this key - Encrypt/Decrypt/Sign/Verify - AEAD
+        HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE ),
+    .keyBitLen = 256U,                                       //256 bits key
+};
+
+uint32_t PlaintextLength = 16;
+
+const uint8_t Plaintext[16] =
+{ 		0x6b, 0xc1, 0xbe, 0xe2, 0x2e, 0x40, 0x9f, 0x96,
+		0xe9, 0x3d, 0x7e, 0x11, 0x73, 0x93, 0x17, 0x2a
+};
 
 int main(void)
 {
@@ -412,12 +425,6 @@ int main(void)
   //  HseResponse = KdfSP800_108ReqTest_demo();
 
     //Declare the information about the 256 bits AES key to be extracted
-    hseKeyInfo_t aes256KeyInfo = {
-        .keyType = HSE_KEY_TYPE_AES,                             //Will generate an AES key
-        .keyFlags = (HSE_KF_USAGE_ENCRYPT |HSE_KF_USAGE_DECRYPT| //Usage flags for this key - Encrypt/Decrypt/Sign/Verify - AEAD
-            HSE_KF_USAGE_SIGN|HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE ),
-        .keyBitLen = 256U,                                       //256 bits key
-    };
 
     //Extract the 256 bits AES key from the remaining derived key material
     HseResponse = HSEKeyDeriveExtractKeyReq
@@ -433,7 +440,10 @@ int main(void)
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
-    HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1, &aes256KeyInfo, aes_exported, &aes_exported_len);
+    HseResponse = AesEncrypt(AESDerivedKeyInfoHandle1, HSE_CIPHER_BLOCK_MODE_ECB, NULL, PlaintextLength, Plaintext, aes_exported, HSE_SGT_OPTION_NONE);
+    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+   // HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1, &aes256KeyInfo, aes_exported, &aes_exported_len);
 
 
 
