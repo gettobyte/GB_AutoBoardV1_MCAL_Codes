@@ -337,7 +337,7 @@ void ST7789_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint
 		BytesToSend = TotalBytesToBeFilled/NoOfRounds;
 	}
 
-	for (uint16_t j =0; j<NoOfRounds; j++)
+	for (uint16_t j =1; j<NoOfRounds; j++)
 	 {
 		{
 			GB_ST7789_SendDataIm(&data[(BytesToSend *j)], BytesToSend);
