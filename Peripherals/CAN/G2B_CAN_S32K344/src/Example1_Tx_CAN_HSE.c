@@ -356,9 +356,6 @@ int main(void)
 
 	    ST7789_WriteString(0, 80, "BMS ECU: Master Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
-
-
-
 	//For Session Keys example
     hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PAIR_KEY_HANDLE;
 	//hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE;
@@ -380,7 +377,7 @@ int main(void)
 
 	string1 = uint8_to_stringhex(ECC_Public_key, 64);
 	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-	ST7789_WriteString(0, 160, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	ST7789_WriteString(0, 190, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
     FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_inter_canfd, ECDH_Tx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
     TestDelay(2000000);
 
@@ -418,13 +415,6 @@ int main(void)
 
        HseResponse =  HSEKdfSP800_108Req(&KdfSP800_108_Scheme_1_0);
 
-
-
-
-    //HSEKdfSP800
-  //  HseResponse = KdfSP800_108ReqTest_demo();
-
-    //Declare the information about the 256 bits AES key to be extracted
 
     //Extract the 256 bits AES key from the remaining derived key material
     HseResponse = HSEKeyDeriveExtractKeyReq
