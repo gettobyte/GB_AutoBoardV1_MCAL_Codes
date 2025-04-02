@@ -65,7 +65,11 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 
 #define ECDH_Rx_Pub_Key_MSG_ID 801u
 
+#define Message_Rx_MSG_ID 802u
+
+
 #define RX_MB_IDX 0
+#define RX_MB_IDX2 2
 #define TX_MB_IDX 1
 
 /* User includes */
@@ -222,6 +226,18 @@ const hseKeyGroupCfgEntry_t RAM_Catalog [] =
         }
 };
 
+uint32_t PlaintextLength = 64;
+
+const uint8_t Plaintext[64] =
+{ 		0x6b, 0xc1, 0xbe, 0xe2, 0x2e, 0x40, 0x9f, 0x96,
+		0xe9, 0x3d, 0x7e, 0x11, 0x73, 0x93, 0x17, 0x2a,
+		0x7b, 0x01, 0x2e, 0x12, 0x4e, 0x40, 0x9f, 0x06,
+		0x99, 0x4d, 0x7e, 0x01, 0x93, 0x93, 0x17, 0x4a,
+		0x7b, 0x01, 0x2e, 0x12, 0x4e, 0x40, 0x9f, 0x06,
+		0x99, 0x4d, 0x7e, 0x01, 0x93, 0x93, 0x17, 0x4a,
+		0x7b, 0x01, 0x2e, 0x12, 0x4e, 0x40, 0x9f, 0x06,
+		0x99, 0x4d, 0x7e, 0x01, 0x93, 0x93, 0x17, 0x4a
+};
 /*==================================================================================================
 *                                      GLOBAL VARIABLES
 ==================================================================================================*/
@@ -280,6 +296,8 @@ const uint8_t CMAC_Plaintext[] =
 uint8_t CMAC_Tag_OutPut[512] = {0};
 uint32_t CMAC_Tag_length = 16;
 
+uint32_t nxp_logo_length = 60*60;
+
 uint8_t Fast_CMAC_Tag_OutPut[512] = {0};
 uint8_t Fast_CMAC_Tag_length = 16;
 
@@ -322,6 +340,29 @@ void scaleImage(uint8_t *src, uint8_t *dest) {
         }
     }
 }
+
+#define SRC_WIDTH4  4
+#define SRC_HEIGHT4 4
+// Function to scale 8x8 image to 56*56
+void scaleImage4x4(uint8_t *src, uint8_t *dest) {
+    for (int y = 0; y < SRC_HEIGHT4; y++) {
+        for (int x = 0; x < SRC_WIDTH4; x++) {
+            uint8_t pixel = src[y * SRC_WIDTH4 + x];  // Get original pixel
+
+            // Expand this pixel into SCALE_FACTOR x SCALE_FACTOR block
+            for (int dy = 0; dy < SCALE_FACTOR; dy++) {
+                for (int dx = 0; dx < SCALE_FACTOR; dx++) {
+                    int destX = x * SCALE_FACTOR + dx;
+                    int destY = y * SCALE_FACTOR + dy;
+                    dest[destY * DEST_WIDTH + destX] = pixel;
+                }
+            }
+        }
+    }
+}
+
+
+uint8_t Tag_of_message_received[16];
 
 
 
@@ -376,6 +417,8 @@ int main(void)
 
     ST7789_WriteString(10, 130, "Exchanging keys for secure communication(via ECDH)....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
+  	TestDelay(14000000);
+
 
 
     /********* Key Exchange protocol ECDH for Shared Secret Key */
@@ -386,27 +429,46 @@ int main(void)
 
     // transmit the exported public key to the other node via can and also receive the exported public key of other node and use that in next step to import it in public key handle
 
-    ST7789_WriteString(0, 190, "Slave Node Receiving Public keys for computing shared key.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    ST7789_WriteString(0, 190, "Slave Node Receiving Public keys for computing shared key.....", Font_11x18, ST77XX_RED, ST77XX_BLACK);
 
     FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_polling_std, ECDH_Tx_Pub_Key_MSG_ID);
     while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX, &rxData, true,1000));
 
     scaleImage(rxData.data, ScaledImage);
-
 	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
+
+  	TestDelay(14000000);
+
+    ST7789_WriteString(0, 190, "Slave Node has received public keys for computing shared key.....", Font_11x18, ST77XX_ORANGE, ST77XX_BLACK);
+  	TestDelay(35000000);
 
 //    string1 = uint8_to_stringhex(rxData.data, rxData.dataLen );
 //	ST7789_WriteString(0, 160, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
+  	ST7789_SetAddressWindow(30,250, ST7789_XEnd, ST7789_YEnd);
+    ST7789_Fill_Color(ST77XX_BLACK);
+
+    ST7789_WriteString(0, 190, "Slave Node Sending Public keys for computing shared key....", Font_11x18, ST77XX_BLUE, ST77XX_BLACK);
+
+  	TestDelay(14000000);
+    scaleImage(ECC_Public_key, ScaledImage);
+  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+  	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
 
 
-    ST7789_WriteString(0, 170, "Transmit Public Key of Slave for Key exchange protocol", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-	string1 = uint8_to_stringhex(ECC_Public_key, 64);
-	ST7789_WriteString(0, 200, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
     FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &rx_info_inter_canfd, ECDH_Rx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
-	TestDelay(2000000);
+  	TestDelay(14000000);
+
+    ST7789_WriteString(0, 190, "Slave Node has Sended Public keys for computing shared key....", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+  	TestDelay(35000000);
+
+    ST7789_SetAddressWindow(30,250, ST7789_XEnd, ST7789_YEnd);
+    ST7789_Fill_Color(ST77XX_BLACK);
+
+    ST7789_WriteString(0, 190, "Now Computing shared secret key via ECDH protocol for S32K3 HSE", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+
+  	TestDelay(35000000);
 
 
     /* Import ECC Key */
@@ -460,60 +522,85 @@ int main(void)
     ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
+    HseResponse = AesEncrypt(AESDerivedKeyInfoHandle1, HSE_CIPHER_BLOCK_MODE_ECB, NULL, PlaintextLength, Plaintext, aes_exported, HSE_SGT_OPTION_NONE);
+        	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+        	scaleImage(aes_exported, ScaledImage);
+            ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+            ST7789_DrawImage(30,250, 120, 120, ScaledImage);
+
+
     HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1,&aes256KeyInfo, aes_exported, &aes_exported_len  );
 
 
 
     /****** MAC Generation and Verification ****************/
 
-    //CMAC Generation using CMAC_Plaintext and AESDerivedKeyInfoHandle1 key handle( which is derived from KDF function).
-    hseMacScheme_t macScheme;
-    macScheme.macAlgo = HSE_MAC_ALGO_CMAC;
-    macScheme.sch.cmac.cipherAlgo = HSE_CIPHER_ALGO_AES;
-    HseResponse = AesCmacGenerate(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
-  		  //MacSignSrv(HSE_ACCESS_MODE_ONE_PASS, 0, macScheme, AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
-
-    // Master will transmit the CMAC_PlainText & CMAC_Tag_OutPut to receiver and also AES Derived Key value to receiver.
-    // Receiver will received the derived key handle and will import that into it for AES key handle in NVM.
-
-
-   HseResponse = AesCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
-
-
-   /********* CMAC With Counter Demo Code ********************/
-
-   uint32_t volatileCnt       = 0xFFFFFFFFUL;
-
-    uint32_t rpBitSize          = 40UL;
-    uint32_t TxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 3UL;
-    uint32_t RxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 2UL;
-
-    HseResponse =  MonotonicCnt_Config(TxnodecntIdx,rpBitSize);
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-    /* Configure Node B */
-    HseResponse = MonotonicCnt_Config(RxnodecntIdx, rpBitSize);
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//    //CMAC Generation using CMAC_Plaintext and AESDerivedKeyInfoHandle1 key handle( which is derived from KDF function).
+//    hseMacScheme_t macScheme;
+//    macScheme.macAlgo = HSE_MAC_ALGO_CMAC;
+//    macScheme.sch.cmac.cipherAlgo = HSE_CIPHER_ALGO_AES;
+//    HseResponse = AesCmacGenerate(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
+//  		  //MacSignSrv(HSE_ACCESS_MODE_ONE_PASS, 0, macScheme, AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
+//
+//    // Master will transmit the CMAC_PlainText & CMAC_Tag_OutPut to receiver and also AES Derived Key value to receiver.
+//    // Receiver will received the derived key handle and will import that into it for AES key handle in NVM.
+//
+//
+    ST7789_WriteString(0, 190, "Receiving Data ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
 
 
-    /* Configure Node A Counter as a default value */
-    HseResponse = MonotonicCnt_Increment(TxnodecntIdx, 0x800000UL);
-      ASSERT(HSE_SRV_RSP_OK == HseResponse);
+    FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX2, &rx_info_polling_std, Message_Rx_MSG_ID);
+     while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX2, &rxData, true,1000));
 
-      /* Configure Node B Counter as a default value */
-      HseResponse = MonotonicCnt_Increment(RxnodecntIdx, 0x800000UL);
-      ASSERT(HSE_SRV_RSP_OK == HseResponse);
+     scaleImage(rxData.data, ScaledImage);
+ 	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+ 	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
 
-
-    HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_GENERATE,TxnodecntIdx, 0,
-    		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
-
-
-    HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_VERIFY,RxnodecntIdx, 0,
-    		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
+ 	for ( int i =0; i<16; i++)
+ 	{
+ 		Tag_of_message_received[i] = rxData.data[i];
+ 	}
+ 	ST7789_WriteString(0, 190, "Verifying Data ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
 
 
-
+   HseResponse = AesCmacVerify(AESDerivedKeyInfoHandle1, nxp_logo_length, nxp_logo, &CMAC_Tag_length,  Tag_of_message_received, HSE_SGT_OPTION_NONE );
+//
+//
+//   /********* CMAC With Counter Demo Code ********************/
+//
+//   uint32_t volatileCnt       = 0xFFFFFFFFUL;
+//
+//    uint32_t rpBitSize          = 40UL;
+//    uint32_t TxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 3UL;
+//    uint32_t RxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 2UL;
+//
+//    HseResponse =  MonotonicCnt_Config(TxnodecntIdx,rpBitSize);
+//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//
+//    /* Configure Node B */
+//    HseResponse = MonotonicCnt_Config(RxnodecntIdx, rpBitSize);
+//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//
+//
+//    /* Configure Node A Counter as a default value */
+//    HseResponse = MonotonicCnt_Increment(TxnodecntIdx, 0x800000UL);
+//      ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//
+//      /* Configure Node B Counter as a default value */
+//      HseResponse = MonotonicCnt_Increment(RxnodecntIdx, 0x800000UL);
+//      ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//
+//
+//    HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_GENERATE,TxnodecntIdx, 0,
+//    		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
+//
+//
+//    HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_VERIFY,RxnodecntIdx, 0,
+//    		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
+//
+//
+//
 
 
 
