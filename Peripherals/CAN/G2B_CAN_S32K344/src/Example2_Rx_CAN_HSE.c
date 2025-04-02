@@ -297,6 +297,34 @@ hseKeyHandle_t targetSharedSecretKey_1 = HSE_INVALID_KEY_HANDLE;
 uint8_t aes_exported[64];
 uint16_t aes_exported_len;
 
+uint8_t *ScaledImage = 0;
+
+#define SRC_WIDTH  8
+#define SRC_HEIGHT 8
+#define DEST_WIDTH 120
+#define DEST_HEIGHT 120
+#define SCALE_FACTOR 15  // 120/8
+
+// Function to scale 8x8 image to 56*56
+void scaleImage(uint8_t *src, uint8_t *dest) {
+    for (int y = 0; y < SRC_HEIGHT; y++) {
+        for (int x = 0; x < SRC_WIDTH; x++) {
+            uint8_t pixel = src[y * SRC_WIDTH + x];  // Get original pixel
+
+            // Expand this pixel into SCALE_FACTOR x SCALE_FACTOR block
+            for (int dy = 0; dy < SCALE_FACTOR; dy++) {
+                for (int dx = 0; dx < SCALE_FACTOR; dx++) {
+                    int destX = x * SCALE_FACTOR + dx;
+                    int destY = y * SCALE_FACTOR + dy;
+                    dest[destY * DEST_WIDTH + destX] = pixel;
+                }
+            }
+        }
+    }
+}
+
+
+
 int main(void)
 {
 
@@ -346,6 +374,8 @@ int main(void)
    // hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_RAM_AES256_KEY1;
     hseKeyHandle_t AESDerivedKeyInfoHandle1 = HSE_DEMO_NVM_AES256_KEY2;
 
+    ST7789_WriteString(10, 130, "Exchanging keys for secure communication(via ECDH)....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
 
 
     /********* Key Exchange protocol ECDH for Shared Secret Key */
@@ -356,12 +386,18 @@ int main(void)
 
     // transmit the exported public key to the other node via can and also receive the exported public key of other node and use that in next step to import it in public key handle
 
-    ST7789_WriteString(0, 130, "Receive Public Key of Master for Key exchange protocol", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    ST7789_WriteString(0, 190, "Slave Node Receiving Public keys for computing shared key.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
     FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_polling_std, ECDH_Tx_Pub_Key_MSG_ID);
     while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX, &rxData, true,1000));
-	string1 = uint8_to_stringhex(rxData.data, rxData.dataLen );
-	ST7789_WriteString(0, 160, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    scaleImage(rxData.data, ScaledImage);
+
+	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
+
+//    string1 = uint8_to_stringhex(rxData.data, rxData.dataLen );
+//	ST7789_WriteString(0, 160, string1 , Font_7x10, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
 
