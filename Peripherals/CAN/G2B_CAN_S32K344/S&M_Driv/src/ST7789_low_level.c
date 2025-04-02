@@ -91,9 +91,9 @@ static void TestDelay(uint32 delay)
 /*
  * LPSPI3, PTD0: MOSI PTD1: CLK. PTB12: CS
  */
+	uint8_t rx_value;
 void GB_MA_SPI_send_byte_conti(uint8_t *val, uint16_t count, uint32_t timeout)
 {
-	uint8_t rx_value;
 	Lpspi_Ip_SyncTransmit(&Lpspi_Ip_DeviceAttributes_SpiExternalDevice_0_Instance_3,val, &rx_value, count, timeout); //Transfer the data from MOSI to MISO
 
 	//Lpspi_Ip_SyncTransmit(&Lpspi_Ip_DeviceAttributes_W25_SPI_Flash_BOARD_InitPeripherals,val, rx_val, count, timeout); //Transfer the data from MOSI to MISO
@@ -305,7 +305,7 @@ void ST7789_Fill_Color(uint16_t color)
 
 }
 uint32_t length = 0;
-uint16_t i,j;
+uint16_t i;
 
 /*
  * @brief This API, will print images on the canvas
@@ -337,7 +337,7 @@ void ST7789_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint
 		BytesToSend = TotalBytesToBeFilled/NoOfRounds;
 	}
 
-	for (j =0; j<NoOfRounds; j++)
+	for (uint16_t j =0; j<NoOfRounds; j++)
 	 {
 		{
 			GB_ST7789_SendDataIm(&data[(BytesToSend *j)], BytesToSend);
