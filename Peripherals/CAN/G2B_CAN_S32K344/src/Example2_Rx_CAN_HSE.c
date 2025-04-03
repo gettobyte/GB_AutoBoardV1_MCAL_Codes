@@ -62,15 +62,22 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 
 
 #define ECDH_Tx_Pub_Key_MSG_ID 800u
-
 #define ECDH_Rx_Pub_Key_MSG_ID 801u
-
 #define Message_Rx_MSG_ID 802u
+
+#define Rx_DS_Pub_key_MSG_IDX 803u
+#define Rx_DS_SignR_key_MSG_IDX 804u
+#define Rx_DS_SignS_key_MSG_IDX 805u
+
 
 
 #define RX_MB_IDX 0
 #define RX_MB_IDX2 2
 #define TX_MB_IDX 1
+
+#define Rx_DS_Pub_key_MB_IDX 3
+#define Rx_DS_SignR_MB_IDX 4
+#define Rx_DS_SignS_MB_IDX 5
 
 /* User includes */
 uint8 dummyData[8] = {1,2,3,4,5,6,7};
@@ -302,6 +309,9 @@ uint8_t Fast_CMAC_Tag_OutPut[512] = {0};
 uint8_t Fast_CMAC_Tag_length = 16;
 
 Flexcan_Ip_MsgBuffType rxData;
+Flexcan_Ip_MsgBuffType rxData_DS_Pub_Keys;
+Flexcan_Ip_MsgBuffType rxData_DS_SignS_Keys;
+Flexcan_Ip_MsgBuffType rxData_DS_SignR_Keys;
 
 uint8_t keyBuf[2 * BITS_TO_BYTES(HSE_MAX_ECC_KEY_BITS_LEN)] = {0};//132
 uint16_t keyBufLen = sizeof(keyBuf);//132
@@ -316,6 +326,10 @@ uint8_t aes_exported[64];
 uint16_t aes_exported_len;
 
 uint8_t *ScaledImage = 0;
+uint8_t *ScaledImage2 = 0;
+uint8_t *ScaledImage3 = 0;
+uint8_t *ScaledImage4 = 0;
+uint8_t *ScaledImage5 = 0;
 
 #define SRC_WIDTH  8
 #define SRC_HEIGHT 8
@@ -364,6 +378,7 @@ void scaleImage4x4(uint8_t *src, uint8_t *dest) {
 
 uint8_t Tag_of_message_received[16];
 
+<<<<<<< HEAD
 
 const uint8_t nxp_logo[] = {
 		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -429,9 +444,26 @@ const uint8_t nxp_logo[] = {
 };
 
 
+=======
+uint8_t SignR_Digital_Signature[32];
+uint8_t SignS_Digital_Signature[32];
+uint8_t Sign_length;
+>>>>>>> 7d3e3ede8359b0b6302f8507ea8bbc6027ae7f54
 
 int main(void)
 {
+
+	/*Check Fw Install Status*/
+	WaitForHSEFWInitToFinish();
+	hseSrvResponse_t HseResponse;
+	//Format the key catalog
+	HseResponse = FormatKeyCatalogs(NVM_Catalog, RAM_Catalog);
+	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+	HseResponse = HKF_Init(NVM_Catalog, RAM_Catalog);
+	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
 
 	Flexcan_Ip_StatusType FlexCAN_Api_Status;
 	    /* Write your code here */
@@ -461,15 +493,55 @@ int main(void)
 	    ST7789_WriteString(0, 80, "VCU ECU: Slave Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
-	/*Check Fw Install Status*/
-	WaitForHSEFWInitToFinish();
-	hseSrvResponse_t HseResponse;
-	//Format the key catalog
-	HseResponse = FormatKeyCatalogs(NVM_Catalog, RAM_Catalog);
-	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
-	HseResponse = HKF_Init(NVM_Catalog, RAM_Catalog);
-	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+	    /************** Digital Signature/Verification Process**************/
+
+//    	hseKeyHandle_t digital_signature_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,2);
+//    	/*Key Handle for Public Key in RAM catalog*/
+    	hseKeyHandle_t digital_signature_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,4);
+
+    	 ST7789_WriteString(0, 80, "Waiting for ECC pub key to receive for Digital Signature for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_Pub_key_MB_IDX, &rx_info_polling_std, Rx_DS_Pub_key_MSG_IDX);
+    	 while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, Rx_DS_Pub_key_MB_IDX, &rxData_DS_Pub_Keys, true,1000));
+
+    	 ST7789_WriteString(0, 80, "Received ECC pub key's for Digital Signature for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 scaleImage(rxData_DS_Pub_Keys.data, ScaledImage2);
+    	 ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+    	 ST7789_DrawImage(30,250, 120, 120, ScaledImage2);
+
+    	 HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,rxData_DS_Pub_Keys.data);
+    		    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
+    	 ST7789_WriteString(0, 80, "Waiting for digital signature's to receive for Digital Signature for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_SignS_MB_IDX, &rx_info_polling_std, Rx_DS_SignS_key_MSG_IDX);
+    	 while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, Rx_DS_SignS_MB_IDX, &rxData_DS_SignS_Keys, true,1000));
+
+    	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_SignR_MB_IDX, &rx_info_polling_std, Rx_DS_SignR_key_MSG_IDX);
+    	 while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, Rx_DS_SignR_MB_IDX, &rxData_DS_SignR_Keys, true,1000));
+
+    	 for( int i =0; i<32; i++)
+    	 {
+    		 SignR_Digital_Signature [i] = rxData_DS_SignR_Keys[i];
+    		 SignS_Digital_Signature [i] = rxData_DS_SignS_Keys[i];
+    		 Sign_length = i+1;
+    	 }
+
+    	 ST7789_WriteString(0, 80, "Received Signature for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 scaleImage(SignR_Digital_Signature, ScaledImage3);
+    	 ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+    	 ST7789_DrawImage(30,250, 120, 120, ScaledImage3);
+
+
+    	 ST7789_WriteString(0, 80, "Verifing the digital signature .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+ 	    HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&Sign_length, SignR_Digital_Signature, &Sign_length, SignS_Digital_Signature);
+ 	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+
 
 
 	//For Session Keys example
