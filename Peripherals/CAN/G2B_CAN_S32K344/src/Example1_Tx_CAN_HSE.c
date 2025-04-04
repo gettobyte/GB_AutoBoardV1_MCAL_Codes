@@ -64,22 +64,25 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 
 
 #define ECDH_Tx_Pub_Key_MSG_ID 800u
-
 #define ECDH_Rx_Pub_Key_MSG_ID 801u
-
 #define Data_Tx_MSG_ID 802u
 
 #define Tx_DS_Pub_key_MSG_IDX 803u
-#define Tx_DS_SignR_MSG_IDX 804u
+#define Tx_DS_Sign_MSG_IDX 804u
 
+#define DS_Master_ACK_Pub_key_MSG_IDX 805u
+#define DS_Master_ACK_Sign_MSG_IDX 806u
 
 #define TX_MB_IDX 0
 #define TX_MB_IDX2 2
 #define RX_MB_IDX 1
 
 #define Tx_DS_Pub_key_MB_IDX 3
-#define Tx_DS_SignR_MB_IDX 4
-#define Tx_DS_SignS_MB_IDX 5
+#define Tx_DS_Sign_MB_IDX 4
+
+#define DS_Master_ACK_Pub_key_MB_IDX 5
+#define DS_Master_ACK_Sign_MB_IDX 6
+
 
 
 /* User includes */
@@ -319,6 +322,9 @@ uint32_t nxp_logo_length = 60*60;
 
 Flexcan_Ip_MsgBuffType rxData;
 //hseAttrSecureLifecycle_t lifecycle;
+Flexcan_Ip_MsgBuffType DS_ACK_Pub_Keys;
+Flexcan_Ip_MsgBuffType DS_ACK_Sign;
+
 
 uint8_t keyBuf[2 * BITS_TO_BYTES(HSE_MAX_ECC_KEY_BITS_LEN)] = {0};//132
 uint16_t keyBufLen = sizeof(keyBuf);//132
@@ -326,7 +332,10 @@ uint16_t keyBufLen = sizeof(keyBuf);//132
 hseKdfSP800_108Scheme_t key_Derive_info;
 hseKeyHandle_t targetSharedSecretKey_1 = HSE_INVALID_KEY_HANDLE;
 
+uint8_t DS_ACK_SignS[32];
+uint8_t DS_ACK_SignR[32];
 
+const uint32_t DS_ACK_Sign_length = 32;
 
 uint8_t aes_exported[64];
 uint16_t aes_exported_len;
@@ -745,6 +754,8 @@ void scaleImage4x4(uint8_t *src, uint8_t *dest) {
 /*Message to be signed*/
 const uint8_t msg[] = "Do or do not, there is no try";
 
+const uint8_t ack_msg[] = "do not, there is no try";
+
 /*Q Point of the ECC curve (public key)*/
 uint8_t Q [2*256/8];
 
@@ -863,31 +874,57 @@ int main(void)
 
 
 
-	   	ST7789_WriteString(0, 220, "Sending the Signature for verification to all receiver's.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	   	ST7789_WriteString(0, 180, "Sending the Signature for verification to all receiver's.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 		TestDelay(14000000);
 
-	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_SignS_MB_IDX, &tx_info_polling_canfd, Tx_DS_SignR_MSG_IDX, (uint8 *)&G2B_Digital_Signature, 2000);
+	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Sign_MB_IDX, &tx_info_polling_canfd, Tx_DS_Sign_MSG_IDX, (uint8 *)&G2B_Digital_Signature, 2000);
 
 
-//	    FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_SignR_MB_IDX, &tx_info_polling_canfd, Tx_DS_SignR_key_MSG_IDX, (uint8 *)&signR, 2000);
-//
-//
+	    ST7789_WriteString(0, 240, "Waiting for verification acknowledgment.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    {
 
-//
-//		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-//		ST7789_Fill_Color(ST77XX_BLACK);
-//
-	    ST7789_WriteString(0, 80, "Waiting for verification acknowledgment.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+				// waiting for acknowledgment ecc public keys
+				FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, DS_Master_ACK_Pub_key_MB_IDX, &tx_info_polling_canfd, DS_Master_ACK_Pub_key_MSG_IDX);
+				while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, DS_Master_ACK_Pub_key_MB_IDX, &DS_ACK_Pub_Keys, true,1000));
+
+				HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,DS_ACK_Pub_Keys.data);
+				ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+				// Waiting for digital signature's to receive for acknowledgement authentication
+
+				FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, DS_Master_ACK_Sign_MB_IDX, &tx_info_polling_canfd, DS_Master_ACK_Sign_MSG_IDX);
+				while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, DS_Master_ACK_Sign_MB_IDX, &DS_ACK_Sign, true,1000));
+
+				for( int i =0; i<64; i++)
+					 {
+						 if ( i<32)
+						 {
+							 DS_ACK_SignS[i] = DS_ACK_Sign.data [i];
+						 }else
+						 {
+							 DS_ACK_SignR[i-32] =  DS_ACK_Sign.data [i];
+						 }
+						// DC_ACK_Sign_length = i+1;
+					 }
 
 
 
 
-		// Receiving Node will receive the Exported public key(Q) and import it inside HSE just like LoadECCPublicKey at line 130
-			/* Verifies the signature with the public Key stored inn the RAM catalog using the signature generated above*/
-	    HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&signRLen, signR, &signSLen, signS);
-//	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+				// Receiving Node will receive the Exported public key(Q) and import it inside HSE just like LoadECCPublicKey at line 130
+					/* Verifies the signature with the public Key stored inn the RAM catalog using the signature generated above*/
+				HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(ack_msg),ack_msg,FALSE,0,&DS_ACK_Sign_length, DS_ACK_SignR, &DS_ACK_Sign_length, DS_ACK_SignS);
+
+				if (HseResponse == HSE_SRV_RSP_OK)
+				{
+					ST7789_WriteString(0, 80, "Received verification acknowledge, device is authorized ...", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
+				}else
+				{
+					ST7789_WriteString(0, 80, "verification acknowledgement not received, device not authenticated ...", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+				}
+	    }
 
 
 
