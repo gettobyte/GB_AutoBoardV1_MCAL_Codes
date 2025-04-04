@@ -555,14 +555,17 @@ int main(void)
      	 TestDelay(14000000);
     	 ST7789_WriteString(0, 190, "Received Signature for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
+    	 TestDelay(14000000);
 
     	 ST7789_WriteString(0, 235, "Verifing the digital signature .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 TestDelay(28000000);
 
  	    HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&Sign_length, rxData_DS_SignR, &Sign_length, rxData_DS_SignS);
 
  	    if (HseResponse == HSE_SRV_RSP_OK)
  	    {
  	    	 ST7789_WriteString(0, 275, "Digital signature verified, sending acknow.... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+ 	    	TestDelay(14000000);
 
  	    	hseKeyHandle_t digital_signature_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,2);
 
@@ -572,6 +575,7 @@ int main(void)
  	    	HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,DS_ack_pub_keys);
  	    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
  	    	FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, DS_ACK_Pub_key_MB_IDX, &rx_info_inter_canfd, DS_ACK_Pub_key_MSG_IDX, (uint8 *)&DS_ack_pub_keys);
+ 	    	TestDelay(14000000);
 
 
  	    	HseResponse = EcdsaSign(digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(ack_msg),ack_msg,FALSE,0,&ack_signRLen, ack_signR, &ack_signSLen, ack_signS);
@@ -591,6 +595,13 @@ int main(void)
  	   	   	}
 
  	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_DS_Sign_MB_IDX, &rx_info_inter_canfd, DS_ACK_DS_Sign_MSG_IDX, (uint8 *)&ack_G2B_Digital_Signature, 2000);
+ 	   TestDelay(14000000);
+
+ 	  ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 190);
+ 	  ST7789_Fill_Color(ST77XX_BLACK);
+
+ 	  ST7789_WriteString(0, 80, "Acknowledgment Sended.... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+ 	  TestDelay(21000000);
 
 
  	    }else
@@ -601,6 +612,8 @@ int main(void)
  	    }
 
 
+ 	 	  ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+ 	 	  ST7789_Fill_Color(ST77XX_BLACK);
 	//For Session Keys example
     hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PAIR_KEY_HANDLE;
 	//hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PUB_KEY_HANDLE;
