@@ -68,6 +68,8 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 #define Rx_DS_Pub_key_MSG_IDX 803u
 #define Rx_DS_Sign_MSG_IDX 804u
 
+#define DS_ACK_Pub_key_MSG_IDX 805u
+#define DS_ACK_DS_Sign_MSG_IDX 806u
 
 
 #define RX_MB_IDX 0
@@ -77,10 +79,9 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 #define Rx_DS_Pub_key_MB_IDX 3
 #define Rx_DS_Sign_MB_IDX 4
 
-/* User includes */
-uint8 dummyData[8] = {1,2,3,4,5,6,7};
+#define DS_ACK_Pub_key_MB_IDX 5
+#define DS_ACK_DS_Sign_MB_IDX 6
 
-uint8 dummyData_canfd[64] = {1,2,3,4,5,6,7, 8, 9, 10, 11,12, 13, 14, 15, 16, 17, 18 , 19, 20};
 
 void TestDelay(uint32 delay);
 void TestDelay(uint32 delay)
@@ -133,7 +134,7 @@ Flexcan_Ip_DataInfoType rx_info_inter_canfd = {
 		.fd_enable = TRUE,
 		.fd_padding = 0xAA,
 		.enable_brs = TRUE,
-        .is_polling = TRUE,
+        .is_polling = FALSE,
         .is_remote = FALSE
 };
 
@@ -309,6 +310,8 @@ uint8_t Fast_CMAC_Tag_length = 16;
 Flexcan_Ip_MsgBuffType rxData;
 Flexcan_Ip_MsgBuffType rxData_DS_Pub_Keys;
 
+uint8_t DS_ack_pub_keys [2*256/8];
+
 Flexcan_Ip_MsgBuffType rxData_DS_Sign;
 
 uint8_t keyBuf[2 * BITS_TO_BYTES(HSE_MAX_ECC_KEY_BITS_LEN)] = {0};//132
@@ -446,6 +449,17 @@ const uint32_t Sign_length = 32;
 
 const uint8_t msg[] = "Do or do not, there is no try";
 
+const uint8_t ack_msg[] = "do not, there is no try";
+
+/*Arrays with the R and S coordinates of the ack_signature*/
+static uint8_t ack_signR[256] = {0};
+static uint8_t ack_signS[256] = {0};
+/*Size of the R and S coordinates of the signature, used as parameters of the sign and verify functions*/
+static uint32_t ack_signRLen = 32;
+static uint32_t ack_signSLen = 32;
+uint8_t ack_G2B_Digital_Signature[64];
+
+
 int main(void)
 {
 
@@ -539,48 +553,52 @@ int main(void)
     	 ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
     	 ST7789_DrawImage(30,160, 120, 120, ScaledImage3);
      	 TestDelay(14000000);
-    	 ST7789_WriteString(0, 210, "Received Signature for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 ST7789_WriteString(0, 190, "Received Signature for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
-    	 ST7789_WriteString(0, 255, "Verifing the digital signature .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 ST7789_WriteString(0, 235, "Verifing the digital signature .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
  	    HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&Sign_length, rxData_DS_SignR, &Sign_length, rxData_DS_SignS);
 
  	    if (HseResponse == HSE_SRV_RSP_OK)
  	    {
+ 	    	 ST7789_WriteString(0, 275, "Digital signature verified, sending acknow.... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
- 	    	HseResponse = GenerateEccKeyAndExportPublic(digital_signature_keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE | HSE_KF_ACCESS_WRITE_PROT),Q);
+ 	    	hseKeyHandle_t digital_signature_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,2);
+
+ 	    	HseResponse = GenerateEccKeyAndExportPublic(digital_signature_keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE | HSE_KF_ACCESS_WRITE_PROT),DS_ack_pub_keys);
  	    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
- 	    	HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,Q);
+ 	    	HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,DS_ack_pub_keys);
  	    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
- 	    	FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_inter_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q);
+ 	    	FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, DS_ACK_Pub_key_MB_IDX, &rx_info_inter_canfd, DS_ACK_Pub_key_MSG_IDX, (uint8 *)&DS_ack_pub_keys);
 
 
- 	    	 	  HseResponse = EcdsaSign(digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&signRLen, signR, &signSLen, signS);
- 	    	 	  ASSERT(HSE_SRV_RSP_OK == HseResponse);
+ 	    	HseResponse = EcdsaSign(digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(ack_msg),ack_msg,FALSE,0,&ack_signRLen, ack_signR, &ack_signSLen, ack_signS);
+ 	    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+ 	    	for ( int i =0; i<64; i++)
+ 	   	   	{
+ 	   	   		if ( i<32)
+ 	   	   		{
+ 	   	   		ack_G2B_Digital_Signature[i] = ack_signS[i];
+ 	   	   		}else
+ 	   	   		{
+ 	   	   		ack_G2B_Digital_Signature[i] = ack_signR[i-32];
+
+ 	   	   		}
+
+ 	   	   	}
+
+ 	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_DS_Sign_MB_IDX, &rx_info_inter_canfd, DS_ACK_DS_Sign_MSG_IDX, (uint8 *)&ack_G2B_Digital_Signature, 2000);
 
 
  	    }else
  	    {
+ 	    	 ST7789_WriteString(0, 290, "Digital signature not verified, not a authorized sender ..... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
 
  	    }
-
-
-
- 	    HseResponse = GenerateEccKeyAndExportPublic(digital_signature_keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE | HSE_KF_ACCESS_WRITE_PROT),Q);
- 		ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
- 	   HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,Q);
- 	   ASSERT(HSE_SRV_RSP_OK == HseResponse);
- 	   FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_inter_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q);
-
-
- 	  HseResponse = EcdsaSign(digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&signRLen, signR, &signSLen, signS);
- 	  ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-
-
 
 
 	//For Session Keys example

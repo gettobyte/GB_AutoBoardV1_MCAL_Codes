@@ -46,7 +46,7 @@ extern "C" {
 #include "sys_init.h"
 #include "Mcal.h"
 #include "StdRegMacros.h"
-#include "C:\Users\gettobyte_kunal\Documents\GB_AutoBoardV1_MCAL_Codes\Peripherals\CAN\G2B_CAN_S32K344\src\target\m7\include\S32K344.h"
+#include "C:\Users\Thank\OneDrive\Documents\GB_AutoBoardV1_MCAL_Codes\Peripherals\CAN\G2B_CAN_S32K344\src\target\m7\include\S32K344.h"
 #include "hse_target.h"
 #include "nvic.h"
 #include "hse_mu.h"
