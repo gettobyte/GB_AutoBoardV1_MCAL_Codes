@@ -822,7 +822,7 @@ int main(void)
 	    	hseKeyHandle_t digital_signature_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,4);
 
 
-		 ST7789_WriteString(0, 80, "Generating ECC Key pair for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+		 ST7789_WriteString(0, 80, "Generating ECC Key pair for authentication ....               ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 	    /*Generates ECC Key in the NVM Catalog and exports the public Key into the Q array*/
 	    HseResponse = GenerateEccKeyAndExportPublic(digital_signature_keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE | HSE_KF_ACCESS_WRITE_PROT),Q);
 	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
@@ -913,10 +913,14 @@ int main(void)
 				// Receiving Node will receive the Exported public key(Q) and import it inside HSE just like LoadECCPublicKey at line 130
 					/* Verifies the signature with the public Key stored inn the RAM catalog using the signature generated above*/
 				HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(ack_msg),ack_msg,FALSE,0,&DS_ACK_Sign_length, DS_ACK_SignR, &DS_ACK_Sign_length, DS_ACK_SignS);
+				TestDelay(7000000);
 
 				if (HseResponse == HSE_SRV_RSP_OK)
 				{
+					ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 180);
+					ST7789_Fill_Color(ST77XX_BLACK);
 					ST7789_WriteString(0, 80, "Received verification acknowledge, device is authorized ...", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+					TestDelay(21000000);
 
 
 				}else
@@ -927,7 +931,8 @@ int main(void)
 	    }
 
 
-
+		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+					ST7789_Fill_Color(ST77XX_BLACK);
 
 	//For Session Keys example
     hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PAIR_KEY_HANDLE;
@@ -1085,7 +1090,7 @@ int main(void)
 
 
 
-   HseResponse = AesCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
+  // HseResponse = AesCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
 
 
 //
@@ -1131,17 +1136,14 @@ int main(void)
 
     ST7789_DrawImage(0,80, 120, 120, nxp_logo);
 
-    HseResponse = AesFastCmacGenerate(AESDerivedKeyInfoHandle1, nxp_logo_length*8, nxp_logo, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-
-    //Sender will send, plaintext, aesderivekey info and
-    HseResponse = AesFastCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-
-
-    uint8_t ciphermsg[NUM_OF_ELEMS(demoapp_msg)] = {0U};
+//    HseResponse = AesFastCmacGenerate(AESDerivedKeyInfoHandle1, nxp_logo_length*8, nxp_logo, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
+//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//
+//
+//    //Sender will send, plaintext, aesderivekey info and
+//    HseResponse = AesFastCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
+//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//
 
 
 
