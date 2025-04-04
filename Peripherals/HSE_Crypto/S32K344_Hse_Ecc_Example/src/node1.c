@@ -50,9 +50,11 @@
 #include "hse_host_sign.h"
 
 #define NOP __asm("NOP")
-/* This example formats the key catalog in a way that the ECC key pair
+/*
+ * This example formats the key catalog in a way that the ECC key pair
  * is generated and sore in the NVM catalog, then, the public key is exported
  * and stored in the ram catalog.
+ *
  */
 /* NVM catalog format*/
 const hseKeyGroupCfgEntry_t nvmKeyCatalog_ecc[] = {

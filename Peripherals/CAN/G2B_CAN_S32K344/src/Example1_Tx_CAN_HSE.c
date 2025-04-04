@@ -53,6 +53,8 @@
 #include "ST7789_low_level.h"
 #include "fonts.h"
 #include "IntCtrl_Ip.h"
+//#include "Platform.h"
+//#include "Platform_Cfg.h"
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -68,8 +70,7 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 #define Data_Tx_MSG_ID 802u
 
 #define Tx_DS_Pub_key_MSG_IDX 803u
-#define Tx_DS_SignR_key_MSG_IDX 804u
-#define Tx_DS_SignS_key_MSG_IDX 805u
+#define Tx_DS_SignR_MSG_IDX 804u
 
 
 #define TX_MB_IDX 0
@@ -137,6 +138,16 @@ Flexcan_Ip_DataInfoType tx_info_inter_canfd = {
 		.fd_enable = TRUE,
 		.fd_padding = 0xAA,
 		.enable_brs = TRUE,
+        .is_polling = FALSE,
+        .is_remote = FALSE
+};
+
+Flexcan_Ip_DataInfoType tx_info_polling_canfd = {
+        .msg_id_type = FLEXCAN_MSG_ID_STD,
+        .data_length = 64u,
+		.fd_enable = TRUE,
+		.fd_padding = 0xAA,
+		.enable_brs = TRUE,
         .is_polling = TRUE,
         .is_remote = FALSE
 };
@@ -151,14 +162,16 @@ const char* string1;
 void GB_MailBox_CallBack(uint8 instance, Flexcan_Ip_EventType eventType,
                   uint32 buffIdx, const Flexcan_Ip_StateType * flexcanState)
 {
-#if GB_RxMailBox_CALLBACK
+//#if GB_RxMailBox_CALLBACK
+	uint8_t can_message_buffer_status;
 	Flexcan_Ip_StateType * state = flexcanState;
-	state->mbs[buffIdx].state = FLEXCAN_MB_RX_BUSY;
-#else
+
+	//can_message_buffer_status = state->mbs[buffIdx].state;
+//#else
 
 	uint8_t callback = 0;
 	/* Do Nothing */
-#endif
+//#endif
 }
 
 
@@ -682,6 +695,32 @@ void scaleImage(uint8_t *src, uint8_t *dest) {
     }
 }
 
+#define SRC_WIDTH  8
+#define SRC_HEIGHT 4
+#define DEST_WIDTH 120
+#define DEST_HEIGHT 120
+#define SCALE_X 15  // Width scaling factor
+#define SCALE_Y 30  // Height scaling factor
+#define BYTES_PER_PIXEL 2  // 2 bytes per pixel (RGB565 format)
+
+void scaleImage_120x120(uint16_t *src, uint16_t *dest) {
+    for (int y = 0; y < SRC_HEIGHT; y++) {
+        for (int x = 0; x < SRC_WIDTH; x++) {
+            uint16_t pixel = src[y * SRC_WIDTH + x];  // Get 2-byte pixel from source
+
+            // Expand this pixel into SCALE_X x SCALE_Y block
+            for (int dy = 0; dy < SCALE_Y; dy++) {
+                for (int dx = 0; dx < SCALE_X; dx++) {
+                    int destX = x * SCALE_X + dx;
+                    int destY = y * SCALE_Y + dy;
+                    dest[destY * DEST_WIDTH + destX] = pixel;
+                }
+            }
+        }
+    }
+}
+
+
 #define SRC_WIDTH4  4
 #define SRC_HEIGHT4 4
 #define SCALE_FACTOR_4 30
@@ -717,8 +756,9 @@ static uint32_t signRLen = sizeof(signR);
 static uint32_t signSLen = sizeof(signS);
 
 
+uint8_t G2B_Digital_Signature[64];
 
-
+boolean can_data_status;
 int main(void)
 {
 
@@ -739,6 +779,7 @@ int main(void)
 	    IntCtrl_Ip_EnableIrq(FlexCAN4_1_IRQn);
 	    IntCtrl_Ip_InstallHandler(FlexCAN4_1_IRQn, CAN4_ORED_0_31_MB_IRQHandler, NULL_PTR);
 
+	   // Platform_Init(Platform_Config);
 
 	    /* Initialize all pins using the Port driver */
 	    Port_Init(NULL_PTR);
@@ -751,16 +792,16 @@ int main(void)
 	    Lpspi_Ip_Init(&Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0_Instance_3);
 	  	GB_ST7789_Init();
 
-//	  	TestDelay(700000);
-//	  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-//	  	ST7789_Fill_Color(ST77XX_BLACK);
-//	  	TestDelay(700000);
-//
-//
+	  	TestDelay(700000);
+	  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+	  	ST7789_Fill_Color(ST77XX_BLACK);
+	  	TestDelay(700000);
+
+
 //		ST7789_DrawImageN(0,80, 240, 240, nxp_security_solution_image);
 //	  	TestDelay(28000000);
-//
-//	    ST7789_WriteString(0, 80, "BMS ECU: Master Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+	    ST7789_WriteString(0, 80, "BMS ECU: Master Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
 	    /***** Digital Signature/Verifiication Process*******/
@@ -770,16 +811,28 @@ int main(void)
 	    	hseKeyHandle_t digital_signature_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,4);
 
 
-		 ST7789_WriteString(0, 80, "Generating ECC Key pair for Digital Signature based authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+		 ST7789_WriteString(0, 80, "Generating ECC Key pair for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 	    /*Generates ECC Key in the NVM Catalog and exports the public Key into the Q array*/
 	    HseResponse = GenerateEccKeyAndExportPublic(digital_signature_keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE | HSE_KF_ACCESS_WRITE_PROT),Q);
-//	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+		TestDelay(21000000);
 
-	    ST7789_WriteString(0, 80, "Sending Pub Keys for Digital Signature", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    ST7789_WriteString(0, 150, "Sending Pub Keys for Digital Signature", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 		/*Loads ECC Public Key stored in the Q array in the RAM catalog*/
 	     HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,Q);
 	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-	    FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_inter_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q);
+		TestDelay(14000000);
+
+
+	    FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000);
+	    scaleImage(Q, ScaledImage4);
+	    ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+	    ST7789_DrawImage(30,210, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
+		TestDelay(28000000);
+
+
+		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+		ST7789_Fill_Color(ST77XX_BLACK);
 
 
 	    ST7789_WriteString(0, 80, "Generating the Signature for verification", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
@@ -787,13 +840,44 @@ int main(void)
 		 * The signature is stored in the signR and signS arrays*/
 	    HseResponse = EcdsaSign(digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&signRLen, signR, &signSLen, signS);
 	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-	    scaleImage(signR, ScaledImage3);
-	   	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-	   	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
+		TestDelay(21000000);
 
-	   	ST7789_WriteString(0, 80, "Sending the Signature for verification to all receiver's.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-	   	FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, Tx_DS_SignS_MB_IDX, &tx_info_inter_canfd, Tx_DS_SignS_key_MSG_IDX, (uint8 *)&signS);
-	    FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, Tx_DS_SignR_MB_IDX, &tx_info_inter_canfd, Tx_DS_SignR_key_MSG_IDX, (uint8 *)&signR);
+	   	for ( int i =0; i<64; i++)
+	   	{
+	   		if ( i<32)
+	   		{
+	   			G2B_Digital_Signature[i] = signS[i];
+	   		}else
+	   		{
+	   			G2B_Digital_Signature[i] = signR[i-32];
+
+	   		}
+
+	   	}
+
+
+	   	scaleImage(G2B_Digital_Signature, ScaledImage3);
+	  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+	   	ST7789_DrawImage(30,140, 120, 120, ScaledImage3);
+		TestDelay(7000000);
+
+
+
+	   	ST7789_WriteString(0, 220, "Sending the Signature for verification to all receiver's.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+		TestDelay(14000000);
+
+	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_SignS_MB_IDX, &tx_info_polling_canfd, Tx_DS_SignR_MSG_IDX, (uint8 *)&G2B_Digital_Signature, 2000);
+
+
+//	    FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_SignR_MB_IDX, &tx_info_polling_canfd, Tx_DS_SignR_key_MSG_IDX, (uint8 *)&signR, 2000);
+//
+//
+
+//
+//		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+//		ST7789_Fill_Color(ST77XX_BLACK);
+//
+	    ST7789_WriteString(0, 80, "Waiting for verification acknowledgment.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 
 
@@ -801,7 +885,7 @@ int main(void)
 		// Receiving Node will receive the Exported public key(Q) and import it inside HSE just like LoadECCPublicKey at line 130
 			/* Verifies the signature with the public Key stored inn the RAM catalog using the signature generated above*/
 	    HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&signRLen, signR, &signSLen, signS);
-	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
 
