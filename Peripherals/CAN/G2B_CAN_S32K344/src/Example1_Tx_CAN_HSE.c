@@ -310,7 +310,7 @@ const uint8_t CMAC_Plaintext[] =
 
 uint8_t CMAC_Tag_OutPut[512] = {0};
 
-uint8_t CMAC_Tag_Output_16[16];
+uint8_t CMAC_Tag_Output_16[64];
 
 
 uint32_t CMAC_Tag_length = 64;
@@ -739,10 +739,10 @@ void scaleImage4x4(uint8_t *src, uint8_t *dest) {
             uint8_t pixel = src[y * SRC_WIDTH4 + x];  // Get original pixel
 
             // Expand this pixel into SCALE_FACTOR x SCALE_FACTOR block
-            for (int dy = 0; dy < SCALE_FACTOR_4; dy++) {
-                for (int dx = 0; dx < SCALE_FACTOR_4; dx++) {
-                    int destX = x * SCALE_FACTOR_4 + dx;
-                    int destY = y * SCALE_FACTOR_4 + dy;
+            for (int dy = 0; dy < 15; dy++) {
+                for (int dx = 0; dx < 15; dx++) {
+                    int destX = x * 15 + dx;
+                    int destY = y * 15 + dy;
                     dest[destY * DEST_WIDTH + destX] = pixel;
                 }
             }
@@ -931,6 +931,7 @@ int main(void)
 	    }
 
 
+	    TestDelay(14000000);
 		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 					ST7789_Fill_Color(ST77XX_BLACK);
 
@@ -1047,6 +1048,7 @@ int main(void)
     	scaleImage(aes_exported, ScaledImage);
         ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
         ST7789_DrawImage(30,250, 120, 120, ScaledImage);
+      	TestDelay(35000000);
 
 
    // HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1, &aes256KeyInfo, aes_exported, &aes_exported_len);
@@ -1057,16 +1059,27 @@ int main(void)
 
   //  CMAC Generation using CMAC_Plaintext and AESDerivedKeyInfoHandle1 key handle( which is derived from KDF function).
 
-        ST7789_WriteString(10, 130, "Original Message to transmit( CMAC: Generation/Verification)", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
-        ST7789_SetAddressWindow(0,190, ST7789_XEnd, ST7789_YEnd);
+        ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
       	ST7789_Fill_Color(ST77XX_BLACK);
 
-        ST7789_DrawImageN(90,190, 60, 60, nxp_logo);
+
+        ST7789_WriteString(0, 80, "Secure Authentication of device and secret keys is established, now sending data ...", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+        TestDelay(14000000);
+
+
+        ST7789_WriteString(0, 170, "Original Message to transmit: ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+        TestDelay(14000000);
+
+
+        ST7789_WriteString(50, 210, "NXP", Font_16x26, ST77XX_GREEN, ST77XX_BLACK);
+        TestDelay(14000000);
+
+//        ST7789_DrawImageN(90,210, 60, 60, nxp_logo);
 
     HseResponse = AesCmacGenerate(AESDerivedKeyInfoHandle1, nxp_logo_length, nxp_logo, &CMAC_Tag_length, CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
 
-    ST7789_WriteString(10, 270,"Its Generated CMAC", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    ST7789_WriteString(0, 235,"Its Generated CMAC", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
     for ( int i =0; i<16;i++)
     {
@@ -1075,8 +1088,14 @@ int main(void)
 
     scaleImage4x4(CMAC_Tag_Output_16, ScaledImage2);
     ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-    ST7789_DrawImage(30,250, 120, 120, ScaledImage2);
+    ST7789_DrawImage(30,260, 120, 120, ScaledImage2);
+    TestDelay(14000000);
 
+
+    ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 170);
+  	ST7789_Fill_Color(ST77XX_BLACK);
+
+    ST7789_WriteString(0, 80,"Sending original message, with tag", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
     FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX2, &tx_info_inter_canfd, Data_Tx_MSG_ID, (uint8 *)&CMAC_Tag_Output_16);
     TestDelay(14000000);
@@ -1134,7 +1153,6 @@ int main(void)
     /***************Fast CMAC ***************************/
 
 
-    ST7789_DrawImage(0,80, 120, 120, nxp_logo);
 
 //    HseResponse = AesFastCmacGenerate(AESDerivedKeyInfoHandle1, nxp_logo_length*8, nxp_logo, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
 //    ASSERT(HSE_SRV_RSP_OK == HseResponse);
