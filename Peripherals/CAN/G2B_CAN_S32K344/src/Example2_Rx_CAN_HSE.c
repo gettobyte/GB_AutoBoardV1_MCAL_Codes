@@ -459,6 +459,7 @@ static uint32_t ack_signRLen = 32;
 static uint32_t ack_signSLen = 32;
 uint8_t ack_G2B_Digital_Signature[64];
 
+boolean verification_flag;
 
 int main(void)
 {
@@ -513,8 +514,10 @@ int main(void)
 
     	 ST7789_WriteString(0, 80, "Waiting for ECC pub key to receive for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
+ 	     //FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_Pub_key_MB_IDX, &rx_info_polling_std, Rx_DS_Pub_key_MSG_IDX);
     	 while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, Rx_DS_Pub_key_MB_IDX, &rxData_DS_Pub_Keys, true,1000));
+ 	   //  FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
     	 scaleImage(rxData_DS_Pub_Keys.data, ScaledImage2);
     	 ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
@@ -533,8 +536,10 @@ int main(void)
 
     	 ST7789_WriteString(0, 80, "Waiting for digital signature's to receive for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
+ 	   // FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_Sign_MB_IDX, &rx_info_polling_std, Rx_DS_Sign_MSG_IDX);
     	 while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, Rx_DS_Sign_MB_IDX, &rxData_DS_Sign, true,1000));
+ 	    // FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
     	 for( int i =0; i<64; i++)
     	 {
@@ -611,6 +616,7 @@ int main(void)
 
  	    }
 
+ 	  	TestDelay(14000000);
 
  	 	  ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
  	 	  ST7789_Fill_Color(ST77XX_BLACK);
@@ -735,6 +741,8 @@ int main(void)
             ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
             ST7789_DrawImage(30,250, 120, 120, ScaledImage);
 
+          	TestDelay(35000000);
+
 
     HseResponse = ExportPlainSymKeyReq(AESDerivedKeyInfoHandle1,&aes256KeyInfo, aes_exported, &aes_exported_len  );
 
@@ -742,36 +750,61 @@ int main(void)
 
     /****** MAC Generation and Verification ****************/
 
-//    //CMAC Generation using CMAC_Plaintext and AESDerivedKeyInfoHandle1 key handle( which is derived from KDF function).
-//    hseMacScheme_t macScheme;
-//    macScheme.macAlgo = HSE_MAC_ALGO_CMAC;
-//    macScheme.sch.cmac.cipherAlgo = HSE_CIPHER_ALGO_AES;
-//    HseResponse = AesCmacGenerate(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
-//  		  //MacSignSrv(HSE_ACCESS_MODE_ONE_PASS, 0, macScheme, AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
-//
-//    // Master will transmit the CMAC_PlainText & CMAC_Tag_OutPut to receiver and also AES Derived Key value to receiver.
-//    // Receiver will received the derived key handle and will import that into it for AES key handle in NVM.
-//
-//
-    ST7789_WriteString(0, 190, "Receiving Data ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+    ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+    ST7789_Fill_Color(ST77XX_BLACK);
+
+
+    ST7789_WriteString(0, 80, "Receiving Data and Tag ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
 
 
     FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX2, &rx_info_polling_std, Message_Rx_MSG_ID);
      while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX2, &rxData, true,1000));
 
-     scaleImage(rxData.data, ScaledImage);
+     ST7789_WriteString(0, 140, "Original Data Received", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+   	TestDelay(14000000);
+
+     ST7789_WriteString(50, 170, "NXP", Font_16x26, ST77XX_GREEN, ST77XX_BLACK);
+   	TestDelay(14000000);
+
+     ST7789_WriteString(0, 200, "Tag of Data received", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+   	TestDelay(14000000);
+
+    scaleImage4x4(rxData.data, ScaledImage);
  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
- 	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
+ 	ST7789_DrawImage(50,240, 120, 120, ScaledImage);
 
- 	for ( int i =0; i<16; i++)
- 	{
- 		Tag_of_message_received[i] = rxData.data[i];
- 	}
- 	ST7789_WriteString(0, 190, "Verifying Data ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+   	TestDelay(14000000);
 
 
-   HseResponse = AesCmacVerify(AESDerivedKeyInfoHandle1, nxp_logo_length, nxp_logo, &CMAC_Tag_length,  Tag_of_message_received, HSE_SGT_OPTION_NONE );
-//
+ 	ST7789_WriteString(0, 280, "Verifying data by AES CMAC cipher.... ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+    HseResponse = AesCmacGenerate(AESDerivedKeyInfoHandle1, nxp_logo_length, nxp_logo, &CMAC_Tag_length, CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
+
+
+    for ( int i =0; i<32; i++)
+    {
+    	if( CMAC_Tag_OutPut[i] == rxData.data[i])
+    	{
+    		verification_flag = 1;
+    	}
+    }
+
+   	TestDelay(7000000);
+
+    ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 140);
+     ST7789_Fill_Color(ST77XX_BLACK);
+
+
+    if ( verification_flag == 1)
+    {
+    	ST7789_WriteString(0, 80, "Verification completed, receiving data is successfully verified", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+   }else
+   {
+	   ST7789_WriteString(0, 80, " Verification complete, receiving data fails verification", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+   }
 //
 //   /********* CMAC With Counter Demo Code ********************/
 //
@@ -812,17 +845,15 @@ int main(void)
 
     /***************Fast CMAC ***************************/
 
-    HseResponse = AesFastCmacGenerate(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-
-    //Sender will send, plaintext, aesderivekey info and
-    HseResponse = AesFastCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
-    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-
-
-    uint8_t ciphermsg[NUM_OF_ELEMS(demoapp_msg)] = {0U};
+//    HseResponse = AesFastCmacGenerate(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
+//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//
+//
+//    //Sender will send, plaintext, aesderivekey info and
+//    HseResponse = AesFastCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
+//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
+//
+//
 
 
 
