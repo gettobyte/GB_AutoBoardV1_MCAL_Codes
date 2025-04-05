@@ -138,6 +138,16 @@ Flexcan_Ip_DataInfoType rx_info_inter_canfd = {
         .is_remote = FALSE
 };
 
+Flexcan_Ip_DataInfoType rx_info_poll_canfd = {
+        .msg_id_type = FLEXCAN_MSG_ID_STD,
+        .data_length = 64u,
+		.fd_enable = TRUE,
+		.fd_padding = 0xAA,
+		.enable_brs = TRUE,
+        .is_polling = TRUE,
+        .is_remote = FALSE
+};
+
 const char* string1;
 
 
@@ -501,9 +511,44 @@ int main(void)
 	  	TestDelay(700000);
 
 
-	    ST7789_WriteString(0, 80, "VCU ECU: Slave Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    ST7789_WriteString(0, 80, "BMS ECU: Secondary Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	  	TestDelay(14000000);
+
+	  	ST7789_WriteString(0, 140, "preparing", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+
+	  	ST7789_WriteString(99, 140, " for", Font_11x18, ST77XX_WHITE, ST77XX_BLACK);
+	  //	TestDelay(14000000);
+
+			ST7789_WriteString(143, 140, " authentication check", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+			//TestDelay(14000000);
+
+			ST7789_WriteString(143, 158, " as", Font_11x18, ST77XX_WHITE, ST77XX_BLACK);
+			//TestDelay(14000000);
+
+			ST7789_WriteString(166, 158, " OEM authorized ECU", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+			TestDelay(14000000);
 
 
+	  	ST7789_WriteString(0, 200, "Using", Font_11x18, ST77XX_WHITE, ST77XX_BLACK);
+	  	TestDelay(14000000);
+
+			ST7789_WriteString(55, 200, " ECDSA asymmetric cipher", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+			//TestDelay(14000000);
+
+			ST7789_WriteString(88, 218, " based", Font_11x18, ST77XX_WHITE, ST77XX_BLACK);
+			//TestDelay(14000000);
+
+			ST7789_WriteString(165, 218, " digital signature", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+			TestDelay(7000000);
+
+	  	ST7789_WriteString(0, 260, "via NXP S32K3-HSE Security IP", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+	    TestDelay(28000000);
+
+
+
+
+		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+		  	ST7789_Fill_Color(ST77XX_BLACK);
 
 
 	    /************** Digital Signature/Verification Process**************/
@@ -512,7 +557,14 @@ int main(void)
 //    	/*Key Handle for Public Key in RAM catalog*/
     	hseKeyHandle_t digital_signature_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,4);
 
-    	 ST7789_WriteString(0, 80, "Waiting for ECC pub key to receive for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 ST7789_WriteString(0, 80, "Waiting for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(121, 80, " pub key  ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(0, 98, " to receive for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(165, 98, " authentication", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
 
  	     //FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_Pub_key_MB_IDX, &rx_info_polling_std, Rx_DS_Pub_key_MSG_IDX);
@@ -521,8 +573,15 @@ int main(void)
 
     	 scaleImage(rxData_DS_Pub_Keys.data, ScaledImage2);
     	 ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-    	 ST7789_DrawImage(30,160, 120, 120, ScaledImage2);
-    	 ST7789_WriteString(0, 230, "Received keys for authentication", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 ST7789_DrawImage(30,140, 120, 120, ScaledImage2);
+
+    	 ST7789_WriteString(0, 180, "Received", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(88, 180, " Pub keys", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(187, 180, " for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(0, 198, "authentication", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
 
 
     	 HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,rxData_DS_Pub_Keys.data);
@@ -531,10 +590,16 @@ int main(void)
     	TestDelay(14000000);
 
 
-         ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-         ST7789_Fill_Color(ST77XX_BLACK);
+//         ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+//         ST7789_Fill_Color(ST77XX_BLACK);
 
-    	 ST7789_WriteString(0, 80, "Waiting for digital signature's to receive for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 ST7789_WriteString(0, 220, "Waiting for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(121, 220, " digital signature ", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+
+    	 ST7789_WriteString(88, 238, " to receive", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(0, 256, "for authentication...", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
 
  	   // FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_Sign_MB_IDX, &rx_info_polling_std, Rx_DS_Sign_MSG_IDX);
@@ -556,20 +621,33 @@ int main(void)
      	// TestDelay(14000000);
     	 scaleImage( rxData_DS_Sign.data, ScaledImage3);
     	 ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-    	 ST7789_DrawImage(30,160, 120, 120, ScaledImage3);
-     	 TestDelay(14000000);
-    	 ST7789_WriteString(0, 190, "Received Signature for authentication .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 ST7789_DrawImageNN(30,275, 120, 120, ScaledImage3);
+     	 TestDelay(30000000);
+    	 //ST7789_WriteString(0, 290, "Received Signature .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
-    	 TestDelay(14000000);
+//    	 TestDelay(14000000);
 
-    	 ST7789_WriteString(0, 235, "Verifing the digital signature .... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+    	 ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 220);
+    	  ST7789_Fill_Color(ST77XX_BLACK);
+
+
+    	 ST7789_WriteString(0, 80, "Verifing the", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+    	 ST7789_WriteString(132, 80, " signature ...", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
     	 TestDelay(28000000);
+
+
 
  	    HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&Sign_length, rxData_DS_SignR, &Sign_length, rxData_DS_SignS);
 
  	    if (HseResponse == HSE_SRV_RSP_OK)
  	    {
- 	    	 ST7789_WriteString(0, 275, "Digital signature verified, sending acknow.... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+ 	    	 ST7789_WriteString(0, 130, "Digital signature verified", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+
+  	    	TestDelay(7000000);
+
+ 	    	ST7789_WriteString(66, 148, " sending acknow", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+
  	    	TestDelay(14000000);
 
  	    	hseKeyHandle_t digital_signature_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,2);
@@ -579,8 +657,6 @@ int main(void)
 
  	    	HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,DS_ack_pub_keys);
  	    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
- 	    	FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, DS_ACK_Pub_key_MB_IDX, &rx_info_inter_canfd, DS_ACK_Pub_key_MSG_IDX, (uint8 *)&DS_ack_pub_keys);
- 	    	TestDelay(14000000);
 
 
  	    	HseResponse = EcdsaSign(digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(ack_msg),ack_msg,FALSE,0,&ack_signRLen, ack_signR, &ack_signSLen, ack_signS);
@@ -599,19 +675,30 @@ int main(void)
 
  	   	   	}
 
- 	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_DS_Sign_MB_IDX, &rx_info_inter_canfd, DS_ACK_DS_Sign_MSG_IDX, (uint8 *)&ack_G2B_Digital_Signature, 2000);
+ 	 	   TestDelay(4000000);
+
+
+	    	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_Pub_key_MB_IDX, &rx_info_poll_canfd, DS_ACK_Pub_key_MSG_IDX, (uint8 *)&DS_ack_pub_keys, 2000);
+	    	TestDelay(14000000);
+
+
+ 	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_DS_Sign_MB_IDX, &rx_info_poll_canfd, DS_ACK_DS_Sign_MSG_IDX, (uint8 *)&ack_G2B_Digital_Signature, 2000);
  	   TestDelay(14000000);
 
- 	  ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 190);
+ 	  ST7789_SetAddressWindow(ST7789_XStart,220, ST7789_XEnd, ST7789_YEnd);
  	  ST7789_Fill_Color(ST77XX_BLACK);
 
- 	  ST7789_WriteString(0, 80, "Acknowledgment Sended.... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+ 	  ST7789_WriteString(0, 190, "Acknowledgment Sended", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+
+ 	  ST7789_WriteString(0, 208, "from ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+ 	  ST7789_WriteString(44, 208, " authorized device", Font_11x18, ST77XX_ORANGE, ST77XX_BLACK);
  	  TestDelay(21000000);
 
 
  	    }else
  	    {
- 	    	 ST7789_WriteString(0, 290, "Digital signature not verified, not a authorized sender ..... ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+ 	    	 ST7789_WriteString(0, 100, "Digital signature not verified, not a authorized sender ..... ", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
 
 
  	    }
