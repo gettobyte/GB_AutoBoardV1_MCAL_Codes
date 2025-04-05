@@ -349,6 +349,42 @@ void ST7789_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint
 
 }
 
+
+void ST7789_DrawImageNN(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint8_t *data)
+{
+	uint8_t d_data;
+
+	ST7789_SetAddressWindow(x,y, (x+w)-1, (y+h)-1);
+	gb_ST7789_CS_pin_low();
+
+	GB_ST7789_SendCommand(ST77XX_RAMWR, &d_data, 0, GB_ST7789_TimeOut);
+
+	uint16_t BytesToSend,NoOfRounds =0;
+	uint32_t TotalCellsToBeFilled = w*h;
+	uint32_t TotalBytesToBeFilled = w*h*2;
+	if(TotalBytesToBeFilled <= 14400)
+	{
+		NoOfRounds = 1;
+		BytesToSend = TotalBytesToBeFilled;
+	}else if(TotalBytesToBeFilled > 14400)
+	{
+		NoOfRounds = TotalBytesToBeFilled/7200;
+		BytesToSend = TotalBytesToBeFilled/NoOfRounds;
+	}
+
+	for (uint16_t j =1; j<(NoOfRounds-2); j++)
+	 {
+		{
+			GB_ST7789_SendDataIm(&data[(BytesToSend *j)], BytesToSend);
+
+		}
+	}
+
+   gb_ST7789_CS_pin_high();
+
+}
+
+
 void ST7789_DrawImageN(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint8_t *data)
 {
 	uint8_t d_data;

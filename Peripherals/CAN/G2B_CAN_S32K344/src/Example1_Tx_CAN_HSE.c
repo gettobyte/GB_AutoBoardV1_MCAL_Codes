@@ -812,7 +812,29 @@ int main(void)
 //		ST7789_DrawImageN(0,80, 240, 240, nxp_security_solution_image);
 //	  	TestDelay(28000000);
 
-	    ST7789_WriteString(0, 80, "BMS ECU: Master Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    ST7789_WriteString(0, 80, "VCU ECU: Primary Node", Font_16x26, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	  	TestDelay(14000000);
+
+	    ST7789_WriteString(0, 140, "Checking", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+
+	    ST7789_WriteString(88, 140, " the OEM", Font_11x18, ST77XX_WHITE, ST77XX_BLACK);
+
+	          ST7789_WriteString(176, 140, " authorized secondary node's", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+
+	  	  	TestDelay(14000000);
+
+	    ST7789_WriteString(0, 200, "Using", Font_11x18, ST77XX_WHITE, ST77XX_BLACK);
+	  	TestDelay(14000000);
+
+             ST7789_WriteString(55, 200, " ECDSA asymmetric cipher", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+
+	         ST7789_WriteString(88, 218, " based", Font_11x18, ST77XX_WHITE, ST77XX_BLACK);
+
+	         ST7789_WriteString(165, 218, " digital signature", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+	 	  	TestDelay(7000000);
+
+	    ST7789_WriteString(0, 260, "via NXP S32K3-HSE Security IP", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+	  	TestDelay(28000000);
 
 
 	    /***** Digital Signature/Verifiication Process*******/
@@ -821,14 +843,39 @@ int main(void)
 	    	/*Key Handle for Public Key in RAM catalog*/
 	    	hseKeyHandle_t digital_signature_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,4);
 
+		  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+		  	ST7789_Fill_Color(ST77XX_BLACK);
 
-		 ST7789_WriteString(0, 80, "Generating ECC Key pair for authentication ....               ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-	    /*Generates ECC Key in the NVM Catalog and exports the public Key into the Q array*/
+		 ST7789_WriteString(0, 80, "Generating", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+		 ST7789_WriteString(110, 80, " Key pair  (", Font_11x18, ST77XX_BLUE, ST77XX_BLACK);
+
+		 ST7789_WriteString(11, 98, "Pub ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+		 ST7789_WriteString(55, 98, "+ ", Font_11x18, ST77XX_BLUE, ST77XX_BLACK);
+
+		 ST7789_WriteString(66, 98, " Priv", Font_11x18, ST77XX_RED, ST77XX_BLACK);
+
+		 ST7789_WriteString(121, 98, " keys)", Font_11x18, ST77XX_BLUE, ST77XX_BLACK);
+
+		 ST7789_WriteString(187, 98, " for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+		 ST7789_WriteString(0, 116, "authentication", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+		 /*Generates ECC Key in the NVM Catalog and exports the public Key into the Q array*/
 	    HseResponse = GenerateEccKeyAndExportPublic(digital_signature_keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE | HSE_KF_ACCESS_WRITE_PROT),Q);
 	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
 		TestDelay(21000000);
 
-	    ST7789_WriteString(0, 150, "Sending Pub Keys for Digital Signature", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    ST7789_WriteString(0, 150, "Sending", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+	    ST7789_WriteString(77, 150, " Pub Keys", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+	    ST7789_WriteString(176, 150, " for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+	    ST7789_WriteString(0, 168, "Digital Signature", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+
+
 		/*Loads ECC Public Key stored in the Q array in the RAM catalog*/
 	     HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,Q);
 	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
@@ -838,15 +885,22 @@ int main(void)
 	    FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000);
 	    scaleImage(Q, ScaledImage4);
 	    ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-	    ST7789_DrawImage(30,210, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
+	    ST7789_DrawImage(30,190, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
 		TestDelay(28000000);
 
 
-		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-		ST7789_Fill_Color(ST77XX_BLACK);
+//		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+//		ST7789_Fill_Color(ST77XX_BLACK);
 
 
-	    ST7789_WriteString(0, 80, "Generating the Signature for verification", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    ST7789_WriteString(0, 225, "Generating the ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+	    ST7789_WriteString(165, 225, "Signature", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+
+	    ST7789_WriteString(44, 243, "for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+	    ST7789_WriteString(88, 243, "verification", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+
 		/* Signs the message using the Key Pair in the NVM catalog with SHA256 algorithm
 		 * The signature is stored in the signR and signS arrays*/
 	    HseResponse = EcdsaSign(digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&signRLen, signR, &signSLen, signS);
@@ -869,18 +923,38 @@ int main(void)
 
 	   	scaleImage(G2B_Digital_Signature, ScaledImage3);
 	  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-	   	ST7789_DrawImage(30,140, 120, 120, ScaledImage3);
+	  	ST7789_DrawImageNN(30,265, 120, 120, ScaledImage3);
 		TestDelay(7000000);
 
+				ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 150);
+				ST7789_Fill_Color(ST77XX_BLACK);
 
 
-	   	ST7789_WriteString(0, 180, "Sending the Signature for verification to all receiver's.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+	   	ST7789_WriteString(0, 80, "Sending the", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 		TestDelay(14000000);
+
+		ST7789_WriteString(121, 80, " Signature", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+
+		ST7789_WriteString(0, 98, "for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+		ST7789_WriteString(33, 98, " verification", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
+
+		ST7789_WriteString(176, 98, " to all receiver's.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
 	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Sign_MB_IDX, &tx_info_polling_canfd, Tx_DS_Sign_MSG_IDX, (uint8 *)&G2B_Digital_Signature, 2000);
 
+		ST7789_SetAddressWindow(ST7789_XStart,150, ST7789_XEnd, ST7789_YEnd);
+		ST7789_Fill_Color(ST77XX_BLACK);
 
-	    ST7789_WriteString(0, 240, "Waiting for verification acknowledgment.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+	    TestDelay(8000000);
+
+	    ST7789_WriteString(0, 140, "Waiting for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+	    ST7789_WriteString(121, 140, " verification acknowledgment.....", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+
+	    TestDelay(14000000);
+
 	    {
 
 				// waiting for acknowledgment ecc public keys
@@ -917,10 +991,17 @@ int main(void)
 
 				if (HseResponse == HSE_SRV_RSP_OK)
 				{
-					ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 180);
-					ST7789_Fill_Color(ST77XX_BLACK);
-					ST7789_WriteString(0, 80, "Received verification acknowledge, device is authorized ...", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+					//ST7789_SetAddressWindow(ST7789_XStart,180, ST7789_XEnd, ST7789_YEnd);
+					//ST7789_Fill_Color(ST77XX_BLACK);
+
 					TestDelay(21000000);
+
+					ST7789_WriteString(0, 200, "Received", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+
+					ST7789_WriteString(88, 200, " verification acknowledge,", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+
+					ST7789_WriteString(132, 218, " device is authorized ...", Font_11x18, ST77XX_ORANGE, ST77XX_BLACK);
+
 
 
 				}else
@@ -964,6 +1045,8 @@ int main(void)
     scaleImage(ECC_Public_key, ScaledImage);
 	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
+
+    TestDelay(100000000);
 
     FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_inter_canfd, ECDH_Tx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
     TestDelay(14000000);
