@@ -882,7 +882,12 @@ int main(void)
 		TestDelay(14000000);
 
 
-	    FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000);
+ //   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000);
+//
+//	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+//	    while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000) );
+//	    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+
 	    scaleImage(Q, ScaledImage4);
 	    ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 	    ST7789_DrawImage(30,190, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
@@ -942,7 +947,9 @@ int main(void)
 
 		ST7789_WriteString(176, 98, " to all receiver's.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
-	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Sign_MB_IDX, &tx_info_polling_canfd, Tx_DS_Sign_MSG_IDX, (uint8 *)&G2B_Digital_Signature, 2000);
+		FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+		while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Sign_MB_IDX, &tx_info_polling_canfd, Tx_DS_Sign_MSG_IDX, (uint8 *)&G2B_Digital_Signature, 2000));
+	    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
 		ST7789_SetAddressWindow(ST7789_XStart,150, ST7789_XEnd, ST7789_YEnd);
 		ST7789_Fill_Color(ST77XX_BLACK);
@@ -953,21 +960,25 @@ int main(void)
 
 	    ST7789_WriteString(121, 140, " verification acknowledgment.....", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
 
-	    TestDelay(14000000);
+	 //   TestDelay(14000000);
 
 	    {
 
 				// waiting for acknowledgment ecc public keys
+			    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
 				FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, DS_Master_ACK_Pub_key_MB_IDX, &tx_info_polling_canfd, DS_Master_ACK_Pub_key_MSG_IDX);
 				while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, DS_Master_ACK_Pub_key_MB_IDX, &DS_ACK_Pub_Keys, true,1000));
+			    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
 				HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,DS_ACK_Pub_Keys.data);
 				ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 				// Waiting for digital signature's to receive for acknowledgement authentication
 
+				FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
 				FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, DS_Master_ACK_Sign_MB_IDX, &tx_info_polling_canfd, DS_Master_ACK_Sign_MSG_IDX);
 				while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, DS_Master_ACK_Sign_MB_IDX, &DS_ACK_Sign, true,1000));
+			    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
 				for( int i =0; i<64; i++)
 					 {
@@ -994,7 +1005,7 @@ int main(void)
 					//ST7789_SetAddressWindow(ST7789_XStart,180, ST7789_XEnd, ST7789_YEnd);
 					//ST7789_Fill_Color(ST77XX_BLACK);
 
-					TestDelay(21000000);
+//					TestDelay(21000000);
 
 					ST7789_WriteString(0, 200, "Received", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
@@ -1046,9 +1057,12 @@ int main(void)
 	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
 
-    TestDelay(100000000);
+    //TestDelay(100000000);
 
-    FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_inter_canfd, ECDH_Tx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
+	FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+	while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, TX_MB_IDX, &tx_info_inter_canfd, ECDH_Tx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key, 2000));
+    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+
     TestDelay(14000000);
 
     ST7789_WriteString(0, 190, "Master Node has sended Public keys for computing shared key.....", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
@@ -1059,8 +1073,11 @@ int main(void)
 
 
 	ST7789_WriteString(0, 190, "Master Node Receiving Public Keys for computing shared key.....", Font_11x18, ST77XX_RED, ST77XX_BLACK);
+	FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
 	FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &tx_info_polling_std, ECDH_Rx_Pub_Key_MSG_ID);
 	while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX, &rxData, true,1000));
+    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+
 
     scaleImage(rxData.data, ScaledImage);
 	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
@@ -1083,7 +1100,7 @@ int main(void)
     recv_pub_key_value = rxData.data;
 	ST7789_WriteString(0, 190, "Now Computing shared secret key via ECDH protocol for S32K3 HSE", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
 
-  	TestDelay(35000000);
+  	TestDelay(21000000);
 
 
     /* Import ECC Key */
@@ -1180,71 +1197,11 @@ int main(void)
 
     ST7789_WriteString(0, 80,"Sending original message, with tag", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
-    FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX2, &tx_info_inter_canfd, Data_Tx_MSG_ID, (uint8 *)&CMAC_Tag_Output_16);
+    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+    while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, TX_MB_IDX2, &tx_info_inter_canfd, Data_Tx_MSG_ID, (uint8 *)&CMAC_Tag_Output_16, 2000));
+    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+
     TestDelay(14000000);
-
-
-
-    //MacSignSrv(HSE_ACCESS_MODE_ONE_PASS, 0, macScheme, AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
-
-    // Master will transmit the CMAC_PlainText & CMAC_Tag_OutPut to receiver and also AES Derived Key value to receiver.
-    // Receiver will received the derived key handle and will import that into it for AES key handle in NVM.
-
-
-
-  // HseResponse = AesCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext), CMAC_Plaintext, &CMAC_Tag_length,  CMAC_Tag_OutPut, HSE_SGT_OPTION_NONE );
-
-
-//
-//   /********* CMAC With Counter Demo Code ********************/
-//
-//   uint32_t volatileCnt       = 0xFFFFFFFFUL;
-//
-//    uint32_t rpBitSize          = 40UL;
-//    uint32_t TxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 3UL;
-//    uint32_t RxnodecntIdx       = HSE_NUM_OF_MONOTONIC_COUNTERS - 2UL;
-//
-//    HseResponse =  MonotonicCnt_Config(TxnodecntIdx,rpBitSize);
-//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-//
-//    /* Configure Node B */
-//    HseResponse = MonotonicCnt_Config(RxnodecntIdx, rpBitSize);
-//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-//
-//
-//    /* Configure Node A Counter as a default value */
-//    HseResponse = MonotonicCnt_Increment(TxnodecntIdx, 0x800000UL);
-//      ASSERT(HSE_SRV_RSP_OK == HseResponse);
-//
-//      /* Configure Node B Counter as a default value */
-//      HseResponse = MonotonicCnt_Increment(RxnodecntIdx, 0x800000UL);
-//      ASSERT(HSE_SRV_RSP_OK == HseResponse);
-//
-//
-//    HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_GENERATE,TxnodecntIdx, 0,
-//    		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
-//
-//
-//    HseResponse = CmacWithCounter(AESDerivedKeyInfoHandle1, HSE_AUTH_DIR_VERIFY,RxnodecntIdx, 0,
-//    		NUM_OF_ELEMS(CMAC_Plaintext)*8U, CMAC_Plaintext, (16*8), CMAC_Tag_OutPut, &volatileCnt, HSE_SGT_OPTION_NONE);
-//
-
-
-
-
-
-    /***************Fast CMAC ***************************/
-
-
-
-//    HseResponse = AesFastCmacGenerate(AESDerivedKeyInfoHandle1, nxp_logo_length*8, nxp_logo, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
-//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-//
-//
-//    //Sender will send, plaintext, aesderivekey info and
-//    HseResponse = AesFastCmacVerify(AESDerivedKeyInfoHandle1, NUM_OF_ELEMS(CMAC_Plaintext)*8, CMAC_Plaintext, Fast_CMAC_Tag_length*8, Fast_CMAC_Tag_OutPut);
-//    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-//
 
 
 
