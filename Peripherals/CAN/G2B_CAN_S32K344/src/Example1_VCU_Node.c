@@ -67,21 +67,21 @@ extern void CAN4_ORED_0_31_MB_IRQHandler(void);
 #define ECDH_Rx_Pub_Key_MSG_ID 801u
 #define Data_Tx_MSG_ID 802u
 
-#define Tx_DS_Pub_key_MSG_IDX 803u
-#define Tx_DS_Sign_MSG_IDX 804u
+#define Tx_VCU_Pub_key_MSG_IDX 803u
+#define Tx_Sign_By_OEM_MSG_IDX 804u
 
-#define DS_Master_ACK_Pub_key_MSG_IDX 805u
-#define DS_Master_ACK_Sign_MSG_IDX 806u
+#define Rx_Random_Number_MSG_IDX 805u
+#define Tx_Random_Number_Signature_MSG_IDX 806u
 
 #define TX_MB_IDX 0
 #define TX_MB_IDX2 2
 #define RX_MB_IDX 1
 
-#define Tx_DS_Pub_key_MB_IDX 3
-#define Tx_DS_Sign_MB_IDX 4
+#define Tx_VCU_Pub_key_MB_IDX 3
+#define Tx_Sign_By_OEM_MB_IDX 4
 
-#define DS_Master_ACK_Pub_key_MB_IDX 5
-#define DS_Master_ACK_Sign_MB_IDX 6
+#define Rx_Random_Number_MB_IDX 5
+#define Tx_Random_Number_Signature_MB_IDX 6
 
 
 
@@ -769,37 +769,56 @@ static uint32_t signSLen = sizeof(signS);
 
 uint8_t G2B_Digital_Signature[64];
 
+uint8_t G2B_OEM_Digital_Signature[64];
+Flexcan_Ip_MsgBuffType Rx_Random_Number_Data;
+uint8_t G2B_Random_Number_Digital_Signature[64];
+
+
 boolean can_data_status;
 
 
-uint8_t oem_public_key[64] =
-		{ 		0x6b, 0xc1, 0xbe, 0xe2, 0x2e, 0x40, 0x9f, 0x96,
-				0xe9, 0x3d, 0x7e, 0x11, 0x73, 0x93, 0x17, 0x2a,
-				0x7b, 0x01, 0x2e, 0x12, 0x4e, 0x40, 0x9f, 0x06,
-				0x99, 0x4d, 0x7e, 0x01, 0x93, 0x93, 0x17, 0x4a,
-				0x7b, 0x01, 0x2e, 0x12, 0x4e, 0x40, 0x9f, 0x06,
-				0x99, 0x4d, 0x7e, 0x01, 0x93, 0x93, 0x17, 0x4a,
-				0x7b, 0x01, 0x2e, 0x12, 0x4e, 0x40, 0x9f, 0x06,
-				0x99, 0x4d, 0x7e, 0x01, 0x93, 0x93, 0x17, 0x4a
+uint8_t oem_private[32] = {
+  0xC1, 0xFE, 0xED, 0xFB, 0xFC, 0x87, 0x0A, 0xE8, 0x21, 0xF7, 0x63, 0x40, 0xA1, 0x0E, 0xBE, 0x0A,
+  0xED, 0xF5, 0x89, 0xE5, 0x7B, 0xA8, 0xBD, 0x2A, 0x73, 0xEB, 0xB3, 0x05, 0xAC, 0x76, 0x05, 0x09
 };
 
-uint8_t oem_priv_key [64] =
-{
-		0x99, 0x11, 0x2e, 0x87, 0x2e, 0x40, 0x9f, 0x96,
-		0xe9, 0x3d, 0x7e, 0x90, 0x73, 0x93, 0x17, 0x2a,
-		0x7b, 0x01, 0x2e, 0x12, 0x4e, 0x40, 0x9f, 0x06,
-		0x99, 0x4d, 0xfe, 0x54, 0x93, 0x93, 0x17, 0x4a,
-		0x7b, 0x01, 0xbe, 0x22, 0x4e, 0x40, 0x9f, 0x06,
-		0x99, 0x4d, 0x7e, 0x01, 0x93, 0x93, 0x17, 0x4a,
-		0x7b, 0x01, 0xae, 0x52, 0x4e, 0x40, 0x9f, 0x06,
-	    0x99, 0x4d, 0x7e, 0x01, 0x93, 0x93, 0x17, 0x4a
-
+uint8_t oem_public[64] = {
+  0x8E, 0x1D, 0x24, 0xD7, 0x6A, 0xFE, 0xE9, 0x6C, 0x62, 0x89, 0x36, 0xA3, 0x0A, 0x36, 0x28, 0xBB,
+  0x9A, 0xFB, 0x0F, 0x69, 0x31, 0x2A, 0x93, 0x9D, 0x6F, 0xA3, 0x1F, 0x40, 0xD7, 0x01, 0x9D, 0x02,
+  0x05, 0xA8, 0x43, 0x12, 0x23, 0x17, 0x57, 0x24, 0x90, 0x8E, 0x04, 0x87, 0x1A, 0x6A, 0x45, 0xAD,
+  0x1C, 0x8F, 0x9F, 0x2F, 0x2A, 0xF6, 0xD8, 0xF6, 0xA1, 0xEB, 0xF5, 0x11, 0xDC, 0x80, 0x44, 0x42
 };
+
+uint8_t vcu_private[32] = {
+  0xB9, 0xE4, 0x08, 0x90, 0x89, 0xBD, 0xA3, 0xE8, 0x6B, 0xBA, 0x34, 0xC0, 0x9C, 0x54, 0xEA, 0xF9,
+  0x3B, 0x5A, 0xD0, 0x22, 0xE6, 0xE1, 0xC9, 0xC8, 0xEB, 0x3A, 0x0E, 0xEF, 0xFD, 0xCC, 0x55, 0x9D
+};
+
+uint8_t vcu_public_key[64] = {
+  0x01, 0x9E, 0x5D, 0xFB, 0x34, 0xF3, 0x8A, 0x27, 0x27, 0xE8, 0x2D, 0x00, 0x47, 0x6E, 0x14, 0x63,
+  0x9F, 0x7B, 0x07, 0xE4, 0x03, 0x10, 0x58, 0x85, 0x34, 0x2E, 0xB2, 0xBD, 0x12, 0x6C, 0x4B, 0x4E,
+  0x26, 0xBD, 0x16, 0x5B, 0xA5, 0x64, 0x00, 0xF4, 0x49, 0xFD, 0x60, 0xFD, 0x8B, 0x2A, 0x22, 0x83,
+  0x53, 0x10, 0x72, 0x0C, 0x49, 0xF5, 0xDE, 0x29, 0xB5, 0x64, 0x89, 0xC4, 0x2F, 0xD3, 0x5D, 0x82
+};
+
+uint8_t signature_r_by_OEM[32] = {
+  0x2F, 0x57, 0x81, 0xF8, 0x10, 0xF7, 0x3F, 0x47, 0x5B, 0xF6, 0x9F, 0x24, 0x8B, 0xB5, 0x20, 0x59,
+  0xCD, 0x2F, 0x41, 0x35, 0x8E, 0xA4, 0x22, 0x24, 0x9C, 0x22, 0xF7, 0x17, 0x72, 0xDB, 0x72, 0x7C
+};
+
+uint8_t signature_s_by_OEM[32] = {
+  0x54, 0x25, 0x6B, 0x32, 0xB9, 0x92, 0x54, 0x8E, 0x81, 0xEC, 0x5B, 0x41, 0x70, 0x05, 0x7C, 0x89,
+  0xAB, 0x19, 0x33, 0x75, 0x6C, 0x8B, 0x74, 0x89, 0xC0, 0xDF, 0x55, 0xD3, 0x1A, 0x34, 0x2B, 0x32
+};
+
 
 uint8_t rxData_DS_SignS[32];
 uint8_t rxData_DS_SignR[32];
 const uint32_t Sign_length = 32;
 
+
+uint8_t random_number[64];
+uint32_t random_number_length = 64;
 int main(void)
 {
 
@@ -868,253 +887,92 @@ int main(void)
 
 
 
+	  	/*************Sending signature_by_oem and device Public keys*************************/
 
 
-	  	/*************Importing OEM Key's*************************/
-
-    	hseKeyHandle_t oem_digital_signature_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,0);
-    	/*Key Handle for Public Key in RAM catalog*/
-    	hseKeyHandle_t oem_digital_signature_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,0);
-
-    	HseResponse = LoadEccPublicKey(&oem_digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1, 256, oem_public_key );
-    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-    	HseResponse = LoadEccKeyPair(&oem_digital_signature_keyPairHandle, 1,HSE_EC_SEC_SECP256R1, 256, oem_public_key, oem_priv_key);
-    	//ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-
-	  	/******* generating VCU ECC key pair************/
-
-    	hseKeyHandle_t digital_signature_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,2);
-    	/*Key Handle for Public Key in RAM catalog*/
-    	hseKeyHandle_t digital_signature_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,4);
-
-
-    	HseResponse = GenerateEccKeyAndExportPublic(digital_signature_keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE | HSE_KF_ACCESS_WRITE_PROT),Q);
-    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-		/*Loads ECC Public Key stored in the Q array in the RAM catalog*/
-		 HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,Q);
-		 ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-
-
-
-	  	/*******signing digital signature of public key and sending it****************/
-
-
-		 HseResponse = EcdsaSign(oem_digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(Q),Q,FALSE,0,&signRLen, signR, &signSLen, signS);
-		ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-	  	//EcdsaSign(OEM key pair handle, ecc public key message as input)
-
-
- 	    HseResponse = EcdsaVerify(oem_digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(Q),Q,FALSE,0,&Sign_length, rxData_DS_SignR, &Sign_length, rxData_DS_SignS);
-
-	  	     //just for checking
-	     	    //EcdsaVerify( OEM Public key handle and ecc public key)
-
-	  	// sends : signature of public key and public key.
-
-
-
-
-	  	/************/
-
-	  	//receives the random number from BMS
-	  	   //sign the random numer using EcdsaSign( VCU private key and random number as message input).
-	  	   //sends the new signature to BMS.
-
-
-	    /***** Digital Signature/Verifiication Process*******/
-	    /*Key Handle for ECC key pair in NVM Catalog*/
-//	    	hseKeyHandle_t digital_signature_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,2);
-//	    	/*Key Handle for Public Key in RAM catalog*/
-//	    	hseKeyHandle_t digital_signature_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,4);
-
-		  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-		  	ST7789_Fill_Color(ST77XX_BLACK);
-
-		 ST7789_WriteString(0, 80, "Generating", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-		 ST7789_WriteString(110, 80, " Key pair  (", Font_11x18, ST77XX_BLUE, ST77XX_BLACK);
-
-		 ST7789_WriteString(11, 98, "Pub ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
-
-		 ST7789_WriteString(55, 98, "+ ", Font_11x18, ST77XX_BLUE, ST77XX_BLACK);
-
-		 ST7789_WriteString(66, 98, " Priv", Font_11x18, ST77XX_RED, ST77XX_BLACK);
-
-		 ST7789_WriteString(121, 98, " keys)", Font_11x18, ST77XX_BLUE, ST77XX_BLACK);
-
-		 ST7789_WriteString(187, 98, " for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-		 ST7789_WriteString(0, 116, "authentication", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-		 /*Generates ECC Key in the NVM Catalog and exports the public Key into the Q array*/
-	    HseResponse = GenerateEccKeyAndExportPublic(digital_signature_keyPairHandle,HSE_EC_SEC_SECP256R1,(HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE | HSE_KF_ACCESS_WRITE_PROT),Q);
-	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-		TestDelay(21000000);
-
-	    ST7789_WriteString(0, 150, "Sending", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-	    ST7789_WriteString(77, 150, " Pub Keys", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
-
-	    ST7789_WriteString(176, 150, " for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-	    ST7789_WriteString(0, 168, "Digital Signature", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
-
-
-		/*Loads ECC Public Key stored in the Q array in the RAM catalog*/
-	     HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,Q);
-	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-		TestDelay(14000000);
-
-
- //   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000);
-//
-	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
-	    while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000) );
-	    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
-
-	    scaleImage(Q, ScaledImage4);
-	    ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-	    ST7789_DrawImage(30,190, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
+		ST7789_WriteString(0, 80, "Provisioning VCU by its ECC Key Pair keys", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
 		TestDelay(28000000);
 
 
-//		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-//		ST7789_Fill_Color(ST77XX_BLACK);
+    	hseKeyHandle_t vcu_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,0);
+/*Key Handle for Public Key in RAM catalog*/
+    	hseKeyHandle_t vcu_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,0);
+
+    	HseResponse = LoadEccPublicKey(&vcu_keyPubHandle,0,HSE_EC_SEC_SECP256R1, 256, oem_public );
+    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
+
+    	HseResponse = LoadEccKeyPair(&vcu_keyPairHandle, 1,HSE_EC_SEC_SECP256R1, 256, oem_public, oem_private);
+    	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
-	    ST7789_WriteString(0, 225, "Generating the ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
-	    ST7789_WriteString(165, 225, "Signature", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
 
-	    ST7789_WriteString(44, 243, "for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+		ST7789_WriteString(0, 80, "VCU sending VCU Public Keys to Secondary Nodes", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+		TestDelay(28000000);
 
-	    ST7789_WriteString(88, 243, "verification", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
 
-		/* Signs the message using the Key Pair in the NVM catalog with SHA256 algorithm
-		 * The signature is stored in the signR and signS arrays*/
-	    HseResponse = EcdsaSign(digital_signature_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(msg),msg,FALSE,0,&signRLen, signR, &signSLen, signS);
-	    ASSERT(HSE_SRV_RSP_OK == HseResponse);
-		TestDelay(21000000);
+	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+	  	while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_VCU_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_VCU_Pub_key_MSG_IDX, (uint8 *)&vcu_public_key, 2000) );
+	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+
+		ST7789_WriteString(0, 80, "VCU sending Signature By OEM to Secondary Nodes", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+		TestDelay(28000000);
 
 	   	for ( int i =0; i<64; i++)
 	   	{
 	   		if ( i<32)
 	   		{
-	   			G2B_Digital_Signature[i] = signS[i];
+	   			G2B_OEM_Digital_Signature[i] = signature_s_by_OEM[i];
 	   		}else
 	   		{
-	   			G2B_Digital_Signature[i] = signR[i-32];
+	   			G2B_OEM_Digital_Signature[i] = signature_r_by_OEM[i-32];
 
 	   		}
 
 	   	}
 
-
-	   	scaleImage(G2B_Digital_Signature, ScaledImage3);
-	  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-	  	ST7789_DrawImageNN(30,265, 120, 120, ScaledImage3);
-		TestDelay(7000000);
-
-				ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, 150);
-				ST7789_Fill_Color(ST77XX_BLACK);
+	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+	  	while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_Sign_By_OEM_MB_IDX, &tx_info_polling_canfd, Tx_Sign_By_OEM_MSG_IDX, (uint8 *)&G2B_OEM_Digital_Signature, 2000) );
+	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
 
+	  	ST7789_WriteString(0, 80, "VCU Waiting for random challenge, to receive", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+	  	TestDelay(28000000);
 
-	   	ST7789_WriteString(0, 80, "Sending the", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-		TestDelay(14000000);
-
-		ST7789_WriteString(121, 80, " Signature", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
-
-		ST7789_WriteString(0, 98, "for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-		ST7789_WriteString(33, 98, " verification", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
-
-		ST7789_WriteString(176, 98, " to all receiver's.....", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-		FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
-		while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Sign_MB_IDX, &tx_info_polling_canfd, Tx_DS_Sign_MSG_IDX, (uint8 *)&G2B_Digital_Signature, 2000));
+	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+		FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_Random_Number_MB_IDX, &tx_info_polling_canfd, Rx_Random_Number_MSG_IDX);
+		while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, Rx_Random_Number_MB_IDX, &Rx_Random_Number_Data, true,1000));
 	    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
-		ST7789_SetAddressWindow(ST7789_XStart,150, ST7789_XEnd, ST7789_YEnd);
-		ST7789_Fill_Color(ST77XX_BLACK);
+	  	ST7789_WriteString(0, 80, "VCU Signing challenge...", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+	  	TestDelay(28000000);
 
-	    TestDelay(8000000);
 
-	    ST7789_WriteString(0, 140, "Waiting for", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
+		 HseResponse = EcdsaSign(vcu_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(Rx_Random_Number_Data.dataLen),Rx_Random_Number_Data.data,FALSE,0,&signRLen, signR, &signSLen, signS);
+		ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
-	    ST7789_WriteString(121, 140, " verification acknowledgment.....", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+	   	for ( int i =0; i<64; i++)
+	   	{
+	   		if ( i<32)
+	   		{
+	   			G2B_Random_Number_Digital_Signature[i] = signS[i];
+	   		}else
+	   		{
+	   			G2B_Random_Number_Digital_Signature[i] = signR[i-32];
 
-	 //   TestDelay(14000000);
+	   		}
 
-	    {
+	   	}
 
-				// waiting for acknowledgment ecc public keys
-			    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
-				FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, DS_Master_ACK_Pub_key_MB_IDX, &tx_info_polling_canfd, DS_Master_ACK_Pub_key_MSG_IDX);
-				while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, DS_Master_ACK_Pub_key_MB_IDX, &DS_ACK_Pub_Keys, true,1000));
-			    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+		ST7789_WriteString(0, 80, "VCU Sending signature of challenge to secondary node", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
+		TestDelay(28000000);
 
-				HseResponse = LoadEccPublicKey(&digital_signature_keyPubHandle,0,HSE_EC_SEC_SECP256R1,256,DS_ACK_Pub_Keys.data);
-				ASSERT(HSE_SRV_RSP_OK == HseResponse);
-
-				// Waiting for digital signature's to receive for acknowledgement authentication
-
-				FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
-				FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, DS_Master_ACK_Sign_MB_IDX, &tx_info_polling_canfd, DS_Master_ACK_Sign_MSG_IDX);
-				while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, DS_Master_ACK_Sign_MB_IDX, &DS_ACK_Sign, true,1000));
-			    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
-
-				for( int i =0; i<64; i++)
-					 {
-						 if ( i<32)
-						 {
-							 DS_ACK_SignS[i] = DS_ACK_Sign.data [i];
-						 }else
-						 {
-							 DS_ACK_SignR[i-32] =  DS_ACK_Sign.data [i];
-						 }
-						// DC_ACK_Sign_length = i+1;
-					 }
+	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+	  	while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_Random_Number_Signature_MB_IDX, &tx_info_polling_canfd, Tx_Random_Number_Signature_MSG_IDX, (uint8 *)&G2B_Random_Number_Digital_Signature, 2000) );
+	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
 
 
-
-				// Receiving Node will receive the Exported public key(Q) and import it inside HSE just like LoadECCPublicKey at line 130
-					/* Verifies the signature with the public Key stored inn the RAM catalog using the signature generated above*/
-				HseResponse = EcdsaVerify(digital_signature_keyPubHandle,HSE_HASH_ALGO_SHA2_256,sizeof(ack_msg),ack_msg,FALSE,0,&DS_ACK_Sign_length, DS_ACK_SignR, &DS_ACK_Sign_length, DS_ACK_SignS);
-				TestDelay(7000000);
-
-				if (HseResponse == HSE_SRV_RSP_OK)
-				{
-					//ST7789_SetAddressWindow(ST7789_XStart,180, ST7789_XEnd, ST7789_YEnd);
-					//ST7789_Fill_Color(ST77XX_BLACK);
-
-//					TestDelay(21000000);
-
-					ST7789_WriteString(0, 200, "Received", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-					ST7789_WriteString(88, 200, " verification acknowledge,", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
-
-					ST7789_WriteString(132, 218, " device is authorized ...", Font_11x18, ST77XX_ORANGE, ST77XX_BLACK);
-
-
-
-				}else
-				{
-					ST7789_WriteString(0, 80, "verification acknowledgement not received, device not authenticated ...", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
-
-				}
-	    }
-
-
-	    TestDelay(14000000);
-		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-					ST7789_Fill_Color(ST77XX_BLACK);
 
 	//For Session Keys example
     hseKeyHandle_t eccRAMKeyHandle = HSE_DEMO_RAM_ECC_PAIR_KEY_HANDLE;

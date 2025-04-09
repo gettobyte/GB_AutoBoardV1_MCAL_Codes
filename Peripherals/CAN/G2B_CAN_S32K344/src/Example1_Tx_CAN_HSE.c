@@ -882,11 +882,11 @@ int main(void)
 		TestDelay(14000000);
 
 
- //   FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000);
-//
-//	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
-//	    while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000) );
-//	    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+    FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000);
+
+	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+	    while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_DS_Pub_key_MB_IDX, &tx_info_polling_canfd, Tx_DS_Pub_key_MSG_IDX, (uint8 *)&Q, 2000) );
+	    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
 	    scaleImage(Q, ScaledImage4);
 	    ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
@@ -894,8 +894,8 @@ int main(void)
 		TestDelay(28000000);
 
 
-//		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-//		ST7789_Fill_Color(ST77XX_BLACK);
+		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+		ST7789_Fill_Color(ST77XX_BLACK);
 
 
 	    ST7789_WriteString(0, 225, "Generating the ", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
