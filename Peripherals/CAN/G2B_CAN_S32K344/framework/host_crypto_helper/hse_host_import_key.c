@@ -2191,7 +2191,7 @@ hseSrvResponse_t LoadEccKeyPair(hseKeyHandle_t *pTargetKeyHandle, bool_t isNvmKe
         goto exit;
     }
     hseResponse = ImportEccKeyReq(*pTargetKeyHandle, HSE_KEY_TYPE_ECC_PAIR,
-                           HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY | HSE_KF_ACCESS_EXPORTABLE,
+                           HSE_KF_USAGE_SIGN | HSE_KF_USAGE_VERIFY,
                            eccCurveId, keyBitLength, pPubKey, pPrivKey);
     if(HSE_SRV_RSP_OK != hseResponse)
     {
