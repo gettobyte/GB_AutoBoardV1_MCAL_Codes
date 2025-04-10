@@ -760,8 +760,8 @@ const uint8_t ack_msg[] = "do not, there is no try";
 uint8_t Q [64];
 
 /*Arrays with the R and S coordinates of the signature*/
-static uint8_t signR[256] = {0};
-static uint8_t signS[256] = {0};
+static uint8_t signR[32] = {0};
+static uint8_t signS[32] = {0};
 /*Size of the R and S coordinates of the signature, used as parameters of the sign and verify functions*/
 static uint32_t signRLen = sizeof(signR);
 static uint32_t signSLen = sizeof(signS);
@@ -846,15 +846,15 @@ int main(void)
 
 	    FlexCAN_Ip_Init(INST_FLEXCAN_4, &FlexCAN_State0, &FlexCAN_Config0);
 
-	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+//	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
 
 
 	    Lpspi_Ip_Init(&Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0_Instance_3);
 	  	GB_ST7789_Init();
 
 //	  	TestDelay(700000);
-//	  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
-//	  	ST7789_Fill_Color(ST77XX_BLACK);
+	  	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
+	  	ST7789_Fill_Color(ST77XX_BLACK);
 //	  	TestDelay(700000);
 
 
@@ -891,24 +891,24 @@ int main(void)
 
 
 		ST7789_WriteString(0, 80, "Provisioning VCU by its ECC Key Pair keys", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
-		TestDelay(28000000);
+	//	TestDelay(28000000);
 
 
     	hseKeyHandle_t vcu_keyPairHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_NVM,4,0);
 /*Key Handle for Public Key in RAM catalog*/
     	hseKeyHandle_t vcu_keyPubHandle = GET_KEY_HANDLE(HSE_KEY_CATALOG_ID_RAM,7,0);
 
-    	HseResponse = LoadEccPublicKey(&vcu_keyPubHandle,0,HSE_EC_SEC_SECP256R1, 256, oem_public );
+    	HseResponse = LoadEccPublicKey(&vcu_keyPubHandle,0,HSE_EC_SEC_SECP256R1, 256, vcu_public_key );
     	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
-    	HseResponse = LoadEccKeyPair(&vcu_keyPairHandle, 1,HSE_EC_SEC_SECP256R1, 256, oem_public, oem_private);
+    	HseResponse = LoadEccKeyPair(&vcu_keyPairHandle, 1,HSE_EC_SEC_SECP256R1, 256, vcu_public_key, vcu_private);
     	ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 
 
 
 		ST7789_WriteString(0, 80, "VCU sending VCU Public Keys to Secondary Nodes", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
-		TestDelay(28000000);
+		//TestDelay(28000000);
 
 
 	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
@@ -916,7 +916,7 @@ int main(void)
 	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
 		ST7789_WriteString(0, 80, "VCU sending Signature By OEM to Secondary Nodes", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
-		TestDelay(28000000);
+		//TestDelay(28000000);
 
 	   	for ( int i =0; i<64; i++)
 	   	{
@@ -948,7 +948,7 @@ int main(void)
 	  	TestDelay(28000000);
 
 
-		 HseResponse = EcdsaSign(vcu_keyPairHandle,HSE_HASH_ALGO_SHA2_256,sizeof(Rx_Random_Number_Data.dataLen),Rx_Random_Number_Data.data,FALSE,0,&signRLen, signR, &signSLen, signS);
+		 HseResponse = EcdsaSign(vcu_keyPairHandle,HSE_HASH_ALGO_SHA2_256,(Rx_Random_Number_Data.dataLen),Rx_Random_Number_Data.data,FALSE,0,&signRLen, signR, &signSLen, signS);
 		ASSERT(HSE_SRV_RSP_OK == HseResponse);
 
 	   	for ( int i =0; i<64; i++)
@@ -970,8 +970,6 @@ int main(void)
 	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
 	  	while ( FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, Tx_Random_Number_Signature_MB_IDX, &tx_info_polling_canfd, Tx_Random_Number_Signature_MSG_IDX, (uint8 *)&G2B_Random_Number_Digital_Signature, 2000) );
 	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
-
-
 
 
 	//For Session Keys example
