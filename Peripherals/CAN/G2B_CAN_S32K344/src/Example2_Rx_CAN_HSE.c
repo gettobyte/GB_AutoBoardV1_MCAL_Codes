@@ -499,7 +499,7 @@ int main(void)
 
 	    FlexCAN_Ip_Init(INST_FLEXCAN_4, &FlexCAN_State0, &FlexCAN_Config0);
 
-	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+	    //FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
 
 
 	    Lpspi_Ip_Init(&Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0_Instance_3);
@@ -566,10 +566,10 @@ int main(void)
     	 ST7789_WriteString(165, 98, " authentication", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
 
 
- 	     //FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+ 	     FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_Pub_key_MB_IDX, &rx_info_polling_std, Rx_DS_Pub_key_MSG_IDX);
     	 while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, Rx_DS_Pub_key_MB_IDX, &rxData_DS_Pub_Keys, true,1000));
- 	   //  FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+ 	     FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
     	 scaleImage(rxData_DS_Pub_Keys.data, ScaledImage2);
     	 ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
@@ -601,10 +601,10 @@ int main(void)
 
     	 ST7789_WriteString(0, 256, "for authentication...", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
 
- 	   // FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+ 	    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     	 FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, Rx_DS_Sign_MB_IDX, &rx_info_polling_std, Rx_DS_Sign_MSG_IDX);
     	 while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, Rx_DS_Sign_MB_IDX, &rxData_DS_Sign, true,1000));
- 	    // FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+ 	    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
     	 for( int i =0; i<64; i++)
     	 {
@@ -634,7 +634,7 @@ int main(void)
     	 ST7789_WriteString(0, 80, "Verifing the", Font_11x18, ST77XX_NEON_GREEN, ST77XX_BLACK);
 
     	 ST7789_WriteString(132, 80, " signature ...", Font_11x18, ST77XX_YELLOW, ST77XX_BLACK);
-    	 TestDelay(28000000);
+    	 TestDelay(14000000);
 
 
 
@@ -678,12 +678,16 @@ int main(void)
  	 	   TestDelay(4000000);
 
 
-	    	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_Pub_key_MB_IDX, &rx_info_poll_canfd, DS_ACK_Pub_key_MSG_IDX, (uint8 *)&DS_ack_pub_keys, 2000);
-	    	TestDelay(14000000);
+ 	 	   FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+ 	 	   while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_Pub_key_MB_IDX, &rx_info_poll_canfd, DS_ACK_Pub_key_MSG_IDX, (uint8 *)&DS_ack_pub_keys, 2000));
+	 	   FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+	 	  //  TestDelay(14000000);
 
+ 	 	   FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+ 	 	   while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_DS_Sign_MB_IDX, &rx_info_poll_canfd, DS_ACK_DS_Sign_MSG_IDX, (uint8 *)&ack_G2B_Digital_Signature, 2000));
+	       FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+	 	   TestDelay(14000000);
 
- 	   	FlexCAN_Api_Status = FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, DS_ACK_DS_Sign_MB_IDX, &rx_info_poll_canfd, DS_ACK_DS_Sign_MSG_IDX, (uint8 *)&ack_G2B_Digital_Signature, 2000);
- 	   TestDelay(14000000);
 
  	  ST7789_SetAddressWindow(ST7789_XStart,220, ST7789_XEnd, ST7789_YEnd);
  	  ST7789_Fill_Color(ST77XX_BLACK);
@@ -730,8 +734,10 @@ int main(void)
 
     ST7789_WriteString(0, 190, "Slave Node Receiving Public keys for computing shared key.....", Font_11x18, ST77XX_RED, ST77XX_BLACK);
 
+     FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX, &rx_info_polling_std, ECDH_Tx_Pub_Key_MSG_ID);
     while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX, &rxData, true,1000));
+    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
     scaleImage(rxData.data, ScaledImage);
 	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
@@ -756,8 +762,10 @@ int main(void)
   	ST7789_DrawImage(30,250, 120, 120, ScaledImage);
 
 
-    FlexCAN_Api_Status = FlexCAN_Ip_Send(INST_FLEXCAN_4, TX_MB_IDX, &rx_info_inter_canfd, ECDH_Rx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key);
-  	TestDelay(14000000);
+  	FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
+  	while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_SendBlocking(INST_FLEXCAN_4, TX_MB_IDX, &rx_info_inter_canfd, ECDH_Rx_Pub_Key_MSG_ID, (uint8 *)&ECC_Public_key, 2000));
+    FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
+    TestDelay(14000000);
 
     ST7789_WriteString(0, 190, "Slave Node has Sended Public keys for computing shared key....", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
   	TestDelay(35000000);
@@ -767,7 +775,7 @@ int main(void)
 
     ST7789_WriteString(0, 190, "Now Computing shared secret key via ECDH protocol for S32K3 HSE", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
 
-  	TestDelay(35000000);
+  	TestDelay(21000000);
 
 
     /* Import ECC Key */
@@ -844,9 +852,10 @@ int main(void)
 
     ST7789_WriteString(0, 80, "Receiving Data and Tag ", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
 
-
+    FlexCAN_Api_Status = FlexCAN_Ip_SetStartMode(INST_FLEXCAN_4);
     FlexCAN_Api_Status = FlexCAN_Ip_ConfigRxMb(INST_FLEXCAN_4, RX_MB_IDX2, &rx_info_polling_std, Message_Rx_MSG_ID);
      while(FLEXCAN_STATUS_TIMEOUT == FlexCAN_Ip_ReceiveBlocking(INST_FLEXCAN_4, RX_MB_IDX2, &rxData, true,1000));
+     FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
      ST7789_WriteString(0, 140, "Original Data Received", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
    	TestDelay(14000000);
@@ -885,11 +894,11 @@ int main(void)
 
     if ( verification_flag == 1)
     {
-    	ST7789_WriteString(0, 80, "Verification completed, receiving data is successfully verified", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+    	ST7789_WriteString(0, 80, "Verification completed, receiving data is successfully verified", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
 
    }else
    {
-	   ST7789_WriteString(0, 80, " Verification complete, receiving data fails verification", Font_11x18, ST77XX_CYAN, ST77XX_BLACK);
+	   ST7789_WriteString(0, 80, " Verification complete, receiving data fails verification", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
 
    }
 //
