@@ -1335,6 +1335,7 @@
 							<tool id="com.freescale.s32ds.cross.gnu.disassembler.178573150" name="Standard S32DS Disassembler" superClass="com.freescale.s32ds.cross.gnu.disassembler"/>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.10.2.exe.debug.882774253.1618244494.1744791843.2010833482.1945690642" name="test.txt" rcbsApplicability="disable" resourcePath="src/target/test.txt" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry excluding="Linker_Files|Debugger" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="RTD"/>
@@ -1347,7 +1348,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="interface"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="plugins"/>
 						<entry excluding="src/utest|src/hse_host_flash.c|src/secure_boot|src/fw_update|src/fw_attribute" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="services"/>
-						<entry excluding="Example1_VCU_Node.c|Example1_Tx_CAN_HSE.c|Example2_Rx_CAN_HSE.c|Example2_Rx_CAN.c|Example1_Tx_CAN.c|target/m7/S32DS|target/m7/GHS|Example2_Rx.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="target/test.txt|Example1_VCU_Node.c|Example1_Tx_CAN_HSE.c|Example2_Rx_CAN_HSE.c|Example2_Rx_CAN.c|Example1_Tx_CAN.c|target/m7/S32DS|target/m7/GHS|Example2_Rx.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -1369,10 +1370,10 @@
 		<configuration configurationName="Release_RAM">
 			<resource resourceType="PROJECT" workspacePath="/G2B_CAN_S32K344"/>
 		</configuration>
-		<configuration configurationName="Example 2">
+		<configuration configurationName="BMS_Node_Demo">
 			<resource resourceType="PROJECT" workspacePath="/G2B_CAN_S32K344"/>
 		</configuration>
-		<configuration configurationName="BMS_Node_Demo">
+		<configuration configurationName="Example 2">
 			<resource resourceType="PROJECT" workspacePath="/G2B_CAN_S32K344"/>
 		</configuration>
 		<configuration configurationName="Debug_FLASH">
