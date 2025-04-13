@@ -2046,10 +2046,11 @@ int main(void)
 		ST7789_DrawImageNN(0,239, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
 	    TestDelay(14000000);
 
-	    TestDelay(21000000);
+	    TestDelay(42000000);
 
 		/*******************scene 4*********************/
 
+	    TestDelay(28000000);
 	    ST7789_DrawImageN(0,80,240,240,scene4_vcu_full);
 	    TestDelay(14000000);
 
@@ -2071,11 +2072,15 @@ int main(void)
 
 
 	  	ST7789_DrawImageN(97,86,137,16,scene5_sending_vcu_pub_Keys_text);
+	    TestDelay(7000000);
 
 	    scaleImage(vcu_public_key, ScaledImage4);
 		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 		ST7789_DrawImageNN(109,118, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
-	  //  TestDelay(28000000);
+
+
+	    TestDelay(21000000);
+
 
 	   	for ( int i =0; i<64; i++)
 	   	{
@@ -2095,11 +2100,12 @@ int main(void)
 	  	FlexCAN_Api_Status = FlexCAN_Ip_SetStopMode(INST_FLEXCAN_4);
 
 	  	ST7789_DrawImageN(87,232,134,13,scene5_sending_signature_by_oem_text);
+	    TestDelay(7000000);
 
 	    scaleImage(signature_by_OEM, ScaledImage4);
 		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 		ST7789_DrawImageNN(115,256, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
-	    //TestDelay(28000000);
+	    TestDelay(28000000);
 
 
 
@@ -2110,6 +2116,8 @@ int main(void)
 //	  	ST7789_WriteString(0, 80, "VCU Waiting for random challenge, to receive", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
 //	  	TestDelay(28000000);
 //
+
+	    TestDelay(90000000);
 
 	  	ST7789_DrawImageN(0,80,240,240,scene6_vcu_full);
 
@@ -2126,25 +2134,22 @@ int main(void)
 	  	scaleImage(Rx_Random_Number_Data.data, ScaledImage4);
 		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 		ST7789_DrawImageNN(102,105, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
-		//TestDelay(28000000);
+		TestDelay(14000000);
 
 
 	  	ST7789_DrawImageN(137,139,75,70,scene6_vcu_digital_sign);
 
 		ST7789_DrawImageN(91,162,40,36,scene6_vcu_plus_sign);
+		TestDelay(7000000);
 
 
 		ST7789_DrawImageN(88,210,126,20,scene6_vcu_private_key_text);
+		TestDelay(14000000);
 
 	  	scaleImage(vcu_private, ScaledImage4);
 		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 		ST7789_DrawImageNN(102,236, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
-			//TestDelay(28000000);
-
-
-
-		ST7789_DrawImageN(117,276,115,23,scene6_signed_Response);
-
+		TestDelay(14000000);
 
 		 HseResponse = EcdsaSign(vcu_keyPairHandle,HSE_HASH_ALGO_SHA2_256,(Rx_Random_Number_Data.dataLen),Rx_Random_Number_Data.data,FALSE,0,&signRLen, signR, &signSLen, signS);
 		//ASSERT(HSE_SRV_RSP_OK == HseResponse);
@@ -2162,10 +2167,12 @@ int main(void)
 
 	   	}
 
+		ST7789_DrawImageN(117,276,115,23,scene6_signed_Response);
+
 	  	scaleImage(G2B_Random_Number_Digital_Signature, ScaledImage4);
 		ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
 		ST7789_DrawImageNN(0,268, 120, 120, ScaledImage4);//need to change the function for 32 bytes of image
-		//TestDelay(28000000);
+		TestDelay(14000000);
 
 
 //		ST7789_WriteString(0, 80, "VCU Sending signature of challenge to secondary node", Font_11x18, ST77XX_MAGENTA, ST77XX_BLACK);
