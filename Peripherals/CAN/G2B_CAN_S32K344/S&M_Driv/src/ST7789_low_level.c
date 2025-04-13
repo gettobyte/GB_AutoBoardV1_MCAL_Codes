@@ -349,7 +349,7 @@ void ST7789_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint
 
 }
 
-
+// for 64 size of photo
 void ST7789_DrawImageNN(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint8_t *data)
 {
 	uint8_t d_data;
