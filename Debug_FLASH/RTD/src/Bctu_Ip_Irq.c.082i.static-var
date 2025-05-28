@@ -1,0 +1,54 @@
+callgraph:
+
+Bctu_Ip_IRQHandler/1 (Bctu_Ip_IRQHandler) @0608bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: Bctu_0_Isr/0 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+Bctu_0_Isr/0 (Bctu_0_Isr) @0608b7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: Bctu_Ip_IRQHandler/1 (1073741824 (estimated locally),1.00 per call) 
+Clearing variable flags:
+
+Function name:Bctu_0_Isr/0:
+  locals read: 
+  locals written: 
+
+ ordered call graph: reduced
+Bctu_0_Isr/0 (Bctu_0_Isr) @0608b7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @05a43848
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: Bctu_Ip_IRQHandler/1 (1073741824 (estimated locally),1.00 per call) 
+
+
+Function name:Bctu_0_Isr/0:
+    locals read: 
+    locals written: 
+  globals read: ALL
+  globals written: ALL
+Bctu_0_Isr ()
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  Bctu_Ip_IRQHandler (0);
+  return;
+
+}
+
+

@@ -1,0 +1,369 @@
+Dump after hash based groups
+Congruence classes: 3 with total: 3 items (in a non-singular class: 0)
+Class size histogram [number of members]: number of classes
+     1:      3
+Dump after WPA based types groups
+Congruence classes: 3 with total: 3 items (in a non-singular class: 0)
+Class size histogram [number of members]: number of classes
+     1:      3
+Worklist has been filled with: 0
+Address reference subdivision created: 0 new classes.
+Dump after callgraph-based congruence reduction
+Congruence classes: 3 with total: 3 items (in a non-singular class: 0)
+Class size histogram [number of members]: number of classes
+     1:      3
+Init called for 0 items (0.00%).
+Dump after full equality comparison of groups
+Congruence classes: 3 with total: 3 items (in a non-singular class: 0)
+Class size histogram [number of members]: number of classes
+     1:      3
+Worklist has been filled with: 0
+Address reference subdivision created: 0 new classes.
+Congruence classes: 3 with total: 3 items (in a non-singular class: 0)
+Class size histogram [number of members]: number of classes
+     1:      3
+
+Item count: 3
+Congruent classes before: 3, after: 3
+Average class size before: 1.00, after: 1.00
+Average non-singular class size: 0.00, count: 0
+Equal symbols: 0
+Totally needed symbols: 0, fraction of loaded symbols: 0.00%
+
+main ()
+{
+  Clock_Ip_StatusType clockStatus;
+  uint8 Index;
+  StatusType status;
+  <unnamed type> _1;
+  <unnamed type> _2;
+  _Bool notif_triggered.10_3;
+  _Bool notif_triggered.11_4;
+  _Bool notif_triggered.12_5;
+  <unnamed type> _6;
+  int exit_code.13_7;
+  int _37;
+
+  <bb 2> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  clockStatus_15 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  # DEBUG clockStatus => clockStatus_15
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [local count: 955630224]:
+  # DEBUG BEGIN_STMT
+  clockStatus_39 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  # DEBUG clockStatus => clockStatus_39
+
+  <bb 4> [local count: 1073741824]:
+  # clockStatus_9 = PHI <clockStatus_15(2), clockStatus_39(3)>
+  # DEBUG clockStatus => clockStatus_9
+  # DEBUG BEGIN_STMT
+  if (clockStatus_9 != 0)
+    goto <bb 3>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  Bctu_Ip_Init (0, &BctuHwUnit_0_VS_0);
+  # DEBUG BEGIN_STMT
+  _1 = Adc_Sar_Ip_Init (0, &AdcHwUnit_0_VS_0);
+  status_18 = (StatusType) _1;
+  # DEBUG status => status_18
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (status_18 != 0)
+    goto <bb 27>; [89.00%]
+  else
+    goto <bb 7>; [11.00%]
+
+  <bb 27> [local count: 955630224]:
+  goto <bb 6>; [100.00%]
+
+  <bb 7> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  IntCtrl_Ip_InstallHandler (180, Adc_Sar_0_Isr, 0B);
+  # DEBUG BEGIN_STMT
+  IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
+  # DEBUG BEGIN_STMT
+  IntCtrl_Ip_EnableIrq (180);
+  # DEBUG BEGIN_STMT
+  IntCtrl_Ip_EnableIrq (87);
+  # DEBUG BEGIN_STMT
+  # DEBUG Index => 0
+  goto <bb 10>; [100.00%]
+
+  <bb 8> [local count: 532694105]:
+  # DEBUG BEGIN_STMT
+  _2 = Adc_Sar_Ip_DoCalibration (0);
+  status_24 = (StatusType) _2;
+  # DEBUG status => status_24
+  # DEBUG BEGIN_STMT
+  if (status_24 == 0)
+    goto <bb 11>; [5.50%]
+  else
+    goto <bb 9>; [94.50%]
+
+  <bb 9> [local count: 503395929]:
+  # DEBUG BEGIN_STMT
+  Index_25 = Index_8 + 1;
+  # DEBUG Index => Index_25
+
+  <bb 10> [local count: 621507531]:
+  # Index_8 = PHI <0(7), Index_25(9)>
+  # DEBUG Index => Index_8
+  # DEBUG BEGIN_STMT
+  if (Index_8 != 6)
+    goto <bb 8>; [85.71%]
+  else
+    goto <bb 11>; [14.29%]
+
+  <bb 11> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  Adc_Sar_Ip_EnableNotifications (0, 5);
+  # DEBUG BEGIN_STMT
+  Adc_Sar_Ip_StartConversion (0, 0);
+  # DEBUG BEGIN_STMT
+
+  <bb 12> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  notif_triggered.10_3 ={v} notif_triggered;
+  if (notif_triggered.10_3 != 0)
+    goto <bb 13>; [11.00%]
+  else
+    goto <bb 26>; [89.00%]
+
+  <bb 26> [local count: 955630226]:
+  goto <bb 12>; [100.00%]
+
+  <bb 13> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  notif_triggered ={v} 0;
+  # DEBUG BEGIN_STMT
+  Adc_Sar_Ip_StartConversion (0, 1);
+  # DEBUG BEGIN_STMT
+
+  <bb 14> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  notif_triggered.11_4 ={v} notif_triggered;
+  if (notif_triggered.11_4 != 0)
+    goto <bb 15>; [11.00%]
+  else
+    goto <bb 25>; [89.00%]
+
+  <bb 25> [local count: 955630226]:
+  goto <bb 14>; [100.00%]
+
+  <bb 15> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  notif_triggered ={v} 0;
+  # DEBUG BEGIN_STMT
+  Bctu_Ip_SetGlobalTriggerEn (0, 1);
+  # DEBUG BEGIN_STMT
+  Bctu_Ip_EnableNotifications (0, 1);
+  # DEBUG BEGIN_STMT
+  Bctu_Ip_SwTriggerConversion (0, 0);
+  # DEBUG BEGIN_STMT
+
+  <bb 16> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  notif_triggered.12_5 ={v} notif_triggered;
+  if (notif_triggered.12_5 != 0)
+    goto <bb 17>; [11.00%]
+  else
+    goto <bb 24>; [89.00%]
+
+  <bb 24> [local count: 955630226]:
+  goto <bb 16>; [100.00%]
+
+  <bb 17> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  Bctu_Ip_Deinit (0);
+  # DEBUG BEGIN_STMT
+  _6 = Adc_Sar_Ip_Deinit (0);
+  status_36 = (StatusType) _6;
+  # DEBUG status => status_36
+  # DEBUG BEGIN_STMT
+
+  <bb 18> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (status_36 != 0)
+    goto <bb 23>; [89.00%]
+  else
+    goto <bb 21>; [11.00%]
+
+  <bb 23> [local count: 955630226]:
+  goto <bb 18>; [100.00%]
+
+  <bb 21> [local count: 118111600]:
+
+  <bb 19> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  exit_code.13_7 ={v} exit_code;
+  if (exit_code.13_7 != 0)
+    goto <bb 20>; [11.00%]
+  else
+    goto <bb 22>; [89.00%]
+
+  <bb 22> [local count: 955630226]:
+  goto <bb 19>; [100.00%]
+
+  <bb 20> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  _37 ={v} exit_code;
+  return _37;
+
+}
+
+
+BctuWatermarkNotif ()
+{
+  uint8 idx;
+  short unsigned int _1;
+  short unsigned int data.5_2;
+  short unsigned int data.6_3;
+  unsigned int _4;
+  unsigned int _5;
+  short unsigned int data.7_6;
+  unsigned int _7;
+  unsigned int _8;
+  _Bool iftmp.4_10;
+  _Bool iftmp.4_16;
+  _Bool iftmp.4_17;
+
+  <bb 2> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  notif_triggered ={v} 1;
+  # DEBUG BEGIN_STMT
+  # DEBUG idx => 0
+  goto <bb 8>; [100.00%]
+
+  <bb 3> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  _1 = Bctu_Ip_GetFifoData (0, 0);
+  data ={v} _1;
+  # DEBUG BEGIN_STMT
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  data.5_2 ={v} data;
+  if (data.5_2 > 3932)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 5> [local count: 536870913]:
+  data.6_3 ={v} data;
+  _4 = (unsigned int) data.6_3;
+  _5 = _4 + 4294963364;
+  iftmp.4_17 = _5 > 200;
+  goto <bb 7>; [100.00%]
+
+  <bb 6> [local count: 536870913]:
+  data.7_6 ={v} data;
+  _7 = (unsigned int) data.7_6;
+  _8 = 3932 - _7;
+  iftmp.4_16 = _8 > 200;
+
+  <bb 7> [local count: 1073741824]:
+  # iftmp.4_10 = PHI <iftmp.4_17(5), iftmp.4_16(6)>
+  if (iftmp.4_10 != 0)
+    goto <bb 11>; [89.00%]
+  else
+    goto <bb 10>; [11.00%]
+
+  <bb 11> [local count: 955630225]:
+  goto <bb 4>; [100.00%]
+
+  <bb 10> [local count: 118111600]:
+
+  <bb 8> [local count: 236223200]:
+  # idx_9 = PHI <0(2), 1(10)>
+  # DEBUG idx => idx_9
+  # DEBUG BEGIN_STMT
+  if (idx_9 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 9> [local count: 118111600]:
+  return;
+
+}
+
+
+AdcEndOfChainNotif ()
+{
+  short unsigned int _1;
+  short unsigned int data.1_2;
+  short unsigned int data.2_3;
+  unsigned int _4;
+  unsigned int _5;
+  short unsigned int data.3_6;
+  unsigned int _7;
+  unsigned int _8;
+  _Bool iftmp.0_9;
+  _Bool iftmp.0_14;
+  _Bool iftmp.0_15;
+
+  <bb 2> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  notif_triggered ={v} 1;
+  # DEBUG BEGIN_STMT
+  _1 = Adc_Sar_Ip_GetConvData (0, 48);
+  data ={v} _1;
+  # DEBUG BEGIN_STMT
+
+  <bb 3> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  data.1_2 ={v} data;
+  if (data.1_2 > 3932)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [local count: 536870913]:
+  data.2_3 ={v} data;
+  _4 = (unsigned int) data.2_3;
+  _5 = _4 + 4294963364;
+  iftmp.0_15 = _5 > 200;
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [local count: 536870913]:
+  data.3_6 ={v} data;
+  _7 = (unsigned int) data.3_6;
+  _8 = 3932 - _7;
+  iftmp.0_14 = _8 > 200;
+
+  <bb 6> [local count: 1073741824]:
+  # iftmp.0_9 = PHI <iftmp.0_15(4), iftmp.0_14(5)>
+  if (iftmp.0_9 != 0)
+    goto <bb 8>; [89.00%]
+  else
+    goto <bb 7>; [11.00%]
+
+  <bb 8> [local count: 955630225]:
+  goto <bb 3>; [100.00%]
+
+  <bb 7> [local count: 118111600]:
+  return;
+
+}
+
+

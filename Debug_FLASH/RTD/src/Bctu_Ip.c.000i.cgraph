@@ -1,0 +1,3907 @@
+Trivially needed symbols: Bctu_Ip_IRQHandler/33 Bctu_Ip_GetFifoCount/24 Bctu_Ip_SetFifoWatermark/23 Bctu_Ip_DisableNotifications/22 Bctu_Ip_EnableNotifications/21 Bctu_Ip_GetFifoResult/20 Bctu_Ip_GetFifoData/19 Bctu_Ip_GetConvResult/18 Bctu_Ip_GetConvData/17 Bctu_Ip_SwTriggerConversion/16 Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_Ip_StopLoopConversions/12 Bctu_Ip_DisableHwTrigger/11 Bctu_Ip_EnableHwTrigger/10 Bctu_Ip_SetTriggerChnListAddr/9 Bctu_Ip_ConfigTrigger/8 Bctu_Ip_ClearStatusFlags/7 Bctu_Ip_GetStatusFlags/6 Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_Deinit/3 Bctu_Ip_Init/2 Bctu_Ip_axBctuState/1 Bctu_Ip_apxBctuBase/0
+Trivially needed symbols: ResolutionArray/64 pAdcBaseTable/63
+
+
+Initial Symbol table:
+
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69) @06f88540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69) @06f88460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66) @06f88000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66) @06f7bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57) @06f7bb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57) @06f7ba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+ResolutionArray/64 (ResolutionArray) @06f7d168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06efa000
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+pAdcBaseTable/63 (pAdcBaseTable) @06f7d120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06f7d168
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71) @06f7b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71) @06f6eee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60) @06f6eb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60) @06f6ea80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70) @06f5de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70) @06f5dd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+OsIf_GetElapsed/46 (OsIf_GetElapsed) @06f5d1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_GetCounter/43 (OsIf_GetCounter) @06f2aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_MicrosToTicks/42 (OsIf_MicrosToTicks) @06f2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65) @06f2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65) @06f2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+Bctu_GetResolutionScaledResult/35 (Bctu_GetResolutionScaledResult) @06f190e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06efa000
+  References: pAdcBaseTable/63 (read) ResolutionArray/64 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_GetFifoResult/20 Bctu_Ip_GetFifoData/19 Bctu_Ip_GetConvResult/18 Bctu_Ip_GetConvData/17 
+  Calls: 
+Bctu_ConfigAndUpdateFifoNotification/34 (Bctu_ConfigAndUpdateFifoNotification) @06f19d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06ee2c40
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_Ip_SetFifoWatermark/23 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 
+Bctu_Ip_IRQHandler/33 (Bctu_Ip_IRQHandler) @06f19a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 
+Bctu_CheckAndCallFifoNotification/32 (Bctu_CheckAndCallFifoNotification) @06f197e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @01981040
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_IRQHandler/33 
+  Calls: Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 
+   Indirect call Num speculative call targets: 0
+Bctu_CheckAndCallNotification/31 (Bctu_CheckAndCallNotification) @06f19540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06f197e0
+  References: Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallFifoNotification/32 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Bctu_SetConvListLastElement/30 (Bctu_SetConvListLastElement) @06f192a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06f19d20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 
+Bctu_SetConvListElemWithTag/29 (Bctu_SetConvListElemWithTag) @06f19000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06f192a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 
+Bctu_PrepareReconfigBlocking/28 (Bctu_PrepareReconfigBlocking) @06f0eee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06ee2ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetElapsed/46 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetCounter/43 OsIf_MicrosToTicks/42 
+Bctu_PrepareReconfigNonBlocking/27 (Bctu_PrepareReconfigNonBlocking) @06f0ec40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06ef0c40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_SetTriggerChnListAddr/9 Bctu_Ip_ConfigTrigger/8 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 
+Bctu_GetBitmask/26 (Bctu_GetBitmask) @06f0e9a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06efa700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_SwTriggerConversion/16 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+  Calls: 
+Bctu_CollectMcrMasks/25 (Bctu_CollectMcrMasks) @06f0e700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06efa700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 
+Bctu_Ip_GetFifoCount/24 (Bctu_Ip_GetFifoCount) @06f0e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06f19a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetFifoWatermark/23 (Bctu_Ip_SetFifoWatermark) @06f0e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06f0e460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 
+Bctu_Ip_DisableNotifications/22 (Bctu_Ip_DisableNotifications) @06f09ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06f0e1c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 
+Bctu_Ip_EnableNotifications/21 (Bctu_Ip_EnableNotifications) @06f09620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06f09ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 
+Bctu_Ip_GetFifoResult/20 (Bctu_Ip_GetFifoResult) @06efab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06f09620
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetFifoData/19 (Bctu_Ip_GetFifoData) @06efa540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06efab60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvResult/18 (Bctu_Ip_GetConvResult) @06efa000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06efa540
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvData/17 (Bctu_Ip_GetConvData) @06efad20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06efa000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_SwTriggerConversion/16 (Bctu_Ip_SwTriggerConversion) @06efaa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06efad20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 Bctu_GetBitmask/26 
+Bctu_ConfigMultiAdcSubLists/15 (Bctu_ConfigMultiAdcSubLists) @06efa700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @06f19d20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanListSimple/14 (Bctu_Ip_ConfigChanListSimple) @06efa460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06efaa80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanList/13 (Bctu_Ip_ConfigChanList) @06efa1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06efa460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_StopLoopConversions/12 (Bctu_Ip_StopLoopConversions) @06ef0d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06efa1c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 
+Bctu_Ip_DisableHwTrigger/11 (Bctu_Ip_DisableHwTrigger) @06ef0380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ef0d20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 
+Bctu_Ip_EnableHwTrigger/10 (Bctu_Ip_EnableHwTrigger) @06ef0ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ef0380
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 
+Bctu_Ip_SetTriggerChnListAddr/9 (Bctu_Ip_SetTriggerChnListAddr) @06ef0c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ef0ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ConfigTrigger/8 (Bctu_Ip_ConfigTrigger) @06ef07e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ef0c40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ClearStatusFlags/7 (Bctu_Ip_ClearStatusFlags) @06ef02a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ef07e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 
+Bctu_Ip_GetStatusFlags/6 (Bctu_Ip_GetStatusFlags) @06ef0000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ef02a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetLowPowerMode/5 (Bctu_Ip_SetLowPowerMode) @06ee2a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ef0000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 
+Bctu_Ip_SetGlobalTriggerEn/4 (Bctu_Ip_SetGlobalTriggerEn) @06ee2ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ee2a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 
+Bctu_Ip_Deinit/3 (Bctu_Ip_Deinit) @06ee2c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ee2ee0
+  References: Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_Ip_ClearStatusFlags/7 Bctu_Ip_SetFifoWatermark/23 Bctu_PrepareReconfigBlocking/28 Bctu_Ip_Init/2 
+Bctu_Ip_Init/2 (Bctu_Ip_Init) @06ee29a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ee2c40
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: Bctu_ConfigAndUpdateFifoNotification/34 Bctu_ConfigMultiAdcSubLists/15 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+Bctu_Ip_axBctuState/1 (Bctu_Ip_axBctuState) @06d10bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ee29a0
+  References: 
+  Referring: Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_Ip_Deinit/3 (write) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_CheckAndCallNotification/31 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+Bctu_Ip_apxBctuBase/0 (Bctu_Ip_apxBctuBase) @06d10b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06d10bd0
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69) @06f88540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69) @06f88460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66) @06f88000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66) @06f7bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57) @06f7bb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57) @06f7ba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+ResolutionArray/64 (ResolutionArray) @06f7d168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+pAdcBaseTable/63 (pAdcBaseTable) @06f7d120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71) @06f7b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71) @06f6eee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60) @06f6eb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60) @06f6ea80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70) @06f5de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70) @06f5dd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+OsIf_GetElapsed/46 (OsIf_GetElapsed) @06f5d1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_GetCounter/43 (OsIf_GetCounter) @06f2aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_MicrosToTicks/42 (OsIf_MicrosToTicks) @06f2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65) @06f2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65) @06f2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+Bctu_GetResolutionScaledResult/35 (Bctu_GetResolutionScaledResult) @06f190e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: pAdcBaseTable/63 (read) ResolutionArray/64 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_GetFifoResult/20 Bctu_Ip_GetFifoData/19 Bctu_Ip_GetConvResult/18 Bctu_Ip_GetConvData/17 
+  Calls: 
+Bctu_ConfigAndUpdateFifoNotification/34 (Bctu_ConfigAndUpdateFifoNotification) @06f19d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_Ip_SetFifoWatermark/23 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 
+Bctu_Ip_IRQHandler/33 (Bctu_Ip_IRQHandler) @06f19a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 
+Bctu_CheckAndCallFifoNotification/32 (Bctu_CheckAndCallFifoNotification) @06f197e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_IRQHandler/33 
+  Calls: Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 
+   Indirect call Num speculative call targets: 0
+Bctu_CheckAndCallNotification/31 (Bctu_CheckAndCallNotification) @06f19540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallFifoNotification/32 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Bctu_SetConvListLastElement/30 (Bctu_SetConvListLastElement) @06f192a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 
+Bctu_SetConvListElemWithTag/29 (Bctu_SetConvListElemWithTag) @06f19000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 
+Bctu_PrepareReconfigBlocking/28 (Bctu_PrepareReconfigBlocking) @06f0eee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetElapsed/46 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetCounter/43 OsIf_MicrosToTicks/42 
+Bctu_PrepareReconfigNonBlocking/27 (Bctu_PrepareReconfigNonBlocking) @06f0ec40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_SetTriggerChnListAddr/9 Bctu_Ip_ConfigTrigger/8 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 
+Bctu_GetBitmask/26 (Bctu_GetBitmask) @06f0e9a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_SwTriggerConversion/16 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+  Calls: 
+Bctu_CollectMcrMasks/25 (Bctu_CollectMcrMasks) @06f0e700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 
+Bctu_Ip_GetFifoCount/24 (Bctu_Ip_GetFifoCount) @06f0e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetFifoWatermark/23 (Bctu_Ip_SetFifoWatermark) @06f0e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 
+Bctu_Ip_DisableNotifications/22 (Bctu_Ip_DisableNotifications) @06f09ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 
+Bctu_Ip_EnableNotifications/21 (Bctu_Ip_EnableNotifications) @06f09620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 
+Bctu_Ip_GetFifoResult/20 (Bctu_Ip_GetFifoResult) @06efab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetFifoData/19 (Bctu_Ip_GetFifoData) @06efa540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvResult/18 (Bctu_Ip_GetConvResult) @06efa000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvData/17 (Bctu_Ip_GetConvData) @06efad20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_SwTriggerConversion/16 (Bctu_Ip_SwTriggerConversion) @06efaa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 Bctu_GetBitmask/26 
+Bctu_ConfigMultiAdcSubLists/15 (Bctu_ConfigMultiAdcSubLists) @06efa700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanListSimple/14 (Bctu_Ip_ConfigChanListSimple) @06efa460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanList/13 (Bctu_Ip_ConfigChanList) @06efa1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_StopLoopConversions/12 (Bctu_Ip_StopLoopConversions) @06ef0d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 
+Bctu_Ip_DisableHwTrigger/11 (Bctu_Ip_DisableHwTrigger) @06ef0380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 
+Bctu_Ip_EnableHwTrigger/10 (Bctu_Ip_EnableHwTrigger) @06ef0ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 
+Bctu_Ip_SetTriggerChnListAddr/9 (Bctu_Ip_SetTriggerChnListAddr) @06ef0c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ConfigTrigger/8 (Bctu_Ip_ConfigTrigger) @06ef07e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ClearStatusFlags/7 (Bctu_Ip_ClearStatusFlags) @06ef02a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 
+Bctu_Ip_GetStatusFlags/6 (Bctu_Ip_GetStatusFlags) @06ef0000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetLowPowerMode/5 (Bctu_Ip_SetLowPowerMode) @06ee2a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 
+Bctu_Ip_SetGlobalTriggerEn/4 (Bctu_Ip_SetGlobalTriggerEn) @06ee2ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 
+Bctu_Ip_Deinit/3 (Bctu_Ip_Deinit) @06ee2c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_Ip_ClearStatusFlags/7 Bctu_Ip_SetFifoWatermark/23 Bctu_PrepareReconfigBlocking/28 Bctu_Ip_Init/2 
+Bctu_Ip_Init/2 (Bctu_Ip_Init) @06ee29a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: Bctu_ConfigAndUpdateFifoNotification/34 Bctu_ConfigMultiAdcSubLists/15 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+Bctu_Ip_axBctuState/1 (Bctu_Ip_axBctuState) @06d10bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_Ip_Deinit/3 (write) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_CheckAndCallNotification/31 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+Bctu_Ip_apxBctuBase/0 (Bctu_Ip_apxBctuBase) @06d10b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69) @06f88540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69) @06f88460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66) @06f88000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66) @06f7bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57) @06f7bb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57) @06f7ba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+ResolutionArray.0/64 (ResolutionArray) @06f7d168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+pAdcBaseTable.1/63 (pAdcBaseTable) @06f7d120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71) @06f7b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71) @06f6eee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60) @06f6eb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60) @06f6ea80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70) @06f5de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70) @06f5dd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+OsIf_GetElapsed/46 (OsIf_GetElapsed) @06f5d1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_GetCounter/43 (OsIf_GetCounter) @06f2aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_MicrosToTicks/42 (OsIf_MicrosToTicks) @06f2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65) @06f2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65) @06f2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+Bctu_GetResolutionScaledResult/35 (Bctu_GetResolutionScaledResult) @06f190e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: pAdcBaseTable.1/63 (read) ResolutionArray.0/64 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_GetFifoResult/20 Bctu_Ip_GetFifoData/19 Bctu_Ip_GetConvResult/18 Bctu_Ip_GetConvData/17 
+  Calls: 
+Bctu_ConfigAndUpdateFifoNotification/34 (Bctu_ConfigAndUpdateFifoNotification) @06f19d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_Ip_SetFifoWatermark/23 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 
+Bctu_Ip_IRQHandler/33 (Bctu_Ip_IRQHandler) @06f19a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 
+Bctu_CheckAndCallFifoNotification/32 (Bctu_CheckAndCallFifoNotification) @06f197e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_IRQHandler/33 
+  Calls: Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 
+   Indirect call Num speculative call targets: 0
+Bctu_CheckAndCallNotification/31 (Bctu_CheckAndCallNotification) @06f19540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallFifoNotification/32 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Bctu_SetConvListLastElement/30 (Bctu_SetConvListLastElement) @06f192a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 
+Bctu_SetConvListElemWithTag/29 (Bctu_SetConvListElemWithTag) @06f19000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 
+Bctu_PrepareReconfigBlocking/28 (Bctu_PrepareReconfigBlocking) @06f0eee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetElapsed/46 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetCounter/43 OsIf_MicrosToTicks/42 
+Bctu_PrepareReconfigNonBlocking/27 (Bctu_PrepareReconfigNonBlocking) @06f0ec40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_SetTriggerChnListAddr/9 Bctu_Ip_ConfigTrigger/8 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 
+Bctu_GetBitmask/26 (Bctu_GetBitmask) @06f0e9a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_SwTriggerConversion/16 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+  Calls: 
+Bctu_CollectMcrMasks/25 (Bctu_CollectMcrMasks) @06f0e700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 
+Bctu_Ip_GetFifoCount/24 (Bctu_Ip_GetFifoCount) @06f0e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetFifoWatermark/23 (Bctu_Ip_SetFifoWatermark) @06f0e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 
+Bctu_Ip_DisableNotifications/22 (Bctu_Ip_DisableNotifications) @06f09ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 
+Bctu_Ip_EnableNotifications/21 (Bctu_Ip_EnableNotifications) @06f09620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 
+Bctu_Ip_GetFifoResult/20 (Bctu_Ip_GetFifoResult) @06efab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetFifoData/19 (Bctu_Ip_GetFifoData) @06efa540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvResult/18 (Bctu_Ip_GetConvResult) @06efa000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvData/17 (Bctu_Ip_GetConvData) @06efad20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_SwTriggerConversion/16 (Bctu_Ip_SwTriggerConversion) @06efaa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 Bctu_GetBitmask/26 
+Bctu_ConfigMultiAdcSubLists/15 (Bctu_ConfigMultiAdcSubLists) @06efa700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanListSimple/14 (Bctu_Ip_ConfigChanListSimple) @06efa460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanList/13 (Bctu_Ip_ConfigChanList) @06efa1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_StopLoopConversions/12 (Bctu_Ip_StopLoopConversions) @06ef0d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 
+Bctu_Ip_DisableHwTrigger/11 (Bctu_Ip_DisableHwTrigger) @06ef0380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 
+Bctu_Ip_EnableHwTrigger/10 (Bctu_Ip_EnableHwTrigger) @06ef0ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 
+Bctu_Ip_SetTriggerChnListAddr/9 (Bctu_Ip_SetTriggerChnListAddr) @06ef0c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ConfigTrigger/8 (Bctu_Ip_ConfigTrigger) @06ef07e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ClearStatusFlags/7 (Bctu_Ip_ClearStatusFlags) @06ef02a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 
+Bctu_Ip_GetStatusFlags/6 (Bctu_Ip_GetStatusFlags) @06ef0000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetLowPowerMode/5 (Bctu_Ip_SetLowPowerMode) @06ee2a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 
+Bctu_Ip_SetGlobalTriggerEn/4 (Bctu_Ip_SetGlobalTriggerEn) @06ee2ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 
+Bctu_Ip_Deinit/3 (Bctu_Ip_Deinit) @06ee2c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_Ip_ClearStatusFlags/7 Bctu_Ip_SetFifoWatermark/23 Bctu_PrepareReconfigBlocking/28 Bctu_Ip_Init/2 
+Bctu_Ip_Init/2 (Bctu_Ip_Init) @06ee29a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: Bctu_ConfigAndUpdateFifoNotification/34 Bctu_ConfigMultiAdcSubLists/15 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+Bctu_Ip_axBctuState/1 (Bctu_Ip_axBctuState) @06d10bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_Ip_Deinit/3 (write) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_CheckAndCallNotification/31 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+Bctu_Ip_apxBctuBase/0 (Bctu_Ip_apxBctuBase) @06d10b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69) @06f88540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69) @06f88460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66) @06f88000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66) @06f7bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57) @06f7bb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57) @06f7ba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+ResolutionArray.0/64 (ResolutionArray) @06f7d168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+pAdcBaseTable.1/63 (pAdcBaseTable) @06f7d120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71) @06f7b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71) @06f6eee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60) @06f6eb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60) @06f6ea80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70) @06f5de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70) @06f5dd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+OsIf_GetElapsed/46 (OsIf_GetElapsed) @06f5d1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_GetCounter/43 (OsIf_GetCounter) @06f2aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_MicrosToTicks/42 (OsIf_MicrosToTicks) @06f2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65) @06f2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65) @06f2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+Bctu_GetResolutionScaledResult/35 (Bctu_GetResolutionScaledResult) @06f190e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: pAdcBaseTable.1/63 (read) ResolutionArray.0/64 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_GetFifoResult/20 Bctu_Ip_GetFifoData/19 Bctu_Ip_GetConvResult/18 Bctu_Ip_GetConvData/17 
+  Calls: 
+Bctu_ConfigAndUpdateFifoNotification/34 (Bctu_ConfigAndUpdateFifoNotification) @06f19d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_Ip_SetFifoWatermark/23 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 
+Bctu_Ip_IRQHandler/33 (Bctu_Ip_IRQHandler) @06f19a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 
+Bctu_CheckAndCallFifoNotification/32 (Bctu_CheckAndCallFifoNotification) @06f197e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_IRQHandler/33 
+  Calls: Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 
+   Indirect call Num speculative call targets: 0
+Bctu_CheckAndCallNotification/31 (Bctu_CheckAndCallNotification) @06f19540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallFifoNotification/32 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Bctu_SetConvListLastElement/30 (Bctu_SetConvListLastElement) @06f192a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 
+Bctu_SetConvListElemWithTag/29 (Bctu_SetConvListElemWithTag) @06f19000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 
+Bctu_PrepareReconfigBlocking/28 (Bctu_PrepareReconfigBlocking) @06f0eee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetElapsed/46 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetCounter/43 OsIf_MicrosToTicks/42 
+Bctu_PrepareReconfigNonBlocking/27 (Bctu_PrepareReconfigNonBlocking) @06f0ec40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_SetTriggerChnListAddr/9 Bctu_Ip_ConfigTrigger/8 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 
+Bctu_GetBitmask/26 (Bctu_GetBitmask) @06f0e9a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_SwTriggerConversion/16 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+  Calls: 
+Bctu_CollectMcrMasks/25 (Bctu_CollectMcrMasks) @06f0e700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 
+Bctu_Ip_GetFifoCount/24 (Bctu_Ip_GetFifoCount) @06f0e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetFifoWatermark/23 (Bctu_Ip_SetFifoWatermark) @06f0e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 
+Bctu_Ip_DisableNotifications/22 (Bctu_Ip_DisableNotifications) @06f09ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 
+Bctu_Ip_EnableNotifications/21 (Bctu_Ip_EnableNotifications) @06f09620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 
+Bctu_Ip_GetFifoResult/20 (Bctu_Ip_GetFifoResult) @06efab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetFifoData/19 (Bctu_Ip_GetFifoData) @06efa540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvResult/18 (Bctu_Ip_GetConvResult) @06efa000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvData/17 (Bctu_Ip_GetConvData) @06efad20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_SwTriggerConversion/16 (Bctu_Ip_SwTriggerConversion) @06efaa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 Bctu_GetBitmask/26 
+Bctu_ConfigMultiAdcSubLists/15 (Bctu_ConfigMultiAdcSubLists) @06efa700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanListSimple/14 (Bctu_Ip_ConfigChanListSimple) @06efa460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanList/13 (Bctu_Ip_ConfigChanList) @06efa1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_StopLoopConversions/12 (Bctu_Ip_StopLoopConversions) @06ef0d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 
+Bctu_Ip_DisableHwTrigger/11 (Bctu_Ip_DisableHwTrigger) @06ef0380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 
+Bctu_Ip_EnableHwTrigger/10 (Bctu_Ip_EnableHwTrigger) @06ef0ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 
+Bctu_Ip_SetTriggerChnListAddr/9 (Bctu_Ip_SetTriggerChnListAddr) @06ef0c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ConfigTrigger/8 (Bctu_Ip_ConfigTrigger) @06ef07e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ClearStatusFlags/7 (Bctu_Ip_ClearStatusFlags) @06ef02a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 
+Bctu_Ip_GetStatusFlags/6 (Bctu_Ip_GetStatusFlags) @06ef0000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetLowPowerMode/5 (Bctu_Ip_SetLowPowerMode) @06ee2a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 
+Bctu_Ip_SetGlobalTriggerEn/4 (Bctu_Ip_SetGlobalTriggerEn) @06ee2ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 
+Bctu_Ip_Deinit/3 (Bctu_Ip_Deinit) @06ee2c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Bctu_Ip_ClearStatusFlags/7 Bctu_Ip_SetFifoWatermark/23 Bctu_PrepareReconfigBlocking/28 Bctu_Ip_Init/2 
+Bctu_Ip_Init/2 (Bctu_Ip_Init) @06ee29a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: Bctu_ConfigAndUpdateFifoNotification/34 Bctu_ConfigMultiAdcSubLists/15 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+Bctu_Ip_axBctuState/1 (Bctu_Ip_axBctuState) @06d10bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_Ip_Deinit/3 (write) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_CheckAndCallNotification/31 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+Bctu_Ip_apxBctuBase/0 (Bctu_Ip_apxBctuBase) @06d10b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69) @06f88540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69) @06f88460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66) @06f88000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66) @06f7bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_SetFifoWatermark/23 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57) @06f7bb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57) @06f7ba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_DisableNotifications/22 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_EnableNotifications/21 
+  Calls: 
+ResolutionArray.0/64 (ResolutionArray) @06f7d168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+pAdcBaseTable.1/63 (pAdcBaseTable) @06f7d120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Bctu_GetResolutionScaledResult/35 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71) @06f7b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71) @06f6eee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_SwTriggerConversion/16 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60) @06f6eb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60) @06f6ea80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_StopLoopConversions/12 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_DisableHwTrigger/11 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_EnableHwTrigger/10 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_PrepareReconfigNonBlocking/27 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70) @06f5de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70) @06f5dd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_ClearStatusFlags/7 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_SetLowPowerMode/5 Bctu_Ip_SetLowPowerMode/5 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_Ip_SetGlobalTriggerEn/4 Bctu_Ip_SetGlobalTriggerEn/4 
+  Calls: 
+OsIf_GetElapsed/46 (OsIf_GetElapsed) @06f5d1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_GetCounter/43 (OsIf_GetCounter) @06f2aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+OsIf_MicrosToTicks/42 (OsIf_MicrosToTicks) @06f2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_PrepareReconfigBlocking/28 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65) @06f2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65) @06f2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_SetConvListLastElement/30 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_SetConvListElemWithTag/29 
+  Calls: 
+Bctu_GetResolutionScaledResult/35 (Bctu_GetResolutionScaledResult) @06f190e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pAdcBaseTable.1/63 (read) ResolutionArray.0/64 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_GetFifoResult/20 Bctu_Ip_GetFifoData/19 Bctu_Ip_GetConvResult/18 Bctu_Ip_GetConvData/17 
+  Calls: 
+Bctu_ConfigAndUpdateFifoNotification/34 (Bctu_ConfigAndUpdateFifoNotification) @06f19d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_Ip_SetFifoWatermark/23 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 
+Bctu_Ip_IRQHandler/33 (Bctu_Ip_IRQHandler) @06f19a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 
+Bctu_CheckAndCallFifoNotification/32 (Bctu_CheckAndCallFifoNotification) @06f197e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_IRQHandler/33 
+  Calls: Bctu_CheckAndCallNotification/31 Bctu_CheckAndCallNotification/31 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 
+   Indirect call Num speculative call targets: 0
+Bctu_CheckAndCallNotification/31 (Bctu_CheckAndCallNotification) @06f19540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Bctu_Ip_axBctuState/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_Ip_IRQHandler/33 Bctu_CheckAndCallFifoNotification/32 Bctu_CheckAndCallFifoNotification/32 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Bctu_SetConvListLastElement/30 (Bctu_SetConvListLastElement) @06f192a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 
+Bctu_SetConvListElemWithTag/29 (Bctu_SetConvListElemWithTag) @06f19000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_ConfigChanListSimple/14 Bctu_Ip_ConfigChanList/13 Bctu_ConfigMultiAdcSubLists/15 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 
+Bctu_PrepareReconfigBlocking/28 (Bctu_PrepareReconfigBlocking) @06f0eee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetElapsed/46 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 OsIf_GetCounter/43 OsIf_MicrosToTicks/42 
+Bctu_PrepareReconfigNonBlocking/27 (Bctu_PrepareReconfigNonBlocking) @06f0ec40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_SetTriggerChnListAddr/9 Bctu_Ip_ConfigTrigger/8 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 
+Bctu_GetBitmask/26 (Bctu_GetBitmask) @06f0e9a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_SwTriggerConversion/16 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+  Calls: 
+Bctu_CollectMcrMasks/25 (Bctu_CollectMcrMasks) @06f0e700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 
+Bctu_Ip_GetFifoCount/24 (Bctu_Ip_GetFifoCount) @06f0e460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetFifoWatermark/23 (Bctu_Ip_SetFifoWatermark) @06f0e1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 Bctu_ConfigAndUpdateFifoNotification/34 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 
+Bctu_Ip_DisableNotifications/22 (Bctu_Ip_DisableNotifications) @06f09ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 
+Bctu_Ip_EnableNotifications/21 (Bctu_Ip_EnableNotifications) @06f09620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 
+Bctu_Ip_GetFifoResult/20 (Bctu_Ip_GetFifoResult) @06efab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetFifoData/19 (Bctu_Ip_GetFifoData) @06efa540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvResult/18 (Bctu_Ip_GetConvResult) @06efa000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_GetConvData/17 (Bctu_Ip_GetConvData) @06efad20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_GetResolutionScaledResult/35 
+Bctu_Ip_SwTriggerConversion/16 (Bctu_Ip_SwTriggerConversion) @06efaa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 Bctu_GetBitmask/26 
+Bctu_ConfigMultiAdcSubLists/15 (Bctu_ConfigMultiAdcSubLists) @06efa700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanListSimple/14 (Bctu_Ip_ConfigChanListSimple) @06efa460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_ConfigChanList/13 (Bctu_Ip_ConfigChanList) @06efa1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_SetConvListLastElement/30 Bctu_SetConvListElemWithTag/29 
+Bctu_Ip_StopLoopConversions/12 (Bctu_Ip_StopLoopConversions) @06ef0d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 
+Bctu_Ip_DisableHwTrigger/11 (Bctu_Ip_DisableHwTrigger) @06ef0380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 
+Bctu_Ip_EnableHwTrigger/10 (Bctu_Ip_EnableHwTrigger) @06ef0ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 
+Bctu_Ip_SetTriggerChnListAddr/9 (Bctu_Ip_SetTriggerChnListAddr) @06ef0c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ConfigTrigger/8 (Bctu_Ip_ConfigTrigger) @06ef07e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Bctu_Ip_Init/2 
+  Calls: Bctu_GetBitmask/26 Bctu_PrepareReconfigNonBlocking/27 
+Bctu_Ip_ClearStatusFlags/7 (Bctu_Ip_ClearStatusFlags) @06ef02a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 
+Bctu_Ip_GetStatusFlags/6 (Bctu_Ip_GetStatusFlags) @06ef0000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bctu_Ip_SetLowPowerMode/5 (Bctu_Ip_SetLowPowerMode) @06ee2a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 
+Bctu_Ip_SetGlobalTriggerEn/4 (Bctu_Ip_SetGlobalTriggerEn) @06ee2ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 
+Bctu_Ip_Deinit/3 (Bctu_Ip_Deinit) @06ee2c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_Ip_ClearStatusFlags/7 Bctu_Ip_SetFifoWatermark/23 Bctu_PrepareReconfigBlocking/28 Bctu_Ip_Init/2 
+Bctu_Ip_Init/2 (Bctu_Ip_Init) @06ee29a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) Bctu_Ip_axBctuState/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Bctu_Ip_Deinit/3 
+  Calls: Bctu_ConfigAndUpdateFifoNotification/34 Bctu_ConfigMultiAdcSubLists/15 Bctu_Ip_ConfigTrigger/8 Bctu_CollectMcrMasks/25 
+Bctu_Ip_axBctuState/1 (Bctu_Ip_axBctuState) @06d10bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Bctu_CheckAndCallFifoNotification/32 (read) Bctu_Ip_Init/2 (write) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_Ip_Init/2 (write) Bctu_Ip_Init/2 (write) Bctu_CheckAndCallNotification/31 (read) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_CheckAndCallFifoNotification/32 (read) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_ConfigAndUpdateFifoNotification/34 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_Deinit/3 (write) Bctu_Ip_Init/2 (write) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) Bctu_Ip_IRQHandler/33 (read) 
+  Availability: available
+  Varpool flags:
+Bctu_Ip_apxBctuBase/0 (Bctu_Ip_apxBctuBase) @06d10b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: ResolutionArray.0/64 pAdcBaseTable.1/63 Bctu_Ip_axBctuState/1 Bctu_Ip_apxBctuBase/0
+Removing variables:
+
+Final Symbol table:
+
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69/76 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_69) @06f88540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69/75 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69) @06f88460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66/74 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_66) @06f88000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66/73 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66) @06f7bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64/72 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64/71 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64) @06f7bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57/70 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_57) @06f7bb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57/69 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57) @06f7ba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63/68 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63/67 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63) @06f7b7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56/66 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56/65 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56) @06f7b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ResolutionArray.0/64 (ResolutionArray) @06f7d168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+pAdcBaseTable.1/63 (pAdcBaseTable) @06f7d120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06f7d168
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71/62 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_71) @06f7b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71/61 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71) @06f6eee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60/60 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_60) @06f6eb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60/59 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60) @06f6ea80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59/58 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59/57 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59) @06f6e7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58/56 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58/55 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58) @06f6e540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61/54 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61/53 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61) @06f6e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70/52 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_70) @06f5de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70/51 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70) @06f5dd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55/50 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55/49 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55) @06f5d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54/48 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54/47 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54) @06f5d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetElapsed/46 (OsIf_GetElapsed) @06f5d1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62/45 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62/44 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62) @06f5d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetCounter/43 (OsIf_GetCounter) @06f2aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_MicrosToTicks/42 (OsIf_MicrosToTicks) @06f2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65/41 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_65) @06f2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65/40 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65) @06f2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68/39 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68/38 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68) @06f2a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67) @06f2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_GetResolutionScaledResult/35 (Bctu_GetResolutionScaledResult) @06f190e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_ConfigAndUpdateFifoNotification/34 (Bctu_ConfigAndUpdateFifoNotification) @06f19d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_Ip_IRQHandler/33 (Bctu_Ip_IRQHandler) @06f19a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_CheckAndCallFifoNotification/32 (Bctu_CheckAndCallFifoNotification) @06f197e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_CheckAndCallNotification/31 (Bctu_CheckAndCallNotification) @06f19540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_SetConvListLastElement/30 (Bctu_SetConvListLastElement) @06f192a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_SetConvListElemWithTag/29 (Bctu_SetConvListElemWithTag) @06f19000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_PrepareReconfigBlocking/28 (Bctu_PrepareReconfigBlocking) @06f0eee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_PrepareReconfigNonBlocking/27 (Bctu_PrepareReconfigNonBlocking) @06f0ec40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_GetBitmask/26 (Bctu_GetBitmask) @06f0e9a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_CollectMcrMasks/25 (Bctu_CollectMcrMasks) @06f0e700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_Ip_GetFifoCount/24 (Bctu_Ip_GetFifoCount) @06f0e460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_SetFifoWatermark/23 (Bctu_Ip_SetFifoWatermark) @06f0e1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_DisableNotifications/22 (Bctu_Ip_DisableNotifications) @06f09ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_EnableNotifications/21 (Bctu_Ip_EnableNotifications) @06f09620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_GetFifoResult/20 (Bctu_Ip_GetFifoResult) @06efab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_GetFifoData/19 (Bctu_Ip_GetFifoData) @06efa540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_GetConvResult/18 (Bctu_Ip_GetConvResult) @06efa000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_GetConvData/17 (Bctu_Ip_GetConvData) @06efad20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_SwTriggerConversion/16 (Bctu_Ip_SwTriggerConversion) @06efaa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_ConfigMultiAdcSubLists/15 (Bctu_ConfigMultiAdcSubLists) @06efa700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Bctu_Ip_ConfigChanListSimple/14 (Bctu_Ip_ConfigChanListSimple) @06efa460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_ConfigChanList/13 (Bctu_Ip_ConfigChanList) @06efa1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_StopLoopConversions/12 (Bctu_Ip_StopLoopConversions) @06ef0d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_DisableHwTrigger/11 (Bctu_Ip_DisableHwTrigger) @06ef0380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_EnableHwTrigger/10 (Bctu_Ip_EnableHwTrigger) @06ef0ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_SetTriggerChnListAddr/9 (Bctu_Ip_SetTriggerChnListAddr) @06ef0c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_ConfigTrigger/8 (Bctu_Ip_ConfigTrigger) @06ef07e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_ClearStatusFlags/7 (Bctu_Ip_ClearStatusFlags) @06ef02a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_GetStatusFlags/6 (Bctu_Ip_GetStatusFlags) @06ef0000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_SetLowPowerMode/5 (Bctu_Ip_SetLowPowerMode) @06ee2a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_SetGlobalTriggerEn/4 (Bctu_Ip_SetGlobalTriggerEn) @06ee2ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_Deinit/3 (Bctu_Ip_Deinit) @06ee2c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_Init/2 (Bctu_Ip_Init) @06ee29a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_Ip_axBctuState/1 (Bctu_Ip_axBctuState) @06d10bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06f7d120
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Bctu_Ip_apxBctuBase/0 (Bctu_Ip_apxBctuBase) @06d10b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06d10bd0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

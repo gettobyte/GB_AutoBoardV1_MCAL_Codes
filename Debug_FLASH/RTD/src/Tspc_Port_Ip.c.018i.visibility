@@ -1,0 +1,221 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: Tspc_Port_Ip_ConfigureObeGroup/2 Tspc_Port_Ip_EnableObeGroup/1
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_10/6 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_10) @061dd2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Tspc_Port_Ip_ConfigureObeGroup/2 
+  Calls: 
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_10/5 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_10) @061dd1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Tspc_Port_Ip_ConfigureObeGroup/2 
+  Calls: 
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_09/4 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_09) @061dd000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Tspc_Port_Ip_EnableObeGroup/1 
+  Calls: 
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_09/3 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_09) @06161a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Tspc_Port_Ip_EnableObeGroup/1 
+  Calls: 
+Tspc_Port_Ip_ConfigureObeGroup/2 (Tspc_Port_Ip_ConfigureObeGroup) @06161c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_10/6 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_10/5 
+Tspc_Port_Ip_EnableObeGroup/1 (Tspc_Port_Ip_EnableObeGroup) @061619a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_09/4 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_09/3 
+Tspc_Port_Ip_ConfigureObeGroup (uint32 cfgCount, const struct Tspc_Port_Ip_ObeGroupConfig * config)
+{
+  uint8 groupConfig;
+  uint32 i;
+  struct TSPC_Type * tspcBase;
+
+  <bb 2> :
+  tspcBase = 1076641792B;
+  groupConfig = 0;
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = i * 8;
+  _2 = config + _1;
+  _3 = _2->obeGroupSelect;
+  groupConfig = groupConfig | _3;
+  i = i + 1;
+
+  <bb 4> :
+  if (i < cfgCount)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_10 ();
+  _4 = tspcBase->GRP_EN;
+  _5 = (long unsigned int) groupConfig;
+  _6 = ~_5;
+  _7 = _4 & _6;
+  tspcBase->GRP_EN = _7;
+  i = 0;
+  goto <bb 12>; [INV]
+
+  <bb 6> :
+  _8 = i * 8;
+  _9 = config + _8;
+  _10 = _9->obeGroupSelect;
+  if (_10 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 7> :
+  _11 = i * 8;
+  _12 = config + _11;
+  _13 = _12->obeGroupIndex;
+  if (_13 != 65535)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  _14 = i * 8;
+  _15 = config + _14;
+  _16 = _15->obeGroupIndex;
+  if (_16 > 31)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _17 = i * 8;
+  _18 = config + _17;
+  _19 = _18->obeGroupSelect;
+  _20 = (unsigned int) _19;
+  _21 = _20 + 4294967295;
+  _22 = tspcBase->GROUP[_21].GRP_OBE2;
+  _23 = i * 8;
+  _24 = config + _23;
+  _25 = _24->obeGroupIndex;
+  _26 = _25 + 4294967264;
+  _27 = 1 << _26;
+  _28 = i * 8;
+  _29 = config + _28;
+  _30 = _29->obeGroupSelect;
+  _31 = (unsigned int) _30;
+  _32 = _31 + 4294967295;
+  _33 = _22 | _27;
+  tspcBase->GROUP[_32].GRP_OBE2 = _33;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _34 = i * 8;
+  _35 = config + _34;
+  _36 = _35->obeGroupSelect;
+  _37 = (unsigned int) _36;
+  _38 = _37 + 4294967295;
+  _39 = tspcBase->GROUP[_38].GRP_OBE1;
+  _40 = i * 8;
+  _41 = config + _40;
+  _42 = _41->obeGroupIndex;
+  _43 = 1 << _42;
+  _44 = i * 8;
+  _45 = config + _44;
+  _46 = _45->obeGroupSelect;
+  _47 = (unsigned int) _46;
+  _48 = _47 + 4294967295;
+  _49 = _39 | _43;
+  tspcBase->GROUP[_48].GRP_OBE1 = _49;
+
+  <bb 11> :
+  i = i + 1;
+
+  <bb 12> :
+  if (i < cfgCount)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  _50 = tspcBase->GRP_EN;
+  _51 = (long unsigned int) groupConfig;
+  _52 = _50 | _51;
+  tspcBase->GRP_EN = _52;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_10 ();
+  return;
+
+}
+
+
+Tspc_Port_Ip_EnableObeGroup (uint8 group)
+{
+  struct TSPC_Type * tspcBase;
+
+  <bb 2> :
+  tspcBase = 1076641792B;
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_09 ();
+  if (group == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = tspcBase->GRP_EN;
+  _2 = _1 | 1;
+  tspcBase->GRP_EN = _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = tspcBase->GRP_EN;
+  _4 = _3 | 2;
+  tspcBase->GRP_EN = _4;
+
+  <bb 5> :
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_09 ();
+  return;
+
+}
+
+

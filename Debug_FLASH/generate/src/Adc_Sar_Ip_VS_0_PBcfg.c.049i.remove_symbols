@@ -1,0 +1,23 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+AdcEndOfChainNotif/1 (AdcEndOfChainNotif) @06bb7e00
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: AdcHwUnit_0_VS_0/0 (addr) AdcHwUnit_0_VS_0/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+AdcHwUnit_0_VS_0/0 (AdcHwUnit_0_VS_0) @06bbb630
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: AdcEndOfChainNotif/1 (addr) AdcEndOfChainNotif/1 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

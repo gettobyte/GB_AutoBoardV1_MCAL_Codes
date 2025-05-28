@@ -1,0 +1,42 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: Bctu_0_Isr/0
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Bctu_Ip_IRQHandler/1 (Bctu_Ip_IRQHandler) @05f91c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Bctu_0_Isr/0 
+  Calls: 
+Bctu_0_Isr/0 (Bctu_0_Isr) @05f917e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bctu_Ip_IRQHandler/1 
+Bctu_0_Isr ()
+{
+  <bb 2> :
+  Bctu_Ip_IRQHandler (0);
+  return;
+
+}
+
+

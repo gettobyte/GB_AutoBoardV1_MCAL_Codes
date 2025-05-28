@@ -1,0 +1,3774 @@
+Adc_Sar_Ip_GetDataAddress (uint32 u32Instance, uint32 u32ChannelIndex)
+{
+  uint32 D.7156;
+  struct ADC_Type * _1;
+  const uint32_t * _2;
+  long unsigned int _3;
+  const uint32_t * _4;
+  uint32 _8;
+
+  <bb 2> :
+  _1 = Adc_Sar_Ip_apxAdcBase[u32Instance_6(D)];
+  _2 = &_1->PCDR[0];
+  _3 = u32ChannelIndex_7(D) * 4;
+  _4 = _2 + _3;
+  _8 = (uint32) _4;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+Adc_Sar_Ip_SetExternalTrigger (const uint32 u32Instance, const Adc_Sar_Ip_ExtTriggerEdgeType eTriggerEdge, const Adc_Sar_Ip_ExtTriggerSourceType eTrggerSrc)
+{
+  <bb 2> :
+  switch (eTrggerSrc_2(D)) <default: <L4> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L2> [INV], case 3: <L3> [INV]>
+
+  <bb 3> :
+<L0>:
+  Adc_Sar_ConfigExternalTrigger (u32Instance_4(D), eTriggerEdge_5(D), 67108864, 0, 134217728);
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+<L1>:
+  Adc_Sar_ConfigExternalTrigger (u32Instance_4(D), eTriggerEdge_5(D), 67108864, 0, 33554432);
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+<L2>:
+  Adc_Sar_ConfigExternalTrigger (u32Instance_4(D), eTriggerEdge_5(D), 67108864, 67108864, 167772160);
+  goto <bb 8>; [INV]
+
+  <bb 6> :
+<L3>:
+  Adc_Sar_ConfigExternalTrigger (u32Instance_4(D), eTriggerEdge_5(D), 2097152, 2097152, 4194304);
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+<L4>:
+
+  <bb 8> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_SetCtuMode (const uint32 u32Instance, const Adc_Sar_Ip_CtuModeType eCtuMode)
+{
+  struct ADC_Type * const AdcBasePtr;
+  Adc_Sar_Ip_StatusType Status;
+  Adc_Sar_Ip_StatusType D.7154;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  Adc_Sar_Ip_StatusType _35;
+
+  <bb 2> :
+  Status_17 = 0;
+  AdcBasePtr_20 = Adc_Sar_Ip_apxAdcBase[u32Instance_19(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_20 ();
+  _1 ={v} AdcBasePtr_20->MCR;
+  _2 = _1 & 4294836223;
+  AdcBasePtr_20->MCR ={v} _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_20 ();
+  Status_25 = Adc_Sar_Ip_Powerdown (u32Instance_19(D));
+  if (Status_25 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 3> :
+  _3 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_19(D)];
+  _4 = _3 & 4;
+  if (_4 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_20 ();
+  switch (eCtuMode_27(D)) <default: <L5> [INV], case 0: <L4> [INV], case 1: <L2> [INV], case 2: <L3> [INV]>
+
+  <bb 5> :
+<L2>:
+  _5 ={v} AdcBasePtr_20->MCR;
+  _6 = _5 & 4294901759;
+  AdcBasePtr_20->MCR ={v} _6;
+  _7 ={v} AdcBasePtr_20->MCR;
+  _8 = _7 | 131072;
+  AdcBasePtr_20->MCR ={v} _8;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+<L3>:
+  _9 ={v} AdcBasePtr_20->MCR;
+  _10 = _9 | 196608;
+  AdcBasePtr_20->MCR ={v} _10;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+<L4>:
+  _11 ={v} AdcBasePtr_20->MCR;
+  _12 = _11 & 4294770687;
+  AdcBasePtr_20->MCR ={v} _12;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+<L5>:
+
+  <bb 9> :
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_20 ();
+
+  <bb 10> :
+  Status_34 = Adc_Sar_Ip_Powerup (u32Instance_19(D));
+
+  <bb 11> :
+  # Status_13 = PHI <Status_25(2), Status_34(10)>
+  _35 = Status_13;
+
+  <bb 12> :
+<L9>:
+  return _35;
+
+}
+
+
+Adc_Sar_Ip_SetConversionMode (const uint32 u32Instance, const Adc_Sar_Ip_ConvModeType eConvMode)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  AdcBasePtr_8 = Adc_Sar_Ip_apxAdcBase[u32Instance_7(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_19 ();
+  switch (eConvMode_10(D)) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  _1 ={v} AdcBasePtr_8->MCR;
+  _2 = _1 & 3758096383;
+  AdcBasePtr_8->MCR ={v} _2;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  _3 ={v} AdcBasePtr_8->MCR;
+  _4 = _3 | 536870912;
+  AdcBasePtr_8->MCR ={v} _4;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_19 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_SetDmaClearSource (const uint32 u32Instance, const Adc_Sar_Ip_ClearSourceType pDmaClear)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  AdcBasePtr_9 = Adc_Sar_Ip_apxAdcBase[u32Instance_8(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_45 ();
+  _1 ={v} AdcBasePtr_9->DMAE;
+  _2 = _1 & 4294967293;
+  AdcBasePtr_9->DMAE ={v} _2;
+  _3 ={v} AdcBasePtr_9->DMAE;
+  _4 = pDmaClear_12(D) << 1;
+  _5 = _4 & 2;
+  _6 = _3 | _5;
+  AdcBasePtr_9->DMAE ={v} _6;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_45 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_DisableChannelDmaAll (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint8 Index;
+  volatile uint32_t * _1;
+  unsigned int _2;
+  unsigned int _3;
+  volatile uint32_t * _4;
+  long unsigned int _5;
+  int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  volatile uint32_t * _9;
+  unsigned int _10;
+  unsigned int _11;
+  volatile uint32_t * _12;
+  long unsigned int _13;
+  unsigned char Index.17_14;
+  unsigned char _15;
+
+  <bb 2> :
+  AdcBasePtr_20 = Adc_Sar_Ip_apxAdcBase[u32Instance_19(D)];
+  Index_21 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_48 ();
+  _1 = &AdcBasePtr_20->DMAR0;
+  _2 = (unsigned int) Index_16;
+  _3 = _2 * 4;
+  _4 = _1 + _3;
+  _5 ={v} MEM[(volatile uint32 *)_4];
+  _6 = (int) Index_16;
+  _7 = Adc_Sar_Ip_au32AdcChanBitmap[u32Instance_19(D)][_6];
+  _8 = ~_7;
+  _9 = &AdcBasePtr_20->DMAR0;
+  _10 = (unsigned int) Index_16;
+  _11 = _10 * 4;
+  _12 = _9 + _11;
+  _13 = _5 & _8;
+  MEM[(volatile uint32 *)_12] ={v} _13;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_48 ();
+  Index.17_14 = Index_16;
+  Index_25 = Index.17_14 + 1;
+
+  <bb 4> :
+  # Index_16 = PHI <Index_21(2), Index_25(3)>
+  _15 = Adc_Sar_Ip_au8AdcGroupCount[u32Instance_19(D)];
+  if (Index_16 < _15)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_DisableChannelDma (const uint32 u32Instance, const uint32 u32ChnIdx)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 VectBit;
+  uint32 VectAdr;
+  volatile uint32_t * _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  volatile uint32_t * _7;
+  long unsigned int _8;
+  volatile uint32_t * _9;
+  long unsigned int _10;
+
+  <bb 2> :
+  AdcBasePtr_13 = Adc_Sar_Ip_apxAdcBase[u32Instance_12(D)];
+  VectAdr_15 = u32ChnIdx_14(D) / 32;
+  VectBit_16 = u32ChnIdx_14(D) & 31;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_47 ();
+  _1 = &AdcBasePtr_13->DMAR0;
+  _2 = VectAdr_15 * 4;
+  _3 = _1 + _2;
+  _4 ={v} MEM[(volatile uint32 *)_3];
+  _5 = 1 << VectBit_16;
+  _6 = ~_5;
+  _7 = &AdcBasePtr_13->DMAR0;
+  _8 = VectAdr_15 * 4;
+  _9 = _7 + _8;
+  _10 = _4 & _6;
+  MEM[(volatile uint32 *)_9] ={v} _10;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_47 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_EnableChannelDma (const uint32 u32Instance, const uint32 u32ChnIdx)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 VectBit;
+  uint32 VectAdr;
+  volatile uint32_t * _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  volatile uint32_t * _6;
+  long unsigned int _7;
+  volatile uint32_t * _8;
+  long unsigned int _9;
+
+  <bb 2> :
+  AdcBasePtr_12 = Adc_Sar_Ip_apxAdcBase[u32Instance_11(D)];
+  VectAdr_14 = u32ChnIdx_13(D) / 32;
+  VectBit_15 = u32ChnIdx_13(D) & 31;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_46 ();
+  _1 = &AdcBasePtr_12->DMAR0;
+  _2 = VectAdr_14 * 4;
+  _3 = _1 + _2;
+  _4 ={v} MEM[(volatile uint32 *)_3];
+  _5 = 1 << VectBit_15;
+  _6 = &AdcBasePtr_12->DMAR0;
+  _7 = VectAdr_14 * 4;
+  _8 = _6 + _7;
+  _9 = _4 | _5;
+  MEM[(volatile uint32 *)_8] ={v} _9;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_46 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_DisableDma (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  AdcBasePtr_5 = Adc_Sar_Ip_apxAdcBase[u32Instance_4(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_44 ();
+  _1 ={v} AdcBasePtr_5->DMAE;
+  _2 = _1 & 4294967294;
+  AdcBasePtr_5->DMAE ={v} _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_44 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_EnableDma (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  AdcBasePtr_5 = Adc_Sar_Ip_apxAdcBase[u32Instance_4(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_43 ();
+  _1 ={v} AdcBasePtr_5->DMAE;
+  _2 = _1 | 1;
+  AdcBasePtr_5->DMAE ={v} _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_43 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_DisablePresampleConversion (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  _1 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_7(D)];
+  _2 = _1 & 2;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  AdcBasePtr_8 = Adc_Sar_Ip_apxAdcBase[u32Instance_7(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_40 ();
+  _3 ={v} AdcBasePtr_8->PSCR;
+  _4 = _3 & 4294967294;
+  AdcBasePtr_8->PSCR ={v} _4;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_40 ();
+
+  <bb 4> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_EnablePresampleConversion (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  _1 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_7(D)];
+  _2 = _1 & 2;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  AdcBasePtr_8 = Adc_Sar_Ip_apxAdcBase[u32Instance_7(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_39 ();
+  _3 ={v} AdcBasePtr_8->PSCR;
+  _4 = _3 | 1;
+  AdcBasePtr_8->PSCR ={v} _4;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_39 ();
+
+  <bb 4> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_DisableChannelPresampling (const uint32 u32Instance, const uint32 u32ChnIdx)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 VectBit;
+  uint32 VectAdr;
+  long unsigned int _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  volatile uint32_t * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  volatile uint32_t * _9;
+  long unsigned int _10;
+  volatile uint32_t * _11;
+  long unsigned int _12;
+
+  <bb 2> :
+  _1 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_15(D)];
+  _2 = _1 & 2;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  AdcBasePtr_16 = Adc_Sar_Ip_apxAdcBase[u32Instance_15(D)];
+  VectAdr_18 = u32ChnIdx_17(D) / 32;
+  VectBit_19 = u32ChnIdx_17(D) & 31;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_42 ();
+  _3 = &AdcBasePtr_16->PSR0;
+  _4 = VectAdr_18 * 4;
+  _5 = _3 + _4;
+  _6 ={v} MEM[(volatile uint32 *)_5];
+  _7 = 1 << VectBit_19;
+  _8 = ~_7;
+  _9 = &AdcBasePtr_16->PSR0;
+  _10 = VectAdr_18 * 4;
+  _11 = _9 + _10;
+  _12 = _6 & _8;
+  MEM[(volatile uint32 *)_11] ={v} _12;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_42 ();
+
+  <bb 4> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_EnableChannelPresampling (const uint32 u32Instance, const uint32 u32ChnIdx)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 VectBit;
+  uint32 VectAdr;
+  long unsigned int _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  volatile uint32_t * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  volatile uint32_t * _8;
+  long unsigned int _9;
+  volatile uint32_t * _10;
+  long unsigned int _11;
+
+  <bb 2> :
+  _1 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_14(D)];
+  _2 = _1 & 2;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  AdcBasePtr_15 = Adc_Sar_Ip_apxAdcBase[u32Instance_14(D)];
+  VectAdr_17 = u32ChnIdx_16(D) / 32;
+  VectBit_18 = u32ChnIdx_16(D) & 31;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_41 ();
+  _3 = &AdcBasePtr_15->PSR0;
+  _4 = VectAdr_17 * 4;
+  _5 = _3 + _4;
+  _6 ={v} MEM[(volatile uint32 *)_5];
+  _7 = 1 << VectBit_18;
+  _8 = &AdcBasePtr_15->PSR0;
+  _9 = VectAdr_17 * 4;
+  _10 = _8 + _9;
+  _11 = _6 | _7;
+  MEM[(volatile uint32 *)_10] ={v} _11;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_41 ();
+
+  <bb 4> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_SetPresamplingSource (const uint32 u32Instance, const Adc_Sar_Ip_ChanGroupType pChanGroup, const Adc_Sar_Ip_PresamplingSourceType pPresampleSource)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 Pscr;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+
+  <bb 2> :
+  _1 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_12(D)];
+  _2 = _1 & 2;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  AdcBasePtr_13 = Adc_Sar_Ip_apxAdcBase[u32Instance_12(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_38 ();
+  Pscr_15 ={v} AdcBasePtr_13->PSCR;
+  switch (pChanGroup_16(D)) <default: <L4> [INV], case 0: <L1> [INV], case 1: <L2> [INV], case 2: <L3> [INV]>
+
+  <bb 4> :
+<L1>:
+  Pscr_22 = Pscr_15 & 4294967293;
+  _3 = pPresampleSource_18(D) << 1;
+  _4 = _3 & 2;
+  Pscr_23 = Pscr_22 | _4;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+<L2>:
+  Pscr_20 = Pscr_15 & 4294967287;
+  _5 = pPresampleSource_18(D) << 3;
+  _6 = _5 & 8;
+  Pscr_21 = Pscr_20 | _6;
+  goto <bb 8>; [INV]
+
+  <bb 6> :
+<L3>:
+  Pscr_17 = Pscr_15 & 4294967263;
+  _7 = pPresampleSource_18(D) << 5;
+  _8 = _7 & 32;
+  Pscr_19 = Pscr_17 | _8;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+<L4>:
+
+  <bb 8> :
+  # Pscr_9 = PHI <Pscr_23(4), Pscr_21(5), Pscr_19(6), Pscr_15(7)>
+  AdcBasePtr_13->PSCR ={v} Pscr_9;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_38 ();
+
+  <bb 9> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_AbortChain (const uint32 u32Instance, const boolean bBlocking, const boolean bAllowRestart)
+{
+  struct ADC_Type * const AdcBasePtr;
+  Adc_Sar_Ip_StatusType ReturnStatus;
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  uint32 MsrStatus;
+  Adc_Sar_Ip_StatusType D.7137;
+  long unsigned int D.7133;
+  long unsigned int _1;
+  _Bool _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _33;
+  Adc_Sar_Ip_StatusType _36;
+
+  <bb 2> :
+  TimeoutTicks_17 = OsIf_MicrosToTicks (3000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  ElapsedTicks_20 = 0;
+  ReturnStatus_21 = 0;
+  AdcBasePtr_23 = Adc_Sar_Ip_apxAdcBase[u32Instance_22(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_18 ();
+  _2 = ~bAllowRestart_25(D);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} AdcBasePtr_23->MCR;
+  _4 = _3 & 4278190079;
+  AdcBasePtr_23->MCR ={v} _4;
+
+  <bb 4> :
+  _5 ={v} AdcBasePtr_23->MCR;
+  _6 = _5 | 128;
+  AdcBasePtr_23->MCR ={v} _6;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_18 ();
+  if (bBlocking_29(D) != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 5> :
+  _7 ={v} AdcBasePtr_23->MSR;
+  MsrStatus_30 = _7 & 16777216;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _8 ={v} AdcBasePtr_23->MSR;
+  MsrStatus_31 = _8 & 16777216;
+  _33 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks_34 = _33 + ElapsedTicks_10;
+
+  <bb 7> :
+  # MsrStatus_9 = PHI <MsrStatus_30(5), MsrStatus_31(6)>
+  # ElapsedTicks_10 = PHI <ElapsedTicks_20(5), ElapsedTicks_34(6)>
+  if (MsrStatus_9 == 16777216)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  if (ElapsedTicks_10 < TimeoutTicks_17)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  if (ElapsedTicks_10 >= TimeoutTicks_17)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  ReturnStatus_35 = 2;
+
+  <bb 11> :
+  # ReturnStatus_11 = PHI <ReturnStatus_21(4), ReturnStatus_21(9), ReturnStatus_35(10)>
+  _36 = ReturnStatus_11;
+  CurrentTicks ={v} {CLOBBER};
+
+  <bb 12> :
+<L11>:
+  return _36;
+
+}
+
+
+Adc_Sar_Ip_AbortConversion (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  AdcBasePtr_5 = Adc_Sar_Ip_apxAdcBase[u32Instance_4(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_17 ();
+  _1 ={v} AdcBasePtr_5->MCR;
+  _2 = _1 | 64;
+  AdcBasePtr_5->MCR ={v} _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_17 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_SetAveraging (const uint32 u32Instance, const boolean bAvgEn, const Adc_Sar_Ip_AvgSelectType eAvgSel)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int iftmp.16;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int iftmp.16_8;
+  long unsigned int iftmp.16_15;
+  long unsigned int iftmp.16_16;
+
+  <bb 2> :
+  AdcBasePtr_11 = Adc_Sar_Ip_apxAdcBase[u32Instance_10(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_16 ();
+  _1 ={v} AdcBasePtr_11->MCR;
+  _2 = _1 & 4294963711;
+  AdcBasePtr_11->MCR ={v} _2;
+  _3 ={v} AdcBasePtr_11->MCR;
+  if (bAvgEn_14(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.16_16 = 2048;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.16_15 = 0;
+
+  <bb 5> :
+  # iftmp.16_8 = PHI <iftmp.16_16(3), iftmp.16_15(4)>
+  _4 = eAvgSel_17(D) << 9;
+  _5 = _4 & 1536;
+  _6 = iftmp.16_8 | _5;
+  _7 = _3 | _6;
+  AdcBasePtr_11->MCR ={v} _7;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_16 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_SetSampleTimes (const uint32 u32Instance, const uint8 * const aSampleTimes)
+{
+  uint8 Index;
+  struct ADC_Type * const AdcBasePtr;
+  sizetype _1;
+  const uint8 * _2;
+  unsigned char _3;
+  volatile uint32_t * _4;
+  unsigned int _5;
+  unsigned int _6;
+  volatile uint32_t * _7;
+  long unsigned int _8;
+  unsigned char Index.15_9;
+  unsigned char _10;
+
+  <bb 2> :
+  AdcBasePtr_15 = Adc_Sar_Ip_apxAdcBase[u32Instance_14(D)];
+  Index_16 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (sizetype) Index_11;
+  _2 = aSampleTimes_17(D) + _1;
+  _3 = *_2;
+  _4 = &AdcBasePtr_15->CTR0;
+  _5 = (unsigned int) Index_11;
+  _6 = _5 * 4;
+  _7 = _4 + _6;
+  _8 = (long unsigned int) _3;
+  MEM[(volatile uint32 *)_7] ={v} _8;
+  Index.15_9 = Index_11;
+  Index_19 = Index.15_9 + 1;
+
+  <bb 4> :
+  # Index_11 = PHI <Index_16(2), Index_19(3)>
+  _10 = Adc_Sar_Ip_au8AdcGroupCount[u32Instance_14(D)];
+  if (Index_11 < _10)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_SetClockMode (const uint32 u32Instance, const struct Adc_Sar_Ip_ClockConfigType * const pConfig)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 Mcr;
+  Adc_Sar_Ip_StatusType Status;
+  Adc_Sar_Ip_StatusType D.7123;
+  long unsigned int D.7118;
+  <unnamed type> _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  _Bool _5;
+  _Bool _6;
+  <unnamed type> _7;
+  unsigned char _8;
+  long unsigned int _9;
+  const uint8[3] * _10;
+  long unsigned int _20;
+  Adc_Sar_Ip_StatusType _35;
+
+  <bb 2> :
+  Status_13 = 0;
+  Mcr_14 = 0;
+  AdcBasePtr_17 = Adc_Sar_Ip_apxAdcBase[u32Instance_16(D)];
+  _1 = pConfig_18(D)->ClkSelect;
+  _20 = Adc_Sar_GetADCLKSELValue (_1);
+  Mcr_21 = _20 | Mcr_14;
+  Status_23 = Adc_Sar_Ip_Powerdown (u32Instance_16(D));
+  if (Status_23 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_15 ();
+  _2 ={v} AdcBasePtr_17->MCR;
+  _3 = _2 & 4294967289;
+  _4 = Mcr_21 | _3;
+  AdcBasePtr_17->MCR ={v} _4;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_15 ();
+  Status_28 = Adc_Sar_Ip_Powerup (u32Instance_16(D));
+  if (Status_28 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_51 ();
+  _5 = pConfig_18(D)->HighSpeedConvEn;
+  Adc_Sar_EnableHighSpeed (AdcBasePtr_17, _5);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_51 ();
+  _6 = pConfig_18(D)->AvgEn;
+  _7 = pConfig_18(D)->AvgSel;
+  Adc_Sar_Ip_SetAveraging (u32Instance_16(D), _6, _7);
+  _8 = pConfig_18(D)->PowerDownDelay;
+  _9 = (long unsigned int) _8;
+  AdcBasePtr_17->PDEDR ={v} _9;
+  _10 = &pConfig_18(D)->SampleTimeArr;
+  Adc_Sar_Ip_SetSampleTimes (u32Instance_16(D), _10);
+
+  <bb 5> :
+  # Status_11 = PHI <Status_23(2), Status_28(3), Status_28(4)>
+  _35 = Status_11;
+
+  <bb 6> :
+<L4>:
+  return _35;
+
+}
+
+
+Adc_Sar_Ip_DisableNotifications (const uint32 u32Instance, const uint32 u32NotificationMask)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 ImrFlags;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+
+  <bb 2> :
+  ImrFlags_10 = 0;
+  AdcBasePtr_13 = Adc_Sar_Ip_apxAdcBase[u32Instance_12(D)];
+  _1 = u32NotificationMask_14(D) & 1;
+  ImrFlags_15 = ImrFlags_10 | _1;
+  _2 = u32NotificationMask_14(D) & 4;
+  ImrFlags_16 = ImrFlags_15 | _2;
+  _3 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_12(D)];
+  _4 = _3 & 4;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _5 = u32NotificationMask_14(D) & 16;
+  ImrFlags_17 = ImrFlags_16 | _5;
+
+  <bb 4> :
+  # ImrFlags_9 = PHI <ImrFlags_16(2), ImrFlags_17(3)>
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_34 ();
+  _6 ={v} AdcBasePtr_13->IMR;
+  _7 = ~ImrFlags_9;
+  _8 = _6 & _7;
+  AdcBasePtr_13->IMR ={v} _8;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_34 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_EnableNotifications (const uint32 u32Instance, const uint32 u32NotificationMask)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 ImrFlags;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  ImrFlags_9 = 0;
+  AdcBasePtr_12 = Adc_Sar_Ip_apxAdcBase[u32Instance_11(D)];
+  _1 = u32NotificationMask_13(D) & 1;
+  ImrFlags_14 = ImrFlags_9 | _1;
+  _2 = u32NotificationMask_13(D) & 4;
+  ImrFlags_15 = ImrFlags_14 | _2;
+  _3 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_11(D)];
+  _4 = _3 & 4;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _5 = u32NotificationMask_13(D) & 16;
+  ImrFlags_16 = ImrFlags_15 | _5;
+
+  <bb 4> :
+  # ImrFlags_8 = PHI <ImrFlags_15(2), ImrFlags_16(3)>
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_33 ();
+  _6 ={v} AdcBasePtr_12->IMR;
+  _7 = ImrFlags_8 | _6;
+  AdcBasePtr_12->IMR ={v} _7;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_33 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_Powerdown (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  uint32 MsrStatus;
+  uint32 ExpectedStatus;
+  Adc_Sar_Ip_StatusType ReturnStatus;
+  Adc_Sar_Ip_StatusType D.7111;
+  long unsigned int D.7107;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _24;
+  Adc_Sar_Ip_StatusType _27;
+
+  <bb 2> :
+  ReturnStatus_8 = 0;
+  ExpectedStatus_9 = 1;
+  TimeoutTicks_12 = OsIf_MicrosToTicks (3000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  ElapsedTicks_15 = 0;
+  AdcBasePtr_17 = Adc_Sar_Ip_apxAdcBase[u32Instance_16(D)];
+  _2 ={v} AdcBasePtr_17->MSR;
+  MsrStatus_18 = _2 & 7;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_14 ();
+  Adc_Sar_Powerdown (AdcBasePtr_17);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_14 ();
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} AdcBasePtr_17->MSR;
+  MsrStatus_22 = _3 & 7;
+  _24 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks_25 = _24 + ElapsedTicks_6;
+
+  <bb 4> :
+  # MsrStatus_5 = PHI <MsrStatus_18(2), MsrStatus_22(3)>
+  # ElapsedTicks_6 = PHI <ElapsedTicks_15(2), ElapsedTicks_25(3)>
+  if (MsrStatus_5 != ExpectedStatus_9)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  if (ElapsedTicks_6 < TimeoutTicks_12)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (ElapsedTicks_6 >= TimeoutTicks_12)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  ReturnStatus_26 = 2;
+
+  <bb 8> :
+  # ReturnStatus_4 = PHI <ReturnStatus_8(6), ReturnStatus_26(7)>
+  _27 = ReturnStatus_4;
+  CurrentTicks ={v} {CLOBBER};
+
+  <bb 9> :
+<L7>:
+  return _27;
+
+}
+
+
+Adc_Sar_Ip_Powerup (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  uint32 MsrStatus;
+  uint32 ExpectedStatus;
+  Adc_Sar_Ip_StatusType ReturnStatus;
+  Adc_Sar_Ip_StatusType D.7104;
+  long unsigned int D.7100;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _24;
+  Adc_Sar_Ip_StatusType _27;
+
+  <bb 2> :
+  ReturnStatus_8 = 0;
+  ExpectedStatus_9 = 0;
+  TimeoutTicks_12 = OsIf_MicrosToTicks (3000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  ElapsedTicks_15 = 0;
+  AdcBasePtr_17 = Adc_Sar_Ip_apxAdcBase[u32Instance_16(D)];
+  _2 ={v} AdcBasePtr_17->MSR;
+  MsrStatus_18 = _2 & 7;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_13 ();
+  Adc_Sar_Powerup (AdcBasePtr_17);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_13 ();
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} AdcBasePtr_17->MSR;
+  MsrStatus_22 = _3 & 7;
+  _24 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks_25 = _24 + ElapsedTicks_6;
+
+  <bb 4> :
+  # MsrStatus_5 = PHI <MsrStatus_18(2), MsrStatus_22(3)>
+  # ElapsedTicks_6 = PHI <ElapsedTicks_15(2), ElapsedTicks_25(3)>
+  if (MsrStatus_5 != ExpectedStatus_9)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  if (ElapsedTicks_6 < TimeoutTicks_12)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (ElapsedTicks_6 >= TimeoutTicks_12)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  ReturnStatus_26 = 2;
+
+  <bb 8> :
+  # ReturnStatus_4 = PHI <ReturnStatus_8(6), ReturnStatus_26(7)>
+  _27 = ReturnStatus_4;
+  CurrentTicks ={v} {CLOBBER};
+
+  <bb 9> :
+<L7>:
+  return _27;
+
+}
+
+
+Adc_Sar_Ip_DoCalibration (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 Calbistreg;
+  uint32 Mcr;
+  uint32 AdcClkSel;
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  Adc_Sar_Ip_StatusType CalStatus;
+  Adc_Sar_Ip_StatusType Status;
+  Adc_Sar_Ip_StatusType D.7097;
+  long unsigned int D.7085;
+  long unsigned int D.7082;
+  long unsigned int _1;
+  <unnamed type> _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _37;
+  long unsigned int _53;
+  Adc_Sar_Ip_StatusType _68;
+
+  <bb 2> :
+  Status_19 = 0;
+  CalStatus_20 = 0;
+  TimeoutTicks_23 = OsIf_MicrosToTicks (3000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  ElapsedTicks_26 = 0;
+  AdcClkSel_27 = 0;
+  AdcBasePtr_29 = Adc_Sar_Ip_apxAdcBase[u32Instance_28(D)];
+  Status_31 = Adc_Sar_Ip_Powerdown (u32Instance_28(D));
+  if (Status_31 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 3> :
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_12 ();
+  Mcr_33 ={v} AdcBasePtr_29->MCR;
+  AdcClkSel_34 = Mcr_33 & 6;
+  Mcr_35 = Mcr_33 & 4294967289;
+  _2 = Adc_Sar_Ip_axAdcSarState[u32Instance_28(D)].CalibrationClkSelect;
+  _37 = Adc_Sar_GetADCLKSELValue (_2);
+  Mcr_38 = _37 | Mcr_35;
+  AdcBasePtr_29->MCR ={v} Mcr_38;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_12 ();
+  Status_42 = Adc_Sar_Ip_Powerup (u32Instance_28(D));
+  if (Status_42 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 4> :
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_36 ();
+  Calbistreg_44 ={v} AdcBasePtr_29->CALBISTREG;
+  Calbistreg_45 = Calbistreg_44 & 3892313998;
+  Calbistreg_46 = Calbistreg_45 | 112;
+  AdcBasePtr_29->CALBISTREG ={v} Calbistreg_46;
+  _3 ={v} AdcBasePtr_29->CALBISTREG;
+  _4 = _3 | 8;
+  AdcBasePtr_29->CALBISTREG ={v} _4;
+  _5 ={v} AdcBasePtr_29->CALBISTREG;
+  _6 = _5 | 1;
+  AdcBasePtr_29->CALBISTREG ={v} _6;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_36 ();
+  ElapsedTicks_51 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _53 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks_54 = _53 + ElapsedTicks_15;
+
+  <bb 6> :
+  # ElapsedTicks_15 = PHI <ElapsedTicks_51(4), ElapsedTicks_54(5)>
+  _7 ={v} AdcBasePtr_29->CALBISTREG;
+  _8 = _7 & 32768;
+  if (_8 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  if (ElapsedTicks_15 < TimeoutTicks_23)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (ElapsedTicks_15 >= TimeoutTicks_23)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  CalStatus_56 = 2;
+  goto <bb 12>; [INV]
+
+  <bb 10> :
+  _9 ={v} AdcBasePtr_29->CALBISTREG;
+  _10 = _9 & 8;
+  if (_10 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  CalStatus_55 = 1;
+
+  <bb 12> :
+  # CalStatus_13 = PHI <CalStatus_56(9), CalStatus_20(10), CalStatus_55(11)>
+  Status_58 = Adc_Sar_Ip_Powerdown (u32Instance_28(D));
+
+  <bb 13> :
+  # Status_11 = PHI <Status_42(3), Status_58(12)>
+  # CalStatus_14 = PHI <CalStatus_20(3), CalStatus_13(12)>
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_12 ();
+  Mcr_60 ={v} AdcBasePtr_29->MCR;
+  Mcr_61 = Mcr_60 & 4294967289;
+  Mcr_62 = Mcr_61 | AdcClkSel_34;
+  AdcBasePtr_29->MCR ={v} Mcr_62;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_12 ();
+  if (Status_11 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  Status_66 = Adc_Sar_Ip_Powerup (u32Instance_28(D));
+  if (CalStatus_14 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  Status_67 = CalStatus_14;
+
+  <bb 16> :
+  # Status_12 = PHI <Status_31(2), Status_11(13), Status_66(14), Status_67(15)>
+  _68 = Status_12;
+  CurrentTicks ={v} {CLOBBER};
+
+  <bb 17> :
+<L19>:
+  return _68;
+
+}
+
+
+Adc_Sar_Ip_GetConvResult (const uint32 u32Instance, const uint32 u32ChnIdx, const Adc_Sar_Ip_ConvChainType pChainType, struct Adc_Sar_Ip_ChanResultType * const pResult)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 Cdr;
+  uint32 VectBit;
+  uint32 VectAdr;
+  unsigned char _1;
+  const uint32_t * _2;
+  long unsigned int _3;
+  const uint32_t * _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  int _9;
+  int _10;
+  _Bool _11;
+  long unsigned int _12;
+  _Bool _13;
+  short unsigned int _14;
+  volatile uint32_t * _15;
+  long unsigned int _16;
+  volatile uint32_t * _17;
+  long unsigned int _18;
+
+  <bb 2> :
+  AdcBasePtr_22 = Adc_Sar_Ip_apxAdcBase[u32Instance_21(D)];
+  VectAdr_24 = u32ChnIdx_23(D) / 32;
+  VectBit_25 = u32ChnIdx_23(D) & 31;
+  pResult_26(D)->ConvData = 0;
+  _1 = (unsigned char) u32ChnIdx_23(D);
+  pResult_26(D)->AdcChnIdx = _1;
+  pResult_26(D)->ValidFlag = 0;
+  pResult_26(D)->OverWrittenFlag = 0;
+  _2 = &AdcBasePtr_22->PCDR[0];
+  _3 = u32ChnIdx_23(D) * 4;
+  _4 = _2 + _3;
+  Cdr_31 ={v} MEM[(const uint32 *)_4];
+  _5 = pChainType_32(D) << 16;
+  _6 = Cdr_31 ^ _5;
+  _7 = _6 & 196608;
+  if (_7 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _8 = Cdr_31 >> 19;
+  _9 = (int) _8;
+  _10 = _9 & 1;
+  _11 = _10 != 0;
+  pResult_26(D)->ValidFlag = _11;
+  _12 = Cdr_31 & 262144;
+  _13 = _12 != 0;
+  pResult_26(D)->OverWrittenFlag = _13;
+  _14 = Adc_Sar_GetMaskedResult (u32Instance_21(D), Cdr_31);
+  pResult_26(D)->ConvData = _14;
+
+  <bb 4> :
+  _15 = &AdcBasePtr_22->CEOCFR0;
+  _16 = VectAdr_24 * 4;
+  _17 = _15 + _16;
+  _18 = 1 << VectBit_25;
+  MEM[(volatile uint32 *)_17] ={v} _18;
+  return;
+
+}
+
+
+Adc_Sar_Ip_GetConvData (const uint32 u32Instance, const uint32 u32ChnIdx)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 Cdr;
+  uint32 VectBit;
+  uint32 VectAdr;
+  uint16 Result;
+  uint16 D.7076;
+  const uint32_t * _1;
+  long unsigned int _2;
+  const uint32_t * _3;
+  long unsigned int _4;
+  volatile uint32_t * _5;
+  long unsigned int _6;
+  volatile uint32_t * _7;
+  long unsigned int _8;
+  uint16 _22;
+
+  <bb 2> :
+  Result_11 = 0;
+  AdcBasePtr_14 = Adc_Sar_Ip_apxAdcBase[u32Instance_13(D)];
+  VectAdr_16 = u32ChnIdx_15(D) / 32;
+  VectBit_17 = u32ChnIdx_15(D) & 31;
+  _1 = &AdcBasePtr_14->PCDR[0];
+  _2 = u32ChnIdx_15(D) * 4;
+  _3 = _1 + _2;
+  Cdr_18 ={v} MEM[(const uint32 *)_3];
+  _4 = Cdr_18 & 524288;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Result_20 = Adc_Sar_GetMaskedResult (u32Instance_13(D), Cdr_18);
+  _5 = &AdcBasePtr_14->CEOCFR0;
+  _6 = VectAdr_16 * 4;
+  _7 = _5 + _6;
+  _8 = 1 << VectBit_17;
+  MEM[(volatile uint32 *)_7] ={v} _8;
+
+  <bb 4> :
+  # Result_9 = PHI <Result_11(2), Result_20(3)>
+  _22 = Result_9;
+
+  <bb 5> :
+<L2>:
+  return _22;
+
+}
+
+
+Adc_Sar_Ip_GetConvResultsToArray (const uint32 u32Instance, const Adc_Sar_Ip_ConvChainType pChainType, const uint32 u32Length, struct Adc_Sar_Ip_ChanResultType * const pResults)
+{
+  uint32 D.7072;
+  uint32 _7;
+
+  <bb 2> :
+  _7 = Adc_Sar_GetConvResults (u32Instance_2(D), pChainType_3(D), 0B, pResults_4(D), u32Length_5(D));
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Adc_Sar_Ip_GetConvDataToArray (const uint32 u32Instance, const Adc_Sar_Ip_ConvChainType pChainType, const uint32 u32Length, uint16 * const pResults)
+{
+  uint32 D.7070;
+  uint32 _7;
+
+  <bb 2> :
+  _7 = Adc_Sar_GetConvResults (u32Instance_2(D), pChainType_3(D), pResults_4(D), 0B, u32Length_5(D));
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Adc_Sar_Ip_SelfTest (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  uint32 MsrStatus;
+  uint32 Reg;
+  Adc_Sar_Ip_StatusType Status;
+  Adc_Sar_Ip_StatusType D.7048;
+  long unsigned int D.7044;
+  long unsigned int _1;
+  volatile uint32_t * _2;
+  long unsigned int _3;
+  volatile uint32_t * _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _63;
+  Adc_Sar_Ip_StatusType _69;
+
+  <bb 2> :
+  Status_28 = 0;
+  TimeoutTicks_31 = OsIf_MicrosToTicks (3000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  ElapsedTicks_34 = 0;
+  AdcBasePtr_36 = Adc_Sar_Ip_apxAdcBase[u32Instance_35(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_25 ();
+  _2 = &AdcBasePtr_36->NCMR0;
+  _3 ={v} MEM[(volatile uint32 *)_2];
+  _4 = &AdcBasePtr_36->NCMR0;
+  _5 = _3 | 1;
+  MEM[(volatile uint32 *)_4] ={v} _5;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_25 ();
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_11 ();
+  _6 ={v} AdcBasePtr_36->MCR;
+  _7 = _6 & 4294836223;
+  AdcBasePtr_36->MCR ={v} _7;
+  _8 ={v} AdcBasePtr_36->MCR;
+  _9 = _8 | 536870912;
+  AdcBasePtr_36->MCR ={v} _9;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_11 ();
+  Reg_44 = 0;
+  Reg_45 = Reg_44 | 268439552;
+  AdcBasePtr_36->STCR1 ={v} Reg_45;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_35 ();
+  _10 ={v} AdcBasePtr_36->STCR3;
+  _11 = _10 | 768;
+  AdcBasePtr_36->STCR3 ={v} _11;
+  _12 ={v} AdcBasePtr_36->STCR2;
+  _13 = _12 | 128;
+  AdcBasePtr_36->STCR2 ={v} _13;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_35 ();
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_11 ();
+  _14 ={v} AdcBasePtr_36->MCR;
+  _15 = _14 | 16777216;
+  AdcBasePtr_36->MCR ={v} _15;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_11 ();
+  Status_55 = Adc_Sar_CheckSelfTestProgress (u32Instance_35(D));
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_11 ();
+  _16 ={v} AdcBasePtr_36->MCR;
+  _17 = _16 & 4278190079;
+  AdcBasePtr_36->MCR ={v} _17;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_11 ();
+  if (Status_55 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _18 ={v} AdcBasePtr_36->MSR;
+  MsrStatus_59 = _18 & 7;
+  ElapsedTicks_60 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _19 ={v} AdcBasePtr_36->MSR;
+  MsrStatus_61 = _19 & 7;
+  _63 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks_64 = _63 + ElapsedTicks_24;
+
+  <bb 5> :
+  # MsrStatus_23 = PHI <MsrStatus_59(3), MsrStatus_61(4)>
+  # ElapsedTicks_24 = PHI <ElapsedTicks_60(3), ElapsedTicks_64(4)>
+  if (MsrStatus_23 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  if (ElapsedTicks_24 < TimeoutTicks_31)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  # ElapsedTicks_25 = PHI <ElapsedTicks_34(2), ElapsedTicks_24(5), ElapsedTicks_24(6)>
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_35 ();
+  _20 ={v} AdcBasePtr_36->STCR2;
+  _21 = _20 & 4294967167;
+  AdcBasePtr_36->STCR2 ={v} _21;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_35 ();
+  if (ElapsedTicks_25 >= TimeoutTicks_31)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  Status_68 = 2;
+
+  <bb 9> :
+  # Status_22 = PHI <Status_55(7), Status_68(8)>
+  _69 = Status_22;
+  CurrentTicks ={v} {CLOBBER};
+
+  <bb 10> :
+<L9>:
+  return _69;
+
+}
+
+
+Adc_Sar_Ip_ClearStatusFlags (const uint32 u32Instance, const uint32 u32Mask)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 IsrFlags;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  IsrFlags_9 = 0;
+  AdcBasePtr_12 = Adc_Sar_Ip_apxAdcBase[u32Instance_11(D)];
+  _1 = u32Mask_13(D) & 2;
+  IsrFlags_14 = IsrFlags_9 | _1;
+  _2 = u32Mask_13(D) & 1;
+  IsrFlags_15 = IsrFlags_14 | _2;
+  _3 = u32Mask_13(D) & 8;
+  IsrFlags_16 = IsrFlags_15 | _3;
+  _4 = u32Mask_13(D) & 4;
+  IsrFlags_17 = IsrFlags_16 | _4;
+  _5 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_11(D)];
+  _6 = _5 & 4;
+  if (_6 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _7 = u32Mask_13(D) & 16;
+  IsrFlags_18 = IsrFlags_17 | _7;
+
+  <bb 4> :
+  # IsrFlags_8 = PHI <IsrFlags_17(2), IsrFlags_18(3)>
+  AdcBasePtr_12->ISR ={v} IsrFlags_8;
+  return;
+
+}
+
+
+Adc_Sar_Ip_GetStatusFlags (const uint32 u32Instance)
+{
+  uint32 Flags;
+  uint32 D.7030;
+  long unsigned int D.7029;
+  long unsigned int D.7028;
+  long unsigned int _5;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Flags_1 = 0;
+  _5 = Adc_Sar_GetMsrFlags (u32Instance_3(D));
+  Flags_6 = _5 | Flags_1;
+  _8 = Adc_Sar_GetIsrFlags (u32Instance_3(D));
+  Flags_9 = _8 | Flags_6;
+  _10 = Flags_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Adc_Sar_Ip_StartConversion (const uint32 u32Instance, const Adc_Sar_Ip_ConvChainType pChainType)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  AdcBasePtr_8 = Adc_Sar_Ip_apxAdcBase[u32Instance_7(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_10 ();
+  switch (pChainType_10(D)) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  _1 ={v} AdcBasePtr_8->MCR;
+  _2 = _1 | 16777216;
+  AdcBasePtr_8->MCR ={v} _2;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  _3 ={v} AdcBasePtr_8->MCR;
+  _4 = _3 | 1048576;
+  AdcBasePtr_8->MCR ={v} _4;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_10 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_SetResolution (const uint32 u32Instance, const Adc_Sar_Ip_Resolution eResolution)
+{
+  uint32 Calbistreg;
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+
+  <bb 2> :
+  AdcBasePtr_4 = Adc_Sar_Ip_apxAdcBase[u32Instance_3(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_37 ();
+  Calbistreg_6 ={v} AdcBasePtr_4->CALBISTREG;
+  Calbistreg_7 = Calbistreg_6 & 536870911;
+  _1 = eResolution_8(D) << 29;
+  Calbistreg_9 = Calbistreg_7 | _1;
+  AdcBasePtr_4->CALBISTREG ={v} Calbistreg_9;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_37 ();
+  return;
+
+}
+
+
+Adc_Sar_Ip_DisableChannel (const uint32 u32Instance, const Adc_Sar_Ip_ConvChainType pChainType, const uint32 u32ChnIdx)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 VectBit;
+  uint32 VectAdr;
+  volatile uint32_t * _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  volatile uint32_t * _7;
+  long unsigned int _8;
+  volatile uint32_t * _9;
+  long unsigned int _10;
+  volatile uint32_t * _11;
+  long unsigned int _12;
+  volatile uint32_t * _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  volatile uint32_t * _17;
+  long unsigned int _18;
+  volatile uint32_t * _19;
+  long unsigned int _20;
+
+  <bb 2> :
+  AdcBasePtr_24 = Adc_Sar_Ip_apxAdcBase[u32Instance_23(D)];
+  VectAdr_26 = u32ChnIdx_25(D) / 32;
+  VectBit_27 = u32ChnIdx_25(D) & 31;
+  switch (pChainType_28(D)) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_24 ();
+  _1 = &AdcBasePtr_24->NCMR0;
+  _2 = VectAdr_26 * 4;
+  _3 = _1 + _2;
+  _4 ={v} MEM[(volatile uint32 *)_3];
+  _5 = 1 << VectBit_27;
+  _6 = ~_5;
+  _7 = &AdcBasePtr_24->NCMR0;
+  _8 = VectAdr_26 * 4;
+  _9 = _7 + _8;
+  _10 = _4 & _6;
+  MEM[(volatile uint32 *)_9] ={v} _10;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_24 ();
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_27 ();
+  _11 = &AdcBasePtr_24->JCMR0;
+  _12 = VectAdr_26 * 4;
+  _13 = _11 + _12;
+  _14 ={v} MEM[(volatile uint32 *)_13];
+  _15 = 1 << VectBit_27;
+  _16 = ~_15;
+  _17 = &AdcBasePtr_24->JCMR0;
+  _18 = VectAdr_26 * 4;
+  _19 = _17 + _18;
+  _20 = _14 & _16;
+  MEM[(volatile uint32 *)_19] ={v} _20;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_27 ();
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_EnableChannel (const uint32 u32Instance, const Adc_Sar_Ip_ConvChainType pChainType, const uint32 u32ChnIdx)
+{
+  struct ADC_Type * const AdcBasePtr;
+  uint32 VectBit;
+  uint32 VectAdr;
+  volatile uint32_t * _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  volatile uint32_t * _6;
+  long unsigned int _7;
+  volatile uint32_t * _8;
+  long unsigned int _9;
+  volatile uint32_t * _10;
+  long unsigned int _11;
+  volatile uint32_t * _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  volatile uint32_t * _15;
+  long unsigned int _16;
+  volatile uint32_t * _17;
+  long unsigned int _18;
+
+  <bb 2> :
+  AdcBasePtr_22 = Adc_Sar_Ip_apxAdcBase[u32Instance_21(D)];
+  VectAdr_24 = u32ChnIdx_23(D) / 32;
+  VectBit_25 = u32ChnIdx_23(D) & 31;
+  switch (pChainType_26(D)) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_23 ();
+  _1 = &AdcBasePtr_22->NCMR0;
+  _2 = VectAdr_24 * 4;
+  _3 = _1 + _2;
+  _4 ={v} MEM[(volatile uint32 *)_3];
+  _5 = 1 << VectBit_25;
+  _6 = &AdcBasePtr_22->NCMR0;
+  _7 = VectAdr_24 * 4;
+  _8 = _6 + _7;
+  _9 = _4 | _5;
+  MEM[(volatile uint32 *)_8] ={v} _9;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_23 ();
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_26 ();
+  _10 = &AdcBasePtr_22->JCMR0;
+  _11 = VectAdr_24 * 4;
+  _12 = _10 + _11;
+  _13 ={v} MEM[(volatile uint32 *)_12];
+  _14 = 1 << VectBit_25;
+  _15 = &AdcBasePtr_22->JCMR0;
+  _16 = VectAdr_24 * 4;
+  _17 = _15 + _16;
+  _18 = _13 | _14;
+  MEM[(volatile uint32 *)_17] ={v} _18;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_26 ();
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_ChainConfig (const uint32 u32Instance, const struct Adc_Sar_Ip_ChansIdxMaskType * const pChansIdxMask, const Adc_Sar_Ip_ConvChainType pChainType)
+{
+  const uint32[3] * _1;
+  const uint32[3] * _2;
+
+  <bb 2> :
+  switch (pChainType_4(D)) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  _1 = &pChansIdxMask_5(D)->ChanMaskArr;
+  Adc_Sar_SetNormalChain (u32Instance_7(D), _1);
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  _2 = &pChansIdxMask_5(D)->ChanMaskArr;
+  Adc_Sar_SetInjectedChain (u32Instance_7(D), _2);
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_Deinit (const uint32 u32Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  Adc_Sar_Ip_StatusType Status;
+  struct Adc_Sar_Ip_ConfigType DefaultConfig;
+  uint32 Index;
+  Adc_Sar_Ip_StatusType D.7025;
+  unsigned char _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  volatile uint32_t * _5;
+  volatile uint32_t * _6;
+  long unsigned int _7;
+  volatile uint32_t * _8;
+  volatile uint32_t * _9;
+  long unsigned int _10;
+  volatile uint32_t * _11;
+  volatile uint32_t * _12;
+  long unsigned int _13;
+  volatile uint32_t * _14;
+  unsigned char _15;
+  long unsigned int _16;
+  Adc_Sar_Ip_StatusType _68;
+
+  <bb 2> :
+  AdcBasePtr_25 = Adc_Sar_Ip_apxAdcBase[u32Instance_24(D)];
+  DefaultConfig.ConvMode = 0;
+  DefaultConfig.ClkSelect = 0;
+  DefaultConfig.CalibrationClkSelect = 1;
+  DefaultConfig.HighSpeedConvEn = 0;
+  DefaultConfig.CtuMode = 0;
+  DefaultConfig.InjectedEdge = 0;
+  DefaultConfig.ExtTrigger = 0;
+  DefaultConfig.NormalExtTrgEn = 0;
+  DefaultConfig.NormalAuxExtTrgEn = 0;
+  Index_35 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  DefaultConfig.SampleTimeArr[Index_17] = 22;
+  DefaultConfig.PresamplingSourceArr[Index_17] = 0;
+  Index_72 = Index_17 + 1;
+
+  <bb 4> :
+  # Index_17 = PHI <Index_35(2), Index_72(3)>
+  _1 = Adc_Sar_Ip_au8AdcGroupCount[u32Instance_24(D)];
+  _2 = (long unsigned int) _1;
+  if (Index_17 < _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  DefaultConfig.BypassSampling = 0;
+  DefaultConfig.AutoClockOff = 0;
+  DefaultConfig.OverwriteEnable = 0;
+  DefaultConfig.DataAlign = 0;
+  DefaultConfig.DecodeDelay = 0;
+  DefaultConfig.PowerDownDelay = 0;
+  DefaultConfig.AvgEn = 0;
+  DefaultConfig.AvgSel = 0;
+  DefaultConfig.UsrOffset = 0;
+  DefaultConfig.UsrGain = 0;
+  DefaultConfig.DmaEnable = 0;
+  DefaultConfig.DmaClearSource = 0;
+  DefaultConfig.NumChannels = 0;
+  DefaultConfig.ChannelConfigsPtr = 0B;
+  DefaultConfig.EndOfNormalChainNotification = 0B;
+  DefaultConfig.EndOfInjectedChainNotification = 0B;
+  DefaultConfig.EndOfCtuConversionNotification = 0B;
+  Status_54 = Adc_Sar_Ip_Init (u32Instance_24(D), &DefaultConfig);
+  if (Status_54 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 6> :
+  Index_55 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _3 = &AdcBasePtr_25->CIMR0;
+  _4 = Index_18 * 4;
+  _5 = _3 + _4;
+  MEM[(volatile uint32 *)_5] ={v} 0;
+  _6 = &AdcBasePtr_25->CEOCFR0;
+  _7 = Index_18 * 4;
+  _8 = _6 + _7;
+  MEM[(volatile uint32 *)_8] ={v} 4294967295;
+  _9 = &AdcBasePtr_25->DMAR0;
+  _10 = Index_18 * 4;
+  _11 = _9 + _10;
+  MEM[(volatile uint32 *)_11] ={v} 0;
+  _12 = &AdcBasePtr_25->PSR0;
+  _13 = Index_18 * 4;
+  _14 = _12 + _13;
+  MEM[(volatile uint32 *)_14] ={v} 0;
+  Index_67 = Index_18 + 1;
+
+  <bb 8> :
+  # Index_18 = PHI <Index_55(6), Index_67(7)>
+  _15 = Adc_Sar_Ip_au8AdcGroupCount[u32Instance_24(D)];
+  _16 = (long unsigned int) _15;
+  if (Index_18 < _16)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  Adc_Sar_ResetWdog (u32Instance_24(D));
+  AdcBasePtr_25->WTIMR ={v} 0;
+  Adc_Sar_Ip_ClearStatusFlags (u32Instance_24(D), 31);
+  Adc_Sar_Ip_SetResolution (u32Instance_24(D), 1);
+  Adc_Sar_Ip_axAdcSarState[u32Instance_24(D)].InitStatus = 0;
+  Status_62 = Adc_Sar_Ip_Powerdown (u32Instance_24(D));
+
+  <bb 10> :
+  # Status_19 = PHI <Status_54(5), Status_62(9)>
+  _68 = Status_19;
+  DefaultConfig ={v} {CLOBBER};
+
+  <bb 11> :
+<L9>:
+  return _68;
+
+}
+
+
+Adc_Sar_Ip_Init (const uint32 u32Instance, const struct Adc_Sar_Ip_ConfigType * const pConfig)
+{
+  struct ADC_Type * const AdcBasePtr;
+  Adc_Sar_Ip_StatusType Status;
+  Adc_Sar_Ip_StatusType D.6991;
+  long unsigned int iftmp.4;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  <unnamed type> _5;
+  <unnamed type> _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  _Bool _9;
+  const uint8[3] * _10;
+  unsigned char _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  short unsigned int _15;
+  long unsigned int _16;
+  const uint32[3] * _17;
+  const uint32[3] * _18;
+  <unnamed type> _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  _Bool _22;
+  long unsigned int _23;
+  <unnamed type> _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  const struct Adc_Sar_Ip_ChanConfigType * _29;
+  unsigned char _30;
+  const struct Adc_Sar_Ip_ChanConfigType * _31;
+  unsigned char _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  _Bool _36;
+  long unsigned int _37;
+  <unnamed type> _38;
+  <unnamed type> _39;
+  <unnamed type> _40;
+  void (*<T532>) (void) _41;
+  void (*<T532>) (void) _42;
+  void (*<T532>) (void) _43;
+  _Bool _44;
+  <unnamed type> _45;
+  unsigned char _46;
+  long unsigned int _47;
+  short unsigned int _48;
+  long unsigned int _49;
+  long unsigned int _50;
+  long unsigned int _51;
+  long unsigned int _52;
+  long unsigned int iftmp.4_54;
+  long unsigned int iftmp.4_86;
+  long unsigned int iftmp.4_87;
+  Adc_Sar_Ip_StatusType _99;
+
+  <bb 2> :
+  Status_60 = 0;
+  AdcBasePtr_63 = Adc_Sar_Ip_apxAdcBase[u32Instance_62(D)];
+  Adc_Sar_Ip_AbortChain (u32Instance_62(D), 1, 0);
+  _1 ={v} AdcBasePtr_63->MCR;
+  _2 = _1 & 4294836223;
+  AdcBasePtr_63->MCR ={v} _2;
+  Status_67 = Adc_Sar_Ip_Powerdown (u32Instance_62(D));
+  if (Status_67 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 3> :
+  _3 ={v} AdcBasePtr_63->MCR;
+  _4 = Adc_Sar_CollectMcrMasks (u32Instance_62(D), pConfig_68(D), _3);
+  AdcBasePtr_63->MCR ={v} _4;
+  _5 = pConfig_68(D)->DataAlign;
+  Adc_Sar_Ip_axAdcSarState[u32Instance_62(D)].DataAlign = _5;
+  Status_73 = Adc_Sar_Ip_Powerup (u32Instance_62(D));
+  if (Status_73 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 4> :
+  _6 = pConfig_68(D)->CtuMode;
+  if (_6 == 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _7 ={v} AdcBasePtr_63->MCR;
+  _8 = _7 | 65536;
+  AdcBasePtr_63->MCR ={v} _8;
+
+  <bb 6> :
+  _9 = pConfig_68(D)->HighSpeedConvEn;
+  Adc_Sar_EnableHighSpeed (AdcBasePtr_63, _9);
+  _10 = &pConfig_68(D)->SampleTimeArr;
+  Adc_Sar_Ip_SetSampleTimes (u32Instance_62(D), _10);
+  _11 = pConfig_68(D)->PowerDownDelay;
+  _12 = (long unsigned int) _11;
+  AdcBasePtr_63->PDEDR ={v} _12;
+  _13 = Adc_Sar_Ip_au32AdcFeatureBitmap[u32Instance_62(D)];
+  _14 = _13 & 1;
+  if (_14 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _15 = pConfig_68(D)->DecodeDelay;
+  _16 = (long unsigned int) _15;
+  AdcBasePtr_63->DSDR ={v} _16;
+
+  <bb 8> :
+  _17 = &pConfig_68(D)->ChanMaskNormal;
+  Adc_Sar_SetNormalChain (u32Instance_62(D), _17);
+  _18 = &pConfig_68(D)->ChanMaskInjected;
+  Adc_Sar_SetInjectedChain (u32Instance_62(D), _18);
+  _19 = pConfig_68(D)->AdcResolution;
+  Adc_Sar_Ip_SetResolution (u32Instance_62(D), _19);
+  _20 ={v} AdcBasePtr_63->DMAE;
+  _21 = _20 & 4294967292;
+  AdcBasePtr_63->DMAE ={v} _21;
+  _22 = pConfig_68(D)->DmaEnable;
+  if (_22 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _23 ={v} AdcBasePtr_63->DMAE;
+  _24 = pConfig_68(D)->DmaClearSource;
+  _25 = _24 << 1;
+  _26 = _25 & 2;
+  _27 = _23 | _26;
+  _28 = _27 | 1;
+  AdcBasePtr_63->DMAE ={v} _28;
+
+  <bb 10> :
+  _29 = pConfig_68(D)->ChannelConfigsPtr;
+  if (_29 != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  _30 = pConfig_68(D)->NumChannels;
+  if (_30 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _31 = pConfig_68(D)->ChannelConfigsPtr;
+  _32 = pConfig_68(D)->NumChannels;
+  Adc_Sar_ConfigChannels (u32Instance_62(D), _31, _32);
+
+  <bb 13> :
+  _33 ={v} AdcBasePtr_63->PSCR;
+  _34 = _33 & 4294967294;
+  AdcBasePtr_63->PSCR ={v} _34;
+  _35 ={v} AdcBasePtr_63->PSCR;
+  _36 = pConfig_68(D)->BypassSampling;
+  if (_36 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.4_87 = 1;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftmp.4_86 = 0;
+
+  <bb 16> :
+  # iftmp.4_54 = PHI <iftmp.4_87(14), iftmp.4_86(15)>
+  _37 = iftmp.4_54 | _35;
+  AdcBasePtr_63->PSCR ={v} _37;
+  _38 = pConfig_68(D)->PresamplingSourceArr[0];
+  Adc_Sar_Ip_SetPresamplingSource (u32Instance_62(D), 0, _38);
+  _39 = pConfig_68(D)->PresamplingSourceArr[1];
+  Adc_Sar_Ip_SetPresamplingSource (u32Instance_62(D), 1, _39);
+  _40 = pConfig_68(D)->PresamplingSourceArr[2];
+  Adc_Sar_Ip_SetPresamplingSource (u32Instance_62(D), 2, _40);
+  _41 = pConfig_68(D)->EndOfNormalChainNotification;
+  Adc_Sar_Ip_axAdcSarState[u32Instance_62(D)].EndOfNormalChainNotification = _41;
+  _42 = pConfig_68(D)->EndOfInjectedChainNotification;
+  Adc_Sar_Ip_axAdcSarState[u32Instance_62(D)].EndOfInjectedChainNotification = _42;
+  _43 = pConfig_68(D)->EndOfCtuConversionNotification;
+  Adc_Sar_Ip_axAdcSarState[u32Instance_62(D)].EndOfCtuConversionNotification = _43;
+  _44 = pConfig_68(D)->BypassResolution;
+  Adc_Sar_Ip_axAdcSarState[u32Instance_62(D)].BypassResolution = _44;
+  _45 = pConfig_68(D)->CalibrationClkSelect;
+  Adc_Sar_Ip_axAdcSarState[u32Instance_62(D)].CalibrationClkSelect = _45;
+  _46 = pConfig_68(D)->UsrOffset;
+  _47 = (long unsigned int) _46;
+  _48 = pConfig_68(D)->UsrGain;
+  _49 = (long unsigned int) _48;
+  _50 = _49 << 16;
+  _51 = _50 & 67043328;
+  _52 = _47 | _51;
+  AdcBasePtr_63->OFSGNUSR ={v} _52;
+  Adc_Sar_Ip_axAdcSarState[u32Instance_62(D)].InitStatus = 1;
+
+  <bb 17> :
+  # Status_53 = PHI <Status_67(2), Status_73(3), Status_73(16)>
+  _99 = Status_53;
+
+  <bb 18> :
+<L17>:
+  return _99;
+
+}
+
+
+Adc_Sar_GetValueFromBool (const boolean bVal, const uint32 TrueVal, const uint32 FalseVal)
+{
+  uint32 iftmp.6;
+  uint32 D.7011;
+  uint32 iftmp.6_1;
+  uint32 iftmp.6_4;
+  uint32 iftmp.6_6;
+  uint32 _7;
+
+  <bb 2> :
+  if (bVal_2(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.6_6 = TrueVal_5(D);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.6_4 = FalseVal_3(D);
+
+  <bb 5> :
+  # iftmp.6_1 = PHI <iftmp.6_6(3), iftmp.6_4(4)>
+  _7 = iftmp.6_1;
+
+  <bb 6> :
+<L3>:
+  return _7;
+
+}
+
+
+Adc_Sar_SetInjectedChain (const uint32 Instance, const uint32 * const Mask)
+{
+  uint8 Index;
+  struct ADC_Type * const AdcBasePtr;
+  unsigned int _1;
+  unsigned int _2;
+  const uint32 * _3;
+  volatile uint32_t * _4;
+  unsigned int _5;
+  unsigned int _6;
+  volatile uint32_t * _7;
+  long unsigned int _8;
+  unsigned char Index.9_9;
+  unsigned char _10;
+
+  <bb 2> :
+  AdcBasePtr_15 = Adc_Sar_Ip_apxAdcBase[Instance_14(D)];
+  Index_16 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (unsigned int) Index_11;
+  _2 = _1 * 4;
+  _3 = Mask_17(D) + _2;
+  _4 = &AdcBasePtr_15->JCMR0;
+  _5 = (unsigned int) Index_11;
+  _6 = _5 * 4;
+  _7 = _4 + _6;
+  _8 = *_3;
+  MEM[(volatile uint32 *)_7] ={v} _8;
+  Index.9_9 = Index_11;
+  Index_19 = Index.9_9 + 1;
+
+  <bb 4> :
+  # Index_11 = PHI <Index_16(2), Index_19(3)>
+  _10 = Adc_Sar_Ip_au8AdcGroupCount[Instance_14(D)];
+  if (Index_11 < _10)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Adc_Sar_SetNormalChain (const uint32 Instance, const uint32 * const Mask)
+{
+  uint8 Index;
+  struct ADC_Type * const AdcBasePtr;
+  unsigned int _1;
+  unsigned int _2;
+  const uint32 * _3;
+  volatile uint32_t * _4;
+  unsigned int _5;
+  unsigned int _6;
+  volatile uint32_t * _7;
+  long unsigned int _8;
+  unsigned char Index.8_9;
+  unsigned char _10;
+
+  <bb 2> :
+  AdcBasePtr_15 = Adc_Sar_Ip_apxAdcBase[Instance_14(D)];
+  Index_16 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (unsigned int) Index_11;
+  _2 = _1 * 4;
+  _3 = Mask_17(D) + _2;
+  _4 = &AdcBasePtr_15->NCMR0;
+  _5 = (unsigned int) Index_11;
+  _6 = _5 * 4;
+  _7 = _4 + _6;
+  _8 = *_3;
+  MEM[(volatile uint32 *)_7] ={v} _8;
+  Index.8_9 = Index_11;
+  Index_19 = Index.8_9 + 1;
+
+  <bb 4> :
+  # Index_11 = PHI <Index_16(2), Index_19(3)>
+  _10 = Adc_Sar_Ip_au8AdcGroupCount[Instance_14(D)];
+  if (Index_11 < _10)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Adc_Sar_Ip_IRQHandler (const uint32 Instance)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  void (*<T532>) (void) _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  void (*<T532>) (void) _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  void (*<T532>) (void) _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+
+  <bb 2> :
+  AdcBasePtr_27 = Adc_Sar_Ip_apxAdcBase[Instance_26(D)];
+  _1 ={v} AdcBasePtr_27->ISR;
+  _2 = _1 & 16;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  AdcBasePtr_27->ISR ={v} 16;
+  _3 ={v} AdcBasePtr_27->IMR;
+  _4 = _3 & 16;
+  if (_4 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = Adc_Sar_Ip_axAdcSarState[Instance_26(D)].EndOfCtuConversionNotification;
+  Adc_Sar_CheckAndCallNotification (Instance_26(D), _5);
+
+  <bb 5> :
+  _6 ={v} AdcBasePtr_27->ISR;
+  _7 = _6 & 1;
+  if (_7 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  AdcBasePtr_27->ISR ={v} 1;
+  _8 ={v} AdcBasePtr_27->IMR;
+  _9 = _8 & 1;
+  if (_9 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _10 = Adc_Sar_Ip_axAdcSarState[Instance_26(D)].EndOfNormalChainNotification;
+  Adc_Sar_CheckAndCallNotification (Instance_26(D), _10);
+
+  <bb 8> :
+  _11 ={v} AdcBasePtr_27->ISR;
+  _12 = _11 & 4;
+  if (_12 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  AdcBasePtr_27->ISR ={v} 4;
+  _13 ={v} AdcBasePtr_27->IMR;
+  _14 = _13 & 4;
+  if (_14 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _15 = Adc_Sar_Ip_axAdcSarState[Instance_26(D)].EndOfInjectedChainNotification;
+  Adc_Sar_CheckAndCallNotification (Instance_26(D), _15);
+
+  <bb 11> :
+  _16 ={v} AdcBasePtr_27->ISR;
+  _17 = _16 & 2;
+  if (_17 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  AdcBasePtr_27->ISR ={v} 2;
+
+  <bb 13> :
+  _18 ={v} AdcBasePtr_27->ISR;
+  _19 = _18 & 8;
+  if (_19 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  AdcBasePtr_27->ISR ={v} 8;
+
+  <bb 15> :
+  Adc_CheckAndCallAllChannelNotification (Instance_26(D));
+  AdcBasePtr_27->WTISR ={v} 4294967295;
+  return;
+
+}
+
+
+Adc_Sar_ConfigExternalTrigger (const uint32 Instance, const Adc_Sar_Ip_ExtTriggerEdgeType TriggerEdge, const uint32 TrgEdgeSetMask, const uint32 TrgEdgeClrMask, const uint32 TrigSrcMask)
+{
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+
+  <bb 2> :
+  AdcBasePtr_16 = Adc_Sar_Ip_apxAdcBase[Instance_15(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_21 ();
+  switch (TriggerEdge_18(D)) <default: <L3> [INV], case 0: <L2> [INV], case 1: <L0> [INV], case 2: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  _1 ={v} AdcBasePtr_16->MCR;
+  _2 = ~TrgEdgeSetMask_19(D);
+  _3 = _1 & _2;
+  AdcBasePtr_16->MCR ={v} _3;
+  _4 ={v} AdcBasePtr_16->MCR;
+  _5 = TrigSrcMask_20(D) | _4;
+  AdcBasePtr_16->MCR ={v} _5;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  _6 ={v} AdcBasePtr_16->MCR;
+  _7 = TrgEdgeSetMask_19(D) | TrigSrcMask_20(D);
+  _8 = _6 | _7;
+  AdcBasePtr_16->MCR ={v} _8;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  _9 ={v} AdcBasePtr_16->MCR;
+  _10 = TrgEdgeClrMask_24(D) | TrigSrcMask_20(D);
+  _11 = ~_10;
+  _12 = _9 & _11;
+  AdcBasePtr_16->MCR ={v} _12;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_21 ();
+  return;
+
+}
+
+
+Adc_CheckAndCallAllChannelNotification (const uint32 Instance)
+{
+  uint32 TempValue;
+  struct ADC_Type * const AdcBasePtr;
+  uint16 VectAdr;
+  volatile uint32_t * _1;
+  unsigned int _2;
+  unsigned int _3;
+  volatile uint32_t * _4;
+  volatile uint32_t * _5;
+  unsigned int _6;
+  unsigned int _7;
+  volatile uint32_t * _8;
+  short unsigned int VectAdr.3_9;
+  unsigned char _10;
+  short unsigned int _11;
+
+  <bb 2> :
+  AdcBasePtr_17 = Adc_Sar_Ip_apxAdcBase[Instance_16(D)];
+  VectAdr_18 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = &AdcBasePtr_17->CEOCFR0;
+  _2 = (unsigned int) VectAdr_12;
+  _3 = _2 * 4;
+  _4 = _1 + _3;
+  TempValue_19 ={v} MEM[(volatile uint32 *)_4];
+  if (TempValue_19 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = &AdcBasePtr_17->CEOCFR0;
+  _6 = (unsigned int) VectAdr_12;
+  _7 = _6 * 4;
+  _8 = _5 + _7;
+  MEM[(volatile uint32 *)_8] ={v} TempValue_19;
+
+  <bb 5> :
+  VectAdr.3_9 = VectAdr_12;
+  VectAdr_21 = VectAdr.3_9 + 1;
+
+  <bb 6> :
+  # VectAdr_12 = PHI <VectAdr_18(2), VectAdr_21(5)>
+  _10 = Adc_Sar_Ip_au8AdcGroupCount[Instance_16(D)];
+  _11 = (short unsigned int) _10;
+  if (VectAdr_12 < _11)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+Adc_Sar_CheckAndCallNotification (const uint32 Instance, void (*<T532>) (void) Callback)
+{
+  _Bool _1;
+
+  <bb 2> :
+  if (Callback_3(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _1 = Adc_Sar_Ip_axAdcSarState[Instance_5(D)].InitStatus;
+  if (_1 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Callback_3(D) ();
+
+  <bb 5> :
+  return;
+
+}
+
+
+Adc_Sar_ResetWdog (const uint32 Instance)
+{
+  uint8 Index;
+  struct ADC_Type * const AdcBasePtr;
+  volatile uint32_t * _1;
+  unsigned int _2;
+  unsigned int _3;
+  volatile uint32_t * _4;
+  volatile uint32_t * _5;
+  unsigned int _6;
+  unsigned int _7;
+  volatile uint32_t * _8;
+  unsigned char Index.0_9;
+  unsigned char _10;
+  unsigned char Index.1_11;
+  unsigned char _12;
+  unsigned int _13;
+  long unsigned int _14;
+  unsigned int _15;
+  unsigned int _16;
+  unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  unsigned char Index.2_20;
+
+  <bb 2> :
+  AdcBasePtr_30 = Adc_Sar_Ip_apxAdcBase[Instance_29(D)];
+  Index_31 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = &AdcBasePtr_30->CWENR0;
+  _2 = (unsigned int) Index_21;
+  _3 = _2 * 4;
+  _4 = _1 + _3;
+  MEM[(volatile uint32 *)_4] ={v} 0;
+  _5 = &AdcBasePtr_30->AWORR0;
+  _6 = (unsigned int) Index_21;
+  _7 = _6 * 4;
+  _8 = _5 + _7;
+  MEM[(volatile uint32 *)_8] ={v} 4294967295;
+  Index.0_9 = Index_21;
+  Index_40 = Index.0_9 + 1;
+
+  <bb 4> :
+  # Index_21 = PHI <Index_31(2), Index_40(3)>
+  _10 = Adc_Sar_Ip_au8AdcGroupCount[Instance_29(D)];
+  if (Index_21 < _10)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Index_32 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  Adc_Sar_WriteThresholds (AdcBasePtr_30, Index_22, 65535, 0);
+  Index.1_11 = Index_22;
+  Index_37 = Index.1_11 + 1;
+
+  <bb 7> :
+  # Index_22 = PHI <Index_32(5), Index_37(6)>
+  if (Index_22 <= 3)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  Index_33 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 9> :
+  _12 = Index_23 / 4;
+  _13 = (unsigned int) _12;
+  _14 = Adc_Sar_Ip_au32AdcChanBitmap[Instance_29(D)][_13];
+  _15 = (unsigned int) Index_23;
+  _16 = _15 & 3;
+  _17 = _16 * 8;
+  _18 = 255 << _17;
+  _19 = _14 & _18;
+  if (_19 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  // predicted unlikely by continue predictor.
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  Adc_Sar_ResetWdogCWSELR (AdcBasePtr_30, Index_23);
+
+  <bb 12> :
+  Index.2_20 = Index_23;
+  Index_35 = Index.2_20 + 1;
+
+  <bb 13> :
+  # Index_23 = PHI <Index_33(8), Index_35(12)>
+  if (Index_23 <= 2)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  return;
+
+}
+
+
+Adc_Sar_GetConvResults (const uint32 Instance, const Adc_Sar_Ip_ConvChainType ChainType, uint16 * const ResultsRaw, struct Adc_Sar_Ip_ChanResultType * const ResultsStruct, const uint32 Length)
+{
+  const uint16 AdcChanCount[3][3];
+  uint32 Cdr;
+  uint8 ChnIdx;
+  uint32 VectBit;
+  uint32 VectAdr;
+  struct ADC_Type * const AdcBasePtr;
+  boolean LengthExceeded;
+  uint32 Index;
+  uint32 D.6936;
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _4;
+  unsigned int _5;
+  long unsigned int _6;
+  unsigned int _7;
+  unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  const uint32_t * _11;
+  unsigned int _12;
+  unsigned int _13;
+  const uint32_t * _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  uint16 * _20;
+  short unsigned int _21;
+  long unsigned int _22;
+  struct Adc_Sar_Ip_ChanResultType * _23;
+  short unsigned int _24;
+  long unsigned int _25;
+  struct Adc_Sar_Ip_ChanResultType * _26;
+  long unsigned int _27;
+  int _28;
+  int _29;
+  long unsigned int _30;
+  struct Adc_Sar_Ip_ChanResultType * _31;
+  _Bool _32;
+  long unsigned int _33;
+  int _34;
+  int _35;
+  long unsigned int _36;
+  struct Adc_Sar_Ip_ChanResultType * _37;
+  _Bool _38;
+  volatile uint32_t * _39;
+  long unsigned int _40;
+  volatile uint32_t * _41;
+  long unsigned int _42;
+  short unsigned int _43;
+  long unsigned int _44;
+  unsigned char _45;
+  long unsigned int _46;
+  uint32 _89;
+
+  <bb 2> :
+  Index_63 = 0;
+  LengthExceeded_64 = 0;
+  AdcBasePtr_67 = Adc_Sar_Ip_apxAdcBase[Instance_66(D)];
+  AdcChanCount = *.LC0;
+  VectAdr_69 = 0;
+  goto <bb 18>; [INV]
+
+  <bb 3> :
+  VectBit_70 = 0;
+  goto <bb 14>; [INV]
+
+  <bb 4> :
+  _1 = (unsigned char) VectAdr_54;
+  _2 = _1 * 32;
+  _3 = (unsigned char) VectBit_55;
+  ChnIdx_71 = _2 + _3;
+  _4 = ChnIdx_71 / 32;
+  _5 = (unsigned int) _4;
+  _6 = Adc_Sar_Ip_au32AdcChanBitmap[Instance_66(D)][_5];
+  _7 = (unsigned int) ChnIdx_71;
+  _8 = _7 & 31;
+  _9 = _6 >> _8;
+  _10 = _9 & 1;
+  if (_10 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  // predicted unlikely by continue predictor.
+  goto <bb 13>; [INV]
+
+  <bb 6> :
+  _11 = &AdcBasePtr_67->PCDR[0];
+  _12 = (unsigned int) ChnIdx_71;
+  _13 = _12 * 4;
+  _14 = _11 + _13;
+  Cdr_72 ={v} MEM[(const uint32 *)_14];
+  _15 = ChainType_73(D) << 16;
+  _16 = _15 & 196608;
+  _17 = _16 | 524288;
+  _18 = Cdr_72 & 720896;
+  if (_17 == _18)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 7> :
+  if (ResultsRaw_74(D) != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _19 = Index_48 * 2;
+  _20 = ResultsRaw_74(D) + _19;
+  _21 = Adc_Sar_GetMaskedResult (Instance_66(D), Cdr_72);
+  *_20 = _21;
+
+  <bb 9> :
+  if (ResultsStruct_77(D) != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _22 = Index_48 * 6;
+  _23 = ResultsStruct_77(D) + _22;
+  _24 = Adc_Sar_GetMaskedResult (Instance_66(D), Cdr_72);
+  _23->ConvData = _24;
+  _25 = Index_48 * 6;
+  _26 = ResultsStruct_77(D) + _25;
+  _26->AdcChnIdx = ChnIdx_71;
+  _27 = Cdr_72 >> 19;
+  _28 = (int) _27;
+  _29 = _28 & 1;
+  _30 = Index_48 * 6;
+  _31 = ResultsStruct_77(D) + _30;
+  _32 = _29 != 0;
+  _31->ValidFlag = _32;
+  _33 = Cdr_72 >> 18;
+  _34 = (int) _33;
+  _35 = _34 & 1;
+  _36 = Index_48 * 6;
+  _37 = ResultsStruct_77(D) + _36;
+  _38 = _35 != 0;
+  _37->OverWrittenFlag = _38;
+
+  <bb 11> :
+  _39 = &AdcBasePtr_67->CEOCFR0;
+  _40 = VectAdr_54 * 4;
+  _41 = _39 + _40;
+  _42 = 1 << VectBit_55;
+  MEM[(volatile uint32 *)_41] ={v} _42;
+  Index_84 = Index_48 + 1;
+  if (Index_84 >= Length_85(D))
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  LengthExceeded_86 = 1;
+  goto <bb 15>; [INV]
+
+  <bb 13> :
+  # Index_47 = PHI <Index_48(5), Index_48(6), Index_84(11)>
+  VectBit_87 = VectBit_55 + 1;
+
+  <bb 14> :
+  # Index_48 = PHI <Index_50(3), Index_47(13)>
+  # VectBit_55 = PHI <VectBit_70(3), VectBit_87(13)>
+  _43 = AdcChanCount[Instance_66(D)][VectAdr_54];
+  _44 = (long unsigned int) _43;
+  if (VectBit_55 < _44)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  # Index_49 = PHI <Index_84(12), Index_48(14)>
+  # LengthExceeded_52 = PHI <LengthExceeded_86(12), LengthExceeded_53(14)>
+  if (LengthExceeded_52 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  goto <bb 19>; [INV]
+
+  <bb 17> :
+  VectAdr_88 = VectAdr_54 + 1;
+
+  <bb 18> :
+  # Index_50 = PHI <Index_63(2), Index_49(17)>
+  # LengthExceeded_53 = PHI <LengthExceeded_64(2), LengthExceeded_52(17)>
+  # VectAdr_54 = PHI <VectAdr_69(2), VectAdr_88(17)>
+  _45 = Adc_Sar_Ip_au8AdcGroupCount[Instance_66(D)];
+  _46 = (long unsigned int) _45;
+  if (VectAdr_54 < _46)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  # Index_51 = PHI <Index_49(16), Index_50(18)>
+  _89 = Index_51;
+  AdcChanCount ={v} {CLOBBER};
+
+  <bb 20> :
+<L20>:
+  return _89;
+
+}
+
+
+Adc_Sar_CheckSelfTestProgress (const uint32 Instance)
+{
+  uint8 Index;
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  uint32 Reg;
+  Adc_Sar_Ip_StatusType Status;
+  const struct ADC_Type * const AdcBasePtr;
+  Adc_Sar_Ip_StatusType D.7067;
+  long unsigned int D.7057;
+  long unsigned int D.7051;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  unsigned char Index.14_6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _34;
+  long unsigned int _39;
+  Adc_Sar_Ip_StatusType _45;
+
+  <bb 2> :
+  AdcBasePtr_24 = Adc_Sar_Ip_apxAdcBase[Instance_23(D)];
+  Status_25 = 0;
+  Reg_26 = 0;
+  TimeoutTicks_28 = OsIf_MicrosToTicks (3000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  Index_31 = 0;
+  goto <bb 19>; [INV]
+
+  <bb 3> :
+  ElapsedTicks_32 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _34 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks_35 = _34 + ElapsedTicks_14;
+
+  <bb 5> :
+  # ElapsedTicks_14 = PHI <ElapsedTicks_32(3), ElapsedTicks_35(4)>
+  _2 ={v} AdcBasePtr_24->MSR;
+  _3 = _2 & 262144;
+  if (_3 != 262144)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  if (ElapsedTicks_14 < TimeoutTicks_28)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (ElapsedTicks_14 >= TimeoutTicks_28)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  Status_36 = 2;
+
+  <bb 9> :
+  # Status_9 = PHI <Status_11(7), Status_36(8)>
+  if (Status_9 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 10> :
+  ElapsedTicks_37 = 0;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _39 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks_40 = _39 + ElapsedTicks_15;
+
+  <bb 12> :
+  # ElapsedTicks_15 = PHI <ElapsedTicks_37(10), ElapsedTicks_40(11)>
+  _4 ={v} AdcBasePtr_24->MSR;
+  _5 = _4 & 262144;
+  if (_5 == 262144)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  if (ElapsedTicks_15 < TimeoutTicks_28)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  if (ElapsedTicks_15 >= TimeoutTicks_28)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  Status_41 = 2;
+
+  <bb 16> :
+  # Status_10 = PHI <Status_9(9), Status_9(14), Status_41(15)>
+  if (Status_10 == 2)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  goto <bb 20>; [INV]
+
+  <bb 18> :
+  Index.14_6 = Index_16;
+  Index_42 = Index.14_6 + 1;
+
+  <bb 19> :
+  # Status_11 = PHI <Status_25(2), Status_10(18)>
+  # Index_16 = PHI <Index_31(2), Index_42(18)>
+  if (Index_16 <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  # Status_12 = PHI <Status_10(17), Status_11(19)>
+  if (Status_12 != 2)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 21> :
+  Reg_43 = Reg_26 | 47104;
+  _7 ={v} AdcBasePtr_24->STSR1;
+  _8 = Reg_43 & _7;
+  if (_8 != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  Status_44 = 1;
+
+  <bb 23> :
+  # Status_13 = PHI <Status_12(20), Status_12(21), Status_44(22)>
+  _45 = Status_13;
+  CurrentTicks ={v} {CLOBBER};
+
+  <bb 24> :
+<L24>:
+  return _45;
+
+}
+
+
+Adc_Sar_ConfigChannels (const uint32 Instance, const struct Adc_Sar_Ip_ChanConfigType * ChannelConfigsPtr, uint8 NumChannels)
+{
+  const struct Adc_Sar_Ip_ChanConfigType * ChnConfig;
+  uint32 PsrMask[3];
+  uint32 DmarMask[3];
+  uint32 CwenrMask[3];
+  uint32 CimrMask[3];
+  uint32 VectBit;
+  uint32 VectAdr;
+  uint8 Index;
+  struct ADC_Type * const AdcBasePtr;
+  long unsigned int D.7022;
+  long unsigned int D.7021;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  unsigned char Index.10_5;
+  unsigned char _6;
+  unsigned int _7;
+  unsigned int _8;
+  unsigned char _9;
+  unsigned char _10;
+  unsigned char _11;
+  long unsigned int _12;
+  _Bool _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  _Bool _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  unsigned char Index.11_21;
+  int _22;
+  volatile uint32_t * _23;
+  unsigned int _24;
+  unsigned int _25;
+  volatile uint32_t * _26;
+  long unsigned int _27;
+  int _28;
+  volatile uint32_t * _29;
+  unsigned int _30;
+  unsigned int _31;
+  volatile uint32_t * _32;
+  long unsigned int _33;
+  int _34;
+  volatile uint32_t * _35;
+  unsigned int _36;
+  unsigned int _37;
+  volatile uint32_t * _38;
+  long unsigned int _39;
+  int _40;
+  volatile uint32_t * _41;
+  unsigned int _42;
+  unsigned int _43;
+  volatile uint32_t * _44;
+  long unsigned int _45;
+  unsigned char Index.12_46;
+  unsigned char _47;
+  long unsigned int _75;
+  long unsigned int _78;
+
+  <bb 2> :
+  AdcBasePtr_56 = Adc_Sar_Ip_apxAdcBase[Instance_55(D)];
+  Index_57 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) Index_48;
+  CimrMask[_1] = 0;
+  _2 = (int) Index_48;
+  CwenrMask[_2] = 0;
+  _3 = (int) Index_48;
+  DmarMask[_3] = 0;
+  _4 = (int) Index_48;
+  PsrMask[_4] = 0;
+  Index.10_5 = Index_48;
+  Index_85 = Index.10_5 + 1;
+
+  <bb 4> :
+  # Index_48 = PHI <Index_57(2), Index_85(3)>
+  _6 = Adc_Sar_Ip_au8AdcGroupCount[Instance_55(D)];
+  if (Index_48 < _6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Index_58 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _7 = (unsigned int) Index_49;
+  _8 = _7 * 3;
+  ChnConfig_71 = ChannelConfigsPtr_70(D) + _8;
+  _9 = ChnConfig_71->ChanIndex;
+  _10 = _9 / 32;
+  VectAdr_72 = (uint32) _10;
+  _11 = ChnConfig_71->ChanIndex;
+  _12 = (long unsigned int) _11;
+  VectBit_73 = _12 & 31;
+  _13 = ChnConfig_71->EndOfConvDmaEnable;
+  _14 = 1 << VectBit_73;
+  _75 = Adc_Sar_GetValueFromBool (_13, _14, 0);
+  _15 = DmarMask[VectAdr_72];
+  _16 = _75 | _15;
+  DmarMask[VectAdr_72] = _16;
+  _17 = ChnConfig_71->PresamplingEnable;
+  _18 = 1 << VectBit_73;
+  _78 = Adc_Sar_GetValueFromBool (_17, _18, 0);
+  _19 = PsrMask[VectAdr_72];
+  _20 = _78 | _19;
+  PsrMask[VectAdr_72] = _20;
+  Index.11_21 = Index_49;
+  Index_80 = Index.11_21 + 1;
+
+  <bb 7> :
+  # Index_49 = PHI <Index_58(5), Index_80(6)>
+  if (Index_49 < NumChannels_59(D))
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  Index_60 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _22 = (int) Index_50;
+  _23 = &AdcBasePtr_56->CIMR0;
+  _24 = (unsigned int) Index_50;
+  _25 = _24 * 4;
+  _26 = _23 + _25;
+  _27 = CimrMask[_22];
+  MEM[(volatile uint32 *)_26] ={v} _27;
+  _28 = (int) Index_50;
+  _29 = &AdcBasePtr_56->CWENR0;
+  _30 = (unsigned int) Index_50;
+  _31 = _30 * 4;
+  _32 = _29 + _31;
+  _33 = CwenrMask[_28];
+  MEM[(volatile uint32 *)_32] ={v} _33;
+  _34 = (int) Index_50;
+  _35 = &AdcBasePtr_56->DMAR0;
+  _36 = (unsigned int) Index_50;
+  _37 = _36 * 4;
+  _38 = _35 + _37;
+  _39 = DmarMask[_34];
+  MEM[(volatile uint32 *)_38] ={v} _39;
+  _40 = (int) Index_50;
+  _41 = &AdcBasePtr_56->PSR0;
+  _42 = (unsigned int) Index_50;
+  _43 = _42 * 4;
+  _44 = _41 + _43;
+  _45 = PsrMask[_40];
+  MEM[(volatile uint32 *)_44] ={v} _45;
+  Index.12_46 = Index_50;
+  Index_69 = Index.12_46 + 1;
+
+  <bb 10> :
+  # Index_50 = PHI <Index_60(8), Index_69(9)>
+  _47 = Adc_Sar_Ip_au8AdcGroupCount[Instance_55(D)];
+  if (Index_50 < _47)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  CimrMask ={v} {CLOBBER};
+  CwenrMask ={v} {CLOBBER};
+  DmarMask ={v} {CLOBBER};
+  PsrMask ={v} {CLOBBER};
+  return;
+
+}
+
+
+Adc_Sar_CollectMcrMasks (const uint32 Instance, const struct Adc_Sar_Ip_ConfigType * const Config, uint32 InitialMcr)
+{
+  uint32 Mcr;
+  uint32 D.7007;
+  long unsigned int D.7006;
+  long unsigned int D.7005;
+  long unsigned int D.7004;
+  long unsigned int iftmp.5;
+  long unsigned int D.6995;
+  long unsigned int D.6994;
+  long unsigned int D.6993;
+  <unnamed type> _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  <unnamed type> _4;
+  _Bool _5;
+  _Bool _6;
+  <unnamed type> _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  <unnamed type> _12;
+  <unnamed type> _13;
+  <unnamed type> _14;
+  <unnamed type> _15;
+  _Bool _16;
+  _Bool _17;
+  _Bool _18;
+  <unnamed type> _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int iftmp.5_25;
+  long unsigned int _35;
+  long unsigned int _39;
+  long unsigned int _43;
+  long unsigned int iftmp.5_58;
+  long unsigned int iftmp.5_59;
+  long unsigned int _63;
+  long unsigned int _67;
+  long unsigned int _71;
+  uint32 _75;
+
+  <bb 2> :
+  Mcr_28 = InitialMcr_27(D);
+  Mcr_29 = Mcr_28 & 3758096383;
+  _1 = Config_31(D)->ConvMode;
+  _2 = _1 << 29;
+  _3 = _2 & 536870912;
+  Mcr_32 = Mcr_29 | _3;
+  Mcr_33 = Mcr_32 & 4294967289;
+  _4 = Config_31(D)->ClkSelect;
+  _35 = Adc_Sar_GetADCLKSELValue (_4);
+  Mcr_36 = _35 | Mcr_33;
+  Mcr_37 = Mcr_36 & 4294967263;
+  _5 = Config_31(D)->AutoClockOff;
+  _39 = Adc_Sar_GetValueFromBool (_5, 32, 0);
+  Mcr_40 = _39 | Mcr_37;
+  Mcr_41 = Mcr_40 & 2147483647;
+  _6 = Config_31(D)->OverwriteEnable;
+  _43 = Adc_Sar_GetValueFromBool (_6, 2147483648, 0);
+  Mcr_44 = _43 | Mcr_41;
+  Mcr_45 = Mcr_44 & 3221225471;
+  _7 = Config_31(D)->DataAlign;
+  _8 = _7 << 30;
+  _9 = _8 & 1073741824;
+  Mcr_46 = Mcr_45 | _9;
+  _10 = Adc_Sar_Ip_au32AdcFeatureBitmap[Instance_47(D)];
+  _11 = _10 & 4;
+  if (_11 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _12 = Config_31(D)->CtuMode;
+  switch (_12) <default: <L3> [INV], case 1: <L1> [INV], case 2: <L2> [INV]>
+
+  <bb 4> :
+<L1>:
+  Mcr_51 = Mcr_46 & 4294836223;
+  Mcr_52 = Mcr_51 | 131072;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  Mcr_48 = Mcr_46 & 4294770687;
+  Mcr_49 = Mcr_48 | 65536;
+  Mcr_50 = Mcr_49 | 131072;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  # Mcr_22 = PHI <Mcr_46(2), Mcr_52(4), Mcr_50(5), Mcr_46(6)>
+  _13 = Config_31(D)->InjectedEdge;
+  switch (_13) <default: <L9> [INV], case 1: <L7> [INV], case 2: <L8> [INV]>
+
+  <bb 8> :
+<L7>:
+  Mcr_55 = Mcr_22 & 4290772991;
+  Mcr_56 = Mcr_55 | 4194304;
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+<L8>:
+  Mcr_53 = Mcr_22 & 4288675839;
+  Mcr_54 = Mcr_53 | 6291456;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+<L9>:
+
+  <bb 11> :
+  # Mcr_23 = PHI <Mcr_56(8), Mcr_54(9), Mcr_22(10)>
+  Mcr_57 = Mcr_23 & 4227858431;
+  _14 = Config_31(D)->ExtTrigger;
+  if (_14 == 2)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.5_59 = 67108864;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.5_58 = 0;
+
+  <bb 14> :
+  # iftmp.5_25 = PHI <iftmp.5_59(12), iftmp.5_58(13)>
+  Mcr_60 = iftmp.5_25 | Mcr_57;
+  _15 = Config_31(D)->ExtTrigger;
+  if (_15 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  Mcr_61 = Mcr_60 & 4160749567;
+  _16 = Config_31(D)->NormalExtTrgEn;
+  _63 = Adc_Sar_GetValueFromBool (_16, 134217728, 0);
+  Mcr_64 = _63 | Mcr_61;
+  Mcr_65 = Mcr_64 & 4261412863;
+  _17 = Config_31(D)->NormalAuxExtTrgEn;
+  _67 = Adc_Sar_GetValueFromBool (_17, 33554432, 0);
+  Mcr_68 = _67 | Mcr_65;
+
+  <bb 16> :
+  # Mcr_24 = PHI <Mcr_60(14), Mcr_68(15)>
+  Mcr_69 = Mcr_24 & 4294965247;
+  _18 = Config_31(D)->AvgEn;
+  _71 = Adc_Sar_GetValueFromBool (_18, 2048, 0);
+  Mcr_72 = _71 | Mcr_69;
+  Mcr_73 = Mcr_72 & 4294965759;
+  _19 = Config_31(D)->AvgSel;
+  _20 = _19 << 9;
+  _21 = _20 & 1536;
+  Mcr_74 = Mcr_73 | _21;
+  _75 = Mcr_74;
+
+  <bb 17> :
+<L17>:
+  return _75;
+
+}
+
+
+Adc_Sar_GetADCLKSELValue (Adc_Sar_Ip_ClockSelType ClockSel)
+{
+  uint32 D.7009;
+  long unsigned int _1;
+  uint32 _3;
+
+  <bb 2> :
+  _1 = ClockSel_2(D) << 1;
+  _3 = _1 & 6;
+
+  <bb 3> :
+<L0>:
+  return _3;
+
+}
+
+
+Adc_Sar_GetIsrFlags (const uint32 Instance)
+{
+  uint32 Flags;
+  uint32 Isr;
+  const struct ADC_Type * const AdcBasePtr;
+  uint32 D.7038;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  uint32 _19;
+
+  <bb 2> :
+  AdcBasePtr_11 = Adc_Sar_Ip_apxAdcBase[Instance_10(D)];
+  Isr_12 ={v} AdcBasePtr_11->ISR;
+  Flags_13 = 0;
+  _1 = Isr_12 & 2;
+  Flags_14 = Flags_13 | _1;
+  _2 = Isr_12 & 1;
+  Flags_15 = Flags_14 | _2;
+  _3 = Isr_12 & 8;
+  Flags_16 = Flags_15 | _3;
+  _4 = Isr_12 & 4;
+  Flags_17 = Flags_16 | _4;
+  _5 = Adc_Sar_Ip_au32AdcFeatureBitmap[Instance_10(D)];
+  _6 = _5 & 4;
+  if (_6 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _7 = Isr_12 & 16;
+  Flags_18 = Flags_17 | _7;
+
+  <bb 4> :
+  # Flags_8 = PHI <Flags_17(2), Flags_18(3)>
+  _19 = Flags_8;
+
+  <bb 5> :
+<L2>:
+  return _19;
+
+}
+
+
+Adc_Sar_GetMsrFlags (const uint32 Instance)
+{
+  uint32 Flags;
+  uint32 Msr;
+  const struct ADC_Type * const AdcBasePtr;
+  uint32 D.7034;
+  signed int Msr.13_1;
+  signed int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  uint32 _29;
+
+  <bb 2> :
+  AdcBasePtr_20 = Adc_Sar_Ip_apxAdcBase[Instance_19(D)];
+  Msr_21 ={v} AdcBasePtr_20->MSR;
+  Flags_22 = 0;
+  Msr.13_1 = (signed int) Msr_21;
+  _2 = Msr.13_1 >> 26;
+  _3 = (long unsigned int) _2;
+  _4 = _3 & 32;
+  Flags_23 = Flags_22 | _4;
+  _5 = Msr_21 >> 18;
+  _6 = _5 & 64;
+  Flags_24 = Flags_23 | _6;
+  _7 = Msr_21 >> 15;
+  _8 = _7 & 256;
+  Flags_25 = Flags_24 | _8;
+  _9 = Msr_21 >> 13;
+  _10 = _9 & 128;
+  Flags_26 = Flags_25 | _10;
+  _11 = Adc_Sar_Ip_au32AdcFeatureBitmap[Instance_19(D)];
+  _12 = _11 & 4;
+  if (_12 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _13 = Msr_21 >> 7;
+  _14 = _13 & 512;
+  Flags_27 = Flags_26 | _14;
+
+  <bb 4> :
+  # Flags_17 = PHI <Flags_26(2), Flags_27(3)>
+  _15 = Msr_21 << 5;
+  _16 = _15 & 1024;
+  Flags_28 = Flags_17 | _16;
+  _29 = Flags_28;
+
+  <bb 5> :
+<L2>:
+  return _29;
+
+}
+
+
+Adc_Sar_GetMaskedResult (const uint32 Instance, const uint32 Cdr)
+{
+  uint8 Resolution;
+  uint16 Result;
+  uint32 CdrMask;
+  uint16 D.6945;
+  _Bool _1;
+  _Bool _2;
+  <unnamed type> _3;
+  unsigned int _4;
+  unsigned int _5;
+  short unsigned int _6;
+  short unsigned int _7;
+  unsigned int _8;
+  unsigned int _9;
+  long unsigned int _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  short unsigned int _13;
+  int _14;
+  unsigned int _15;
+  unsigned int _16;
+  int _17;
+  uint16 _32;
+
+  <bb 2> :
+  CdrMask_21 = 65535;
+  _1 = Adc_Sar_Ip_axAdcSarState[Instance_23(D)].BypassResolution;
+  _2 = ~_1;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Resolution_26 = Adc_Sar_GetResolution (Instance_23(D));
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Resolution_24 = 15;
+
+  <bb 5> :
+  # Resolution_19 = PHI <Resolution_26(3), Resolution_24(4)>
+  _3 = Adc_Sar_Ip_axAdcSarState[Instance_23(D)].DataAlign;
+  if (_3 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _4 = (unsigned int) Resolution_19;
+  _5 = 16 - _4;
+  CdrMask_30 = 65535 << _5;
+  _6 = (short unsigned int) Cdr_28(D);
+  _7 = (short unsigned int) CdrMask_30;
+  Result_31 = _6 & _7;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _8 = (unsigned int) Resolution_19;
+  _9 = 15 - _8;
+  _10 = 65535 << _9;
+  CdrMask_27 = _10 & 32767;
+  _11 = (short unsigned int) Cdr_28(D);
+  _12 = (short unsigned int) CdrMask_27;
+  _13 = _11 & _12;
+  _14 = (int) _13;
+  _15 = (unsigned int) Resolution_19;
+  _16 = 15 - _15;
+  _17 = _14 >> _16;
+  Result_29 = (uint16) _17;
+
+  <bb 8> :
+  # Result_18 = PHI <Result_31(6), Result_29(7)>
+  _32 = Result_18;
+
+  <bb 9> :
+<L6>:
+  return _32;
+
+}
+
+
+Adc_Sar_GetResolution (const uint32 Instance)
+{
+  uint8 ResolutionBits;
+  uint32 Calbistreg;
+  const struct ADC_Type * const AdcBasePtr;
+  static const uint8 ResolutionArray[4] = "\x0e\f\n\b";
+  uint8 Resolution;
+  uint8 D.6947;
+  long unsigned int _1;
+  unsigned char _2;
+  int _3;
+  uint8 _10;
+
+  <bb 2> :
+  AdcBasePtr_6 = Adc_Sar_Ip_apxAdcBase[Instance_5(D)];
+  Calbistreg_7 ={v} AdcBasePtr_6->CALBISTREG;
+  _1 = Calbistreg_7 >> 29;
+  _2 = (unsigned char) _1;
+  ResolutionBits_8 = _2 & 3;
+  _3 = (int) ResolutionBits_8;
+  Resolution_9 = ResolutionArray[_3];
+  _10 = Resolution_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Adc_Sar_ResetWdogCWSELR (struct ADC_Type * const Base, const uint8 RegisterNumber)
+{
+  volatile uint32_t * _1;
+  unsigned int _2;
+  unsigned int _3;
+  volatile uint32_t * _4;
+
+  <bb 2> :
+  _1 = &Base_5(D)->CWSELRPI[0];
+  _2 = (unsigned int) RegisterNumber_6(D);
+  _3 = _2 * 4;
+  _4 = _1 + _3;
+  MEM[(volatile uint32 *)_4] ={v} 0;
+  return;
+
+}
+
+
+Adc_Sar_WriteThresholds (struct ADC_Type * const Base, const uint8 RegisterNumber, const uint16 HighThreshold, const uint16 LowThreshold)
+{
+  uint32 Value;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+
+  <bb 2> :
+  _1 = (long unsigned int) HighThreshold_7(D);
+  _2 = _1 << 16;
+  _3 = _2 & 2147418112;
+  _4 = (long unsigned int) LowThreshold_8(D);
+  _5 = _4 & 32767;
+  Value_9 = _3 | _5;
+  _6 = (int) RegisterNumber_10(D);
+  Base_12(D)->THRHLR[_6] ={v} Value_9;
+  return;
+
+}
+
+
+Adc_Sar_EnableHighSpeed (struct ADC_Type * const Base, boolean Enable)
+{
+  uint32 Amsio;
+  long unsigned int iftmp.7;
+  long unsigned int iftmp.7_1;
+  long unsigned int iftmp.7_7;
+  long unsigned int iftmp.7_8;
+
+  <bb 2> :
+  Amsio_4 ={v} Base_3(D)->AMSIO;
+  Amsio_5 = Amsio_4 & 4294574079;
+  if (Enable_6(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.7_8 = 393216;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.7_7 = 0;
+
+  <bb 5> :
+  # iftmp.7_1 = PHI <iftmp.7_8(3), iftmp.7_7(4)>
+  Amsio_9 = iftmp.7_1 | Amsio_5;
+  Base_3(D)->AMSIO ={v} Amsio_9;
+  return;
+
+}
+
+
+Adc_Sar_Powerdown (struct ADC_Type * const Base)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 ={v} Base_4(D)->MCR;
+  _2 = _1 | 1;
+  Base_4(D)->MCR ={v} _2;
+  return;
+
+}
+
+
+Adc_Sar_Powerup (struct ADC_Type * const Base)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 ={v} Base_4(D)->MCR;
+  _2 = _1 & 4294967294;
+  Base_4(D)->MCR ={v} _2;
+  return;
+
+}
+
+

@@ -1,0 +1,172 @@
+main ()
+{
+  Clock_Ip_StatusType clockStatus;
+  uint8 Index;
+  StatusType status;
+  int D.7401;
+
+  <bb 2> :
+  clockStatus = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  clockStatus = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+
+  <bb 4> :
+  if (clockStatus != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Bctu_Ip_Init (0, &BctuHwUnit_0_VS_0);
+  _1 = Adc_Sar_Ip_Init (0, &AdcHwUnit_0_VS_0);
+  status = (StatusType) _1;
+
+  <bb 6> :
+  if (status != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  IntCtrl_Ip_InstallHandler (180, Adc_Sar_0_Isr, 0B);
+  IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
+  IntCtrl_Ip_EnableIrq (180);
+  IntCtrl_Ip_EnableIrq (87);
+  Index = 0;
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  _2 = Adc_Sar_Ip_DoCalibration (0);
+  status = (StatusType) _2;
+  if (status == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  goto <bb 12>; [INV]
+
+  <bb 10> :
+  Index.2_3 = Index;
+  Index = Index.2_3 + 1;
+
+  <bb 11> :
+  if (Index <= 5)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  Adc_Sar_Ip_EnableNotifications (0, 5);
+  Adc_Sar_Ip_StartConversion (0, 0);
+  notif_triggered = 0;
+  Adc_Sar_Ip_StartConversion (0, 1);
+  notif_triggered = 0;
+  Bctu_Ip_SetGlobalTriggerEn (0, 1);
+  Bctu_Ip_EnableNotifications (0, 1);
+  Bctu_Ip_SwTriggerConversion (0, 0);
+
+  <bb 13> :
+  notif_triggered.3_4 = notif_triggered;
+  _5 = ~notif_triggered.3_4;
+  if (_5 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  Bctu_Ip_Deinit (0);
+  _6 = Adc_Sar_Ip_Deinit (0);
+  status = (StatusType) _6;
+
+  <bb 15> :
+  if (status != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  exit_code.4_7 = exit_code;
+  if (exit_code.4_7 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  goto <bb 16>; [INV]
+
+  <bb 19> :
+  D.7401 = exit_code;
+
+  <bb 20> :
+<L21>:
+  return D.7401;
+
+}
+
+
+BctuWatermarkNotif ()
+{
+  uint8 idx;
+
+  <bb 2> :
+  notif_triggered = 1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = Bctu_Ip_GetFifoData (0, 0);
+  data = _1;
+  Bctu_Ip_SwTriggerConversion (0, 0);
+
+  <bb 4> :
+  data.1_2 = data;
+  if (data.1_2 <= 3499)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+AdcEndOfChainNotif ()
+{
+  <bb 2> :
+  notif_triggered = 1;
+  _1 = Adc_Sar_Ip_GetConvData (0, 4);
+  data = _1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = Adc_Sar_Ip_GetConvData (0, 4);
+  data = _2;
+  Adc_Sar_Ip_StartConversion (0, 0);
+
+  <bb 4> :
+  data.0_3 = data;
+  if (data.0_3 <= 2999)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Pit0ch0Notification ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
