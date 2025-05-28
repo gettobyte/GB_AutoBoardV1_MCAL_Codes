@@ -3,7 +3,7 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.7401;
+  int D.7394;
 
   <bb 2> :
   clockStatus = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
@@ -32,8 +32,10 @@ main ()
   <bb 7> :
   IntCtrl_Ip_InstallHandler (180, Adc_Sar_0_Isr, 0B);
   IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
+  IntCtrl_Ip_InstallHandler (96, PIT_0_ISR, 0B);
   IntCtrl_Ip_EnableIrq (180);
   IntCtrl_Ip_EnableIrq (87);
+  IntCtrl_Ip_EnableIrq (96);
   Index = 0;
   goto <bb 11>; [INV]
 
@@ -60,60 +62,36 @@ main ()
 
   <bb 12> :
   Adc_Sar_Ip_EnableNotifications (0, 5);
-  Adc_Sar_Ip_StartConversion (0, 0);
-  notif_triggered = 0;
-  Adc_Sar_Ip_StartConversion (0, 1);
-  notif_triggered = 0;
-  Bctu_Ip_SetGlobalTriggerEn (0, 1);
-  Bctu_Ip_EnableNotifications (0, 1);
-  Bctu_Ip_SwTriggerConversion (0, 0);
+  Pit_Ip_Init (0, &PIT_0_InitConfig_PB);
+  Pit_Ip_InitChannel (0, &PIT_0_ChannelConfig_PB[0]);
+  Pit_Ip_EnableChannelInterrupt (0, 0);
+  Pit_Ip_StartChannel (0, 0, 80000000);
 
   <bb 13> :
-  notif_triggered.3_4 = notif_triggered;
-  _5 = ~notif_triggered.3_4;
-  if (_5 != 0)
-    goto <bb 13>; [INV]
-  else
+  exit_code.3_4 = exit_code;
+  if (exit_code.3_4 != 0)
     goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
 
   <bb 14> :
-  Bctu_Ip_Deinit (0);
-  _6 = Adc_Sar_Ip_Deinit (0);
-  status = (StatusType) _6;
-
-  <bb 15> :
-  if (status != 0)
-    goto <bb 15>; [INV]
-  else
-    goto <bb 16>; [INV]
-
-  <bb 16> :
-  exit_code.4_7 = exit_code;
-  if (exit_code.4_7 != 0)
-    goto <bb 17>; [INV]
-  else
-    goto <bb 18>; [INV]
-
-  <bb 17> :
-  goto <bb 19>; [INV]
-
-  <bb 18> :
   goto <bb 16>; [INV]
 
-  <bb 19> :
-  D.7401 = exit_code;
+  <bb 15> :
+  goto <bb 13>; [INV]
 
-  <bb 20> :
-<L21>:
-  return D.7401;
+  <bb 16> :
+  D.7394 = exit_code;
+
+  <bb 17> :
+<L15>:
+  return D.7394;
 
 }
 
 
 BctuWatermarkNotif ()
 {
-  uint8 idx;
-
   <bb 2> :
   notif_triggered = 1;
   goto <bb 4>; [INV]

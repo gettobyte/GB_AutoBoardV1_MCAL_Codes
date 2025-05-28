@@ -3,26 +3,23 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.7401;
+  int D.7394;
   <unnamed type> _1;
   <unnamed type> _2;
   unsigned char Index.2_3;
-  _Bool notif_triggered.3_4;
-  _Bool _5;
-  <unnamed type> _6;
-  int exit_code.4_7;
-  int _38;
+  int exit_code.3_4;
+  int _31;
 
   <bb 2> :
-  clockStatus_15 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  clockStatus_12 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
   goto <bb 4>; [INV]
 
   <bb 3> :
-  clockStatus_40 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  clockStatus_33 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
 
   <bb 4> :
-  # clockStatus_9 = PHI <clockStatus_15(2), clockStatus_40(3)>
-  if (clockStatus_9 != 0)
+  # clockStatus_6 = PHI <clockStatus_12(2), clockStatus_33(3)>
+  if (clockStatus_6 != 0)
     goto <bb 3>; [INV]
   else
     goto <bb 5>; [INV]
@@ -30,10 +27,10 @@ main ()
   <bb 5> :
   Bctu_Ip_Init (0, &BctuHwUnit_0_VS_0);
   _1 = Adc_Sar_Ip_Init (0, &AdcHwUnit_0_VS_0);
-  status_18 = (StatusType) _1;
+  status_15 = (StatusType) _1;
 
   <bb 6> :
-  if (status_18 != 0)
+  if (status_15 != 0)
     goto <bb 6>; [INV]
   else
     goto <bb 7>; [INV]
@@ -41,15 +38,17 @@ main ()
   <bb 7> :
   IntCtrl_Ip_InstallHandler (180, Adc_Sar_0_Isr, 0B);
   IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
+  IntCtrl_Ip_InstallHandler (96, PIT_0_ISR, 0B);
   IntCtrl_Ip_EnableIrq (180);
   IntCtrl_Ip_EnableIrq (87);
-  Index_23 = 0;
+  IntCtrl_Ip_EnableIrq (96);
+  Index_22 = 0;
   goto <bb 11>; [INV]
 
   <bb 8> :
   _2 = Adc_Sar_Ip_DoCalibration (0);
-  status_25 = (StatusType) _2;
-  if (status_25 == 0)
+  status_24 = (StatusType) _2;
+  if (status_24 == 0)
     goto <bb 9>; [INV]
   else
     goto <bb 10>; [INV]
@@ -58,71 +57,48 @@ main ()
   goto <bb 12>; [INV]
 
   <bb 10> :
-  Index.2_3 = Index_8;
-  Index_26 = Index.2_3 + 1;
+  Index.2_3 = Index_5;
+  Index_25 = Index.2_3 + 1;
 
   <bb 11> :
-  # Index_8 = PHI <Index_23(7), Index_26(10)>
-  if (Index_8 <= 5)
+  # Index_5 = PHI <Index_22(7), Index_25(10)>
+  if (Index_5 <= 5)
     goto <bb 8>; [INV]
   else
     goto <bb 12>; [INV]
 
   <bb 12> :
   Adc_Sar_Ip_EnableNotifications (0, 5);
-  Adc_Sar_Ip_StartConversion (0, 0);
-  notif_triggered ={v} 0;
-  Adc_Sar_Ip_StartConversion (0, 1);
-  notif_triggered ={v} 0;
-  Bctu_Ip_SetGlobalTriggerEn (0, 1);
-  Bctu_Ip_EnableNotifications (0, 1);
-  Bctu_Ip_SwTriggerConversion (0, 0);
+  Pit_Ip_Init (0, &PIT_0_InitConfig_PB);
+  Pit_Ip_InitChannel (0, &PIT_0_ChannelConfig_PB[0]);
+  Pit_Ip_EnableChannelInterrupt (0, 0);
+  Pit_Ip_StartChannel (0, 0, 80000000);
 
   <bb 13> :
-  notif_triggered.3_4 ={v} notif_triggered;
-  _5 = ~notif_triggered.3_4;
-  if (_5 != 0)
-    goto <bb 13>; [INV]
-  else
+  exit_code.3_4 ={v} exit_code;
+  if (exit_code.3_4 != 0)
     goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
 
   <bb 14> :
-  Bctu_Ip_Deinit (0);
-  _6 = Adc_Sar_Ip_Deinit (0);
-  status_37 = (StatusType) _6;
-
-  <bb 15> :
-  if (status_37 != 0)
-    goto <bb 15>; [INV]
-  else
-    goto <bb 16>; [INV]
-
-  <bb 16> :
-  exit_code.4_7 ={v} exit_code;
-  if (exit_code.4_7 != 0)
-    goto <bb 17>; [INV]
-  else
-    goto <bb 18>; [INV]
-
-  <bb 17> :
-  goto <bb 19>; [INV]
-
-  <bb 18> :
   goto <bb 16>; [INV]
 
-  <bb 19> :
-  _38 ={v} exit_code;
+  <bb 15> :
+  goto <bb 13>; [INV]
 
-  <bb 20> :
-<L21>:
-  return _38;
+  <bb 16> :
+  _31 ={v} exit_code;
+
+  <bb 17> :
+<L15>:
+  return _31;
 
 }
 
 
 BctuWatermarkNotif ()
 {
-  uint8 idx;
   short unsigned int _1;
   short unsigned int data.1_2;
 
