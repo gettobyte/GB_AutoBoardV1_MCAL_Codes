@@ -30,24 +30,30 @@
 #define BCTU_USED_FIFO_IDX 0U
 #define BCTU_FIFO_WATERMARK 1U
 #define ADC_TOLERANCE(x,y) (((x > y) ? (x - y) : (y - x)) > 200U) /* Check that the data is within tolerated range */
+
 /* PIT instance used - 0 */
 #define PIT_INST_0 0U
 /* PIT Channel used - 0 */
 #define CH_0 0U
 /* PIT time-out period - equivalent to 1s */
-#define PIT_PERIOD 80000000
+#define PIT_PERIOD 20000
 
 volatile int exit_code = 0;
 volatile boolean notif_triggered = FALSE;
 
 volatile uint16 data;
+volatile uint32 pit_count = 0;
 
 extern void Adc_Sar_0_Isr(void);
 extern void Bctu_0_Isr(void);
 
 void Pit0ch0Notification(void)
 {
+	Adc_Sar_Ip_StartConversion(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
 
+	Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
+
+	pit_count++;
 }
 
 void AdcEndOfChainNotif(void)
@@ -68,7 +74,8 @@ void BctuWatermarkNotif(void)
 //    uint8 idx;
     notif_triggered = TRUE;
 	/* Checks the measured ADC data conversion */
-	while (data < 3500UL)
+    data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
+    while (data < 3000UL)
 	{
 		data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
 
@@ -98,13 +105,10 @@ int main(void)
 
     /* Install and enable interrupt handlers */
     IntCtrl_Ip_InstallHandler(ADC0_IRQn, Adc_Sar_0_Isr, NULL_PTR);
-
     IntCtrl_Ip_InstallHandler(BCTU_IRQn, Bctu_0_Isr, NULL_PTR);
-
     IntCtrl_Ip_InstallHandler(PIT0_IRQn, PIT_0_ISR, NULL_PTR);
 
     IntCtrl_Ip_EnableIrq(ADC0_IRQn);
-
     IntCtrl_Ip_EnableIrq(BCTU_IRQn);
     IntCtrl_Ip_EnableIrq(PIT0_IRQn);
 
@@ -144,8 +148,8 @@ int main(void)
 //    notif_triggered = FALSE;
 
     /* Start a SW triggered conversion on BCTU using a single trigger */
-//    Bctu_Ip_SetGlobalTriggerEn(BCTUHWUNIT_0_VS_0_INSTANCE, TRUE);
-//    Bctu_Ip_EnableNotifications(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_IP_NOTIF_FIFO1);
+    Bctu_Ip_SetGlobalTriggerEn(BCTUHWUNIT_0_VS_0_INSTANCE, TRUE);
+    Bctu_Ip_EnableNotifications(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_IP_NOTIF_FIFO1);
 //    Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
 
     /* Wait for the watermark notification to be triggered and then read the data */

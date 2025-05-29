@@ -15,7 +15,7 @@ Overall time estimate: 0.000000 weighted by profile: 0.000000
 Why inlining failed?
 Symbol table:
 
-BctuWatermarkNotif/3 (BctuWatermarkNotif) @06b6f7e0
+BctuWatermarkNotif/3 (BctuWatermarkNotif) @05f1b7e0
   Type: function
   Visibility: external public
   Address is taken.
@@ -25,21 +25,21 @@ BctuWatermarkNotif/3 (BctuWatermarkNotif) @06b6f7e0
   Function flags:
   Called by: 
   Calls: 
-BctuHwUnit_0_VS_0/2 (BctuHwUnit_0_VS_0) @06b6cea0
+BctuHwUnit_0_VS_0/2 (BctuHwUnit_0_VS_0) @05f18ea0
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: BctuHwUnit_0_aTrigConfigPB_VS_0/0 (addr) BctuHwUnit_0_aFifoConfigPB_VS_0/1 (addr) 
   Referring: 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-BctuHwUnit_0_aFifoConfigPB_VS_0/1 (BctuHwUnit_0_aFifoConfigPB_VS_0) @06b6cdc8
+BctuHwUnit_0_aFifoConfigPB_VS_0/1 (BctuHwUnit_0_aFifoConfigPB_VS_0) @05f18dc8
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: BctuWatermarkNotif/3 (addr) 
   Referring: BctuHwUnit_0_VS_0/2 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-BctuHwUnit_0_aTrigConfigPB_VS_0/0 (BctuHwUnit_0_aTrigConfigPB_VS_0) @06b6ccf0
+BctuHwUnit_0_aTrigConfigPB_VS_0/0 (BctuHwUnit_0_aTrigConfigPB_VS_0) @05f18cf0
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
