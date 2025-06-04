@@ -15,7 +15,10 @@
 #include "IntCtrl_Ip.h"
 #include "Adc_Sar_Ip.h"
 #include "Bctu_Ip.h"
-#include "Pit_Ip.h"
+//#include "Pit_Ip.h"
+#include "Emios_Mcl_Ip.h"
+#include "Siul2_Dio_Ip.h"
+#include "Siul2_Port_Ip.h"
 
 /* By default S32K342 boards will have 3.3V voltage reference selected while S32K312 and S32K344 will have 5V selected.
  * If you have S32K342 with default pin configuration or if you've manually selected 3.3V reference, please uncomment the following line: */
@@ -31,29 +34,38 @@
 #define BCTU_FIFO_WATERMARK 1U
 #define ADC_TOLERANCE(x,y) (((x > y) ? (x - y) : (y - x)) > 200U) /* Check that the data is within tolerated range */
 
-/* PIT instance used - 0 */
-#define PIT_INST_0 0U
-/* PIT Channel used - 0 */
-#define CH_0 0U
-/* PIT time-out period - equivalent to 1s */
-#define PIT_PERIOD 20000
+///* PIT instance used - 0 */
+//#define PIT_INST_0 0U
+///* PIT Channel used - 0 */
+//#define CH_0 0U
+///* PIT time-out period - equivalent to 1s */
+//#define PIT_PERIOD 20000
+
+/* eMIOS Instance Used - 0 */
+#define EMIOS_INST0           0U
 
 volatile int exit_code = 0;
 volatile boolean notif_triggered = FALSE;
 
 volatile uint16 data;
-volatile uint32 pit_count = 0;
+volatile uint32 eMIOS_count = 0;
 
 extern void Adc_Sar_0_Isr(void);
 extern void Bctu_0_Isr(void);
 
-void Pit0ch0Notification(void)
+//void Pit0ch0Notification(void)
+//{
+//	Adc_Sar_Ip_StartConversion(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
+//
+//	Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
+//
+//	pit_count++;
+//}
+
+void Check(void)
 {
-	Adc_Sar_Ip_StartConversion(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
-
-	Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
-
-	pit_count++;
+	eMIOS_count++;
+	Siul2_Dio_Ip_TogglePins(LED_PORT, (1 << LED_PIN));
 }
 
 void AdcEndOfChainNotif(void)
@@ -97,6 +109,8 @@ int main(void)
         clockStatus = Clock_Ip_Init(&Clock_Ip_aClockConfig[0]);
     }
 
+    Siul2_Port_Ip_Init(NUM_OF_CONFIGURED_PINS0, g_pin_mux_InitConfigArr0);
+
     Bctu_Ip_Init(BCTUHWUNIT_0_VS_0_INSTANCE, &BctuHwUnit_0_VS_0);
 
     status = (StatusType) Adc_Sar_Ip_Init(ADCHWUNIT_0_VS_0_INSTANCE, &AdcHwUnit_0_VS_0);
@@ -106,11 +120,11 @@ int main(void)
     /* Install and enable interrupt handlers */
     IntCtrl_Ip_InstallHandler(ADC0_IRQn, Adc_Sar_0_Isr, NULL_PTR);
     IntCtrl_Ip_InstallHandler(BCTU_IRQn, Bctu_0_Isr, NULL_PTR);
-    IntCtrl_Ip_InstallHandler(PIT0_IRQn, PIT_0_ISR, NULL_PTR);
+//    IntCtrl_Ip_InstallHandler(PIT0_IRQn, PIT_0_ISR, NULL_PTR);
 
     IntCtrl_Ip_EnableIrq(ADC0_IRQn);
     IntCtrl_Ip_EnableIrq(BCTU_IRQn);
-    IntCtrl_Ip_EnableIrq(PIT0_IRQn);
+//    IntCtrl_Ip_EnableIrq(PIT0_IRQn);
 
 
     /* Call Calibration function multiple times, to mitigate instability of board source */
@@ -125,13 +139,13 @@ int main(void)
 
     Adc_Sar_Ip_EnableNotifications(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_IP_NOTIF_FLAG_NORMAL_ENDCHAIN | ADC_SAR_IP_NOTIF_FLAG_INJECTED_ENDCHAIN);
 
-    Pit_Ip_Init(PIT_INST_0, &PIT_0_InitConfig_PB);
+//    Pit_Ip_Init(PIT_0_IP_INSTANCE_NUMBER, &PIT_0_InitConfig_PB);
 
-    Pit_Ip_InitChannel(PIT_INST_0, PIT_0_CH_0);
+//    Pit_Ip_InitChannel(PIT_INST_0, PIT_0_CH_0);
 
-    Pit_Ip_EnableChannelInterrupt(PIT_INST_0, CH_0);
+//    Pit_Ip_EnableChannelInterrupt(PIT_INST_0, CH_0);
 
-    Pit_Ip_StartChannel(PIT_INST_0, CH_0, PIT_PERIOD);
+//    Pit_Ip_StartChannel(PIT_INST_0, CH_0, PIT_PERIOD);
 
     /* Start a SW triggered normal conversion on ADC_SAR */
 //    Adc_Sar_Ip_StartConversion(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
@@ -159,6 +173,8 @@ int main(void)
 //    Bctu_Ip_Deinit(BCTUHWUNIT_0_VS_0_INSTANCE);
 //    status = (StatusType) Adc_Sar_Ip_Deinit(ADCHWUNIT_0_VS_0_INSTANCE);
 //    while (status != E_OK);
+
+    Emios_Mcl_Ip_Init(EMIOS_INST0, &Emios_Mcl_Ip_0_Config_VS_0);
 
     for(;;)
     {

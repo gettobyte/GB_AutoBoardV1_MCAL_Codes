@@ -25,16 +25,19 @@ C_SRCS += \
 ../RTD/src/Clock_Ip_Specific.c \
 ../RTD/src/Det.c \
 ../RTD/src/Det_stub.c \
+../RTD/src/Emios_Mcl_Ip.c \
+../RTD/src/Emios_Mcl_Ip_Irq.c \
 ../RTD/src/IntCtrl_Ip.c \
 ../RTD/src/OsIf_Interrupts.c \
 ../RTD/src/OsIf_Timer.c \
 ../RTD/src/OsIf_Timer_System.c \
 ../RTD/src/OsIf_Timer_System_Internal_Systick.c \
-../RTD/src/Pit_Ip.c \
 ../RTD/src/SchM_Adc.c \
-../RTD/src/SchM_Gpt.c \
+../RTD/src/SchM_Dio.c \
+../RTD/src/SchM_Mcl.c \
 ../RTD/src/SchM_Mcu.c \
 ../RTD/src/SchM_Port.c \
+../RTD/src/Siul2_Dio_Ip.c \
 ../RTD/src/Siul2_Port_Ip.c \
 ../RTD/src/Tspc_Port_Ip.c 
 
@@ -60,16 +63,19 @@ OBJS += \
 ./RTD/src/Clock_Ip_Specific.o \
 ./RTD/src/Det.o \
 ./RTD/src/Det_stub.o \
+./RTD/src/Emios_Mcl_Ip.o \
+./RTD/src/Emios_Mcl_Ip_Irq.o \
 ./RTD/src/IntCtrl_Ip.o \
 ./RTD/src/OsIf_Interrupts.o \
 ./RTD/src/OsIf_Timer.o \
 ./RTD/src/OsIf_Timer_System.o \
 ./RTD/src/OsIf_Timer_System_Internal_Systick.o \
-./RTD/src/Pit_Ip.o \
 ./RTD/src/SchM_Adc.o \
-./RTD/src/SchM_Gpt.o \
+./RTD/src/SchM_Dio.o \
+./RTD/src/SchM_Mcl.o \
 ./RTD/src/SchM_Mcu.o \
 ./RTD/src/SchM_Port.o \
+./RTD/src/Siul2_Dio_Ip.o \
 ./RTD/src/Siul2_Port_Ip.o \
 ./RTD/src/Tspc_Port_Ip.o 
 
@@ -95,16 +101,19 @@ C_DEPS += \
 ./RTD/src/Clock_Ip_Specific.d \
 ./RTD/src/Det.d \
 ./RTD/src/Det_stub.d \
+./RTD/src/Emios_Mcl_Ip.d \
+./RTD/src/Emios_Mcl_Ip_Irq.d \
 ./RTD/src/IntCtrl_Ip.d \
 ./RTD/src/OsIf_Interrupts.d \
 ./RTD/src/OsIf_Timer.d \
 ./RTD/src/OsIf_Timer_System.d \
 ./RTD/src/OsIf_Timer_System_Internal_Systick.d \
-./RTD/src/Pit_Ip.d \
 ./RTD/src/SchM_Adc.d \
-./RTD/src/SchM_Gpt.d \
+./RTD/src/SchM_Dio.d \
+./RTD/src/SchM_Mcl.d \
 ./RTD/src/SchM_Mcu.d \
 ./RTD/src/SchM_Port.d \
+./RTD/src/Siul2_Dio_Ip.d \
 ./RTD/src/Siul2_Port_Ip.d \
 ./RTD/src/Tspc_Port_Ip.d 
 

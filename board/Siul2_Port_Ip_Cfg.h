@@ -98,7 +98,21 @@ extern "C"{
 
 /*! @brief Definitions for BOARD_InitPins Functional Group */
 
-/*! @brief No pin was configured for this group or no need any configuration */
+/*! @brief User number of configured pins */
+#define NUM_OF_CONFIGURED_PINS0 1
+
+#define PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Port_MemMap.h"
+
+/*! @brief User configuration structure */
+extern const Siul2_Port_Ip_PinSettingsConfig g_pin_mux_InitConfigArr0[NUM_OF_CONFIGURED_PINS0];
+
+#define PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Port_MemMap.h"
+
+/*! @brief Defines for user pin and port configurations */
+#define LED_PIN                 15u
+#define LED_PORT                PTD_H_HALF
 
 /*==================================================================================================
                                            ENUMS

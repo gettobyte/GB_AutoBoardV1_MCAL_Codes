@@ -3,34 +3,35 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.7395;
+  int D.10158;
   <unnamed type> _1;
   <unnamed type> _2;
   unsigned char Index.3_3;
   int exit_code.4_4;
-  int _33;
+  int _29;
 
   <bb 2> :
   clockStatus_12 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
   goto <bb 4>; [INV]
 
   <bb 3> :
-  clockStatus_35 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  clockStatus_31 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
 
   <bb 4> :
-  # clockStatus_6 = PHI <clockStatus_12(2), clockStatus_35(3)>
+  # clockStatus_6 = PHI <clockStatus_12(2), clockStatus_31(3)>
   if (clockStatus_6 != 0)
     goto <bb 3>; [INV]
   else
     goto <bb 5>; [INV]
 
   <bb 5> :
+  Siul2_Port_Ip_Init (1, &g_pin_mux_InitConfigArr0);
   Bctu_Ip_Init (0, &BctuHwUnit_0_VS_0);
   _1 = Adc_Sar_Ip_Init (0, &AdcHwUnit_0_VS_0);
-  status_15 = (StatusType) _1;
+  status_16 = (StatusType) _1;
 
   <bb 6> :
-  if (status_15 != 0)
+  if (status_16 != 0)
     goto <bb 6>; [INV]
   else
     goto <bb 7>; [INV]
@@ -38,17 +39,15 @@ main ()
   <bb 7> :
   IntCtrl_Ip_InstallHandler (180, Adc_Sar_0_Isr, 0B);
   IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
-  IntCtrl_Ip_InstallHandler (96, PIT_0_ISR, 0B);
   IntCtrl_Ip_EnableIrq (180);
   IntCtrl_Ip_EnableIrq (87);
-  IntCtrl_Ip_EnableIrq (96);
-  Index_22 = 0;
+  Index_21 = 0;
   goto <bb 11>; [INV]
 
   <bb 8> :
   _2 = Adc_Sar_Ip_DoCalibration (0);
-  status_24 = (StatusType) _2;
-  if (status_24 == 0)
+  status_23 = (StatusType) _2;
+  if (status_23 == 0)
     goto <bb 9>; [INV]
   else
     goto <bb 10>; [INV]
@@ -58,10 +57,10 @@ main ()
 
   <bb 10> :
   Index.3_3 = Index_5;
-  Index_25 = Index.3_3 + 1;
+  Index_24 = Index.3_3 + 1;
 
   <bb 11> :
-  # Index_5 = PHI <Index_22(7), Index_25(10)>
+  # Index_5 = PHI <Index_21(7), Index_24(10)>
   if (Index_5 <= 5)
     goto <bb 8>; [INV]
   else
@@ -69,12 +68,9 @@ main ()
 
   <bb 12> :
   Adc_Sar_Ip_EnableNotifications (0, 5);
-  Pit_Ip_Init (0, &PIT_0_InitConfig_PB);
-  Pit_Ip_InitChannel (0, &PIT_0_ChannelConfig_PB[0]);
-  Pit_Ip_EnableChannelInterrupt (0, 0);
-  Pit_Ip_StartChannel (0, 0, 20000);
   Bctu_Ip_SetGlobalTriggerEn (0, 1);
   Bctu_Ip_EnableNotifications (0, 1);
+  Emios_Mcl_Ip_Init (0, &Emios_Mcl_Ip_0_Config_VS_0);
 
   <bb 13> :
   exit_code.4_4 ={v} exit_code;
@@ -90,11 +86,11 @@ main ()
   goto <bb 13>; [INV]
 
   <bb 16> :
-  _33 ={v} exit_code;
+  _29 ={v} exit_code;
 
   <bb 17> :
 <L15>:
-  return _33;
+  return _29;
 
 }
 
@@ -159,17 +155,16 @@ AdcEndOfChainNotif ()
 }
 
 
-Pit0ch0Notification ()
+Check ()
 {
-  long unsigned int pit_count.0_1;
+  long unsigned int eMIOS_count.0_1;
   long unsigned int _2;
 
   <bb 2> :
-  Adc_Sar_Ip_StartConversion (0, 0);
-  Bctu_Ip_SwTriggerConversion (0, 0);
-  pit_count.0_1 ={v} pit_count;
-  _2 = pit_count.0_1 + 1;
-  pit_count ={v} _2;
+  eMIOS_count.0_1 ={v} eMIOS_count;
+  _2 = eMIOS_count.0_1 + 1;
+  eMIOS_count ={v} _2;
+  Siul2_Dio_Ip_TogglePins (1076434700B, 32768);
   return;
 
 }

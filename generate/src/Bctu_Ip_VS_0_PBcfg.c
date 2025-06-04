@@ -102,7 +102,7 @@ static const Bctu_Ip_TrigConfigType BctuHwUnit_0_aTrigConfigPB_VS_0[1] =
         0U, /* TrigIndex - BCTU_EMIOS_0_0 */
         (boolean)FALSE, /* LoopEn */
         BCTU_IP_DATA_DEST_FIFO1, /* DataDest */
-        (boolean)FALSE, /* HwTriggersEn */
+        (boolean)TRUE, /* HwTriggersEn */
         BCTU_IP_TRIG_TYPE_SINGLE, /* TrigType */
         1U, /* AdcTargetMask */
         4U /* AdcChanOrListStart - Adc channel ID, because trigger is configured in single mode */
@@ -142,9 +142,9 @@ static const Bctu_Ip_FifoConfigType BctuHwUnit_0_aFifoConfigPB_VS_0[1] =
 const Bctu_Ip_ConfigType BctuHwUnit_0_VS_0 =
 {
     (boolean)FALSE, /* LowPowerModeEn */
-    (boolean)FALSE, /* GlobalHwTriggersEn */
+    (boolean)TRUE, /* GlobalHwTriggersEn */
     0U, /* NewDataDmaEnMask */
-    NULL_PTR, /* TriggerNotification */
+    Check, /* TriggerNotification */
     { { NULL_PTR, NULL_PTR, NULL_PTR }, { NULL_PTR, NULL_PTR, NULL_PTR }, { NULL_PTR, NULL_PTR, NULL_PTR } }, /* AdcNotifications */
     1U, /* NumTrigConfigs */
     BctuHwUnit_0_aTrigConfigPB_VS_0, /* TrigConfigs */

@@ -1,0 +1,1034 @@
+IPA summary for Emios_Mcl_Ip_GetCounterBusPeriod/14 is missing.
+IPA summary for Emios_Mcl_Ip_SetCounterBusPeriod/13 is missing.
+IPA summary for Emios_Mcl_Ip_ValidateChannel/12 is missing.
+IPA summary for Emios_Mcl_Ip_SetReloadInterval/11 is missing.
+IPA summary for Emios_Mcl_Ip_Deinit/10 is missing.
+IPA summary for Emios_Mcl_Ip_ComparatorTransferDisable/9 is missing.
+IPA summary for Emios_Mcl_Ip_ComparatorTransferEnable/8 is missing.
+IPA summary for Emios_Mcl_Ip_DisableChannel/7 is missing.
+IPA summary for Emios_Mcl_Ip_EnableChannel/6 is missing.
+IPA summary for Emios_Mcl_Ip_Init/5 is missing.
+IPA summary for DevAssert/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function not considered for inlining              :       21 calls, 21.000000 freq, 0 count
+IPA summary for Emios_Mcl_Ip_GetCounterBusPeriod/14 is missing.
+IPA summary for Emios_Mcl_Ip_SetCounterBusPeriod/13 is missing.
+IPA summary for Emios_Mcl_Ip_ValidateChannel/12 is missing.
+IPA summary for Emios_Mcl_Ip_SetReloadInterval/11 is missing.
+IPA summary for Emios_Mcl_Ip_Deinit/10 is missing.
+IPA summary for Emios_Mcl_Ip_ComparatorTransferDisable/9 is missing.
+IPA summary for Emios_Mcl_Ip_ComparatorTransferEnable/8 is missing.
+IPA summary for Emios_Mcl_Ip_DisableChannel/7 is missing.
+IPA summary for Emios_Mcl_Ip_EnableChannel/6 is missing.
+IPA summary for Emios_Mcl_Ip_Init/5 is missing.
+IPA summary for DevAssert/0 is missing.
+Symbol table:
+
+Emios_Mcl_Ip_GetCounterBusPeriod/14 (Emios_Mcl_Ip_GetCounterBusPeriod) @0711ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_ChPeriodMasterBus/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+Emios_Mcl_Ip_SetCounterBusPeriod/13 (Emios_Mcl_Ip_SetCounterBusPeriod) @0711a380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_axChState/3 (read) Emios_Ip_axChState/3 (read) Emios_Ip_paxBase/1 (read) Emios_Ip_ChPeriodMasterBus/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 DevAssert/0 
+Emios_Mcl_Ip_ValidateChannel/12 (Emios_Mcl_Ip_ValidateChannel) @0711ae00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_axChState/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+Emios_Mcl_Ip_SetReloadInterval/11 (Emios_Mcl_Ip_SetReloadInterval) @0711ab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_paxBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 DevAssert/0 
+Emios_Mcl_Ip_Deinit/10 (Emios_Mcl_Ip_Deinit) @0711a7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_paxBase/1 (read) Emios_Ip_axIpIsInitialized/2 (read) Emios_Ip_axChState/3 (read) Emios_Ip_paxBase/1 (read) Emios_Ip_paxBase/1 (read) Emios_Ip_paxBase/1 (read) Emios_Ip_paxBase/1 (read) Emios_Ip_paxBase/1 (read) Emios_Ip_ChPeriodMasterBus/4 (write) Emios_Ip_axChState/3 (write) Emios_Ip_axIpIsInitialized/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 
+Emios_Mcl_Ip_ComparatorTransferDisable/9 (Emios_Mcl_Ip_ComparatorTransferDisable) @0711a2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_paxBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+Emios_Mcl_Ip_ComparatorTransferEnable/8 (Emios_Mcl_Ip_ComparatorTransferEnable) @0711a000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_paxBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+Emios_Mcl_Ip_DisableChannel/7 (Emios_Mcl_Ip_DisableChannel) @06fdec40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_paxBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+Emios_Mcl_Ip_EnableChannel/6 (Emios_Mcl_Ip_EnableChannel) @06fdee00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_paxBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+Emios_Mcl_Ip_Init/5 (Emios_Mcl_Ip_Init) @06fdeb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Ip_paxBase/1 (read) Emios_Ip_axIpIsInitialized/2 (read) Emios_Ip_axChState/3 (write) Emios_Ip_axChState/3 (write) Emios_Ip_ChPeriodMasterBus/4 (write) Emios_Ip_axIpIsInitialized/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: DevAssert/0 DevAssert/0 
+Emios_Ip_ChPeriodMasterBus/4 (Emios_Ip_ChPeriodMasterBus) @06fe0048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Emios_Mcl_Ip_Deinit/10 (write) Emios_Mcl_Ip_SetCounterBusPeriod/13 (write) Emios_Mcl_Ip_Init/5 (write) Emios_Mcl_Ip_GetCounterBusPeriod/14 (read) 
+  Availability: available
+  Varpool flags:
+Emios_Ip_axChState/3 (Emios_Ip_axChState) @06fd6f78
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Emios_Mcl_Ip_Init/5 (write) Emios_Mcl_Ip_Deinit/10 (write) Emios_Mcl_Ip_Deinit/10 (read) Emios_Mcl_Ip_ValidateChannel/12 (read) Emios_Mcl_Ip_Init/5 (write) Emios_Mcl_Ip_SetCounterBusPeriod/13 (read) Emios_Mcl_Ip_SetCounterBusPeriod/13 (read) 
+  Availability: available
+  Varpool flags:
+Emios_Ip_axIpIsInitialized/2 (Emios_Ip_axIpIsInitialized) @06fd6ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Emios_Mcl_Ip_Init/5 (read) Emios_Mcl_Ip_Init/5 (write) Emios_Mcl_Ip_Deinit/10 (read) Emios_Mcl_Ip_Deinit/10 (write) 
+  Availability: available
+  Varpool flags:
+Emios_Ip_paxBase/1 (Emios_Ip_paxBase) @06fd6e58
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Mcl_Ip_Deinit/10 (read) Emios_Mcl_Ip_SetReloadInterval/11 (read) Emios_Mcl_Ip_Init/5 (read) Emios_Mcl_Ip_EnableChannel/6 (read) Emios_Mcl_Ip_DisableChannel/7 (read) Emios_Mcl_Ip_ComparatorTransferDisable/9 (read) Emios_Mcl_Ip_ComparatorTransferEnable/8 (read) Emios_Mcl_Ip_Deinit/10 (read) Emios_Mcl_Ip_Deinit/10 (read) Emios_Mcl_Ip_Deinit/10 (read) Emios_Mcl_Ip_Deinit/10 (read) Emios_Mcl_Ip_Deinit/10 (read) Emios_Mcl_Ip_SetCounterBusPeriod/13 (read) 
+  Availability: available
+  Varpool flags: initialized
+DevAssert/0 (DevAssert) @06fd8000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Mcl_Ip_GetCounterBusPeriod/14 Emios_Mcl_Ip_GetCounterBusPeriod/14 Emios_Mcl_Ip_SetCounterBusPeriod/13 Emios_Mcl_Ip_SetCounterBusPeriod/13 Emios_Mcl_Ip_SetCounterBusPeriod/13 Emios_Mcl_Ip_ValidateChannel/12 Emios_Mcl_Ip_ValidateChannel/12 Emios_Mcl_Ip_SetReloadInterval/11 Emios_Mcl_Ip_SetReloadInterval/11 Emios_Mcl_Ip_SetReloadInterval/11 Emios_Mcl_Ip_Deinit/10 Emios_Mcl_Ip_ComparatorTransferDisable/9 Emios_Mcl_Ip_ComparatorTransferDisable/9 Emios_Mcl_Ip_ComparatorTransferEnable/8 Emios_Mcl_Ip_ComparatorTransferEnable/8 Emios_Mcl_Ip_DisableChannel/7 Emios_Mcl_Ip_DisableChannel/7 Emios_Mcl_Ip_EnableChannel/6 Emios_Mcl_Ip_EnableChannel/6 Emios_Mcl_Ip_Init/5 Emios_Mcl_Ip_Init/5 
+  Calls: 
+
+;; Function DevAssert (DevAssert, funcdef_no=0, decl_uid=9045, cgraph_uid=1, symbol_order=0)
+
+DevAssert (volatile boolean x)
+{
+  _Bool x.1_1;
+
+  <bb 2> :
+  x.1_1 ={v} x;
+  if (x.1_1 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  return;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_Init (Emios_Mcl_Ip_Init, funcdef_no=1, decl_uid=9064, cgraph_uid=2, symbol_order=5)
+
+Emios_Mcl_Ip_Init (uint8 Instance, const struct Emios_Mcl_Ip_ConfigType * const ConfigPtr)
+{
+  Emios_Ip_CommonStatusType Status;
+  struct eMIOS_Type * Base;
+  uint8 CurrentChannel;
+  Emios_Ip_CommonStatusType D.9159;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  int _4;
+  _Bool _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  const struct Emios_Ip_GlobalConfigType * _8;
+  unsigned char _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  const struct Emios_Ip_GlobalConfigType * _13;
+  _Bool _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  const struct Emios_Ip_GlobalConfigType * _19;
+  _Bool _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _25;
+  int _26;
+  _Bool _27;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _28;
+  int _29;
+  unsigned char _30;
+  int _31;
+  long unsigned int _32;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _33;
+  int _34;
+  unsigned char _35;
+  int _36;
+  long unsigned int _37;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _38;
+  int _39;
+  unsigned char _40;
+  int _41;
+  long unsigned int _42;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _43;
+  int _44;
+  unsigned char _45;
+  long unsigned int _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _49;
+  int _50;
+  unsigned char _51;
+  int _52;
+  long unsigned int _53;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _54;
+  int _55;
+  <unnamed type> _56;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _57;
+  int _58;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _59;
+  int _60;
+  unsigned char _61;
+  int _62;
+  long unsigned int _63;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _64;
+  int _65;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _66;
+  int _67;
+  unsigned char _68;
+  int _69;
+  long unsigned int _70;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _71;
+  int _72;
+  unsigned char _73;
+  int _74;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _75;
+  int _76;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _77;
+  int _78;
+  unsigned char _79;
+  int _80;
+  long unsigned int _81;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _82;
+  int _83;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _84;
+  int _85;
+  unsigned char _86;
+  int _87;
+  long unsigned int _88;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _89;
+  int _90;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _91;
+  int _92;
+  unsigned char _93;
+  int _94;
+  long unsigned int _95;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _96;
+  int _97;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _98;
+  int _99;
+  unsigned char _100;
+  int _101;
+  long unsigned int _102;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _103;
+  int _104;
+  unsigned char _105;
+  int _106;
+  long unsigned int _107;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _108;
+  int _109;
+  <unnamed type> _110;
+  long unsigned int _111;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _112;
+  int _113;
+  unsigned char _114;
+  int _115;
+  long unsigned int _116;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _117;
+  int _118;
+  unsigned char _119;
+  int _120;
+  long unsigned int _121;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _122;
+  int _123;
+  unsigned char _124;
+  int _125;
+  long unsigned int _126;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _127;
+  int _128;
+  int _129;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _130;
+  int _131;
+  unsigned char _132;
+  int _133;
+  <unnamed type> _134;
+  int _135;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _136;
+  int _137;
+  unsigned char _138;
+  int _139;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _140;
+  int _141;
+  long unsigned int _142;
+  int _143;
+  const struct Emios_Ip_MasterBusConfigType[<unknown>] * _144;
+  int _145;
+  unsigned char _146;
+  int _147;
+  short unsigned int _148;
+  unsigned char CurrentChannel.0_149;
+  unsigned char _150;
+  int _151;
+  long unsigned int _152;
+  long unsigned int _153;
+  Emios_Ip_CommonStatusType _188;
+
+  <bb 2> :
+  _1 = Instance_160(D) <= 2;
+  DevAssert (_1);
+  _2 = ConfigPtr_163(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_160(D);
+  Base_165 = Emios_Ip_paxBase[_3];
+  Status_166 = 0;
+  _4 = (int) Instance_160(D);
+  _5 = Emios_Ip_axIpIsInitialized[_4].instanceInitState;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status_186 = 1;
+  goto <bb 17>; [INV]
+
+  <bb 4> :
+  _6 ={v} Base_165->MCR;
+  _7 = _6 & 4227858431;
+  Base_165->MCR ={v} _7;
+  _8 = ConfigPtr_163(D)->emiosGlobalConfig;
+  _9 = _8->clkDivVal;
+  _10 = (long unsigned int) _9;
+  _11 = _10 << 8;
+  _12 = _11 & 65535;
+  _13 = ConfigPtr_163(D)->emiosGlobalConfig;
+  _14 = _13->allowDebugMode;
+  _15 = (long unsigned int) _14;
+  _16 = _15 << 29;
+  _17 = _16 & 536870912;
+  _18 = _12 | _17;
+  _19 = ConfigPtr_163(D)->emiosGlobalConfig;
+  _20 = _19->enableGlobalTimeBase;
+  _21 = (long unsigned int) _20;
+  _22 = _21 << 28;
+  _23 = _22 & 268435456;
+  _24 = _18 | _23;
+  Base_165->MCR ={v} _24;
+  CurrentChannel_169 = 0;
+  goto <bb 15>; [INV]
+
+  <bb 5> :
+  _25 = ConfigPtr_163(D)->masterBusConfig;
+  _26 = (int) CurrentChannel_154;
+  _27 = (*_25)[_26].allowDebugMode;
+  if (_27 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _28 = ConfigPtr_163(D)->masterBusConfig;
+  _29 = (int) CurrentChannel_154;
+  _30 = (*_28)[_29].hwChannel;
+  _31 = (int) _30;
+  _32 ={v} Base_165->CH.UC[_31].C;
+  _33 = ConfigPtr_163(D)->masterBusConfig;
+  _34 = (int) CurrentChannel_154;
+  _35 = (*_33)[_34].hwChannel;
+  _36 = (int) _35;
+  _37 = _32 | 2147483648;
+  Base_165->CH.UC[_36].C ={v} _37;
+
+  <bb 7> :
+  _38 = ConfigPtr_163(D)->masterBusConfig;
+  _39 = (int) CurrentChannel_154;
+  _40 = (*_38)[_39].hwChannel;
+  _41 = (int) _40;
+  _42 ={v} Base_165->CH.UC[_41].C2;
+  _43 = ConfigPtr_163(D)->masterBusConfig;
+  _44 = (int) CurrentChannel_154;
+  _45 = (*_43)[_44].masterBusPrescaler;
+  _46 = (long unsigned int) _45;
+  _47 = _46 << 16;
+  _48 = _47 & 983040;
+  _49 = ConfigPtr_163(D)->masterBusConfig;
+  _50 = (int) CurrentChannel_154;
+  _51 = (*_49)[_50].hwChannel;
+  _52 = (int) _51;
+  _53 = _42 | _48;
+  Base_165->CH.UC[_52].C2 ={v} _53;
+  _54 = ConfigPtr_163(D)->masterBusConfig;
+  _55 = (int) CurrentChannel_154;
+  _56 = (*_54)[_55].masterMode;
+  switch (_56) <default: <L10> [INV], case 16: <L5> [INV], case 18: <L6> [INV], case 20: <L7> [INV], case 80: <L8> [INV], case 84: <L9> [INV]>
+
+  <bb 8> :
+<L5>:
+  _57 = ConfigPtr_163(D)->masterBusConfig;
+  _58 = (int) CurrentChannel_154;
+  _59 = ConfigPtr_163(D)->masterBusConfig;
+  _60 = (int) CurrentChannel_154;
+  _61 = (*_59)[_60].hwChannel;
+  _62 = (int) _61;
+  _63 = (*_57)[_58].defaultPeriod;
+  Base_165->CH.UC[_62].A ={v} _63;
+  goto <bb 14>; [INV]
+
+  <bb 9> :
+<L6>:
+  _64 = ConfigPtr_163(D)->masterBusConfig;
+  _65 = (int) CurrentChannel_154;
+  _66 = ConfigPtr_163(D)->masterBusConfig;
+  _67 = (int) CurrentChannel_154;
+  _68 = (*_66)[_67].hwChannel;
+  _69 = (int) _68;
+  _70 = (*_64)[_65].defaultPeriod;
+  Base_165->CH.UC[_69].A ={v} _70;
+  goto <bb 14>; [INV]
+
+  <bb 10> :
+<L7>:
+  _71 = ConfigPtr_163(D)->masterBusConfig;
+  _72 = (int) CurrentChannel_154;
+  _73 = (*_71)[_72].hwChannel;
+  _74 = (int) _73;
+  Base_165->CH.UC[_74].B ={v} 0;
+  _75 = ConfigPtr_163(D)->masterBusConfig;
+  _76 = (int) CurrentChannel_154;
+  _77 = ConfigPtr_163(D)->masterBusConfig;
+  _78 = (int) CurrentChannel_154;
+  _79 = (*_77)[_78].hwChannel;
+  _80 = (int) _79;
+  _81 = (*_75)[_76].defaultPeriod;
+  Base_165->CH.UC[_80].A ={v} _81;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+<L8>:
+  _82 = ConfigPtr_163(D)->masterBusConfig;
+  _83 = (int) CurrentChannel_154;
+  _84 = ConfigPtr_163(D)->masterBusConfig;
+  _85 = (int) CurrentChannel_154;
+  _86 = (*_84)[_85].hwChannel;
+  _87 = (int) _86;
+  _88 = (*_82)[_83].defaultPeriod;
+  Base_165->CH.UC[_87].A ={v} _88;
+  goto <bb 14>; [INV]
+
+  <bb 12> :
+<L9>:
+  _89 = ConfigPtr_163(D)->masterBusConfig;
+  _90 = (int) CurrentChannel_154;
+  _91 = ConfigPtr_163(D)->masterBusConfig;
+  _92 = (int) CurrentChannel_154;
+  _93 = (*_91)[_92].hwChannel;
+  _94 = (int) _93;
+  _95 = (*_89)[_90].defaultPeriod;
+  Base_165->CH.UC[_94].A ={v} _95;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+<L10>:
+
+  <bb 14> :
+  _96 = ConfigPtr_163(D)->masterBusConfig;
+  _97 = (int) CurrentChannel_154;
+  _98 = ConfigPtr_163(D)->masterBusConfig;
+  _99 = (int) CurrentChannel_154;
+  _100 = (*_98)[_99].hwChannel;
+  _101 = (int) _100;
+  _102 = (*_96)[_97].offsetStartValue;
+  Base_165->CH.UC[_101].CNT ={v} _102;
+  _103 = ConfigPtr_163(D)->masterBusConfig;
+  _104 = (int) CurrentChannel_154;
+  _105 = (*_103)[_104].hwChannel;
+  _106 = (int) _105;
+  _107 ={v} Base_165->CH.UC[_106].C;
+  _108 = ConfigPtr_163(D)->masterBusConfig;
+  _109 = (int) CurrentChannel_154;
+  _110 = (*_108)[_109].masterMode;
+  _111 = _110 & 127;
+  _112 = ConfigPtr_163(D)->masterBusConfig;
+  _113 = (int) CurrentChannel_154;
+  _114 = (*_112)[_113].hwChannel;
+  _115 = (int) _114;
+  _116 = _107 | _111;
+  Base_165->CH.UC[_115].C ={v} _116;
+  _117 = ConfigPtr_163(D)->masterBusConfig;
+  _118 = (int) CurrentChannel_154;
+  _119 = (*_117)[_118].hwChannel;
+  _120 = (int) _119;
+  _121 ={v} Base_165->CH.UC[_120].C;
+  _122 = ConfigPtr_163(D)->masterBusConfig;
+  _123 = (int) CurrentChannel_154;
+  _124 = (*_122)[_123].hwChannel;
+  _125 = (int) _124;
+  _126 = _121 | 33554432;
+  Base_165->CH.UC[_125].C ={v} _126;
+  _127 = ConfigPtr_163(D)->masterBusConfig;
+  _128 = (int) CurrentChannel_154;
+  _129 = (int) Instance_160(D);
+  _130 = ConfigPtr_163(D)->masterBusConfig;
+  _131 = (int) CurrentChannel_154;
+  _132 = (*_130)[_131].hwChannel;
+  _133 = (int) _132;
+  _134 = (*_127)[_128].masterMode;
+  Emios_Ip_axChState[_129][_133].counterMode = _134;
+  _135 = (int) Instance_160(D);
+  _136 = ConfigPtr_163(D)->masterBusConfig;
+  _137 = (int) CurrentChannel_154;
+  _138 = (*_136)[_137].hwChannel;
+  _139 = (int) _138;
+  Emios_Ip_axChState[_135][_139].channelInitState = 1;
+  _140 = ConfigPtr_163(D)->masterBusConfig;
+  _141 = (int) CurrentChannel_154;
+  _142 = (*_140)[_141].defaultPeriod;
+  _143 = (int) Instance_160(D);
+  _144 = ConfigPtr_163(D)->masterBusConfig;
+  _145 = (int) CurrentChannel_154;
+  _146 = (*_144)[_145].hwChannel;
+  _147 = (int) _146;
+  _148 = (short unsigned int) _142;
+  Emios_Ip_ChPeriodMasterBus[_143][_147] = _148;
+  CurrentChannel.0_149 = CurrentChannel_154;
+  CurrentChannel_185 = CurrentChannel.0_149 + 1;
+
+  <bb 15> :
+  # CurrentChannel_154 = PHI <CurrentChannel_169(4), CurrentChannel_185(14)>
+  _150 = ConfigPtr_163(D)->channelsNumber;
+  if (CurrentChannel_154 < _150)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  _151 = (int) Instance_160(D);
+  Emios_Ip_axIpIsInitialized[_151].instanceInitState = 1;
+
+  <bb 17> :
+  # Status_155 = PHI <Status_186(3), Status_166(16)>
+  _152 ={v} Base_165->MCR;
+  _153 = _152 | 67108864;
+  Base_165->MCR ={v} _153;
+  _188 = Status_155;
+
+  <bb 18> :
+<L15>:
+  return _188;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_EnableChannel (Emios_Mcl_Ip_EnableChannel, funcdef_no=2, decl_uid=9050, cgraph_uid=3, symbol_order=6)
+
+Emios_Mcl_Ip_EnableChannel (uint8 Instance, uint8 HwChannel)
+{
+  struct eMIOS_Type * Base;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+
+  <bb 2> :
+  _1 = Instance_9(D) <= 2;
+  DevAssert (_1);
+  _2 = HwChannel_12(D) <= 23;
+  DevAssert (_2);
+  _3 = (int) Instance_9(D);
+  Base_14 = Emios_Ip_paxBase[_3];
+  _4 ={v} Base_14->UCDIS;
+  _5 = (long unsigned int) HwChannel_12(D);
+  _6 = 1 << _5;
+  _7 = ~_6;
+  _8 = _4 & _7;
+  Base_14->UCDIS ={v} _8;
+  return;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_DisableChannel (Emios_Mcl_Ip_DisableChannel, funcdef_no=3, decl_uid=9053, cgraph_uid=4, symbol_order=7)
+
+Emios_Mcl_Ip_DisableChannel (uint8 Instance, uint8 HwChannel)
+{
+  struct eMIOS_Type * Base;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  _1 = Instance_8(D) <= 2;
+  DevAssert (_1);
+  _2 = HwChannel_11(D) <= 23;
+  DevAssert (_2);
+  _3 = (int) Instance_8(D);
+  Base_13 = Emios_Ip_paxBase[_3];
+  _4 ={v} Base_13->UCDIS;
+  _5 = (long unsigned int) HwChannel_11(D);
+  _6 = 1 << _5;
+  _7 = _4 | _6;
+  Base_13->UCDIS ={v} _7;
+  return;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_ComparatorTransferEnable (Emios_Mcl_Ip_ComparatorTransferEnable, funcdef_no=4, decl_uid=9056, cgraph_uid=5, symbol_order=8)
+
+Emios_Mcl_Ip_ComparatorTransferEnable (uint8 Instance, uint32 ChannelMask)
+{
+  struct eMIOS_Type * Base;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 = Instance_7(D) <= 2;
+  DevAssert (_1);
+  _2 = ChannelMask_10(D) <= 16777214;
+  DevAssert (_2);
+  _3 = (int) Instance_7(D);
+  Base_12 = Emios_Ip_paxBase[_3];
+  _4 ={v} Base_12->OUDIS;
+  _5 = ~ChannelMask_10(D);
+  _6 = _4 & _5;
+  Base_12->OUDIS ={v} _6;
+  return;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_ComparatorTransferDisable (Emios_Mcl_Ip_ComparatorTransferDisable, funcdef_no=5, decl_uid=9059, cgraph_uid=6, symbol_order=9)
+
+Emios_Mcl_Ip_ComparatorTransferDisable (uint8 Instance, uint32 ChannelMask)
+{
+  struct eMIOS_Type * Base;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+
+  <bb 2> :
+  _1 = Instance_6(D) <= 2;
+  DevAssert (_1);
+  _2 = ChannelMask_9(D) <= 16777214;
+  DevAssert (_2);
+  _3 = (int) Instance_6(D);
+  Base_11 = Emios_Ip_paxBase[_3];
+  _4 ={v} Base_11->OUDIS;
+  _5 = ChannelMask_9(D) | _4;
+  Base_11->OUDIS ={v} _5;
+  return;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_Deinit (Emios_Mcl_Ip_Deinit, funcdef_no=6, decl_uid=9061, cgraph_uid=7, symbol_order=10)
+
+Emios_Mcl_Ip_Deinit (uint8 Instance)
+{
+  struct eMIOS_Type * Base;
+  Emios_Ip_CommonStatusType Status;
+  uint8 CurrentChannel;
+  Emios_Ip_CommonStatusType D.9169;
+  _Bool _1;
+  int _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  int _9;
+  _Bool _10;
+  int _11;
+  struct eMIOS_Type * _12;
+  int _13;
+  int _14;
+  struct eMIOS_Type * _15;
+  int _16;
+  int _17;
+  struct eMIOS_Type * _18;
+  int _19;
+  int _20;
+  struct eMIOS_Type * _21;
+  int _22;
+  struct eMIOS_Type * _23;
+  long unsigned int _24;
+  int _25;
+  int _26;
+  int _27;
+  int _28;
+  unsigned char CurrentChannel.2_29;
+  int _30;
+  Emios_Ip_CommonStatusType _53;
+
+  <bb 2> :
+  _1 = Instance_36(D) <= 2;
+  DevAssert (_1);
+  Status_39 = 0;
+  _2 = (int) Instance_36(D);
+  Base_40 = Emios_Ip_paxBase[_2];
+  _3 = (int) Instance_36(D);
+  _4 = Emios_Ip_axIpIsInitialized[_3].instanceInitState;
+  _5 = ~_4;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status_52 = 1;
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  _6 ={v} Base_40->MCR;
+  _7 = _6 & 4227858431;
+  Base_40->MCR ={v} _7;
+  Base_40->MCR ={v} 0;
+  CurrentChannel_43 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _8 = (int) Instance_36(D);
+  _9 = (int) CurrentChannel_31;
+  _10 = Emios_Ip_axChState[_8][_9].channelInitState;
+  if (_10 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _11 = (int) Instance_36(D);
+  _12 = Emios_Ip_paxBase[_11];
+  _13 = (int) CurrentChannel_31;
+  _12->CH.UC[_13].C ={v} 0;
+  _14 = (int) Instance_36(D);
+  _15 = Emios_Ip_paxBase[_14];
+  _16 = (int) CurrentChannel_31;
+  _15->CH.UC[_16].A ={v} 0;
+  _17 = (int) Instance_36(D);
+  _18 = Emios_Ip_paxBase[_17];
+  _19 = (int) CurrentChannel_31;
+  _18->CH.UC[_19].B ={v} 0;
+  _20 = (int) Instance_36(D);
+  _21 = Emios_Ip_paxBase[_20];
+  _22 = (int) Instance_36(D);
+  _23 = Emios_Ip_paxBase[_22];
+  _24 ={v} _21->UCDIS;
+  _23->UCDIS ={v} _24;
+  _25 = (int) Instance_36(D);
+  _26 = (int) CurrentChannel_31;
+  Emios_Ip_ChPeriodMasterBus[_25][_26] = 0;
+  _27 = (int) Instance_36(D);
+  _28 = (int) CurrentChannel_31;
+  Emios_Ip_axChState[_27][_28].channelInitState = 0;
+
+  <bb 7> :
+  CurrentChannel.2_29 = CurrentChannel_31;
+  CurrentChannel_51 = CurrentChannel.2_29 + 1;
+
+  <bb 8> :
+  # CurrentChannel_31 = PHI <CurrentChannel_43(4), CurrentChannel_51(7)>
+  if (CurrentChannel_31 <= 23)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _30 = (int) Instance_36(D);
+  Emios_Ip_axIpIsInitialized[_30].instanceInitState = 0;
+
+  <bb 10> :
+  # Status_32 = PHI <Status_52(3), Status_39(9)>
+  _53 = Status_32;
+
+  <bb 11> :
+<L8>:
+  return _53;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_SetReloadInterval (Emios_Mcl_Ip_SetReloadInterval, funcdef_no=7, decl_uid=9068, cgraph_uid=8, symbol_order=11)
+
+Emios_Mcl_Ip_SetReloadInterval (uint8 HwInstance, uint8 HwChannel, uint8 Interval)
+{
+  _Bool _1;
+  _Bool _2;
+  _Bool _3;
+  long unsigned int _4;
+  int _5;
+  struct eMIOS_Type * _6;
+  int _7;
+  long unsigned int _8;
+
+  <bb 2> :
+  _1 = Interval_9(D) <= 30;
+  DevAssert (_1);
+  _2 = HwInstance_12(D) <= 2;
+  DevAssert (_2);
+  _3 = HwChannel_14(D) <= 23;
+  DevAssert (_3);
+  _4 = (long unsigned int) Interval_9(D);
+  _5 = (int) HwInstance_12(D);
+  _6 = Emios_Ip_paxBase[_5];
+  _7 = (int) HwChannel_14(D);
+  _8 = _4 & 31;
+  _6->CH.UC[_7].C2 ={v} _8;
+  return;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_ValidateChannel (Emios_Mcl_Ip_ValidateChannel, funcdef_no=8, decl_uid=9071, cgraph_uid=9, symbol_order=12)
+
+Emios_Mcl_Ip_ValidateChannel (uint8 HwInstance, uint8 HwChannel)
+{
+  boolean Valid;
+  boolean D.9173;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  int _4;
+  _Bool _5;
+  boolean _14;
+
+  <bb 2> :
+  _1 = HwInstance_7(D) <= 2;
+  DevAssert (_1);
+  _2 = HwChannel_10(D) <= 23;
+  DevAssert (_2);
+  Valid_12 = 0;
+  _3 = (int) HwInstance_7(D);
+  _4 = (int) HwChannel_10(D);
+  _5 = Emios_Ip_axChState[_3][_4].channelInitState;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Valid_13 = 1;
+
+  <bb 4> :
+  # Valid_6 = PHI <Valid_12(2), Valid_13(3)>
+  _14 = Valid_6;
+
+  <bb 5> :
+<L2>:
+  return _14;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_SetCounterBusPeriod (Emios_Mcl_Ip_SetCounterBusPeriod, funcdef_no=9, decl_uid=9075, cgraph_uid=10, symbol_order=13)
+
+Emios_Mcl_Ip_SetCounterBusPeriod (uint8 HwInstance, uint8 HwChannel, uint16 Period)
+{
+  Emios_Ip_CommonStatusType Status;
+  Emios_Ip_CommonStatusType D.9180;
+  _Bool _1;
+  _Bool _2;
+  _Bool _3;
+  int _4;
+  int _5;
+  <unnamed type> _6;
+  int _7;
+  int _8;
+  <unnamed type> _9;
+  int _10;
+  struct eMIOS_Type * _11;
+  int _12;
+  long unsigned int _13;
+  int _14;
+  int _15;
+  Emios_Ip_CommonStatusType _30;
+
+  <bb 2> :
+  _1 = Period_18(D) != 65535;
+  DevAssert (_1);
+  _2 = HwInstance_21(D) <= 2;
+  DevAssert (_2);
+  _3 = HwChannel_23(D) <= 23;
+  DevAssert (_3);
+  Status_25 = 1;
+  _4 = (int) HwInstance_21(D);
+  _5 = (int) HwChannel_23(D);
+  _6 = Emios_Ip_axChState[_4][_5].counterMode;
+  if (_6 == 80)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _7 = (int) HwInstance_21(D);
+  _8 = (int) HwChannel_23(D);
+  _9 = Emios_Ip_axChState[_7][_8].counterMode;
+  if (_9 == 84)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  if (Period_18(D) == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Status_26 = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _10 = (int) HwInstance_21(D);
+  _11 = Emios_Ip_paxBase[_10];
+  _12 = (int) HwChannel_23(D);
+  _13 = (long unsigned int) Period_18(D);
+  _11->CH.UC[_12].A ={v} _13;
+  _14 = (int) HwInstance_21(D);
+  _15 = (int) HwChannel_23(D);
+  Emios_Ip_ChPeriodMasterBus[_14][_15] = Period_18(D);
+  Status_29 = 0;
+
+  <bb 7> :
+  # Status_16 = PHI <Status_26(5), Status_29(6)>
+  _30 = Status_16;
+
+  <bb 8> :
+<L5>:
+  return _30;
+
+}
+
+
+
+;; Function Emios_Mcl_Ip_GetCounterBusPeriod (Emios_Mcl_Ip_GetCounterBusPeriod, funcdef_no=10, decl_uid=9078, cgraph_uid=11, symbol_order=14)
+
+Emios_Mcl_Ip_GetCounterBusPeriod (uint8 Instance, uint8 Channel)
+{
+  uint16 PeriodCounterBus;
+  uint16 D.9182;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  int _4;
+  uint16 _11;
+
+  <bb 2> :
+  _1 = Instance_5(D) <= 2;
+  DevAssert (_1);
+  _2 = Channel_8(D) <= 23;
+  DevAssert (_2);
+  _3 = (int) Instance_5(D);
+  _4 = (int) Channel_8(D);
+  PeriodCounterBus_10 = Emios_Ip_ChPeriodMasterBus[_3][_4];
+  _11 = PeriodCounterBus_10;
+
+  <bb 3> :
+<L0>:
+  return _11;
+
+}
+
+

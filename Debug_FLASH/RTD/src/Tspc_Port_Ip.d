@@ -17,6 +17,7 @@ RTD/src/Tspc_Port_Ip.o: ../RTD/src/Tspc_Port_Ip.c \
  ../RTD/include/Siul2_Port_Ip_Types.h \
  C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Siul2_Port_Ip_Defines.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_DCM_GPR.h \
+ D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Port_MemMap.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Devassert.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Mcal.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/StandardTypes.h \
@@ -27,7 +28,6 @@ RTD/src/Tspc_Port_Ip.o: ../RTD/src/Tspc_Port_Ip.c \
  C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/OsIf_Cfg.h \
  C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/OsIf_ArchCfg.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_SYSTICK.h \
- D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Port_MemMap.h \
  ../RTD/include/SchM_Port.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Rte_MemMap.h
 ../RTD/include/Tspc_Port_Ip.h:
@@ -48,6 +48,7 @@ D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D22
 ../RTD/include/Siul2_Port_Ip_Types.h:
 C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Siul2_Port_Ip_Defines.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_DCM_GPR.h:
+D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Port_MemMap.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Devassert.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Mcal.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/StandardTypes.h:
@@ -58,6 +59,5 @@ D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D22
 C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/OsIf_Cfg.h:
 C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/OsIf_ArchCfg.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_SYSTICK.h:
-D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Port_MemMap.h:
 ../RTD/include/SchM_Port.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Rte_MemMap.h:

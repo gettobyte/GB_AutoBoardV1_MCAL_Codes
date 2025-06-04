@@ -1,0 +1,579 @@
+Emios_Mcl_Ip_GetCounterBusPeriod (uint8 Instance, uint8 Channel)
+{
+  uint16 PeriodCounterBus;
+  uint16 D.9182;
+
+  <bb 2> :
+  _1 = Instance <= 2;
+  DevAssert (_1);
+  _2 = Channel <= 23;
+  DevAssert (_2);
+  _3 = (int) Instance;
+  _4 = (int) Channel;
+  PeriodCounterBus = Emios_Ip_ChPeriodMasterBus[_3][_4];
+  D.9182 = PeriodCounterBus;
+
+  <bb 3> :
+<L0>:
+  return D.9182;
+
+}
+
+
+Emios_Mcl_Ip_SetCounterBusPeriod (uint8 HwInstance, uint8 HwChannel, uint16 Period)
+{
+  Emios_Ip_CommonStatusType Status;
+  Emios_Ip_CommonStatusType D.9180;
+
+  <bb 2> :
+  _1 = Period != 65535;
+  DevAssert (_1);
+  _2 = HwInstance <= 2;
+  DevAssert (_2);
+  _3 = HwChannel <= 23;
+  DevAssert (_3);
+  Status = 1;
+  _4 = (int) HwInstance;
+  _5 = (int) HwChannel;
+  _6 = Emios_Ip_axChState[_4][_5].counterMode;
+  if (_6 == 80)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _7 = (int) HwInstance;
+  _8 = (int) HwChannel;
+  _9 = Emios_Ip_axChState[_7][_8].counterMode;
+  if (_9 == 84)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  if (Period == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Status = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _10 = (int) HwInstance;
+  _11 = Emios_Ip_paxBase[_10];
+  _12 = (int) HwChannel;
+  _13 = (long unsigned int) Period;
+  _11->CH.UC[_12].A = _13;
+  _14 = (int) HwInstance;
+  _15 = (int) HwChannel;
+  Emios_Ip_ChPeriodMasterBus[_14][_15] = Period;
+  Status = 0;
+
+  <bb 7> :
+  D.9180 = Status;
+
+  <bb 8> :
+<L5>:
+  return D.9180;
+
+}
+
+
+Emios_Mcl_Ip_ValidateChannel (uint8 HwInstance, uint8 HwChannel)
+{
+  boolean Valid;
+  boolean D.9173;
+
+  <bb 2> :
+  _1 = HwInstance <= 2;
+  DevAssert (_1);
+  _2 = HwChannel <= 23;
+  DevAssert (_2);
+  Valid = 0;
+  _3 = (int) HwInstance;
+  _4 = (int) HwChannel;
+  _5 = Emios_Ip_axChState[_3][_4].channelInitState;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Valid = 1;
+
+  <bb 4> :
+  D.9173 = Valid;
+
+  <bb 5> :
+<L2>:
+  return D.9173;
+
+}
+
+
+Emios_Mcl_Ip_SetReloadInterval (uint8 HwInstance, uint8 HwChannel, uint8 Interval)
+{
+  <bb 2> :
+  _1 = Interval <= 30;
+  DevAssert (_1);
+  _2 = HwInstance <= 2;
+  DevAssert (_2);
+  _3 = HwChannel <= 23;
+  DevAssert (_3);
+  _4 = (long unsigned int) Interval;
+  _5 = (int) HwInstance;
+  _6 = Emios_Ip_paxBase[_5];
+  _7 = (int) HwChannel;
+  _8 = _4 & 31;
+  _6->CH.UC[_7].C2 = _8;
+  return;
+
+}
+
+
+Emios_Mcl_Ip_Deinit (uint8 Instance)
+{
+  struct eMIOS_Type * Base;
+  Emios_Ip_CommonStatusType Status;
+  uint8 CurrentChannel;
+  Emios_Ip_CommonStatusType D.9169;
+
+  <bb 2> :
+  _1 = Instance <= 2;
+  DevAssert (_1);
+  Status = 0;
+  _2 = (int) Instance;
+  Base = Emios_Ip_paxBase[_2];
+  _3 = (int) Instance;
+  _4 = Emios_Ip_axIpIsInitialized[_3].instanceInitState;
+  _5 = ~_4;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status = 1;
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  _6 = Base->MCR;
+  _7 = _6 & 4227858431;
+  Base->MCR = _7;
+  Base->MCR = 0;
+  CurrentChannel = 0;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _8 = (int) Instance;
+  _9 = (int) CurrentChannel;
+  _10 = Emios_Ip_axChState[_8][_9].channelInitState;
+  if (_10 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _11 = (int) Instance;
+  _12 = Emios_Ip_paxBase[_11];
+  _13 = (int) CurrentChannel;
+  _12->CH.UC[_13].C = 0;
+  _14 = (int) Instance;
+  _15 = Emios_Ip_paxBase[_14];
+  _16 = (int) CurrentChannel;
+  _15->CH.UC[_16].A = 0;
+  _17 = (int) Instance;
+  _18 = Emios_Ip_paxBase[_17];
+  _19 = (int) CurrentChannel;
+  _18->CH.UC[_19].B = 0;
+  _20 = (int) Instance;
+  _21 = Emios_Ip_paxBase[_20];
+  _22 = (int) Instance;
+  _23 = Emios_Ip_paxBase[_22];
+  _24 = _21->UCDIS;
+  _23->UCDIS = _24;
+  _25 = (int) Instance;
+  _26 = (int) CurrentChannel;
+  Emios_Ip_ChPeriodMasterBus[_25][_26] = 0;
+  _27 = (int) Instance;
+  _28 = (int) CurrentChannel;
+  Emios_Ip_axChState[_27][_28].channelInitState = 0;
+
+  <bb 7> :
+  CurrentChannel.2_29 = CurrentChannel;
+  CurrentChannel = CurrentChannel.2_29 + 1;
+
+  <bb 8> :
+  if (CurrentChannel <= 23)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _30 = (int) Instance;
+  Emios_Ip_axIpIsInitialized[_30].instanceInitState = 0;
+
+  <bb 10> :
+  D.9169 = Status;
+
+  <bb 11> :
+<L8>:
+  return D.9169;
+
+}
+
+
+Emios_Mcl_Ip_ComparatorTransferDisable (uint8 Instance, uint32 ChannelMask)
+{
+  struct eMIOS_Type * Base;
+
+  <bb 2> :
+  _1 = Instance <= 2;
+  DevAssert (_1);
+  _2 = ChannelMask <= 16777214;
+  DevAssert (_2);
+  _3 = (int) Instance;
+  Base = Emios_Ip_paxBase[_3];
+  _4 = Base->OUDIS;
+  _5 = ChannelMask | _4;
+  Base->OUDIS = _5;
+  return;
+
+}
+
+
+Emios_Mcl_Ip_ComparatorTransferEnable (uint8 Instance, uint32 ChannelMask)
+{
+  struct eMIOS_Type * Base;
+
+  <bb 2> :
+  _1 = Instance <= 2;
+  DevAssert (_1);
+  _2 = ChannelMask <= 16777214;
+  DevAssert (_2);
+  _3 = (int) Instance;
+  Base = Emios_Ip_paxBase[_3];
+  _4 = Base->OUDIS;
+  _5 = ~ChannelMask;
+  _6 = _4 & _5;
+  Base->OUDIS = _6;
+  return;
+
+}
+
+
+Emios_Mcl_Ip_DisableChannel (uint8 Instance, uint8 HwChannel)
+{
+  struct eMIOS_Type * Base;
+
+  <bb 2> :
+  _1 = Instance <= 2;
+  DevAssert (_1);
+  _2 = HwChannel <= 23;
+  DevAssert (_2);
+  _3 = (int) Instance;
+  Base = Emios_Ip_paxBase[_3];
+  _4 = Base->UCDIS;
+  _5 = (long unsigned int) HwChannel;
+  _6 = 1 << _5;
+  _7 = _4 | _6;
+  Base->UCDIS = _7;
+  return;
+
+}
+
+
+Emios_Mcl_Ip_EnableChannel (uint8 Instance, uint8 HwChannel)
+{
+  struct eMIOS_Type * Base;
+
+  <bb 2> :
+  _1 = Instance <= 2;
+  DevAssert (_1);
+  _2 = HwChannel <= 23;
+  DevAssert (_2);
+  _3 = (int) Instance;
+  Base = Emios_Ip_paxBase[_3];
+  _4 = Base->UCDIS;
+  _5 = (long unsigned int) HwChannel;
+  _6 = 1 << _5;
+  _7 = ~_6;
+  _8 = _4 & _7;
+  Base->UCDIS = _8;
+  return;
+
+}
+
+
+Emios_Mcl_Ip_Init (uint8 Instance, const struct Emios_Mcl_Ip_ConfigType * const ConfigPtr)
+{
+  Emios_Ip_CommonStatusType Status;
+  struct eMIOS_Type * Base;
+  uint8 CurrentChannel;
+  Emios_Ip_CommonStatusType D.9159;
+
+  <bb 2> :
+  _1 = Instance <= 2;
+  DevAssert (_1);
+  _2 = ConfigPtr != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance;
+  Base = Emios_Ip_paxBase[_3];
+  Status = 0;
+  _4 = (int) Instance;
+  _5 = Emios_Ip_axIpIsInitialized[_4].instanceInitState;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status = 1;
+  goto <bb 17>; [INV]
+
+  <bb 4> :
+  _6 = Base->MCR;
+  _7 = _6 & 4227858431;
+  Base->MCR = _7;
+  _8 = ConfigPtr->emiosGlobalConfig;
+  _9 = _8->clkDivVal;
+  _10 = (long unsigned int) _9;
+  _11 = _10 << 8;
+  _12 = _11 & 65535;
+  _13 = ConfigPtr->emiosGlobalConfig;
+  _14 = _13->allowDebugMode;
+  _15 = (long unsigned int) _14;
+  _16 = _15 << 29;
+  _17 = _16 & 536870912;
+  _18 = _12 | _17;
+  _19 = ConfigPtr->emiosGlobalConfig;
+  _20 = _19->enableGlobalTimeBase;
+  _21 = (long unsigned int) _20;
+  _22 = _21 << 28;
+  _23 = _22 & 268435456;
+  _24 = _18 | _23;
+  Base->MCR = _24;
+  CurrentChannel = 0;
+  goto <bb 15>; [INV]
+
+  <bb 5> :
+  _25 = ConfigPtr->masterBusConfig;
+  _26 = (int) CurrentChannel;
+  _27 = (*_25)[_26].allowDebugMode;
+  if (_27 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _28 = ConfigPtr->masterBusConfig;
+  _29 = (int) CurrentChannel;
+  _30 = (*_28)[_29].hwChannel;
+  _31 = (int) _30;
+  _32 = Base->CH.UC[_31].C;
+  _33 = ConfigPtr->masterBusConfig;
+  _34 = (int) CurrentChannel;
+  _35 = (*_33)[_34].hwChannel;
+  _36 = (int) _35;
+  _37 = _32 | 2147483648;
+  Base->CH.UC[_36].C = _37;
+
+  <bb 7> :
+  _38 = ConfigPtr->masterBusConfig;
+  _39 = (int) CurrentChannel;
+  _40 = (*_38)[_39].hwChannel;
+  _41 = (int) _40;
+  _42 = Base->CH.UC[_41].C2;
+  _43 = ConfigPtr->masterBusConfig;
+  _44 = (int) CurrentChannel;
+  _45 = (*_43)[_44].masterBusPrescaler;
+  _46 = (long unsigned int) _45;
+  _47 = _46 << 16;
+  _48 = _47 & 983040;
+  _49 = ConfigPtr->masterBusConfig;
+  _50 = (int) CurrentChannel;
+  _51 = (*_49)[_50].hwChannel;
+  _52 = (int) _51;
+  _53 = _42 | _48;
+  Base->CH.UC[_52].C2 = _53;
+  _54 = ConfigPtr->masterBusConfig;
+  _55 = (int) CurrentChannel;
+  _56 = (*_54)[_55].masterMode;
+  switch (_56) <default: <L10> [INV], case 16: <L5> [INV], case 18: <L6> [INV], case 20: <L7> [INV], case 80: <L8> [INV], case 84: <L9> [INV]>
+
+  <bb 8> :
+<L5>:
+  _57 = ConfigPtr->masterBusConfig;
+  _58 = (int) CurrentChannel;
+  _59 = ConfigPtr->masterBusConfig;
+  _60 = (int) CurrentChannel;
+  _61 = (*_59)[_60].hwChannel;
+  _62 = (int) _61;
+  _63 = (*_57)[_58].defaultPeriod;
+  Base->CH.UC[_62].A = _63;
+  goto <bb 14>; [INV]
+
+  <bb 9> :
+<L6>:
+  _64 = ConfigPtr->masterBusConfig;
+  _65 = (int) CurrentChannel;
+  _66 = ConfigPtr->masterBusConfig;
+  _67 = (int) CurrentChannel;
+  _68 = (*_66)[_67].hwChannel;
+  _69 = (int) _68;
+  _70 = (*_64)[_65].defaultPeriod;
+  Base->CH.UC[_69].A = _70;
+  goto <bb 14>; [INV]
+
+  <bb 10> :
+<L7>:
+  _71 = ConfigPtr->masterBusConfig;
+  _72 = (int) CurrentChannel;
+  _73 = (*_71)[_72].hwChannel;
+  _74 = (int) _73;
+  Base->CH.UC[_74].B = 0;
+  _75 = ConfigPtr->masterBusConfig;
+  _76 = (int) CurrentChannel;
+  _77 = ConfigPtr->masterBusConfig;
+  _78 = (int) CurrentChannel;
+  _79 = (*_77)[_78].hwChannel;
+  _80 = (int) _79;
+  _81 = (*_75)[_76].defaultPeriod;
+  Base->CH.UC[_80].A = _81;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+<L8>:
+  _82 = ConfigPtr->masterBusConfig;
+  _83 = (int) CurrentChannel;
+  _84 = ConfigPtr->masterBusConfig;
+  _85 = (int) CurrentChannel;
+  _86 = (*_84)[_85].hwChannel;
+  _87 = (int) _86;
+  _88 = (*_82)[_83].defaultPeriod;
+  Base->CH.UC[_87].A = _88;
+  goto <bb 14>; [INV]
+
+  <bb 12> :
+<L9>:
+  _89 = ConfigPtr->masterBusConfig;
+  _90 = (int) CurrentChannel;
+  _91 = ConfigPtr->masterBusConfig;
+  _92 = (int) CurrentChannel;
+  _93 = (*_91)[_92].hwChannel;
+  _94 = (int) _93;
+  _95 = (*_89)[_90].defaultPeriod;
+  Base->CH.UC[_94].A = _95;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+<L10>:
+
+  <bb 14> :
+  _96 = ConfigPtr->masterBusConfig;
+  _97 = (int) CurrentChannel;
+  _98 = ConfigPtr->masterBusConfig;
+  _99 = (int) CurrentChannel;
+  _100 = (*_98)[_99].hwChannel;
+  _101 = (int) _100;
+  _102 = (*_96)[_97].offsetStartValue;
+  Base->CH.UC[_101].CNT = _102;
+  _103 = ConfigPtr->masterBusConfig;
+  _104 = (int) CurrentChannel;
+  _105 = (*_103)[_104].hwChannel;
+  _106 = (int) _105;
+  _107 = Base->CH.UC[_106].C;
+  _108 = ConfigPtr->masterBusConfig;
+  _109 = (int) CurrentChannel;
+  _110 = (*_108)[_109].masterMode;
+  _111 = _110 & 127;
+  _112 = ConfigPtr->masterBusConfig;
+  _113 = (int) CurrentChannel;
+  _114 = (*_112)[_113].hwChannel;
+  _115 = (int) _114;
+  _116 = _107 | _111;
+  Base->CH.UC[_115].C = _116;
+  _117 = ConfigPtr->masterBusConfig;
+  _118 = (int) CurrentChannel;
+  _119 = (*_117)[_118].hwChannel;
+  _120 = (int) _119;
+  _121 = Base->CH.UC[_120].C;
+  _122 = ConfigPtr->masterBusConfig;
+  _123 = (int) CurrentChannel;
+  _124 = (*_122)[_123].hwChannel;
+  _125 = (int) _124;
+  _126 = _121 | 33554432;
+  Base->CH.UC[_125].C = _126;
+  _127 = ConfigPtr->masterBusConfig;
+  _128 = (int) CurrentChannel;
+  _129 = (int) Instance;
+  _130 = ConfigPtr->masterBusConfig;
+  _131 = (int) CurrentChannel;
+  _132 = (*_130)[_131].hwChannel;
+  _133 = (int) _132;
+  _134 = (*_127)[_128].masterMode;
+  Emios_Ip_axChState[_129][_133].counterMode = _134;
+  _135 = (int) Instance;
+  _136 = ConfigPtr->masterBusConfig;
+  _137 = (int) CurrentChannel;
+  _138 = (*_136)[_137].hwChannel;
+  _139 = (int) _138;
+  Emios_Ip_axChState[_135][_139].channelInitState = 1;
+  _140 = ConfigPtr->masterBusConfig;
+  _141 = (int) CurrentChannel;
+  _142 = (*_140)[_141].defaultPeriod;
+  _143 = (int) Instance;
+  _144 = ConfigPtr->masterBusConfig;
+  _145 = (int) CurrentChannel;
+  _146 = (*_144)[_145].hwChannel;
+  _147 = (int) _146;
+  _148 = (short unsigned int) _142;
+  Emios_Ip_ChPeriodMasterBus[_143][_147] = _148;
+  CurrentChannel.0_149 = CurrentChannel;
+  CurrentChannel = CurrentChannel.0_149 + 1;
+
+  <bb 15> :
+  _150 = ConfigPtr->channelsNumber;
+  if (CurrentChannel < _150)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  _151 = (int) Instance;
+  Emios_Ip_axIpIsInitialized[_151].instanceInitState = 1;
+
+  <bb 17> :
+  _152 = Base->MCR;
+  _153 = _152 | 67108864;
+  Base->MCR = _153;
+  D.9159 = Status;
+
+  <bb 18> :
+<L15>:
+  return D.9159;
+
+}
+
+
+DevAssert (volatile boolean x)
+{
+  <bb 2> :
+  x.1_1 = x;
+  if (x.1_1 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  return;
+
+}
+
+

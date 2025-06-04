@@ -140,7 +140,7 @@ Siul2_Port_Ip_RevertPinConfiguration (const struct Siul2_Port_Ip_PortType * cons
   const struct Siul2_Port_Ip_PinSettingsConfig * ConfigPtr;
   uint32 u32RegVal;
   uint16 u16PinIdx;
-  uint32 D.6684;
+  uint32 D.6685;
   long unsigned int base.4_1;
   long unsigned int _2;
   long unsigned int _3;
@@ -526,7 +526,7 @@ Siul2_Port_Ip_SetPullSel (struct Siul2_Port_Ip_PortType * const base, uint16 pin
 Siul2_Port_Ip_Init (uint32 pinCount, const struct Siul2_Port_Ip_PinSettingsConfig * config)
 {
   uint32 i;
-  Siul2_Port_Ip_PortStatusType D.6664;
+  Siul2_Port_Ip_PortStatusType D.6665;
   long unsigned int _1;
   const struct Siul2_Port_Ip_PinSettingsConfig * _2;
   Siul2_Port_Ip_PortStatusType _11;

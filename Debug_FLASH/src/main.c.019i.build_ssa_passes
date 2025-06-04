@@ -3,7 +3,7 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.7395;
+  int D.10158;
 
   <bb 2> :
   clockStatus = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
@@ -19,6 +19,7 @@ main ()
     goto <bb 5>; [INV]
 
   <bb 5> :
+  Siul2_Port_Ip_Init (1, &g_pin_mux_InitConfigArr0);
   Bctu_Ip_Init (0, &BctuHwUnit_0_VS_0);
   _1 = Adc_Sar_Ip_Init (0, &AdcHwUnit_0_VS_0);
   status = (StatusType) _1;
@@ -32,10 +33,8 @@ main ()
   <bb 7> :
   IntCtrl_Ip_InstallHandler (180, Adc_Sar_0_Isr, 0B);
   IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
-  IntCtrl_Ip_InstallHandler (96, PIT_0_ISR, 0B);
   IntCtrl_Ip_EnableIrq (180);
   IntCtrl_Ip_EnableIrq (87);
-  IntCtrl_Ip_EnableIrq (96);
   Index = 0;
   goto <bb 11>; [INV]
 
@@ -62,12 +61,9 @@ main ()
 
   <bb 12> :
   Adc_Sar_Ip_EnableNotifications (0, 5);
-  Pit_Ip_Init (0, &PIT_0_InitConfig_PB);
-  Pit_Ip_InitChannel (0, &PIT_0_ChannelConfig_PB[0]);
-  Pit_Ip_EnableChannelInterrupt (0, 0);
-  Pit_Ip_StartChannel (0, 0, 20000);
   Bctu_Ip_SetGlobalTriggerEn (0, 1);
   Bctu_Ip_EnableNotifications (0, 1);
+  Emios_Mcl_Ip_Init (0, &Emios_Mcl_Ip_0_Config_VS_0);
 
   <bb 13> :
   exit_code.4_4 = exit_code;
@@ -83,11 +79,11 @@ main ()
   goto <bb 13>; [INV]
 
   <bb 16> :
-  D.7395 = exit_code;
+  D.10158 = exit_code;
 
   <bb 17> :
 <L15>:
-  return D.7395;
+  return D.10158;
 
 }
 
@@ -144,14 +140,13 @@ AdcEndOfChainNotif ()
 }
 
 
-Pit0ch0Notification ()
+Check ()
 {
   <bb 2> :
-  Adc_Sar_Ip_StartConversion (0, 0);
-  Bctu_Ip_SwTriggerConversion (0, 0);
-  pit_count.0_1 = pit_count;
-  _2 = pit_count.0_1 + 1;
-  pit_count = _2;
+  eMIOS_count.0_1 = eMIOS_count;
+  _2 = eMIOS_count.0_1 + 1;
+  eMIOS_count = _2;
+  Siul2_Dio_Ip_TogglePins (1076434700B, 32768);
   return;
 
 }

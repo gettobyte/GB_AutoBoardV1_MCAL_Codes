@@ -1,0 +1,665 @@
+
+Marking local functions: Emios_Gpt_Ip_CounterReset/7 Emios_Gpt_Ip_SetCompareValue/6 Emios_Gpt_Ip_ClearFlag/5 Emios_Gpt_Ip_ConfigureChannel/4 Emios_Gpt_Ip_FlagEnable/3
+
+
+Marking externally visible functions: Emios_Gpt_Ip_IrqHandler/18 Emios_Gpt_Ip_DisableChannelInterrupt/17 Emios_Gpt_Ip_EnableChannelInterrupt/16 Emios_Gpt_Ip_StopTimer/15 Emios_Gpt_Ip_StartTimer/14 Emios_Gpt_Ip_Deinit/13 Emios_Gpt_Ip_InitChannel/12 Emios_Gpt_Ip_GetInterruptFlag/11 Emios_Gpt_Ip_GetCounterValue/10 Emios_Gpt_Ip_GetPeriodValue/9 Emios_Gpt_Ip_GetValue/8
+
+
+Marking externally visible variables: eMiosGptBase/1
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_38/24 (SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_38) @05fa2700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Gpt_Ip_StartTimer/14 
+  Calls: 
+SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_38/23 (SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_38) @05fa2620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Gpt_Ip_StartTimer/14 
+  Calls: 
+SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_36/22 (SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_36) @05fa20e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Gpt_Ip_ConfigureChannel/4 
+  Calls: 
+SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_36/21 (SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_36) @05fa2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Gpt_Ip_ConfigureChannel/4 
+  Calls: 
+SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_35/20 (SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_35) @05f31540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Gpt_Ip_FlagEnable/3 
+  Calls: 
+SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_35/19 (SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_35) @05f312a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Gpt_Ip_FlagEnable/3 
+  Calls: 
+Emios_Gpt_Ip_IrqHandler/18 (Emios_Gpt_Ip_IrqHandler) @05f31700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Gpt_Ip_u32ChState/2 (read) Emios_Gpt_Ip_u32ChState/2 (read) Emios_Gpt_Ip_u32ChState/2 (read) Emios_Gpt_Ip_u32ChState/2 (read) Emios_Gpt_Ip_u32ChState/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Gpt_Ip_StopTimer/15 Emios_Gpt_Ip_ClearFlag/5 Emios_Gpt_Ip_GetValue/8 Emios_Gpt_Ip_GetInterruptFlag/11 
+   Indirect call Num speculative call targets: 0
+Emios_Gpt_Ip_DisableChannelInterrupt/17 (Emios_Gpt_Ip_DisableChannelInterrupt) @05f31460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Gpt_Ip_ClearFlag/5 Emios_Gpt_Ip_FlagEnable/3 
+Emios_Gpt_Ip_EnableChannelInterrupt/16 (Emios_Gpt_Ip_EnableChannelInterrupt) @05f311c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Gpt_Ip_FlagEnable/3 Emios_Gpt_Ip_ClearFlag/5 
+Emios_Gpt_Ip_StopTimer/15 (Emios_Gpt_Ip_StopTimer) @05e9eee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Gpt_Ip_IrqHandler/18 
+  Calls: Emios_Gpt_Ip_ClearFlag/5 Emios_Gpt_Ip_ConfigureChannel/4 
+Emios_Gpt_Ip_StartTimer/14 (Emios_Gpt_Ip_StartTimer) @05e9e8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: eMiosGptBase/1 (read) eMiosGptBase/1 (read) eMiosGptBase/1 (read) eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_38/24 SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_38/23 Emios_Gpt_Ip_SetCompareValue/6 Emios_Gpt_Ip_ConfigureChannel/4 
+Emios_Gpt_Ip_Deinit/13 (Emios_Gpt_Ip_Deinit) @05e9e380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Gpt_Ip_bHwChannelsUsed/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Gpt_Ip_SetCompareValue/6 Emios_Gpt_Ip_CounterReset/7 Emios_Gpt_Ip_ClearFlag/5 
+Emios_Gpt_Ip_InitChannel/12 (Emios_Gpt_Ip_InitChannel) @05e9ee00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: eMiosGptBase/1 (read) Emios_Gpt_Ip_u32ChState/2 (write) Emios_Gpt_Ip_u32ChState/2 (write) Emios_Gpt_Ip_u32ChState/2 (write) Emios_Gpt_Ip_u32ChState/2 (write) Emios_Gpt_Ip_bHwChannelsUsed/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Gpt_Ip_SetCompareValue/6 Emios_Gpt_Ip_ClearFlag/5 Emios_Gpt_Ip_ConfigureChannel/4 Emios_Gpt_Ip_FlagEnable/3 
+Emios_Gpt_Ip_GetInterruptFlag/11 (Emios_Gpt_Ip_GetInterruptFlag) @05e9ea80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Gpt_Ip_IrqHandler/18 
+  Calls: 
+Emios_Gpt_Ip_GetCounterValue/10 (Emios_Gpt_Ip_GetCounterValue) @05e9e7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Emios_Gpt_Ip_GetPeriodValue/9 (Emios_Gpt_Ip_GetPeriodValue) @05e9e540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Emios_Gpt_Ip_GetValue/8 (Emios_Gpt_Ip_GetValue) @05e9e2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Gpt_Ip_IrqHandler/18 
+  Calls: 
+Emios_Gpt_Ip_CounterReset/7 (Emios_Gpt_Ip_CounterReset) @05e9e000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Gpt_Ip_Deinit/13 
+  Calls: 
+Emios_Gpt_Ip_SetCompareValue/6 (Emios_Gpt_Ip_SetCompareValue) @05e99a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Gpt_Ip_StartTimer/14 Emios_Gpt_Ip_Deinit/13 Emios_Gpt_Ip_InitChannel/12 
+  Calls: 
+Emios_Gpt_Ip_ClearFlag/5 (Emios_Gpt_Ip_ClearFlag) @05e99ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Gpt_Ip_IrqHandler/18 Emios_Gpt_Ip_DisableChannelInterrupt/17 Emios_Gpt_Ip_EnableChannelInterrupt/16 Emios_Gpt_Ip_StopTimer/15 Emios_Gpt_Ip_Deinit/13 Emios_Gpt_Ip_InitChannel/12 
+  Calls: 
+Emios_Gpt_Ip_ConfigureChannel/4 (Emios_Gpt_Ip_ConfigureChannel) @05e99c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: eMiosGptBase/1 (read) eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Gpt_Ip_StopTimer/15 Emios_Gpt_Ip_StartTimer/14 Emios_Gpt_Ip_InitChannel/12 
+  Calls: SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_36/22 SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_36/21 
+Emios_Gpt_Ip_FlagEnable/3 (Emios_Gpt_Ip_FlagEnable) @05e999a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: eMiosGptBase/1 (read) eMiosGptBase/1 (read) eMiosGptBase/1 (read) eMiosGptBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Gpt_Ip_DisableChannelInterrupt/17 Emios_Gpt_Ip_EnableChannelInterrupt/16 Emios_Gpt_Ip_InitChannel/12 
+  Calls: SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_35/20 SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_35/19 
+Emios_Gpt_Ip_u32ChState/2 (Emios_Gpt_Ip_u32ChState) @05e96360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Emios_Gpt_Ip_InitChannel/12 (write) Emios_Gpt_Ip_InitChannel/12 (write) Emios_Gpt_Ip_InitChannel/12 (write) Emios_Gpt_Ip_InitChannel/12 (write) Emios_Gpt_Ip_IrqHandler/18 (read) Emios_Gpt_Ip_IrqHandler/18 (read) Emios_Gpt_Ip_IrqHandler/18 (read) Emios_Gpt_Ip_IrqHandler/18 (read) Emios_Gpt_Ip_IrqHandler/18 (read) 
+  Availability: available
+  Varpool flags: initialized
+eMiosGptBase/1 (eMiosGptBase) @05e96288
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Gpt_Ip_GetValue/8 (read) Emios_Gpt_Ip_GetPeriodValue/9 (read) Emios_Gpt_Ip_GetCounterValue/10 (read) Emios_Gpt_Ip_GetInterruptFlag/11 (read) Emios_Gpt_Ip_InitChannel/12 (read) Emios_Gpt_Ip_FlagEnable/3 (read) Emios_Gpt_Ip_FlagEnable/3 (read) Emios_Gpt_Ip_FlagEnable/3 (read) Emios_Gpt_Ip_FlagEnable/3 (read) Emios_Gpt_Ip_ConfigureChannel/4 (read) Emios_Gpt_Ip_ConfigureChannel/4 (read) Emios_Gpt_Ip_ClearFlag/5 (read) Emios_Gpt_Ip_SetCompareValue/6 (read) Emios_Gpt_Ip_CounterReset/7 (read) Emios_Gpt_Ip_StartTimer/14 (read) Emios_Gpt_Ip_StartTimer/14 (read) Emios_Gpt_Ip_StartTimer/14 (read) Emios_Gpt_Ip_StartTimer/14 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Emios_Gpt_Ip_bHwChannelsUsed/0 (Emios_Gpt_Ip_bHwChannelsUsed) @05e961f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Emios_Gpt_Ip_InitChannel/12 (write) Emios_Gpt_Ip_Deinit/13 (read) 
+  Availability: available
+  Varpool flags: initialized
+Emios_Gpt_Ip_IrqHandler (uint8 instance, uint8 channel)
+{
+  uint32 interruptBit;
+  uint32 interruptFlag;
+
+  <bb 2> :
+  interruptFlag = Emios_Gpt_Ip_GetInterruptFlag (instance, channel);
+  interruptBit = Emios_Gpt_Ip_GetValue (instance, channel);
+  Emios_Gpt_Ip_ClearFlag (instance, channel);
+  _1 = interruptFlag & 1;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  _2 = interruptBit & 131072;
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _3 = (int) instance;
+  _4 = (int) channel;
+  _5 = Emios_Gpt_Ip_u32ChState[_3][_4].channelMode;
+  if (_5 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Emios_Gpt_Ip_StopTimer (instance, channel);
+
+  <bb 6> :
+  _6 = (int) instance;
+  _7 = (int) channel;
+  _8 = Emios_Gpt_Ip_u32ChState[_6][_7].chInit;
+  if (_8 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _9 = (int) instance;
+  _10 = (int) channel;
+  _11 = Emios_Gpt_Ip_u32ChState[_9][_10].callback;
+  if (_11 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _12 = (int) instance;
+  _13 = (int) channel;
+  _14 = Emios_Gpt_Ip_u32ChState[_12][_13].callback;
+  _15 = (int) instance;
+  _16 = (int) channel;
+  _17 = Emios_Gpt_Ip_u32ChState[_15][_16].callbackParam;
+  _14 (_17);
+
+  <bb 9> :
+  return;
+
+}
+
+
+Emios_Gpt_Ip_DisableChannelInterrupt (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Emios_Gpt_Ip_FlagEnable (instance, channel, 0);
+  Emios_Gpt_Ip_ClearFlag (instance, channel);
+  return;
+
+}
+
+
+Emios_Gpt_Ip_EnableChannelInterrupt (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Emios_Gpt_Ip_ClearFlag (instance, channel);
+  Emios_Gpt_Ip_FlagEnable (instance, channel, 1);
+  return;
+
+}
+
+
+Emios_Gpt_Ip_StopTimer (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Emios_Gpt_Ip_ConfigureChannel (instance, channel);
+  Emios_Gpt_Ip_ClearFlag (instance, channel);
+  return;
+
+}
+
+
+Emios_Gpt_Ip_StartTimer (uint8 instance, uint8 channel, uint16 compareValue)
+{
+  <bb 2> :
+  Emios_Gpt_Ip_ConfigureChannel (instance, channel);
+  _1 = (long unsigned int) compareValue;
+  Emios_Gpt_Ip_SetCompareValue (instance, channel, _1);
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_38 ();
+  _2 = (int) instance;
+  _3 = eMiosGptBase[_2];
+  _4 = (int) channel;
+  _5 = _3->CH.UC[_4].C;
+  _6 = (int) instance;
+  _7 = eMiosGptBase[_6];
+  _8 = (int) channel;
+  _9 = _5 | 33554432;
+  _7->CH.UC[_8].C = _9;
+  _10 = (int) instance;
+  _11 = eMiosGptBase[_10];
+  _12 = (int) channel;
+  _13 = _11->CH.UC[_12].C;
+  _14 = _13 & 4294967168;
+  _15 = (int) instance;
+  _16 = eMiosGptBase[_15];
+  _17 = (int) channel;
+  _18 = _14 | 80;
+  _16->CH.UC[_17].C = _18;
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_38 ();
+  return;
+
+}
+
+
+Emios_Gpt_Ip_Deinit (uint8 instance)
+{
+  uint8 channelIndex;
+
+  <bb 2> :
+  channelIndex = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance;
+  _2 = (int) channelIndex;
+  _3 = Emios_Gpt_Ip_bHwChannelsUsed[_1][_2];
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Emios_Gpt_Ip_ClearFlag (instance, channelIndex);
+  Emios_Gpt_Ip_CounterReset (instance, channelIndex, 0);
+  Emios_Gpt_Ip_SetCompareValue (instance, channelIndex, 1);
+
+  <bb 5> :
+  channelIndex.0_4 = channelIndex;
+  channelIndex = channelIndex.0_4 + 1;
+
+  <bb 6> :
+  if (channelIndex <= 23)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+Emios_Gpt_Ip_InitChannel (uint8 instance, const struct Emios_Gpt_Ip_ChannelConfigType * configPtr)
+{
+  struct eMIOS_Type * base;
+  uint32 u32Temp;
+
+  <bb 2> :
+  _1 = (int) instance;
+  base = eMiosGptBase[_1];
+  _2 = configPtr->hwChannel;
+  Emios_Gpt_Ip_FlagEnable (instance, _2, 0);
+  _3 = configPtr->hwChannel;
+  Emios_Gpt_Ip_ConfigureChannel (instance, _3);
+  _4 = configPtr->stopInDebugMode;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _5 = configPtr->clockPrescaler;
+  _6 = (long unsigned int) _5;
+  _7 = _6 << 26;
+  u32Temp = _7 | 2147485184;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _8 = configPtr->clockPrescaler;
+  _9 = (long unsigned int) _8;
+  _10 = _9 << 26;
+  u32Temp = _10 | 1536;
+
+  <bb 5> :
+  _11 = configPtr->hwChannel;
+  _12 = (int) _11;
+  _13 = base->CH.UC[_12].C;
+  _14 = _13 & 2105801215;
+  _15 = u32Temp & 2189166080;
+  _16 = configPtr->hwChannel;
+  _17 = (int) _16;
+  _18 = _14 | _15;
+  base->CH.UC[_17].C = _18;
+  _19 = configPtr->hwChannel;
+  _20 = (int) _19;
+  _21 = base->CH.UC[_20].C2;
+  _22 = configPtr->hwChannel;
+  _23 = (int) _22;
+  _24 = _21 & 4293984255;
+  base->CH.UC[_23].C2 = _24;
+  _25 = configPtr->hwChannel;
+  _26 = (int) _25;
+  _27 = base->CH.UC[_26].C2;
+  _28 = configPtr->clockPrescaler;
+  _29 = (long unsigned int) _28;
+  _30 = _29 << 16;
+  _31 = _30 & 983040;
+  _32 = configPtr->hwChannel;
+  _33 = (int) _32;
+  _34 = _27 | _31;
+  base->CH.UC[_33].C2 = _34;
+  _35 = configPtr->hwChannel;
+  Emios_Gpt_Ip_ClearFlag (instance, _35);
+  _36 = configPtr->hwChannel;
+  Emios_Gpt_Ip_SetCompareValue (instance, _36, 1);
+  _37 = (int) instance;
+  _38 = configPtr->hwChannel;
+  _39 = (int) _38;
+  Emios_Gpt_Ip_u32ChState[_37][_39].chInit = 1;
+  _40 = (int) instance;
+  _41 = configPtr->hwChannel;
+  _42 = (int) _41;
+  _43 = configPtr->callback;
+  Emios_Gpt_Ip_u32ChState[_40][_42].callback = _43;
+  _44 = (int) instance;
+  _45 = configPtr->hwChannel;
+  _46 = (int) _45;
+  _47 = configPtr->callbackParam;
+  Emios_Gpt_Ip_u32ChState[_44][_46].callbackParam = _47;
+  _48 = (int) instance;
+  _49 = configPtr->hwChannel;
+  _50 = (int) _49;
+  _51 = configPtr->channelMode;
+  Emios_Gpt_Ip_u32ChState[_48][_50].channelMode = _51;
+  _52 = (int) instance;
+  _53 = configPtr->hwChannel;
+  _54 = (int) _53;
+  Emios_Gpt_Ip_bHwChannelsUsed[_52][_54] = 1;
+  return;
+
+}
+
+
+Emios_Gpt_Ip_GetInterruptFlag (uint8 instance, uint8 channel)
+{
+  uint32 flag;
+  uint32 D.6090;
+
+  <bb 2> :
+  flag = 0;
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  flag = _2->CH.UC[_3].S;
+  D.6090 = flag;
+
+  <bb 3> :
+<L0>:
+  return D.6090;
+
+}
+
+
+Emios_Gpt_Ip_GetCounterValue (uint8 instance, uint8 channel)
+{
+  uint32 currentValueCnt;
+  uint32 D.6088;
+
+  <bb 2> :
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  currentValueCnt = _2->CH.UC[_3].CNT;
+  D.6088 = currentValueCnt;
+
+  <bb 3> :
+<L0>:
+  return D.6088;
+
+}
+
+
+Emios_Gpt_Ip_GetPeriodValue (uint8 instance, uint8 channel)
+{
+  uint32 currentValuePeriod;
+  uint32 D.6086;
+
+  <bb 2> :
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  currentValuePeriod = _2->CH.UC[_3].A;
+  D.6086 = currentValuePeriod;
+
+  <bb 3> :
+<L0>:
+  return D.6086;
+
+}
+
+
+Emios_Gpt_Ip_GetValue (uint8 instance, uint8 channel)
+{
+  uint32 currentValue;
+  uint32 D.6084;
+
+  <bb 2> :
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  currentValue = _2->CH.UC[_3].C;
+  D.6084 = currentValue;
+
+  <bb 3> :
+<L0>:
+  return D.6084;
+
+}
+
+
+Emios_Gpt_Ip_CounterReset (uint8 instance, uint8 channel, uint32 Cntvalue)
+{
+  <bb 2> :
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  _2->CH.UC[_3].C = Cntvalue;
+  return;
+
+}
+
+
+Emios_Gpt_Ip_SetCompareValue (uint8 instance, uint8 channel, uint32 value)
+{
+  <bb 2> :
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  _2->CH.UC[_3].A = value;
+  return;
+
+}
+
+
+Emios_Gpt_Ip_ClearFlag (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  _2->CH.UC[_3].S = 1;
+  return;
+
+}
+
+
+Emios_Gpt_Ip_ConfigureChannel (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_36 ();
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  _4 = _2->CH.UC[_3].C;
+  _5 = _4 & 4294966912;
+  _6 = (int) instance;
+  _7 = eMiosGptBase[_6];
+  _8 = (int) channel;
+  _9 = _5 | 256;
+  _7->CH.UC[_8].C = _9;
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_36 ();
+  return;
+
+}
+
+
+Emios_Gpt_Ip_FlagEnable (uint8 instance, uint8 channel, boolean enable)
+{
+  <bb 2> :
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_35 ();
+  if (enable != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance;
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel;
+  _4 = _2->CH.UC[_3].C;
+  _5 = (int) instance;
+  _6 = eMiosGptBase[_5];
+  _7 = (int) channel;
+  _8 = _4 | 131072;
+  _6->CH.UC[_7].C = _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = (int) instance;
+  _10 = eMiosGptBase[_9];
+  _11 = (int) channel;
+  _12 = _10->CH.UC[_11].C;
+  _13 = (int) instance;
+  _14 = eMiosGptBase[_13];
+  _15 = (int) channel;
+  _16 = _12 & 4294836223;
+  _14->CH.UC[_15].C = _16;
+
+  <bb 5> :
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_35 ();
+  return;
+
+}
+
+

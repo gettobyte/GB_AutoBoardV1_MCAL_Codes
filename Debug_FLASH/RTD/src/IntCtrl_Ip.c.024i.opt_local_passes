@@ -9,7 +9,7 @@ IntCtrl_Ip_SetTargetCores (IRQn_Type eIrqNumber, uint8 u8TargetCores)
 
 IntCtrl_Ip_GetActive (IRQn_Type eIrqNumber)
 {
-  boolean D.6033;
+  boolean D.6030;
   long unsigned int _1;
   boolean _5;
 
@@ -26,7 +26,7 @@ IntCtrl_Ip_GetActive (IRQn_Type eIrqNumber)
 
 IntCtrl_Ip_GetPending (IRQn_Type eIrqNumber)
 {
-  boolean D.6031;
+  boolean D.6028;
   long unsigned int _1;
   boolean _5;
 
@@ -61,7 +61,7 @@ IntCtrl_Ip_ClearPending (IRQn_Type eIrqNumber)
 
 IntCtrl_Ip_GetPriority (IRQn_Type eIrqNumber)
 {
-  uint8 D.6029;
+  uint8 D.6026;
   uint8 _4;
 
   <bb 2> :
@@ -113,7 +113,7 @@ IntCtrl_Ip_InstallHandler (IRQn_Type eIrqNumber, void (*IntCtrl_Ip_IrqHandlerTyp
 IntCtrl_Ip_ConfigIrqRouting (const struct IntCtrl_Ip_GlobalRouteConfigType * routeConfig)
 {
   uint32 irqIdx;
-  IntCtrl_Ip_StatusType D.6027;
+  IntCtrl_Ip_StatusType D.6024;
   _Bool _1;
   long unsigned int _2;
   _Bool _3;
@@ -187,7 +187,7 @@ IntCtrl_Ip_ConfigIrqRouting (const struct IntCtrl_Ip_GlobalRouteConfigType * rou
 IntCtrl_Ip_Init (const struct IntCtrl_Ip_CtrlConfigType * pIntCtrlCtrlConfig)
 {
   uint32 irqIdx;
-  IntCtrl_Ip_StatusType D.6025;
+  IntCtrl_Ip_StatusType D.6022;
   _Bool _1;
   long unsigned int _2;
   _Bool _3;
@@ -323,7 +323,7 @@ IntCtrl_Ip_SetTargetCoresPrivileged (IRQn_Type eIrqNumber, uint8 u8TargetCores)
 
 IntCtrl_Ip_GetActivePrivileged (IRQn_Type eIrqNumber)
 {
-  uint32 D.6020;
+  uint32 D.6017;
   _Bool _1;
   _Bool _2;
   struct S32_NVIC_Type * _3;
@@ -362,7 +362,7 @@ IntCtrl_Ip_GetActivePrivileged (IRQn_Type eIrqNumber)
 
 IntCtrl_Ip_GetPendingPrivileged (IRQn_Type eIrqNumber)
 {
-  uint32 D.6018;
+  uint32 D.6015;
   _Bool _1;
   _Bool _2;
   struct S32_NVIC_Type * _3;
@@ -459,7 +459,7 @@ IntCtrl_Ip_GetPriorityPrivileged (IRQn_Type eIrqNumber)
 {
   uint8 shift;
   uint8 priority;
-  uint8 D.6016;
+  uint8 D.6013;
   _Bool _1;
   _Bool _2;
   struct S32_NVIC_Type * _3;

@@ -1,0 +1,581 @@
+Emios_Gpt_Ip_IrqHandler (uint8 instance, uint8 channel)
+{
+  uint32 interruptBit;
+  uint32 interruptFlag;
+  long unsigned int _1;
+  long unsigned int _2;
+  int _3;
+  int _4;
+  <unnamed type> _5;
+  int _6;
+  int _7;
+  _Bool _8;
+  int _9;
+  int _10;
+  void (*<T4c5>) (uint8) _11;
+  int _12;
+  int _13;
+  void (*<T4c5>) (uint8) _14;
+  int _15;
+  int _16;
+  unsigned char _17;
+
+  <bb 2> :
+  interruptFlag_24 = Emios_Gpt_Ip_GetInterruptFlag (instance_21(D), channel_22(D));
+  interruptBit_26 = Emios_Gpt_Ip_GetValue (instance_21(D), channel_22(D));
+  Emios_Gpt_Ip_ClearFlag (instance_21(D), channel_22(D));
+  _1 = interruptFlag_24 & 1;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  _2 = interruptBit_26 & 131072;
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _3 = (int) instance_21(D);
+  _4 = (int) channel_22(D);
+  _5 = Emios_Gpt_Ip_u32ChState[_3][_4].channelMode;
+  if (_5 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Emios_Gpt_Ip_StopTimer (instance_21(D), channel_22(D));
+
+  <bb 6> :
+  _6 = (int) instance_21(D);
+  _7 = (int) channel_22(D);
+  _8 = Emios_Gpt_Ip_u32ChState[_6][_7].chInit;
+  if (_8 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _9 = (int) instance_21(D);
+  _10 = (int) channel_22(D);
+  _11 = Emios_Gpt_Ip_u32ChState[_9][_10].callback;
+  if (_11 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _12 = (int) instance_21(D);
+  _13 = (int) channel_22(D);
+  _14 = Emios_Gpt_Ip_u32ChState[_12][_13].callback;
+  _15 = (int) instance_21(D);
+  _16 = (int) channel_22(D);
+  _17 = Emios_Gpt_Ip_u32ChState[_15][_16].callbackParam;
+  _14 (_17);
+
+  <bb 9> :
+  return;
+
+}
+
+
+Emios_Gpt_Ip_DisableChannelInterrupt (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Emios_Gpt_Ip_FlagEnable (instance_2(D), channel_3(D), 0);
+  Emios_Gpt_Ip_ClearFlag (instance_2(D), channel_3(D));
+  return;
+
+}
+
+
+Emios_Gpt_Ip_EnableChannelInterrupt (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Emios_Gpt_Ip_ClearFlag (instance_2(D), channel_3(D));
+  Emios_Gpt_Ip_FlagEnable (instance_2(D), channel_3(D), 1);
+  return;
+
+}
+
+
+Emios_Gpt_Ip_StopTimer (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Emios_Gpt_Ip_ConfigureChannel (instance_2(D), channel_3(D));
+  Emios_Gpt_Ip_ClearFlag (instance_2(D), channel_3(D));
+  return;
+
+}
+
+
+Emios_Gpt_Ip_StartTimer (uint8 instance, uint8 channel, uint16 compareValue)
+{
+  long unsigned int _1;
+  int _2;
+  struct eMIOS_Type * _3;
+  int _4;
+  long unsigned int _5;
+  int _6;
+  struct eMIOS_Type * _7;
+  int _8;
+  long unsigned int _9;
+  int _10;
+  struct eMIOS_Type * _11;
+  int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  int _15;
+  struct eMIOS_Type * _16;
+  int _17;
+  long unsigned int _18;
+
+  <bb 2> :
+  Emios_Gpt_Ip_ConfigureChannel (instance_20(D), channel_21(D));
+  _1 = (long unsigned int) compareValue_23(D);
+  Emios_Gpt_Ip_SetCompareValue (instance_20(D), channel_21(D), _1);
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_38 ();
+  _2 = (int) instance_20(D);
+  _3 = eMiosGptBase[_2];
+  _4 = (int) channel_21(D);
+  _5 ={v} _3->CH.UC[_4].C;
+  _6 = (int) instance_20(D);
+  _7 = eMiosGptBase[_6];
+  _8 = (int) channel_21(D);
+  _9 = _5 | 33554432;
+  _7->CH.UC[_8].C ={v} _9;
+  _10 = (int) instance_20(D);
+  _11 = eMiosGptBase[_10];
+  _12 = (int) channel_21(D);
+  _13 ={v} _11->CH.UC[_12].C;
+  _14 = _13 & 4294967168;
+  _15 = (int) instance_20(D);
+  _16 = eMiosGptBase[_15];
+  _17 = (int) channel_21(D);
+  _18 = _14 | 80;
+  _16->CH.UC[_17].C ={v} _18;
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_38 ();
+  return;
+
+}
+
+
+Emios_Gpt_Ip_Deinit (uint8 instance)
+{
+  uint8 channelIndex;
+  int _1;
+  int _2;
+  _Bool _3;
+  unsigned char channelIndex.0_4;
+
+  <bb 2> :
+  channelIndex_8 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance_10(D);
+  _2 = (int) channelIndex_5;
+  _3 = Emios_Gpt_Ip_bHwChannelsUsed[_1][_2];
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Emios_Gpt_Ip_ClearFlag (instance_10(D), channelIndex_5);
+  Emios_Gpt_Ip_CounterReset (instance_10(D), channelIndex_5, 0);
+  Emios_Gpt_Ip_SetCompareValue (instance_10(D), channelIndex_5, 1);
+
+  <bb 5> :
+  channelIndex.0_4 = channelIndex_5;
+  channelIndex_14 = channelIndex.0_4 + 1;
+
+  <bb 6> :
+  # channelIndex_5 = PHI <channelIndex_8(2), channelIndex_14(5)>
+  if (channelIndex_5 <= 23)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+Emios_Gpt_Ip_InitChannel (uint8 instance, const struct Emios_Gpt_Ip_ChannelConfigType * configPtr)
+{
+  struct eMIOS_Type * base;
+  uint32 u32Temp;
+  int _1;
+  unsigned char _2;
+  unsigned char _3;
+  _Bool _4;
+  unsigned char _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  unsigned char _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  unsigned char _11;
+  int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  unsigned char _16;
+  int _17;
+  long unsigned int _18;
+  unsigned char _19;
+  int _20;
+  long unsigned int _21;
+  unsigned char _22;
+  int _23;
+  long unsigned int _24;
+  unsigned char _25;
+  int _26;
+  long unsigned int _27;
+  unsigned char _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  unsigned char _32;
+  int _33;
+  long unsigned int _34;
+  unsigned char _35;
+  unsigned char _36;
+  int _37;
+  unsigned char _38;
+  int _39;
+  int _40;
+  unsigned char _41;
+  int _42;
+  void (*<T4c5>) (uint8) _43;
+  int _44;
+  unsigned char _45;
+  int _46;
+  unsigned char _47;
+  int _48;
+  unsigned char _49;
+  int _50;
+  <unnamed type> _51;
+  int _52;
+  unsigned char _53;
+  int _54;
+
+  <bb 2> :
+  _1 = (int) instance_56(D);
+  base_58 = eMiosGptBase[_1];
+  _2 = configPtr_59(D)->hwChannel;
+  Emios_Gpt_Ip_FlagEnable (instance_56(D), _2, 0);
+  _3 = configPtr_59(D)->hwChannel;
+  Emios_Gpt_Ip_ConfigureChannel (instance_56(D), _3);
+  _4 = configPtr_59(D)->stopInDebugMode;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _5 = configPtr_59(D)->clockPrescaler;
+  _6 = (long unsigned int) _5;
+  _7 = _6 << 26;
+  u32Temp_63 = _7 | 2147485184;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _8 = configPtr_59(D)->clockPrescaler;
+  _9 = (long unsigned int) _8;
+  _10 = _9 << 26;
+  u32Temp_62 = _10 | 1536;
+
+  <bb 5> :
+  # u32Temp_55 = PHI <u32Temp_63(3), u32Temp_62(4)>
+  _11 = configPtr_59(D)->hwChannel;
+  _12 = (int) _11;
+  _13 ={v} base_58->CH.UC[_12].C;
+  _14 = _13 & 2105801215;
+  _15 = u32Temp_55 & 2189166080;
+  _16 = configPtr_59(D)->hwChannel;
+  _17 = (int) _16;
+  _18 = _14 | _15;
+  base_58->CH.UC[_17].C ={v} _18;
+  _19 = configPtr_59(D)->hwChannel;
+  _20 = (int) _19;
+  _21 ={v} base_58->CH.UC[_20].C2;
+  _22 = configPtr_59(D)->hwChannel;
+  _23 = (int) _22;
+  _24 = _21 & 4293984255;
+  base_58->CH.UC[_23].C2 ={v} _24;
+  _25 = configPtr_59(D)->hwChannel;
+  _26 = (int) _25;
+  _27 ={v} base_58->CH.UC[_26].C2;
+  _28 = configPtr_59(D)->clockPrescaler;
+  _29 = (long unsigned int) _28;
+  _30 = _29 << 16;
+  _31 = _30 & 983040;
+  _32 = configPtr_59(D)->hwChannel;
+  _33 = (int) _32;
+  _34 = _27 | _31;
+  base_58->CH.UC[_33].C2 ={v} _34;
+  _35 = configPtr_59(D)->hwChannel;
+  Emios_Gpt_Ip_ClearFlag (instance_56(D), _35);
+  _36 = configPtr_59(D)->hwChannel;
+  Emios_Gpt_Ip_SetCompareValue (instance_56(D), _36, 1);
+  _37 = (int) instance_56(D);
+  _38 = configPtr_59(D)->hwChannel;
+  _39 = (int) _38;
+  Emios_Gpt_Ip_u32ChState[_37][_39].chInit = 1;
+  _40 = (int) instance_56(D);
+  _41 = configPtr_59(D)->hwChannel;
+  _42 = (int) _41;
+  _43 = configPtr_59(D)->callback;
+  Emios_Gpt_Ip_u32ChState[_40][_42].callback = _43;
+  _44 = (int) instance_56(D);
+  _45 = configPtr_59(D)->hwChannel;
+  _46 = (int) _45;
+  _47 = configPtr_59(D)->callbackParam;
+  Emios_Gpt_Ip_u32ChState[_44][_46].callbackParam = _47;
+  _48 = (int) instance_56(D);
+  _49 = configPtr_59(D)->hwChannel;
+  _50 = (int) _49;
+  _51 = configPtr_59(D)->channelMode;
+  Emios_Gpt_Ip_u32ChState[_48][_50].channelMode = _51;
+  _52 = (int) instance_56(D);
+  _53 = configPtr_59(D)->hwChannel;
+  _54 = (int) _53;
+  Emios_Gpt_Ip_bHwChannelsUsed[_52][_54] = 1;
+  return;
+
+}
+
+
+Emios_Gpt_Ip_GetInterruptFlag (uint8 instance, uint8 channel)
+{
+  uint32 flag;
+  uint32 D.6090;
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+  uint32 _9;
+
+  <bb 2> :
+  flag_4 = 0;
+  _1 = (int) instance_5(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_7(D);
+  flag_8 ={v} _2->CH.UC[_3].S;
+  _9 = flag_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Emios_Gpt_Ip_GetCounterValue (uint8 instance, uint8 channel)
+{
+  uint32 currentValueCnt;
+  uint32 D.6088;
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+  uint32 _8;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_6(D);
+  currentValueCnt_7 ={v} _2->CH.UC[_3].CNT;
+  _8 = currentValueCnt_7;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+Emios_Gpt_Ip_GetPeriodValue (uint8 instance, uint8 channel)
+{
+  uint32 currentValuePeriod;
+  uint32 D.6086;
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+  uint32 _8;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_6(D);
+  currentValuePeriod_7 ={v} _2->CH.UC[_3].A;
+  _8 = currentValuePeriod_7;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+Emios_Gpt_Ip_GetValue (uint8 instance, uint8 channel)
+{
+  uint32 currentValue;
+  uint32 D.6084;
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+  uint32 _8;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_6(D);
+  currentValue_7 ={v} _2->CH.UC[_3].C;
+  _8 = currentValue_7;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+Emios_Gpt_Ip_CounterReset (uint8 instance, uint8 channel, uint32 Cntvalue)
+{
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_6(D);
+  _2->CH.UC[_3].C ={v} Cntvalue_7(D);
+  return;
+
+}
+
+
+Emios_Gpt_Ip_SetCompareValue (uint8 instance, uint8 channel, uint32 value)
+{
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_6(D);
+  _2->CH.UC[_3].A ={v} value_7(D);
+  return;
+
+}
+
+
+Emios_Gpt_Ip_ClearFlag (uint8 instance, uint8 channel)
+{
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_6(D);
+  _2->CH.UC[_3].S ={v} 1;
+  return;
+
+}
+
+
+Emios_Gpt_Ip_ConfigureChannel (uint8 instance, uint8 channel)
+{
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  struct eMIOS_Type * _7;
+  int _8;
+  long unsigned int _9;
+
+  <bb 2> :
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_36 ();
+  _1 = (int) instance_12(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_13(D);
+  _4 ={v} _2->CH.UC[_3].C;
+  _5 = _4 & 4294966912;
+  _6 = (int) instance_12(D);
+  _7 = eMiosGptBase[_6];
+  _8 = (int) channel_13(D);
+  _9 = _5 | 256;
+  _7->CH.UC[_8].C ={v} _9;
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_36 ();
+  return;
+
+}
+
+
+Emios_Gpt_Ip_FlagEnable (uint8 instance, uint8 channel, boolean enable)
+{
+  int _1;
+  struct eMIOS_Type * _2;
+  int _3;
+  long unsigned int _4;
+  int _5;
+  struct eMIOS_Type * _6;
+  int _7;
+  long unsigned int _8;
+  int _9;
+  struct eMIOS_Type * _10;
+  int _11;
+  long unsigned int _12;
+  int _13;
+  struct eMIOS_Type * _14;
+  int _15;
+  long unsigned int _16;
+
+  <bb 2> :
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_35 ();
+  if (enable_20(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance_21(D);
+  _2 = eMiosGptBase[_1];
+  _3 = (int) channel_22(D);
+  _4 ={v} _2->CH.UC[_3].C;
+  _5 = (int) instance_21(D);
+  _6 = eMiosGptBase[_5];
+  _7 = (int) channel_22(D);
+  _8 = _4 | 131072;
+  _6->CH.UC[_7].C ={v} _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = (int) instance_21(D);
+  _10 = eMiosGptBase[_9];
+  _11 = (int) channel_22(D);
+  _12 ={v} _10->CH.UC[_11].C;
+  _13 = (int) instance_21(D);
+  _14 = eMiosGptBase[_13];
+  _15 = (int) channel_22(D);
+  _16 = _12 & 4294836223;
+  _14->CH.UC[_15].C ={v} _16;
+
+  <bb 5> :
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_35 ();
+  return;
+
+}
+
+

@@ -3,7 +3,7 @@ Trivially needed symbols: Adc_Sar_2_Isr/2 Adc_Sar_1_Isr/1 Adc_Sar_0_Isr/0
 
 Initial Symbol table:
 
-Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
+Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @05e62620
   Type: function
   Visibility: external public
   References: 
@@ -11,7 +11,7 @@ Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
   Function flags:
   Called by: Adc_Sar_2_Isr/2 Adc_Sar_1_Isr/1 Adc_Sar_0_Isr/0 
   Calls: 
-Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
+Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @05e621c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   Aux: @01981040
@@ -20,19 +20,19 @@ Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
+Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @05e59ee0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @06a851c0
+  Aux: @05e621c0
   References: 
   Referring: 
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @06a7ce00
+Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @05e59e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @06a7cee0
+  Aux: @05e59ee0
   References: 
   Referring: 
   Function flags: body
@@ -43,7 +43,7 @@ Removing unused symbols:
 
 Reclaimed Symbol table:
 
-Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
+Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @05e62620
   Type: function
   Visibility: external public
   References: 
@@ -51,7 +51,7 @@ Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
   Function flags:
   Called by: Adc_Sar_2_Isr/2 Adc_Sar_1_Isr/1 Adc_Sar_0_Isr/0 
   Calls: 
-Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
+Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @05e621c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -59,7 +59,7 @@ Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
+Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @05e59ee0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -67,7 +67,7 @@ Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @06a7ce00
+Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @05e59e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -79,7 +79,7 @@ Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @06a7ce00
 
 Initial Symbol table:
 
-Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
+Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @05e62620
   Type: function
   Visibility: external public
   References: 
@@ -87,7 +87,7 @@ Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
   Function flags:
   Called by: Adc_Sar_2_Isr/2 Adc_Sar_1_Isr/1 Adc_Sar_0_Isr/0 
   Calls: 
-Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
+Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @05e621c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -95,7 +95,7 @@ Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
+Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @05e59ee0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -103,7 +103,7 @@ Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @06a7ce00
+Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @05e59e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -116,7 +116,7 @@ Removing unused symbols:
 
 Reclaimed Symbol table:
 
-Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
+Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @05e62620
   Type: function
   Visibility: external public
   References: 
@@ -124,7 +124,7 @@ Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
   Function flags:
   Called by: Adc_Sar_2_Isr/2 Adc_Sar_1_Isr/1 Adc_Sar_0_Isr/0 
   Calls: 
-Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
+Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @05e621c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -132,7 +132,7 @@ Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
+Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @05e59ee0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -140,7 +140,7 @@ Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @06a7ce00
+Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @05e59e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -154,7 +154,7 @@ Reclaiming variables:
 Clearing address taken flags:
 Optimized Symbol table:
 
-Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
+Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @05e62620
   Type: function
   Visibility: external public
   References: 
@@ -163,7 +163,7 @@ Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
   Function flags:
   Called by: Adc_Sar_2_Isr/2 Adc_Sar_1_Isr/1 Adc_Sar_0_Isr/0 
   Calls: 
-Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
+Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @05e621c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -172,7 +172,7 @@ Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
+Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @05e59ee0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -181,7 +181,7 @@ Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
   Function flags: body
   Called by: 
   Calls: Adc_Sar_Ip_IRQHandler/3 
-Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @06a7ce00
+Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @05e59e00
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -201,7 +201,7 @@ Removing variables:
 
 Final Symbol table:
 
-Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
+Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @05e62620
   Type: function
   Visibility: external public
   References: 
@@ -210,7 +210,7 @@ Adc_Sar_Ip_IRQHandler/3 (Adc_Sar_Ip_IRQHandler) @06a85620
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
+Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @05e621c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -219,7 +219,7 @@ Adc_Sar_2_Isr/2 (Adc_Sar_2_Isr) @06a851c0
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
+Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @05e59ee0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -228,7 +228,7 @@ Adc_Sar_1_Isr/1 (Adc_Sar_1_Isr) @06a7cee0
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @06a7ce00
+Adc_Sar_0_Isr/0 (Adc_Sar_0_Isr) @05e59e00
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 

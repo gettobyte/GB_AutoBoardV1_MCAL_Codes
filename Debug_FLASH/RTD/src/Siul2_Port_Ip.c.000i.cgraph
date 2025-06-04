@@ -3,7 +3,7 @@ Trivially needed symbols: Siul2_Port_Ip_GetPinConfiguration/14 Siul2_Port_Ip_Rev
 
 Initial Symbol table:
 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @0612ea80
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @06f2dd20
   Type: function
   Visibility: external public
   References: 
@@ -11,7 +11,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04)
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @0612e9a0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @06f2dc40
   Type: function
   Visibility: external public
   References: 
@@ -19,7 +19,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @0612e7e0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @06f2da80
   Type: function
   Visibility: external public
   References: 
@@ -27,7 +27,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03)
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @0612e700
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @06f2d9a0
   Type: function
   Visibility: external public
   References: 
@@ -35,7 +35,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @0612e540
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @06f2d7e0
   Type: function
   Visibility: external public
   References: 
@@ -43,7 +43,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02)
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @0612e460
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @06f2d700
   Type: function
   Visibility: external public
   References: 
@@ -51,7 +51,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @0612e2a0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @06f2d540
   Type: function
   Visibility: external public
   References: 
@@ -59,7 +59,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01)
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @0612e1c0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @06f2d460
   Type: function
   Visibility: external public
   References: 
@@ -67,7 +67,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd20
+Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @06ecc2a0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   Aux: @01981040
@@ -76,61 +76,61 @@ Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_GetMSCRConfiguration/7 
-Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @0627ca80
+Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @06eccd20
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0627cd20
+  Aux: @06ecc2a0
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
+Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @06ecca80
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0627ca80
+  Aux: @06eccd20
   References: 
   Referring: 
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 
-Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
+Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @06ecc620
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0627c7e0
+  Aux: @06ecca80
   References: 
   Referring: 
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 
-Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
+Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @06ecc1c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0627c380
+  Aux: @06ecc620
   References: 
   Referring: 
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 
-Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
+Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @06ebfb60
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0626fe00
+  Aux: @06ecc1c0
   References: 
   Referring: 
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 
-Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
+Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @06ebf540
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0626f2a0
+  Aux: @06ebfb60
   References: pPort_Setting/2 (write) u32MaxPinConfigured/3 (write) 
   Referring: 
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626fa80
+Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @06ebfd20
   Type: function definition analyzed
   Visibility: no_reorder
   Aux: @01981040
@@ -139,58 +139,58 @@ Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626f
   Function flags: body
   Called by: Siul2_Port_Ip_GetPinConfiguration/14 
   Calls: 
-Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0626f7e0
+Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @06ebfa80
   Type: function definition analyzed
   Visibility: no_reorder
-  Aux: @0626f460
+  Aux: @06ebf700
   References: 
   Referring: 
   Function flags: body
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @0626f460
+Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @06ebf700
   Type: function definition analyzed
   Visibility: no_reorder
-  Aux: @0626fd20
+  Aux: @06ebf540
   References: 
   Referring: 
   Function flags: body
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
+Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @06ebf460
   Type: function definition analyzed
   Visibility: force_output no_reorder
-  Aux: @0626fd20
+  Aux: @06ebf540
   References: 
   Referring: 
   Function flags: body
   Called by: Siul2_Port_Ip_RevertPinConfiguration/13 Siul2_Port_Ip_Init/8 
   Calls: Siul2_Port_Ip_WriteDCMConfiguration/5 Siul2_Port_Ip_WriteIMCRConfiguration/6 
-u32MaxPinConfigured/3 (u32MaxPinConfigured) @06117168
+u32MaxPinConfigured/3 (u32MaxPinConfigured) @06ddc2d0
   Type: variable definition analyzed
   Visibility: force_output no_reorder
-  Aux: @0626f1c0
+  Aux: @06ebf460
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: not-ready
   Varpool flags:
-pPort_Setting/2 (pPort_Setting) @061170d8
+pPort_Setting/2 (pPort_Setting) @06ddc240
   Type: variable definition analyzed
   Visibility: force_output no_reorder
-  Aux: @06117168
+  Aux: @06ddc2d0
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: not-ready
   Varpool flags:
-Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06117048
+Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06ddc1b0
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @061170d8
+  Aux: @06ddc240
   References: 
   Referring: 
   Availability: not-ready
   Varpool flags: initialized read-only const-value-known
-DevAssert/0 (DevAssert) @060f2e00
+DevAssert/0 (DevAssert) @06e151c0
   Type: function definition
   Visibility: no_reorder
   References: 
@@ -203,7 +203,7 @@ Removing unused symbols: DevAssert/0
 
 Reclaimed Symbol table:
 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @0612ea80
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @06f2dd20
   Type: function
   Visibility: external public
   References: 
@@ -211,7 +211,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04)
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @0612e9a0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @06f2dc40
   Type: function
   Visibility: external public
   References: 
@@ -219,7 +219,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @0612e7e0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @06f2da80
   Type: function
   Visibility: external public
   References: 
@@ -227,7 +227,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03)
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @0612e700
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @06f2d9a0
   Type: function
   Visibility: external public
   References: 
@@ -235,7 +235,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @0612e540
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @06f2d7e0
   Type: function
   Visibility: external public
   References: 
@@ -243,7 +243,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02)
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @0612e460
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @06f2d700
   Type: function
   Visibility: external public
   References: 
@@ -251,7 +251,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @0612e2a0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @06f2d540
   Type: function
   Visibility: external public
   References: 
@@ -259,7 +259,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01)
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @0612e1c0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @06f2d460
   Type: function
   Visibility: external public
   References: 
@@ -267,7 +267,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd20
+Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @06ecc2a0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
@@ -275,7 +275,7 @@ Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_GetMSCRConfiguration/7 
-Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @0627ca80
+Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @06eccd20
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
@@ -283,7 +283,7 @@ Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
+Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @06ecca80
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -291,7 +291,7 @@ Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 
-Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
+Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @06ecc620
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -299,7 +299,7 @@ Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 
-Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
+Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @06ecc1c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -307,7 +307,7 @@ Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 
-Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
+Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @06ebfb60
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -315,7 +315,7 @@ Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 
-Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
+Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @06ebf540
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (write) u32MaxPinConfigured/3 (write) 
@@ -323,7 +323,7 @@ Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626fa80
+Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @06ebfd20
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -331,7 +331,7 @@ Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626f
   Function flags: body
   Called by: Siul2_Port_Ip_GetPinConfiguration/14 
   Calls: 
-Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0626f7e0
+Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @06ebfa80
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -339,7 +339,7 @@ Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0
   Function flags: body
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @0626f460
+Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @06ebf700
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -347,7 +347,7 @@ Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @062
   Function flags: body
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
+Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @06ebf460
   Type: function definition analyzed
   Visibility: force_output no_reorder
   References: 
@@ -355,21 +355,21 @@ Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
   Function flags: body
   Called by: Siul2_Port_Ip_RevertPinConfiguration/13 Siul2_Port_Ip_Init/8 
   Calls: Siul2_Port_Ip_WriteDCMConfiguration/5 Siul2_Port_Ip_WriteIMCRConfiguration/6 
-u32MaxPinConfigured/3 (u32MaxPinConfigured) @06117168
+u32MaxPinConfigured/3 (u32MaxPinConfigured) @06ddc2d0
   Type: variable definition analyzed
   Visibility: force_output no_reorder
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: not-ready
   Varpool flags:
-pPort_Setting/2 (pPort_Setting) @061170d8
+pPort_Setting/2 (pPort_Setting) @06ddc240
   Type: variable definition analyzed
   Visibility: force_output no_reorder
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: not-ready
   Varpool flags:
-Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06117048
+Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06ddc1b0
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -380,7 +380,7 @@ Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06117048
 
 Initial Symbol table:
 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @0612ea80
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @06f2dd20
   Type: function
   Visibility: external public
   References: 
@@ -388,7 +388,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04)
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @0612e9a0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @06f2dc40
   Type: function
   Visibility: external public
   References: 
@@ -396,7 +396,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @0612e7e0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @06f2da80
   Type: function
   Visibility: external public
   References: 
@@ -404,7 +404,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03)
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @0612e700
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @06f2d9a0
   Type: function
   Visibility: external public
   References: 
@@ -412,7 +412,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @0612e540
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @06f2d7e0
   Type: function
   Visibility: external public
   References: 
@@ -420,7 +420,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02)
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @0612e460
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @06f2d700
   Type: function
   Visibility: external public
   References: 
@@ -428,7 +428,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @0612e2a0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @06f2d540
   Type: function
   Visibility: external public
   References: 
@@ -436,7 +436,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01)
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @0612e1c0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @06f2d460
   Type: function
   Visibility: external public
   References: 
@@ -444,7 +444,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd20
+Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @06ecc2a0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
@@ -452,7 +452,7 @@ Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_GetMSCRConfiguration/7 
-Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @0627ca80
+Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @06eccd20
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
@@ -460,7 +460,7 @@ Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
+Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @06ecca80
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -468,7 +468,7 @@ Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 
-Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
+Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @06ecc620
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -476,7 +476,7 @@ Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 
-Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
+Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @06ecc1c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -484,7 +484,7 @@ Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 
-Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
+Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @06ebfb60
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -492,7 +492,7 @@ Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 
-Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
+Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @06ebf540
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (write) u32MaxPinConfigured/3 (write) 
@@ -500,7 +500,7 @@ Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626fa80
+Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @06ebfd20
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -508,7 +508,7 @@ Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626f
   Function flags: body
   Called by: Siul2_Port_Ip_GetPinConfiguration/14 
   Calls: 
-Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0626f7e0
+Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @06ebfa80
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -516,7 +516,7 @@ Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0
   Function flags: body
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @0626f460
+Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @06ebf700
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -524,7 +524,7 @@ Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @062
   Function flags: body
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
+Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @06ebf460
   Type: function definition analyzed
   Visibility: force_output no_reorder
   References: 
@@ -532,21 +532,21 @@ Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
   Function flags: body
   Called by: Siul2_Port_Ip_RevertPinConfiguration/13 Siul2_Port_Ip_Init/8 
   Calls: Siul2_Port_Ip_WriteDCMConfiguration/5 Siul2_Port_Ip_WriteIMCRConfiguration/6 
-u32MaxPinConfigured/3 (u32MaxPinConfigured) @06117168
+u32MaxPinConfigured/3 (u32MaxPinConfigured) @06ddc2d0
   Type: variable definition analyzed
   Visibility: force_output no_reorder
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: not-ready
   Varpool flags:
-pPort_Setting/2 (pPort_Setting) @061170d8
+pPort_Setting/2 (pPort_Setting) @06ddc240
   Type: variable definition analyzed
   Visibility: force_output no_reorder
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: not-ready
   Varpool flags:
-Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06117048
+Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06ddc1b0
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -558,7 +558,7 @@ Removing unused symbols:
 
 Reclaimed Symbol table:
 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @0612ea80
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @06f2dd20
   Type: function
   Visibility: external public
   References: 
@@ -566,7 +566,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04)
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @0612e9a0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @06f2dc40
   Type: function
   Visibility: external public
   References: 
@@ -574,7 +574,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @0612e7e0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @06f2da80
   Type: function
   Visibility: external public
   References: 
@@ -582,7 +582,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03)
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @0612e700
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @06f2d9a0
   Type: function
   Visibility: external public
   References: 
@@ -590,7 +590,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @0612e540
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @06f2d7e0
   Type: function
   Visibility: external public
   References: 
@@ -598,7 +598,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02)
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @0612e460
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @06f2d700
   Type: function
   Visibility: external public
   References: 
@@ -606,7 +606,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @0612e2a0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @06f2d540
   Type: function
   Visibility: external public
   References: 
@@ -614,7 +614,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01)
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @0612e1c0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @06f2d460
   Type: function
   Visibility: external public
   References: 
@@ -622,7 +622,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd20
+Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @06ecc2a0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
@@ -630,7 +630,7 @@ Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_GetMSCRConfiguration/7 
-Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @0627ca80
+Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @06eccd20
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
@@ -638,7 +638,7 @@ Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
+Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @06ecca80
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -646,7 +646,7 @@ Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 
-Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
+Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @06ecc620
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -654,7 +654,7 @@ Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 
-Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
+Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @06ecc1c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -662,7 +662,7 @@ Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 
-Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
+Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @06ebfb60
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -670,7 +670,7 @@ Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 
-Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
+Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @06ebf540
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: pPort_Setting/2 (write) u32MaxPinConfigured/3 (write) 
@@ -678,7 +678,7 @@ Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626fa80
+Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @06ebfd20
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -686,7 +686,7 @@ Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626f
   Function flags: body
   Called by: Siul2_Port_Ip_GetPinConfiguration/14 
   Calls: 
-Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0626f7e0
+Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @06ebfa80
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -694,7 +694,7 @@ Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0
   Function flags: body
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @0626f460
+Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @06ebf700
   Type: function definition analyzed
   Visibility: no_reorder
   References: 
@@ -702,7 +702,7 @@ Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @062
   Function flags: body
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
+Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @06ebf460
   Type: function definition analyzed
   Visibility: force_output no_reorder
   References: 
@@ -710,21 +710,21 @@ Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
   Function flags: body
   Called by: Siul2_Port_Ip_RevertPinConfiguration/13 Siul2_Port_Ip_Init/8 
   Calls: Siul2_Port_Ip_WriteDCMConfiguration/5 Siul2_Port_Ip_WriteIMCRConfiguration/6 
-u32MaxPinConfigured/3 (u32MaxPinConfigured) @06117168
+u32MaxPinConfigured/3 (u32MaxPinConfigured) @06ddc2d0
   Type: variable definition analyzed
   Visibility: force_output no_reorder
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: not-ready
   Varpool flags:
-pPort_Setting/2 (pPort_Setting) @061170d8
+pPort_Setting/2 (pPort_Setting) @06ddc240
   Type: variable definition analyzed
   Visibility: force_output no_reorder
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: not-ready
   Varpool flags:
-Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06117048
+Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06ddc1b0
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -737,7 +737,7 @@ Reclaiming variables:
 Clearing address taken flags:
 Optimized Symbol table:
 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @0612ea80
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @06f2dd20
   Type: function
   Visibility: external public
   References: 
@@ -746,7 +746,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04)
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @0612e9a0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @06f2dc40
   Type: function
   Visibility: external public
   References: 
@@ -755,7 +755,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPinDirection/12 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @0612e7e0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @06f2da80
   Type: function
   Visibility: external public
   References: 
@@ -764,7 +764,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03)
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @0612e700
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @06f2d9a0
   Type: function
   Visibility: external public
   References: 
@@ -773,7 +773,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetInputBuffer/11 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @0612e540
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @06f2d7e0
   Type: function
   Visibility: external public
   References: 
@@ -782,7 +782,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02)
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @0612e460
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @06f2d700
   Type: function
   Visibility: external public
   References: 
@@ -791,7 +791,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetOutputBuffer/10 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @0612e2a0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @06f2d540
   Type: function
   Visibility: external public
   References: 
@@ -800,7 +800,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01)
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @0612e1c0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @06f2d460
   Type: function
   Visibility: external public
   References: 
@@ -809,7 +809,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: Siul2_Port_Ip_SetPullSel/9 
   Calls: 
-Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd20
+Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @06ecc2a0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
@@ -818,7 +818,7 @@ Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_GetMSCRConfiguration/7 
-Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @0627ca80
+Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @06eccd20
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: pPort_Setting/2 (read) u32MaxPinConfigured/3 (read) 
@@ -827,7 +827,7 @@ Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
+Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @06ecca80
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -836,7 +836,7 @@ Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 
-Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
+Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @06ecc620
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -845,7 +845,7 @@ Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 
-Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
+Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @06ecc1c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -854,7 +854,7 @@ Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 
-Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
+Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @06ebfb60
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -863,7 +863,7 @@ Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
   Function flags: body
   Called by: 
   Calls: SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 
-Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
+Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @06ebf540
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: pPort_Setting/2 (write) u32MaxPinConfigured/3 (write) 
@@ -872,7 +872,7 @@ Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
   Function flags: body
   Called by: 
   Calls: Siul2_Port_Ip_PinInit/4 
-Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626fa80
+Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @06ebfd20
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -881,7 +881,7 @@ Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626f
   Function flags: body local
   Called by: Siul2_Port_Ip_GetPinConfiguration/14 
   Calls: 
-Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0626f7e0
+Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @06ebfa80
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -890,7 +890,7 @@ Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0
   Function flags: body local
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @0626f460
+Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @06ebf700
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -899,7 +899,7 @@ Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @062
   Function flags: body local
   Called by: Siul2_Port_Ip_PinInit/4 
   Calls: 
-Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
+Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @06ebf460
   Type: function definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
@@ -908,21 +908,21 @@ Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
   Function flags: body
   Called by: Siul2_Port_Ip_RevertPinConfiguration/13 Siul2_Port_Ip_Init/8 
   Calls: Siul2_Port_Ip_WriteDCMConfiguration/5 Siul2_Port_Ip_WriteIMCRConfiguration/6 
-u32MaxPinConfigured/3 (u32MaxPinConfigured) @06117168
+u32MaxPinConfigured/3 (u32MaxPinConfigured) @06ddc2d0
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: available
   Varpool flags:
-pPort_Setting/2 (pPort_Setting) @061170d8
+pPort_Setting/2 (pPort_Setting) @06ddc240
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: 
   Referring: Siul2_Port_Ip_Init/8 (write) Siul2_Port_Ip_RevertPinConfiguration/13 (read) Siul2_Port_Ip_GetPinConfiguration/14 (read) 
   Availability: available
   Varpool flags:
-Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06117048
+Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06ddc1b0
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -940,7 +940,7 @@ Removing variables:
 
 Final Symbol table:
 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @0612ea80
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04) @06f2dd20
   Type: function
   Visibility: external public
   References: 
@@ -949,7 +949,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04/22 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04)
   Function flags:
   Called by: 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @0612e9a0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04) @06f2dc40
   Type: function
   Visibility: external public
   References: 
@@ -958,7 +958,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04/21 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @0612e7e0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03) @06f2da80
   Type: function
   Visibility: external public
   References: 
@@ -967,7 +967,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03/20 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03)
   Function flags:
   Called by: 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @0612e700
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03) @06f2d9a0
   Type: function
   Visibility: external public
   References: 
@@ -976,7 +976,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03/19 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @0612e540
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02) @06f2d7e0
   Type: function
   Visibility: external public
   References: 
@@ -985,7 +985,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02/18 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02)
   Function flags:
   Called by: 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @0612e460
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02) @06f2d700
   Type: function
   Visibility: external public
   References: 
@@ -994,7 +994,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02/17 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: 
   Calls: 
-SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @0612e2a0
+SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01) @06f2d540
   Type: function
   Visibility: external public
   References: 
@@ -1003,7 +1003,7 @@ SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01/16 (SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01)
   Function flags:
   Called by: 
   Calls: 
-SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @0612e1c0
+SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01) @06f2d460
   Type: function
   Visibility: external public
   References: 
@@ -1012,7 +1012,7 @@ SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01/15 (SchM_Enter_Port_PORT_EXCLUSIVE_AREA_0
   Function flags:
   Called by: 
   Calls: 
-Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd20
+Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @06ecc2a0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1021,7 +1021,7 @@ Siul2_Port_Ip_GetPinConfiguration/14 (Siul2_Port_Ip_GetPinConfiguration) @0627cd
   Function flags:
   Called by: 
   Calls: 
-Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @0627ca80
+Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @06eccd20
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1030,7 +1030,7 @@ Siul2_Port_Ip_RevertPinConfiguration/13 (Siul2_Port_Ip_RevertPinConfiguration) @
   Function flags:
   Called by: 
   Calls: 
-Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
+Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @06ecca80
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1039,7 +1039,7 @@ Siul2_Port_Ip_SetPinDirection/12 (Siul2_Port_Ip_SetPinDirection) @0627c7e0
   Function flags:
   Called by: 
   Calls: 
-Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
+Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @06ecc620
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1048,7 +1048,7 @@ Siul2_Port_Ip_SetInputBuffer/11 (Siul2_Port_Ip_SetInputBuffer) @0627c380
   Function flags:
   Called by: 
   Calls: 
-Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
+Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @06ecc1c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1057,7 +1057,7 @@ Siul2_Port_Ip_SetOutputBuffer/10 (Siul2_Port_Ip_SetOutputBuffer) @0626fe00
   Function flags:
   Called by: 
   Calls: 
-Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
+Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @06ebfb60
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1066,7 +1066,7 @@ Siul2_Port_Ip_SetPullSel/9 (Siul2_Port_Ip_SetPullSel) @0626f2a0
   Function flags:
   Called by: 
   Calls: 
-Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
+Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @06ebf540
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1075,7 +1075,7 @@ Siul2_Port_Ip_Init/8 (Siul2_Port_Ip_Init) @0626fd20
   Function flags:
   Called by: 
   Calls: 
-Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626fa80
+Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @06ebfd20
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly asm_written
   References: 
@@ -1084,7 +1084,7 @@ Siul2_Port_Ip_GetMSCRConfiguration/7 (Siul2_Port_Ip_GetMSCRConfiguration) @0626f
   Function flags: local
   Called by: 
   Calls: 
-Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0626f7e0
+Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @06ebfa80
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly asm_written
   References: 
@@ -1093,7 +1093,7 @@ Siul2_Port_Ip_WriteIMCRConfiguration/6 (Siul2_Port_Ip_WriteIMCRConfiguration) @0
   Function flags: local
   Called by: 
   Calls: 
-Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @0626f460
+Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @06ebf700
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly asm_written
   References: 
@@ -1102,7 +1102,7 @@ Siul2_Port_Ip_WriteDCMConfiguration/5 (Siul2_Port_Ip_WriteDCMConfiguration) @062
   Function flags: local
   Called by: 
   Calls: 
-Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
+Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @06ebf460
   Type: function definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly asm_written
   References: 
@@ -1111,7 +1111,7 @@ Siul2_Port_Ip_PinInit/4 (Siul2_Port_Ip_PinInit) @0626f1c0
   Function flags:
   Called by: 
   Calls: 
-u32MaxPinConfigured/3 (u32MaxPinConfigured) @06117168
+u32MaxPinConfigured/3 (u32MaxPinConfigured) @06ddc2d0
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly asm_written
   Aux: @00000001
@@ -1119,18 +1119,18 @@ u32MaxPinConfigured/3 (u32MaxPinConfigured) @06117168
   Referring: 
   Availability: available
   Varpool flags:
-pPort_Setting/2 (pPort_Setting) @061170d8
+pPort_Setting/2 (pPort_Setting) @06ddc240
   Type: variable definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly asm_written
-  Aux: @06117168
+  Aux: @06ddc2d0
   References: 
   Referring: 
   Availability: available
   Varpool flags:
-Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06117048
+Port_au32Siul2BaseAddr/1 (Port_au32Siul2BaseAddr) @06ddc1b0
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
-  Aux: @061170d8
+  Aux: @06ddc240
   References: 
   Referring: 
   Availability: available
