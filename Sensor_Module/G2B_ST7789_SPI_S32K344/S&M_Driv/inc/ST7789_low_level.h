@@ -28,6 +28,22 @@ typedef enum
 	ST7789_18_Bit_6_6_6_Input_262K_Color = 0x66,//0b01100110
 }ST7789_Color_mode_values;
 
+
+#define ILI9341_PWCTR1 0xC0 ///< Power Control 1
+#define ILI9341_PWCTR2 0xC1 ///< Power Control 2
+#define ILI9341_VMCTR1 0xC5 ///< VCOM Control 1
+#define ILI9341_VMCTR2 0xC7 ///< VCOM Control 2
+#define ILI9341_MADCTL 0x36   ///< Memory Access Control
+#define ILI9341_VSCRSADD 0x37 ///< Vertical Scrolling Start Address
+#define ILI9341_PIXFMT 0x3A   ///< COLMOD: Pixel Format Set
+
+#define ILI9341_FRMCTR1       0xB1
+#define ILI9341_DFUNCTR 0xB6 ///< Display Function Control
+#define ILI9341_GAMMASET 0x26 ///< Gamma Set
+#define ILI9341_GMCTRP1 0xE0 ///< Positive Gamma Correction
+#define ILI9341_GMCTRN1 0xE1 ///< Negative Gamma Correction
+
+
 #define ST7789_XStart 0  // for 1.44 and mini
 #define ST7789_XEnd 239
 #define ST7789_YStart 80  // for 1.44 and mini
@@ -107,6 +123,7 @@ void GB_ST7789_SendCommand(uint8_t commandByte, uint8_t *dataBytes, uint8_t numD
 void GB_ST7789_SendData( uint8_t *data, uint32_t data_size);
 void GB_ST7789_SendDataIm( const uint8_t *data, uint32_t data_size);
 void GB_ST7789_Init(void);
+void GB_ILI9341_Init(void);
 /*
  * Reference from: https://github.com/Floyd-Fish/ST7789-STM32/blob/master/ST7789/st7789.c
  */

@@ -694,7 +694,7 @@
                            <array name="SpiExternalDevice">
                               <struct name="0">
                                  <setting name="Name" value="SpiExternalDevice_0"/>
-                                 <setting name="SpiBaudrate" value="1400000"/>
+                                 <setting name="SpiBaudrate" value="8000000"/>
                                  <setting name="SpiUseBaudrateConfig" value="false"/>
                                  <setting name="SpiCsIdentifier" value="PCS3"/>
                                  <setting name="SpiCsPolarity" value="LOW"/>
@@ -711,7 +711,7 @@
                                  <setting name="SpiDeviceHalfDuplexSupport" value="false"/>
                                  <setting name="SpiTransferWidth" value="TRANSFER_1_BIT"/>
                                  <setting name="SpiHalfDuplexPinSelect" value="HALF_DUPLEX_SIN"/>
-                                 <setting name="SpiCsBehavior" value="CS_TOGGLE"/>
+                                 <setting name="SpiCsBehavior" value="CS_KEEP_ASSERTED"/>
                                  <setting name="SpiDeviceDmaRepeatedTransferSupport" value="false"/>
                                  <array name="SpiDmaRepeatedTransferNotification"/>
                                  <setting name="SpiHostRequest" value="DISABLE"/>

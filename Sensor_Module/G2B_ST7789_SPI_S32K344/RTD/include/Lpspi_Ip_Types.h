@@ -320,7 +320,7 @@ typedef struct
    uint16 RxIndex;  /**< Store current Rx index to receive data in Rx buffer */
    uint16 TxIndex;  /**< Store current Tx index to transmit data in Tx buffer */
    uint16 ExpectedFifoReads;    /**< Store number of frames needs to be receive for current transfer */
-   uint32 ExpectedFifoWrites;   /**< Store number of frames needs to be transmit for current transfer */
+   uint16 ExpectedFifoWrites;   /**< Store number of frames needs to be transmit for current transfer */
    boolean KeepCs;   /**< Keep CS signal after tranfers completed. */
    boolean FirstCmd;
    const Lpspi_Ip_ConfigType *PhyUnitConfig;

@@ -192,6 +192,109 @@ void GB_ST7789_Init()
 	gb_ST7789_CS_pin_high();
 }
 
+void GB_ILI9341_Init()
+{
+
+//	uint8_t ColorMod = ST7789_16_Bit_5_6_5_Input_64K_Color;
+//	uint8_t MADCTL_SetRotation1 = 0x80; //MX = 0, MY=1, MX = 0
+//	uint8_t MADCTL_SetRotation0 = 0xC0; // MY = 0, MX= 0, RGB is set
+//
+//	uint8_t ColAddr[4]={ 0x00,0x00,0x00,240};
+//	uint8_t RowAddr[4] = {0x00,0x00,320>>8,320&0xFF};
+	uint8_t data;
+
+	gb_ST7789_reset_pin_low();
+	TestDelay(72000);
+	gb_ST7789_reset_pin_high();
+	TestDelay(144000);
+
+	gb_ST7789_CS_pin_low();
+
+	GB_ST7789_SendCommand(ST77XX_SWRESET, &data, 0, GB_ST7789_TimeOut );
+
+	uint8_t d1_data_3[3] = { 0x03, 0x80, 0x02};
+	GB_ST7789_SendCommand(0xEF, d1_data_3, 3, GB_ST7789_TimeOut );
+
+	uint8_t d2_data_3[3] = { 0x00, 0xC1, 0x30};
+	GB_ST7789_SendCommand(0xCF, d2_data_3, 3, GB_ST7789_TimeOut );
+
+	uint8_t d3_data_4[4] = { 0x64, 0x03, 0x12, 0x81};
+	GB_ST7789_SendCommand(0xED, d3_data_4, 4, GB_ST7789_TimeOut );
+
+	uint8_t d4_data_3[3] = { 0x85, 0x00, 0x78};
+	GB_ST7789_SendCommand(0xE8, d4_data_3, 3, GB_ST7789_TimeOut );
+
+	uint8_t d5_data_5[5] = { 0x39, 0x2C, 0x00, 0x34, 0x02};
+	GB_ST7789_SendCommand(0xCB, d5_data_5, 5, GB_ST7789_TimeOut );
+
+	uint8_t d6_data_1[1] = { 0x20};
+	GB_ST7789_SendCommand(0xF7, d6_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d7_data_2[2] = { 0x00, 0x00};
+	GB_ST7789_SendCommand(0xEA, d7_data_2, 2, GB_ST7789_TimeOut );
+
+	uint8_t d8_data_1[1] = { 0x23};
+	GB_ST7789_SendCommand(ILI9341_PWCTR1, d8_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d9_data_1[1] = { 0x10};
+	GB_ST7789_SendCommand(ILI9341_PWCTR2, d9_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d10_data_2[2] = { 0x3e, 0x28};
+	GB_ST7789_SendCommand( ILI9341_VMCTR1, d10_data_2, 2, GB_ST7789_TimeOut );
+
+	uint8_t d11_data_1[1] = { 0x86};
+	GB_ST7789_SendCommand( ILI9341_VMCTR2, d11_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d12_data_1[1] = { 0x48};
+	GB_ST7789_SendCommand( ILI9341_MADCTL, d12_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d13_data_1[1] = { 0x00};
+	GB_ST7789_SendCommand( ILI9341_VSCRSADD, d13_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d14_data_1[1] = { 0x55};
+	GB_ST7789_SendCommand( ILI9341_PIXFMT  , d14_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d15_data_2[2] = { 0x00, 0x18};
+	GB_ST7789_SendCommand( ILI9341_FRMCTR1 , d15_data_2, 2, GB_ST7789_TimeOut );
+
+	uint8_t d16_data_3[3] = { 0x08, 0x82, 0x27};
+	GB_ST7789_SendCommand( ILI9341_DFUNCTR , d16_data_3, 3, GB_ST7789_TimeOut );
+
+	uint8_t d17_data_1[1] = { 0x00};
+	GB_ST7789_SendCommand( 0xF2 , d17_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d18_data_1[1] = { 0x01};
+	GB_ST7789_SendCommand( ILI9341_GAMMASET, d18_data_1, 1, GB_ST7789_TimeOut );
+
+	uint8_t d19_data_15[15] = { 0x0F, 0x31, 0x2B, 0x0C, 0x0E, 0x08, 0x4E, 0xF1, 0x37, 0x07, 0x10, 0x03, 0x0E, 0x09, 0x00};
+	GB_ST7789_SendCommand( ILI9341_GMCTRP1 , d19_data_15, 15, GB_ST7789_TimeOut );
+
+	uint8_t d20_data_15[15] = { 0x00, 0x0E, 0x14, 0x03, 0x11, 0x07,
+	                        0x31, 0xc1, 0x48, 0x08, 0x0f, 0x0c, 0x31, 0x36, 0x0f};
+	GB_ST7789_SendCommand( ILI9341_GMCTRN1 , d20_data_15, 15, GB_ST7789_TimeOut );
+
+
+
+
+
+
+	GB_ST7789_SendCommand(ST77XX_SLPOUT, &data, 0, GB_ST7789_TimeOut );
+
+//	GB_ST7789_SendCommand(ST77XX_COLMOD, &ColorMod, 1, GB_ST7789_TimeOut);   // Set color Mode
+//
+//	//GB_ST7789_SendCommand(ST77XX_MADCTL, &MADCTL_SetRotation1, 1, 10);  // Set display rotation
+//
+//	GB_ST7789_SendCommand(ST77XX_INVON, &data, 0, GB_ST7789_TimeOut);
+//
+//	GB_ST7789_SendCommand(ST77XX_NORON, &data, 0, GB_ST7789_TimeOut);
+
+	GB_ST7789_SendCommand(ST77XX_DISPON, &data, 0, GB_ST7789_TimeOut);
+
+	//GB_ST7789_SendCommand(ST77XX_MADCTL, &MADCTL_SetRotation0, 1, GB_ST7789_TimeOut);
+	gb_ST7789_CS_pin_high();
+}
+
+
 /**
  * @brief Set address of DisplayWindow, this API sets the cursor for ST7789
  * Total canvas size is of 240*320 for ST7789 Driver IC, that is 240 columns and 320 rows.
