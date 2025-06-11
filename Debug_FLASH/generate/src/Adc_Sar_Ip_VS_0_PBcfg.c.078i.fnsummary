@@ -1,19 +1,36 @@
 Symbol table:
 
-AdcEndOfChainNotif/1 (AdcEndOfChainNotif) @060cbe00
+Adc2EndOfChainNotif/3 (Adc2EndOfChainNotif) @06070e00
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: AdcHwUnit_0_VS_0/0 (addr) AdcHwUnit_0_VS_0/0 (addr) 
+  Referring: ADC_2_VS_0/1 (addr) 
   Availability: not_available
   Function flags:
   Called by: 
   Calls: 
-AdcHwUnit_0_VS_0/0 (AdcHwUnit_0_VS_0) @060cf630
+Adc1EndOfChainNotif/2 (Adc1EndOfChainNotif) @06070c40
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: ADC_1_VS_0/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ADC_2_VS_0/1 (ADC_2_VS_0) @060747e0
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
-  References: AdcEndOfChainNotif/1 (addr) AdcEndOfChainNotif/1 (addr) 
+  References: Adc2EndOfChainNotif/3 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+ADC_1_VS_0/0 (ADC_1_VS_0) @06074750
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc1EndOfChainNotif/2 (addr) 
   Referring: 
   Availability: available
   Varpool flags: initialized read-only const-value-known

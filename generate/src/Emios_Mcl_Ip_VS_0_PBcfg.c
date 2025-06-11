@@ -138,7 +138,7 @@ const Emios_Ip_GlobalConfigType Emios_Ip_0_GlobalConfig_VS_0 =
     /** @brief  Allow Debug Mode */
     (boolean)TRUE,
     /** @brief  Clock Divider Value */
-    (uint8) 0U,
+    (uint8) 19U,
     /** @brief  Enable Global Time Base */
     (boolean)TRUE
 };

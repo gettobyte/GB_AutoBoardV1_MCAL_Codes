@@ -68,16 +68,29 @@ void Check(void)
 	Siul2_Dio_Ip_TogglePins(LED_PORT, (1 << LED_PIN));
 }
 
-void AdcEndOfChainNotif(void)
+void Adc1EndOfChainNotif(void)
 {
     notif_triggered = TRUE;
     /* Checks the measured ADC data conversion */
-    data = Adc_Sar_Ip_GetConvData(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_USED_CH);
+    data = Adc_Sar_Ip_GetConvData(ADC_1_VS_0_INSTANCE, ADC_SAR_USED_CH);
     while (data < 3000UL)
     {
-    	data = Adc_Sar_Ip_GetConvData(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_USED_CH);
+    	data = Adc_Sar_Ip_GetConvData(ADC_1_VS_0_INSTANCE, ADC_SAR_USED_CH);
 
-    	Adc_Sar_Ip_StartConversion(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
+    	Adc_Sar_Ip_StartConversion(ADC_1_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
+    }
+}
+
+void Adc2EndOfChainNotif(void)
+{
+    notif_triggered = TRUE;
+    /* Checks the measured ADC data conversion */
+    data = Adc_Sar_Ip_GetConvData(ADC_1_VS_0_INSTANCE, ADC_SAR_USED_CH);
+    while (data < 3000UL)
+    {
+    	data = Adc_Sar_Ip_GetConvData(ADC_1_VS_0_INSTANCE, ADC_SAR_USED_CH);
+
+    	Adc_Sar_Ip_StartConversion(ADC_1_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
     }
 }
 
@@ -87,12 +100,12 @@ void BctuWatermarkNotif(void)
     notif_triggered = TRUE;
 	/* Checks the measured ADC data conversion */
     data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
-    while (data < 3000UL)
-	{
-		data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
-
-		Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
-	}
+//    while (data < 3000UL)
+//	{
+//		data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
+//
+//		Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
+//	}
 }
 
 int main(void)
@@ -113,7 +126,9 @@ int main(void)
 
     Bctu_Ip_Init(BCTUHWUNIT_0_VS_0_INSTANCE, &BctuHwUnit_0_VS_0);
 
-    status = (StatusType) Adc_Sar_Ip_Init(ADCHWUNIT_0_VS_0_INSTANCE, &AdcHwUnit_0_VS_0);
+    status = (StatusType) Adc_Sar_Ip_Init(ADC_1_VS_0_INSTANCE, &ADC_1_VS_0);
+
+    status = (StatusType) Adc_Sar_Ip_Init(ADC_2_VS_0_INSTANCE, &ADC_2_VS_0);
 
     while (status != E_OK);
 
@@ -130,14 +145,14 @@ int main(void)
     /* Call Calibration function multiple times, to mitigate instability of board source */
     for(Index = 0; Index <= 5; Index++)
     {
-        status = (StatusType) Adc_Sar_Ip_DoCalibration(ADCHWUNIT_0_VS_0_INSTANCE);
+        status = (StatusType) Adc_Sar_Ip_DoCalibration(ADC_1_VS_0_INSTANCE);
         if(status == E_OK)
         {
             break;
         }
     }
 
-    Adc_Sar_Ip_EnableNotifications(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_IP_NOTIF_FLAG_NORMAL_ENDCHAIN | ADC_SAR_IP_NOTIF_FLAG_INJECTED_ENDCHAIN);
+    Adc_Sar_Ip_EnableNotifications(ADC_1_VS_0_INSTANCE, ADC_SAR_IP_NOTIF_FLAG_NORMAL_ENDCHAIN);
 
 //    Pit_Ip_Init(PIT_0_IP_INSTANCE_NUMBER, &PIT_0_InitConfig_PB);
 

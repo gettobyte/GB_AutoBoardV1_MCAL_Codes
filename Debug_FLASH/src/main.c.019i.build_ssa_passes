@@ -3,7 +3,7 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.10158;
+  int D.10164;
 
   <bb 2> :
   clockStatus = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
@@ -21,8 +21,10 @@ main ()
   <bb 5> :
   Siul2_Port_Ip_Init (1, &g_pin_mux_InitConfigArr0);
   Bctu_Ip_Init (0, &BctuHwUnit_0_VS_0);
-  _1 = Adc_Sar_Ip_Init (0, &AdcHwUnit_0_VS_0);
+  _1 = Adc_Sar_Ip_Init (1, &ADC_1_VS_0);
   status = (StatusType) _1;
+  _2 = Adc_Sar_Ip_Init (2, &ADC_2_VS_0);
+  status = (StatusType) _2;
 
   <bb 6> :
   if (status != 0)
@@ -39,8 +41,8 @@ main ()
   goto <bb 11>; [INV]
 
   <bb 8> :
-  _2 = Adc_Sar_Ip_DoCalibration (0);
-  status = (StatusType) _2;
+  _3 = Adc_Sar_Ip_DoCalibration (1);
+  status = (StatusType) _3;
   if (status == 0)
     goto <bb 9>; [INV]
   else
@@ -50,8 +52,8 @@ main ()
   goto <bb 12>; [INV]
 
   <bb 10> :
-  Index.3_3 = Index;
-  Index = Index.3_3 + 1;
+  Index.3_4 = Index;
+  Index = Index.3_4 + 1;
 
   <bb 11> :
   if (Index <= 5)
@@ -60,14 +62,14 @@ main ()
     goto <bb 12>; [INV]
 
   <bb 12> :
-  Adc_Sar_Ip_EnableNotifications (0, 5);
+  Adc_Sar_Ip_EnableNotifications (1, 1);
   Bctu_Ip_SetGlobalTriggerEn (0, 1);
   Bctu_Ip_EnableNotifications (0, 1);
   Emios_Mcl_Ip_Init (0, &Emios_Mcl_Ip_0_Config_VS_0);
 
   <bb 13> :
-  exit_code.4_4 = exit_code;
-  if (exit_code.4_4 != 0)
+  exit_code.4_5 = exit_code;
+  if (exit_code.4_5 != 0)
     goto <bb 14>; [INV]
   else
     goto <bb 15>; [INV]
@@ -79,11 +81,11 @@ main ()
   goto <bb 13>; [INV]
 
   <bb 16> :
-  D.10158 = exit_code;
+  D.10164 = exit_code;
 
   <bb 17> :
 <L15>:
-  return D.10158;
+  return D.10164;
 
 }
 
@@ -94,12 +96,23 @@ BctuWatermarkNotif ()
   notif_triggered = 1;
   _1 = Bctu_Ip_GetFifoData (0, 0);
   data = _1;
+  return;
+
+}
+
+
+Adc2EndOfChainNotif ()
+{
+  <bb 2> :
+  notif_triggered = 1;
+  _1 = Adc_Sar_Ip_GetConvData (1, 4);
+  data = _1;
   goto <bb 4>; [INV]
 
   <bb 3> :
-  _2 = Bctu_Ip_GetFifoData (0, 0);
+  _2 = Adc_Sar_Ip_GetConvData (1, 4);
   data = _2;
-  Bctu_Ip_SwTriggerConversion (0, 0);
+  Adc_Sar_Ip_StartConversion (1, 0);
 
   <bb 4> :
   data.2_3 = data;
@@ -114,18 +127,18 @@ BctuWatermarkNotif ()
 }
 
 
-AdcEndOfChainNotif ()
+Adc1EndOfChainNotif ()
 {
   <bb 2> :
   notif_triggered = 1;
-  _1 = Adc_Sar_Ip_GetConvData (0, 4);
+  _1 = Adc_Sar_Ip_GetConvData (1, 4);
   data = _1;
   goto <bb 4>; [INV]
 
   <bb 3> :
-  _2 = Adc_Sar_Ip_GetConvData (0, 4);
+  _2 = Adc_Sar_Ip_GetConvData (1, 4);
   data = _2;
-  Adc_Sar_Ip_StartConversion (0, 0);
+  Adc_Sar_Ip_StartConversion (1, 0);
 
   <bb 4> :
   data.1_3 = data;

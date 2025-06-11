@@ -86,16 +86,23 @@ extern "C"{
 /*==================================================================================================
 *                                      DEFINES AND MACROS
 ==================================================================================================*/
-#define ADCHWUNIT_0_VS_0_INSTANCE    (0U)
+#define ADC_1_VS_0_INSTANCE    (1U)
+#define ADC_2_VS_0_INSTANCE    (2U)
 
 #define ADC_START_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Adc_MemMap.h"
 
-extern void (AdcEndOfChainNotif)(void);
+extern void (Adc1EndOfChainNotif)(void);
 /**
-* @brief          ADC SAR Ip Config for Hardware Unit ADC0 for configuration variant VS_0.
+* @brief          ADC SAR Ip Config for Hardware Unit ADC1 for configuration variant VS_0.
 */
-extern const Adc_Sar_Ip_ConfigType AdcHwUnit_0_VS_0;
+extern const Adc_Sar_Ip_ConfigType ADC_1_VS_0;
+
+extern void (Adc2EndOfChainNotif)(void);
+/**
+* @brief          ADC SAR Ip Config for Hardware Unit ADC2 for configuration variant VS_0.
+*/
+extern const Adc_Sar_Ip_ConfigType ADC_2_VS_0;
 
 
 #define ADC_STOP_SEC_CONFIG_DATA_UNSPECIFIED

@@ -92,11 +92,11 @@ extern "C"{
 #include "Adc_MemMap.h"
 
 
-const Adc_Sar_Ip_ConfigType AdcHwUnit_0_VS_0 =
+const Adc_Sar_Ip_ConfigType ADC_1_VS_0 =
 {
     ADC_SAR_IP_CONV_MODE_ONESHOT, /* ConvMode */
 #if (ADC_SAR_IP_SET_RESOLUTION == STD_ON)
-    ADC_SAR_IP_RESOLUTION_12, /* AdcResolution */
+    ADC_SAR_IP_RESOLUTION_14, /* AdcResolution */
     (boolean)FALSE, /* BypassResolution */
 #endif /* (ADC_SAR_IP_SET_RESOLUTION == STD_ON) */
     ADC_SAR_IP_CLK_FULL_BUS, /* ClkSelect */
@@ -139,8 +139,8 @@ const Adc_Sar_Ip_ConfigType AdcHwUnit_0_VS_0 =
     0U, /* UsrGain */
     (boolean)FALSE, /* DmaEnable */
     ADC_SAR_IP_DMA_REQ_CLEAR_ON_ACK, /* DmaClearSource */
-    { 0x10U, 0x0U, 0x0U }, /* ChanMaskNormal */
-    { 0x10U, 0x0U, 0x0U }, /* ChanMaskInjected */
+    { 0x20U, 0x0U, 0x0U }, /* ChanMaskNormal */
+    { 0x0U, 0x0U, 0x0U }, /* ChanMaskInjected */
     0U, /* NumChannels */
     NULL_PTR, /* ChannelConfigsPtr */
 #if (STD_ON == ADC_SAR_IP_WDG_ENABLED)
@@ -148,10 +148,84 @@ const Adc_Sar_Ip_ConfigType AdcHwUnit_0_VS_0 =
     NULL_PTR, /* WdgThresholds */
 #endif /* (STD_ON == ADC_SAR_IP_WDG_ENABLED) */
 #if (STD_ON == ADC_SAR_IP_ECH_ENABLED)
-    AdcEndOfChainNotif, /* EndOfNormalChainNotification */
+    Adc1EndOfChainNotif, /* EndOfNormalChainNotification */
 #endif /* (STD_ON == ADC_SAR_IP_ECH_ENABLED) */
 #if (STD_ON == ADC_SAR_IP_JECH_ENABLED)
-    AdcEndOfChainNotif, /* EndOfInjectedChainNotification */
+    NULL_PTR, /* EndOfInjectedChainNotification */
+#endif /* (STD_ON == ADC_SAR_IP_JECH_ENABLED) */
+#if FEATURE_ADC_HAS_CTU
+#if (STD_ON == ADC_SAR_IP_EOCTU_ENABLED)
+    NULL_PTR, /* EndOfCtuConversionNotification */
+#endif /* (STD_ON == ADC_SAR_IP_EOCTU_ENABLED) */
+#endif /* FEATURE_ADC_HAS_CTU */
+#if (STD_ON == ADC_SAR_IP_EOC_ENABLED)
+    NULL_PTR, /* EndOfConvNotification */
+#endif /* (STD_ON == ADC_SAR_IP_EOC_ENABLED) */
+#if (STD_ON == ADC_SAR_IP_WDG_ENABLED)
+    NULL_PTR /* WdgOutOfRangeNotification */
+#endif /* (STD_ON == ADC_SAR_IP_WDG_ENABLED) */
+};
+
+const Adc_Sar_Ip_ConfigType ADC_2_VS_0 =
+{
+    ADC_SAR_IP_CONV_MODE_ONESHOT, /* ConvMode */
+#if (ADC_SAR_IP_SET_RESOLUTION == STD_ON)
+    ADC_SAR_IP_RESOLUTION_14, /* AdcResolution */
+    (boolean)FALSE, /* BypassResolution */
+#endif /* (ADC_SAR_IP_SET_RESOLUTION == STD_ON) */
+    ADC_SAR_IP_CLK_FULL_BUS, /* ClkSelect */
+    ADC_SAR_IP_CLK_FULL_BUS, /* CalibrationClkSelect */
+#if FEATURE_ADC_HAS_HIGH_SPEED_ENABLE
+    (boolean)FALSE, /* HighSpeedConvEn */
+#endif /* FEATURE_ADC_HAS_HIGH_SPEED_ENABLE */
+#if FEATURE_ADC_HAS_CTU
+    ADC_SAR_IP_CTU_MODE_CONTROL, /* CtuMode */
+#endif /* FEATURE_ADC_HAS_CTU */
+#if FEATURE_ADC_HAS_INJ_EXT_TRIGGER
+    ADC_SAR_IP_EXT_TRIG_EDGE_DISABLED, /* InjectedEdge */
+#endif /* FEATURE_ADC_HAS_INJ_EXT_TRIGGER */
+#if FEATURE_ADC_HAS_EXT_TRIGGER
+    ADC_SAR_IP_EXT_TRIG_EDGE_DISABLED, /* ExtTrigger */
+    (boolean)FALSE, /* NormalExtTrgEn */
+#if FEATURE_ADC_HAS_AUX_EXT_TRIGGER
+    (boolean)FALSE, /* NormalAuxExtTrgEn */
+#endif /* FEATURE_ADC_HAS_AUX_EXT_TRIGGER */
+#endif /* FEATURE_ADC_HAS_EXT_TRIGGER */
+#if FEATURE_ADC_HAS_CONVERSION_TIMING
+    { 22U, 22U, 22U }, /* SampleTimeArr */
+#endif /* FEATURE_ADC_HAS_CONVERSION_TIMING */
+#if FEATURE_ADC_HAS_PRESAMPLING
+    (boolean)FALSE, /* BypassSampling */
+    { ADC_SAR_IP_PRESAMPLE_VREFL, ADC_SAR_IP_PRESAMPLE_VREFL, ADC_SAR_IP_PRESAMPLE_VREFL }, /* PresamplingSourceArr */
+#endif /* FEATURE_ADC_HAS_PRESAMPLING */
+    (boolean)FALSE, /* AutoClockOff */
+    (boolean)TRUE, /* OverwriteEnable */
+    ADC_SAR_IP_DATA_ALIGNED_RIGHT, /* DataAlign */
+#if FEATURE_ADC_SAR_DECODE_DELAY
+    0U, /* DecodeDelay */
+#endif /* FEATURE_ADC_SAR_DECODE_DELAY */
+    0U, /* PowerDownDelay */
+#if FEATURE_ADC_HAS_AVERAGING
+    (boolean)FALSE, /* AvgEn */
+    ADC_SAR_IP_AVG_4_CONV, /* AvgSel */
+#endif /* FEATURE_ADC_HAS_AVERAGING */
+    0U, /* UsrOffset */
+    0U, /* UsrGain */
+    (boolean)FALSE, /* DmaEnable */
+    ADC_SAR_IP_DMA_REQ_CLEAR_ON_ACK, /* DmaClearSource */
+    { 0x0U, 0x20U, 0x0U }, /* ChanMaskNormal */
+    { 0x0U, 0x0U, 0x0U }, /* ChanMaskInjected */
+    0U, /* NumChannels */
+    NULL_PTR, /* ChannelConfigsPtr */
+#if (STD_ON == ADC_SAR_IP_WDG_ENABLED)
+    0U, /* NumWdgThresholds */
+    NULL_PTR, /* WdgThresholds */
+#endif /* (STD_ON == ADC_SAR_IP_WDG_ENABLED) */
+#if (STD_ON == ADC_SAR_IP_ECH_ENABLED)
+    Adc2EndOfChainNotif, /* EndOfNormalChainNotification */
+#endif /* (STD_ON == ADC_SAR_IP_ECH_ENABLED) */
+#if (STD_ON == ADC_SAR_IP_JECH_ENABLED)
+    NULL_PTR, /* EndOfInjectedChainNotification */
 #endif /* (STD_ON == ADC_SAR_IP_JECH_ENABLED) */
 #if FEATURE_ADC_HAS_CTU
 #if (STD_ON == ADC_SAR_IP_EOCTU_ENABLED)

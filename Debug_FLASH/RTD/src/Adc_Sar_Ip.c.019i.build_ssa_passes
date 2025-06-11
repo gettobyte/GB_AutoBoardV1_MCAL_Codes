@@ -1,17 +1,17 @@
 Adc_Sar_Ip_GetDataAddress (uint32 u32Instance, uint32 u32ChannelIndex)
 {
-  uint32 D.7156;
+  uint32 D.7159;
 
   <bb 2> :
   _1 = Adc_Sar_Ip_apxAdcBase[u32Instance];
   _2 = &_1->PCDR[0];
   _3 = u32ChannelIndex * 4;
   _4 = _2 + _3;
-  D.7156 = (uint32) _4;
+  D.7159 = (uint32) _4;
 
   <bb 3> :
 <L0>:
-  return D.7156;
+  return D.7159;
 
 }
 
@@ -54,7 +54,7 @@ Adc_Sar_Ip_SetCtuMode (const uint32 u32Instance, const Adc_Sar_Ip_CtuModeType eC
 {
   struct ADC_Type * const AdcBasePtr;
   Adc_Sar_Ip_StatusType Status;
-  Adc_Sar_Ip_StatusType D.7154;
+  Adc_Sar_Ip_StatusType D.7157;
 
   <bb 2> :
   Status = 0;
@@ -116,11 +116,11 @@ Adc_Sar_Ip_SetCtuMode (const uint32 u32Instance, const Adc_Sar_Ip_CtuModeType eC
   Status = Adc_Sar_Ip_Powerup (u32Instance);
 
   <bb 11> :
-  D.7154 = Status;
+  D.7157 = Status;
 
   <bb 12> :
 <L9>:
-  return D.7154;
+  return D.7157;
 
 }
 
@@ -500,8 +500,8 @@ Adc_Sar_Ip_AbortChain (const uint32 u32Instance, const boolean bBlocking, const 
   uint32 CurrentTicks;
   uint32 TimeoutTicks;
   uint32 MsrStatus;
-  Adc_Sar_Ip_StatusType D.7137;
-  long unsigned int D.7133;
+  Adc_Sar_Ip_StatusType D.7140;
+  long unsigned int D.7136;
 
   <bb 2> :
   TimeoutTicks = OsIf_MicrosToTicks (3000, 0);
@@ -540,8 +540,8 @@ Adc_Sar_Ip_AbortChain (const uint32 u32Instance, const boolean bBlocking, const 
   <bb 6> :
   _8 = AdcBasePtr->MSR;
   MsrStatus = _8 & 16777216;
-  D.7133 = OsIf_GetElapsed (&CurrentTicks, 0);
-  ElapsedTicks = D.7133 + ElapsedTicks;
+  D.7136 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.7136 + ElapsedTicks;
 
   <bb 7> :
   if (MsrStatus == 16777216)
@@ -565,12 +565,12 @@ Adc_Sar_Ip_AbortChain (const uint32 u32Instance, const boolean bBlocking, const 
   ReturnStatus = 2;
 
   <bb 11> :
-  D.7137 = ReturnStatus;
+  D.7140 = ReturnStatus;
   CurrentTicks = {CLOBBER};
 
   <bb 12> :
 <L11>:
-  return D.7137;
+  return D.7140;
 
 }
 
@@ -668,16 +668,16 @@ Adc_Sar_Ip_SetClockMode (const uint32 u32Instance, const struct Adc_Sar_Ip_Clock
   struct ADC_Type * const AdcBasePtr;
   uint32 Mcr;
   Adc_Sar_Ip_StatusType Status;
-  Adc_Sar_Ip_StatusType D.7123;
-  long unsigned int D.7118;
+  Adc_Sar_Ip_StatusType D.7126;
+  long unsigned int D.7121;
 
   <bb 2> :
   Status = 0;
   Mcr = 0;
   AdcBasePtr = Adc_Sar_Ip_apxAdcBase[u32Instance];
   _1 = pConfig->ClkSelect;
-  D.7118 = Adc_Sar_GetADCLKSELValue (_1);
-  Mcr = D.7118 | Mcr;
+  D.7121 = Adc_Sar_GetADCLKSELValue (_1);
+  Mcr = D.7121 | Mcr;
   Status = Adc_Sar_Ip_Powerdown (u32Instance);
   if (Status == 0)
     goto <bb 3>; [INV]
@@ -712,11 +712,11 @@ Adc_Sar_Ip_SetClockMode (const uint32 u32Instance, const struct Adc_Sar_Ip_Clock
   Adc_Sar_Ip_SetSampleTimes (u32Instance, _10);
 
   <bb 5> :
-  D.7123 = Status;
+  D.7126 = Status;
 
   <bb 6> :
 <L4>:
-  return D.7123;
+  return D.7126;
 
 }
 
@@ -799,8 +799,8 @@ Adc_Sar_Ip_Powerdown (const uint32 u32Instance)
   uint32 MsrStatus;
   uint32 ExpectedStatus;
   Adc_Sar_Ip_StatusType ReturnStatus;
-  Adc_Sar_Ip_StatusType D.7111;
-  long unsigned int D.7107;
+  Adc_Sar_Ip_StatusType D.7114;
+  long unsigned int D.7110;
 
   <bb 2> :
   ReturnStatus = 0;
@@ -820,8 +820,8 @@ Adc_Sar_Ip_Powerdown (const uint32 u32Instance)
   <bb 3> :
   _3 = AdcBasePtr->MSR;
   MsrStatus = _3 & 7;
-  D.7107 = OsIf_GetElapsed (&CurrentTicks, 0);
-  ElapsedTicks = D.7107 + ElapsedTicks;
+  D.7110 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.7110 + ElapsedTicks;
 
   <bb 4> :
   if (MsrStatus != ExpectedStatus)
@@ -845,12 +845,12 @@ Adc_Sar_Ip_Powerdown (const uint32 u32Instance)
   ReturnStatus = 2;
 
   <bb 8> :
-  D.7111 = ReturnStatus;
+  D.7114 = ReturnStatus;
   CurrentTicks = {CLOBBER};
 
   <bb 9> :
 <L7>:
-  return D.7111;
+  return D.7114;
 
 }
 
@@ -864,8 +864,8 @@ Adc_Sar_Ip_Powerup (const uint32 u32Instance)
   uint32 MsrStatus;
   uint32 ExpectedStatus;
   Adc_Sar_Ip_StatusType ReturnStatus;
-  Adc_Sar_Ip_StatusType D.7104;
-  long unsigned int D.7100;
+  Adc_Sar_Ip_StatusType D.7107;
+  long unsigned int D.7103;
 
   <bb 2> :
   ReturnStatus = 0;
@@ -885,8 +885,8 @@ Adc_Sar_Ip_Powerup (const uint32 u32Instance)
   <bb 3> :
   _3 = AdcBasePtr->MSR;
   MsrStatus = _3 & 7;
-  D.7100 = OsIf_GetElapsed (&CurrentTicks, 0);
-  ElapsedTicks = D.7100 + ElapsedTicks;
+  D.7103 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.7103 + ElapsedTicks;
 
   <bb 4> :
   if (MsrStatus != ExpectedStatus)
@@ -910,12 +910,12 @@ Adc_Sar_Ip_Powerup (const uint32 u32Instance)
   ReturnStatus = 2;
 
   <bb 8> :
-  D.7104 = ReturnStatus;
+  D.7107 = ReturnStatus;
   CurrentTicks = {CLOBBER};
 
   <bb 9> :
 <L7>:
-  return D.7104;
+  return D.7107;
 
 }
 
@@ -931,9 +931,9 @@ Adc_Sar_Ip_DoCalibration (const uint32 u32Instance)
   uint32 TimeoutTicks;
   Adc_Sar_Ip_StatusType CalStatus;
   Adc_Sar_Ip_StatusType Status;
-  Adc_Sar_Ip_StatusType D.7097;
+  Adc_Sar_Ip_StatusType D.7100;
+  long unsigned int D.7088;
   long unsigned int D.7085;
-  long unsigned int D.7082;
 
   <bb 2> :
   Status = 0;
@@ -956,8 +956,8 @@ Adc_Sar_Ip_DoCalibration (const uint32 u32Instance)
   AdcClkSel = Mcr & 6;
   Mcr = Mcr & 4294967289;
   _2 = Adc_Sar_Ip_axAdcSarState[u32Instance].CalibrationClkSelect;
-  D.7082 = Adc_Sar_GetADCLKSELValue (_2);
-  Mcr = D.7082 | Mcr;
+  D.7085 = Adc_Sar_GetADCLKSELValue (_2);
+  Mcr = D.7085 | Mcr;
   AdcBasePtr->MCR = Mcr;
   SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_12 ();
   Status = Adc_Sar_Ip_Powerup (u32Instance);
@@ -983,8 +983,8 @@ Adc_Sar_Ip_DoCalibration (const uint32 u32Instance)
   goto <bb 6>; [INV]
 
   <bb 5> :
-  D.7085 = OsIf_GetElapsed (&CurrentTicks, 0);
-  ElapsedTicks = D.7085 + ElapsedTicks;
+  D.7088 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.7088 + ElapsedTicks;
 
   <bb 6> :
   _7 = AdcBasePtr->CALBISTREG;
@@ -1047,12 +1047,12 @@ Adc_Sar_Ip_DoCalibration (const uint32 u32Instance)
   Status = CalStatus;
 
   <bb 16> :
-  D.7097 = Status;
+  D.7100 = Status;
   CurrentTicks = {CLOBBER};
 
   <bb 17> :
 <L19>:
-  return D.7097;
+  return D.7100;
 
 }
 
@@ -1115,7 +1115,7 @@ Adc_Sar_Ip_GetConvData (const uint32 u32Instance, const uint32 u32ChnIdx)
   uint32 VectBit;
   uint32 VectAdr;
   uint16 Result;
-  uint16 D.7076;
+  uint16 D.7079;
 
   <bb 2> :
   Result = 0;
@@ -1141,39 +1141,39 @@ Adc_Sar_Ip_GetConvData (const uint32 u32Instance, const uint32 u32ChnIdx)
   MEM[(volatile uint32 *)_7] = _8;
 
   <bb 4> :
-  D.7076 = Result;
+  D.7079 = Result;
 
   <bb 5> :
 <L2>:
-  return D.7076;
+  return D.7079;
 
 }
 
 
 Adc_Sar_Ip_GetConvResultsToArray (const uint32 u32Instance, const Adc_Sar_Ip_ConvChainType pChainType, const uint32 u32Length, struct Adc_Sar_Ip_ChanResultType * const pResults)
 {
-  uint32 D.7072;
+  uint32 D.7075;
 
   <bb 2> :
-  D.7072 = Adc_Sar_GetConvResults (u32Instance, pChainType, 0B, pResults, u32Length);
+  D.7075 = Adc_Sar_GetConvResults (u32Instance, pChainType, 0B, pResults, u32Length);
 
   <bb 3> :
 <L0>:
-  return D.7072;
+  return D.7075;
 
 }
 
 
 Adc_Sar_Ip_GetConvDataToArray (const uint32 u32Instance, const Adc_Sar_Ip_ConvChainType pChainType, const uint32 u32Length, uint16 * const pResults)
 {
-  uint32 D.7070;
+  uint32 D.7073;
 
   <bb 2> :
-  D.7070 = Adc_Sar_GetConvResults (u32Instance, pChainType, pResults, 0B, u32Length);
+  D.7073 = Adc_Sar_GetConvResults (u32Instance, pChainType, pResults, 0B, u32Length);
 
   <bb 3> :
 <L0>:
-  return D.7070;
+  return D.7073;
 
 }
 
@@ -1187,8 +1187,8 @@ Adc_Sar_Ip_SelfTest (const uint32 u32Instance)
   uint32 MsrStatus;
   uint32 Reg;
   Adc_Sar_Ip_StatusType Status;
-  Adc_Sar_Ip_StatusType D.7048;
-  long unsigned int D.7044;
+  Adc_Sar_Ip_StatusType D.7051;
+  long unsigned int D.7047;
 
   <bb 2> :
   Status = 0;
@@ -1248,8 +1248,8 @@ Adc_Sar_Ip_SelfTest (const uint32 u32Instance)
   <bb 4> :
   _19 = AdcBasePtr->MSR;
   MsrStatus = _19 & 7;
-  D.7044 = OsIf_GetElapsed (&CurrentTicks, 0);
-  ElapsedTicks = D.7044 + ElapsedTicks;
+  D.7047 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.7047 + ElapsedTicks;
 
   <bb 5> :
   if (MsrStatus != 0)
@@ -1278,12 +1278,12 @@ Adc_Sar_Ip_SelfTest (const uint32 u32Instance)
   Status = 2;
 
   <bb 9> :
-  D.7048 = Status;
+  D.7051 = Status;
   CurrentTicks = {CLOBBER};
 
   <bb 10> :
 <L9>:
-  return D.7048;
+  return D.7051;
 
 }
 
@@ -1325,21 +1325,21 @@ Adc_Sar_Ip_ClearStatusFlags (const uint32 u32Instance, const uint32 u32Mask)
 Adc_Sar_Ip_GetStatusFlags (const uint32 u32Instance)
 {
   uint32 Flags;
-  uint32 D.7030;
-  long unsigned int D.7029;
-  long unsigned int D.7028;
+  uint32 D.7033;
+  long unsigned int D.7032;
+  long unsigned int D.7031;
 
   <bb 2> :
   Flags = 0;
-  D.7028 = Adc_Sar_GetMsrFlags (u32Instance);
-  Flags = D.7028 | Flags;
-  D.7029 = Adc_Sar_GetIsrFlags (u32Instance);
-  Flags = D.7029 | Flags;
-  D.7030 = Flags;
+  D.7031 = Adc_Sar_GetMsrFlags (u32Instance);
+  Flags = D.7031 | Flags;
+  D.7032 = Adc_Sar_GetIsrFlags (u32Instance);
+  Flags = D.7032 | Flags;
+  D.7033 = Flags;
 
   <bb 3> :
 <L0>:
-  return D.7030;
+  return D.7033;
 
 }
 
@@ -1536,7 +1536,7 @@ Adc_Sar_Ip_Deinit (const uint32 u32Instance)
   Adc_Sar_Ip_StatusType Status;
   struct Adc_Sar_Ip_ConfigType DefaultConfig;
   uint32 Index;
-  Adc_Sar_Ip_StatusType D.7025;
+  Adc_Sar_Ip_StatusType D.7028;
 
   <bb 2> :
   AdcBasePtr = Adc_Sar_Ip_apxAdcBase[u32Instance];
@@ -1629,12 +1629,12 @@ Adc_Sar_Ip_Deinit (const uint32 u32Instance)
   Status = Adc_Sar_Ip_Powerdown (u32Instance);
 
   <bb 10> :
-  D.7025 = Status;
+  D.7028 = Status;
   DefaultConfig = {CLOBBER};
 
   <bb 11> :
 <L9>:
-  return D.7025;
+  return D.7028;
 
 }
 
@@ -1643,7 +1643,7 @@ Adc_Sar_Ip_Init (const uint32 u32Instance, const struct Adc_Sar_Ip_ConfigType * 
 {
   struct ADC_Type * const AdcBasePtr;
   Adc_Sar_Ip_StatusType Status;
-  Adc_Sar_Ip_StatusType D.6991;
+  Adc_Sar_Ip_StatusType D.6994;
   long unsigned int iftmp.4;
 
   <bb 2> :
@@ -1795,11 +1795,11 @@ Adc_Sar_Ip_Init (const uint32 u32Instance, const struct Adc_Sar_Ip_ConfigType * 
   Adc_Sar_Ip_axAdcSarState[u32Instance].InitStatus = 1;
 
   <bb 17> :
-  D.6991 = Status;
+  D.6994 = Status;
 
   <bb 18> :
 <L17>:
-  return D.6991;
+  return D.6994;
 
 }
 
@@ -1807,7 +1807,7 @@ Adc_Sar_Ip_Init (const uint32 u32Instance, const struct Adc_Sar_Ip_ConfigType * 
 Adc_Sar_GetValueFromBool (const boolean bVal, const uint32 TrueVal, const uint32 FalseVal)
 {
   uint32 iftmp.6;
-  uint32 D.7011;
+  uint32 D.7014;
 
   <bb 2> :
   if (bVal != 0)
@@ -1823,11 +1823,11 @@ Adc_Sar_GetValueFromBool (const boolean bVal, const uint32 TrueVal, const uint32
   iftmp.6 = FalseVal;
 
   <bb 5> :
-  D.7011 = iftmp.6;
+  D.7014 = iftmp.6;
 
   <bb 6> :
 <L3>:
-  return D.7011;
+  return D.7014;
 
 }
 
@@ -2217,7 +2217,7 @@ Adc_Sar_GetConvResults (const uint32 Instance, const Adc_Sar_Ip_ConvChainType Ch
   struct ADC_Type * const AdcBasePtr;
   boolean LengthExceeded;
   uint32 Index;
-  uint32 D.6936;
+  uint32 D.6939;
 
   <bb 2> :
   Index = 0;
@@ -2356,12 +2356,12 @@ Adc_Sar_GetConvResults (const uint32 Instance, const Adc_Sar_Ip_ConvChainType Ch
     goto <bb 19>; [INV]
 
   <bb 19> :
-  D.6936 = Index;
+  D.6939 = Index;
   AdcChanCount = {CLOBBER};
 
   <bb 20> :
 <L20>:
-  return D.6936;
+  return D.6939;
 
 }
 
@@ -2375,9 +2375,9 @@ Adc_Sar_CheckSelfTestProgress (const uint32 Instance)
   uint32 Reg;
   Adc_Sar_Ip_StatusType Status;
   const struct ADC_Type * const AdcBasePtr;
-  Adc_Sar_Ip_StatusType D.7067;
-  long unsigned int D.7057;
-  long unsigned int D.7051;
+  Adc_Sar_Ip_StatusType D.7070;
+  long unsigned int D.7060;
+  long unsigned int D.7054;
 
   <bb 2> :
   AdcBasePtr = Adc_Sar_Ip_apxAdcBase[Instance];
@@ -2394,8 +2394,8 @@ Adc_Sar_CheckSelfTestProgress (const uint32 Instance)
   goto <bb 5>; [INV]
 
   <bb 4> :
-  D.7051 = OsIf_GetElapsed (&CurrentTicks, 0);
-  ElapsedTicks = D.7051 + ElapsedTicks;
+  D.7054 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.7054 + ElapsedTicks;
 
   <bb 5> :
   _2 = AdcBasePtr->MSR;
@@ -2431,8 +2431,8 @@ Adc_Sar_CheckSelfTestProgress (const uint32 Instance)
   goto <bb 12>; [INV]
 
   <bb 11> :
-  D.7057 = OsIf_GetElapsed (&CurrentTicks, 0);
-  ElapsedTicks = D.7057 + ElapsedTicks;
+  D.7060 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.7060 + ElapsedTicks;
 
   <bb 12> :
   _4 = AdcBasePtr->MSR;
@@ -2495,12 +2495,12 @@ Adc_Sar_CheckSelfTestProgress (const uint32 Instance)
   Status = 1;
 
   <bb 23> :
-  D.7067 = Status;
+  D.7070 = Status;
   CurrentTicks = {CLOBBER};
 
   <bb 24> :
 <L24>:
-  return D.7067;
+  return D.7070;
 
 }
 
@@ -2516,8 +2516,8 @@ Adc_Sar_ConfigChannels (const uint32 Instance, const struct Adc_Sar_Ip_ChanConfi
   uint32 VectAdr;
   uint8 Index;
   struct ADC_Type * const AdcBasePtr;
-  long unsigned int D.7022;
-  long unsigned int D.7021;
+  long unsigned int D.7025;
+  long unsigned int D.7024;
 
   <bb 2> :
   AdcBasePtr = Adc_Sar_Ip_apxAdcBase[Instance];
@@ -2559,15 +2559,15 @@ Adc_Sar_ConfigChannels (const uint32 Instance, const struct Adc_Sar_Ip_ChanConfi
   VectBit = _12 & 31;
   _13 = ChnConfig->EndOfConvDmaEnable;
   _14 = 1 << VectBit;
-  D.7021 = Adc_Sar_GetValueFromBool (_13, _14, 0);
+  D.7024 = Adc_Sar_GetValueFromBool (_13, _14, 0);
   _15 = DmarMask[VectAdr];
-  _16 = D.7021 | _15;
+  _16 = D.7024 | _15;
   DmarMask[VectAdr] = _16;
   _17 = ChnConfig->PresamplingEnable;
   _18 = 1 << VectBit;
-  D.7022 = Adc_Sar_GetValueFromBool (_17, _18, 0);
+  D.7025 = Adc_Sar_GetValueFromBool (_17, _18, 0);
   _19 = PsrMask[VectAdr];
-  _20 = D.7022 | _19;
+  _20 = D.7025 | _19;
   PsrMask[VectAdr] = _20;
   Index.11_21 = Index;
   Index = Index.11_21 + 1;
@@ -2634,14 +2634,14 @@ Adc_Sar_ConfigChannels (const uint32 Instance, const struct Adc_Sar_Ip_ChanConfi
 Adc_Sar_CollectMcrMasks (const uint32 Instance, const struct Adc_Sar_Ip_ConfigType * const Config, uint32 InitialMcr)
 {
   uint32 Mcr;
-  uint32 D.7007;
-  long unsigned int D.7006;
-  long unsigned int D.7005;
-  long unsigned int D.7004;
+  uint32 D.7010;
+  long unsigned int D.7009;
+  long unsigned int D.7008;
+  long unsigned int D.7007;
   long unsigned int iftmp.5;
-  long unsigned int D.6995;
-  long unsigned int D.6994;
-  long unsigned int D.6993;
+  long unsigned int D.6998;
+  long unsigned int D.6997;
+  long unsigned int D.6996;
 
   <bb 2> :
   Mcr = InitialMcr;
@@ -2652,16 +2652,16 @@ Adc_Sar_CollectMcrMasks (const uint32 Instance, const struct Adc_Sar_Ip_ConfigTy
   Mcr = Mcr | _3;
   Mcr = Mcr & 4294967289;
   _4 = Config->ClkSelect;
-  D.6993 = Adc_Sar_GetADCLKSELValue (_4);
-  Mcr = D.6993 | Mcr;
+  D.6996 = Adc_Sar_GetADCLKSELValue (_4);
+  Mcr = D.6996 | Mcr;
   Mcr = Mcr & 4294967263;
   _5 = Config->AutoClockOff;
-  D.6994 = Adc_Sar_GetValueFromBool (_5, 32, 0);
-  Mcr = D.6994 | Mcr;
+  D.6997 = Adc_Sar_GetValueFromBool (_5, 32, 0);
+  Mcr = D.6997 | Mcr;
   Mcr = Mcr & 2147483647;
   _6 = Config->OverwriteEnable;
-  D.6995 = Adc_Sar_GetValueFromBool (_6, 2147483648, 0);
-  Mcr = D.6995 | Mcr;
+  D.6998 = Adc_Sar_GetValueFromBool (_6, 2147483648, 0);
+  Mcr = D.6998 | Mcr;
   Mcr = Mcr & 3221225471;
   _7 = Config->DataAlign;
   _8 = _7 << 30;
@@ -2739,43 +2739,43 @@ Adc_Sar_CollectMcrMasks (const uint32 Instance, const struct Adc_Sar_Ip_ConfigTy
   <bb 15> :
   Mcr = Mcr & 4160749567;
   _16 = Config->NormalExtTrgEn;
-  D.7004 = Adc_Sar_GetValueFromBool (_16, 134217728, 0);
-  Mcr = D.7004 | Mcr;
+  D.7007 = Adc_Sar_GetValueFromBool (_16, 134217728, 0);
+  Mcr = D.7007 | Mcr;
   Mcr = Mcr & 4261412863;
   _17 = Config->NormalAuxExtTrgEn;
-  D.7005 = Adc_Sar_GetValueFromBool (_17, 33554432, 0);
-  Mcr = D.7005 | Mcr;
+  D.7008 = Adc_Sar_GetValueFromBool (_17, 33554432, 0);
+  Mcr = D.7008 | Mcr;
 
   <bb 16> :
   Mcr = Mcr & 4294965247;
   _18 = Config->AvgEn;
-  D.7006 = Adc_Sar_GetValueFromBool (_18, 2048, 0);
-  Mcr = D.7006 | Mcr;
+  D.7009 = Adc_Sar_GetValueFromBool (_18, 2048, 0);
+  Mcr = D.7009 | Mcr;
   Mcr = Mcr & 4294965759;
   _19 = Config->AvgSel;
   _20 = _19 << 9;
   _21 = _20 & 1536;
   Mcr = Mcr | _21;
-  D.7007 = Mcr;
+  D.7010 = Mcr;
 
   <bb 17> :
 <L17>:
-  return D.7007;
+  return D.7010;
 
 }
 
 
 Adc_Sar_GetADCLKSELValue (Adc_Sar_Ip_ClockSelType ClockSel)
 {
-  uint32 D.7009;
+  uint32 D.7012;
 
   <bb 2> :
   _1 = ClockSel << 1;
-  D.7009 = _1 & 6;
+  D.7012 = _1 & 6;
 
   <bb 3> :
 <L0>:
-  return D.7009;
+  return D.7012;
 
 }
 
@@ -2785,7 +2785,7 @@ Adc_Sar_GetIsrFlags (const uint32 Instance)
   uint32 Flags;
   uint32 Isr;
   const struct ADC_Type * const AdcBasePtr;
-  uint32 D.7038;
+  uint32 D.7041;
 
   <bb 2> :
   AdcBasePtr = Adc_Sar_Ip_apxAdcBase[Instance];
@@ -2811,11 +2811,11 @@ Adc_Sar_GetIsrFlags (const uint32 Instance)
   Flags = Flags | _7;
 
   <bb 4> :
-  D.7038 = Flags;
+  D.7041 = Flags;
 
   <bb 5> :
 <L2>:
-  return D.7038;
+  return D.7041;
 
 }
 
@@ -2825,7 +2825,7 @@ Adc_Sar_GetMsrFlags (const uint32 Instance)
   uint32 Flags;
   uint32 Msr;
   const struct ADC_Type * const AdcBasePtr;
-  uint32 D.7034;
+  uint32 D.7037;
 
   <bb 2> :
   AdcBasePtr = Adc_Sar_Ip_apxAdcBase[Instance];
@@ -2861,11 +2861,11 @@ Adc_Sar_GetMsrFlags (const uint32 Instance)
   _15 = Msr << 5;
   _16 = _15 & 1024;
   Flags = Flags | _16;
-  D.7034 = Flags;
+  D.7037 = Flags;
 
   <bb 5> :
 <L2>:
-  return D.7034;
+  return D.7037;
 
 }
 
@@ -2875,7 +2875,7 @@ Adc_Sar_GetMaskedResult (const uint32 Instance, const uint32 Cdr)
   uint8 Resolution;
   uint16 Result;
   uint32 CdrMask;
-  uint16 D.6945;
+  uint16 D.6948;
 
   <bb 2> :
   CdrMask = 65535;
@@ -2924,11 +2924,11 @@ Adc_Sar_GetMaskedResult (const uint32 Instance, const uint32 Cdr)
   Result = (uint16) _17;
 
   <bb 8> :
-  D.6945 = Result;
+  D.6948 = Result;
 
   <bb 9> :
 <L6>:
-  return D.6945;
+  return D.6948;
 
 }
 
@@ -2940,7 +2940,7 @@ Adc_Sar_GetResolution (const uint32 Instance)
   const struct ADC_Type * const AdcBasePtr;
   static const uint8 ResolutionArray[4] = "\x0e\f\n\b";
   uint8 Resolution;
-  uint8 D.6947;
+  uint8 D.6950;
 
   <bb 2> :
   AdcBasePtr = Adc_Sar_Ip_apxAdcBase[Instance];
@@ -2950,11 +2950,11 @@ Adc_Sar_GetResolution (const uint32 Instance)
   ResolutionBits = _2 & 3;
   _3 = (int) ResolutionBits;
   Resolution = ResolutionArray[_3];
-  D.6947 = Resolution;
+  D.6950 = Resolution;
 
   <bb 3> :
 <L0>:
-  return D.6947;
+  return D.6950;
 
 }
 

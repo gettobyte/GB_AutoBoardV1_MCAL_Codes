@@ -3,23 +3,24 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.10158;
+  int D.10164;
   <unnamed type> _1;
   <unnamed type> _2;
-  unsigned char Index.3_3;
-  int exit_code.4_4;
-  int _29;
+  <unnamed type> _3;
+  unsigned char Index.3_4;
+  int exit_code.4_5;
+  int _32;
 
   <bb 2> :
-  clockStatus_12 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  clockStatus_13 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
   goto <bb 4>; [INV]
 
   <bb 3> :
-  clockStatus_31 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  clockStatus_34 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
 
   <bb 4> :
-  # clockStatus_6 = PHI <clockStatus_12(2), clockStatus_31(3)>
-  if (clockStatus_6 != 0)
+  # clockStatus_7 = PHI <clockStatus_13(2), clockStatus_34(3)>
+  if (clockStatus_7 != 0)
     goto <bb 3>; [INV]
   else
     goto <bb 5>; [INV]
@@ -27,11 +28,13 @@ main ()
   <bb 5> :
   Siul2_Port_Ip_Init (1, &g_pin_mux_InitConfigArr0);
   Bctu_Ip_Init (0, &BctuHwUnit_0_VS_0);
-  _1 = Adc_Sar_Ip_Init (0, &AdcHwUnit_0_VS_0);
-  status_16 = (StatusType) _1;
+  _1 = Adc_Sar_Ip_Init (1, &ADC_1_VS_0);
+  status_17 = (StatusType) _1;
+  _2 = Adc_Sar_Ip_Init (2, &ADC_2_VS_0);
+  status_19 = (StatusType) _2;
 
   <bb 6> :
-  if (status_16 != 0)
+  if (status_19 != 0)
     goto <bb 6>; [INV]
   else
     goto <bb 7>; [INV]
@@ -41,13 +44,13 @@ main ()
   IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
   IntCtrl_Ip_EnableIrq (180);
   IntCtrl_Ip_EnableIrq (87);
-  Index_21 = 0;
+  Index_24 = 0;
   goto <bb 11>; [INV]
 
   <bb 8> :
-  _2 = Adc_Sar_Ip_DoCalibration (0);
-  status_23 = (StatusType) _2;
-  if (status_23 == 0)
+  _3 = Adc_Sar_Ip_DoCalibration (1);
+  status_26 = (StatusType) _3;
+  if (status_26 == 0)
     goto <bb 9>; [INV]
   else
     goto <bb 10>; [INV]
@@ -56,25 +59,25 @@ main ()
   goto <bb 12>; [INV]
 
   <bb 10> :
-  Index.3_3 = Index_5;
-  Index_24 = Index.3_3 + 1;
+  Index.3_4 = Index_6;
+  Index_27 = Index.3_4 + 1;
 
   <bb 11> :
-  # Index_5 = PHI <Index_21(7), Index_24(10)>
-  if (Index_5 <= 5)
+  # Index_6 = PHI <Index_24(7), Index_27(10)>
+  if (Index_6 <= 5)
     goto <bb 8>; [INV]
   else
     goto <bb 12>; [INV]
 
   <bb 12> :
-  Adc_Sar_Ip_EnableNotifications (0, 5);
+  Adc_Sar_Ip_EnableNotifications (1, 1);
   Bctu_Ip_SetGlobalTriggerEn (0, 1);
   Bctu_Ip_EnableNotifications (0, 1);
   Emios_Mcl_Ip_Init (0, &Emios_Mcl_Ip_0_Config_VS_0);
 
   <bb 13> :
-  exit_code.4_4 ={v} exit_code;
-  if (exit_code.4_4 != 0)
+  exit_code.4_5 ={v} exit_code;
+  if (exit_code.4_5 != 0)
     goto <bb 14>; [INV]
   else
     goto <bb 15>; [INV]
@@ -86,11 +89,11 @@ main ()
   goto <bb 13>; [INV]
 
   <bb 16> :
-  _29 ={v} exit_code;
+  _32 ={v} exit_code;
 
   <bb 17> :
 <L15>:
-  return _29;
+  return _32;
 
 }
 
@@ -98,19 +101,32 @@ main ()
 BctuWatermarkNotif ()
 {
   short unsigned int _1;
-  short unsigned int _2;
-  short unsigned int data.2_3;
 
   <bb 2> :
   notif_triggered ={v} 1;
   _1 = Bctu_Ip_GetFifoData (0, 0);
   data ={v} _1;
+  return;
+
+}
+
+
+Adc2EndOfChainNotif ()
+{
+  short unsigned int _1;
+  short unsigned int _2;
+  short unsigned int data.2_3;
+
+  <bb 2> :
+  notif_triggered ={v} 1;
+  _1 = Adc_Sar_Ip_GetConvData (1, 4);
+  data ={v} _1;
   goto <bb 4>; [INV]
 
   <bb 3> :
-  _2 = Bctu_Ip_GetFifoData (0, 0);
+  _2 = Adc_Sar_Ip_GetConvData (1, 4);
   data ={v} _2;
-  Bctu_Ip_SwTriggerConversion (0, 0);
+  Adc_Sar_Ip_StartConversion (1, 0);
 
   <bb 4> :
   data.2_3 ={v} data;
@@ -125,7 +141,7 @@ BctuWatermarkNotif ()
 }
 
 
-AdcEndOfChainNotif ()
+Adc1EndOfChainNotif ()
 {
   short unsigned int _1;
   short unsigned int _2;
@@ -133,14 +149,14 @@ AdcEndOfChainNotif ()
 
   <bb 2> :
   notif_triggered ={v} 1;
-  _1 = Adc_Sar_Ip_GetConvData (0, 4);
+  _1 = Adc_Sar_Ip_GetConvData (1, 4);
   data ={v} _1;
   goto <bb 4>; [INV]
 
   <bb 3> :
-  _2 = Adc_Sar_Ip_GetConvData (0, 4);
+  _2 = Adc_Sar_Ip_GetConvData (1, 4);
   data ={v} _2;
-  Adc_Sar_Ip_StartConversion (0, 0);
+  Adc_Sar_Ip_StartConversion (1, 0);
 
   <bb 4> :
   data.1_3 ={v} data;
