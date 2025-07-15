@@ -4,7 +4,7 @@ Bctu_GetResolutionScaledResult (const uint8 AdcIdx, const uint32 RawResult)
   uint8 Resolution;
   static const uint8 ResolutionArray[4] = "\x0e\f\n\b";
   static const struct ADC_Type * const pAdcBaseTable[3] = {1074397184B, 1074413568B, 1074429952B};
-  uint16 D.6799;
+  uint16 D.6801;
   int _1;
   const struct ADC_Type * _2;
   long unsigned int _3;
@@ -594,8 +594,8 @@ Bctu_PrepareReconfigBlocking (struct BCTU_Type * const BctuBasePtr, const uint8 
   uint32 CurrentTicks;
   uint32 TimeoutTicks;
   Bctu_Ip_StatusType Status;
-  Bctu_Ip_StatusType D.6690;
-  long unsigned int D.6685;
+  Bctu_Ip_StatusType D.6692;
+  long unsigned int D.6687;
   long unsigned int _1;
   int _2;
   long unsigned int _3;
@@ -690,7 +690,7 @@ Bctu_PrepareReconfigBlocking (struct BCTU_Type * const BctuBasePtr, const uint8 
 Bctu_PrepareReconfigNonBlocking (struct BCTU_Type * const BctuBasePtr, const uint8 TrigIdx)
 {
   Bctu_Ip_StatusType Status;
-  Bctu_Ip_StatusType D.6787;
+  Bctu_Ip_StatusType D.6789;
   int _1;
   long unsigned int _2;
   int _3;
@@ -746,7 +746,7 @@ Bctu_PrepareReconfigNonBlocking (struct BCTU_Type * const BctuBasePtr, const uin
 
 Bctu_GetBitmask (const uint8 Pos)
 {
-  uint32 D.6651;
+  uint32 D.6653;
   int _1;
   uint32 _3;
 
@@ -765,7 +765,7 @@ Bctu_CollectMcrMasks (const struct Bctu_Ip_ConfigType * const Config)
 {
   uint8 Index;
   uint32 Mcr;
-  uint32 D.6649;
+  uint32 D.6651;
   long unsigned int iftmp.5;
   long unsigned int iftmp.4;
   long unsigned int iftmp.3;
@@ -937,7 +937,7 @@ Bctu_Ip_GetFifoCount (const uint32 u32Instance, const uint8 u8FifoIdx)
 {
   const struct BCTU_Type * const BctuBasePtr;
   uint8 Count;
-  uint8 D.6803;
+  uint8 D.6805;
   int _1;
   long unsigned int _2;
   unsigned char _3;
@@ -1251,7 +1251,7 @@ Bctu_Ip_GetFifoData (const uint32 u32Instance, const uint8 u8FifoIdx)
   uint8 AdcIdx;
   uint32 ResultFifo;
   uint32 Data;
-  uint16 D.6801;
+  uint16 D.6803;
   int _1;
   long unsigned int _2;
   unsigned char _3;
@@ -1354,7 +1354,7 @@ Bctu_Ip_GetConvData (const uint32 u32Instance, const uint8 u8AdcIdx)
 {
   const struct BCTU_Type * const BctuBasePtr;
   uint32 Data;
-  uint16 D.6797;
+  uint16 D.6799;
   int _1;
   long unsigned int _2;
   uint16 _8;
@@ -1689,7 +1689,7 @@ Bctu_Ip_SetTriggerChnListAddr (const uint32 u32Instance, const uint8 u8TrigIdx, 
   struct BCTU_Type * const BctuBasePtr;
   Bctu_Ip_StatusType Status;
   uint32 Trgcfg;
-  Bctu_Ip_StatusType D.6795;
+  Bctu_Ip_StatusType D.6797;
   long unsigned int iftmp.44;
   int _1;
   long unsigned int _2;
@@ -1761,7 +1761,7 @@ Bctu_Ip_ConfigTrigger (const uint32 u32Instance, const struct Bctu_Ip_TrigConfig
   Bctu_Ip_StatusType Status;
   uint8 Idx;
   uint32 Trgcfg;
-  Bctu_Ip_StatusType D.6782;
+  Bctu_Ip_StatusType D.6784;
   long unsigned int iftmp.42;
   long unsigned int iftmp.41;
   long unsigned int iftmp.40;
@@ -2201,7 +2201,7 @@ Bctu_Ip_GetStatusFlags (const uint32 u32Instance)
   uint8 Index;
   uint32 Mask;
   uint32 Reg;
-  uint32 D.6732;
+  uint32 D.6734;
   long unsigned int iftmp.26;
   long unsigned int iftmp.25;
   long unsigned int iftmp.24;
@@ -2555,7 +2555,7 @@ Bctu_Ip_Deinit (const uint32 u32Instance)
   Bctu_Ip_StatusType Status;
   uint8 Index;
   struct Bctu_Ip_ConfigType DefaultConfig;
-  Bctu_Ip_StatusType D.6682;
+  Bctu_Ip_StatusType D.6684;
   long unsigned int _1;
   long unsigned int _2;
   int _3;

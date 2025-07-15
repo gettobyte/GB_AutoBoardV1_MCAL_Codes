@@ -1,0 +1,5235 @@
+
+Marking local functions: Emios_Pwm_Ip_InitOutputIrqAndMode/65 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 Emios_Pwm_Ip_GetCounterBusMode/53 Emios_Pwm_Ip_GetCounterBusPeriod/52 Emios_Pwm_Ip_SetPrescalerSource/40 Emios_Pwm_Ip_SetExtendedPrescaler/39 Emios_Pwm_Ip_GetTrigger/38 Emios_Pwm_Ip_SetTrigger/37 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_GetOutputPinState/34 Emios_Pwm_Ip_GetChannelPwmMode/29 Emios_Pwm_Ip_SetPwmModePol/28 Emios_Pwm_Ip_SetPwmMode/27 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_GetTimebaseChannel/24 Emios_Pwm_Ip_GetCounterBus/23 Emios_Pwm_Ip_SetCounterBus/22 Emios_Pwm_Ip_SetForceMatchB/21 Emios_Pwm_Ip_SetForceMatchA/20 Emios_Pwm_Ip_GetInterruptRequest/19 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_GetDMARequest/17 Emios_Pwm_Ip_SetDMARequest/16 Emios_Pwm_Ip_SetPrescalerEnable/15 Emios_Pwm_Ip_SetOutDisableSource/14 Emios_Pwm_Ip_SetOutDisable/13 Emios_Pwm_Ip_SetFreezeEnable/12 Emios_Pwm_Ip_GetUCRegB/10 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_GetOutputUpdateInstance/4 Emios_Pwm_Ip_SetOutputUpdate/2 Emios_Pwm_Ip_GetDebugMode/1
+
+
+Marking externally visible functions: Emios_Pwm_Ip_SyncUpdate/94 Emios_Pwm_Ip_ComparatorTransferDisable/93 Emios_Pwm_Ip_ComparatorTransferEnable/92 Emios_Pwm_Ip_SetClockPs/91 Emios_Pwm_Ip_SetBusSelected/90 Emios_Pwm_Ip_SetPreEnableClock/89 Emios_Pwm_Ip_GetMasterBusChannel/88 Emios_Pwm_Ip_GetChannelMode/87 Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputState/85 Emios_Pwm_Ip_GetOutputState/84 Emios_Pwm_Ip_SetFlagRequest/83 Emios_Pwm_Ip_GetFlagRequest/82 Emios_Pwm_Ip_ChannelStopDebugMode/81 Emios_Pwm_Ip_ChannelEnterDebugMode/80 Emios_Pwm_Ip_SetTriggerPlacement/79 Emios_Pwm_Ip_GetTriggerPlacement/78 Emios_Pwm_Ip_SetDeadTime/77 Emios_Pwm_Ip_GetDeadTime/76 Emios_Pwm_Ip_SetPhaseShift/75 Emios_Pwm_Ip_GetPhaseShift/74 Emios_Pwm_Ip_SetDutyCycle/73 Emios_Pwm_Ip_GetDutyCycle/72 Emios_Pwm_Ip_SetPeriod/71 Emios_Pwm_Ip_GetPeriod/70 Emios_Pwm_Ip_ForceMatchTrailingEdge/69 Emios_Pwm_Ip_ForceMatchLeadingEdge/68 Emios_Pwm_Ip_DeInitChannel/67 Emios_Pwm_Ip_InitChannel/66
+
+
+Marking externally visible variables: Emios_Pwm_Ip_aCheckState/51 Emios_Pwm_Ip_aPolarity/50 Emios_Pwm_Ip_aCheckEnableNotif/49 Emios_Pwm_Ip_aNotif/48 Emios_Pwm_Ip_aDutyCycle/47 Emios_Pwm_Ip_aRegA/46 Emios_Pwm_Ip_aPeriod/45 Emios_Pwm_Ip_aNotificationPtr/44 Emios_Pwm_Ip_aCurrentModes/43 Emios_Pwm_Ip_aBasePtr/41
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_30/131 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_30) @071b9a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ComparatorTransferDisable/93 
+  Calls: 
+Emios_Mcl_Ip_ComparatorTransferDisable/130 (Emios_Mcl_Ip_ComparatorTransferDisable) @071b99a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ComparatorTransferDisable/93 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_30/129 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_30) @071b98c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ComparatorTransferDisable/93 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_29/128 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_29) @071b9700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ComparatorTransferEnable/92 
+  Calls: 
+Emios_Mcl_Ip_ComparatorTransferEnable/127 (Emios_Mcl_Ip_ComparatorTransferEnable) @071b9620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SyncUpdate/94 Emios_Pwm_Ip_SyncUpdate/94 Emios_Pwm_Ip_SyncUpdate/94 Emios_Pwm_Ip_ComparatorTransferEnable/92 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_29/126 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_29) @071b9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ComparatorTransferEnable/92 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_28/125 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_28) @071b9380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetClockPs/91 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_28/124 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_28) @071b92a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetClockPs/91 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_27/123 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_27) @071b90e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetBusSelected/90 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_27/122 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_27) @071b9000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetBusSelected/90 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_26/121 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_26) @071b1e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetPreEnableClock/89 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_26/120 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_26) @071b1d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetPreEnableClock/89 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_25/119 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_25) @071b18c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetOutputToNormal/86 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_25/118 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_25) @071b17e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetOutputToNormal/86 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_24/117 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_24) @071b1540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetOutputState/85 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_24/116 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_24) @071b1460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetOutputState/85 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_23/115 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_23) @071b10e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetFlagRequest/83 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_23/114 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_23) @071a5ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetFlagRequest/83 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_22/113 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_22) @071a5a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ChannelStopDebugMode/81 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_22/112 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_22) @071a59a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ChannelStopDebugMode/81 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_21/111 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_21) @071a5700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ChannelEnterDebugMode/80 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_21/110 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_21) @071a5620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ChannelEnterDebugMode/80 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_20/109 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_20) @071a5460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetTriggerPlacement/79 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_20/108 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_20) @071a5380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetTriggerPlacement/79 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_19/107 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_19) @071a5000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetDeadTime/77 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_19/106 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_19) @070d0e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetDeadTime/77 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_18/105 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_18) @070d0a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetPhaseShift/75 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_18/104 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_18) @070d07e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetPhaseShift/75 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_17/103 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_17) @070d0380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetDutyCycle/73 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_17/102 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_17) @070d02a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetDutyCycle/73 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_16/101 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_16) @070d0000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetPeriod/71 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_16/100 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_16) @070c3ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_SetPeriod/71 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_15/99 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_15) @070c39a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ForceMatchTrailingEdge/69 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_15/98 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_15) @070c38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ForceMatchTrailingEdge/69 
+  Calls: 
+SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_14/97 (SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_14) @070c3700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ForceMatchLeadingEdge/68 
+  Calls: 
+SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_14/96 (SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_14) @070c3620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_ForceMatchLeadingEdge/68 
+  Calls: 
+Emios_Mcl_Ip_GetCounterBusPeriod/95 (Emios_Mcl_Ip_GetCounterBusPeriod) @0707fe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_GetCounterBusPeriod/52 
+  Calls: 
+Emios_Pwm_Ip_SyncUpdate/94 (Emios_Pwm_Ip_SyncUpdate) @0707f1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aCheckState/51 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Mcl_Ip_ComparatorTransferEnable/127 Emios_Pwm_Ip_SetForceMatchA/20 Emios_Mcl_Ip_ComparatorTransferEnable/127 Emios_Pwm_Ip_SetForceMatchB/21 Emios_Mcl_Ip_ComparatorTransferEnable/127 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_GetOutputUpdateInstance/4 
+Emios_Pwm_Ip_ComparatorTransferDisable/93 (Emios_Pwm_Ip_ComparatorTransferDisable) @0707ad20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_30/131 Emios_Mcl_Ip_ComparatorTransferDisable/130 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_30/129 
+Emios_Pwm_Ip_ComparatorTransferEnable/92 (Emios_Pwm_Ip_ComparatorTransferEnable) @0707a7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_29/128 Emios_Mcl_Ip_ComparatorTransferEnable/127 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_29/126 
+Emios_Pwm_Ip_SetClockPs/91 (Emios_Pwm_Ip_SetClockPs) @0707a2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_28/125 Emios_Pwm_Ip_SetPrescalerEnable/15 Emios_Pwm_Ip_SetExtendedPrescaler/39 Emios_Pwm_Ip_SetPrescalerEnable/15 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_28/124 
+Emios_Pwm_Ip_SetBusSelected/90 (Emios_Pwm_Ip_SetBusSelected) @0707aee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_27/123 Emios_Pwm_Ip_SetCounterBus/22 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_27/122 
+Emios_Pwm_Ip_SetPreEnableClock/89 (Emios_Pwm_Ip_SetPreEnableClock) @0707ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_26/121 Emios_Pwm_Ip_SetPrescalerEnable/15 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_26/120 
+Emios_Pwm_Ip_GetMasterBusChannel/88 (Emios_Pwm_Ip_GetMasterBusChannel) @0707a9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDCModeWithDuty/62 
+  Calls: Emios_Pwm_Ip_GetCounterBus/23 
+Emios_Pwm_Ip_GetChannelMode/87 (Emios_Pwm_Ip_GetChannelMode) @0707a700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aCurrentModes/43 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Emios_Pwm_Ip_SetOutputToNormal/86 (Emios_Pwm_Ip_SetOutputToNormal) @0707a460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_25/119 Emios_Pwm_Ip_SetPwmModePol/28 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetPwmModePol/28 Emios_Pwm_Ip_SetPwmModePol/28 Emios_Pwm_Ip_SetPwmModePol/28 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetPwmMode/27 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetPwmMode/27 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_25/118 
+Emios_Pwm_Ip_SetOutputState/85 (Emios_Pwm_Ip_SetOutputState) @0707a1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aCurrentModes/43 (write) Emios_Pwm_Ip_aCheckState/51 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_24/117 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetPwmMode/27 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetEdgePolarity/25 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_24/116 
+Emios_Pwm_Ip_GetOutputState/84 (Emios_Pwm_Ip_GetOutputState) @07070d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_GetOutputPinState/34 
+Emios_Pwm_Ip_SetFlagRequest/83 (Emios_Pwm_Ip_SetFlagRequest) @070707e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aNotif/48 (read) Emios_Pwm_Ip_aCheckEnableNotif/49 (write) Emios_Pwm_Ip_aCheckEnableNotif/49 (write) Emios_Pwm_Ip_aCheckEnableNotif/49 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_23/115 Emios_Pwm_Ip_SetDMARequest/16 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetDMARequest/16 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetDMARequest/16 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_ClearFlagEvent/35 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_23/114 
+Emios_Pwm_Ip_GetFlagRequest/82 (Emios_Pwm_Ip_GetFlagRequest) @070702a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_GetDMARequest/17 Emios_Pwm_Ip_GetInterruptRequest/19 
+Emios_Pwm_Ip_ChannelStopDebugMode/81 (Emios_Pwm_Ip_ChannelStopDebugMode) @07070ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_22/113 Emios_Pwm_Ip_SetFreezeEnable/12 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_22/112 
+Emios_Pwm_Ip_ChannelEnterDebugMode/80 (Emios_Pwm_Ip_ChannelEnterDebugMode) @07070c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_21/111 Emios_Pwm_Ip_SetFreezeEnable/12 Emios_Pwm_Ip_GetDebugMode/1 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_21/110 
+Emios_Pwm_Ip_SetTriggerPlacement/79 (Emios_Pwm_Ip_SetTriggerPlacement) @070709a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_20/109 Emios_Pwm_Ip_SetTrigger/37 Emios_Pwm_Ip_GetCounterBusMode/53 Emios_Pwm_Ip_GetCounterBus/23 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_20/108 
+Emios_Pwm_Ip_GetTriggerPlacement/78 (Emios_Pwm_Ip_GetTriggerPlacement) @07070700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_GetTrigger/38 
+Emios_Pwm_Ip_SetDeadTime/77 (Emios_Pwm_Ip_SetDeadTime) @07070460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_19/107 Emios_Pwm_Ip_SetUCRegB/9 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_19/106 
+Emios_Pwm_Ip_GetDeadTime/76 (Emios_Pwm_Ip_GetDeadTime) @070701c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_GetUCRegB/10 
+Emios_Pwm_Ip_SetPhaseShift/75 (Emios_Pwm_Ip_SetPhaseShift) @066edd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aDutyCycle/47 (read) Emios_Pwm_Ip_aRegA/46 (write) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aRegA/46 (read) Emios_Pwm_Ip_aRegA/46 (read) Emios_Pwm_Ip_aRegA/46 (read) Emios_Pwm_Ip_aRegA/46 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_18/105 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_GetCounterBusMode/53 Emios_Pwm_Ip_GetCounterBusPeriod/52 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_18/104 Emios_Pwm_Ip_GetCounterBus/23 
+Emios_Pwm_Ip_GetPhaseShift/74 (Emios_Pwm_Ip_GetPhaseShift) @066ed7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_GetUCRegA/8 
+Emios_Pwm_Ip_SetDutyCycle/73 (Emios_Pwm_Ip_SetDutyCycle) @066ed2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aCheckState/51 (read) Emios_Pwm_Ip_aInitialModes/42 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_17/103 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_17/102 
+Emios_Pwm_Ip_GetDutyCycle/72 (Emios_Pwm_Ip_GetDutyCycle) @066edee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aDutyCycle/47 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Emios_Pwm_Ip_SetPeriod/71 (Emios_Pwm_Ip_SetPeriod) @066edc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aPeriod/45 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_16/101 Emios_Pwm_Ip_SetUCRegB/9 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_16/100 
+Emios_Pwm_Ip_GetPeriod/70 (Emios_Pwm_Ip_GetPeriod) @066ed9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aCheckState/51 (read) Emios_Pwm_Ip_aInitialModes/42 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aPeriod/45 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_GetCounterBusPeriod/52 Emios_Pwm_Ip_GetCounterBus/23 Emios_Pwm_Ip_GetCounterBusPeriod/52 Emios_Pwm_Ip_GetCounterBus/23 Emios_Pwm_Ip_GetUCRegB/10 
+Emios_Pwm_Ip_ForceMatchTrailingEdge/69 (Emios_Pwm_Ip_ForceMatchTrailingEdge) @066ed700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_15/99 Emios_Pwm_Ip_SetForceMatchB/21 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_15/98 
+Emios_Pwm_Ip_ForceMatchLeadingEdge/68 (Emios_Pwm_Ip_ForceMatchLeadingEdge) @066ed460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_14/97 Emios_Pwm_Ip_SetForceMatchA/20 SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_14/96 
+Emios_Pwm_Ip_DeInitChannel/67 (Emios_Pwm_Ip_DeInitChannel) @066ed1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aCheckEnableNotif/49 (write) Emios_Pwm_Ip_aCheckState/51 (write) Emios_Pwm_Ip_aCheckState/51 (read) Emios_Pwm_Ip_aCheckState/51 (read) Emios_Pwm_Ip_aCheckState/51 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_SetTrigger/37 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_GetTimebaseChannel/24 Emios_Pwm_Ip_GetCounterBus/23 
+Emios_Pwm_Ip_InitChannel/66 (Emios_Pwm_Ip_InitChannel) @066e0e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aInitialModes/42 (write) Emios_Pwm_Ip_aCurrentModes/43 (write) Emios_Pwm_Ip_aCheckState/51 (write) Emios_Pwm_Ip_aCheckState/51 (read) Emios_Pwm_Ip_aCheckState/51 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_SetPrescalerEnable/15 Emios_Pwm_Ip_SetPrescalerEnable/15 Emios_Pwm_Ip_SetExtendedPrescaler/39 Emios_Pwm_Ip_SetPrescalerSource/40 Emios_Pwm_Ip_InitOutputIrqAndMode/65 Emios_Pwm_Ip_SetFreezeEnable/12 Emios_Pwm_Ip_SetOutputUpdate/2 Emios_Pwm_Ip_GetTimebaseChannel/24 
+Emios_Pwm_Ip_InitOutputIrqAndMode/65 (Emios_Pwm_Ip_InitOutputIrqAndMode) @066e0d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aNotificationPtr/44 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitChannel/66 
+  Calls: Emios_Pwm_Ip_InitDoubleCompareMode/63 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitEdgePlacementMode/58 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 Emios_Pwm_Ip_SetDMARequest/16 Emios_Pwm_Ip_SetOutDisableSource/14 Emios_Pwm_Ip_SetOutDisable/13 
+Emios_Pwm_Ip_SetDutyCycleDaoc/64 (Emios_Pwm_Ip_SetDutyCycleDaoc) @066e0a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aDutyCycle/47 (write) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aPolarity/50 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aDutyCycle/47 (write) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aPolarity/50 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aDutyCycle/47 (write) Emios_Pwm_Ip_aCurrentModes/43 (read) Emios_Pwm_Ip_aPolarity/50 (read) Emios_Pwm_Ip_aNotif/48 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycle/73 
+  Calls: Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetForceMatchA/20 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetForceMatchB/21 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_GetMasterBusChannel/88 
+Emios_Pwm_Ip_InitDoubleCompareMode/63 (Emios_Pwm_Ip_InitDoubleCompareMode) @066e07e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aPeriod/45 (write) Emios_Pwm_Ip_aPolarity/50 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Pwm_Ip_InitOutputIrqAndMode/65 
+  Calls: Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetPwmMode/27 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetCounterBus/22 Emios_Pwm_Ip_SetInterruptRequest/18 
+Emios_Pwm_Ip_InitDCModeWithDuty/62 (Emios_Pwm_Ip_InitDCModeWithDuty) @066e0540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aDutyCycle/47 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aDutyCycle/47 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aDutyCycle/47 (write) Emios_Pwm_Ip_aNotif/48 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitDoubleCompareMode/63 
+  Calls: Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetForceMatchA/20 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetForceMatchB/21 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_GetMasterBusChannel/88 
+Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (Emios_Pwm_Ip_SetDutyCycleOpwmt) @066e02a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aRegA/46 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aRegA/46 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aCheckEnableNotif/49 (read) Emios_Pwm_Ip_aDutyCycle/47 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycle/73 
+  Calls: Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_GetCounterBusPeriod/52 Emios_Pwm_Ip_GetCounterBus/23 
+Emios_Pwm_Ip_InitTriggerMode/60 (Emios_Pwm_Ip_InitTriggerMode) @066e0000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aRegA/46 (write) Emios_Pwm_Ip_aDutyCycle/47 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Pwm_Ip_InitOutputIrqAndMode/65 
+  Calls: Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetPwmMode/27 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetTrigger/37 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetCounterBus/22 Emios_Pwm_Ip_GetCounterBusMode/53 Emios_Pwm_Ip_GetCounterBusPeriod/52 
+Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (Emios_Pwm_Ip_SetDutyCycleOpwmb) @0717cd20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aRegA/46 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aCheckEnableNotif/49 (read) Emios_Pwm_Ip_aRegA/46 (read) Emios_Pwm_Ip_aDutyCycle/47 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycle/73 
+  Calls: Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_GetCounterBusPeriod/52 Emios_Pwm_Ip_GetCounterBus/23 
+Emios_Pwm_Ip_InitEdgePlacementMode/58 (Emios_Pwm_Ip_InitEdgePlacementMode) @0717ca80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aRegA/46 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aDutyCycle/47 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Pwm_Ip_InitOutputIrqAndMode/65 
+  Calls: Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetPwmMode/27 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetCounterBus/22 
+Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (Emios_Pwm_Ip_SetDutyCycleOpwmcb) @0717c7e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aInitialModes/42 (read) Emios_Pwm_Ip_aInitialModes/42 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aCheckEnableNotif/49 (read) Emios_Pwm_Ip_aDutyCycle/47 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycle/73 
+  Calls: Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetForceMatchA/20 Emios_Pwm_Ip_SetForceMatchB/21 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_GetCounterBusPeriod/52 Emios_Pwm_Ip_GetCounterBus/23 
+Emios_Pwm_Ip_InitDeadTimeMode/56 (Emios_Pwm_Ip_InitDeadTimeMode) @0717c540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aDutyCycle/47 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Pwm_Ip_InitOutputIrqAndMode/65 
+  Calls: Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetPwmMode/27 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetCounterBus/22 Emios_Pwm_Ip_GetCounterBusPeriod/52 Emios_Pwm_Ip_GetCounterBusPeriod/52 
+Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (Emios_Pwm_Ip_SetDutyCycleOpwfmb) @0717c2a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aPeriod/45 (read) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aCheckEnableNotif/49 (read) Emios_Pwm_Ip_aDutyCycle/47 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycle/73 
+  Calls: Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_SetInterruptRequest/18 
+Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 (Emios_Pwm_Ip_InitPeriodDutyCycleMode) @0717c000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) Emios_Pwm_Ip_aPeriod/45 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aNotif/48 (write) Emios_Pwm_Ip_aDutyCycle/47 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Pwm_Ip_InitOutputIrqAndMode/65 
+  Calls: Emios_Pwm_Ip_SetEdgePolarity/25 Emios_Pwm_Ip_SetPwmMode/27 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_SetCounterBus/22 
+Emios_Pwm_Ip_GetCounterBusMode/53 (Emios_Pwm_Ip_GetCounterBusMode) @070eed20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/41 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetTriggerPlacement/79 Emios_Pwm_Ip_SetPhaseShift/75 Emios_Pwm_Ip_InitTriggerMode/60 
+  Calls: Emios_Pwm_Ip_GetChannelPwmMode/29 Emios_Pwm_Ip_GetChannelPwmMode/29 Emios_Pwm_Ip_GetChannelPwmMode/29 
+Emios_Pwm_Ip_GetCounterBusPeriod/52 (Emios_Pwm_Ip_GetCounterBusPeriod) @070eea80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetPhaseShift/75 Emios_Pwm_Ip_GetPeriod/70 Emios_Pwm_Ip_GetPeriod/70 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 
+  Calls: Emios_Mcl_Ip_GetCounterBusPeriod/95 Emios_Pwm_Ip_GetTimebaseChannel/24 
+Emios_Pwm_Ip_aCheckState/51 (Emios_Pwm_Ip_aCheckState) @070678b8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_DeInitChannel/67 (read) Emios_Pwm_Ip_DeInitChannel/67 (read) Emios_Pwm_Ip_GetPeriod/70 (read) Emios_Pwm_Ip_SetDutyCycle/73 (read) Emios_Pwm_Ip_SetOutputState/85 (write) Emios_Pwm_Ip_DeInitChannel/67 (write) Emios_Pwm_Ip_InitChannel/66 (write) Emios_Pwm_Ip_DeInitChannel/67 (write) Emios_Pwm_Ip_InitChannel/66 (write) Emios_Pwm_Ip_InitChannel/66 (read) Emios_Pwm_Ip_SyncUpdate/94 (read) 
+  Availability: available
+  Varpool flags:
+Emios_Pwm_Ip_aPolarity/50 (Emios_Pwm_Ip_aPolarity) @07067f30
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_InitDoubleCompareMode/63 (write) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) 
+  Availability: available
+  Varpool flags:
+Emios_Pwm_Ip_aCheckEnableNotif/49 (Emios_Pwm_Ip_aCheckEnableNotif) @07067ea0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (read) Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (read) Emios_Pwm_Ip_DeInitChannel/67 (write) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (read) Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (read) Emios_Pwm_Ip_SetFlagRequest/83 (write) Emios_Pwm_Ip_SetFlagRequest/83 (write) Emios_Pwm_Ip_SetFlagRequest/83 (write) 
+  Availability: available
+  Varpool flags:
+Emios_Pwm_Ip_aNotif/48 (Emios_Pwm_Ip_aNotif) @07067e10
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (write) Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (write) Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (write) Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (write) Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (write) Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (write) Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 (write) Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 (write) Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 (write) Emios_Pwm_Ip_InitDeadTimeMode/56 (write) Emios_Pwm_Ip_InitDeadTimeMode/56 (write) Emios_Pwm_Ip_InitDeadTimeMode/56 (write) Emios_Pwm_Ip_InitEdgePlacementMode/58 (write) Emios_Pwm_Ip_InitEdgePlacementMode/58 (write) Emios_Pwm_Ip_InitTriggerMode/60 (write) Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (write) Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (write) Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (write) Emios_Pwm_Ip_InitEdgePlacementMode/58 (write) Emios_Pwm_Ip_InitDCModeWithDuty/62 (write) Emios_Pwm_Ip_InitDCModeWithDuty/62 (write) Emios_Pwm_Ip_InitDCModeWithDuty/62 (write) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (write) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (write) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (write) Emios_Pwm_Ip_InitTriggerMode/60 (write) Emios_Pwm_Ip_InitTriggerMode/60 (write) Emios_Pwm_Ip_SetFlagRequest/83 (read) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (write) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (write) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (write) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (write) 
+  Availability: available
+  Varpool flags:
+Emios_Pwm_Ip_aDutyCycle/47 (Emios_Pwm_Ip_aDutyCycle) @07067d80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (write) Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (write) Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 (write) Emios_Pwm_Ip_InitDeadTimeMode/56 (write) Emios_Pwm_Ip_SetPhaseShift/75 (read) Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (write) Emios_Pwm_Ip_GetDutyCycle/72 (read) Emios_Pwm_Ip_InitEdgePlacementMode/58 (write) Emios_Pwm_Ip_InitTriggerMode/60 (write) Emios_Pwm_Ip_InitDCModeWithDuty/62 (write) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (write) Emios_Pwm_Ip_InitDCModeWithDuty/62 (write) Emios_Pwm_Ip_InitDCModeWithDuty/62 (write) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (write) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (write) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (write) 
+  Availability: available
+  Varpool flags:
+Emios_Pwm_Ip_aRegA/46 (Emios_Pwm_Ip_aRegA) @07067cf0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (read) Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (read) Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (read) Emios_Pwm_Ip_InitEdgePlacementMode/58 (write) Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (read) Emios_Pwm_Ip_InitTriggerMode/60 (write) Emios_Pwm_Ip_SetPhaseShift/75 (write) Emios_Pwm_Ip_SetPhaseShift/75 (read) Emios_Pwm_Ip_SetPhaseShift/75 (read) Emios_Pwm_Ip_SetPhaseShift/75 (read) Emios_Pwm_Ip_SetPhaseShift/75 (read) 
+  Availability: available
+  Varpool flags:
+Emios_Pwm_Ip_aPeriod/45 (Emios_Pwm_Ip_aPeriod) @07067c60
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_InitDoubleCompareMode/63 (write) Emios_Pwm_Ip_SetPeriod/71 (write) Emios_Pwm_Ip_GetPeriod/70 (read) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (read) Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 (write) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (read) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (read) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (read) Emios_Pwm_Ip_InitDCModeWithDuty/62 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) 
+  Availability: available
+  Varpool flags:
+Emios_Pwm_Ip_aNotificationPtr/44 (Emios_Pwm_Ip_aNotificationPtr) @07067bd0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_InitOutputIrqAndMode/65 (write) 
+  Availability: available
+  Varpool flags:
+Emios_Pwm_Ip_aCurrentModes/43 (Emios_Pwm_Ip_aCurrentModes) @07067b40
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_SetOutputToNormal/86 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_SetDutyCycle/73 (read) Emios_Pwm_Ip_InitChannel/66 (write) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_GetChannelMode/87 (read) Emios_Pwm_Ip_DeInitChannel/67 (read) Emios_Pwm_Ip_GetPeriod/70 (read) Emios_Pwm_Ip_SetPhaseShift/75 (read) Emios_Pwm_Ip_SetOutputState/85 (write) Emios_Pwm_Ip_SyncUpdate/94 (read) Emios_Pwm_Ip_SyncUpdate/94 (read) Emios_Pwm_Ip_SyncUpdate/94 (read) Emios_Pwm_Ip_SyncUpdate/94 (read) 
+  Availability: available
+  Varpool flags: initialized
+Emios_Pwm_Ip_aInitialModes/42 (Emios_Pwm_Ip_aInitialModes) @070679d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (read) Emios_Pwm_Ip_InitChannel/66 (write) Emios_Pwm_Ip_GetPeriod/70 (read) Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (read) Emios_Pwm_Ip_SetDutyCycle/73 (read) 
+  Availability: available
+  Varpool flags: initialized
+Emios_Pwm_Ip_aBasePtr/41 (Emios_Pwm_Ip_aBasePtr) @070677e0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Emios_Pwm_Ip_SetDutyCycleOpwmb/59 (read) Emios_Pwm_Ip_SetDutyCycleOpwmt/61 (read) Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 (read) Emios_Pwm_Ip_InitDeadTimeMode/56 (read) Emios_Pwm_Ip_SetBusSelected/90 (read) Emios_Pwm_Ip_GetMasterBusChannel/88 (read) Emios_Pwm_Ip_SetOutputToNormal/86 (read) Emios_Pwm_Ip_SetPreEnableClock/89 (read) Emios_Pwm_Ip_InitDoubleCompareMode/63 (read) Emios_Pwm_Ip_InitDCModeWithDuty/62 (read) Emios_Pwm_Ip_InitEdgePlacementMode/58 (read) Emios_Pwm_Ip_InitTriggerMode/60 (read) Emios_Pwm_Ip_DeInitChannel/67 (read) Emios_Pwm_Ip_ForceMatchLeadingEdge/68 (read) Emios_Pwm_Ip_ForceMatchTrailingEdge/69 (read) Emios_Pwm_Ip_SetClockPs/91 (read) Emios_Pwm_Ip_GetCounterBusMode/53 (read) Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 (read) Emios_Pwm_Ip_InitOutputIrqAndMode/65 (read) Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 (read) Emios_Pwm_Ip_GetPeriod/70 (read) Emios_Pwm_Ip_SetPeriod/71 (read) Emios_Pwm_Ip_GetPhaseShift/74 (read) Emios_Pwm_Ip_SetPhaseShift/75 (read) Emios_Pwm_Ip_GetDeadTime/76 (read) Emios_Pwm_Ip_SetDeadTime/77 (read) Emios_Pwm_Ip_GetTriggerPlacement/78 (read) Emios_Pwm_Ip_SetTriggerPlacement/79 (read) Emios_Pwm_Ip_ChannelEnterDebugMode/80 (read) Emios_Pwm_Ip_ChannelStopDebugMode/81 (read) Emios_Pwm_Ip_GetFlagRequest/82 (read) Emios_Pwm_Ip_SetFlagRequest/83 (read) Emios_Pwm_Ip_GetOutputState/84 (read) Emios_Pwm_Ip_SetOutputState/85 (read) Emios_Pwm_Ip_InitChannel/66 (read) Emios_Pwm_Ip_SetDutyCycleDaoc/64 (read) Emios_Pwm_Ip_InitChannel/66 (read) Emios_Pwm_Ip_SyncUpdate/94 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Emios_Pwm_Ip_SetPrescalerSource/40 (Emios_Pwm_Ip_SetPrescalerSource) @060afb60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitChannel/66 
+  Calls: 
+Emios_Pwm_Ip_SetExtendedPrescaler/39 (Emios_Pwm_Ip_SetExtendedPrescaler) @060af7e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetClockPs/91 Emios_Pwm_Ip_InitChannel/66 
+  Calls: 
+Emios_Pwm_Ip_GetTrigger/38 (Emios_Pwm_Ip_GetTrigger) @060af460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_GetTriggerPlacement/78 
+  Calls: 
+Emios_Pwm_Ip_SetTrigger/37 (Emios_Pwm_Ip_SetTrigger) @060af1c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetTriggerPlacement/79 Emios_Pwm_Ip_DeInitChannel/67 Emios_Pwm_Ip_InitTriggerMode/60 
+  Calls: 
+Emios_Pwm_Ip_ClearFlagEvent/35 (Emios_Pwm_Ip_ClearFlagEvent) @060abb60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetOutputState/85 Emios_Pwm_Ip_SetFlagRequest/83 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 
+  Calls: 
+Emios_Pwm_Ip_GetOutputPinState/34 (Emios_Pwm_Ip_GetOutputPinState) @060ab7e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_GetOutputState/84 
+  Calls: 
+Emios_Pwm_Ip_GetChannelPwmMode/29 (Emios_Pwm_Ip_GetChannelPwmMode) @0605e8c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_GetCounterBusMode/53 Emios_Pwm_Ip_GetCounterBusMode/53 Emios_Pwm_Ip_GetCounterBusMode/53 
+  Calls: 
+Emios_Pwm_Ip_SetPwmModePol/28 (Emios_Pwm_Ip_SetPwmModePol) @0605e620
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputToNormal/86 
+  Calls: 
+Emios_Pwm_Ip_SetPwmMode/27 (Emios_Pwm_Ip_SetPwmMode) @0605e1c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitDoubleCompareMode/63 Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputState/85 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitEdgePlacementMode/58 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 
+  Calls: 
+Emios_Pwm_Ip_SetEdgePolarity/25 (Emios_Pwm_Ip_SetEdgePolarity) @06058b60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDoubleCompareMode/63 Emios_Pwm_Ip_InitDoubleCompareMode/63 Emios_Pwm_Ip_InitDoubleCompareMode/63 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputToNormal/86 Emios_Pwm_Ip_SetOutputState/85 Emios_Pwm_Ip_SetOutputState/85 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitEdgePlacementMode/58 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 
+  Calls: 
+Emios_Pwm_Ip_GetTimebaseChannel/24 (Emios_Pwm_Ip_GetTimebaseChannel) @060587e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitChannel/66 Emios_Pwm_Ip_DeInitChannel/67 Emios_Pwm_Ip_GetCounterBusPeriod/52 
+  Calls: 
+Emios_Pwm_Ip_GetCounterBus/23 (Emios_Pwm_Ip_GetCounterBus) @06058540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_GetMasterBusChannel/88 Emios_Pwm_Ip_SetTriggerPlacement/79 Emios_Pwm_Ip_SetPhaseShift/75 Emios_Pwm_Ip_GetPeriod/70 Emios_Pwm_Ip_GetPeriod/70 Emios_Pwm_Ip_DeInitChannel/67 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 
+  Calls: 
+Emios_Pwm_Ip_SetCounterBus/22 (Emios_Pwm_Ip_SetCounterBus) @060582a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetBusSelected/90 Emios_Pwm_Ip_InitDoubleCompareMode/63 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitEdgePlacementMode/58 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 
+  Calls: 
+Emios_Pwm_Ip_SetForceMatchB/21 (Emios_Pwm_Ip_SetForceMatchB) @06054ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SyncUpdate/94 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_ForceMatchTrailingEdge/69 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 
+  Calls: 
+Emios_Pwm_Ip_SetForceMatchA/20 (Emios_Pwm_Ip_SetForceMatchA) @06054b60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SyncUpdate/94 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_ForceMatchLeadingEdge/68 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 
+  Calls: 
+Emios_Pwm_Ip_GetInterruptRequest/19 (Emios_Pwm_Ip_GetInterruptRequest) @060547e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_GetFlagRequest/82 
+  Calls: 
+Emios_Pwm_Ip_SetInterruptRequest/18 (Emios_Pwm_Ip_SetInterruptRequest) @06054540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDoubleCompareMode/63 Emios_Pwm_Ip_SetOutputState/85 Emios_Pwm_Ip_SetFlagRequest/83 Emios_Pwm_Ip_SetFlagRequest/83 Emios_Pwm_Ip_SetFlagRequest/83 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 
+  Calls: 
+Emios_Pwm_Ip_GetDMARequest/17 (Emios_Pwm_Ip_GetDMARequest) @060541c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_GetFlagRequest/82 
+  Calls: 
+Emios_Pwm_Ip_SetDMARequest/16 (Emios_Pwm_Ip_SetDMARequest) @05fc6ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitOutputIrqAndMode/65 Emios_Pwm_Ip_SetFlagRequest/83 Emios_Pwm_Ip_SetFlagRequest/83 Emios_Pwm_Ip_SetFlagRequest/83 
+  Calls: 
+Emios_Pwm_Ip_SetPrescalerEnable/15 (Emios_Pwm_Ip_SetPrescalerEnable) @05fc6b60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetClockPs/91 Emios_Pwm_Ip_SetClockPs/91 Emios_Pwm_Ip_SetPreEnableClock/89 Emios_Pwm_Ip_InitChannel/66 Emios_Pwm_Ip_InitChannel/66 
+  Calls: 
+Emios_Pwm_Ip_SetOutDisableSource/14 (Emios_Pwm_Ip_SetOutDisableSource) @05fc67e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitOutputIrqAndMode/65 
+  Calls: 
+Emios_Pwm_Ip_SetOutDisable/13 (Emios_Pwm_Ip_SetOutDisable) @05fc6460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitOutputIrqAndMode/65 
+  Calls: 
+Emios_Pwm_Ip_SetFreezeEnable/12 (Emios_Pwm_Ip_SetFreezeEnable) @05fc60e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitChannel/66 Emios_Pwm_Ip_ChannelStopDebugMode/81 Emios_Pwm_Ip_ChannelEnterDebugMode/80 
+  Calls: 
+Emios_Pwm_Ip_GetUCRegB/10 (Emios_Pwm_Ip_GetUCRegB) @05fc1a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_GetDeadTime/76 Emios_Pwm_Ip_GetPeriod/70 
+  Calls: 
+Emios_Pwm_Ip_SetUCRegB/9 (Emios_Pwm_Ip_SetUCRegB) @05fc17e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_SetDeadTime/77 Emios_Pwm_Ip_SetPhaseShift/75 Emios_Pwm_Ip_SetPhaseShift/75 Emios_Pwm_Ip_SetPeriod/71 Emios_Pwm_Ip_DeInitChannel/67 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitEdgePlacementMode/58 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmt/61 Emios_Pwm_Ip_SetDutyCycleOpwmb/59 
+  Calls: 
+Emios_Pwm_Ip_GetUCRegA/8 (Emios_Pwm_Ip_GetUCRegA) @05fc1460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SyncUpdate/94 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_GetPhaseShift/74 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 
+  Calls: 
+Emios_Pwm_Ip_SetUCRegA/7 (Emios_Pwm_Ip_SetUCRegA) @05fc11c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_SetDutyCycleDaoc/64 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_InitDCModeWithDuty/62 Emios_Pwm_Ip_SetPhaseShift/75 Emios_Pwm_Ip_SetPhaseShift/75 Emios_Pwm_Ip_DeInitChannel/67 Emios_Pwm_Ip_InitTriggerMode/60 Emios_Pwm_Ip_InitEdgePlacementMode/58 Emios_Pwm_Ip_InitDeadTimeMode/56 Emios_Pwm_Ip_InitPeriodDutyCycleMode/54 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwmcb/57 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 Emios_Pwm_Ip_SetDutyCycleOpwfmb/55 
+  Calls: 
+Emios_Pwm_Ip_GetOutputUpdateInstance/4 (Emios_Pwm_Ip_GetOutputUpdateInstance) @05fbb8c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_SyncUpdate/94 
+  Calls: 
+Emios_Pwm_Ip_SetOutputUpdate/2 (Emios_Pwm_Ip_SetOutputUpdate) @05fbb380
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_InitChannel/66 
+  Calls: 
+Emios_Pwm_Ip_GetDebugMode/1 (Emios_Pwm_Ip_GetDebugMode) @05fbb0e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_ChannelEnterDebugMode/80 
+  Calls: 
+Emios_Pwm_Ip_SyncUpdate (uint8 Instance)
+{
+  uint8 ChannelId;
+  uint8 OudisDisable;
+  uint32 ChannelMask;
+  uint32 OudisRegVal;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  int _5;
+  long unsigned int _6;
+  int _7;
+  int _8;
+  unsigned char _9;
+  short unsigned int _10;
+  int _11;
+  int _12;
+  <unnamed type> _13;
+  int _14;
+  int _15;
+  <unnamed type> _16;
+  int _17;
+  long unsigned int _18;
+  int _19;
+  int _20;
+  <unnamed type> _21;
+  int _22;
+  int _23;
+  <unnamed type> _24;
+  int _25;
+  long unsigned int _26;
+  int _27;
+  long unsigned int _28;
+  unsigned char ChannelId.15_29;
+
+  <bb 2> :
+  _1 = (int) Instance_36(D);
+  Base_38 = Emios_Pwm_Ip_aBasePtr[_1];
+  OudisRegVal_40 = Emios_Pwm_Ip_GetOutputUpdateInstance (Base_38);
+  ChannelMask_41 = 0;
+  OudisDisable_42 = 0;
+  ChannelId_43 = 0;
+  goto <bb 14>; [INV]
+
+  <bb 3> :
+  _2 = (int) ChannelId_32;
+  _3 = 1 << _2;
+  _4 = OudisRegVal_40 & _3;
+  _5 = (int) ChannelId_32;
+  _6 = _4 >> _5;
+  OudisDisable_45 = (uint8) _6;
+  _7 = (int) Instance_36(D);
+  _8 = (int) ChannelId_32;
+  _9 = Emios_Pwm_Ip_aCheckState[_7][_8];
+  if (_9 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 4> :
+  if (OudisDisable_45 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 5> :
+  _10 = Emios_Pwm_Ip_GetUCRegA (Base_38, ChannelId_32);
+  if (_10 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 6> :
+  _11 = (int) Instance_36(D);
+  _12 = (int) ChannelId_32;
+  _13 = Emios_Pwm_Ip_aCurrentModes[_11][_12];
+  if (_13 == 92)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _14 = (int) Instance_36(D);
+  _15 = (int) ChannelId_32;
+  _16 = Emios_Pwm_Ip_aCurrentModes[_14][_15];
+  if (_16 == 94)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _17 = (int) ChannelId_32;
+  _18 = 1 << _17;
+  Emios_Mcl_Ip_ComparatorTransferEnable (Instance_36(D), _18);
+  Emios_Pwm_Ip_SetForceMatchB (Base_38, ChannelId_32, 1);
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  _19 = (int) Instance_36(D);
+  _20 = (int) ChannelId_32;
+  _21 = Emios_Pwm_Ip_aCurrentModes[_19][_20];
+  if (_21 == 93)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _22 = (int) Instance_36(D);
+  _23 = (int) ChannelId_32;
+  _24 = Emios_Pwm_Ip_aCurrentModes[_22][_23];
+  if (_24 == 95)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _25 = (int) ChannelId_32;
+  _26 = 1 << _25;
+  Emios_Mcl_Ip_ComparatorTransferEnable (Instance_36(D), _26);
+  Emios_Pwm_Ip_SetForceMatchA (Base_38, ChannelId_32, 1);
+
+  <bb 12> :
+  _27 = (int) ChannelId_32;
+  _28 = 1 << _27;
+  ChannelMask_51 = ChannelMask_31 | _28;
+
+  <bb 13> :
+  # ChannelMask_30 = PHI <ChannelMask_31(3), ChannelMask_31(4), ChannelMask_51(12)>
+  ChannelId.15_29 = ChannelId_32;
+  ChannelId_52 = ChannelId.15_29 + 1;
+
+  <bb 14> :
+  # ChannelMask_31 = PHI <ChannelMask_41(2), ChannelMask_30(13)>
+  # ChannelId_32 = PHI <ChannelId_43(2), ChannelId_52(13)>
+  if (ChannelId_32 <= 23)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  Emios_Mcl_Ip_ComparatorTransferEnable (Instance_36(D), ChannelMask_31);
+  return;
+
+}
+
+
+Emios_Pwm_Ip_ComparatorTransferDisable (uint8 Instance, uint32 ChannelMask)
+{
+  <bb 2> :
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_30 ();
+  Emios_Mcl_Ip_ComparatorTransferDisable (Instance_3(D), ChannelMask_4(D));
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_30 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_ComparatorTransferEnable (uint8 Instance, uint32 ChannelMask)
+{
+  <bb 2> :
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_29 ();
+  Emios_Mcl_Ip_ComparatorTransferEnable (Instance_3(D), ChannelMask_4(D));
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_29 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetClockPs (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_InternalClkPsType Value)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_28 ();
+  Emios_Pwm_Ip_SetPrescalerEnable (Base_4, Channel_6(D), 0);
+  Emios_Pwm_Ip_SetExtendedPrescaler (Base_4, Channel_6(D), Value_8(D));
+  Emios_Pwm_Ip_SetPrescalerEnable (Base_4, Channel_6(D), 1);
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_28 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetBusSelected (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_CounterBusSourceType Value)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_27 ();
+  Emios_Pwm_Ip_SetCounterBus (Base_4, Channel_6(D), Value_7(D));
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_27 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetPreEnableClock (uint8 Instance, uint8 Channel, boolean Value)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_26 ();
+  Emios_Pwm_Ip_SetPrescalerEnable (Base_4, Channel_6(D), Value_7(D));
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_26 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetMasterBusChannel (uint8 Instance, uint8 Channel)
+{
+  Emios_Pwm_Ip_CounterBusSourceType CounterBus;
+  uint8 ChannelMaster;
+  const struct Emios_Pwm_Ip_HwAddrType * const Base;
+  uint8 D.10287;
+  int _1;
+  unsigned char _2;
+  uint8 _15;
+
+  <bb 2> :
+  _1 = (int) Instance_4(D);
+  Base_6 = Emios_Pwm_Ip_aBasePtr[_1];
+  ChannelMaster_8 = Channel_7(D);
+  CounterBus_10 = Emios_Pwm_Ip_GetCounterBus (Base_6, Channel_7(D));
+  switch (CounterBus_10) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L2> [INV], case 2: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  ChannelMaster_13 = 23;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  ChannelMaster_11 = 22;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  _2 = Channel_7(D) >> 3;
+  ChannelMaster_12 = _2 * 8;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+  ChannelMaster_14 = Channel_7(D);
+
+  <bb 7> :
+  # ChannelMaster_3 = PHI <ChannelMaster_13(3), ChannelMaster_11(4), ChannelMaster_12(5), ChannelMaster_14(6)>
+  _15 = ChannelMaster_3;
+
+  <bb 8> :
+<L5>:
+  return _15;
+
+}
+
+
+Emios_Pwm_Ip_GetChannelMode (uint8 Instance, uint8 Channel)
+{
+  Emios_Pwm_Ip_PwmModeType ChannelMode;
+  Emios_Pwm_Ip_PwmModeType D.10285;
+  int _1;
+  int _2;
+  Emios_Pwm_Ip_PwmModeType _7;
+
+  <bb 2> :
+  _1 = (int) Instance_3(D);
+  _2 = (int) Channel_4(D);
+  ChannelMode_6 = Emios_Pwm_Ip_aCurrentModes[_1][_2];
+  _7 = ChannelMode_6;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Emios_Pwm_Ip_SetOutputToNormal (uint8 Instance, uint8 Channel, uint16 DutyPercent, Emios_Pwm_Ip_PolarityType Polarity, Emios_Pwm_Ip_PwmModeType Mode)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  int _2;
+  int _3;
+  <unnamed type> _4;
+  _Bool _5;
+  <unnamed type> _6;
+  _Bool _7;
+  <unnamed type> _8;
+  _Bool _9;
+  <unnamed type> _10;
+
+  <bb 2> :
+  _1 = (int) Instance_14(D);
+  Base_16 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_25 ();
+  _2 = (int) Instance_14(D);
+  _3 = (int) Channel_18(D);
+  _4 = Emios_Pwm_Ip_aCurrentModes[_2][_3];
+  if (_4 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 3> :
+  if (Mode_19(D) == 88)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  if (Mode_19(D) == 90)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Emios_Pwm_Ip_SetPwmMode (Base_16, Channel_18(D), Mode_19(D));
+  _5 = Polarity_21(D) != 1;
+  _6 = (<unnamed type>) _5;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_16, Channel_18(D), _6);
+  goto <bb 18>; [INV]
+
+  <bb 6> :
+  if (Mode_19(D) == 96)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (Mode_19(D) == 98)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  Emios_Pwm_Ip_SetPwmMode (Base_16, Channel_18(D), Mode_19(D));
+  Emios_Pwm_Ip_SetEdgePolarity (Base_16, Channel_18(D), Polarity_21(D));
+  goto <bb 18>; [INV]
+
+  <bb 9> :
+  if (Mode_19(D) == 6)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  if (Mode_19(D) == 7)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 11> :
+  if (DutyPercent_20(D) == 32768)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _7 = Polarity_21(D) != 1;
+  _8 = (<unnamed type>) _7;
+  Emios_Pwm_Ip_SetPwmModePol (Base_16, Channel_18(D), Mode_19(D), _8);
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  Emios_Pwm_Ip_SetPwmModePol (Base_16, Channel_18(D), Mode_19(D), Polarity_21(D));
+
+  <bb 14> :
+  goto <bb 18>; [INV]
+
+  <bb 15> :
+  if (DutyPercent_20(D) == 32768)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _9 = Polarity_21(D) != 1;
+  _10 = (<unnamed type>) _9;
+  Emios_Pwm_Ip_SetPwmModePol (Base_16, Channel_18(D), Mode_19(D), _10);
+  Emios_Pwm_Ip_SetEdgePolarity (Base_16, Channel_18(D), Polarity_21(D));
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  Emios_Pwm_Ip_SetPwmModePol (Base_16, Channel_18(D), Mode_19(D), Polarity_21(D));
+
+  <bb 18> :
+
+  <bb 19> :
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_25 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetOutputState (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_OutputStateType OutputState)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _5;
+
+  <bb 2> :
+  _1 = (int) Instance_7(D);
+  Base_9 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_24 ();
+  if (OutputState_11(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Emios_Pwm_Ip_SetEdgePolarity (Base_9, Channel_12(D), 0);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Emios_Pwm_Ip_SetEdgePolarity (Base_9, Channel_12(D), 1);
+
+  <bb 5> :
+  Emios_Pwm_Ip_SetPwmMode (Base_9, Channel_12(D), 1);
+  _2 = (int) Instance_7(D);
+  _3 = (int) Channel_12(D);
+  Emios_Pwm_Ip_aCurrentModes[_2][_3] = 1;
+  Emios_Pwm_Ip_SetInterruptRequest (Base_9, Channel_12(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_9, Channel_12(D));
+  _4 = (int) Instance_7(D);
+  _5 = (int) Channel_12(D);
+  Emios_Pwm_Ip_aCheckState[_4][_5] = 2;
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_24 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetOutputState (uint8 Instance, uint8 Channel)
+{
+  const struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_OutputStateType iftmp.14;
+  Emios_Pwm_Ip_OutputStateType D.10253;
+  int _1;
+  _Bool _2;
+  _Bool _3;
+  Emios_Pwm_Ip_OutputStateType iftmp.14_4;
+  Emios_Pwm_Ip_OutputStateType iftmp.14_10;
+  Emios_Pwm_Ip_OutputStateType iftmp.14_11;
+  Emios_Pwm_Ip_OutputStateType _12;
+
+  <bb 2> :
+  _1 = (int) Instance_5(D);
+  Base_7 = Emios_Pwm_Ip_aBasePtr[_1];
+  _2 = Emios_Pwm_Ip_GetOutputPinState (Base_7, Channel_8(D));
+  _3 = ~_2;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.14_11 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.14_10 = 1;
+
+  <bb 5> :
+  # iftmp.14_4 = PHI <iftmp.14_11(3), iftmp.14_10(4)>
+  _12 = iftmp.14_4;
+
+  <bb 6> :
+<L3>:
+  return _12;
+
+}
+
+
+Emios_Pwm_Ip_SetFlagRequest (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_InterruptType Event)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  int _2;
+  int _3;
+  unsigned char _4;
+  int _5;
+  int _6;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+
+  <bb 2> :
+  _1 = (int) Instance_13(D);
+  Base_15 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_23 ();
+  Emios_Pwm_Ip_ClearFlagEvent (Base_15, Channel_17(D));
+  switch (Event_19(D)) <default: <L5> [INV], case 0: <L4> [INV], case 1: <L0> [INV], case 2: <L3> [INV]>
+
+  <bb 3> :
+<L0>:
+  _2 = (int) Instance_13(D);
+  _3 = (int) Channel_17(D);
+  _4 = Emios_Pwm_Ip_aNotif[_2][_3];
+  if (_4 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_15, Channel_17(D), 1);
+  Emios_Pwm_Ip_SetDMARequest (Base_15, Channel_17(D), 0);
+  _5 = (int) Instance_13(D);
+  _6 = (int) Channel_17(D);
+  Emios_Pwm_Ip_aCheckEnableNotif[_5][_6] = 1;
+
+  <bb 5> :
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+<L3>:
+  Emios_Pwm_Ip_SetInterruptRequest (Base_15, Channel_17(D), 1);
+  Emios_Pwm_Ip_SetDMARequest (Base_15, Channel_17(D), 1);
+  _7 = (int) Instance_13(D);
+  _8 = (int) Channel_17(D);
+  Emios_Pwm_Ip_aCheckEnableNotif[_7][_8] = 1;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+<L4>:
+  Emios_Pwm_Ip_SetInterruptRequest (Base_15, Channel_17(D), 0);
+  Emios_Pwm_Ip_SetDMARequest (Base_15, Channel_17(D), 0);
+  _9 = (int) Instance_13(D);
+  _10 = (int) Channel_17(D);
+  Emios_Pwm_Ip_aCheckEnableNotif[_9][_10] = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+<L5>:
+
+  <bb 9> :
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_23 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetFlagRequest (uint8 Instance, uint8 Channel)
+{
+  Emios_Pwm_Ip_InterruptType EventType;
+  const struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_InterruptType D.10245;
+  int _1;
+  _Bool _2;
+  _Bool _3;
+  Emios_Pwm_Ip_InterruptType _15;
+
+  <bb 2> :
+  _1 = (int) Instance_6(D);
+  Base_8 = Emios_Pwm_Ip_aBasePtr[_1];
+  EventType_9 = 0;
+  _2 = Emios_Pwm_Ip_GetInterruptRequest (Base_8, Channel_10(D));
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _3 = Emios_Pwm_Ip_GetDMARequest (Base_8, Channel_10(D));
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  EventType_14 = 2;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  EventType_13 = 1;
+
+  <bb 6> :
+  # EventType_4 = PHI <EventType_9(2), EventType_14(4), EventType_13(5)>
+  _15 = EventType_4;
+
+  <bb 7> :
+<L5>:
+  return _15;
+
+}
+
+
+Emios_Pwm_Ip_ChannelStopDebugMode (uint8 Instance, uint8 Channel)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_22 ();
+  Emios_Pwm_Ip_SetFreezeEnable (Base_4, Channel_6(D), 0);
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_22 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_ChannelEnterDebugMode (uint8 Instance, uint8 Channel)
+{
+  Emios_Pwm_Ip_StatusType Ret;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_StatusType D.10236;
+  int _1;
+  _Bool _2;
+  Emios_Pwm_Ip_StatusType _15;
+
+  <bb 2> :
+  _1 = (int) Instance_5(D);
+  Base_7 = Emios_Pwm_Ip_aBasePtr[_1];
+  Ret_8 = 0;
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_21 ();
+  _2 = Emios_Pwm_Ip_GetDebugMode (Base_7);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Emios_Pwm_Ip_SetFreezeEnable (Base_7, Channel_12(D), 1);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Ret_11 = 3075;
+
+  <bb 5> :
+  # Ret_3 = PHI <Ret_8(3), Ret_11(4)>
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_21 ();
+  _15 = Ret_3;
+
+  <bb 6> :
+<L3>:
+  return _15;
+
+}
+
+
+Emios_Pwm_Ip_SetTriggerPlacement (uint8 Instance, uint8 Channel, uint32 NewTriggerPlacement)
+{
+  uint8 CounterStart;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  <unnamed type> _2;
+  <unnamed type> _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  short unsigned int _6;
+
+  <bb 2> :
+  _1 = (int) Instance_8(D);
+  Base_10 = Emios_Pwm_Ip_aBasePtr[_1];
+  CounterStart_11 = 0;
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_20 ();
+  _2 = Emios_Pwm_Ip_GetCounterBus (Base_10, Channel_13(D));
+  _3 = Emios_Pwm_Ip_GetCounterBusMode (Instance_8(D), Channel_13(D), _2);
+  if (_3 == 80)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  CounterStart_17 = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  CounterStart_16 = 0;
+
+  <bb 5> :
+  # CounterStart_7 = PHI <CounterStart_17(3), CounterStart_16(4)>
+  _4 = (short unsigned int) NewTriggerPlacement_18(D);
+  _5 = (short unsigned int) CounterStart_7;
+  _6 = _4 + _5;
+  Emios_Pwm_Ip_SetTrigger (Base_10, Channel_13(D), _6);
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_20 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetTriggerPlacement (uint8 Instance, uint8 Channel)
+{
+  const struct Emios_Pwm_Ip_HwAddrType * const Base;
+  uint32 D.10226;
+  int _1;
+  short unsigned int _2;
+  uint32 _8;
+
+  <bb 2> :
+  _1 = (int) Instance_3(D);
+  Base_5 = Emios_Pwm_Ip_aBasePtr[_1];
+  _2 = Emios_Pwm_Ip_GetTrigger (Base_5, Channel_6(D));
+  _8 = (uint32) _2;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+Emios_Pwm_Ip_SetDeadTime (uint8 Instance, uint8 Channel, uint16 NewDeadTime)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_19 ();
+  Emios_Pwm_Ip_SetUCRegB (Base_4, Channel_6(D), NewDeadTime_7(D));
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_19 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetDeadTime (uint8 Instance, uint8 Channel)
+{
+  const struct Emios_Pwm_Ip_HwAddrType * const Base;
+  uint16 D.10224;
+  int _1;
+  uint16 _7;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  _7 = Emios_Pwm_Ip_GetUCRegB (Base_4, Channel_5(D));
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Emios_Pwm_Ip_SetPhaseShift (uint8 Instance, uint8 Channel, uint16 PhaseShift)
+{
+  uint8 CounterStart;
+  uint16 DutyCycle;
+  uint16 ChPeriod;
+  Emios_Pwm_Ip_CounterBusSourceType CounterBus;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_StatusType Status;
+  Emios_Pwm_Ip_StatusType D.10222;
+  uint8 iftmp.13;
+  int _1;
+  int _2;
+  int _3;
+  <unnamed type> _4;
+  short unsigned int _5;
+  int _6;
+  int _7;
+  short unsigned int _8;
+  int _9;
+  int _10;
+  <unnamed type> _11;
+  int _12;
+  int _13;
+  int _14;
+  int _15;
+  int _16;
+  int _17;
+  short unsigned int _18;
+  int _19;
+  int _20;
+  short unsigned int _21;
+  short unsigned int _22;
+  int _23;
+  int _24;
+  short unsigned int _25;
+  int _26;
+  int _27;
+  short unsigned int _28;
+  short unsigned int _29;
+  uint8 iftmp.13_33;
+  uint8 iftmp.13_52;
+  uint8 iftmp.13_53;
+  Emios_Pwm_Ip_StatusType _65;
+
+  <bb 2> :
+  Status_37 = 0;
+  _1 = (int) Instance_38(D);
+  Base_40 = Emios_Pwm_Ip_aBasePtr[_1];
+  CounterBus_43 = Emios_Pwm_Ip_GetCounterBus (Base_40, Channel_41(D));
+  ChPeriod_44 = 0;
+  DutyCycle_45 = 0;
+  CounterStart_46 = 0;
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_18 ();
+  ChPeriod_49 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_38(D), Channel_41(D), CounterBus_43);
+  _2 = (int) Instance_38(D);
+  _3 = (int) Channel_41(D);
+  DutyCycle_50 = Emios_Pwm_Ip_aDutyCycle[_2][_3];
+  _4 = Emios_Pwm_Ip_GetCounterBusMode (Instance_38(D), Channel_41(D), CounterBus_43);
+  if (_4 == 80)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.13_53 = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.13_52 = 0;
+
+  <bb 5> :
+  # iftmp.13_33 = PHI <iftmp.13_53(3), iftmp.13_52(4)>
+  CounterStart_54 = iftmp.13_33;
+  _5 = (short unsigned int) CounterStart_54;
+  _6 = (int) Instance_38(D);
+  _7 = (int) Channel_41(D);
+  _8 = PhaseShift_55(D) + _5;
+  Emios_Pwm_Ip_aRegA[_6][_7] = _8;
+  _9 = (int) Instance_38(D);
+  _10 = (int) Channel_41(D);
+  _11 = Emios_Pwm_Ip_aCurrentModes[_9][_10];
+  switch (_11) <default: <L12> [INV], case 38: <L8> [INV], case 96: <L3> [INV], case 98: <L3> [INV]>
+
+  <bb 6> :
+<L3>:
+  _12 = (int) PhaseShift_55(D);
+  _13 = (int) DutyCycle_50;
+  _14 = _12 + _13;
+  _15 = (int) ChPeriod_49;
+  if (_14 > _15)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status_59 = 1;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _16 = (int) Instance_38(D);
+  _17 = (int) Channel_41(D);
+  _18 = Emios_Pwm_Ip_aRegA[_16][_17];
+  Emios_Pwm_Ip_SetUCRegA (Base_40, Channel_41(D), _18);
+  _19 = (int) Instance_38(D);
+  _20 = (int) Channel_41(D);
+  _21 = Emios_Pwm_Ip_aRegA[_19][_20];
+  _22 = DutyCycle_50 + _21;
+  Emios_Pwm_Ip_SetUCRegB (Base_40, Channel_41(D), _22);
+
+  <bb 9> :
+  # Status_30 = PHI <Status_59(7), Status_37(8)>
+  goto <bb 15>; [INV]
+
+  <bb 10> :
+<L8>:
+  if (PhaseShift_55(D) > ChPeriod_49)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  Status_62 = 1;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _23 = (int) Instance_38(D);
+  _24 = (int) Channel_41(D);
+  _25 = Emios_Pwm_Ip_aRegA[_23][_24];
+  Emios_Pwm_Ip_SetUCRegA (Base_40, Channel_41(D), _25);
+  _26 = (int) Instance_38(D);
+  _27 = (int) Channel_41(D);
+  _28 = Emios_Pwm_Ip_aRegA[_26][_27];
+  _29 = DutyCycle_50 + _28;
+  Emios_Pwm_Ip_SetUCRegB (Base_40, Channel_41(D), _29);
+
+  <bb 13> :
+  # Status_31 = PHI <Status_62(11), Status_37(12)>
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+<L12>:
+  Status_63 = 1;
+
+  <bb 15> :
+  # Status_32 = PHI <Status_30(9), Status_31(13), Status_63(14)>
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_18 ();
+  _65 = Status_32;
+
+  <bb 16> :
+<L14>:
+  return _65;
+
+}
+
+
+Emios_Pwm_Ip_GetPhaseShift (uint8 Instance, uint8 Channel)
+{
+  const struct Emios_Pwm_Ip_HwAddrType * const Base;
+  uint16 D.10210;
+  int _1;
+  uint16 _7;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  _7 = Emios_Pwm_Ip_GetUCRegA (Base_4, Channel_5(D));
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Emios_Pwm_Ip_SetDutyCycle (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
+{
+  Emios_Pwm_Ip_PwmModeType ChMode;
+  Emios_Pwm_Ip_StatusType Ret;
+  Emios_Pwm_Ip_StatusType D.10127;
+  Emios_Pwm_Ip_PwmModeType iftmp.10;
+  int _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  int _5;
+  int _6;
+  int _7;
+  Emios_Pwm_Ip_PwmModeType iftmp.10_9;
+  Emios_Pwm_Ip_PwmModeType iftmp.10_16;
+  Emios_Pwm_Ip_PwmModeType iftmp.10_17;
+  Emios_Pwm_Ip_StatusType _33;
+
+  <bb 2> :
+  Ret_11 = 0;
+  ChMode_12 = 255;
+  _1 = (int) Instance_13(D);
+  _2 = (int) Channel_14(D);
+  _3 = Emios_Pwm_Ip_aCheckState[_1][_2];
+  if (_3 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = (int) Instance_13(D);
+  _5 = (int) Channel_14(D);
+  iftmp.10_17 = Emios_Pwm_Ip_aInitialModes[_4][_5];
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _6 = (int) Instance_13(D);
+  _7 = (int) Channel_14(D);
+  iftmp.10_16 = Emios_Pwm_Ip_aCurrentModes[_6][_7];
+
+  <bb 5> :
+  # iftmp.10_9 = PHI <iftmp.10_17(3), iftmp.10_16(4)>
+  ChMode_18 = iftmp.10_9;
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_17 ();
+  switch (ChMode_18) <default: <L14> [INV], case 6 ... 7: <L11> [INV], case 38: <L13> [INV], case 88: <L3> [INV], case 90: <L3> [INV], case 92 ... 95: <L5> [INV], case 96: <L9> [INV], case 98: <L9> [INV]>
+
+  <bb 6> :
+<L3>:
+  Ret_26 = Emios_Pwm_Ip_SetDutyCycleOpwfmb (Instance_13(D), Channel_14(D), NewDutyCycle_20(D));
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+<L5>:
+  Ret_24 = Emios_Pwm_Ip_SetDutyCycleOpwmcb (Instance_13(D), Channel_14(D), NewDutyCycle_20(D));
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+<L9>:
+  Ret_22 = Emios_Pwm_Ip_SetDutyCycleOpwmb (Instance_13(D), Channel_14(D), NewDutyCycle_20(D));
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+<L11>:
+  Ret_30 = Emios_Pwm_Ip_SetDutyCycleDaoc (Instance_13(D), Channel_14(D), NewDutyCycle_20(D));
+  goto <bb 12>; [INV]
+
+  <bb 10> :
+<L13>:
+  Ret_28 = Emios_Pwm_Ip_SetDutyCycleOpwmt (Instance_13(D), Channel_14(D), NewDutyCycle_20(D));
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+<L14>:
+  Ret_31 = 3072;
+
+  <bb 12> :
+  # Ret_8 = PHI <Ret_26(6), Ret_24(7), Ret_22(8), Ret_30(9), Ret_28(10), Ret_31(11)>
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_17 ();
+  _33 = Ret_8;
+
+  <bb 13> :
+<L16>:
+  return _33;
+
+}
+
+
+Emios_Pwm_Ip_GetDutyCycle (uint8 Instance, uint8 Channel)
+{
+  uint16 DutyCycle;
+  uint16 D.10121;
+  int _1;
+  int _2;
+  uint16 _7;
+
+  <bb 2> :
+  _1 = (int) Instance_3(D);
+  _2 = (int) Channel_4(D);
+  DutyCycle_6 = Emios_Pwm_Ip_aDutyCycle[_1][_2];
+  _7 = DutyCycle_6;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Emios_Pwm_Ip_SetPeriod (uint8 Instance, uint8 Channel, uint16 NewPeriod)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  int _2;
+  int _3;
+
+  <bb 2> :
+  _1 = (int) Instance_5(D);
+  Base_7 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_16 ();
+  if (NewPeriod_9(D) == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  Emios_Pwm_Ip_SetUCRegB (Base_7, Channel_10(D), NewPeriod_9(D));
+
+  <bb 4> :
+  _2 = (int) Instance_5(D);
+  _3 = (int) Channel_10(D);
+  Emios_Pwm_Ip_aPeriod[_2][_3] = NewPeriod_9(D);
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_16 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetPeriod (uint8 Instance, uint8 Channel)
+{
+  uint16 ChPeriod;
+  Emios_Pwm_Ip_PwmModeType ChMode;
+  const struct Emios_Pwm_Ip_HwAddrType * const Base;
+  uint16 D.10114;
+  int _1;
+  int _2;
+  int _3;
+  unsigned char _4;
+  int _5;
+  int _6;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+  <unnamed type> _11;
+  short unsigned int _12;
+  <unnamed type> _13;
+  uint16 _36;
+
+  <bb 2> :
+  _1 = (int) Instance_17(D);
+  Base_19 = Emios_Pwm_Ip_aBasePtr[_1];
+  ChMode_20 = 255;
+  ChPeriod_21 = 0;
+  _2 = (int) Instance_17(D);
+  _3 = (int) Channel_22(D);
+  _4 = Emios_Pwm_Ip_aCheckState[_2][_3];
+  if (_4 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _5 = (int) Instance_17(D);
+  _6 = (int) Channel_22(D);
+  ChMode_24 = Emios_Pwm_Ip_aInitialModes[_5][_6];
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _7 = (int) Instance_17(D);
+  _8 = (int) Channel_22(D);
+  ChMode_23 = Emios_Pwm_Ip_aCurrentModes[_7][_8];
+
+  <bb 5> :
+  # ChMode_14 = PHI <ChMode_24(3), ChMode_23(4)>
+  if (ChMode_14 == 88)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (ChMode_14 == 90)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  ChPeriod_35 = Emios_Pwm_Ip_GetUCRegB (Base_19, Channel_22(D));
+  goto <bb 21>; [INV]
+
+  <bb 8> :
+  if (ChMode_14 == 6)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  if (ChMode_14 == 7)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _9 = (int) Instance_17(D);
+  _10 = (int) Channel_22(D);
+  ChPeriod_33 = Emios_Pwm_Ip_aPeriod[_9][_10];
+  goto <bb 21>; [INV]
+
+  <bb 11> :
+  if (ChMode_14 == 92)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (ChMode_14 == 94)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  if (ChMode_14 == 93)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  if (ChMode_14 == 95)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _11 = Emios_Pwm_Ip_GetCounterBus (Base_19, Channel_22(D));
+  ChPeriod_31 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_17(D), Channel_22(D), _11);
+  _12 = ChPeriod_31 << 1;
+  ChPeriod_32 = _12 + 65534;
+  goto <bb 21>; [INV]
+
+  <bb 16> :
+  if (ChMode_14 == 96)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  if (ChMode_14 == 98)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  if (ChMode_14 == 38)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  _13 = Emios_Pwm_Ip_GetCounterBus (Base_19, Channel_22(D));
+  ChPeriod_28 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_17(D), Channel_22(D), _13);
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  ChPeriod_25 = 0;
+
+  <bb 21> :
+  # ChPeriod_15 = PHI <ChPeriod_35(7), ChPeriod_33(10), ChPeriod_32(15), ChPeriod_28(19), ChPeriod_25(20)>
+  _36 = ChPeriod_15;
+
+  <bb 22> :
+<L22>:
+  return _36;
+
+}
+
+
+Emios_Pwm_Ip_ForceMatchTrailingEdge (uint8 Instance, uint8 Channel, boolean Enable)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_15 ();
+  Emios_Pwm_Ip_SetForceMatchB (Base_4, Channel_6(D), Enable_7(D));
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_15 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_ForceMatchLeadingEdge (uint8 Instance, uint8 Channel, boolean Enable)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+
+  <bb 2> :
+  _1 = (int) Instance_2(D);
+  Base_4 = Emios_Pwm_Ip_aBasePtr[_1];
+  SchM_Enter_Pwm_PWM_EXCLUSIVE_AREA_14 ();
+  Emios_Pwm_Ip_SetForceMatchA (Base_4, Channel_6(D), Enable_7(D));
+  SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_14 ();
+  return;
+
+}
+
+
+Emios_Pwm_Ip_DeInitChannel (uint8 Instance, uint8 Channel)
+{
+  uint8 TimbaseCh;
+  Emios_Pwm_Ip_CounterBusSourceType CounterBus;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _5;
+  <unnamed type> _6;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+  int _11;
+  int _12;
+  unsigned char _13;
+  int _14;
+  int _15;
+  unsigned char _16;
+  int _17;
+  int _18;
+  unsigned char _19;
+
+  <bb 2> :
+  _1 = (int) Instance_22(D);
+  Base_24 = Emios_Pwm_Ip_aBasePtr[_1];
+  CounterBus_27 = Emios_Pwm_Ip_GetCounterBus (Base_24, Channel_25(D));
+  TimbaseCh_29 = Emios_Pwm_Ip_GetTimebaseChannel (Channel_25(D), CounterBus_27);
+  _2 = (int) Channel_25(D);
+  Base_24->CH.UC[_2].C2 ={v} 0;
+  _3 = (int) Channel_25(D);
+  Base_24->CH.UC[_3].C ={v} 0;
+  Emios_Pwm_Ip_SetUCRegA (Base_24, Channel_25(D), 0);
+  Emios_Pwm_Ip_SetUCRegB (Base_24, Channel_25(D), 0);
+  _4 = (int) Instance_22(D);
+  _5 = (int) Channel_25(D);
+  _6 = Emios_Pwm_Ip_aCurrentModes[_4][_5];
+  if (_6 == 38)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Emios_Pwm_Ip_SetTrigger (Base_24, Channel_25(D), 0);
+
+  <bb 4> :
+  _7 = (int) Instance_22(D);
+  _8 = (int) Channel_25(D);
+  Emios_Pwm_Ip_aCheckEnableNotif[_7][_8] = 0;
+  _9 = (int) Instance_22(D);
+  _10 = (int) Channel_25(D);
+  Emios_Pwm_Ip_aCheckState[_9][_10] = 0;
+  if (CounterBus_27 != 3)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _11 = (int) Instance_22(D);
+  _12 = (int) TimbaseCh_29;
+  _13 = Emios_Pwm_Ip_aCheckState[_11][_12];
+  if (_13 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _14 = (int) Instance_22(D);
+  _15 = (int) TimbaseCh_29;
+  _16 = Emios_Pwm_Ip_aCheckState[_14][_15];
+  _17 = (int) Instance_22(D);
+  _18 = (int) TimbaseCh_29;
+  _19 = _16 + 255;
+  Emios_Pwm_Ip_aCheckState[_17][_18] = _19;
+
+  <bb 7> :
+  return;
+
+}
+
+
+Emios_Pwm_Ip_InitChannel (uint8 Instance, const struct Emios_Pwm_Ip_ChannelConfigType * UserChCfg)
+{
+  uint8 TimbaseCh;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  unsigned char _2;
+  <unnamed type> _3;
+  int _4;
+  struct Emios_Pwm_Ip_HwAddrType * _5;
+  unsigned char _6;
+  int _7;
+  unsigned char _8;
+  unsigned char _9;
+  _Bool _10;
+  unsigned char _11;
+  <unnamed type> _12;
+  <unnamed type> _13;
+  unsigned char _14;
+  <unnamed type> _15;
+  unsigned char _16;
+  unsigned char _17;
+  int _18;
+  unsigned char _19;
+  int _20;
+  <unnamed type> _21;
+  int _22;
+  unsigned char _23;
+  int _24;
+  <unnamed type> _25;
+  int _26;
+  unsigned char _27;
+  int _28;
+  int _29;
+  int _30;
+  unsigned char _31;
+  int _32;
+  int _33;
+  unsigned char _34;
+
+  <bb 2> :
+  _1 = (int) Instance_37(D);
+  Base_39 = Emios_Pwm_Ip_aBasePtr[_1];
+  _2 = UserChCfg_40(D)->ChannelId;
+  _3 = UserChCfg_40(D)->Timebase;
+  TimbaseCh_42 = Emios_Pwm_Ip_GetTimebaseChannel (_2, _3);
+  _4 = (int) Instance_37(D);
+  _5 = Emios_Pwm_Ip_aBasePtr[_4];
+  _6 = UserChCfg_40(D)->ChannelId;
+  _7 = (int) _6;
+  _5->CH.UC[_7].C ={v} 0;
+  _8 = UserChCfg_40(D)->ChannelId;
+  Emios_Pwm_Ip_SetOutputUpdate (Base_39, _8, 1);
+  _9 = UserChCfg_40(D)->ChannelId;
+  _10 = UserChCfg_40(D)->DebugMode;
+  Emios_Pwm_Ip_SetFreezeEnable (Base_39, _9, _10);
+  Emios_Pwm_Ip_InitOutputIrqAndMode (Instance_37(D), UserChCfg_40(D));
+  _11 = UserChCfg_40(D)->ChannelId;
+  _12 = UserChCfg_40(D)->InternalPsSrc;
+  Emios_Pwm_Ip_SetPrescalerSource (Base_39, _11, _12);
+  _13 = UserChCfg_40(D)->InternalPs;
+  if (_13 != 255)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _14 = UserChCfg_40(D)->ChannelId;
+  _15 = UserChCfg_40(D)->InternalPs;
+  Emios_Pwm_Ip_SetExtendedPrescaler (Base_39, _14, _15);
+  _16 = UserChCfg_40(D)->ChannelId;
+  Emios_Pwm_Ip_SetPrescalerEnable (Base_39, _16, 1);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _17 = UserChCfg_40(D)->ChannelId;
+  Emios_Pwm_Ip_SetPrescalerEnable (Base_39, _17, 0);
+
+  <bb 5> :
+  _18 = (int) Instance_37(D);
+  _19 = UserChCfg_40(D)->ChannelId;
+  _20 = (int) _19;
+  _21 = UserChCfg_40(D)->Mode;
+  Emios_Pwm_Ip_aInitialModes[_18][_20] = _21;
+  _22 = (int) Instance_37(D);
+  _23 = UserChCfg_40(D)->ChannelId;
+  _24 = (int) _23;
+  _25 = UserChCfg_40(D)->Mode;
+  Emios_Pwm_Ip_aCurrentModes[_22][_24] = _25;
+  _26 = (int) Instance_37(D);
+  _27 = UserChCfg_40(D)->ChannelId;
+  _28 = (int) _27;
+  Emios_Pwm_Ip_aCheckState[_26][_28] = 1;
+  if (TimbaseCh_42 != 255)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _29 = (int) Instance_37(D);
+  _30 = (int) TimbaseCh_42;
+  _31 = Emios_Pwm_Ip_aCheckState[_29][_30];
+  _32 = (int) Instance_37(D);
+  _33 = (int) TimbaseCh_42;
+  _34 = _31 + 1;
+  Emios_Pwm_Ip_aCheckState[_32][_33] = _34;
+
+  <bb 7> :
+  return;
+
+}
+
+
+Emios_Pwm_Ip_InitOutputIrqAndMode (uint8 Instance, const struct Emios_Pwm_Ip_ChannelConfigType * UserChCfg)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  <unnamed type> _2;
+  unsigned char _3;
+  unsigned char _4;
+  <unnamed type> _5;
+  <unnamed type> _6;
+  <unnamed type> _7;
+  int _8;
+  unsigned char _9;
+  int _10;
+  const struct Emios_Pwm_Ip_NotificationType * _11;
+  unsigned char _12;
+  <unnamed type> _13;
+
+  <bb 2> :
+  _1 = (int) Instance_17(D);
+  Base_19 = Emios_Pwm_Ip_aBasePtr[_1];
+  _2 = UserChCfg_20(D)->OutputDisableSource;
+  if (_2 != 255)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = UserChCfg_20(D)->ChannelId;
+  Emios_Pwm_Ip_SetOutDisable (Base_19, _3, 1);
+  _4 = UserChCfg_20(D)->ChannelId;
+  _5 = UserChCfg_20(D)->OutputDisableSource;
+  Emios_Pwm_Ip_SetOutDisableSource (Base_19, _4, _5);
+
+  <bb 4> :
+  _6 = UserChCfg_20(D)->IrqMode;
+  if (_6 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _7 = UserChCfg_20(D)->IrqMode;
+  if (_7 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _8 = (int) Instance_17(D);
+  _9 = UserChCfg_20(D)->ChannelId;
+  _10 = (int) _9;
+  _11 = &UserChCfg_20(D)->UserCallback;
+  Emios_Pwm_Ip_aNotificationPtr[_8][_10] = _11;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _12 = UserChCfg_20(D)->ChannelId;
+  Emios_Pwm_Ip_SetDMARequest (Base_19, _12, 1);
+
+  <bb 8> :
+  _13 = UserChCfg_20(D)->Mode;
+  switch (_13) <default: <L18> [INV], case 6 ... 7: <L16> [INV], case 38: <L15> [INV], case 88: <L7> [INV], case 90: <L7> [INV], case 92 ... 95: <L9> [INV], case 96: <L13> [INV], case 98: <L13> [INV]>
+
+  <bb 9> :
+<L7>:
+  Emios_Pwm_Ip_InitPeriodDutyCycleMode (Instance_17(D), UserChCfg_20(D));
+  goto <bb 15>; [INV]
+
+  <bb 10> :
+<L9>:
+  Emios_Pwm_Ip_InitDeadTimeMode (Instance_17(D), UserChCfg_20(D));
+  goto <bb 15>; [INV]
+
+  <bb 11> :
+<L13>:
+  Emios_Pwm_Ip_InitEdgePlacementMode (Instance_17(D), UserChCfg_20(D));
+  goto <bb 15>; [INV]
+
+  <bb 12> :
+<L15>:
+  Emios_Pwm_Ip_InitTriggerMode (Instance_17(D), UserChCfg_20(D));
+  goto <bb 15>; [INV]
+
+  <bb 13> :
+<L16>:
+  Emios_Pwm_Ip_InitDoubleCompareMode (Instance_17(D), UserChCfg_20(D));
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+<L18>:
+
+  <bb 15> :
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetDutyCycleDaoc (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
+{
+  uint16 CounterMax;
+  uint16 DaocRegA;
+  Emios_Pwm_Ip_StatusType Ret;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_StatusType D.10197;
+  uint16 iftmp.12;
+  uint16 iftmp.11;
+  int _1;
+  unsigned char _2;
+  int _3;
+  int _4;
+  short unsigned int _5;
+  int _6;
+  int _7;
+  short unsigned int _8;
+  int _9;
+  int _10;
+  short unsigned int _11;
+  int _12;
+  int _13;
+  short unsigned int _14;
+  int _15;
+  int _16;
+  <unnamed type> _17;
+  int _18;
+  int _19;
+  unsigned char _20;
+  _Bool _21;
+  <unnamed type> _22;
+  int _23;
+  int _24;
+  int _25;
+  int _26;
+  short unsigned int _27;
+  int _28;
+  int _29;
+  int _30;
+  int _31;
+  short unsigned int _32;
+  int _33;
+  short unsigned int _34;
+  int _35;
+  int _36;
+  int _37;
+  int _38;
+  int _39;
+  int _40;
+  <unnamed type> _41;
+  int _42;
+  int _43;
+  unsigned char _44;
+  _Bool _45;
+  <unnamed type> _46;
+  int _47;
+  int _48;
+  int _49;
+  int _50;
+  short unsigned int _51;
+  int _52;
+  int _53;
+  <unnamed type> _54;
+  int _55;
+  int _56;
+  unsigned char _57;
+  _Bool _58;
+  <unnamed type> _59;
+  int _60;
+  int _61;
+  uint16 iftmp.11_63;
+  uint16 iftmp.12_64;
+  uint16 iftmp.11_92;
+  uint16 iftmp.11_93;
+  uint16 iftmp.12_95;
+  uint16 iftmp.12_96;
+  Emios_Pwm_Ip_StatusType _108;
+
+  <bb 2> :
+  _1 = (int) Instance_69(D);
+  Base_71 = Emios_Pwm_Ip_aBasePtr[_1];
+  Ret_72 = 0;
+  DaocRegA_73 = 0;
+  _2 = Emios_Pwm_Ip_GetMasterBusChannel (Instance_69(D), Channel_74(D));
+  CounterMax_77 = Emios_Pwm_Ip_GetUCRegA (Base_71, _2);
+  _3 = (int) Instance_69(D);
+  _4 = (int) Channel_74(D);
+  _5 = Emios_Pwm_Ip_aPeriod[_3][_4];
+  if (NewDutyCycle_78(D) > _5)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = (int) Instance_69(D);
+  _7 = (int) Channel_74(D);
+  _8 = Emios_Pwm_Ip_aPeriod[_6][_7];
+  if (_8 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Ret_79 = 1;
+  goto <bb 23>; [INV]
+
+  <bb 5> :
+  _9 = (int) Instance_69(D);
+  _10 = (int) Channel_74(D);
+  _11 = Emios_Pwm_Ip_aPeriod[_9][_10];
+  if (_11 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (NewDutyCycle_78(D) == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 7> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_71, Channel_74(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_71, Channel_74(D));
+  _12 = (int) Instance_69(D);
+  _13 = (int) Channel_74(D);
+  Emios_Pwm_Ip_aDutyCycle[_12][_13] = 0;
+  Emios_Pwm_Ip_SetForceMatchB (Base_71, Channel_74(D), 1);
+  Emios_Pwm_Ip_SetUCRegA (Base_71, Channel_74(D), 1);
+  _14 = NewDutyCycle_78(D) + 1;
+  Emios_Pwm_Ip_SetUCRegB (Base_71, Channel_74(D), _14);
+  _15 = (int) Instance_69(D);
+  _16 = (int) Channel_74(D);
+  _17 = Emios_Pwm_Ip_aCurrentModes[_15][_16];
+  if (_17 != 1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _18 = (int) Instance_69(D);
+  _19 = (int) Channel_74(D);
+  _20 = Emios_Pwm_Ip_aPolarity[_18][_19];
+  _21 = _20 == 1;
+  _22 = (<unnamed type>) _21;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_71, Channel_74(D), _22);
+
+  <bb 9> :
+  _23 = (int) Instance_69(D);
+  _24 = (int) Channel_74(D);
+  Emios_Pwm_Ip_aNotif[_23][_24] = 1;
+  goto <bb 23>; [INV]
+
+  <bb 10> :
+  _25 = (int) Instance_69(D);
+  _26 = (int) Channel_74(D);
+  _27 = Emios_Pwm_Ip_aPeriod[_25][_26];
+  if (NewDutyCycle_78(D) == _27)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 11> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_71, Channel_74(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_71, Channel_74(D));
+  _28 = (int) Instance_69(D);
+  _29 = (int) Channel_74(D);
+  Emios_Pwm_Ip_aDutyCycle[_28][_29] = 0;
+  _30 = (int) Instance_69(D);
+  _31 = (int) Channel_74(D);
+  _32 = Emios_Pwm_Ip_aPeriod[_30][_31];
+  _33 = (int) _32;
+  _34 = Emios_Pwm_Ip_GetUCRegA (Base_71, Channel_74(D));
+  _35 = (int) _34;
+  _36 = _33 + _35;
+  _37 = (int) CounterMax_77;
+  _38 = _36 % _37;
+  DaocRegA_90 = (uint16) _38;
+  Emios_Pwm_Ip_SetForceMatchA (Base_71, Channel_74(D), 1);
+  if (DaocRegA_90 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.11_93 = CounterMax_77;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.11_92 = DaocRegA_90;
+
+  <bb 14> :
+  # iftmp.11_63 = PHI <iftmp.11_93(12), iftmp.11_92(13)>
+  Emios_Pwm_Ip_SetUCRegA (Base_71, Channel_74(D), iftmp.11_63);
+  if (DaocRegA_90 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftmp.12_96 = CounterMax_77;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.12_95 = DaocRegA_90;
+
+  <bb 17> :
+  # iftmp.12_64 = PHI <iftmp.12_96(15), iftmp.12_95(16)>
+  Emios_Pwm_Ip_SetUCRegB (Base_71, Channel_74(D), iftmp.12_64);
+  _39 = (int) Instance_69(D);
+  _40 = (int) Channel_74(D);
+  _41 = Emios_Pwm_Ip_aCurrentModes[_39][_40];
+  if (_41 != 1)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _42 = (int) Instance_69(D);
+  _43 = (int) Channel_74(D);
+  _44 = Emios_Pwm_Ip_aPolarity[_42][_43];
+  _45 = _44 != 1;
+  _46 = (<unnamed type>) _45;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_71, Channel_74(D), _46);
+
+  <bb 19> :
+  _47 = (int) Instance_69(D);
+  _48 = (int) Channel_74(D);
+  Emios_Pwm_Ip_aNotif[_47][_48] = 1;
+  goto <bb 23>; [INV]
+
+  <bb 20> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_71, Channel_74(D), 1);
+  _49 = (int) Instance_69(D);
+  _50 = (int) Channel_74(D);
+  Emios_Pwm_Ip_aDutyCycle[_49][_50] = NewDutyCycle_78(D);
+  Emios_Pwm_Ip_SetUCRegA (Base_71, Channel_74(D), 1);
+  _51 = NewDutyCycle_78(D) + 1;
+  Emios_Pwm_Ip_SetUCRegB (Base_71, Channel_74(D), _51);
+  _52 = (int) Instance_69(D);
+  _53 = (int) Channel_74(D);
+  _54 = Emios_Pwm_Ip_aCurrentModes[_52][_53];
+  if (_54 != 1)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _55 = (int) Instance_69(D);
+  _56 = (int) Channel_74(D);
+  _57 = Emios_Pwm_Ip_aPolarity[_55][_56];
+  _58 = _57 == 1;
+  _59 = (<unnamed type>) _58;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_71, Channel_74(D), _59);
+
+  <bb 22> :
+  _60 = (int) Instance_69(D);
+  _61 = (int) Channel_74(D);
+  Emios_Pwm_Ip_aNotif[_60][_61] = 0;
+
+  <bb 23> :
+  # Ret_62 = PHI <Ret_79(4), Ret_72(9), Ret_72(19), Ret_72(22)>
+  _108 = Ret_62;
+
+  <bb 24> :
+<L23>:
+  return _108;
+
+}
+
+
+Emios_Pwm_Ip_InitDoubleCompareMode (uint8 Instance, const struct Emios_Pwm_Ip_ChannelConfigType * UserChCfg)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const base;
+  uint8 iftmp.0;
+  int _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  short unsigned int _5;
+  <unnamed type> _6;
+  int _7;
+  unsigned char _8;
+  int _9;
+  unsigned char _10;
+  unsigned char _11;
+  <unnamed type> _12;
+  short unsigned int _13;
+  short unsigned int _14;
+  unsigned char _15;
+  <unnamed type> _16;
+  _Bool _17;
+  <unnamed type> _18;
+  unsigned char _19;
+  <unnamed type> _20;
+  unsigned char _21;
+  <unnamed type> _22;
+  unsigned char _23;
+  <unnamed type> _24;
+  uint8 iftmp.0_25;
+  uint8 iftmp.0_32;
+  uint8 iftmp.0_33;
+
+  <bb 2> :
+  _1 = (int) Instance_27(D);
+  base_29 = Emios_Pwm_Ip_aBasePtr[_1];
+  _2 = (int) Instance_27(D);
+  _3 = UserChCfg_30(D)->ChannelId;
+  _4 = (int) _3;
+  _5 = UserChCfg_30(D)->PeriodCount;
+  Emios_Pwm_Ip_aPeriod[_2][_4] = _5;
+  _6 = UserChCfg_30(D)->OutputPolarity;
+  if (_6 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.0_33 = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.0_32 = 0;
+
+  <bb 5> :
+  # iftmp.0_25 = PHI <iftmp.0_33(3), iftmp.0_32(4)>
+  _7 = (int) Instance_27(D);
+  _8 = UserChCfg_30(D)->ChannelId;
+  _9 = (int) _8;
+  Emios_Pwm_Ip_aPolarity[_7][_9] = iftmp.0_25;
+  _10 = UserChCfg_30(D)->ChannelId;
+  Emios_Pwm_Ip_SetInterruptRequest (base_29, _10, 1);
+  _11 = UserChCfg_30(D)->ChannelId;
+  _12 = UserChCfg_30(D)->Timebase;
+  Emios_Pwm_Ip_SetCounterBus (base_29, _11, _12);
+  _13 = UserChCfg_30(D)->PeriodCount;
+  _14 = UserChCfg_30(D)->DutyCycle;
+  if (_13 == _14)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _15 = UserChCfg_30(D)->ChannelId;
+  _16 = UserChCfg_30(D)->OutputPolarity;
+  _17 = _16 != 1;
+  _18 = (<unnamed type>) _17;
+  Emios_Pwm_Ip_SetEdgePolarity (base_29, _15, _18);
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _19 = UserChCfg_30(D)->ChannelId;
+  _20 = UserChCfg_30(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (base_29, _19, _20);
+
+  <bb 8> :
+  _21 = UserChCfg_30(D)->ChannelId;
+  _22 = UserChCfg_30(D)->Mode;
+  Emios_Pwm_Ip_SetPwmMode (base_29, _21, _22);
+  _23 = UserChCfg_30(D)->ChannelId;
+  _24 = UserChCfg_30(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (base_29, _23, _24);
+  Emios_Pwm_Ip_InitDCModeWithDuty (Instance_27(D), UserChCfg_30(D));
+  return;
+
+}
+
+
+Emios_Pwm_Ip_InitDCModeWithDuty (uint8 Instance, const struct Emios_Pwm_Ip_ChannelConfigType * UserChCfg)
+{
+  uint16 CounterMax;
+  uint16 DaocRegA;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  uint16 iftmp.3;
+  uint16 iftmp.2;
+  int _1;
+  unsigned char _2;
+  unsigned char _3;
+  short unsigned int _4;
+  int _5;
+  unsigned char _6;
+  int _7;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  unsigned char _13;
+  <unnamed type> _14;
+  int _15;
+  unsigned char _16;
+  int _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  int _20;
+  unsigned char _21;
+  int _22;
+  short unsigned int _23;
+  int _24;
+  unsigned char _25;
+  short unsigned int _26;
+  int _27;
+  int _28;
+  int _29;
+  int _30;
+  int _31;
+  unsigned char _32;
+  int _33;
+  unsigned char _34;
+  unsigned char _35;
+  unsigned char _36;
+  unsigned char _37;
+  <unnamed type> _38;
+  _Bool _39;
+  <unnamed type> _40;
+  int _41;
+  unsigned char _42;
+  int _43;
+  int _44;
+  unsigned char _45;
+  int _46;
+  short unsigned int _47;
+  unsigned char _48;
+  unsigned char _49;
+  short unsigned int _50;
+  short unsigned int _51;
+  unsigned char _52;
+  <unnamed type> _53;
+  int _54;
+  unsigned char _55;
+  int _56;
+  uint16 iftmp.2_57;
+  uint16 iftmp.3_58;
+  uint16 iftmp.2_78;
+  uint16 iftmp.2_79;
+  uint16 iftmp.3_81;
+  uint16 iftmp.3_82;
+
+  <bb 2> :
+  _1 = (int) Instance_60(D);
+  Base_62 = Emios_Pwm_Ip_aBasePtr[_1];
+  DaocRegA_63 = 0;
+  _2 = UserChCfg_64(D)->ChannelId;
+  _3 = Emios_Pwm_Ip_GetMasterBusChannel (Instance_60(D), _2);
+  CounterMax_67 = Emios_Pwm_Ip_GetUCRegA (Base_62, _3);
+  _4 = UserChCfg_64(D)->DutyCycle;
+  if (_4 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  DaocRegA_86 = 1;
+  _5 = (int) Instance_60(D);
+  _6 = UserChCfg_64(D)->ChannelId;
+  _7 = (int) _6;
+  Emios_Pwm_Ip_aDutyCycle[_5][_7] = 0;
+  _8 = UserChCfg_64(D)->ChannelId;
+  Emios_Pwm_Ip_SetForceMatchB (Base_62, _8, 1);
+  _9 = UserChCfg_64(D)->ChannelId;
+  Emios_Pwm_Ip_SetUCRegA (Base_62, _9, DaocRegA_86);
+  _10 = UserChCfg_64(D)->ChannelId;
+  _11 = UserChCfg_64(D)->DutyCycle;
+  _12 = _11 + 1;
+  Emios_Pwm_Ip_SetUCRegB (Base_62, _10, _12);
+  _13 = UserChCfg_64(D)->ChannelId;
+  _14 = UserChCfg_64(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_62, _13, _14);
+  _15 = (int) Instance_60(D);
+  _16 = UserChCfg_64(D)->ChannelId;
+  _17 = (int) _16;
+  Emios_Pwm_Ip_aNotif[_15][_17] = 1;
+  goto <bb 13>; [INV]
+
+  <bb 4> :
+  _18 = UserChCfg_64(D)->DutyCycle;
+  _19 = UserChCfg_64(D)->PeriodCount;
+  if (_18 == _19)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 5> :
+  _20 = (int) Instance_60(D);
+  _21 = UserChCfg_64(D)->ChannelId;
+  _22 = (int) _21;
+  _23 = Emios_Pwm_Ip_aPeriod[_20][_22];
+  _24 = (int) _23;
+  _25 = UserChCfg_64(D)->ChannelId;
+  _26 = Emios_Pwm_Ip_GetUCRegA (Base_62, _25);
+  _27 = (int) _26;
+  _28 = _24 + _27;
+  _29 = (int) CounterMax_67;
+  _30 = _28 % _29;
+  DaocRegA_75 = (uint16) _30;
+  _31 = (int) Instance_60(D);
+  _32 = UserChCfg_64(D)->ChannelId;
+  _33 = (int) _32;
+  Emios_Pwm_Ip_aDutyCycle[_31][_33] = 0;
+  _34 = UserChCfg_64(D)->ChannelId;
+  Emios_Pwm_Ip_SetForceMatchA (Base_62, _34, 1);
+  _35 = UserChCfg_64(D)->ChannelId;
+  if (DaocRegA_75 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.2_79 = CounterMax_67;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.2_78 = DaocRegA_75;
+
+  <bb 8> :
+  # iftmp.2_57 = PHI <iftmp.2_79(6), iftmp.2_78(7)>
+  Emios_Pwm_Ip_SetUCRegA (Base_62, _35, iftmp.2_57);
+  _36 = UserChCfg_64(D)->ChannelId;
+  if (DaocRegA_75 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.3_82 = CounterMax_67;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.3_81 = DaocRegA_75;
+
+  <bb 11> :
+  # iftmp.3_58 = PHI <iftmp.3_82(9), iftmp.3_81(10)>
+  Emios_Pwm_Ip_SetUCRegB (Base_62, _36, iftmp.3_58);
+  _37 = UserChCfg_64(D)->ChannelId;
+  _38 = UserChCfg_64(D)->OutputPolarity;
+  _39 = _38 != 1;
+  _40 = (<unnamed type>) _39;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_62, _37, _40);
+  _41 = (int) Instance_60(D);
+  _42 = UserChCfg_64(D)->ChannelId;
+  _43 = (int) _42;
+  Emios_Pwm_Ip_aNotif[_41][_43] = 1;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  DaocRegA_68 = 1;
+  _44 = (int) Instance_60(D);
+  _45 = UserChCfg_64(D)->ChannelId;
+  _46 = (int) _45;
+  _47 = UserChCfg_64(D)->DutyCycle;
+  Emios_Pwm_Ip_aDutyCycle[_44][_46] = _47;
+  _48 = UserChCfg_64(D)->ChannelId;
+  Emios_Pwm_Ip_SetUCRegA (Base_62, _48, DaocRegA_68);
+  _49 = UserChCfg_64(D)->ChannelId;
+  _50 = UserChCfg_64(D)->DutyCycle;
+  _51 = _50 + 1;
+  Emios_Pwm_Ip_SetUCRegB (Base_62, _49, _51);
+  _52 = UserChCfg_64(D)->ChannelId;
+  _53 = UserChCfg_64(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_62, _52, _53);
+  _54 = (int) Instance_60(D);
+  _55 = UserChCfg_64(D)->ChannelId;
+  _56 = (int) _55;
+  Emios_Pwm_Ip_aNotif[_54][_56] = 0;
+
+  <bb 13> :
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetDutyCycleOpwmt (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
+{
+  uint16 ChPeriod;
+  Emios_Pwm_Ip_StatusType Ret;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_StatusType D.10208;
+  int _1;
+  <unnamed type> _2;
+  short unsigned int _3;
+  int _4;
+  int _5;
+  int _6;
+  int _7;
+  short unsigned int _8;
+  int _9;
+  int _10;
+  int _11;
+  int _12;
+  short unsigned int _13;
+  int _14;
+  int _15;
+  int _16;
+  int _17;
+  int _18;
+  short unsigned int _19;
+  int _20;
+  int _21;
+  int _22;
+  int _23;
+  unsigned char _24;
+  _Bool _25;
+  int _26;
+  int _27;
+  Emios_Pwm_Ip_StatusType _52;
+
+  <bb 2> :
+  _1 = (int) Instance_30(D);
+  Base_32 = Emios_Pwm_Ip_aBasePtr[_1];
+  Ret_33 = 0;
+  _2 = Emios_Pwm_Ip_GetCounterBus (Base_32, Channel_34(D));
+  ChPeriod_37 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_30(D), Channel_34(D), _2);
+  if (NewDutyCycle_38(D) > ChPeriod_37)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Ret_50 = 1;
+  goto <bb 9>; [INV]
+
+  <bb 4> :
+  if (ChPeriod_37 == NewDutyCycle_38(D))
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_32, Channel_34(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_32, Channel_34(D));
+  _3 = NewDutyCycle_38(D) + 1;
+  Emios_Pwm_Ip_SetUCRegB (Base_32, Channel_34(D), _3);
+  _4 = (int) Instance_30(D);
+  _5 = (int) Channel_34(D);
+  Emios_Pwm_Ip_aNotif[_4][_5] = 1;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  if (NewDutyCycle_38(D) == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_32, Channel_34(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_32, Channel_34(D));
+  _6 = (int) Instance_30(D);
+  _7 = (int) Channel_34(D);
+  _8 = Emios_Pwm_Ip_aRegA[_6][_7];
+  Emios_Pwm_Ip_SetUCRegB (Base_32, Channel_34(D), _8);
+  _9 = (int) Instance_30(D);
+  _10 = (int) Channel_34(D);
+  Emios_Pwm_Ip_aNotif[_9][_10] = 1;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _11 = (int) Instance_30(D);
+  _12 = (int) Channel_34(D);
+  _13 = Emios_Pwm_Ip_aRegA[_11][_12];
+  _14 = (int) _13;
+  _15 = (int) NewDutyCycle_38(D);
+  _16 = _14 + _15;
+  _17 = (int) ChPeriod_37;
+  _18 = _16 % _17;
+  _19 = (short unsigned int) _18;
+  Emios_Pwm_Ip_SetUCRegB (Base_32, Channel_34(D), _19);
+  _20 = (int) Instance_30(D);
+  _21 = (int) Channel_34(D);
+  Emios_Pwm_Ip_aNotif[_20][_21] = 0;
+  _22 = (int) Instance_30(D);
+  _23 = (int) Channel_34(D);
+  _24 = Emios_Pwm_Ip_aCheckEnableNotif[_22][_23];
+  _25 = _24 != 0;
+  Emios_Pwm_Ip_SetInterruptRequest (Base_32, Channel_34(D), _25);
+
+  <bb 9> :
+  # Ret_28 = PHI <Ret_50(3), Ret_33(5), Ret_33(7), Ret_33(8)>
+  _26 = (int) Instance_30(D);
+  _27 = (int) Channel_34(D);
+  Emios_Pwm_Ip_aDutyCycle[_26][_27] = NewDutyCycle_38(D);
+  _52 = Ret_28;
+
+  <bb 10> :
+<L9>:
+  return _52;
+
+}
+
+
+Emios_Pwm_Ip_InitTriggerMode (uint8 Instance, const struct Emios_Pwm_Ip_ChannelConfigType * UserChCfg)
+{
+  uint8 CounterStart;
+  uint16 TrailingEdge;
+  uint16 CounterBusPeriod;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  unsigned char _2;
+  <unnamed type> _3;
+  unsigned char _4;
+  <unnamed type> _5;
+  <unnamed type> _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  int _9;
+  unsigned char _10;
+  int _11;
+  short unsigned int _12;
+  int _13;
+  unsigned char _14;
+  int _15;
+  short unsigned int _16;
+  int _17;
+  short unsigned int _18;
+  int _19;
+  int _20;
+  int _21;
+  int _22;
+  int _23;
+  unsigned char _24;
+  int _25;
+  short unsigned int _26;
+  short unsigned int _27;
+  int _28;
+  unsigned char _29;
+  int _30;
+  short unsigned int _31;
+  unsigned char _32;
+  <unnamed type> _33;
+  unsigned char _34;
+  short unsigned int _35;
+  short unsigned int _36;
+  short unsigned int _37;
+  unsigned char _38;
+  short unsigned int _39;
+  short unsigned int _40;
+  unsigned char _41;
+  short unsigned int _42;
+  short unsigned int _43;
+  short unsigned int _44;
+  short unsigned int _45;
+  unsigned char _46;
+  <unnamed type> _47;
+  _Bool _48;
+  <unnamed type> _49;
+  unsigned char _50;
+  <unnamed type> _51;
+  unsigned char _52;
+  <unnamed type> _53;
+  unsigned char _54;
+  <unnamed type> _55;
+  int _56;
+  unsigned char _57;
+  int _58;
+  short unsigned int _59;
+
+  <bb 2> :
+  _1 = (int) Instance_64(D);
+  Base_66 = Emios_Pwm_Ip_aBasePtr[_1];
+  _2 = UserChCfg_67(D)->ChannelId;
+  _3 = UserChCfg_67(D)->Timebase;
+  CounterBusPeriod_69 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_64(D), _2, _3);
+  TrailingEdge_70 = 0;
+  CounterStart_71 = 0;
+  _4 = UserChCfg_67(D)->ChannelId;
+  _5 = UserChCfg_67(D)->Timebase;
+  _6 = Emios_Pwm_Ip_GetCounterBusMode (Instance_64(D), _4, _5);
+  if (_6 == 80)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  CounterStart_74 = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  CounterStart_73 = 0;
+
+  <bb 5> :
+  # CounterStart_61 = PHI <CounterStart_74(3), CounterStart_73(4)>
+  _7 = UserChCfg_67(D)->DutyCycle;
+  if (CounterBusPeriod_69 == _7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _8 = UserChCfg_67(D)->DutyCycle;
+  TrailingEdge_79 = _8 + 1;
+  _9 = (int) Instance_64(D);
+  _10 = UserChCfg_67(D)->ChannelId;
+  _11 = (int) _10;
+  Emios_Pwm_Ip_aNotif[_9][_11] = 1;
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  _12 = UserChCfg_67(D)->DutyCycle;
+  if (_12 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  TrailingEdge_77 = UserChCfg_67(D)->PhaseShift;
+  _13 = (int) Instance_64(D);
+  _14 = UserChCfg_67(D)->ChannelId;
+  _15 = (int) _14;
+  Emios_Pwm_Ip_aNotif[_13][_15] = 1;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _16 = UserChCfg_67(D)->PhaseShift;
+  _17 = (int) _16;
+  _18 = UserChCfg_67(D)->DutyCycle;
+  _19 = (int) _18;
+  _20 = _17 + _19;
+  _21 = (int) CounterBusPeriod_69;
+  _22 = _20 % _21;
+  TrailingEdge_75 = (uint16) _22;
+  _23 = (int) Instance_64(D);
+  _24 = UserChCfg_67(D)->ChannelId;
+  _25 = (int) _24;
+  Emios_Pwm_Ip_aNotif[_23][_25] = 0;
+
+  <bb 10> :
+  # TrailingEdge_60 = PHI <TrailingEdge_79(6), TrailingEdge_77(8), TrailingEdge_75(9)>
+  _26 = UserChCfg_67(D)->PhaseShift;
+  _27 = (short unsigned int) CounterStart_61;
+  _28 = (int) Instance_64(D);
+  _29 = UserChCfg_67(D)->ChannelId;
+  _30 = (int) _29;
+  _31 = _26 + _27;
+  Emios_Pwm_Ip_aRegA[_28][_30] = _31;
+  _32 = UserChCfg_67(D)->ChannelId;
+  _33 = UserChCfg_67(D)->Timebase;
+  Emios_Pwm_Ip_SetCounterBus (Base_66, _32, _33);
+  _34 = UserChCfg_67(D)->ChannelId;
+  _35 = UserChCfg_67(D)->PhaseShift;
+  _36 = (short unsigned int) CounterStart_61;
+  _37 = _35 + _36;
+  Emios_Pwm_Ip_SetUCRegA (Base_66, _34, _37);
+  _38 = UserChCfg_67(D)->ChannelId;
+  _39 = (short unsigned int) CounterStart_61;
+  _40 = TrailingEdge_60 + _39;
+  Emios_Pwm_Ip_SetUCRegB (Base_66, _38, _40);
+  _41 = UserChCfg_67(D)->ChannelId;
+  _42 = UserChCfg_67(D)->TriggerPosition;
+  _43 = (short unsigned int) CounterStart_61;
+  _44 = _42 + _43;
+  Emios_Pwm_Ip_SetTrigger (Base_66, _41, _44);
+  _45 = UserChCfg_67(D)->DutyCycle;
+  if (CounterBusPeriod_69 == _45)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _46 = UserChCfg_67(D)->ChannelId;
+  _47 = UserChCfg_67(D)->OutputPolarity;
+  _48 = _47 != 1;
+  _49 = (<unnamed type>) _48;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_66, _46, _49);
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _50 = UserChCfg_67(D)->ChannelId;
+  _51 = UserChCfg_67(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_66, _50, _51);
+
+  <bb 13> :
+  _52 = UserChCfg_67(D)->ChannelId;
+  _53 = UserChCfg_67(D)->Mode;
+  Emios_Pwm_Ip_SetPwmMode (Base_66, _52, _53);
+  _54 = UserChCfg_67(D)->ChannelId;
+  _55 = UserChCfg_67(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_66, _54, _55);
+  _56 = (int) Instance_64(D);
+  _57 = UserChCfg_67(D)->ChannelId;
+  _58 = (int) _57;
+  _59 = UserChCfg_67(D)->DutyCycle;
+  Emios_Pwm_Ip_aDutyCycle[_56][_58] = _59;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetDutyCycleOpwmb (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
+{
+  uint16 ChPeriod;
+  Emios_Pwm_Ip_StatusType Ret;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_StatusType D.10170;
+  int _1;
+  <unnamed type> _2;
+  int _3;
+  int _4;
+  int _5;
+  short unsigned int _6;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+  int _11;
+  int _12;
+  int _13;
+  int _14;
+  int _15;
+  int _16;
+  int _17;
+  unsigned char _18;
+  _Bool _19;
+  int _20;
+  int _21;
+  short unsigned int _22;
+  short unsigned int _23;
+  int _24;
+  int _25;
+  Emios_Pwm_Ip_StatusType _49;
+
+  <bb 2> :
+  _1 = (int) Instance_29(D);
+  Base_31 = Emios_Pwm_Ip_aBasePtr[_1];
+  Ret_32 = 0;
+  _2 = Emios_Pwm_Ip_GetCounterBus (Base_31, Channel_33(D));
+  ChPeriod_36 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_29(D), Channel_33(D), _2);
+  _3 = (int) NewDutyCycle_37(D);
+  _4 = (int) Instance_29(D);
+  _5 = (int) Channel_33(D);
+  _6 = Emios_Pwm_Ip_aRegA[_4][_5];
+  _7 = (int) _6;
+  _8 = _3 + _7;
+  _9 = (int) ChPeriod_36;
+  if (_8 > _9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Ret_47 = 1;
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  if (NewDutyCycle_37(D) == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_31, Channel_33(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_31, Channel_33(D));
+  _10 = (int) Instance_29(D);
+  _11 = (int) Channel_33(D);
+  Emios_Pwm_Ip_aNotif[_10][_11] = 1;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  if (NewDutyCycle_37(D) == ChPeriod_36)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_31, Channel_33(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_31, Channel_33(D));
+  _12 = (int) Instance_29(D);
+  _13 = (int) Channel_33(D);
+  Emios_Pwm_Ip_aNotif[_12][_13] = 1;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _14 = (int) Instance_29(D);
+  _15 = (int) Channel_33(D);
+  Emios_Pwm_Ip_aNotif[_14][_15] = 0;
+  _16 = (int) Instance_29(D);
+  _17 = (int) Channel_33(D);
+  _18 = Emios_Pwm_Ip_aCheckEnableNotif[_16][_17];
+  _19 = _18 != 0;
+  Emios_Pwm_Ip_SetInterruptRequest (Base_31, Channel_33(D), _19);
+
+  <bb 9> :
+  _20 = (int) Instance_29(D);
+  _21 = (int) Channel_33(D);
+  _22 = Emios_Pwm_Ip_aRegA[_20][_21];
+  _23 = NewDutyCycle_37(D) + _22;
+  Emios_Pwm_Ip_SetUCRegB (Base_31, Channel_33(D), _23);
+
+  <bb 10> :
+  # Ret_26 = PHI <Ret_47(3), Ret_32(9)>
+  _24 = (int) Instance_29(D);
+  _25 = (int) Channel_33(D);
+  Emios_Pwm_Ip_aDutyCycle[_24][_25] = NewDutyCycle_37(D);
+  _49 = Ret_26;
+
+  <bb 11> :
+<L9>:
+  return _49;
+
+}
+
+
+Emios_Pwm_Ip_InitEdgePlacementMode (uint8 Instance, const struct Emios_Pwm_Ip_ChannelConfigType * UserChCfg)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  short unsigned int _5;
+  unsigned char _6;
+  <unnamed type> _7;
+  unsigned char _8;
+  short unsigned int _9;
+  unsigned char _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  short unsigned int _13;
+  unsigned char _14;
+  <unnamed type> _15;
+  unsigned char _16;
+  <unnamed type> _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  int _20;
+  unsigned char _21;
+  int _22;
+  short unsigned int _23;
+  short unsigned int _24;
+  int _25;
+  unsigned char _26;
+  int _27;
+  int _28;
+  unsigned char _29;
+  int _30;
+  int _31;
+  unsigned char _32;
+  int _33;
+  short unsigned int _34;
+
+  <bb 2> :
+  _1 = (int) Instance_36(D);
+  Base_38 = Emios_Pwm_Ip_aBasePtr[_1];
+  _2 = (int) Instance_36(D);
+  _3 = UserChCfg_39(D)->ChannelId;
+  _4 = (int) _3;
+  _5 = UserChCfg_39(D)->PhaseShift;
+  Emios_Pwm_Ip_aRegA[_2][_4] = _5;
+  _6 = UserChCfg_39(D)->ChannelId;
+  _7 = UserChCfg_39(D)->Timebase;
+  Emios_Pwm_Ip_SetCounterBus (Base_38, _6, _7);
+  _8 = UserChCfg_39(D)->ChannelId;
+  _9 = UserChCfg_39(D)->PhaseShift;
+  Emios_Pwm_Ip_SetUCRegA (Base_38, _8, _9);
+  _10 = UserChCfg_39(D)->ChannelId;
+  _11 = UserChCfg_39(D)->PhaseShift;
+  _12 = UserChCfg_39(D)->DutyCycle;
+  _13 = _11 + _12;
+  Emios_Pwm_Ip_SetUCRegB (Base_38, _10, _13);
+  _14 = UserChCfg_39(D)->ChannelId;
+  _15 = UserChCfg_39(D)->Mode;
+  Emios_Pwm_Ip_SetPwmMode (Base_38, _14, _15);
+  _16 = UserChCfg_39(D)->ChannelId;
+  _17 = UserChCfg_39(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_38, _16, _17);
+  _18 = UserChCfg_39(D)->PeriodCount;
+  _19 = UserChCfg_39(D)->DutyCycle;
+  if (_18 == _19)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _20 = (int) Instance_36(D);
+  _21 = UserChCfg_39(D)->ChannelId;
+  _22 = (int) _21;
+  Emios_Pwm_Ip_aNotif[_20][_22] = 1;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _23 = UserChCfg_39(D)->DutyCycle;
+  if (_23 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _24 = UserChCfg_39(D)->DutyCycle;
+  if (_24 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _25 = (int) Instance_36(D);
+  _26 = UserChCfg_39(D)->ChannelId;
+  _27 = (int) _26;
+  Emios_Pwm_Ip_aNotif[_25][_27] = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _28 = (int) Instance_36(D);
+  _29 = UserChCfg_39(D)->ChannelId;
+  _30 = (int) _29;
+  Emios_Pwm_Ip_aNotif[_28][_30] = 0;
+
+  <bb 8> :
+  _31 = (int) Instance_36(D);
+  _32 = UserChCfg_39(D)->ChannelId;
+  _33 = (int) _32;
+  _34 = UserChCfg_39(D)->DutyCycle;
+  Emios_Pwm_Ip_aDutyCycle[_31][_33] = _34;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetDutyCycleOpwmcb (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
+{
+  uint16 ChPeriod;
+  Emios_Pwm_Ip_StatusType Ret;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_StatusType D.10159;
+  int _1;
+  <unnamed type> _2;
+  unsigned int _3;
+  unsigned int _4;
+  unsigned int _5;
+  unsigned int _6;
+  short unsigned int _7;
+  int _8;
+  int _9;
+  short unsigned int _10;
+  int _11;
+  int _12;
+  <unnamed type> _13;
+  int _14;
+  int _15;
+  <unnamed type> _16;
+  unsigned int _17;
+  unsigned int _18;
+  unsigned int _19;
+  unsigned int _20;
+  int _21;
+  int _22;
+  short unsigned int _23;
+  short unsigned int _24;
+  int _25;
+  int _26;
+  int _27;
+  int _28;
+  unsigned char _29;
+  _Bool _30;
+  int _31;
+  int _32;
+  Emios_Pwm_Ip_StatusType _61;
+
+  <bb 2> :
+  _1 = (int) Instance_36(D);
+  Base_38 = Emios_Pwm_Ip_aBasePtr[_1];
+  Ret_39 = 0;
+  _2 = Emios_Pwm_Ip_GetCounterBus (Base_38, Channel_40(D));
+  ChPeriod_43 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_36(D), Channel_40(D), _2);
+  _3 = (unsigned int) NewDutyCycle_44(D);
+  _4 = (unsigned int) ChPeriod_43;
+  _5 = _4 + 2147483647;
+  _6 = _5 * 2;
+  if (_3 > _6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Ret_59 = 1;
+  goto <bb 14>; [INV]
+
+  <bb 4> :
+  if (NewDutyCycle_44(D) == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 5> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_38, Channel_40(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_38, Channel_40(D));
+  _7 = ChPeriod_43 + 1;
+  Emios_Pwm_Ip_SetUCRegA (Base_38, Channel_40(D), _7);
+  _8 = (int) Instance_36(D);
+  _9 = (int) Channel_40(D);
+  Emios_Pwm_Ip_aNotif[_8][_9] = 1;
+  _10 = Emios_Pwm_Ip_GetUCRegA (Base_38, Channel_40(D));
+  if (_10 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 6> :
+  _11 = (int) Instance_36(D);
+  _12 = (int) Channel_40(D);
+  _13 = Emios_Pwm_Ip_aInitialModes[_11][_12];
+  if (_13 == 92)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _14 = (int) Instance_36(D);
+  _15 = (int) Channel_40(D);
+  _16 = Emios_Pwm_Ip_aInitialModes[_14][_15];
+  if (_16 == 94)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  Emios_Pwm_Ip_SetForceMatchB (Base_38, Channel_40(D), 1);
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  Emios_Pwm_Ip_SetForceMatchA (Base_38, Channel_40(D), 1);
+
+  <bb 10> :
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  _17 = (unsigned int) NewDutyCycle_44(D);
+  _18 = (unsigned int) ChPeriod_43;
+  _19 = _18 + 2147483647;
+  _20 = _19 * 2;
+  if (_17 == _20)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_38, Channel_40(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_38, Channel_40(D));
+  Emios_Pwm_Ip_SetUCRegA (Base_38, Channel_40(D), 1);
+  _21 = (int) Instance_36(D);
+  _22 = (int) Channel_40(D);
+  Emios_Pwm_Ip_aNotif[_21][_22] = 1;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _23 = NewDutyCycle_44(D) >> 1;
+  _24 = ChPeriod_43 - _23;
+  Emios_Pwm_Ip_SetUCRegA (Base_38, Channel_40(D), _24);
+  _25 = (int) Instance_36(D);
+  _26 = (int) Channel_40(D);
+  Emios_Pwm_Ip_aNotif[_25][_26] = 0;
+  _27 = (int) Instance_36(D);
+  _28 = (int) Channel_40(D);
+  _29 = Emios_Pwm_Ip_aCheckEnableNotif[_27][_28];
+  _30 = _29 != 0;
+  Emios_Pwm_Ip_SetInterruptRequest (Base_38, Channel_40(D), _30);
+
+  <bb 14> :
+  # Ret_33 = PHI <Ret_59(3), Ret_39(10), Ret_39(12), Ret_39(13)>
+  _31 = (int) Instance_36(D);
+  _32 = (int) Channel_40(D);
+  Emios_Pwm_Ip_aDutyCycle[_31][_32] = NewDutyCycle_44(D);
+  _61 = Ret_33;
+
+  <bb 15> :
+<L15>:
+  return _61;
+
+}
+
+
+Emios_Pwm_Ip_InitDeadTimeMode (uint8 Instance, const struct Emios_Pwm_Ip_ChannelConfigType * UserChCfg)
+{
+  uint16 DutyCycle;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  int _4;
+  unsigned char _5;
+  int _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  unsigned char _9;
+  <unnamed type> _10;
+  short unsigned int _11;
+  int _12;
+  unsigned char _13;
+  int _14;
+  short unsigned int _15;
+  unsigned char _16;
+  <unnamed type> _17;
+  short unsigned int _18;
+  int _19;
+  unsigned char _20;
+  int _21;
+  unsigned char _22;
+  <unnamed type> _23;
+  unsigned char _24;
+  unsigned char _25;
+  short unsigned int _26;
+  short unsigned int _27;
+  short unsigned int _28;
+  unsigned char _29;
+  <unnamed type> _30;
+  _Bool _31;
+  <unnamed type> _32;
+  unsigned char _33;
+  <unnamed type> _34;
+  unsigned char _35;
+  <unnamed type> _36;
+  unsigned char _37;
+  <unnamed type> _38;
+  int _39;
+  unsigned char _40;
+  int _41;
+  short unsigned int _42;
+
+  <bb 2> :
+  _1 = (int) Instance_46(D);
+  Base_48 = Emios_Pwm_Ip_aBasePtr[_1];
+  DutyCycle_49 = 0;
+  _2 = UserChCfg_50(D)->PeriodCount;
+  _3 = UserChCfg_50(D)->DutyCycle;
+  if (_2 == _3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  DutyCycle_58 = 1;
+  _4 = (int) Instance_46(D);
+  _5 = UserChCfg_50(D)->ChannelId;
+  _6 = (int) _5;
+  Emios_Pwm_Ip_aNotif[_4][_6] = 1;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _7 = UserChCfg_50(D)->DutyCycle;
+  if (_7 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _8 = UserChCfg_50(D)->DutyCycle;
+  if (_8 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _9 = UserChCfg_50(D)->ChannelId;
+  _10 = UserChCfg_50(D)->Timebase;
+  _11 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_46(D), _9, _10);
+  DutyCycle_56 = _11 + 1;
+  _12 = (int) Instance_46(D);
+  _13 = UserChCfg_50(D)->ChannelId;
+  _14 = (int) _13;
+  Emios_Pwm_Ip_aNotif[_12][_14] = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _15 = UserChCfg_50(D)->DutyCycle;
+  DutyCycle_51 = _15 >> 1;
+  _16 = UserChCfg_50(D)->ChannelId;
+  _17 = UserChCfg_50(D)->Timebase;
+  _18 = Emios_Pwm_Ip_GetCounterBusPeriod (Instance_46(D), _16, _17);
+  DutyCycle_53 = _18 - DutyCycle_51;
+  _19 = (int) Instance_46(D);
+  _20 = UserChCfg_50(D)->ChannelId;
+  _21 = (int) _20;
+  Emios_Pwm_Ip_aNotif[_19][_21] = 0;
+
+  <bb 8> :
+  # DutyCycle_43 = PHI <DutyCycle_58(3), DutyCycle_56(6), DutyCycle_53(7)>
+  _22 = UserChCfg_50(D)->ChannelId;
+  _23 = UserChCfg_50(D)->Timebase;
+  Emios_Pwm_Ip_SetCounterBus (Base_48, _22, _23);
+  _24 = UserChCfg_50(D)->ChannelId;
+  Emios_Pwm_Ip_SetUCRegA (Base_48, _24, DutyCycle_43);
+  _25 = UserChCfg_50(D)->ChannelId;
+  _26 = UserChCfg_50(D)->DeadTime;
+  Emios_Pwm_Ip_SetUCRegB (Base_48, _25, _26);
+  _27 = UserChCfg_50(D)->PeriodCount;
+  _28 = UserChCfg_50(D)->DutyCycle;
+  if (_27 == _28)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _29 = UserChCfg_50(D)->ChannelId;
+  _30 = UserChCfg_50(D)->OutputPolarity;
+  _31 = _30 != 1;
+  _32 = (<unnamed type>) _31;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_48, _29, _32);
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _33 = UserChCfg_50(D)->ChannelId;
+  _34 = UserChCfg_50(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_48, _33, _34);
+
+  <bb 11> :
+  _35 = UserChCfg_50(D)->ChannelId;
+  _36 = UserChCfg_50(D)->Mode;
+  Emios_Pwm_Ip_SetPwmMode (Base_48, _35, _36);
+  _37 = UserChCfg_50(D)->ChannelId;
+  _38 = UserChCfg_50(D)->OutputPolarity;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_48, _37, _38);
+  _39 = (int) Instance_46(D);
+  _40 = UserChCfg_50(D)->ChannelId;
+  _41 = (int) _40;
+  _42 = UserChCfg_50(D)->DutyCycle;
+  Emios_Pwm_Ip_aDutyCycle[_39][_41] = _42;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetDutyCycleOpwfmb (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
+{
+  Emios_Pwm_Ip_StatusType Ret;
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_StatusType D.10142;
+  int _1;
+  int _2;
+  int _3;
+  short unsigned int _4;
+  int _5;
+  int _6;
+  short unsigned int _7;
+  int _8;
+  int _9;
+  short unsigned int _10;
+  int _11;
+  int _12;
+  int _13;
+  int _14;
+  int _15;
+  int _16;
+  short unsigned int _17;
+  int _18;
+  int _19;
+  int _20;
+  int _21;
+  int _22;
+  int _23;
+  unsigned char _24;
+  _Bool _25;
+  int _26;
+  int _27;
+  Emios_Pwm_Ip_StatusType _52;
+
+  <bb 2> :
+  _1 = (int) Instance_31(D);
+  Base_33 = Emios_Pwm_Ip_aBasePtr[_1];
+  Ret_34 = 0;
+  _2 = (int) Instance_31(D);
+  _3 = (int) Channel_35(D);
+  _4 = Emios_Pwm_Ip_aPeriod[_2][_3];
+  if (NewDutyCycle_36(D) > _4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _5 = (int) Instance_31(D);
+  _6 = (int) Channel_35(D);
+  _7 = Emios_Pwm_Ip_aPeriod[_5][_6];
+  if (_7 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Ret_37 = 1;
+  goto <bb 13>; [INV]
+
+  <bb 5> :
+  _8 = (int) Instance_31(D);
+  _9 = (int) Channel_35(D);
+  _10 = Emios_Pwm_Ip_aPeriod[_8][_9];
+  if (_10 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_33, Channel_35(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_33, Channel_35(D));
+  Emios_Pwm_Ip_SetUCRegA (Base_33, Channel_35(D), 0);
+  _11 = (int) Instance_31(D);
+  _12 = (int) Channel_35(D);
+  Emios_Pwm_Ip_aNotif[_11][_12] = 1;
+  goto <bb 13>; [INV]
+
+  <bb 7> :
+  if (NewDutyCycle_36(D) == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_33, Channel_35(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_33, Channel_35(D));
+  _13 = (int) Instance_31(D);
+  _14 = (int) Channel_35(D);
+  Emios_Pwm_Ip_aNotif[_13][_14] = 1;
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  _15 = (int) Instance_31(D);
+  _16 = (int) Channel_35(D);
+  _17 = Emios_Pwm_Ip_aPeriod[_15][_16];
+  if (NewDutyCycle_36(D) == _17)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  Emios_Pwm_Ip_SetInterruptRequest (Base_33, Channel_35(D), 0);
+  Emios_Pwm_Ip_ClearFlagEvent (Base_33, Channel_35(D));
+  _18 = (int) Instance_31(D);
+  _19 = (int) Channel_35(D);
+  Emios_Pwm_Ip_aNotif[_18][_19] = 1;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _20 = (int) Instance_31(D);
+  _21 = (int) Channel_35(D);
+  Emios_Pwm_Ip_aNotif[_20][_21] = 0;
+  _22 = (int) Instance_31(D);
+  _23 = (int) Channel_35(D);
+  _24 = Emios_Pwm_Ip_aCheckEnableNotif[_22][_23];
+  _25 = _24 != 0;
+  Emios_Pwm_Ip_SetInterruptRequest (Base_33, Channel_35(D), _25);
+
+  <bb 12> :
+  Emios_Pwm_Ip_SetUCRegA (Base_33, Channel_35(D), NewDutyCycle_36(D));
+
+  <bb 13> :
+  # Ret_28 = PHI <Ret_37(4), Ret_34(6), Ret_34(12)>
+  _26 = (int) Instance_31(D);
+  _27 = (int) Channel_35(D);
+  Emios_Pwm_Ip_aDutyCycle[_26][_27] = NewDutyCycle_36(D);
+  _52 = Ret_28;
+
+  <bb 14> :
+<L13>:
+  return _52;
+
+}
+
+
+Emios_Pwm_Ip_InitPeriodDutyCycleMode (uint8 Instance, const struct Emios_Pwm_Ip_ChannelConfigType * UserChCfg)
+{
+  struct Emios_Pwm_Ip_HwAddrType * const Base;
+  int _1;
+  unsigned char _2;
+  <unnamed type> _3;
+  unsigned char _4;
+  short unsigned int _5;
+  unsigned char _6;
+  short unsigned int _7;
+  unsigned char _8;
+  <unnamed type> _9;
+  unsigned char _10;
+  <unnamed type> _11;
+  _Bool _12;
+  <unnamed type> _13;
+  int _14;
+  unsigned char _15;
+  int _16;
+  short unsigned int _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  int _20;
+  unsigned char _21;
+  int _22;
+  short unsigned int _23;
+  int _24;
+  unsigned char _25;
+  int _26;
+  int _27;
+  unsigned char _28;
+  int _29;
+  int _30;
+  unsigned char _31;
+  int _32;
+  short unsigned int _33;
+
+  <bb 2> :
+  _1 = (int) Instance_35(D);
+  Base_37 = Emios_Pwm_Ip_aBasePtr[_1];
+  _2 = UserChCfg_38(D)->ChannelId;
+  _3 = UserChCfg_38(D)->Timebase;
+  Emios_Pwm_Ip_SetCounterBus (Base_37, _2, _3);
+  _4 = UserChCfg_38(D)->ChannelId;
+  _5 = UserChCfg_38(D)->DutyCycle;
+  Emios_Pwm_Ip_SetUCRegA (Base_37, _4, _5);
+  _6 = UserChCfg_38(D)->ChannelId;
+  _7 = UserChCfg_38(D)->PeriodCount;
+  Emios_Pwm_Ip_SetUCRegB (Base_37, _6, _7);
+  _8 = UserChCfg_38(D)->ChannelId;
+  _9 = UserChCfg_38(D)->Mode;
+  Emios_Pwm_Ip_SetPwmMode (Base_37, _8, _9);
+  _10 = UserChCfg_38(D)->ChannelId;
+  _11 = UserChCfg_38(D)->OutputPolarity;
+  _12 = _11 != 1;
+  _13 = (<unnamed type>) _12;
+  Emios_Pwm_Ip_SetEdgePolarity (Base_37, _10, _13);
+  _14 = (int) Instance_35(D);
+  _15 = UserChCfg_38(D)->ChannelId;
+  _16 = (int) _15;
+  _17 = UserChCfg_38(D)->PeriodCount;
+  Emios_Pwm_Ip_aPeriod[_14][_16] = _17;
+  _18 = UserChCfg_38(D)->PeriodCount;
+  _19 = UserChCfg_38(D)->DutyCycle;
+  if (_18 == _19)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _20 = (int) Instance_35(D);
+  _21 = UserChCfg_38(D)->ChannelId;
+  _22 = (int) _21;
+  Emios_Pwm_Ip_aNotif[_20][_22] = 1;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _23 = UserChCfg_38(D)->DutyCycle;
+  if (_23 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _24 = (int) Instance_35(D);
+  _25 = UserChCfg_38(D)->ChannelId;
+  _26 = (int) _25;
+  Emios_Pwm_Ip_aNotif[_24][_26] = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _27 = (int) Instance_35(D);
+  _28 = UserChCfg_38(D)->ChannelId;
+  _29 = (int) _28;
+  Emios_Pwm_Ip_aNotif[_27][_29] = 0;
+
+  <bb 7> :
+  _30 = (int) Instance_35(D);
+  _31 = UserChCfg_38(D)->ChannelId;
+  _32 = (int) _31;
+  _33 = UserChCfg_38(D)->DutyCycle;
+  Emios_Pwm_Ip_aDutyCycle[_30][_32] = _33;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetCounterBusMode (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_CounterBusSourceType CounterBus)
+{
+  Emios_Pwm_Ip_MasterBusModeType CounterBusMode;
+  const struct Emios_Pwm_Ip_HwAddrType * const Base;
+  Emios_Pwm_Ip_MasterBusModeType D.10015;
+  int _1;
+  unsigned char _2;
+  Emios_Pwm_Ip_MasterBusModeType _18;
+
+  <bb 2> :
+  _1 = (int) Instance_5(D);
+  Base_7 = Emios_Pwm_Ip_aBasePtr[_1];
+  CounterBusMode_8 = 16;
+  switch (CounterBus_9(D)) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  CounterBusMode_16 = Emios_Pwm_Ip_GetChannelPwmMode (Base_7, 23);
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  _2 = Channel_12(D) & 248;
+  CounterBusMode_14 = Emios_Pwm_Ip_GetChannelPwmMode (Base_7, _2);
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  CounterBusMode_11 = Emios_Pwm_Ip_GetChannelPwmMode (Base_7, 22);
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+  CounterBusMode_17 = 0;
+
+  <bb 7> :
+  # CounterBusMode_3 = PHI <CounterBusMode_16(3), CounterBusMode_14(4), CounterBusMode_11(5), CounterBusMode_17(6)>
+  _18 = CounterBusMode_3;
+
+  <bb 8> :
+<L5>:
+  return _18;
+
+}
+
+
+Emios_Pwm_Ip_GetCounterBusPeriod (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_CounterBusSourceType CounterBus)
+{
+  uint8 MasterBusCh;
+  uint16 ChPeriod;
+  uint16 D.9992;
+  uint16 _10;
+
+  <bb 2> :
+  ChPeriod_1 = 0;
+  MasterBusCh_6 = Emios_Pwm_Ip_GetTimebaseChannel (Channel_3(D), CounterBus_4(D));
+  ChPeriod_9 = Emios_Mcl_Ip_GetCounterBusPeriod (Instance_7(D), MasterBusCh_6);
+  _10 = ChPeriod_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Emios_Pwm_Ip_SetPrescalerSource (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, Emios_Pwm_Ip_InternalPsSrcType Value)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  _1 = (int) Channel_8(D);
+  _2 ={v} Base_10(D)->CH.UC[_1].C2;
+  _3 = _2 & 4294950911;
+  _4 = Value_11(D) << 14;
+  _5 = _4 & 16384;
+  _6 = (int) Channel_8(D);
+  _7 = _3 | _5;
+  Base_10(D)->CH.UC[_6].C2 ={v} _7;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetExtendedPrescaler (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, Emios_Pwm_Ip_InternalClkPsType Value)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  _1 = (int) Channel_8(D);
+  _2 ={v} Base_10(D)->CH.UC[_1].C2;
+  _3 = _2 & 4293984255;
+  _4 = Value_11(D) << 16;
+  _5 = _4 & 983040;
+  _6 = (int) Channel_8(D);
+  _7 = _3 | _5;
+  Base_10(D)->CH.UC[_6].C2 ={v} _7;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetTrigger (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  uint16 D.10228;
+  int _1;
+  long unsigned int _2;
+  uint16 _6;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 ={v} Base_5(D)->CH.UC[_1].ALTA;
+  _6 = (uint16) _2;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+Emios_Pwm_Ip_SetTrigger (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 = (int) Channel_7(D);
+  _2 ={v} Base_9(D)->CH.UC[_1].ALTA;
+  _3 = _2 & 4294901760;
+  _4 = (long unsigned int) Value_10(D);
+  _5 = (int) Channel_7(D);
+  _6 = _3 | _4;
+  Base_9(D)->CH.UC[_5].ALTA ={v} _6;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_ClearFlagEvent (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  int _1;
+  long unsigned int _2;
+  int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  _1 = (int) Channel_5(D);
+  _2 ={v} Base_7(D)->CH.UC[_1].S;
+  _3 = (int) Channel_5(D);
+  _4 = _2 | 1;
+  Base_7(D)->CH.UC[_3].S ={v} _4;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  boolean D.10259;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  boolean _7;
+
+  <bb 2> :
+  _1 = (int) Channel_4(D);
+  _2 ={v} Base_6(D)->CH.UC[_1].S;
+  _3 = _2 & 2;
+  _7 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Emios_Pwm_Ip_GetChannelPwmMode (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  Emios_Pwm_Ip_MasterBusModeType MasterBusMode;
+  Emios_Pwm_Ip_MasterBusModeType D.10017;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  Emios_Pwm_Ip_MasterBusModeType _14;
+
+  <bb 2> :
+  _1 = (int) Channel_5(D);
+  _2 ={v} Base_7(D)->CH.UC[_1].C;
+  _3 = _2 & 127;
+  switch (_3) <default: <L5> [INV], case 16: <L0> [INV], case 18: <L1> [INV], case 20: <L2> [INV], case 80: <L3> [INV], case 84: <L4> [INV]>
+
+  <bb 3> :
+<L0>:
+  MasterBusMode_12 = 16;
+  goto <bb 9>; [INV]
+
+  <bb 4> :
+<L1>:
+  MasterBusMode_11 = 18;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+<L2>:
+  MasterBusMode_10 = 20;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+<L3>:
+  MasterBusMode_9 = 80;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+<L4>:
+  MasterBusMode_8 = 84;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+<L5>:
+  MasterBusMode_13 = 0;
+
+  <bb 9> :
+  # MasterBusMode_4 = PHI <MasterBusMode_12(3), MasterBusMode_11(4), MasterBusMode_10(5), MasterBusMode_9(6), MasterBusMode_8(7), MasterBusMode_13(8)>
+  _14 = MasterBusMode_4;
+
+  <bb 10> :
+<L7>:
+  return _14;
+
+}
+
+
+Emios_Pwm_Ip_SetPwmModePol (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, Emios_Pwm_Ip_PwmModeType Mode, Emios_Pwm_Ip_PolarityType Pol)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+
+  <bb 2> :
+  _1 = (int) Channel_10(D);
+  _2 ={v} Base_12(D)->CH.UC[_1].C;
+  _3 = _2 & 4294967040;
+  _4 = Mode_13(D) & 127;
+  _5 = _3 | _4;
+  _6 = Pol_14(D) << 7;
+  _7 = _6 & 255;
+  _8 = (int) Channel_10(D);
+  _9 = _5 | _7;
+  Base_12(D)->CH.UC[_8].C ={v} _9;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetPwmMode (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, Emios_Pwm_Ip_PwmModeType Mode)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 = (int) Channel_7(D);
+  _2 ={v} Base_9(D)->CH.UC[_1].C;
+  _3 = _2 & 4294967168;
+  _4 = Mode_10(D) & 127;
+  _5 = (int) Channel_7(D);
+  _6 = _3 | _4;
+  Base_9(D)->CH.UC[_5].C ={v} _6;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetEdgePolarity (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, Emios_Pwm_Ip_PolarityType Value)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  _1 = (int) Channel_8(D);
+  _2 ={v} Base_10(D)->CH.UC[_1].C;
+  _3 = _2 & 4294967167;
+  _4 = Value_11(D) << 7;
+  _5 = _4 & 255;
+  _6 = (int) Channel_8(D);
+  _7 = _3 | _5;
+  Base_10(D)->CH.UC[_6].C ={v} _7;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetTimebaseChannel (uint8 Channel, Emios_Pwm_Ip_CounterBusSourceType Value)
+{
+  uint8 TimbaseChannel;
+  uint8 D.9994;
+  uint8 _8;
+
+  <bb 2> :
+  switch (Value_2(D)) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L2> [INV], case 2: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  TimbaseChannel_6 = 23;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  TimbaseChannel_3 = 22;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  TimbaseChannel_5 = Channel_4(D) & 248;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+  TimbaseChannel_7 = 255;
+
+  <bb 7> :
+  # TimbaseChannel_1 = PHI <TimbaseChannel_6(3), TimbaseChannel_3(4), TimbaseChannel_5(5), TimbaseChannel_7(6)>
+  _8 = TimbaseChannel_1;
+
+  <bb 8> :
+<L5>:
+  return _8;
+
+}
+
+
+Emios_Pwm_Ip_GetCounterBus (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  Emios_Pwm_Ip_CounterBusSourceType CounterBus;
+  Emios_Pwm_Ip_CounterBusSourceType D.10090;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  Emios_Pwm_Ip_CounterBusSourceType _13;
+
+  <bb 2> :
+  _1 = (int) Channel_6(D);
+  _2 ={v} Base_8(D)->CH.UC[_1].C;
+  _3 = _2 >> 9;
+  _4 = _3 & 3;
+  switch (_4) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  CounterBus_11 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  CounterBus_10 = 1;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  CounterBus_9 = 2;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+  CounterBus_12 = 3;
+
+  <bb 7> :
+  # CounterBus_5 = PHI <CounterBus_11(3), CounterBus_10(4), CounterBus_9(5), CounterBus_12(6)>
+  _13 = CounterBus_5;
+
+  <bb 8> :
+<L5>:
+  return _13;
+
+}
+
+
+Emios_Pwm_Ip_SetCounterBus (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, Emios_Pwm_Ip_CounterBusSourceType Value)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  _1 = (int) Channel_8(D);
+  _2 ={v} Base_10(D)->CH.UC[_1].C;
+  _3 = _2 & 4294965759;
+  _4 = Value_11(D) << 9;
+  _5 = _4 & 1536;
+  _6 = (int) Channel_8(D);
+  _7 = _3 | _5;
+  Base_10(D)->CH.UC[_6].C ={v} _7;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetForceMatchB (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, boolean Value)
+{
+  uint8 ValueConvert;
+  uint8 iftmp.4;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  uint8 iftmp.4_10;
+  uint8 iftmp.4_12;
+  uint8 iftmp.4_13;
+
+  <bb 2> :
+  _1 = ~Value_11(D);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.4_13 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.4_12 = 1;
+
+  <bb 5> :
+  # iftmp.4_10 = PHI <iftmp.4_13(3), iftmp.4_12(4)>
+  ValueConvert_14 = iftmp.4_10;
+  _2 = (int) Channel_15(D);
+  _3 ={v} Base_17(D)->CH.UC[_2].C;
+  _4 = _3 & 4294963199;
+  _5 = (long unsigned int) ValueConvert_14;
+  _6 = _5 << 12;
+  _7 = _6 & 4096;
+  _8 = (int) Channel_15(D);
+  _9 = _4 | _7;
+  Base_17(D)->CH.UC[_8].C ={v} _9;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetForceMatchA (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, boolean Value)
+{
+  uint8 ValueConvert;
+  uint8 iftmp.5;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  uint8 iftmp.5_10;
+  uint8 iftmp.5_12;
+  uint8 iftmp.5_13;
+
+  <bb 2> :
+  _1 = ~Value_11(D);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.5_13 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.5_12 = 1;
+
+  <bb 5> :
+  # iftmp.5_10 = PHI <iftmp.5_13(3), iftmp.5_12(4)>
+  ValueConvert_14 = iftmp.5_10;
+  _2 = (int) Channel_15(D);
+  _3 ={v} Base_17(D)->CH.UC[_2].C;
+  _4 = _3 & 4294959103;
+  _5 = (long unsigned int) ValueConvert_14;
+  _6 = _5 << 13;
+  _7 = _6 & 8192;
+  _8 = (int) Channel_15(D);
+  _9 = _4 | _7;
+  Base_17(D)->CH.UC[_8].C ={v} _9;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetInterruptRequest (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  boolean D.10247;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  boolean _7;
+
+  <bb 2> :
+  _1 = (int) Channel_4(D);
+  _2 ={v} Base_6(D)->CH.UC[_1].C;
+  _3 = _2 & 131072;
+  _7 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Emios_Pwm_Ip_SetInterruptRequest (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, boolean Value)
+{
+  uint8 ValueConvert;
+  uint8 iftmp.1;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  uint8 iftmp.1_10;
+  uint8 iftmp.1_12;
+  uint8 iftmp.1_13;
+
+  <bb 2> :
+  _1 = ~Value_11(D);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.1_13 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.1_12 = 1;
+
+  <bb 5> :
+  # iftmp.1_10 = PHI <iftmp.1_13(3), iftmp.1_12(4)>
+  ValueConvert_14 = iftmp.1_10;
+  _2 = (int) Channel_15(D);
+  _3 ={v} Base_17(D)->CH.UC[_2].C;
+  _4 = _3 & 4294836223;
+  _5 = (long unsigned int) ValueConvert_14;
+  _6 = _5 << 17;
+  _7 = _6 & 131072;
+  _8 = (int) Channel_15(D);
+  _9 = _4 | _7;
+  Base_17(D)->CH.UC[_8].C ={v} _9;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetDMARequest (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  boolean D.10249;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  boolean _7;
+
+  <bb 2> :
+  _1 = (int) Channel_4(D);
+  _2 ={v} Base_6(D)->CH.UC[_1].C;
+  _3 = _2 & 16777216;
+  _7 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Emios_Pwm_Ip_SetDMARequest (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, boolean Value)
+{
+  uint8 ValueConvert;
+  uint8 iftmp.8;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  uint8 iftmp.8_10;
+  uint8 iftmp.8_12;
+  uint8 iftmp.8_13;
+
+  <bb 2> :
+  _1 = ~Value_11(D);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.8_13 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.8_12 = 1;
+
+  <bb 5> :
+  # iftmp.8_10 = PHI <iftmp.8_13(3), iftmp.8_12(4)>
+  ValueConvert_14 = iftmp.8_10;
+  _2 = (int) Channel_15(D);
+  _3 ={v} Base_17(D)->CH.UC[_2].C;
+  _4 = _3 & 4278190079;
+  _5 = (long unsigned int) ValueConvert_14;
+  _6 = _5 << 24;
+  _7 = _6 & 16777216;
+  _8 = (int) Channel_15(D);
+  _9 = _4 | _7;
+  Base_17(D)->CH.UC[_8].C ={v} _9;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetPrescalerEnable (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, boolean Value)
+{
+  uint8 ValueConvert;
+  uint8 iftmp.9;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  uint8 iftmp.9_10;
+  uint8 iftmp.9_12;
+  uint8 iftmp.9_13;
+
+  <bb 2> :
+  _1 = ~Value_11(D);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.9_13 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.9_12 = 1;
+
+  <bb 5> :
+  # iftmp.9_10 = PHI <iftmp.9_13(3), iftmp.9_12(4)>
+  ValueConvert_14 = iftmp.9_10;
+  _2 = (int) Channel_15(D);
+  _3 ={v} Base_17(D)->CH.UC[_2].C;
+  _4 = _3 & 4261412863;
+  _5 = (long unsigned int) ValueConvert_14;
+  _6 = _5 << 25;
+  _7 = _6 & 33554432;
+  _8 = (int) Channel_15(D);
+  _9 = _4 | _7;
+  Base_17(D)->CH.UC[_8].C ={v} _9;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetOutDisableSource (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, Emios_Pwm_Ip_OutDisableSourceType Value)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  _1 = (int) Channel_8(D);
+  _2 ={v} Base_10(D)->CH.UC[_1].C;
+  _3 = _2 & 3489660927;
+  _4 = Value_11(D) << 28;
+  _5 = _4 & 805306368;
+  _6 = (int) Channel_8(D);
+  _7 = _3 | _5;
+  Base_10(D)->CH.UC[_6].C ={v} _7;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetOutDisable (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, boolean Value)
+{
+  uint8 ValueConvert;
+  uint8 iftmp.7;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  uint8 iftmp.7_10;
+  uint8 iftmp.7_12;
+  uint8 iftmp.7_13;
+
+  <bb 2> :
+  _1 = ~Value_11(D);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.7_13 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.7_12 = 1;
+
+  <bb 5> :
+  # iftmp.7_10 = PHI <iftmp.7_13(3), iftmp.7_12(4)>
+  ValueConvert_14 = iftmp.7_10;
+  _2 = (int) Channel_15(D);
+  _3 ={v} Base_17(D)->CH.UC[_2].C;
+  _4 = _3 & 3221225471;
+  _5 = (long unsigned int) ValueConvert_14;
+  _6 = _5 << 30;
+  _7 = _6 & 1073741824;
+  _8 = (int) Channel_15(D);
+  _9 = _4 | _7;
+  Base_17(D)->CH.UC[_8].C ={v} _9;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_SetFreezeEnable (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, boolean Value)
+{
+  uint8 ValueConvert;
+  uint8 iftmp.6;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  int _7;
+  long unsigned int _8;
+  uint8 iftmp.6_9;
+  uint8 iftmp.6_11;
+  uint8 iftmp.6_12;
+
+  <bb 2> :
+  _1 = ~Value_10(D);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.6_12 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.6_11 = 1;
+
+  <bb 5> :
+  # iftmp.6_9 = PHI <iftmp.6_12(3), iftmp.6_11(4)>
+  ValueConvert_13 = iftmp.6_9;
+  _2 = (int) Channel_14(D);
+  _3 ={v} Base_16(D)->CH.UC[_2].C;
+  _4 = _3 & 2147483647;
+  _5 = (long unsigned int) ValueConvert_13;
+  _6 = _5 << 31;
+  _7 = (int) Channel_14(D);
+  _8 = _4 | _6;
+  Base_16(D)->CH.UC[_7].C ={v} _8;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetUCRegB (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  uint16 D.10116;
+  int _1;
+  long unsigned int _2;
+  uint16 _6;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 ={v} Base_5(D)->CH.UC[_1].B;
+  _6 = (uint16) _2;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+Emios_Pwm_Ip_SetUCRegB (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
+{
+  int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 = (long unsigned int) Value_4(D);
+  Base_6(D)->CH.UC[_1].B ={v} _2;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetUCRegA (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  uint16 D.10048;
+  int _1;
+  long unsigned int _2;
+  uint16 _6;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 ={v} Base_5(D)->CH.UC[_1].A;
+  _6 = (uint16) _2;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+Emios_Pwm_Ip_SetUCRegA (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
+{
+  int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 = (long unsigned int) Value_4(D);
+  Base_6(D)->CH.UC[_1].A ={v} _2;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetOutputUpdateInstance (const struct Emios_Pwm_Ip_HwAddrType * const Base)
+{
+  uint32 D.10302;
+  uint32 _3;
+
+  <bb 2> :
+  _3 ={v} Base_2(D)->OUDIS;
+
+  <bb 3> :
+<L0>:
+  return _3;
+
+}
+
+
+Emios_Pwm_Ip_SetOutputUpdate (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, boolean Value)
+{
+  long unsigned int _1;
+  _Bool _2;
+  long unsigned int _3;
+  int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 ={v} Base_8(D)->OUDIS;
+  _2 = ~Value_9(D);
+  _3 = (long unsigned int) _2;
+  _4 = (int) Channel_10(D);
+  _5 = _3 << _4;
+  _6 = _1 | _5;
+  Base_8(D)->OUDIS ={v} _6;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetDebugMode (const struct Emios_Pwm_Ip_HwAddrType * const Base)
+{
+  boolean D.10238;
+  long unsigned int _1;
+  long unsigned int _2;
+  boolean _5;
+
+  <bb 2> :
+  _1 ={v} Base_4(D)->MCR;
+  _2 = _1 & 536870912;
+  _5 = _2 != 0;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+

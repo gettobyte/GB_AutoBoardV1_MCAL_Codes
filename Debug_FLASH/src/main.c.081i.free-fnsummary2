@@ -3,30 +3,30 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.10164;
+  int D.10377;
   <unnamed type> _1;
   <unnamed type> _2;
   <unnamed type> _3;
-  unsigned char Index.3_4;
-  int exit_code.4_5;
-  int _32;
+  unsigned char Index.4_4;
+  int exit_code.5_5;
+  int _33;
 
   <bb 2> :
   clockStatus_13 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
   goto <bb 4>; [INV]
 
   <bb 3> :
-  clockStatus_34 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  clockStatus_35 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
 
   <bb 4> :
-  # clockStatus_7 = PHI <clockStatus_13(2), clockStatus_34(3)>
+  # clockStatus_7 = PHI <clockStatus_13(2), clockStatus_35(3)>
   if (clockStatus_7 != 0)
     goto <bb 3>; [INV]
   else
     goto <bb 5>; [INV]
 
   <bb 5> :
-  Siul2_Port_Ip_Init (1, &g_pin_mux_InitConfigArr0);
+  Siul2_Port_Ip_Init (4, &g_pin_mux_InitConfigArr0);
   Bctu_Ip_Init (0, &BctuHwUnit_0_VS_0);
   _1 = Adc_Sar_Ip_Init (1, &ADC_1_VS_0);
   status_17 = (StatusType) _1;
@@ -59,8 +59,8 @@ main ()
   goto <bb 12>; [INV]
 
   <bb 10> :
-  Index.3_4 = Index_6;
-  Index_27 = Index.3_4 + 1;
+  Index.4_4 = Index_6;
+  Index_27 = Index.4_4 + 1;
 
   <bb 11> :
   # Index_6 = PHI <Index_24(7), Index_27(10)>
@@ -74,10 +74,11 @@ main ()
   Bctu_Ip_SetGlobalTriggerEn (0, 1);
   Bctu_Ip_EnableNotifications (0, 1);
   Emios_Mcl_Ip_Init (0, &Emios_Mcl_Ip_0_Config_VS_0);
+  Emios_Pwm_Ip_InitChannel (0, &Emios_Pwm_Ip_VS_0_I0_Ch1);
 
   <bb 13> :
-  exit_code.4_5 ={v} exit_code;
-  if (exit_code.4_5 != 0)
+  exit_code.5_5 ={v} exit_code;
+  if (exit_code.5_5 != 0)
     goto <bb 14>; [INV]
   else
     goto <bb 15>; [INV]
@@ -89,23 +90,59 @@ main ()
   goto <bb 13>; [INV]
 
   <bb 16> :
-  _32 ={v} exit_code;
+  _33 ={v} exit_code;
 
   <bb 17> :
 <L15>:
-  return _32;
+  return _33;
 
 }
 
 
-BctuWatermarkNotif ()
+Fifo2Watermark ()
 {
-  short unsigned int _1;
+  uint8 idx;
+  int _1;
+  short unsigned int _2;
 
   <bb 2> :
+  idx_3 = 0;
   notif_triggered ={v} 1;
-  _1 = Bctu_Ip_GetFifoData (0, 0);
-  data ={v} _1;
+  _1 = (int) idx_3;
+  _2 = Bctu_Ip_GetFifoData (0, 1);
+  data1[_1] ={v} _2;
+  return;
+
+}
+
+
+Fifo1Watermark ()
+{
+  uint8 idx;
+  int _1;
+  short unsigned int _2;
+  unsigned char idx.3_3;
+
+  <bb 2> :
+  idx_6 = 2;
+  notif_triggered ={v} 1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) idx_4;
+  _2 = Bctu_Ip_GetFifoData (0, 0);
+  data1[_1] ={v} _2;
+  idx.3_3 = idx_4;
+  idx_11 = idx.3_3 + 255;
+
+  <bb 4> :
+  # idx_4 = PHI <idx_6(2), idx_11(3)>
+  if (idx_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
   return;
 
 }
@@ -180,7 +217,8 @@ Check ()
   eMIOS_count.0_1 ={v} eMIOS_count;
   _2 = eMIOS_count.0_1 + 1;
   eMIOS_count ={v} _2;
-  Siul2_Dio_Ip_TogglePins (1076434700B, 32768);
+  Siul2_Dio_Ip_TogglePins (1076434700B, 2048);
+  Siul2_Dio_Ip_TogglePins (1076434700B, 2048);
   return;
 
 }

@@ -19,6 +19,7 @@
 #include "Emios_Mcl_Ip.h"
 #include "Siul2_Dio_Ip.h"
 #include "Siul2_Port_Ip.h"
+#include "Emios_Pwm_Ip.h"
 
 /* By default S32K342 boards will have 3.3V voltage reference selected while S32K312 and S32K344 will have 5V selected.
  * If you have S32K342 with default pin configuration or if you've manually selected 3.3V reference, please uncomment the following line: */
@@ -30,7 +31,8 @@
 #endif
 #define ADC_SAR_USED_CH 4U /* Internal Bandgap Channel */
 #define BCTU_USED_SINGLE_TRIG_IDX 0U
-#define BCTU_USED_FIFO_IDX 0U
+#define BCTU_USED_FIFO1_IDX 0U
+#define BCTU_USED_FIFO2_IDX 1U
 #define BCTU_FIFO_WATERMARK 1U
 #define ADC_TOLERANCE(x,y) (((x > y) ? (x - y) : (y - x)) > 200U) /* Check that the data is within tolerated range */
 
@@ -48,6 +50,7 @@ volatile int exit_code = 0;
 volatile boolean notif_triggered = FALSE;
 
 volatile uint16 data;
+volatile uint16 data1[3];
 volatile uint32 eMIOS_count = 0;
 
 extern void Adc_Sar_0_Isr(void);
@@ -65,7 +68,8 @@ extern void Bctu_0_Isr(void);
 void Check(void)
 {
 	eMIOS_count++;
-	Siul2_Dio_Ip_TogglePins(LED_PORT, (1 << LED_PIN));
+	Siul2_Dio_Ip_TogglePins(BTCU_Trigger_PORT, (1 << BTCU_Trigger_PIN));
+	Siul2_Dio_Ip_TogglePins(BTCU_Trigger_PORT, (1 << BTCU_Trigger_PIN));
 }
 
 void Adc1EndOfChainNotif(void)
@@ -94,12 +98,34 @@ void Adc2EndOfChainNotif(void)
     }
 }
 
-void BctuWatermarkNotif(void)
+void Fifo1Watermark(void)
 {
-//    uint8 idx;
+    uint8 idx = 2;
+    notif_triggered = TRUE;
+
+	/* Checks the measured ADC data conversion */
+    while(idx > 0)
+    {
+    	data1[idx] = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO1_IDX);
+    	idx--;
+    }
+
+//    while (data < 3000UL)
+//	{
+//		data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
+//
+//		Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
+//	}
+}
+
+void Fifo2Watermark(void)
+{
+    uint8 idx = 0;
     notif_triggered = TRUE;
 	/* Checks the measured ADC data conversion */
-    data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
+
+	data1[idx] = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO2_IDX);
+
 //    while (data < 3000UL)
 //	{
 //		data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
@@ -190,6 +216,8 @@ int main(void)
 //    while (status != E_OK);
 
     Emios_Mcl_Ip_Init(EMIOS_INST0, &Emios_Mcl_Ip_0_Config_VS_0);
+
+    Emios_Pwm_Ip_InitChannel(EMIOS_PWM_IP_VS_0_I0_CH1_CFG, &Emios_Pwm_Ip_VS_0_I0_Ch1);
 
     for(;;)
     {

@@ -4,7 +4,7 @@ Bctu_GetResolutionScaledResult (const uint8 AdcIdx, const uint32 RawResult)
   uint8 Resolution;
   static const uint8 ResolutionArray[4] = "\x0e\f\n\b";
   static const struct ADC_Type * const pAdcBaseTable[3] = {1074397184B, 1074413568B, 1074429952B};
-  uint16 D.6799;
+  uint16 D.6801;
 
   <bb 2> :
   _1 = (int) AdcIdx;
@@ -18,11 +18,11 @@ Bctu_GetResolutionScaledResult (const uint8 AdcIdx, const uint32 RawResult)
   _7 = (unsigned int) Resolution;
   _8 = 15 - _7;
   _9 = RawResult >> _8;
-  D.6799 = (uint16) _9;
+  D.6801 = (uint16) _9;
 
   <bb 3> :
 <L0>:
-  return D.6799;
+  return D.6801;
 
 }
 
@@ -452,8 +452,8 @@ Bctu_PrepareReconfigBlocking (struct BCTU_Type * const BctuBasePtr, const uint8 
   uint32 CurrentTicks;
   uint32 TimeoutTicks;
   Bctu_Ip_StatusType Status;
-  Bctu_Ip_StatusType D.6690;
-  long unsigned int D.6685;
+  Bctu_Ip_StatusType D.6692;
+  long unsigned int D.6687;
 
   <bb 2> :
   Status = 0;
@@ -476,8 +476,8 @@ Bctu_PrepareReconfigBlocking (struct BCTU_Type * const BctuBasePtr, const uint8 
   goto <bb 4>; [INV]
 
   <bb 3> :
-  D.6685 = OsIf_GetElapsed (&CurrentTicks, 0);
-  ElapsedTicks = D.6685 + ElapsedTicks;
+  D.6687 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.6687 + ElapsedTicks;
 
   <bb 4> :
   _10 = (int) TrigIdx;
@@ -515,12 +515,12 @@ Bctu_PrepareReconfigBlocking (struct BCTU_Type * const BctuBasePtr, const uint8 
   Status = 0;
 
   <bb 9> :
-  D.6690 = Status;
+  D.6692 = Status;
   CurrentTicks = {CLOBBER};
 
   <bb 10> :
 <L8>:
-  return D.6690;
+  return D.6692;
 
 }
 
@@ -528,7 +528,7 @@ Bctu_PrepareReconfigBlocking (struct BCTU_Type * const BctuBasePtr, const uint8 
 Bctu_PrepareReconfigNonBlocking (struct BCTU_Type * const BctuBasePtr, const uint8 TrigIdx)
 {
   Bctu_Ip_StatusType Status;
-  Bctu_Ip_StatusType D.6787;
+  Bctu_Ip_StatusType D.6789;
 
   <bb 2> :
   SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61 ();
@@ -560,26 +560,26 @@ Bctu_PrepareReconfigNonBlocking (struct BCTU_Type * const BctuBasePtr, const uin
   Status = 0;
 
   <bb 5> :
-  D.6787 = Status;
+  D.6789 = Status;
 
   <bb 6> :
 <L3>:
-  return D.6787;
+  return D.6789;
 
 }
 
 
 Bctu_GetBitmask (const uint8 Pos)
 {
-  uint32 D.6651;
+  uint32 D.6653;
 
   <bb 2> :
   _1 = (int) Pos;
-  D.6651 = 1 << _1;
+  D.6653 = 1 << _1;
 
   <bb 3> :
 <L0>:
-  return D.6651;
+  return D.6653;
 
 }
 
@@ -588,7 +588,7 @@ Bctu_CollectMcrMasks (const struct Bctu_Ip_ConfigType * const Config)
 {
   uint8 Index;
   uint32 Mcr;
-  uint32 D.6649;
+  uint32 D.6651;
   long unsigned int iftmp.5;
   long unsigned int iftmp.4;
   long unsigned int iftmp.3;
@@ -708,11 +708,11 @@ Bctu_CollectMcrMasks (const struct Bctu_Ip_ConfigType * const Config)
     goto <bb 22>; [INV]
 
   <bb 22> :
-  D.6649 = Mcr;
+  D.6651 = Mcr;
 
   <bb 23> :
 <L20>:
-  return D.6649;
+  return D.6651;
 
 }
 
@@ -721,7 +721,7 @@ Bctu_Ip_GetFifoCount (const uint32 u32Instance, const uint8 u8FifoIdx)
 {
   const struct BCTU_Type * const BctuBasePtr;
   uint8 Count;
-  uint8 D.6803;
+  uint8 D.6805;
 
   <bb 2> :
   Count = 0;
@@ -748,11 +748,11 @@ Bctu_Ip_GetFifoCount (const uint32 u32Instance, const uint8 u8FifoIdx)
 <L2>:
 
   <bb 6> :
-  D.6803 = Count;
+  D.6805 = Count;
 
   <bb 7> :
 <L4>:
-  return D.6803;
+  return D.6805;
 
 }
 
@@ -957,7 +957,7 @@ Bctu_Ip_GetFifoData (const uint32 u32Instance, const uint8 u8FifoIdx)
   uint8 AdcIdx;
   uint32 ResultFifo;
   uint32 Data;
-  uint16 D.6801;
+  uint16 D.6803;
 
   <bb 2> :
   Data = 0;
@@ -989,11 +989,11 @@ Bctu_Ip_GetFifoData (const uint32 u32Instance, const uint8 u8FifoIdx)
 <L2>:
 
   <bb 6> :
-  D.6801 = Bctu_GetResolutionScaledResult (AdcIdx, Data);
+  D.6803 = Bctu_GetResolutionScaledResult (AdcIdx, Data);
 
   <bb 7> :
 <L4>:
-  return D.6801;
+  return D.6803;
 
 }
 
@@ -1036,18 +1036,18 @@ Bctu_Ip_GetConvData (const uint32 u32Instance, const uint8 u8AdcIdx)
 {
   const struct BCTU_Type * const BctuBasePtr;
   uint32 Data;
-  uint16 D.6797;
+  uint16 D.6799;
 
   <bb 2> :
   BctuBasePtr = 1074282496B;
   _1 = (int) u8AdcIdx;
   _2 = BctuBasePtr->ADCDR[_1];
   Data = _2 & 32767;
-  D.6797 = Bctu_GetResolutionScaledResult (u8AdcIdx, Data);
+  D.6799 = Bctu_GetResolutionScaledResult (u8AdcIdx, Data);
 
   <bb 3> :
 <L0>:
-  return D.6797;
+  return D.6799;
 
 }
 
@@ -1295,7 +1295,7 @@ Bctu_Ip_SetTriggerChnListAddr (const uint32 u32Instance, const uint8 u8TrigIdx, 
   struct BCTU_Type * const BctuBasePtr;
   Bctu_Ip_StatusType Status;
   uint32 Trgcfg;
-  Bctu_Ip_StatusType D.6795;
+  Bctu_Ip_StatusType D.6797;
   long unsigned int iftmp.44;
 
   <bb 2> :
@@ -1337,11 +1337,11 @@ Bctu_Ip_SetTriggerChnListAddr (const uint32 u32Instance, const uint8 u8TrigIdx, 
   BctuBasePtr->TRGCFG[_9] = _10;
 
   <bb 7> :
-  D.6795 = Status;
+  D.6797 = Status;
 
   <bb 8> :
 <L5>:
-  return D.6795;
+  return D.6797;
 
 }
 
@@ -1352,7 +1352,7 @@ Bctu_Ip_ConfigTrigger (const uint32 u32Instance, const struct Bctu_Ip_TrigConfig
   Bctu_Ip_StatusType Status;
   uint8 Idx;
   uint32 Trgcfg;
-  Bctu_Ip_StatusType D.6782;
+  Bctu_Ip_StatusType D.6784;
   long unsigned int iftmp.42;
   long unsigned int iftmp.41;
   long unsigned int iftmp.40;
@@ -1480,11 +1480,11 @@ Bctu_Ip_ConfigTrigger (const uint32 u32Instance, const struct Bctu_Ip_TrigConfig
   BctuBasePtr->TRGCFG[_23] = Trgcfg;
 
   <bb 22> :
-  D.6782 = Status;
+  D.6784 = Status;
 
   <bb 23> :
 <L22>:
-  return D.6782;
+  return D.6784;
 
 }
 
@@ -1683,7 +1683,7 @@ Bctu_Ip_GetStatusFlags (const uint32 u32Instance)
   uint8 Index;
   uint32 Mask;
   uint32 Reg;
-  uint32 D.6732;
+  uint32 D.6734;
   long unsigned int iftmp.26;
   long unsigned int iftmp.25;
   long unsigned int iftmp.24;
@@ -1875,11 +1875,11 @@ Bctu_Ip_GetStatusFlags (const uint32 u32Instance)
     goto <bb 32>; [INV]
 
   <bb 32> :
-  D.6732 = Mask;
+  D.6734 = Mask;
 
   <bb 33> :
 <L30>:
-  return D.6732;
+  return D.6734;
 
 }
 
@@ -1954,7 +1954,7 @@ Bctu_Ip_Deinit (const uint32 u32Instance)
   Bctu_Ip_StatusType Status;
   uint8 Index;
   struct Bctu_Ip_ConfigType DefaultConfig;
-  Bctu_Ip_StatusType D.6682;
+  Bctu_Ip_StatusType D.6684;
 
   <bb 2> :
   Status = 0;
@@ -2066,12 +2066,12 @@ Bctu_Ip_Deinit (const uint32 u32Instance)
   Bctu_Ip_axBctuState[u32Instance].InitStatus = 0;
 
   <bb 19> :
-  D.6682 = Status;
+  D.6684 = Status;
   DefaultConfig = {CLOBBER};
 
   <bb 20> :
 <L18>:
-  return D.6682;
+  return D.6684;
 
 }
 

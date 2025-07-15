@@ -110,6 +110,9 @@ BOARD_InitPins:
   - {pin_num: '153', peripheral: ADC_2, signal: 'p_in, 3', pin_signal: PTE21}
   - {pin_num: '157', peripheral: ADC_2, signal: 's_in, 13', pin_signal: PTE24}
   - {pin_num: '139', peripheral: SIUL2, signal: 'gpio, 127', pin_signal: PTD31, direction: OUTPUT}
+  - {pin_num: '132', peripheral: SIUL2, signal: 'gpio, 123', pin_signal: PTD27, direction: OUTPUT}
+  - {pin_num: '134', peripheral: SIUL2, signal: 'gpio, 124', pin_signal: PTD28, direction: OUTPUT}
+  - {pin_num: '9', peripheral: eMIOS_0, signal: 'ch_g, 1', pin_signal: PTE11, direction: OUTPUT}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */

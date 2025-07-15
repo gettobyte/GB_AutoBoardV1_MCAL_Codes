@@ -8,6 +8,7 @@ C_SRCS += \
 ../generate/src/Bctu_Ip_VS_0_PBcfg.c \
 ../generate/src/Clock_Ip_Cfg.c \
 ../generate/src/Emios_Mcl_Ip_VS_0_PBcfg.c \
+../generate/src/Emios_Pwm_Ip_VS_0_PBcfg.c \
 ../generate/src/IntCtrl_Ip_Cfg.c \
 ../generate/src/OsIf_Cfg.c 
 
@@ -16,6 +17,7 @@ OBJS += \
 ./generate/src/Bctu_Ip_VS_0_PBcfg.o \
 ./generate/src/Clock_Ip_Cfg.o \
 ./generate/src/Emios_Mcl_Ip_VS_0_PBcfg.o \
+./generate/src/Emios_Pwm_Ip_VS_0_PBcfg.o \
 ./generate/src/IntCtrl_Ip_Cfg.o \
 ./generate/src/OsIf_Cfg.o 
 
@@ -24,6 +26,7 @@ C_DEPS += \
 ./generate/src/Bctu_Ip_VS_0_PBcfg.d \
 ./generate/src/Clock_Ip_Cfg.d \
 ./generate/src/Emios_Mcl_Ip_VS_0_PBcfg.d \
+./generate/src/Emios_Pwm_Ip_VS_0_PBcfg.d \
 ./generate/src/IntCtrl_Ip_Cfg.d \
 ./generate/src/OsIf_Cfg.d 
 

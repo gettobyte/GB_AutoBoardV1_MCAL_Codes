@@ -1,0 +1,483 @@
+
+Marking local functions: Emios_Pwm_Ip_ClearFlagEvent/35 Emios_Pwm_Ip_GetOutputPinState/34 Emios_Pwm_Ip_GetEdgePolarity/26 Emios_Pwm_Ip_GetUCRegB/10 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_SetUCRegA/7
+
+
+Marking externally visible functions: Emios_Pwm_Ip_IrqHandler/42
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Emios_Pwm_Ip_aNotificationPtr/48 (Emios_Pwm_Ip_aNotificationPtr) @05f85e58
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Emios_Pwm_Ip_IrqHandler/42 (read) Emios_Pwm_Ip_IrqHandler/42 (read) Emios_Pwm_Ip_IrqHandler/42 (read) 
+  Availability: not_available
+  Varpool flags:
+Emios_Pwm_Ip_aDutyCycle/47 (Emios_Pwm_Ip_aDutyCycle) @05f853a8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) 
+  Availability: not_available
+  Varpool flags:
+Emios_Pwm_Ip_aPeriod/46 (Emios_Pwm_Ip_aPeriod) @05f85360
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) 
+  Availability: not_available
+  Varpool flags:
+Emios_Pwm_Ip_aCurrentModes/45 (Emios_Pwm_Ip_aCurrentModes) @05f85318
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) 
+  Availability: not_available
+  Varpool flags:
+Emios_Pwm_Ip_GetMasterBusChannel/44 (Emios_Pwm_Ip_GetMasterBusChannel) @05f7d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Emios_Pwm_Ip_IrqDaocHandler/41 
+  Calls: 
+Emios_Pwm_Ip_aBasePtr/43 (Emios_Pwm_Ip_aBasePtr) @05f851b0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqHandler/42 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+Emios_Pwm_Ip_IrqHandler/42 (Emios_Pwm_Ip_IrqHandler) @05f1de00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aNotificationPtr/48 (read) Emios_Pwm_Ip_aNotificationPtr/48 (read) Emios_Pwm_Ip_aNotificationPtr/48 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_ClearFlagEvent/35 
+   Indirect call Num speculative call targets: 0
+Emios_Pwm_Ip_IrqDaocHandler/41 (Emios_Pwm_Ip_IrqDaocHandler) @05f1da80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aCurrentModes/45 (read) Emios_Pwm_Ip_aPeriod/46 (read) Emios_Pwm_Ip_aDutyCycle/47 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aPeriod/46 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aCurrentModes/45 (read) Emios_Pwm_Ip_aPeriod/46 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aDutyCycle/47 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Emios_Pwm_Ip_IrqHandler/42 
+  Calls: Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_GetUCRegB/10 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_GetUCRegB/10 Emios_Pwm_Ip_GetOutputPinState/34 Emios_Pwm_Ip_GetEdgePolarity/26 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_GetMasterBusChannel/44 
+Emios_Pwm_Ip_ClearFlagEvent/35 (Emios_Pwm_Ip_ClearFlagEvent) @05f14b60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_IrqHandler/42 
+  Calls: 
+Emios_Pwm_Ip_GetOutputPinState/34 (Emios_Pwm_Ip_GetOutputPinState) @05f147e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_IrqDaocHandler/41 
+  Calls: 
+Emios_Pwm_Ip_GetEdgePolarity/26 (Emios_Pwm_Ip_GetEdgePolarity) @05ec2e00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_IrqDaocHandler/41 
+  Calls: 
+Emios_Pwm_Ip_GetUCRegB/10 (Emios_Pwm_Ip_GetUCRegB) @05e26a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 
+  Calls: 
+Emios_Pwm_Ip_SetUCRegB/9 (Emios_Pwm_Ip_SetUCRegB) @05e267e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 
+  Calls: 
+Emios_Pwm_Ip_GetUCRegA/8 (Emios_Pwm_Ip_GetUCRegA) @05e26460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 
+  Calls: 
+Emios_Pwm_Ip_SetUCRegA/7 (Emios_Pwm_Ip_SetUCRegA) @05e261c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 
+  Calls: 
+Emios_Pwm_Ip_IrqHandler (uint8 Instance, uint8 Channel)
+{
+  <bb 2> :
+  _1 = (int) Instance;
+  _2 = Emios_Pwm_Ip_aBasePtr[_1];
+  Emios_Pwm_Ip_ClearFlagEvent (_2, Channel);
+  Emios_Pwm_Ip_IrqDaocHandler (Instance, Channel);
+  _3 = (int) Instance;
+  _4 = (int) Channel;
+  _5 = Emios_Pwm_Ip_aNotificationPtr[_3][_4];
+  _6 = _5->CbFunction;
+  if (_6 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _7 = (int) Instance;
+  _8 = (int) Channel;
+  _9 = Emios_Pwm_Ip_aNotificationPtr[_7][_8];
+  _10 = _9->CbFunction;
+  _11 = (int) Instance;
+  _12 = (int) Channel;
+  _13 = Emios_Pwm_Ip_aNotificationPtr[_11][_12];
+  _14 = _13->CbParameter;
+  _10 (_14);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Emios_Pwm_Ip_IrqDaocHandler (uint8 Instance, uint8 Channel)
+{
+  boolean OutputPin;
+  Emios_Pwm_Ip_PolarityType Polarity;
+  uint16 CounterMax;
+  uint16 DaocRegB;
+  uint16 DaocRegA;
+  uint16 DaocDuty;
+  uint16 iftmp.3;
+  uint16 iftmp.2;
+  uint16 iftmp.1;
+  uint16 iftmp.0;
+
+  <bb 2> :
+  DaocDuty = 0;
+  DaocRegA = 0;
+  DaocRegB = 0;
+  _1 = (int) Instance;
+  _2 = Emios_Pwm_Ip_aBasePtr[_1];
+  _3 = Emios_Pwm_Ip_GetMasterBusChannel (Instance, Channel);
+  CounterMax = Emios_Pwm_Ip_GetUCRegA (_2, _3);
+  _4 = (int) Instance;
+  _5 = Emios_Pwm_Ip_aBasePtr[_4];
+  Polarity = Emios_Pwm_Ip_GetEdgePolarity (_5, Channel);
+  _6 = (int) Instance;
+  _7 = Emios_Pwm_Ip_aBasePtr[_6];
+  OutputPin = Emios_Pwm_Ip_GetOutputPinState (_7, Channel);
+  _8 = (int) Instance;
+  _9 = (int) Channel;
+  _10 = Emios_Pwm_Ip_aCurrentModes[_8][_9];
+  if (_10 == 6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  _11 = (int) Instance;
+  _12 = (int) Channel;
+  _13 = Emios_Pwm_Ip_aPeriod[_11][_12];
+  _14 = (int) Instance;
+  _15 = (int) Channel;
+  _16 = Emios_Pwm_Ip_aDutyCycle[_14][_15];
+  DaocDuty = _13 - _16;
+  _17 = (int) DaocDuty;
+  _18 = (int) Instance;
+  _19 = Emios_Pwm_Ip_aBasePtr[_18];
+  _20 = Emios_Pwm_Ip_GetUCRegB (_19, Channel);
+  _21 = (int) _20;
+  _22 = _17 + _21;
+  _23 = (int) CounterMax;
+  _24 = _22 % _23;
+  DaocRegA = (uint16) _24;
+  _25 = (int) Instance;
+  _26 = Emios_Pwm_Ip_aBasePtr[_25];
+  if (DaocRegA == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.0 = CounterMax;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.0 = DaocRegA;
+
+  <bb 6> :
+  Emios_Pwm_Ip_SetUCRegA (_26, Channel, iftmp.0);
+  _27 = (int) Instance;
+  _28 = (int) Channel;
+  _29 = Emios_Pwm_Ip_aPeriod[_27][_28];
+  _30 = (int) _29;
+  _31 = (int) Instance;
+  _32 = Emios_Pwm_Ip_aBasePtr[_31];
+  _33 = Emios_Pwm_Ip_GetUCRegB (_32, Channel);
+  _34 = (int) _33;
+  _35 = _30 + _34;
+  _36 = (int) CounterMax;
+  _37 = _35 % _36;
+  DaocRegB = (uint16) _37;
+  _38 = (int) Instance;
+  _39 = Emios_Pwm_Ip_aBasePtr[_38];
+  if (DaocRegB == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.1 = CounterMax;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.1 = DaocRegB;
+
+  <bb 9> :
+  Emios_Pwm_Ip_SetUCRegB (_39, Channel, iftmp.1);
+  goto <bb 24>; [INV]
+
+  <bb 10> :
+  _40 = (int) Instance;
+  _41 = (int) Channel;
+  _42 = Emios_Pwm_Ip_aCurrentModes[_40][_41];
+  if (_42 == 7)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 11> :
+  if (Polarity == 1)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _43 = ~OutputPin;
+  if (_43 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  if (Polarity == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 14> :
+  if (OutputPin != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 15> :
+  _44 = (int) Instance;
+  _45 = (int) Channel;
+  _46 = Emios_Pwm_Ip_aPeriod[_44][_45];
+  _47 = (int) _46;
+  _48 = (int) Instance;
+  _49 = Emios_Pwm_Ip_aBasePtr[_48];
+  _50 = Emios_Pwm_Ip_GetUCRegA (_49, Channel);
+  _51 = (int) _50;
+  _52 = _47 + _51;
+  _53 = (int) CounterMax;
+  _54 = _52 % _53;
+  DaocRegA = (uint16) _54;
+  _55 = (int) Instance;
+  _56 = Emios_Pwm_Ip_aBasePtr[_55];
+  if (DaocRegA == 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.2 = CounterMax;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.2 = DaocRegA;
+
+  <bb 18> :
+  Emios_Pwm_Ip_SetUCRegA (_56, Channel, iftmp.2);
+  goto <bb 23>; [INV]
+
+  <bb 19> :
+  _57 = (int) Instance;
+  _58 = (int) Channel;
+  _59 = Emios_Pwm_Ip_aDutyCycle[_57][_58];
+  _60 = (int) _59;
+  _61 = (int) Instance;
+  _62 = Emios_Pwm_Ip_aBasePtr[_61];
+  _63 = Emios_Pwm_Ip_GetUCRegA (_62, Channel);
+  _64 = (int) _63;
+  _65 = _60 + _64;
+  _66 = (int) CounterMax;
+  _67 = _65 % _66;
+  DaocRegB = (uint16) _67;
+  _68 = (int) Instance;
+  _69 = Emios_Pwm_Ip_aBasePtr[_68];
+  if (DaocRegB == 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  iftmp.3 = CounterMax;
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  iftmp.3 = DaocRegB;
+
+  <bb 22> :
+  Emios_Pwm_Ip_SetUCRegB (_69, Channel, iftmp.3);
+
+  <bb 23> :
+
+  <bb 24> :
+  return;
+
+}
+
+
+Emios_Pwm_Ip_ClearFlagEvent (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  <bb 2> :
+  _1 = (int) Channel;
+  _2 = Base->CH.UC[_1].S;
+  _3 = (int) Channel;
+  _4 = _2 | 1;
+  Base->CH.UC[_3].S = _4;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  boolean D.6197;
+
+  <bb 2> :
+  _1 = (int) Channel;
+  _2 = Base->CH.UC[_1].S;
+  _3 = _2 & 2;
+  D.6197 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return D.6197;
+
+}
+
+
+Emios_Pwm_Ip_GetEdgePolarity (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  Emios_Pwm_Ip_PolarityType D.6195;
+
+  <bb 2> :
+  _1 = (int) Channel;
+  _2 = Base->CH.UC[_1].C;
+  _3 = _2 & 128;
+  _4 = _3 != 0;
+  _5 = (int) _4;
+  D.6195 = (Emios_Pwm_Ip_PolarityType) _5;
+
+  <bb 3> :
+<L0>:
+  return D.6195;
+
+}
+
+
+Emios_Pwm_Ip_GetUCRegB (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  uint16 D.6199;
+
+  <bb 2> :
+  _1 = (int) Channel;
+  _2 = Base->CH.UC[_1].B;
+  D.6199 = (uint16) _2;
+
+  <bb 3> :
+<L0>:
+  return D.6199;
+
+}
+
+
+Emios_Pwm_Ip_SetUCRegB (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
+{
+  <bb 2> :
+  _1 = (int) Channel;
+  _2 = (long unsigned int) Value;
+  Base->CH.UC[_1].B = _2;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetUCRegA (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  uint16 D.6201;
+
+  <bb 2> :
+  _1 = (int) Channel;
+  _2 = Base->CH.UC[_1].A;
+  D.6201 = (uint16) _2;
+
+  <bb 3> :
+<L0>:
+  return D.6201;
+
+}
+
+
+Emios_Pwm_Ip_SetUCRegA (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
+{
+  <bb 2> :
+  _1 = (int) Channel;
+  _2 = (long unsigned int) Value;
+  Base->CH.UC[_1].A = _2;
+  return;
+
+}
+
+

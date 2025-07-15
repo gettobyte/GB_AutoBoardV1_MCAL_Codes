@@ -132,6 +132,7 @@ src/main.o: ../src/main.c ../RTD/include/Clock_Ip.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_SCB.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_SYSTICK.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_MPU.h \
+ C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Emios_Pwm_Ip_CfgDefines.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Mcl_MemMap.h \
  ../RTD/include/Siul2_Dio_Ip.h \
  C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Siul2_Dio_Ip_Cfg.h \
@@ -143,7 +144,13 @@ src/main.o: ../src/main.c ../RTD/include/Clock_Ip.h \
  C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Siul2_Port_Ip_Defines.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_DCM_GPR.h \
  D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Port_MemMap.h \
- ../RTD/include/Siul2_Port_Ip_Types.h
+ ../RTD/include/Siul2_Port_Ip_Types.h ../RTD/include/Emios_Pwm_Ip.h \
+ C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Emios_Pwm_Ip_Cfg.h \
+ C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Emios_Pwm_Ip_VS_0_PBcfg.h \
+ ../RTD/include/Emios_Pwm_Ip_Types.h \
+ C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Emios_Pwm_Ip_CfgDefines.h \
+ D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Pwm_MemMap.h \
+ ../RTD/include/Emios_Pwm_Ip_Types.h
 ../RTD/include/Clock_Ip.h:
 ../RTD/include/Clock_Ip_Types.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/StandardTypes.h:
@@ -282,6 +289,7 @@ D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D22
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_SCB.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_SYSTICK.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_MPU.h:
+C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Emios_Pwm_Ip_CfgDefines.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Mcl_MemMap.h:
 ../RTD/include/Siul2_Dio_Ip.h:
 C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Siul2_Dio_Ip_Cfg.h:
@@ -294,3 +302,10 @@ C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/incl
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/header/S32K344_DCM_GPR.h:
 D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Port_MemMap.h:
 ../RTD/include/Siul2_Port_Ip_Types.h:
+../RTD/include/Emios_Pwm_Ip.h:
+C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Emios_Pwm_Ip_Cfg.h:
+C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Emios_Pwm_Ip_VS_0_PBcfg.h:
+../RTD/include/Emios_Pwm_Ip_Types.h:
+C\:/Users/singh/workspaceS32DS.3.4/Adc_Sar_Bctu_Ip_example_S32K344/generate/include/Emios_Pwm_Ip_CfgDefines.h:
+D\:/NXP_Folder/S32DS/software/PlatformSDK_S32K3_2022_03/SW32K3_RTD_4_4_2_0_0_D2203/Base_TS_T40D34M20I0R0/include/Pwm_MemMap.h:
+../RTD/include/Emios_Pwm_Ip_Types.h:

@@ -27,6 +27,8 @@ C_SRCS += \
 ../RTD/src/Det_stub.c \
 ../RTD/src/Emios_Mcl_Ip.c \
 ../RTD/src/Emios_Mcl_Ip_Irq.c \
+../RTD/src/Emios_Pwm_Ip.c \
+../RTD/src/Emios_Pwm_Ip_Irq.c \
 ../RTD/src/IntCtrl_Ip.c \
 ../RTD/src/OsIf_Interrupts.c \
 ../RTD/src/OsIf_Timer.c \
@@ -37,6 +39,7 @@ C_SRCS += \
 ../RTD/src/SchM_Mcl.c \
 ../RTD/src/SchM_Mcu.c \
 ../RTD/src/SchM_Port.c \
+../RTD/src/SchM_Pwm.c \
 ../RTD/src/Siul2_Dio_Ip.c \
 ../RTD/src/Siul2_Port_Ip.c \
 ../RTD/src/Tspc_Port_Ip.c 
@@ -65,6 +68,8 @@ OBJS += \
 ./RTD/src/Det_stub.o \
 ./RTD/src/Emios_Mcl_Ip.o \
 ./RTD/src/Emios_Mcl_Ip_Irq.o \
+./RTD/src/Emios_Pwm_Ip.o \
+./RTD/src/Emios_Pwm_Ip_Irq.o \
 ./RTD/src/IntCtrl_Ip.o \
 ./RTD/src/OsIf_Interrupts.o \
 ./RTD/src/OsIf_Timer.o \
@@ -75,6 +80,7 @@ OBJS += \
 ./RTD/src/SchM_Mcl.o \
 ./RTD/src/SchM_Mcu.o \
 ./RTD/src/SchM_Port.o \
+./RTD/src/SchM_Pwm.o \
 ./RTD/src/Siul2_Dio_Ip.o \
 ./RTD/src/Siul2_Port_Ip.o \
 ./RTD/src/Tspc_Port_Ip.o 
@@ -103,6 +109,8 @@ C_DEPS += \
 ./RTD/src/Det_stub.d \
 ./RTD/src/Emios_Mcl_Ip.d \
 ./RTD/src/Emios_Mcl_Ip_Irq.d \
+./RTD/src/Emios_Pwm_Ip.d \
+./RTD/src/Emios_Pwm_Ip_Irq.d \
 ./RTD/src/IntCtrl_Ip.d \
 ./RTD/src/OsIf_Interrupts.d \
 ./RTD/src/OsIf_Timer.d \
@@ -113,6 +121,7 @@ C_DEPS += \
 ./RTD/src/SchM_Mcl.d \
 ./RTD/src/SchM_Mcu.d \
 ./RTD/src/SchM_Port.d \
+./RTD/src/SchM_Pwm.d \
 ./RTD/src/Siul2_Dio_Ip.d \
 ./RTD/src/Siul2_Port_Ip.d \
 ./RTD/src/Tspc_Port_Ip.d 

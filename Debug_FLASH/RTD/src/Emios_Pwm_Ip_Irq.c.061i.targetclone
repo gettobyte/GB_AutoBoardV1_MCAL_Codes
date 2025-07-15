@@ -1,0 +1,464 @@
+Emios_Pwm_Ip_IrqHandler (uint8 Instance, uint8 Channel)
+{
+  int _1;
+  struct Emios_Pwm_Ip_HwAddrType * _2;
+  int _3;
+  int _4;
+  const struct Emios_Pwm_Ip_NotificationType * _5;
+  void (*<Td3>) (void *) _6;
+  int _7;
+  int _8;
+  const struct Emios_Pwm_Ip_NotificationType * _9;
+  void (*<Td3>) (void *) _10;
+  int _11;
+  int _12;
+  const struct Emios_Pwm_Ip_NotificationType * _13;
+  void * _14;
+
+  <bb 2> :
+  _1 = (int) Instance_16(D);
+  _2 = Emios_Pwm_Ip_aBasePtr[_1];
+  Emios_Pwm_Ip_ClearFlagEvent (_2, Channel_18(D));
+  Emios_Pwm_Ip_IrqDaocHandler (Instance_16(D), Channel_18(D));
+  _3 = (int) Instance_16(D);
+  _4 = (int) Channel_18(D);
+  _5 = Emios_Pwm_Ip_aNotificationPtr[_3][_4];
+  _6 = _5->CbFunction;
+  if (_6 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _7 = (int) Instance_16(D);
+  _8 = (int) Channel_18(D);
+  _9 = Emios_Pwm_Ip_aNotificationPtr[_7][_8];
+  _10 = _9->CbFunction;
+  _11 = (int) Instance_16(D);
+  _12 = (int) Channel_18(D);
+  _13 = Emios_Pwm_Ip_aNotificationPtr[_11][_12];
+  _14 = _13->CbParameter;
+  _10 (_14);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Emios_Pwm_Ip_IrqDaocHandler (uint8 Instance, uint8 Channel)
+{
+  boolean OutputPin;
+  Emios_Pwm_Ip_PolarityType Polarity;
+  uint16 CounterMax;
+  uint16 DaocRegB;
+  uint16 DaocRegA;
+  uint16 DaocDuty;
+  uint16 iftmp.3;
+  uint16 iftmp.2;
+  uint16 iftmp.1;
+  uint16 iftmp.0;
+  int _1;
+  struct Emios_Pwm_Ip_HwAddrType * _2;
+  unsigned char _3;
+  int _4;
+  struct Emios_Pwm_Ip_HwAddrType * _5;
+  int _6;
+  struct Emios_Pwm_Ip_HwAddrType * _7;
+  int _8;
+  int _9;
+  <unnamed type> _10;
+  int _11;
+  int _12;
+  short unsigned int _13;
+  int _14;
+  int _15;
+  short unsigned int _16;
+  int _17;
+  int _18;
+  struct Emios_Pwm_Ip_HwAddrType * _19;
+  short unsigned int _20;
+  int _21;
+  int _22;
+  int _23;
+  int _24;
+  int _25;
+  struct Emios_Pwm_Ip_HwAddrType * _26;
+  int _27;
+  int _28;
+  short unsigned int _29;
+  int _30;
+  int _31;
+  struct Emios_Pwm_Ip_HwAddrType * _32;
+  short unsigned int _33;
+  int _34;
+  int _35;
+  int _36;
+  int _37;
+  int _38;
+  struct Emios_Pwm_Ip_HwAddrType * _39;
+  int _40;
+  int _41;
+  <unnamed type> _42;
+  _Bool _43;
+  int _44;
+  int _45;
+  short unsigned int _46;
+  int _47;
+  int _48;
+  struct Emios_Pwm_Ip_HwAddrType * _49;
+  short unsigned int _50;
+  int _51;
+  int _52;
+  int _53;
+  int _54;
+  int _55;
+  struct Emios_Pwm_Ip_HwAddrType * _56;
+  int _57;
+  int _58;
+  short unsigned int _59;
+  int _60;
+  int _61;
+  struct Emios_Pwm_Ip_HwAddrType * _62;
+  short unsigned int _63;
+  int _64;
+  int _65;
+  int _66;
+  int _67;
+  int _68;
+  struct Emios_Pwm_Ip_HwAddrType * _69;
+  uint16 iftmp.0_70;
+  uint16 iftmp.1_71;
+  uint16 iftmp.2_72;
+  uint16 iftmp.3_73;
+  uint16 iftmp.3_91;
+  uint16 iftmp.3_92;
+  uint16 iftmp.2_96;
+  uint16 iftmp.2_97;
+  uint16 iftmp.0_102;
+  uint16 iftmp.0_103;
+  uint16 iftmp.1_107;
+  uint16 iftmp.1_108;
+
+  <bb 2> :
+  DaocDuty_76 = 0;
+  DaocRegA_77 = 0;
+  DaocRegB_78 = 0;
+  _1 = (int) Instance_79(D);
+  _2 = Emios_Pwm_Ip_aBasePtr[_1];
+  _3 = Emios_Pwm_Ip_GetMasterBusChannel (Instance_79(D), Channel_81(D));
+  CounterMax_84 = Emios_Pwm_Ip_GetUCRegA (_2, _3);
+  _4 = (int) Instance_79(D);
+  _5 = Emios_Pwm_Ip_aBasePtr[_4];
+  Polarity_86 = Emios_Pwm_Ip_GetEdgePolarity (_5, Channel_81(D));
+  _6 = (int) Instance_79(D);
+  _7 = Emios_Pwm_Ip_aBasePtr[_6];
+  OutputPin_88 = Emios_Pwm_Ip_GetOutputPinState (_7, Channel_81(D));
+  _8 = (int) Instance_79(D);
+  _9 = (int) Channel_81(D);
+  _10 = Emios_Pwm_Ip_aCurrentModes[_8][_9];
+  if (_10 == 6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  _11 = (int) Instance_79(D);
+  _12 = (int) Channel_81(D);
+  _13 = Emios_Pwm_Ip_aPeriod[_11][_12];
+  _14 = (int) Instance_79(D);
+  _15 = (int) Channel_81(D);
+  _16 = Emios_Pwm_Ip_aDutyCycle[_14][_15];
+  DaocDuty_99 = _13 - _16;
+  _17 = (int) DaocDuty_99;
+  _18 = (int) Instance_79(D);
+  _19 = Emios_Pwm_Ip_aBasePtr[_18];
+  _20 = Emios_Pwm_Ip_GetUCRegB (_19, Channel_81(D));
+  _21 = (int) _20;
+  _22 = _17 + _21;
+  _23 = (int) CounterMax_84;
+  _24 = _22 % _23;
+  DaocRegA_101 = (uint16) _24;
+  _25 = (int) Instance_79(D);
+  _26 = Emios_Pwm_Ip_aBasePtr[_25];
+  if (DaocRegA_101 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.0_103 = CounterMax_84;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.0_102 = DaocRegA_101;
+
+  <bb 6> :
+  # iftmp.0_70 = PHI <iftmp.0_103(4), iftmp.0_102(5)>
+  Emios_Pwm_Ip_SetUCRegA (_26, Channel_81(D), iftmp.0_70);
+  _27 = (int) Instance_79(D);
+  _28 = (int) Channel_81(D);
+  _29 = Emios_Pwm_Ip_aPeriod[_27][_28];
+  _30 = (int) _29;
+  _31 = (int) Instance_79(D);
+  _32 = Emios_Pwm_Ip_aBasePtr[_31];
+  _33 = Emios_Pwm_Ip_GetUCRegB (_32, Channel_81(D));
+  _34 = (int) _33;
+  _35 = _30 + _34;
+  _36 = (int) CounterMax_84;
+  _37 = _35 % _36;
+  DaocRegB_106 = (uint16) _37;
+  _38 = (int) Instance_79(D);
+  _39 = Emios_Pwm_Ip_aBasePtr[_38];
+  if (DaocRegB_106 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.1_108 = CounterMax_84;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.1_107 = DaocRegB_106;
+
+  <bb 9> :
+  # iftmp.1_71 = PHI <iftmp.1_108(7), iftmp.1_107(8)>
+  Emios_Pwm_Ip_SetUCRegB (_39, Channel_81(D), iftmp.1_71);
+  goto <bb 24>; [INV]
+
+  <bb 10> :
+  _40 = (int) Instance_79(D);
+  _41 = (int) Channel_81(D);
+  _42 = Emios_Pwm_Ip_aCurrentModes[_40][_41];
+  if (_42 == 7)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 11> :
+  if (Polarity_86 == 1)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _43 = ~OutputPin_88;
+  if (_43 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  if (Polarity_86 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 14> :
+  if (OutputPin_88 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 15> :
+  _44 = (int) Instance_79(D);
+  _45 = (int) Channel_81(D);
+  _46 = Emios_Pwm_Ip_aPeriod[_44][_45];
+  _47 = (int) _46;
+  _48 = (int) Instance_79(D);
+  _49 = Emios_Pwm_Ip_aBasePtr[_48];
+  _50 = Emios_Pwm_Ip_GetUCRegA (_49, Channel_81(D));
+  _51 = (int) _50;
+  _52 = _47 + _51;
+  _53 = (int) CounterMax_84;
+  _54 = _52 % _53;
+  DaocRegA_95 = (uint16) _54;
+  _55 = (int) Instance_79(D);
+  _56 = Emios_Pwm_Ip_aBasePtr[_55];
+  if (DaocRegA_95 == 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.2_97 = CounterMax_84;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.2_96 = DaocRegA_95;
+
+  <bb 18> :
+  # iftmp.2_72 = PHI <iftmp.2_97(16), iftmp.2_96(17)>
+  Emios_Pwm_Ip_SetUCRegA (_56, Channel_81(D), iftmp.2_72);
+  goto <bb 23>; [INV]
+
+  <bb 19> :
+  _57 = (int) Instance_79(D);
+  _58 = (int) Channel_81(D);
+  _59 = Emios_Pwm_Ip_aDutyCycle[_57][_58];
+  _60 = (int) _59;
+  _61 = (int) Instance_79(D);
+  _62 = Emios_Pwm_Ip_aBasePtr[_61];
+  _63 = Emios_Pwm_Ip_GetUCRegA (_62, Channel_81(D));
+  _64 = (int) _63;
+  _65 = _60 + _64;
+  _66 = (int) CounterMax_84;
+  _67 = _65 % _66;
+  DaocRegB_90 = (uint16) _67;
+  _68 = (int) Instance_79(D);
+  _69 = Emios_Pwm_Ip_aBasePtr[_68];
+  if (DaocRegB_90 == 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  iftmp.3_92 = CounterMax_84;
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  iftmp.3_91 = DaocRegB_90;
+
+  <bb 22> :
+  # iftmp.3_73 = PHI <iftmp.3_92(20), iftmp.3_91(21)>
+  Emios_Pwm_Ip_SetUCRegB (_69, Channel_81(D), iftmp.3_73);
+
+  <bb 23> :
+
+  <bb 24> :
+  return;
+
+}
+
+
+Emios_Pwm_Ip_ClearFlagEvent (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  int _1;
+  long unsigned int _2;
+  int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  _1 = (int) Channel_5(D);
+  _2 ={v} Base_7(D)->CH.UC[_1].S;
+  _3 = (int) Channel_5(D);
+  _4 = _2 | 1;
+  Base_7(D)->CH.UC[_3].S ={v} _4;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  boolean D.6197;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  boolean _7;
+
+  <bb 2> :
+  _1 = (int) Channel_4(D);
+  _2 ={v} Base_6(D)->CH.UC[_1].S;
+  _3 = _2 & 2;
+  _7 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Emios_Pwm_Ip_GetEdgePolarity (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  Emios_Pwm_Ip_PolarityType D.6195;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  _Bool _4;
+  int _5;
+  Emios_Pwm_Ip_PolarityType _9;
+
+  <bb 2> :
+  _1 = (int) Channel_6(D);
+  _2 ={v} Base_8(D)->CH.UC[_1].C;
+  _3 = _2 & 128;
+  _4 = _3 != 0;
+  _5 = (int) _4;
+  _9 = (Emios_Pwm_Ip_PolarityType) _5;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Emios_Pwm_Ip_GetUCRegB (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  uint16 D.6199;
+  int _1;
+  long unsigned int _2;
+  uint16 _6;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 ={v} Base_5(D)->CH.UC[_1].B;
+  _6 = (uint16) _2;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+Emios_Pwm_Ip_SetUCRegB (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
+{
+  int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 = (long unsigned int) Value_4(D);
+  Base_6(D)->CH.UC[_1].B ={v} _2;
+  return;
+
+}
+
+
+Emios_Pwm_Ip_GetUCRegA (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  uint16 D.6201;
+  int _1;
+  long unsigned int _2;
+  uint16 _6;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 ={v} Base_5(D)->CH.UC[_1].A;
+  _6 = (uint16) _2;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+Emios_Pwm_Ip_SetUCRegA (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
+{
+  int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 = (int) Channel_3(D);
+  _2 = (long unsigned int) Value_4(D);
+  Base_6(D)->CH.UC[_1].A ={v} _2;
+  return;
+
+}
+
+
