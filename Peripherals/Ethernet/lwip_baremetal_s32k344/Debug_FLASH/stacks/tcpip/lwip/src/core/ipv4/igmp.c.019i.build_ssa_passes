@@ -1,0 +1,1237 @@
+igmp_send (struct netif * netif, struct igmp_group * group, u8_t type)
+{
+  struct ip4_addr_t * dest;
+  struct ip4_addr_t src;
+  struct igmp_msg * igmp;
+  struct pbuf * p;
+
+  <bb 2> :
+  p = 0B;
+  igmp = 0B;
+  src = ip_addr_any.u_addr.ip4;
+  dest = 0B;
+  p = pbuf_alloc (74, 8, 640);
+  if (p != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 3> :
+  igmp = p->payload;
+  _1 = p->len;
+  if (_1 <= 7)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  _2 = &netif->ip_addr.u_addr.ip4;
+  _3 = MEM[(const struct ip4_addr_t *)_2].addr;
+  src.addr = _3;
+  if (type == 22)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  dest = &group->group_address;
+  _4 = group->group_address.addr;
+  igmp->igmp_group_address.addr = _4;
+  group->last_reporter_flag = 1;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (type == 23)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  dest = &allrouters;
+  _5 = group->group_address.addr;
+  igmp->igmp_group_address.addr = _5;
+
+  <bb 9> :
+  if (type == 22)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  if (type == 23)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  igmp->igmp_msgtype = type;
+  igmp->igmp_maxresp = 0;
+  igmp->igmp_checksum = 0;
+  _6 = inet_chksum (igmp, 8);
+  igmp->igmp_checksum = _6;
+  igmp_ip_output_if (p, &src, dest, netif);
+
+  <bb 12> :
+  pbuf_free (p);
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _7 = lwip_stats.igmp.memerr;
+  _8 = _7 + 1;
+  lwip_stats.igmp.memerr = _8;
+
+  <bb 14> :
+  src = {CLOBBER};
+  return;
+
+}
+
+
+igmp_ip_output_if (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, struct netif * netif)
+{
+  u16_t ra[2];
+  err_t D.7618;
+
+  <bb 2> :
+  ra[0] = 1172;
+  ra[1] = 0;
+  _1 = lwip_stats.igmp.xmit;
+  _2 = _1 + 1;
+  lwip_stats.igmp.xmit = _2;
+  D.7618 = ip4_output_if_opt (p, src, dest, 1, 0, 2, netif, &ra, 4);
+  ra = {CLOBBER};
+
+  <bb 3> :
+<L1>:
+  return D.7618;
+
+}
+
+
+igmp_delaying_member (struct igmp_group * group, u8_t maxresp)
+{
+  <bb 2> :
+  _1 = group->group_state;
+  if (_1 == 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _2 = group->group_state;
+  if (_2 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _3 = group->timer;
+  if (_3 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _4 = (short unsigned int) maxresp;
+  _5 = group->timer;
+  if (_4 < _5)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  igmp_start_timer (group, maxresp);
+  group->group_state = 1;
+
+  <bb 7> :
+  return;
+
+}
+
+
+igmp_start_timer (struct igmp_group * group, u8_t max_time)
+{
+  short unsigned int iftmp.1;
+
+  <bb 2> :
+  if (max_time > 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = rand ();
+  _2 = (long unsigned int) _1;
+  _3 = (long unsigned int) max_time;
+  _4 = _2 % _3;
+  iftmp.1 = (short unsigned int) _4;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.1 = 1;
+
+  <bb 5> :
+  group->timer = iftmp.1;
+  _5 = group->timer;
+  if (_5 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  group->timer = 1;
+
+  <bb 7> :
+  return;
+
+}
+
+
+igmp_timeout (struct netif * netif, struct igmp_group * group)
+{
+  <bb 2> :
+  _1 = group->group_state;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _2 = group->group_address.addr;
+  _3 = allsystems.addr;
+  if (_2 != _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  group->group_state = 2;
+  _4 = lwip_stats.igmp.tx_report;
+  _5 = _4 + 1;
+  lwip_stats.igmp.tx_report = _5;
+  igmp_send (netif, group, 22);
+
+  <bb 5> :
+  return;
+
+}
+
+
+igmp_tmr ()
+{
+  struct igmp_group * group;
+  struct netif * netif;
+
+  <bb 2> :
+  netif = netif_list;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  group = netif->client_data[0];
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _1 = group->timer;
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _2 = group->timer;
+  _3 = _2;
+  _4 = _3 + 65535;
+  group->timer = _4;
+  _5 = group->timer;
+  if (_5 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  igmp_timeout (netif, group);
+
+  <bb 7> :
+  group = group->next;
+
+  <bb 8> :
+  if (group != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  netif = netif->next;
+
+  <bb 10> :
+  if (netif != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  return;
+
+}
+
+
+igmp_leavegroup_netif (struct netif * netif, const struct ip4_addr_t * groupaddr)
+{
+  struct igmp_group * group;
+  err_t D.7584;
+
+  <bb 2> :
+  _1 = groupaddr->addr;
+  _2 = _1 & 240;
+  if (_2 != 224)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7584 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 18>; [INV]
+
+  <bb 4> :
+  _3 = groupaddr->addr;
+  _4 = allsystems.addr;
+  if (_3 == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7584 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 18>; [INV]
+
+  <bb 6> :
+  _5 = netif->flags;
+  _6 = (unsigned int) _5;
+  _7 = _6 & 32;
+  if (_7 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.7584 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 18>; [INV]
+
+  <bb 8> :
+  group = igmp_lookfor_group (netif, groupaddr);
+  if (group != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 9> :
+  _8 = group->use;
+  if (_8 <= 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 10> :
+  igmp_remove_group (netif, group);
+  _9 = group->last_reporter_flag;
+  if (_9 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _10 = lwip_stats.igmp.tx_leave;
+  _11 = _10 + 1;
+  lwip_stats.igmp.tx_leave = _11;
+  igmp_send (netif, group, 23);
+
+  <bb 12> :
+  _12 = netif->igmp_mac_filter;
+  if (_12 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _13 = netif->igmp_mac_filter;
+  _13 (netif, groupaddr, 0);
+
+  <bb 14> :
+  memp_free (8, group);
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  _14 = group->use;
+  _15 = _14;
+  _16 = _15 + 255;
+  group->use = _16;
+
+  <bb 16> :
+  D.7584 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  D.7584 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 18> :
+<L15>:
+  return D.7584;
+
+}
+
+
+igmp_leavegroup (const struct ip4_addr_t * ifaddr, const struct ip4_addr_t * groupaddr)
+{
+  err_t res;
+  struct netif * netif;
+  err_t err;
+  err_t D.7570;
+
+  <bb 2> :
+  err = -6;
+  _1 = groupaddr->addr;
+  _2 = _1 & 240;
+  if (_2 != 224)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7570 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 4> :
+  _3 = groupaddr->addr;
+  _4 = allsystems.addr;
+  if (_3 == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7570 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 6> :
+  netif = netif_list;
+  goto <bb 14>; [INV]
+
+  <bb 7> :
+  _5 = netif->flags;
+  _6 = (unsigned int) _5;
+  _7 = _6 & 32;
+  if (_7 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  if (ifaddr == 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _8 = ifaddr->addr;
+  if (_8 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _9 = &netif->ip_addr.u_addr.ip4;
+  _10 = MEM[(const struct ip4_addr_t *)_9].addr;
+  _11 = ifaddr->addr;
+  if (_10 == _11)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  res = igmp_leavegroup_netif (netif, groupaddr);
+  if (err != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  err = res;
+
+  <bb 13> :
+  netif = netif->next;
+
+  <bb 14> :
+  if (netif != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  D.7570 = err;
+
+  <bb 16> :
+<L15>:
+  return D.7570;
+
+}
+
+
+igmp_joingroup_netif (struct netif * netif, const struct ip4_addr_t * groupaddr)
+{
+  struct igmp_group * group;
+  err_t D.7553;
+
+  <bb 2> :
+  _1 = groupaddr->addr;
+  _2 = _1 & 240;
+  if (_2 != 224)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7553 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 4> :
+  _3 = groupaddr->addr;
+  _4 = allsystems.addr;
+  if (_3 == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7553 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 6> :
+  _5 = netif->flags;
+  _6 = (unsigned int) _5;
+  _7 = _6 & 32;
+  if (_7 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.7553 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 8> :
+  group = igmp_lookup_group (netif, groupaddr);
+  if (group != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 9> :
+  _8 = group->group_state;
+  if (_8 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _9 = group->use;
+  if (_9 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  _10 = netif->igmp_mac_filter;
+  if (_10 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _11 = netif->igmp_mac_filter;
+  _11 (netif, groupaddr, 1);
+
+  <bb 13> :
+  _12 = lwip_stats.igmp.tx_join;
+  _13 = _12 + 1;
+  lwip_stats.igmp.tx_join = _13;
+  igmp_send (netif, group, 22);
+  igmp_start_timer (group, 5);
+  group->group_state = 1;
+
+  <bb 14> :
+  _14 = group->use;
+  _15 = _14;
+  _16 = _15 + 1;
+  group->use = _16;
+  D.7553 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  D.7553 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 16> :
+<L15>:
+  return D.7553;
+
+}
+
+
+igmp_joingroup (const struct ip4_addr_t * ifaddr, const struct ip4_addr_t * groupaddr)
+{
+  struct netif * netif;
+  err_t err;
+  err_t D.7539;
+
+  <bb 2> :
+  err = -6;
+  _1 = groupaddr->addr;
+  _2 = _1 & 240;
+  if (_2 != 224)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7539 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 4> :
+  _3 = groupaddr->addr;
+  _4 = allsystems.addr;
+  if (_3 == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7539 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 6> :
+  netif = netif_list;
+  goto <bb 14>; [INV]
+
+  <bb 7> :
+  _5 = netif->flags;
+  _6 = (unsigned int) _5;
+  _7 = _6 & 32;
+  if (_7 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  if (ifaddr == 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _8 = ifaddr->addr;
+  if (_8 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _9 = &netif->ip_addr.u_addr.ip4;
+  _10 = MEM[(const struct ip4_addr_t *)_9].addr;
+  _11 = ifaddr->addr;
+  if (_10 == _11)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  err = igmp_joingroup_netif (netif, groupaddr);
+  if (err != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  D.7539 = err;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 13> :
+  netif = netif->next;
+
+  <bb 14> :
+  if (netif != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  D.7539 = err;
+
+  <bb 16> :
+<L15>:
+  return D.7539;
+
+}
+
+
+igmp_input (struct pbuf * p, struct netif * inp, const struct ip4_addr_t * dest)
+{
+  struct ip4_addr_t groupaddr;
+  struct igmp_group * groupref;
+  struct igmp_group * group;
+  struct igmp_msg * igmp;
+
+  <bb 2> :
+  _1 = lwip_stats.igmp.recv;
+  _2 = _1 + 1;
+  lwip_stats.igmp.recv = _2;
+  _3 = p->len;
+  if (_3 <= 7)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  pbuf_free (p);
+  _4 = lwip_stats.igmp.lenerr;
+  _5 = _4 + 1;
+  lwip_stats.igmp.lenerr = _5;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 4> :
+  igmp = p->payload;
+  _6 = p->len;
+  _7 = inet_chksum (igmp, _6);
+  if (_7 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  pbuf_free (p);
+  _8 = lwip_stats.igmp.chkerr;
+  _9 = _8 + 1;
+  lwip_stats.igmp.chkerr = _9;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 6> :
+  group = igmp_lookfor_group (inp, dest);
+  if (group == 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  pbuf_free (p);
+  _10 = lwip_stats.igmp.drop;
+  _11 = _10 + 1;
+  lwip_stats.igmp.drop = _11;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 8> :
+  _12 = igmp->igmp_msgtype;
+  _13 = (int) _12;
+  switch (_13) <default: <L33> [INV], case 17: <L6> [INV], case 22: <L30> [INV]>
+
+  <bb 9> :
+<L6>:
+  _14 = dest->addr;
+  _15 = allsystems.addr;
+  if (_14 == _15)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 10> :
+  _16 = &igmp->igmp_group_address;
+  if (_16 == 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _17 = igmp->igmp_group_address.addr;
+  if (_17 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 12> :
+  _18 = igmp->igmp_maxresp;
+  if (_18 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _19 = lwip_stats.igmp.rx_v1;
+  _20 = _19 + 1;
+  lwip_stats.igmp.rx_v1 = _20;
+  igmp->igmp_maxresp = 10;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  _21 = lwip_stats.igmp.rx_general;
+  _22 = _21 + 1;
+  lwip_stats.igmp.rx_general = _22;
+
+  <bb 15> :
+  groupref = inp->client_data[0];
+  if (groupref != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  groupref = groupref->next;
+
+  <bb 17> :
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  _23 = igmp->igmp_maxresp;
+  igmp_delaying_member (groupref, _23);
+  groupref = groupref->next;
+
+  <bb 19> :
+  if (groupref != 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  goto <bb 30>; [INV]
+
+  <bb 21> :
+  _24 = &igmp->igmp_group_address;
+  if (_24 != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 22> :
+  _25 = igmp->igmp_group_address.addr;
+  if (_25 != 0)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 23> :
+  _26 = dest->addr;
+  _27 = allsystems.addr;
+  if (_26 == _27)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _28 = igmp->igmp_group_address.addr;
+  groupaddr.addr = _28;
+  group = igmp_lookfor_group (inp, &groupaddr);
+  groupaddr = {CLOBBER};
+
+  <bb 25> :
+  if (group != 0B)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  _29 = lwip_stats.igmp.rx_group;
+  _30 = _29 + 1;
+  lwip_stats.igmp.rx_group = _30;
+  _31 = igmp->igmp_maxresp;
+  igmp_delaying_member (group, _31);
+  goto <bb 28>; [INV]
+
+  <bb 27> :
+  _32 = lwip_stats.igmp.drop;
+  _33 = _32 + 1;
+  lwip_stats.igmp.drop = _33;
+
+  <bb 28> :
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  _34 = lwip_stats.igmp.proterr;
+  _35 = _34 + 1;
+  lwip_stats.igmp.proterr = _35;
+
+  <bb 30> :
+  goto <bb 35>; [INV]
+
+  <bb 31> :
+<L30>:
+  _36 = lwip_stats.igmp.rx_report;
+  _37 = _36 + 1;
+  lwip_stats.igmp.rx_report = _37;
+  _38 = group->group_state;
+  if (_38 == 1)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  group->timer = 0;
+  group->group_state = 2;
+  group->last_reporter_flag = 0;
+
+  <bb 33> :
+  goto <bb 35>; [INV]
+
+  <bb 34> :
+<L33>:
+  _39 = lwip_stats.igmp.proterr;
+  _40 = _39 + 1;
+  lwip_stats.igmp.proterr = _40;
+
+  <bb 35> :
+  pbuf_free (p);
+
+  <bb 36> :
+<L35>:
+  return;
+
+}
+
+
+igmp_remove_group (struct netif * netif, struct igmp_group * group)
+{
+  struct igmp_group * tmp_group;
+  err_t err;
+  err_t D.7506;
+
+  <bb 2> :
+  err = 0;
+  tmp_group = netif->client_data[0];
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = tmp_group->next;
+  if (group == _1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = group->next;
+  tmp_group->next = _2;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  tmp_group = tmp_group->next;
+
+  <bb 6> :
+  if (tmp_group != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (tmp_group == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  err = -16;
+
+  <bb 9> :
+  D.7506 = err;
+
+  <bb 10> :
+<L7>:
+  return D.7506;
+
+}
+
+
+igmp_lookup_group (struct netif * ifp, const struct ip4_addr_t * addr)
+{
+  struct igmp_group * list_head;
+  struct igmp_group * group;
+  const long unsigned int iftmp.0;
+  struct igmp_group * D.7487;
+
+  <bb 2> :
+  list_head = ifp->client_data[0];
+  group = igmp_lookfor_group (ifp, addr);
+  if (group != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7487 = group;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 4> :
+  group = memp_malloc (8);
+  if (group != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 5> :
+  if (addr != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.0 = addr->addr;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.0 = 0;
+
+  <bb 8> :
+  group->group_address.addr = iftmp.0;
+  group->timer = 0;
+  group->group_state = 0;
+  group->last_reporter_flag = 0;
+  group->use = 0;
+  if (list_head == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  _1 = addr->addr;
+  _2 = allsystems.addr;
+  if (_1 != _2)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 10>; [INV]
+
+  <bb 11> :
+  group->next = 0B;
+  ifp->client_data[0] = group;
+  goto <bb 15>; [INV]
+
+  <bb 12> :
+  _3 = addr->addr;
+  _4 = allsystems.addr;
+  if (_3 == _4)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 13>; [INV]
+
+  <bb 14> :
+  _5 = list_head->next;
+  group->next = _5;
+  list_head->next = group;
+
+  <bb 15> :
+  D.7487 = group;
+
+  <bb 16> :
+<L16>:
+  return D.7487;
+
+}
+
+
+igmp_lookfor_group (struct netif * ifp, const struct ip4_addr_t * addr)
+{
+  struct igmp_group * group;
+  struct igmp_group * D.7483;
+
+  <bb 2> :
+  group = ifp->client_data[0];
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = group->group_address.addr;
+  _2 = addr->addr;
+  if (_1 == _2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.7483 = group;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  group = group->next;
+
+  <bb 6> :
+  if (group != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  D.7483 = 0B;
+
+  <bb 8> :
+<L5>:
+  return D.7483;
+
+}
+
+
+igmp_report_groups (struct netif * netif)
+{
+  struct igmp_group * group;
+
+  <bb 2> :
+  group = netif->client_data[0];
+  if (group != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  group = group->next;
+
+  <bb 4> :
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  igmp_delaying_member (group, 5);
+  group = group->next;
+
+  <bb 6> :
+  if (group != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+igmp_stop (struct netif * netif)
+{
+  struct igmp_group * next;
+  struct igmp_group * group;
+  err_t D.7477;
+
+  <bb 2> :
+  group = netif->client_data[0];
+  netif->client_data[0] = 0B;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  next = group->next;
+  _1 = netif->igmp_mac_filter;
+  if (_1 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = netif->igmp_mac_filter;
+  _3 = &group->group_address;
+  _2 (netif, _3, 0);
+
+  <bb 5> :
+  memp_free (8, group);
+  group = next;
+
+  <bb 6> :
+  if (group != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  D.7477 = 0;
+
+  <bb 8> :
+<L5>:
+  return D.7477;
+
+}
+
+
+igmp_start (struct netif * netif)
+{
+  struct igmp_group * group;
+  err_t D.7473;
+
+  <bb 2> :
+  group = igmp_lookup_group (netif, &allsystems);
+  if (group != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  group->group_state = 2;
+  _1 = group->use;
+  _2 = _1;
+  _3 = _2 + 1;
+  group->use = _3;
+  _4 = netif->igmp_mac_filter;
+  if (_4 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = netif->igmp_mac_filter;
+  _5 (netif, &allsystems, 1);
+
+  <bb 5> :
+  D.7473 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.7473 = -1;
+
+  <bb 7> :
+<L4>:
+  return D.7473;
+
+}
+
+
+igmp_init ()
+{
+  <bb 2> :
+  allsystems.addr = 16777440;
+  allrouters.addr = 33554656;
+  return;
+
+}
+
+

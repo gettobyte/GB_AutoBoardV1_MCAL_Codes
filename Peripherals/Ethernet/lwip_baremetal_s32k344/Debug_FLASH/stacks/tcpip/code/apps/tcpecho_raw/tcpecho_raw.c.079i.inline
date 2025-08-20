@@ -1,0 +1,807 @@
+IPA summary for tcpecho_raw_init/10 is missing.
+IPA summary for tcpecho_raw_accept/9 is missing.
+IPA summary for tcpecho_raw_recv/8 is missing.
+IPA summary for tcpecho_raw_sent/7 is missing.
+IPA summary for tcpecho_raw_poll/6 is missing.
+IPA summary for tcpecho_raw_error/5 is missing.
+IPA summary for tcpecho_raw_send/4 is missing.
+IPA summary for tcpecho_raw_close/3 is missing.
+IPA summary for tcpecho_raw_free/2 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function not considered for inlining              :       10 calls, 10.000000 freq, 0 count
+function body not available                       :       29 calls, 29.000000 freq, 0 count
+IPA summary for tcpecho_raw_init/10 is missing.
+IPA summary for tcpecho_raw_accept/9 is missing.
+IPA summary for tcpecho_raw_recv/8 is missing.
+IPA summary for tcpecho_raw_sent/7 is missing.
+IPA summary for tcpecho_raw_poll/6 is missing.
+IPA summary for tcpecho_raw_error/5 is missing.
+IPA summary for tcpecho_raw_send/4 is missing.
+IPA summary for tcpecho_raw_close/3 is missing.
+IPA summary for tcpecho_raw_free/2 is missing.
+Symbol table:
+
+tcp_accept/30 (tcp_accept) @06ca6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_listen_with_backlog/29 (tcp_listen_with_backlog) @06ca6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+ip_addr_any_type/28 (ip_addr_any_type) @06ca5630
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/27 (tcp_bind) @06ca6380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_new_ip_type/26 (tcp_new_ip_type) @06ca62a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+mem_malloc/25 (mem_malloc) @06ca60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+tcp_setprio/24 (tcp_setprio) @06ca6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+pbuf_cat/23 (pbuf_cat) @06c58e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_recv/8 
+  Calls: 
+tcp_abort/22 (tcp_abort) @06c58a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_poll/6 
+  Calls: 
+tcp_recved/21 (tcp_recved) @06c587e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_send/4 
+  Calls: 
+pbuf_ref/20 (pbuf_ref) @06c58700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_write/19 (tcp_write) @06c58620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_close/18 (tcp_close) @06c58460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 
+  Calls: 
+tcp_poll/17 (tcp_poll) @06c58380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+tcp_err/16 (tcp_err) @06c582a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+tcp_recv/15 (tcp_recv) @06c581c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+tcp_sent/14 (tcp_sent) @06c580e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_sent/7 tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+tcp_arg/13 (tcp_arg) @06c58000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+mem_free/12 (mem_free) @06c4dee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_free/2 
+  Calls: 
+pbuf_free/11 (pbuf_free) @06c4de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_send/4 tcpecho_raw_free/2 
+  Calls: 
+tcpecho_raw_init/10 (tcpecho_raw_init) @06c4d9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (read) ip_addr_any_type/28 (addr) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_accept/9 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_accept/30 tcp_listen_with_backlog/29 tcp_bind/27 tcp_new_ip_type/26 
+tcpecho_raw_accept/9 (tcpecho_raw_accept) @06c4d700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: tcpecho_raw_recv/8 (addr) tcpecho_raw_error/5 (addr) tcpecho_raw_poll/6 (addr) tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/14 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_arg/13 mem_malloc/25 tcp_setprio/24 
+tcpecho_raw_recv/8 (tcpecho_raw_recv) @06c4d460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/11 tcp_recved/21 pbuf_cat/23 tcpecho_raw_send/4 tcpecho_raw_send/4 pbuf_free/11 tcpecho_raw_send/4 tcpecho_raw_close/3 
+tcpecho_raw_sent/7 (tcpecho_raw_sent) @06c4d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_accept/9 (addr) tcpecho_raw_sent/7 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_close/3 tcpecho_raw_send/4 tcp_sent/14 
+tcpecho_raw_poll/6 (tcpecho_raw_poll) @06c45ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/22 tcpecho_raw_close/3 tcpecho_raw_send/4 
+tcpecho_raw_error/5 (tcpecho_raw_error) @06c45c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_free/2 
+tcpecho_raw_send/4 (tcpecho_raw_send) @06c459a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_recved/21 pbuf_free/11 pbuf_ref/20 tcp_write/19 
+tcpecho_raw_close/3 (tcpecho_raw_close) @06c45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_close/18 tcpecho_raw_free/2 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_sent/14 tcp_arg/13 
+tcpecho_raw_free/2 (tcpecho_raw_free) @06c45460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcpecho_raw_close/3 tcpecho_raw_error/5 
+  Calls: mem_free/12 pbuf_free/11 
+tcpecho_raw_pcb/1 (tcpecho_raw_pcb) @06c3f6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) 
+  Availability: available
+  Varpool flags:
+
+;; Function tcpecho_raw_free (tcpecho_raw_free, funcdef_no=1, decl_uid=7441, cgraph_uid=2, symbol_order=2)
+
+tcpecho_raw_free (struct tcpecho_raw_state * es)
+{
+  struct pbuf * _1;
+  struct pbuf * _2;
+
+  <bb 2> :
+  if (es_5(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = es_5(D)->p;
+  if (_1 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = es_5(D)->p;
+  pbuf_free (_2);
+
+  <bb 5> :
+  mem_free (es_5(D));
+
+  <bb 6> :
+  return;
+
+}
+
+
+
+;; Function tcpecho_raw_close (tcpecho_raw_close, funcdef_no=2, decl_uid=7445, cgraph_uid=3, symbol_order=3)
+
+tcpecho_raw_close (struct tcp_pcb * tpcb, struct tcpecho_raw_state * es)
+{
+  <bb 2> :
+  tcp_arg (tpcb_2(D), 0B);
+  tcp_sent (tpcb_2(D), 0B);
+  tcp_recv (tpcb_2(D), 0B);
+  tcp_err (tpcb_2(D), 0B);
+  tcp_poll (tpcb_2(D), 0B, 0);
+  tcpecho_raw_free (es_8(D));
+  tcp_close (tpcb_2(D));
+  return;
+
+}
+
+
+
+;; Function tcpecho_raw_send (tcpecho_raw_send, funcdef_no=3, decl_uid=7449, cgraph_uid=4, symbol_order=4)
+
+tcpecho_raw_send (struct tcp_pcb * tpcb, struct tcpecho_raw_state * es)
+{
+  u16_t plen;
+  err_t wr_err;
+  struct pbuf * ptr;
+  void * _1;
+  short unsigned int _2;
+  struct pbuf * _3;
+  struct pbuf * _4;
+  struct pbuf * _5;
+  struct pbuf * _6;
+  struct pbuf * _7;
+  short unsigned int _8;
+  short unsigned int _9;
+
+  <bb 2> :
+  wr_err_13 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 3> :
+  ptr_17 = es_15(D)->p;
+  _1 = ptr_17->payload;
+  _2 = ptr_17->len;
+  wr_err_19 = tcp_write (tpcb_16(D), _1, _2, 1);
+  if (wr_err_19 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  plen_21 = ptr_17->len;
+  _3 = ptr_17->next;
+  es_15(D)->p = _3;
+  _4 = es_15(D)->p;
+  if (_4 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _5 = es_15(D)->p;
+  pbuf_ref (_5);
+
+  <bb 6> :
+  pbuf_free (ptr_17);
+  tcp_recved (tpcb_16(D), plen_21);
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (wr_err_19 == -1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  es_15(D)->p = ptr_17;
+
+  <bb 9> :
+  # wr_err_10 = PHI <wr_err_13(2), wr_err_19(6), wr_err_19(7), wr_err_19(8)>
+  if (wr_err_10 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  _6 = es_15(D)->p;
+  if (_6 != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _7 = es_15(D)->p;
+  _8 = _7->len;
+  _9 = tpcb_16(D)->snd_buf;
+  if (_8 <= _9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  return;
+
+}
+
+
+
+;; Function tcpecho_raw_error (tcpecho_raw_error, funcdef_no=4, decl_uid=7459, cgraph_uid=5, symbol_order=5)
+
+tcpecho_raw_error (void * arg, err_t err)
+{
+  struct tcpecho_raw_state * es;
+
+  <bb 2> :
+  es_2 = arg_1(D);
+  tcpecho_raw_free (es_2);
+  return;
+
+}
+
+
+
+;; Function tcpecho_raw_poll (tcpecho_raw_poll, funcdef_no=5, decl_uid=7464, cgraph_uid=6, symbol_order=6)
+
+tcpecho_raw_poll (void * arg, struct tcp_pcb * tpcb)
+{
+  struct tcpecho_raw_state * es;
+  err_t ret_err;
+  err_t D.7521;
+  struct pbuf * _1;
+  unsigned char _2;
+  err_t _15;
+
+  <bb 2> :
+  es_7 = arg_6(D);
+  if (es_7 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  _1 = es_7->p;
+  if (_1 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  tcpecho_raw_send (tpcb_9(D), es_7);
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  _2 = es_7->state;
+  if (_2 == 3)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  tcpecho_raw_close (tpcb_9(D), es_7);
+
+  <bb 7> :
+  ret_err_14 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  tcp_abort (tpcb_9(D));
+  ret_err_11 = -13;
+
+  <bb 9> :
+  # ret_err_3 = PHI <ret_err_14(7), ret_err_11(8)>
+  _15 = ret_err_3;
+
+  <bb 10> :
+<L8>:
+  return _15;
+
+}
+
+
+
+;; Function tcpecho_raw_sent (tcpecho_raw_sent, funcdef_no=6, decl_uid=7471, cgraph_uid=7, symbol_order=7)
+
+tcpecho_raw_sent (void * arg, struct tcp_pcb * tpcb, u16_t len)
+{
+  struct tcpecho_raw_state * es;
+  err_t D.7528;
+  struct pbuf * _1;
+  unsigned char _2;
+  err_t _12;
+
+  <bb 2> :
+  es_5 = arg_4(D);
+  es_5->retries = 0;
+  _1 = es_5->p;
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  tcp_sent (tpcb_8(D), tcpecho_raw_sent);
+  tcpecho_raw_send (tpcb_8(D), es_5);
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+  _2 = es_5->state;
+  if (_2 == 3)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  tcpecho_raw_close (tpcb_8(D), es_5);
+
+  <bb 6> :
+  _12 = 0;
+
+  <bb 7> :
+<L5>:
+  return _12;
+
+}
+
+
+
+;; Function tcpecho_raw_recv (tcpecho_raw_recv, funcdef_no=7, decl_uid=7478, cgraph_uid=8, symbol_order=8)
+
+tcpecho_raw_recv (void * arg, struct tcp_pcb * tpcb, struct pbuf * p, err_t err)
+{
+  struct pbuf * ptr;
+  err_t ret_err;
+  struct tcpecho_raw_state * es;
+  err_t D.7552;
+  struct pbuf * _1;
+  unsigned char _2;
+  unsigned char _3;
+  struct pbuf * _4;
+  short unsigned int _5;
+  err_t _36;
+
+  <bb 2> :
+  if (arg_12(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  es_14 = arg_12(D);
+  if (p_15(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  es_14->state = 3;
+  _1 = es_14->p;
+  if (_1 == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  tcpecho_raw_close (tpcb_17(D), es_14);
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  tcpecho_raw_send (tpcb_17(D), es_14);
+
+  <bb 8> :
+  ret_err_35 = 0;
+  goto <bb 21>; [INV]
+
+  <bb 9> :
+  if (err_16(D) != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  if (p_15(D) != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  pbuf_free (p_15(D));
+
+  <bb 12> :
+  ret_err_31 = err_16(D);
+  goto <bb 21>; [INV]
+
+  <bb 13> :
+  _2 = es_14->state;
+  if (_2 == 1)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  es_14->state = 2;
+  es_14->p = p_15(D);
+  tcpecho_raw_send (tpcb_17(D), es_14);
+  ret_err_29 = 0;
+  goto <bb 21>; [INV]
+
+  <bb 15> :
+  _3 = es_14->state;
+  if (_3 == 2)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 16> :
+  _4 = es_14->p;
+  if (_4 == 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  es_14->p = p_15(D);
+  tcpecho_raw_send (tpcb_17(D), es_14);
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  ptr_21 = es_14->p;
+  pbuf_cat (ptr_21, p_15(D));
+
+  <bb 19> :
+  ret_err_25 = 0;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  _5 = p_15(D)->tot_len;
+  tcp_recved (tpcb_17(D), _5);
+  pbuf_free (p_15(D));
+  ret_err_20 = 0;
+
+  <bb 21> :
+  # ret_err_6 = PHI <ret_err_35(8), ret_err_31(12), ret_err_29(14), ret_err_25(19), ret_err_20(20)>
+  _36 = ret_err_6;
+
+  <bb 22> :
+<L23>:
+  return _36;
+
+}
+
+
+
+;; Function tcpecho_raw_accept (tcpecho_raw_accept, funcdef_no=8, decl_uid=7487, cgraph_uid=9, symbol_order=9)
+
+tcpecho_raw_accept (void * arg, struct tcp_pcb * newpcb, err_t err)
+{
+  struct tcpecho_raw_state * es;
+  err_t ret_err;
+  err_t D.7557;
+  err_t _2;
+  err_t _22;
+  err_t _23;
+
+  <bb 2> :
+  if (err_5(D) != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (newpcb_6(D) == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _23 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  tcp_setprio (newpcb_6(D), 1);
+  es_10 = mem_malloc (12);
+  if (es_10 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  es_10->state = 1;
+  es_10->pcb = newpcb_6(D);
+  es_10->retries = 0;
+  es_10->p = 0B;
+  tcp_arg (newpcb_6(D), es_10);
+  tcp_recv (newpcb_6(D), tcpecho_raw_recv);
+  tcp_err (newpcb_6(D), tcpecho_raw_error);
+  tcp_poll (newpcb_6(D), tcpecho_raw_poll, 0);
+  tcp_sent (newpcb_6(D), tcpecho_raw_sent);
+  ret_err_21 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  ret_err_11 = -1;
+
+  <bb 8> :
+  # ret_err_1 = PHI <ret_err_21(6), ret_err_11(7)>
+  _22 = ret_err_1;
+
+  <bb 9> :
+  # _2 = PHI <_23(4), _22(8)>
+<L6>:
+  return _2;
+
+}
+
+
+
+;; Function tcpecho_raw_init (tcpecho_raw_init, funcdef_no=9, decl_uid=7428, cgraph_uid=10, symbol_order=10)
+
+tcpecho_raw_init ()
+{
+  err_t err;
+  struct tcp_pcb * _1;
+  struct tcp_pcb * tcpecho_raw_pcb.0_2;
+  struct tcp_pcb * tcpecho_raw_pcb.1_3;
+  struct tcp_pcb * tcpecho_raw_pcb.2_4;
+  struct tcp_pcb * _5;
+  struct tcp_pcb * tcpecho_raw_pcb.3_6;
+
+  <bb 2> :
+  _1 = tcp_new_ip_type (46);
+  tcpecho_raw_pcb = _1;
+  tcpecho_raw_pcb.0_2 = tcpecho_raw_pcb;
+  if (tcpecho_raw_pcb.0_2 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  tcpecho_raw_pcb.1_3 = tcpecho_raw_pcb;
+  err_12 = tcp_bind (tcpecho_raw_pcb.1_3, &ip_addr_any_type, 7);
+  if (err_12 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  tcpecho_raw_pcb.2_4 = tcpecho_raw_pcb;
+  _5 = tcp_listen_with_backlog (tcpecho_raw_pcb.2_4, 255);
+  tcpecho_raw_pcb = _5;
+  tcpecho_raw_pcb.3_6 = tcpecho_raw_pcb;
+  tcp_accept (tcpecho_raw_pcb.3_6, tcpecho_raw_accept);
+
+  <bb 5> :
+  return;
+
+}
+
+

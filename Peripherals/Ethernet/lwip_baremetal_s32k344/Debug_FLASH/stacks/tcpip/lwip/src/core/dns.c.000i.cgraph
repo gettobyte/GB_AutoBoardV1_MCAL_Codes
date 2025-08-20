@@ -1,0 +1,2559 @@
+Trivially needed symbols: dns_gethostbyname_addrtype/28 dns_gethostbyname/27 dns_enqueue/26 dns_recv/25 dns_correct_response/24 dns_check_entries/23 dns_check_entry/22 dns_backupserver_available/21 dns_create_txid/20 dns_call_found/19 dns_alloc_pcb/18 dns_alloc_random_port/17 dns_send/16 dns_skip_name/15 dns_compare_name/14 dns_lookup/13 dns_tmr/12 dns_getserver/11 dns_setserver/10 dns_init/9 dns_mquery_v6group/8 dns_mquery_v4group/7 dns_servers/6 dns_requests/5 dns_table/4 dns_seqno/3 dns_last_pcb_idx/2 dns_pcbs/1
+
+
+Initial Symbol table:
+
+ipaddr_aton/51 (ipaddr_aton) @06d53700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: 
+memcpy/50 (memcpy) @06d532a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_enqueue/26 
+  Calls: 
+lwip_htonl/49 (lwip_htonl) @06d0bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: 
+pbuf_copy_partial/48 (pbuf_copy_partial) @06d0b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 
+  Calls: 
+udp_recv/47 (udp_recv) @06d0b1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+udp_remove/46 (udp_remove) @06d0b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_call_found/19 dns_alloc_random_port/17 
+  Calls: 
+ip_addr_any_type/45 (ip_addr_any_type) @06d09a68
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+udp_bind/44 (udp_bind) @06d0b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+rand/43 (rand) @06cfd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_create_txid/20 dns_alloc_random_port/17 
+  Calls: 
+udp_new_ip_type/42 (udp_new_ip_type) @06cfdee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+pbuf_free/41 (pbuf_free) @06cfdd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 dns_send/16 
+  Calls: 
+udp_sendto/40 (udp_sendto) @06cfdc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_take_at/39 (pbuf_take_at) @06cfdb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_put_at/38 (pbuf_put_at) @06cfda80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_take/37 (pbuf_take) @06cfd9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+lwip_htons/36 (lwip_htons) @06cfd8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 
+  Calls: 
+memset/35 (memset) @06cfd7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_alloc/34 (pbuf_alloc) @06cfd700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+strlen/33 (strlen) @06cfd620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 dns_send/16 
+  Calls: 
+_ctype_/32 (_ctype_) @06cfe120
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_compare_name/14 (addr) dns_compare_name/14 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_try_get_at/31 (pbuf_try_get_at) @06cfd0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_skip_name/15 dns_skip_name/15 dns_compare_name/14 dns_compare_name/14 dns_compare_name/14 
+  Calls: 
+lwip_strnicmp/30 (lwip_strnicmp) @06cebd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_enqueue/26 dns_lookup/13 
+  Calls: 
+ip_addr_any/29 (ip_addr_any) @06cd2a20
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_setserver/10 (read) dns_getserver/11 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+dns_gethostbyname_addrtype/28 (dns_gethostbyname_addrtype) @06ceb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname/27 
+  Calls: dns_enqueue/26 dns_lookup/13 dns_lookup/13 ipaddr_aton/51 strlen/33 
+dns_gethostbyname/27 (dns_gethostbyname) @06cccee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ceb380
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: dns_gethostbyname_addrtype/28 
+dns_enqueue/26 (dns_enqueue) @06cccc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cccee0
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_requests/5 (read) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_table/4 (addr) dns_seqno/3 (read) dns_table/4 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (addr) dns_seqno/3 (read) dns_seqno/3 (read) dns_seqno/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: dns_check_entry/22 dns_alloc_pcb/18 memcpy/50 lwip_strnicmp/30 
+dns_recv/25 (dns_recv) @06ccc700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06cccc40
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/41 dns_call_found/19 pbuf_free/41 dns_check_entry/22 pbuf_free/41 lwip_htons/36 lwip_htons/36 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 pbuf_copy_partial/48 dns_skip_name/15 dns_check_entry/22 dns_backupserver_available/21 pbuf_copy_partial/48 dns_compare_name/14 lwip_htons/36 lwip_htons/36 lwip_htons/36 pbuf_copy_partial/48 
+dns_correct_response/24 (dns_correct_response) @06c938c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ccc700
+  References: dns_table/4 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: dns_call_found/19 
+dns_check_entries/23 (dns_check_entries) @06c93460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c938c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: dns_tmr/12 
+  Calls: dns_check_entry/22 
+dns_check_entry/22 (dns_check_entry) @06c931c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c93460
+  References: dns_table/4 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_enqueue/26 dns_recv/25 dns_recv/25 dns_check_entries/23 
+  Calls: dns_send/16 dns_call_found/19 dns_backupserver_available/21 dns_send/16 dns_create_txid/20 
+dns_backupserver_available/21 (dns_backupserver_available) @06c88ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c931c0
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_check_entry/22 
+  Calls: 
+dns_create_txid/20 (dns_create_txid) @06c888c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c88ee0
+  References: dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_check_entry/22 
+  Calls: rand/43 
+dns_call_found/19 (dns_call_found) @06c88620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c888c0
+  References: dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_requests/5 (read) dns_requests/5 (read) dns_requests/5 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_pcbs/1 (read) dns_table/4 (read) dns_pcbs/1 (write) dns_table/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_correct_response/24 dns_check_entry/22 dns_send/16 
+  Calls: udp_remove/46 
+   Indirect call Num speculative call targets: 0
+dns_alloc_pcb/18 (dns_alloc_pcb) @06c88380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c88620
+  References: dns_pcbs/1 (read) dns_pcbs/1 (write) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) dns_last_pcb_idx/2 (read) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_enqueue/26 
+  Calls: dns_alloc_random_port/17 
+dns_alloc_random_port/17 (dns_alloc_random_port) @06c880e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c88380
+  References: ip_addr_any_type/45 (addr) dns_recv/25 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_alloc_pcb/18 
+  Calls: udp_recv/47 udp_remove/46 udp_bind/44 rand/43 udp_new_ip_type/42 
+dns_send/16 (dns_send) @06c6fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c880e0
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (addr) dns_pcbs/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_check_entry/22 dns_check_entry/22 
+  Calls: pbuf_free/41 pbuf_free/41 udp_sendto/40 pbuf_take_at/39 pbuf_put_at/38 pbuf_take_at/39 pbuf_put_at/38 pbuf_take/37 lwip_htons/36 memset/35 pbuf_alloc/34 strlen/33 dns_call_found/19 
+dns_skip_name/15 (dns_skip_name) @06c6f8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c6fe00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_compare_name/14 (dns_compare_name) @06c6f620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c6f8c0
+  References: _ctype_/32 (addr) _ctype_/32 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_lookup/13 (dns_lookup) @06c6f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c6f620
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 dns_gethostbyname_addrtype/28 
+  Calls: lwip_strnicmp/30 
+dns_tmr/12 (dns_tmr) @06c5f460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c6f000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: dns_check_entries/23 
+dns_getserver/11 (dns_getserver) @06c5f1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c5f460
+  References: dns_servers/6 (addr) ip_addr_any/29 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_setserver/10 (dns_setserver) @06c18ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c5f1c0
+  References: dns_servers/6 (write) dns_servers/6 (write) ip_addr_any/29 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_init/9 (dns_init) @06c18e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c18ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_mquery_v6group/8 (dns_mquery_v6group) @06c13c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c18e00
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+dns_mquery_v4group/7 (dns_mquery_v4group) @06a23ca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c13c18
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+dns_servers/6 (dns_servers) @06c13bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06a23ca8
+  References: 
+  Referring: dns_setserver/10 (write) dns_setserver/10 (write) dns_getserver/11 (addr) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (addr) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+dns_requests/5 (dns_requests) @06c13b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c13bd0
+  References: 
+  Referring: dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_enqueue/26 (read) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: not-ready
+  Varpool flags:
+dns_table/4 (dns_table) @06c13ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c13b40
+  References: 
+  Referring: dns_lookup/13 (read) dns_lookup/13 (addr) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_send/16 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_create_txid/20 (read) dns_create_txid/20 (read) dns_check_entry/22 (addr) dns_correct_response/24 (addr) dns_recv/25 (addr) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: not-ready
+  Varpool flags:
+dns_seqno/3 (dns_seqno) @06c13a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c13ab0
+  References: 
+  Referring: dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (write) 
+  Availability: not-ready
+  Varpool flags:
+dns_last_pcb_idx/2 (dns_last_pcb_idx) @06c13990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c13a20
+  References: 
+  Referring: dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) 
+  Availability: not-ready
+  Varpool flags:
+dns_pcbs/1 (dns_pcbs) @06c13900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c13990
+  References: 
+  Referring: dns_send/16 (read) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (read) dns_call_found/19 (read) dns_call_found/19 (write) 
+  Availability: not-ready
+  Varpool flags:
+DevAssert/0 (DevAssert) @06a752a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+ipaddr_aton/51 (ipaddr_aton) @06d53700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: 
+memcpy/50 (memcpy) @06d532a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_enqueue/26 
+  Calls: 
+lwip_htonl/49 (lwip_htonl) @06d0bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: 
+pbuf_copy_partial/48 (pbuf_copy_partial) @06d0b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 
+  Calls: 
+udp_recv/47 (udp_recv) @06d0b1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+udp_remove/46 (udp_remove) @06d0b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_call_found/19 dns_alloc_random_port/17 
+  Calls: 
+ip_addr_any_type/45 (ip_addr_any_type) @06d09a68
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+udp_bind/44 (udp_bind) @06d0b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+rand/43 (rand) @06cfd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_create_txid/20 dns_alloc_random_port/17 
+  Calls: 
+udp_new_ip_type/42 (udp_new_ip_type) @06cfdee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+pbuf_free/41 (pbuf_free) @06cfdd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 dns_send/16 
+  Calls: 
+udp_sendto/40 (udp_sendto) @06cfdc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_take_at/39 (pbuf_take_at) @06cfdb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_put_at/38 (pbuf_put_at) @06cfda80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_take/37 (pbuf_take) @06cfd9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+lwip_htons/36 (lwip_htons) @06cfd8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 
+  Calls: 
+memset/35 (memset) @06cfd7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_alloc/34 (pbuf_alloc) @06cfd700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+strlen/33 (strlen) @06cfd620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 dns_send/16 
+  Calls: 
+_ctype_/32 (_ctype_) @06cfe120
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_compare_name/14 (addr) dns_compare_name/14 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_try_get_at/31 (pbuf_try_get_at) @06cfd0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_skip_name/15 dns_skip_name/15 dns_compare_name/14 dns_compare_name/14 dns_compare_name/14 
+  Calls: 
+lwip_strnicmp/30 (lwip_strnicmp) @06cebd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_enqueue/26 dns_lookup/13 
+  Calls: 
+ip_addr_any/29 (ip_addr_any) @06cd2a20
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_setserver/10 (read) dns_getserver/11 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+dns_gethostbyname_addrtype/28 (dns_gethostbyname_addrtype) @06ceb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname/27 
+  Calls: dns_enqueue/26 dns_lookup/13 dns_lookup/13 ipaddr_aton/51 strlen/33 
+dns_gethostbyname/27 (dns_gethostbyname) @06cccee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: dns_gethostbyname_addrtype/28 
+dns_enqueue/26 (dns_enqueue) @06cccc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_requests/5 (read) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_table/4 (addr) dns_seqno/3 (read) dns_table/4 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (addr) dns_seqno/3 (read) dns_seqno/3 (read) dns_seqno/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: dns_check_entry/22 dns_alloc_pcb/18 memcpy/50 lwip_strnicmp/30 
+dns_recv/25 (dns_recv) @06ccc700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/41 dns_call_found/19 pbuf_free/41 dns_check_entry/22 pbuf_free/41 lwip_htons/36 lwip_htons/36 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 pbuf_copy_partial/48 dns_skip_name/15 dns_check_entry/22 dns_backupserver_available/21 pbuf_copy_partial/48 dns_compare_name/14 lwip_htons/36 lwip_htons/36 lwip_htons/36 pbuf_copy_partial/48 
+dns_correct_response/24 (dns_correct_response) @06c938c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: dns_call_found/19 
+dns_check_entries/23 (dns_check_entries) @06c93460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: dns_tmr/12 
+  Calls: dns_check_entry/22 
+dns_check_entry/22 (dns_check_entry) @06c931c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_enqueue/26 dns_recv/25 dns_recv/25 dns_check_entries/23 
+  Calls: dns_send/16 dns_call_found/19 dns_backupserver_available/21 dns_send/16 dns_create_txid/20 
+dns_backupserver_available/21 (dns_backupserver_available) @06c88ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_check_entry/22 
+  Calls: 
+dns_create_txid/20 (dns_create_txid) @06c888c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_check_entry/22 
+  Calls: rand/43 
+dns_call_found/19 (dns_call_found) @06c88620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_requests/5 (read) dns_requests/5 (read) dns_requests/5 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_pcbs/1 (read) dns_table/4 (read) dns_pcbs/1 (write) dns_table/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_correct_response/24 dns_check_entry/22 dns_send/16 
+  Calls: udp_remove/46 
+   Indirect call Num speculative call targets: 0
+dns_alloc_pcb/18 (dns_alloc_pcb) @06c88380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_pcbs/1 (read) dns_pcbs/1 (write) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) dns_last_pcb_idx/2 (read) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_enqueue/26 
+  Calls: dns_alloc_random_port/17 
+dns_alloc_random_port/17 (dns_alloc_random_port) @06c880e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ip_addr_any_type/45 (addr) dns_recv/25 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_alloc_pcb/18 
+  Calls: udp_recv/47 udp_remove/46 udp_bind/44 rand/43 udp_new_ip_type/42 
+dns_send/16 (dns_send) @06c6fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (addr) dns_pcbs/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_check_entry/22 dns_check_entry/22 
+  Calls: pbuf_free/41 pbuf_free/41 udp_sendto/40 pbuf_take_at/39 pbuf_put_at/38 pbuf_take_at/39 pbuf_put_at/38 pbuf_take/37 lwip_htons/36 memset/35 pbuf_alloc/34 strlen/33 dns_call_found/19 
+dns_skip_name/15 (dns_skip_name) @06c6f8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_compare_name/14 (dns_compare_name) @06c6f620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _ctype_/32 (addr) _ctype_/32 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_lookup/13 (dns_lookup) @06c6f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 dns_gethostbyname_addrtype/28 
+  Calls: lwip_strnicmp/30 
+dns_tmr/12 (dns_tmr) @06c5f460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: dns_check_entries/23 
+dns_getserver/11 (dns_getserver) @06c5f1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (addr) ip_addr_any/29 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_setserver/10 (dns_setserver) @06c18ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (write) dns_servers/6 (write) ip_addr_any/29 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_init/9 (dns_init) @06c18e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_mquery_v6group/8 (dns_mquery_v6group) @06c13c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+dns_mquery_v4group/7 (dns_mquery_v4group) @06a23ca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+dns_servers/6 (dns_servers) @06c13bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_setserver/10 (write) dns_setserver/10 (write) dns_getserver/11 (addr) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (addr) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+dns_requests/5 (dns_requests) @06c13b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_enqueue/26 (read) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: not-ready
+  Varpool flags:
+dns_table/4 (dns_table) @06c13ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_lookup/13 (read) dns_lookup/13 (addr) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_send/16 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_create_txid/20 (read) dns_create_txid/20 (read) dns_check_entry/22 (addr) dns_correct_response/24 (addr) dns_recv/25 (addr) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: not-ready
+  Varpool flags:
+dns_seqno/3 (dns_seqno) @06c13a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (write) 
+  Availability: not-ready
+  Varpool flags:
+dns_last_pcb_idx/2 (dns_last_pcb_idx) @06c13990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) 
+  Availability: not-ready
+  Varpool flags:
+dns_pcbs/1 (dns_pcbs) @06c13900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_send/16 (read) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (read) dns_call_found/19 (read) dns_call_found/19 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+ipaddr_aton/51 (ipaddr_aton) @06d53700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: 
+memcpy/50 (memcpy) @06d532a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_enqueue/26 
+  Calls: 
+lwip_htonl/49 (lwip_htonl) @06d0bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: 
+pbuf_copy_partial/48 (pbuf_copy_partial) @06d0b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 
+  Calls: 
+udp_recv/47 (udp_recv) @06d0b1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+udp_remove/46 (udp_remove) @06d0b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_call_found/19 dns_alloc_random_port/17 
+  Calls: 
+ip_addr_any_type/45 (ip_addr_any_type) @06d09a68
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+udp_bind/44 (udp_bind) @06d0b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+rand/43 (rand) @06cfd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_create_txid/20 dns_alloc_random_port/17 
+  Calls: 
+udp_new_ip_type/42 (udp_new_ip_type) @06cfdee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+pbuf_free/41 (pbuf_free) @06cfdd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 dns_send/16 
+  Calls: 
+udp_sendto/40 (udp_sendto) @06cfdc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_take_at/39 (pbuf_take_at) @06cfdb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_put_at/38 (pbuf_put_at) @06cfda80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_take/37 (pbuf_take) @06cfd9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+lwip_htons/36 (lwip_htons) @06cfd8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 
+  Calls: 
+memset/35 (memset) @06cfd7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_alloc/34 (pbuf_alloc) @06cfd700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+strlen/33 (strlen) @06cfd620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 dns_send/16 
+  Calls: 
+_ctype_/32 (_ctype_) @06cfe120
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_compare_name/14 (addr) dns_compare_name/14 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_try_get_at/31 (pbuf_try_get_at) @06cfd0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_skip_name/15 dns_skip_name/15 dns_compare_name/14 dns_compare_name/14 dns_compare_name/14 
+  Calls: 
+lwip_strnicmp/30 (lwip_strnicmp) @06cebd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_enqueue/26 dns_lookup/13 
+  Calls: 
+ip_addr_any/29 (ip_addr_any) @06cd2a20
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_setserver/10 (read) dns_getserver/11 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+dns_gethostbyname_addrtype/28 (dns_gethostbyname_addrtype) @06ceb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname/27 
+  Calls: dns_enqueue/26 dns_lookup/13 dns_lookup/13 ipaddr_aton/51 strlen/33 
+dns_gethostbyname/27 (dns_gethostbyname) @06cccee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: dns_gethostbyname_addrtype/28 
+dns_enqueue/26 (dns_enqueue) @06cccc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_requests/5 (read) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_table/4 (addr) dns_seqno/3 (read) dns_table/4 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (addr) dns_seqno/3 (read) dns_seqno/3 (read) dns_seqno/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: dns_check_entry/22 dns_alloc_pcb/18 memcpy/50 lwip_strnicmp/30 
+dns_recv/25 (dns_recv) @06ccc700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/41 dns_call_found/19 pbuf_free/41 dns_check_entry/22 pbuf_free/41 lwip_htons/36 lwip_htons/36 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 pbuf_copy_partial/48 dns_skip_name/15 dns_check_entry/22 dns_backupserver_available/21 pbuf_copy_partial/48 dns_compare_name/14 lwip_htons/36 lwip_htons/36 lwip_htons/36 pbuf_copy_partial/48 
+dns_correct_response/24 (dns_correct_response) @06c938c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: dns_call_found/19 
+dns_check_entries/23 (dns_check_entries) @06c93460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: dns_tmr/12 
+  Calls: dns_check_entry/22 
+dns_check_entry/22 (dns_check_entry) @06c931c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_enqueue/26 dns_recv/25 dns_recv/25 dns_check_entries/23 
+  Calls: dns_send/16 dns_call_found/19 dns_backupserver_available/21 dns_send/16 dns_create_txid/20 
+dns_backupserver_available/21 (dns_backupserver_available) @06c88ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_check_entry/22 
+  Calls: 
+dns_create_txid/20 (dns_create_txid) @06c888c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_check_entry/22 
+  Calls: rand/43 
+dns_call_found/19 (dns_call_found) @06c88620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_requests/5 (read) dns_requests/5 (read) dns_requests/5 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_pcbs/1 (read) dns_table/4 (read) dns_pcbs/1 (write) dns_table/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_correct_response/24 dns_check_entry/22 dns_send/16 
+  Calls: udp_remove/46 
+   Indirect call Num speculative call targets: 0
+dns_alloc_pcb/18 (dns_alloc_pcb) @06c88380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_pcbs/1 (read) dns_pcbs/1 (write) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) dns_last_pcb_idx/2 (read) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_enqueue/26 
+  Calls: dns_alloc_random_port/17 
+dns_alloc_random_port/17 (dns_alloc_random_port) @06c880e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ip_addr_any_type/45 (addr) dns_recv/25 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_alloc_pcb/18 
+  Calls: udp_recv/47 udp_remove/46 udp_bind/44 rand/43 udp_new_ip_type/42 
+dns_send/16 (dns_send) @06c6fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (addr) dns_pcbs/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_check_entry/22 dns_check_entry/22 
+  Calls: pbuf_free/41 pbuf_free/41 udp_sendto/40 pbuf_take_at/39 pbuf_put_at/38 pbuf_take_at/39 pbuf_put_at/38 pbuf_take/37 lwip_htons/36 memset/35 pbuf_alloc/34 strlen/33 dns_call_found/19 
+dns_skip_name/15 (dns_skip_name) @06c6f8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_compare_name/14 (dns_compare_name) @06c6f620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _ctype_/32 (addr) _ctype_/32 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_lookup/13 (dns_lookup) @06c6f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 dns_gethostbyname_addrtype/28 
+  Calls: lwip_strnicmp/30 
+dns_tmr/12 (dns_tmr) @06c5f460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: dns_check_entries/23 
+dns_getserver/11 (dns_getserver) @06c5f1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (addr) ip_addr_any/29 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_setserver/10 (dns_setserver) @06c18ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (write) dns_servers/6 (write) ip_addr_any/29 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_init/9 (dns_init) @06c18e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_mquery_v6group/8 (dns_mquery_v6group) @06c13c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+dns_mquery_v4group/7 (dns_mquery_v4group) @06a23ca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+dns_servers/6 (dns_servers) @06c13bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_setserver/10 (write) dns_setserver/10 (write) dns_getserver/11 (addr) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (addr) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+dns_requests/5 (dns_requests) @06c13b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_enqueue/26 (read) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: not-ready
+  Varpool flags:
+dns_table/4 (dns_table) @06c13ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_lookup/13 (read) dns_lookup/13 (addr) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_send/16 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_create_txid/20 (read) dns_create_txid/20 (read) dns_check_entry/22 (addr) dns_correct_response/24 (addr) dns_recv/25 (addr) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: not-ready
+  Varpool flags:
+dns_seqno/3 (dns_seqno) @06c13a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (write) 
+  Availability: not-ready
+  Varpool flags:
+dns_last_pcb_idx/2 (dns_last_pcb_idx) @06c13990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) 
+  Availability: not-ready
+  Varpool flags:
+dns_pcbs/1 (dns_pcbs) @06c13900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_send/16 (read) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (read) dns_call_found/19 (read) dns_call_found/19 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+ipaddr_aton/51 (ipaddr_aton) @06d53700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: 
+memcpy/50 (memcpy) @06d532a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_enqueue/26 
+  Calls: 
+lwip_htonl/49 (lwip_htonl) @06d0bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: 
+pbuf_copy_partial/48 (pbuf_copy_partial) @06d0b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 
+  Calls: 
+udp_recv/47 (udp_recv) @06d0b1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+udp_remove/46 (udp_remove) @06d0b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_call_found/19 dns_alloc_random_port/17 
+  Calls: 
+ip_addr_any_type/45 (ip_addr_any_type) @06d09a68
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+udp_bind/44 (udp_bind) @06d0b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+rand/43 (rand) @06cfd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_create_txid/20 dns_alloc_random_port/17 
+  Calls: 
+udp_new_ip_type/42 (udp_new_ip_type) @06cfdee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+pbuf_free/41 (pbuf_free) @06cfdd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 dns_send/16 
+  Calls: 
+udp_sendto/40 (udp_sendto) @06cfdc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_take_at/39 (pbuf_take_at) @06cfdb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_put_at/38 (pbuf_put_at) @06cfda80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_take/37 (pbuf_take) @06cfd9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+lwip_htons/36 (lwip_htons) @06cfd8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 
+  Calls: 
+memset/35 (memset) @06cfd7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_alloc/34 (pbuf_alloc) @06cfd700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+strlen/33 (strlen) @06cfd620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 dns_send/16 
+  Calls: 
+_ctype_/32 (_ctype_) @06cfe120
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_compare_name/14 (addr) dns_compare_name/14 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_try_get_at/31 (pbuf_try_get_at) @06cfd0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_skip_name/15 dns_skip_name/15 dns_compare_name/14 dns_compare_name/14 dns_compare_name/14 
+  Calls: 
+lwip_strnicmp/30 (lwip_strnicmp) @06cebd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: dns_enqueue/26 dns_lookup/13 
+  Calls: 
+ip_addr_any/29 (ip_addr_any) @06cd2a20
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: dns_setserver/10 (read) dns_getserver/11 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+dns_gethostbyname_addrtype/28 (dns_gethostbyname_addrtype) @06ceb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname/27 
+  Calls: dns_enqueue/26 dns_lookup/13 dns_lookup/13 ipaddr_aton/51 strlen/33 
+dns_gethostbyname/27 (dns_gethostbyname) @06cccee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: dns_gethostbyname_addrtype/28 
+dns_enqueue/26 (dns_enqueue) @06cccc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_requests/5 (read) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_table/4 (addr) dns_seqno/3 (read) dns_table/4 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (addr) dns_seqno/3 (read) dns_seqno/3 (read) dns_seqno/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: dns_check_entry/22 dns_alloc_pcb/18 memcpy/50 lwip_strnicmp/30 
+dns_recv/25 (dns_recv) @06ccc700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/41 dns_call_found/19 pbuf_free/41 dns_check_entry/22 pbuf_free/41 lwip_htons/36 lwip_htons/36 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 pbuf_copy_partial/48 dns_skip_name/15 dns_check_entry/22 dns_backupserver_available/21 pbuf_copy_partial/48 dns_compare_name/14 lwip_htons/36 lwip_htons/36 lwip_htons/36 pbuf_copy_partial/48 
+dns_correct_response/24 (dns_correct_response) @06c938c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: dns_call_found/19 
+dns_check_entries/23 (dns_check_entries) @06c93460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: dns_tmr/12 
+  Calls: dns_check_entry/22 
+dns_check_entry/22 (dns_check_entry) @06c931c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_enqueue/26 dns_recv/25 dns_recv/25 dns_check_entries/23 
+  Calls: dns_send/16 dns_call_found/19 dns_backupserver_available/21 dns_send/16 dns_create_txid/20 
+dns_backupserver_available/21 (dns_backupserver_available) @06c88ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_check_entry/22 
+  Calls: 
+dns_create_txid/20 (dns_create_txid) @06c888c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_check_entry/22 
+  Calls: rand/43 
+dns_call_found/19 (dns_call_found) @06c88620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_requests/5 (read) dns_requests/5 (read) dns_requests/5 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_pcbs/1 (read) dns_table/4 (read) dns_pcbs/1 (write) dns_table/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 dns_correct_response/24 dns_check_entry/22 dns_send/16 
+  Calls: udp_remove/46 
+   Indirect call Num speculative call targets: 0
+dns_alloc_pcb/18 (dns_alloc_pcb) @06c88380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_pcbs/1 (read) dns_pcbs/1 (write) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) dns_last_pcb_idx/2 (read) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: dns_enqueue/26 
+  Calls: dns_alloc_random_port/17 
+dns_alloc_random_port/17 (dns_alloc_random_port) @06c880e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ip_addr_any_type/45 (addr) dns_recv/25 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_alloc_pcb/18 
+  Calls: udp_recv/47 udp_remove/46 udp_bind/44 rand/43 udp_new_ip_type/42 
+dns_send/16 (dns_send) @06c6fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (addr) dns_pcbs/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_check_entry/22 dns_check_entry/22 
+  Calls: pbuf_free/41 pbuf_free/41 udp_sendto/40 pbuf_take_at/39 pbuf_put_at/38 pbuf_take_at/39 pbuf_put_at/38 pbuf_take/37 lwip_htons/36 memset/35 pbuf_alloc/34 strlen/33 dns_call_found/19 
+dns_skip_name/15 (dns_skip_name) @06c6f8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_compare_name/14 (dns_compare_name) @06c6f620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _ctype_/32 (addr) _ctype_/32 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_lookup/13 (dns_lookup) @06c6f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 dns_gethostbyname_addrtype/28 
+  Calls: lwip_strnicmp/30 
+dns_tmr/12 (dns_tmr) @06c5f460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: dns_check_entries/23 
+dns_getserver/11 (dns_getserver) @06c5f1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (addr) ip_addr_any/29 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_setserver/10 (dns_setserver) @06c18ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: dns_servers/6 (write) dns_servers/6 (write) ip_addr_any/29 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_init/9 (dns_init) @06c18e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_mquery_v6group/8 (dns_mquery_v6group) @06c13c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+dns_mquery_v4group/7 (dns_mquery_v4group) @06a23ca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+dns_servers/6 (dns_servers) @06c13bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_setserver/10 (write) dns_setserver/10 (write) dns_getserver/11 (addr) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (addr) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+dns_requests/5 (dns_requests) @06c13b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_enqueue/26 (read) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: not-ready
+  Varpool flags:
+dns_table/4 (dns_table) @06c13ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_lookup/13 (read) dns_lookup/13 (addr) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_send/16 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_create_txid/20 (read) dns_create_txid/20 (read) dns_check_entry/22 (addr) dns_correct_response/24 (addr) dns_recv/25 (addr) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: not-ready
+  Varpool flags:
+dns_seqno/3 (dns_seqno) @06c13a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (write) 
+  Availability: not-ready
+  Varpool flags:
+dns_last_pcb_idx/2 (dns_last_pcb_idx) @06c13990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) 
+  Availability: not-ready
+  Varpool flags:
+dns_pcbs/1 (dns_pcbs) @06c13900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: dns_send/16 (read) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (read) dns_call_found/19 (read) dns_call_found/19 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+ipaddr_aton/51 (ipaddr_aton) @06d53700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: 
+memcpy/50 (memcpy) @06d532a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_enqueue/26 
+  Calls: 
+lwip_htonl/49 (lwip_htonl) @06d0bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: 
+pbuf_copy_partial/48 (pbuf_copy_partial) @06d0b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 
+  Calls: 
+udp_recv/47 (udp_recv) @06d0b1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+udp_remove/46 (udp_remove) @06d0b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_call_found/19 dns_alloc_random_port/17 
+  Calls: 
+ip_addr_any_type/45 (ip_addr_any_type) @06d09a68
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+udp_bind/44 (udp_bind) @06d0b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+rand/43 (rand) @06cfd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_create_txid/20 dns_alloc_random_port/17 
+  Calls: 
+udp_new_ip_type/42 (udp_new_ip_type) @06cfdee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_alloc_random_port/17 
+  Calls: 
+pbuf_free/41 (pbuf_free) @06cfdd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 dns_send/16 
+  Calls: 
+udp_sendto/40 (udp_sendto) @06cfdc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_take_at/39 (pbuf_take_at) @06cfdb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_put_at/38 (pbuf_put_at) @06cfda80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_send/16 dns_send/16 
+  Calls: 
+pbuf_take/37 (pbuf_take) @06cfd9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+lwip_htons/36 (lwip_htons) @06cfd8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_recv/25 dns_send/16 
+  Calls: 
+memset/35 (memset) @06cfd7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+pbuf_alloc/34 (pbuf_alloc) @06cfd700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_send/16 
+  Calls: 
+strlen/33 (strlen) @06cfd620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_gethostbyname_addrtype/28 dns_send/16 
+  Calls: 
+_ctype_/32 (_ctype_) @06cfe120
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: dns_compare_name/14 (addr) dns_compare_name/14 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+pbuf_try_get_at/31 (pbuf_try_get_at) @06cfd0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_skip_name/15 dns_skip_name/15 dns_compare_name/14 dns_compare_name/14 dns_compare_name/14 
+  Calls: 
+lwip_strnicmp/30 (lwip_strnicmp) @06cebd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: dns_enqueue/26 dns_lookup/13 
+  Calls: 
+ip_addr_any/29 (ip_addr_any) @06cd2a20
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: dns_setserver/10 (read) dns_getserver/11 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+dns_gethostbyname_addrtype/28 (dns_gethostbyname_addrtype) @06ceb380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_gethostbyname/27 
+  Calls: dns_enqueue/26 dns_lookup/13 dns_lookup/13 ipaddr_aton/51 strlen/33 
+dns_gethostbyname/27 (dns_gethostbyname) @06cccee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: dns_gethostbyname_addrtype/28 
+dns_enqueue/26 (dns_enqueue) @06cccc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_requests/5 (read) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_requests/5 (write) dns_table/4 (addr) dns_seqno/3 (read) dns_table/4 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (addr) dns_seqno/3 (read) dns_seqno/3 (read) dns_seqno/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 
+  Calls: dns_check_entry/22 dns_alloc_pcb/18 memcpy/50 lwip_strnicmp/30 
+dns_recv/25 (dns_recv) @06ccc700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) dns_table/4 (write) 
+  Referring: dns_alloc_random_port/17 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/41 dns_call_found/19 pbuf_free/41 dns_check_entry/22 pbuf_free/41 lwip_htons/36 lwip_htons/36 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 dns_correct_response/24 lwip_htonl/49 pbuf_free/41 pbuf_copy_partial/48 pbuf_copy_partial/48 dns_skip_name/15 dns_check_entry/22 dns_backupserver_available/21 pbuf_copy_partial/48 dns_compare_name/14 lwip_htons/36 lwip_htons/36 lwip_htons/36 pbuf_copy_partial/48 
+dns_correct_response/24 (dns_correct_response) @06c938c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_table/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_recv/25 dns_recv/25 
+  Calls: dns_call_found/19 
+dns_check_entries/23 (dns_check_entries) @06c93460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_tmr/12 
+  Calls: dns_check_entry/22 
+dns_check_entry/22 (dns_check_entry) @06c931c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_table/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_enqueue/26 dns_recv/25 dns_recv/25 dns_check_entries/23 
+  Calls: dns_send/16 dns_call_found/19 dns_backupserver_available/21 dns_send/16 dns_create_txid/20 
+dns_backupserver_available/21 (dns_backupserver_available) @06c88ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_recv/25 dns_check_entry/22 
+  Calls: 
+dns_create_txid/20 (dns_create_txid) @06c888c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_check_entry/22 
+  Calls: rand/43 
+dns_call_found/19 (dns_call_found) @06c88620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_requests/5 (read) dns_requests/5 (read) dns_requests/5 (read) dns_table/4 (addr) dns_requests/5 (read) dns_requests/5 (write) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (write) dns_table/4 (read) dns_table/4 (read) dns_pcbs/1 (read) dns_table/4 (read) dns_pcbs/1 (write) dns_table/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_recv/25 dns_correct_response/24 dns_check_entry/22 dns_send/16 
+  Calls: udp_remove/46 
+   Indirect call Num speculative call targets: 0
+dns_alloc_pcb/18 (dns_alloc_pcb) @06c88380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_pcbs/1 (read) dns_pcbs/1 (write) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) dns_last_pcb_idx/2 (read) dns_pcbs/1 (read) dns_last_pcb_idx/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_enqueue/26 
+  Calls: dns_alloc_random_port/17 
+dns_alloc_random_port/17 (dns_alloc_random_port) @06c880e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: ip_addr_any_type/45 (addr) dns_recv/25 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_alloc_pcb/18 
+  Calls: udp_recv/47 udp_remove/46 udp_bind/44 rand/43 udp_new_ip_type/42 
+dns_send/16 (dns_send) @06c6fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_table/4 (addr) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (read) dns_servers/6 (addr) dns_pcbs/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_check_entry/22 dns_check_entry/22 
+  Calls: pbuf_free/41 pbuf_free/41 udp_sendto/40 pbuf_take_at/39 pbuf_put_at/38 pbuf_take_at/39 pbuf_put_at/38 pbuf_take/37 lwip_htons/36 memset/35 pbuf_alloc/34 strlen/33 dns_call_found/19 
+dns_skip_name/15 (dns_skip_name) @06c6f8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_compare_name/14 (dns_compare_name) @06c6f620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: _ctype_/32 (addr) _ctype_/32 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_recv/25 
+  Calls: pbuf_try_get_at/31 pbuf_try_get_at/31 pbuf_try_get_at/31 
+dns_lookup/13 (dns_lookup) @06c6f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: dns_table/4 (read) dns_table/4 (addr) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) dns_table/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: dns_gethostbyname_addrtype/28 dns_gethostbyname_addrtype/28 
+  Calls: lwip_strnicmp/30 
+dns_tmr/12 (dns_tmr) @06c5f460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: dns_check_entries/23 
+dns_getserver/11 (dns_getserver) @06c5f1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: dns_servers/6 (addr) ip_addr_any/29 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_setserver/10 (dns_setserver) @06c18ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: dns_servers/6 (write) dns_servers/6 (write) ip_addr_any/29 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_init/9 (dns_init) @06c18e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+dns_mquery_v6group/8 (dns_mquery_v6group) @06c13c18
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+dns_mquery_v4group/7 (dns_mquery_v4group) @06a23ca8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+dns_servers/6 (dns_servers) @06c13bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_recv/25 (read) dns_send/16 (addr) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_backupserver_available/21 (read) dns_recv/25 (read) dns_setserver/10 (write) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_recv/25 (read) dns_setserver/10 (write) dns_getserver/11 (addr) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_send/16 (read) dns_recv/25 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) dns_gethostbyname_addrtype/28 (read) 
+  Availability: available
+  Varpool flags:
+dns_requests/5 (dns_requests) @06c13b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_enqueue/26 (read) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: available
+  Varpool flags:
+dns_table/4 (dns_table) @06c13ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_call_found/19 (read) dns_check_entry/22 (addr) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (read) dns_call_found/19 (read) dns_create_txid/20 (read) dns_correct_response/24 (addr) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_lookup/13 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_call_found/19 (write) dns_call_found/19 (addr) dns_call_found/19 (read) dns_call_found/19 (read) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_lookup/13 (read) dns_call_found/19 (write) dns_send/16 (addr) dns_create_txid/20 (read) dns_call_found/19 (write) dns_lookup/13 (read) dns_lookup/13 (addr) dns_lookup/13 (read) dns_call_found/19 (read) dns_call_found/19 (read) dns_recv/25 (addr) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (read) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_recv/25 (write) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) dns_enqueue/26 (read) dns_enqueue/26 (addr) 
+  Availability: available
+  Varpool flags:
+dns_seqno/3 (dns_seqno) @06c13a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (read) dns_enqueue/26 (write) 
+  Availability: available
+  Varpool flags:
+dns_last_pcb_idx/2 (dns_last_pcb_idx) @06c13990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: dns_alloc_pcb/18 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) 
+  Availability: available
+  Varpool flags:
+dns_pcbs/1 (dns_pcbs) @06c13900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (read) dns_call_found/19 (write) dns_alloc_pcb/18 (read) dns_alloc_pcb/18 (write) dns_call_found/19 (read) dns_send/16 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: dns_mquery_v6group/8 dns_mquery_v4group/7 dns_servers/6 dns_requests/5 dns_table/4 dns_seqno/3 dns_last_pcb_idx/2 dns_pcbs/1
+Removing variables:
+
+Final Symbol table:
+
+ipaddr_aton/51 (ipaddr_aton) @06d53700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memcpy/50 (memcpy) @06d532a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_htonl/49 (lwip_htonl) @06d0bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_copy_partial/48 (pbuf_copy_partial) @06d0b700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+udp_recv/47 (udp_recv) @06d0b1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+udp_remove/46 (udp_remove) @06d0b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_addr_any_type/45 (ip_addr_any_type) @06d09a68
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+udp_bind/44 (udp_bind) @06d0b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+rand/43 (rand) @06cfd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+udp_new_ip_type/42 (udp_new_ip_type) @06cfdee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_free/41 (pbuf_free) @06cfdd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+udp_sendto/40 (udp_sendto) @06cfdc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_take_at/39 (pbuf_take_at) @06cfdb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_put_at/38 (pbuf_put_at) @06cfda80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_take/37 (pbuf_take) @06cfd9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_htons/36 (lwip_htons) @06cfd8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memset/35 (memset) @06cfd7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_alloc/34 (pbuf_alloc) @06cfd700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+strlen/33 (strlen) @06cfd620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+_ctype_/32 (_ctype_) @06cfe120
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+pbuf_try_get_at/31 (pbuf_try_get_at) @06cfd0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_strnicmp/30 (lwip_strnicmp) @06cebd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_addr_any/29 (ip_addr_any) @06cd2a20
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+dns_gethostbyname_addrtype/28 (dns_gethostbyname_addrtype) @06ceb380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_gethostbyname/27 (dns_gethostbyname) @06cccee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_enqueue/26 (dns_enqueue) @06cccc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_recv/25 (dns_recv) @06ccc700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_correct_response/24 (dns_correct_response) @06c938c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_check_entries/23 (dns_check_entries) @06c93460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_check_entry/22 (dns_check_entry) @06c931c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_backupserver_available/21 (dns_backupserver_available) @06c88ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_create_txid/20 (dns_create_txid) @06c888c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_call_found/19 (dns_call_found) @06c88620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_alloc_pcb/18 (dns_alloc_pcb) @06c88380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_alloc_random_port/17 (dns_alloc_random_port) @06c880e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_send/16 (dns_send) @06c6fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_skip_name/15 (dns_skip_name) @06c6f8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_compare_name/14 (dns_compare_name) @06c6f620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_lookup/13 (dns_lookup) @06c6f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_tmr/12 (dns_tmr) @06c5f460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_getserver/11 (dns_getserver) @06c5f1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_setserver/10 (dns_setserver) @06c18ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_init/9 (dns_init) @06c18e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_mquery_v6group/8 (dns_mquery_v6group) @06c13c18
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+dns_mquery_v4group/7 (dns_mquery_v4group) @06a23ca8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06c13c18
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+dns_servers/6 (dns_servers) @06c13bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06a23ca8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+dns_requests/5 (dns_requests) @06c13b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06c13bd0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+dns_table/4 (dns_table) @06c13ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06c13b40
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+dns_seqno/3 (dns_seqno) @06c13a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06c13ab0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+dns_last_pcb_idx/2 (dns_last_pcb_idx) @06c13990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06c13a20
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+dns_pcbs/1 (dns_pcbs) @06c13900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06c13990
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

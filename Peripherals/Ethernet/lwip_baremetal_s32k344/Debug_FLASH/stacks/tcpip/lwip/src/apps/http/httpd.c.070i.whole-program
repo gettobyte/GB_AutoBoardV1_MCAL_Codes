@@ -1,0 +1,2063 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: httpd_init/28
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+tcp_new_ip_type/60 (tcp_new_ip_type) @06e44700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init/28 
+  Calls: 
+tcp_accept/59 (tcp_accept) @06e44540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_listen_with_backlog/58 (tcp_listen_with_backlog) @06e44460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+ip_addr_any_type/57 (ip_addr_any_type) @06e41cf0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: httpd_init_pcb/27 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/56 (tcp_bind) @06e44380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_setprio/55 (tcp_setprio) @06e441c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init_pcb/27 http_accept/26 
+  Calls: 
+tcp_recved/54 (tcp_recved) @06e44000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_recv/25 http_recv/25 
+  Calls: 
+tcp_output/53 (tcp_output) @06e31d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_poll/24 
+  Calls: 
+strchr/52 (strchr) @06e318c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_find_file/20 
+  Calls: 
+memcpy/51 (memcpy) @06e31700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+strlen/50 (strlen) @06e31620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+pbuf_clen/49 (pbuf_clen) @06e312a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+strncmp/48 (strncmp) @06e311c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+lwip_strnstr/47 (lwip_strnstr) @06e310e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 http_parse_request/19 http_parse_request/19 http_parse_request/19 http_init_file/21 
+  Calls: 
+pbuf_copy_partial/46 (pbuf_copy_partial) @06e31000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_ref/45 (pbuf_ref) @06e10ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_cat/44 (pbuf_cat) @06e10e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+fs_open/43 (fs_open) @06e10a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 http_get_404_file/18 http_get_404_file/18 http_get_404_file/18 
+  Calls: 
+fs_bytes_left/42 (fs_bytes_left) @06e10700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_send/17 http_check_eof/15 
+  Calls: 
+tcp_close/41 (tcp_close) @06e10380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_abort/40 (tcp_abort) @06e102a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_sent/39 (tcp_sent) @06e101c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_poll/38 (tcp_poll) @06e100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_err/37 (tcp_err) @06e10000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_recv/36 (tcp_recv) @06e0aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_arg/35 (tcp_arg) @06e0ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_write/34 (tcp_write) @06e0ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_write/11 
+  Calls: 
+mem_free/33 (mem_free) @06e0a9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_state_free/10 
+  Calls: 
+pbuf_free/32 (pbuf_free) @06e0a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_recv/25 http_recv/25 http_recv/25 http_recv/25 http_state_eof/9 
+  Calls: 
+fs_close/31 (fs_close) @06e0a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_state_eof/9 
+  Calls: 
+mem_malloc/30 (mem_malloc) @06e0a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_state_alloc/8 
+  Calls: 
+memset/29 (memset) @06e0a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_state_init/7 
+  Calls: 
+httpd_init/28 (httpd_init) @06dfeee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: httpd_init_pcb/27 tcp_new_ip_type/60 
+httpd_init_pcb/27 (httpd_init_pcb) @06dfee00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: ip_addr_any_type/57 (addr) http_accept/26 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: httpd_init/28 
+  Calls: tcp_accept/59 tcp_listen_with_backlog/58 tcp_bind/56 tcp_setprio/55 
+http_accept/26 (http_accept) @06dfea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: http_recv/25 (addr) http_err/22 (addr) http_poll/24 (addr) http_sent/23 (addr) 
+  Referring: httpd_init_pcb/27 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 http_state_alloc/8 tcp_setprio/55 
+http_recv/25 (http_recv) @06dfe7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/32 http_close_conn/13 http_send/17 pbuf_free/32 pbuf_free/32 http_parse_request/19 tcp_recved/54 http_close_conn/13 pbuf_free/32 tcp_recved/54 
+http_poll/24 (http_poll) @06dfe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) http_close_or_abort_conn/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/53 http_send/17 http_close_conn/13 http_close_conn/13 
+http_sent/23 (http_sent) @06dfe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: http_send/17 
+http_err/22 (http_err) @06dfe000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: http_state_free/10 
+http_init_file/21 (http_init_file) @06debee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_find_file/20 
+  Calls: lwip_strnstr/47 
+http_find_file/20 (http_find_file) @06debc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: http_uri_buf/6 (addr) http_uri_buf/6 (addr) http_uri_buf/6 (write) httpd_default_filenames/4 (read) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) http_uri_buf/6 (write) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_parse_request/19 
+  Calls: http_init_file/21 http_get_404_file/18 http_get_404_file/18 fs_open/43 strchr/52 fs_open/43 memcpy/51 strlen/50 memcpy/51 strlen/50 
+http_parse_request/19 (http_parse_request) @06deb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: httpd_req_buf/5 (addr) httpd_req_buf/5 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_recv/25 
+  Calls: pbuf_clen/49 http_find_file/20 lwip_strnstr/47 lwip_strnstr/47 lwip_strnstr/47 strncmp/48 lwip_strnstr/47 pbuf_copy_partial/46 pbuf_ref/45 pbuf_cat/44 
+http_get_404_file/18 (http_get_404_file) @06deb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: fs_open/43 fs_open/43 fs_open/43 
+http_send/17 (http_send) @06deb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_recv/25 http_poll/24 http_sent/23 
+  Calls: http_eof/14 fs_bytes_left/42 http_send_data_nonssi/16 http_check_eof/15 
+http_send_data_nonssi/16 (http_send_data_nonssi) @06ddfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_write/11 
+http_check_eof/15 (http_check_eof) @06ddfee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_eof/14 fs_bytes_left/42 http_eof/14 
+http_eof/14 (http_eof) @06ddfb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_send/17 http_check_eof/15 http_check_eof/15 
+  Calls: http_close_conn/13 
+http_close_conn/13 (http_close_conn) @06ddf8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_recv/25 http_recv/25 http_poll/24 http_poll/24 http_eof/14 
+  Calls: http_close_or_abort_conn/12 
+http_close_or_abort_conn/12 (http_close_or_abort_conn) @06ddf620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: http_poll/24 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_close_conn/13 
+  Calls: tcp_poll/38 tcp_close/41 tcp_abort/40 http_state_free/10 tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 
+http_write/11 (http_write) @06ddf380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_send_data_nonssi/16 
+  Calls: tcp_write/34 
+http_state_free/10 (http_state_free) @06ddf0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_close_or_abort_conn/12 http_err/22 
+  Calls: mem_free/33 http_state_eof/9 
+http_state_eof/9 (http_state_eof) @06dd7e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_state_free/10 
+  Calls: pbuf_free/32 fs_close/31 
+http_state_alloc/8 (http_state_alloc) @06dd7b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_accept/26 
+  Calls: http_state_init/7 mem_malloc/30 
+http_state_init/7 (http_state_init) @06dd78c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_state_alloc/8 
+  Calls: memset/29 
+http_uri_buf/6 (http_uri_buf) @06dacc60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: http_find_file/20 (addr) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) 
+  Availability: available
+  Varpool flags:
+httpd_req_buf/5 (httpd_req_buf) @06dacb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: http_parse_request/19 (addr) http_parse_request/19 (addr) 
+  Availability: available
+  Varpool flags:
+httpd_default_filenames/4 (httpd_default_filenames) @06dacab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: http_find_file/20 (read) http_find_file/20 (read) http_find_file/20 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+httpd_init ()
+{
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  pcb_4 = tcp_new_ip_type (46);
+  if (pcb_4 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  httpd_init_pcb (pcb_4, 80);
+  return;
+
+}
+
+
+httpd_init_pcb (struct tcp_pcb * pcb, u16_t port)
+{
+  err_t err;
+
+  <bb 2> :
+  if (pcb_4(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  tcp_setprio (pcb_4(D), 1);
+  err_9 = tcp_bind (pcb_4(D), &ip_addr_any_type, port_7(D));
+  if (err_9 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  pcb_11 = tcp_listen_with_backlog (pcb_4(D), 255);
+  if (pcb_11 == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  tcp_accept (pcb_11, http_accept);
+
+  <bb 8> :
+  return;
+
+}
+
+
+http_accept (void * arg, struct tcp_pcb * pcb, err_t err)
+{
+  struct http_state * hs;
+  err_t D.8478;
+  err_t _1;
+  err_t _15;
+  err_t _16;
+  err_t _17;
+
+  <bb 2> :
+  if (err_3(D) != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (pcb_4(D) == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _17 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  tcp_setprio (pcb_4(D), 1);
+  hs_8 = http_state_alloc ();
+  if (hs_8 == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _16 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  hs_8->pcb = pcb_4(D);
+  tcp_arg (pcb_4(D), hs_8);
+  tcp_recv (pcb_4(D), http_recv);
+  tcp_err (pcb_4(D), http_err);
+  tcp_poll (pcb_4(D), http_poll, 4);
+  tcp_sent (pcb_4(D), http_sent);
+  _15 = 0;
+
+  <bb 8> :
+  # _1 = PHI <_17(4), _16(6), _15(7)>
+<L5>:
+  return _1;
+
+}
+
+
+http_recv (void * arg, struct tcp_pcb * pcb, struct pbuf * p, err_t err)
+{
+  err_t parsed;
+  struct http_state * hs;
+  err_t D.8453;
+  short unsigned int _1;
+  short unsigned int _2;
+  struct fs_file * _3;
+  struct pbuf * _4;
+  struct pbuf * _5;
+  err_t _6;
+  err_t _28;
+  err_t _32;
+
+  <bb 2> :
+  hs_13 = arg_12(D);
+  if (err_14(D) != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (p_15(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  if (hs_13 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  if (p_15(D) != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _1 = p_15(D)->tot_len;
+  tcp_recved (pcb_17(D), _1);
+  pbuf_free (p_15(D));
+
+  <bb 7> :
+  http_close_conn (pcb_17(D), hs_13);
+  _32 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 8> :
+  _2 = p_15(D)->tot_len;
+  tcp_recved (pcb_17(D), _2);
+  _3 = hs_13->handle;
+  if (_3 == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 9> :
+  parsed_21 = http_parse_request (p_15(D), hs_13, pcb_17(D));
+  if (parsed_21 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 10> :
+  if (parsed_21 != -5)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 11> :
+  if (parsed_21 != -16)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  if (parsed_21 != -8)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 13>; [INV]
+
+  <bb 14> :
+  if (parsed_21 != -5)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 15> :
+  _4 = hs_13->req;
+  if (_4 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _5 = hs_13->req;
+  pbuf_free (_5);
+  hs_13->req = 0B;
+
+  <bb 17> :
+  pbuf_free (p_15(D));
+  if (parsed_21 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  http_send (pcb_17(D), hs_13);
+  goto <bb 22>; [INV]
+
+  <bb 19> :
+  if (parsed_21 == -16)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 20> :
+  http_close_conn (pcb_17(D), hs_13);
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  pbuf_free (p_15(D));
+
+  <bb 22> :
+  _28 = 0;
+
+  <bb 23> :
+  # _6 = PHI <_32(7), _28(22)>
+<L29>:
+  return _6;
+
+}
+
+
+http_poll (void * arg, struct tcp_pcb * pcb)
+{
+  err_t closed;
+  struct http_state * hs;
+  err_t D.8437;
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _4;
+  struct fs_file * _5;
+  unsigned char _6;
+  err_t _7;
+  err_t _17;
+  err_t _19;
+  err_t _22;
+
+  <bb 2> :
+  hs_11 = arg_10(D);
+  if (hs_11 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  closed_21 = http_close_conn (pcb_14(D), 0B);
+  _22 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  _1 = hs_11->retries;
+  _2 = _1;
+  _3 = _2 + 1;
+  hs_11->retries = _3;
+  _4 = hs_11->retries;
+  if (_4 == 4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  http_close_conn (pcb_14(D), hs_11);
+  _19 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 6> :
+  _5 = hs_11->handle;
+  if (_5 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _6 = http_send (pcb_14(D), hs_11);
+  if (_6 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  tcp_output (pcb_14(D));
+
+  <bb 9> :
+  _17 = 0;
+
+  <bb 10> :
+  # _7 = PHI <_22(3), _19(5), _17(9)>
+<L8>:
+  return _7;
+
+}
+
+
+http_sent (void * arg, struct tcp_pcb * pcb, u16_t len)
+{
+  struct http_state * hs;
+  err_t D.8433;
+  err_t _1;
+  err_t _9;
+  err_t _10;
+
+  <bb 2> :
+  hs_4 = arg_3(D);
+  if (hs_4 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _10 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  hs_4->retries = 0;
+  http_send (pcb_7(D), hs_4);
+  _9 = 0;
+
+  <bb 5> :
+  # _1 = PHI <_10(3), _9(4)>
+<L2>:
+  return _1;
+
+}
+
+
+http_err (void * arg, err_t err)
+{
+  struct http_state * hs;
+
+  <bb 2> :
+  hs_3 = arg_2(D);
+  if (hs_3 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_state_free (hs_3);
+
+  <bb 4> :
+  return;
+
+}
+
+
+http_init_file (struct http_state * hs, struct fs_file * file, int is_09, const char * uri, u8_t tag_check, char * params)
+{
+  int diff;
+  char * file_start;
+  err_t D.8427;
+  const char * _1;
+  const char * _2;
+  int _3;
+  int _4;
+  long unsigned int _5;
+  struct fs_file * _6;
+  unsigned char _7;
+  int _8;
+  int _9;
+  struct fs_file * _10;
+  unsigned char _11;
+  int _12;
+  int _13;
+  const char * _14;
+  long unsigned int _15;
+  char * _16;
+  const char * _17;
+  const char * _18;
+  sizetype diff.10_19;
+  const char * _20;
+  long unsigned int _21;
+  long unsigned int diff.11_22;
+  long unsigned int _23;
+  err_t _48;
+
+  <bb 2> :
+  if (file_28(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 3> :
+  _1 = file_28(D)->data;
+  if (_1 == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  hs_30(D)->handle = file_28(D);
+  _2 = file_28(D)->data;
+  hs_30(D)->file = _2;
+  _3 = file_28(D)->len;
+  if (_3 < 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  _4 = file_28(D)->len;
+  _5 = (long unsigned int) _4;
+  hs_30(D)->left = _5;
+  hs_30(D)->retries = 0;
+  _6 = hs_30(D)->handle;
+  _7 = _6->flags;
+  _8 = (int) _7;
+  _9 = _8 & 1;
+  if (_9 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  if (is_09_39(D) != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 10> :
+  _10 = hs_30(D)->handle;
+  _11 = _10->flags;
+  _12 = (int) _11;
+  _13 = _12 & 1;
+  if (_13 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 11> :
+  _14 = hs_30(D)->file;
+  _15 = hs_30(D)->left;
+  file_start_41 = lwip_strnstr (_14, "\r\n\r\n", _15);
+  if (file_start_41 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  _16 = file_start_41 + 4;
+  _17 = hs_30(D)->file;
+  diff_42 = _16 - _17;
+  _18 = hs_30(D)->file;
+  diff.10_19 = (sizetype) diff_42;
+  _20 = _18 + diff.10_19;
+  hs_30(D)->file = _20;
+  _21 = hs_30(D)->left;
+  diff.11_22 = (long unsigned int) diff_42;
+  _23 = _21 - diff.11_22;
+  hs_30(D)->left = _23;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  hs_30(D)->handle = 0B;
+  hs_30(D)->file = 0B;
+  hs_30(D)->left = 0;
+  hs_30(D)->retries = 0;
+
+  <bb 14> :
+  _48 = 0;
+
+  <bb 15> :
+<L18>:
+  return _48;
+
+}
+
+
+http_find_file (struct http_state * hs, const char * uri, int is_09)
+{
+  size_t name_copy_len;
+  size_t name_len;
+  size_t len_left;
+  const char * file_name;
+  size_t copy_len;
+  size_t uri_len;
+  const u8_t tag_check;
+  err_t err;
+  char * params;
+  struct fs_file * file;
+  size_t loop;
+  err_t D.8410;
+  const char * uri.3_1;
+  const char * uri.4_2;
+  sizetype _3;
+  const char * _4;
+  char _5;
+  const char * uri.5_6;
+  unsigned int _7;
+  const char * uri.6_8;
+  const char * _9;
+  char * _10;
+  const char * _11;
+  unsigned int _12;
+  struct fs_file * _13;
+  const char * uri.7_14;
+  struct fs_file * _15;
+  const char * uri.8_16;
+  const char * uri.9_17;
+  err_t _67;
+
+  <bb 2> :
+  file_33 = 0B;
+  params_34 = 0B;
+  tag_check_35 = 0;
+  uri.3_1 = uri;
+  uri_len_37 = strlen (uri.3_1);
+  if (uri_len_37 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 3> :
+  uri.4_2 = uri;
+  _3 = uri_len_37 + 4294967295;
+  _4 = uri.4_2 + _3;
+  _5 = *_4;
+  if (_5 == 47)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 4> :
+  uri.5_6 = uri;
+  if (uri.5_6 != &http_uri_buf)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (uri_len_37 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 6> :
+  _7 = uri_len_37 + 4294967295;
+  copy_len_38 = MIN_EXPR <_7, 63>;
+  if (copy_len_38 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  uri.6_8 = uri;
+  memcpy (&http_uri_buf, uri.6_8, copy_len_38);
+  http_uri_buf[copy_len_38] = 0;
+
+  <bb 8> :
+  loop_41 = 0;
+  goto <bb 17>; [INV]
+
+  <bb 9> :
+  if (copy_len_38 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  len_left_43 = 63 - copy_len_38;
+  if (len_left_43 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _9 = httpd_default_filenames[loop_18].name;
+  name_len_44 = strlen (_9);
+  name_copy_len_45 = MIN_EXPR <name_len_44, len_left_43>;
+  _10 = &http_uri_buf[copy_len_38];
+  _11 = httpd_default_filenames[loop_18].name;
+  memcpy (_10, _11, name_copy_len_45);
+  _12 = copy_len_38 + name_copy_len_45;
+  http_uri_buf[_12] = 0;
+
+  <bb 12> :
+  file_name_48 = &http_uri_buf;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  file_name_42 = httpd_default_filenames[loop_18].name;
+
+  <bb 14> :
+  # file_name_24 = PHI <file_name_48(12), file_name_42(13)>
+  _13 = &hs_49(D)->file_handle;
+  err_51 = fs_open (_13, file_name_24);
+  if (err_51 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  uri = file_name_24;
+  file_54 = &hs_49(D)->file_handle;
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+  loop_52 = loop_18 + 1;
+
+  <bb 17> :
+  # loop_18 = PHI <loop_41(8), loop_52(16)>
+  if (loop_18 <= 4)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  # file_19 = PHI <file_33(2), file_33(3), file_33(5), file_54(15), file_33(17)>
+  if (file_19 == 0B)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 19> :
+  uri.7_14 = uri;
+  params_55 = strchr (uri.7_14, 63);
+  if (params_55 != 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  *params_55 = 0;
+  params_57 = params_55 + 1;
+
+  <bb 21> :
+  # params_22 = PHI <params_55(19), params_57(20)>
+  _15 = &hs_49(D)->file_handle;
+  uri.8_16 = uri;
+  err_59 = fs_open (_15, uri.8_16);
+  if (err_59 == 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  file_62 = &hs_49(D)->file_handle;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  file_61 = http_get_404_file (hs_49(D), &uri);
+
+  <bb 24> :
+  # file_20 = PHI <file_19(18), file_62(22), file_61(23)>
+  # params_23 = PHI <params_34(18), params_22(22), params_22(23)>
+  if (file_20 == 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  file_64 = http_get_404_file (hs_49(D), &uri);
+
+  <bb 26> :
+  # file_21 = PHI <file_20(24), file_64(25)>
+  uri.9_17 = uri;
+  _67 = http_init_file (hs_49(D), file_21, is_09_65(D), uri.9_17, tag_check_35, params_23);
+
+  <bb 27> :
+<L28>:
+  return _67;
+
+}
+
+
+http_parse_request (struct pbuf * inp, struct http_state * hs, struct tcp_pcb * pcb)
+{
+  char * uri;
+  u16_t uri_len;
+  u16_t left_len;
+  char * sp2;
+  char * sp1;
+  int is_09;
+  u16_t clen;
+  struct pbuf * p;
+  u16_t data_len;
+  char * crlf;
+  char * data;
+  err_t D.8356;
+  struct fs_file * _1;
+  const char * _2;
+  struct pbuf * _3;
+  struct pbuf * _4;
+  struct pbuf * _5;
+  struct pbuf * _6;
+  struct pbuf * _7;
+  short unsigned int _8;
+  struct pbuf * _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  unsigned int _12;
+  int _13;
+  char * _14;
+  char * _15;
+  int _16;
+  short unsigned int _17;
+  char * _18;
+  unsigned int _19;
+  char * _20;
+  unsigned int _21;
+  char * _22;
+  int _23;
+  unsigned int _24;
+  char * _25;
+  sizetype _26;
+  char * _27;
+  struct pbuf * _28;
+  struct pbuf * _29;
+  short unsigned int _30;
+  err_t _35;
+  err_t _59;
+  err_t _73;
+  err_t _76;
+  err_t _77;
+  err_t _78;
+
+  <bb 2> :
+  p_44 = inp_43(D);
+  if (p_44 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (hs_46(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = hs_46(D)->handle;
+  if (_1 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _2 = hs_46(D)->file;
+  if (_2 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _78 = -8;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 9> :
+  _3 = hs_46(D)->req;
+  if (_3 == 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  hs_46(D)->req = p_44;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _4 = hs_46(D)->req;
+  pbuf_cat (_4, p_44);
+
+  <bb 12> :
+  pbuf_ref (p_44);
+  _5 = hs_46(D)->req;
+  _6 = _5->next;
+  if (_6 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _7 = hs_46(D)->req;
+  _8 = _7->tot_len;
+  data_len_52 = MIN_EXPR <_8, 1023>;
+  _9 = hs_46(D)->req;
+  pbuf_copy_partial (_9, &httpd_req_buf, data_len_52, 0);
+  data_54 = &httpd_req_buf;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  data_50 = p_44->payload;
+  data_len_51 = p_44->len;
+  _10 = p_44->len;
+  _11 = p_44->tot_len;
+
+  <bb 15> :
+  # data_31 = PHI <data_54(13), data_50(14)>
+  # data_len_32 = PHI <data_len_52(13), data_len_51(14)>
+  if (data_len_32 > 6)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 16> :
+  _12 = (unsigned int) data_len_32;
+  crlf_56 = lwip_strnstr (data_31, "\r\n", _12);
+  if (crlf_56 != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 17> :
+  is_09_57 = 0;
+  _13 = strncmp (data_31, "GET ", 4);
+  if (_13 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  sp1_60 = data_31 + 3;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  _14 = data_31 + 4;
+  *_14 = 0;
+  _59 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 20> :
+  _15 = sp1_60 + 1;
+  _16 = _15 - data_31;
+  _17 = (short unsigned int) _16;
+  left_len_61 = data_len_32 - _17;
+  _18 = sp1_60 + 1;
+  _19 = (unsigned int) left_len_61;
+  sp2_63 = lwip_strnstr (_18, " ", _19);
+  if (sp2_63 == 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _20 = sp1_60 + 1;
+  _21 = (unsigned int) left_len_61;
+  sp2_65 = lwip_strnstr (_20, "\r\n", _21);
+  is_09_66 = 1;
+
+  <bb 22> :
+  # is_09_33 = PHI <is_09_57(20), is_09_66(21)>
+  # sp2_34 = PHI <sp2_63(20), sp2_65(21)>
+  _22 = sp1_60 + 1;
+  _23 = sp2_34 - _22;
+  uri_len_67 = (u16_t) _23;
+  if (sp2_34 != 0B)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 23> :
+  if (sp2_34 > sp1_60)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 24> :
+  _24 = (unsigned int) data_len_32;
+  _25 = lwip_strnstr (data_31, "\r\n\r\n", _24);
+  if (_25 != 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  uri_69 = sp1_60 + 1;
+  *sp1_60 = 0;
+  _26 = (sizetype) uri_len_67;
+  _27 = uri_69 + _26;
+  *_27 = 0;
+  _73 = http_find_file (hs_46(D), uri_69, is_09_33);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 26> :
+  _28 = hs_46(D)->req;
+  clen_75 = pbuf_clen (_28);
+  _29 = hs_46(D)->req;
+  _30 = _29->tot_len;
+  if (_30 <= 1023)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 27> :
+  if (clen_75 <= 5)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  _76 = -5;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  _77 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 30> :
+  # _35 = PHI <_78(8), _59(19), _73(25), _76(28), _77(29)>
+<L36>:
+  return _35;
+
+}
+
+
+http_get_404_file (struct http_state * hs, const char * * uri)
+{
+  err_t err;
+  struct fs_file * D.8347;
+  struct fs_file * _1;
+  const char * _2;
+  struct fs_file * _3;
+  const char * _4;
+  struct fs_file * _5;
+  const char * _6;
+  struct fs_file * _7;
+  struct fs_file * _23;
+  struct fs_file * _24;
+
+  <bb 2> :
+  *uri_11(D) = "/404.html";
+  _1 = &hs_13(D)->file_handle;
+  _2 = *uri_11(D);
+  err_15 = fs_open (_1, _2);
+  if (err_15 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  *uri_11(D) = "/404.htm";
+  _3 = &hs_13(D)->file_handle;
+  _4 = *uri_11(D);
+  err_18 = fs_open (_3, _4);
+  if (err_18 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  *uri_11(D) = "/404.shtml";
+  _5 = &hs_13(D)->file_handle;
+  _6 = *uri_11(D);
+  err_21 = fs_open (_5, _6);
+  if (err_21 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  *uri_11(D) = 0B;
+  _23 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _24 = &hs_13(D)->file_handle;
+
+  <bb 7> :
+  # _7 = PHI <_23(5), _24(6)>
+<L6>:
+  return _7;
+
+}
+
+
+http_send (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  u8_t data_to_send;
+  u8_t D.8331;
+  long unsigned int _1;
+  unsigned char _2;
+  long unsigned int _3;
+  struct fs_file * _4;
+  int _5;
+  u8_t _6;
+  u8_t _15;
+  u8_t _20;
+  u8_t _21;
+  u8_t _22;
+
+  <bb 2> :
+  data_to_send_10 = 0;
+  if (hs_11(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _22 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 4> :
+  _1 = hs_11(D)->left;
+  if (_1 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _2 = http_check_eof (pcb_13(D), hs_11(D));
+  if (_2 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _15 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+  data_to_send_17 = http_send_data_nonssi (pcb_13(D), hs_11(D));
+  _3 = hs_11(D)->left;
+  if (_3 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _4 = hs_11(D)->handle;
+  _5 = fs_bytes_left (_4);
+  if (_5 <= 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  http_eof (pcb_13(D), hs_11(D));
+  _20 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _21 = data_to_send_17;
+
+  <bb 11> :
+  # _6 = PHI <_22(3), _15(6), _20(9), _21(10)>
+<L10>:
+  return _6;
+
+}
+
+
+http_send_data_nonssi (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  u8_t data_to_send;
+  u16_t len;
+  err_t err;
+  u8_t D.8326;
+  short unsigned int iftmp.0;
+  long unsigned int _1;
+  long unsigned int _2;
+  const char * _3;
+  const char * _4;
+  short unsigned int len.1_5;
+  sizetype _6;
+  const char * _7;
+  long unsigned int _8;
+  short unsigned int len.2_9;
+  long unsigned int _10;
+  long unsigned int _11;
+  short unsigned int iftmp.0_13;
+  short unsigned int iftmp.0_18;
+  short unsigned int iftmp.0_19;
+  u8_t _27;
+
+  <bb 2> :
+  data_to_send_15 = 0;
+  _1 = hs_17(D)->left;
+  if (_1 <= 65534)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = hs_17(D)->left;
+  iftmp.0_19 = (short unsigned int) _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.0_18 = 65535;
+
+  <bb 5> :
+  # iftmp.0_13 = PHI <iftmp.0_19(3), iftmp.0_18(4)>
+  len = iftmp.0_13;
+  _3 = hs_17(D)->file;
+  err_23 = http_write (pcb_21(D), _3, &len, 0);
+  if (err_23 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  data_to_send_24 = 1;
+  _4 = hs_17(D)->file;
+  len.1_5 = len;
+  _6 = (sizetype) len.1_5;
+  _7 = _4 + _6;
+  hs_17(D)->file = _7;
+  _8 = hs_17(D)->left;
+  len.2_9 = len;
+  _10 = (long unsigned int) len.2_9;
+  _11 = _8 - _10;
+  hs_17(D)->left = _11;
+
+  <bb 7> :
+  # data_to_send_12 = PHI <data_to_send_15(5), data_to_send_24(6)>
+  _27 = data_to_send_12;
+  len ={v} {CLOBBER};
+
+  <bb 8> :
+<L6>:
+  return _27;
+
+}
+
+
+http_check_eof (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  int bytes_left;
+  u8_t D.8314;
+  struct fs_file * _1;
+  struct fs_file * _2;
+  u8_t _3;
+  u8_t _13;
+  u8_t _15;
+
+  <bb 2> :
+  _1 = hs_7(D)->handle;
+  if (_1 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_eof (pcb_11(D), hs_7(D));
+  _15 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _2 = hs_7(D)->handle;
+  bytes_left_9 = fs_bytes_left (_2);
+  if (bytes_left_9 <= 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  http_eof (pcb_11(D), hs_7(D));
+  _13 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  # _3 = PHI <_15(3), _13(5)>
+<L7>:
+  return _3;
+
+}
+
+
+http_eof (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  <bb 2> :
+  http_close_conn (pcb_2(D), hs_3(D));
+  return;
+
+}
+
+
+http_close_conn (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  err_t D.8310;
+  err_t _5;
+
+  <bb 2> :
+  _5 = http_close_or_abort_conn (pcb_2(D), hs_3(D), 0);
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+http_close_or_abort_conn (struct tcp_pcb * pcb, struct http_state * hs, u8_t abort_conn)
+{
+  err_t err;
+  err_t D.8306;
+  err_t _1;
+  err_t _18;
+  err_t _20;
+
+  <bb 2> :
+  tcp_arg (pcb_6(D), 0B);
+  tcp_recv (pcb_6(D), 0B);
+  tcp_err (pcb_6(D), 0B);
+  tcp_poll (pcb_6(D), 0B, 0);
+  tcp_sent (pcb_6(D), 0B);
+  if (hs_12(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_state_free (hs_12(D));
+
+  <bb 4> :
+  if (abort_conn_14(D) != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  tcp_abort (pcb_6(D));
+  _20 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  err_16 = tcp_close (pcb_6(D));
+  if (err_16 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  tcp_poll (pcb_6(D), http_poll, 4);
+
+  <bb 8> :
+  _18 = err_16;
+
+  <bb 9> :
+  # _1 = PHI <_20(5), _18(8)>
+<L6>:
+  return _1;
+
+}
+
+
+http_write (struct tcp_pcb * pcb, const void * ptr, u16_t * length, u8_t apiflags)
+{
+  err_t err;
+  u16_t max_len;
+  u16_t len;
+  err_t D.8286;
+  short unsigned int _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  err_t _7;
+  err_t _28;
+  err_t _29;
+
+  <bb 2> :
+  if (length_12(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  len_14 = *length_12(D);
+  if (len_14 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _29 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 21>; [INV]
+
+  <bb 6> :
+  max_len_16 = pcb_15(D)->snd_buf;
+  if (max_len_16 < len_14)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  len_17 = max_len_16;
+
+  <bb 8> :
+  # len_4 = PHI <len_14(6), len_17(7)>
+  _1 = pcb_15(D)->mss;
+  max_len_18 = _1 * 2;
+  if (len_4 > max_len_18)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  len_19 = max_len_18;
+
+  <bb 10> :
+  # len_5 = PHI <len_4(8), len_19(9), len_6(16)>
+  err_23 = tcp_write (pcb_15(D), ptr_20(D), len_5, apiflags_21(D));
+  if (err_23 == -1)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 11> :
+  _2 = pcb_15(D)->snd_buf;
+  if (_2 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _3 = pcb_15(D)->snd_queuelen;
+  if (_3 > 19)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  len_25 = 1;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  len_24 = len_5 / 2;
+
+  <bb 15> :
+  # len_6 = PHI <len_5(10), len_25(13), len_24(14)>
+  if (err_23 == -1)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  if (len_6 > 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  if (err_23 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  *length_12(D) = len_6;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  *length_12(D) = 0;
+
+  <bb 20> :
+  _28 = err_23;
+
+  <bb 21> :
+  # _7 = PHI <_29(5), _28(20)>
+<L21>:
+  return _7;
+
+}
+
+
+http_state_free (struct http_state * hs)
+{
+  <bb 2> :
+  if (hs_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_state_eof (hs_2(D));
+  mem_free (hs_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+http_state_eof (struct http_state * hs)
+{
+  struct fs_file * _1;
+  struct fs_file * _2;
+  struct pbuf * _3;
+  struct pbuf * _4;
+
+  <bb 2> :
+  _1 = hs_8(D)->handle;
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = hs_8(D)->handle;
+  fs_close (_2);
+  hs_8(D)->handle = 0B;
+
+  <bb 4> :
+  _3 = hs_8(D)->req;
+  if (_3 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = hs_8(D)->req;
+  pbuf_free (_4);
+  hs_8(D)->req = 0B;
+
+  <bb 6> :
+  return;
+
+}
+
+
+http_state_alloc ()
+{
+  struct http_state * ret;
+  struct http_state * D.8274;
+  struct http_state * _6;
+
+  <bb 2> :
+  ret_4 = mem_malloc (44);
+  if (ret_4 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_state_init (ret_4);
+
+  <bb 4> :
+  _6 = ret_4;
+
+  <bb 5> :
+<L2>:
+  return _6;
+
+}
+
+
+http_state_init (struct http_state * hs)
+{
+  <bb 2> :
+  memset (hs_2(D), 0, 44);
+  return;
+
+}
+
+

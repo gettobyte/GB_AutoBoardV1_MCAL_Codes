@@ -1,0 +1,729 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+snmp_table_get_next_instance/28 (snmp_table_get_next_instance) @061099a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: interfaces_Table/14 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_table_get_instance/27 (snmp_table_get_instance) @061098c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: interfaces_Table/14 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_scalar_get_next_instance/26 (snmp_scalar_get_next_instance) @061097e0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: interfaces_Number/12 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_scalar_get_instance/25 (snmp_scalar_get_instance) @06109700
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: interfaces_Number/12 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_zero_dot_zero/24 (snmp_zero_dot_zero) @0610dd80
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: interfaces_Table_get_value/11 (read) interfaces_Table_get_value/11 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+memcpy/23 (memcpy) @06109620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: interfaces_Table_get_value/11 interfaces_Table_get_value/11 interfaces_Table_get_value/11 
+  Calls: 
+snmp_oid_assign/22 (snmp_oid_assign) @061092a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: interfaces_Table_get_next_cell_instance/10 
+  Calls: 
+snmp_next_oid_check/21 (snmp_next_oid_check) @061091c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: interfaces_Table_get_next_cell_instance/10 
+  Calls: 
+snmp_next_oid_init/20 (snmp_next_oid_init) @061090e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: interfaces_Table_get_next_cell_instance/10 
+  Calls: 
+netif_to_num/19 (netif_to_num) @06104ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: interfaces_Table_get_value/11 interfaces_Table_get_next_cell_instance/10 interfaces_Table_get_cell_instance/9 
+  Calls: 
+snmp_oid_in_range/18 (snmp_oid_in_range) @06104e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: interfaces_Table_get_cell_instance/9 
+  Calls: 
+netif_list/17 (netif_list) @060ec828
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: interfaces_get_value/1 (read) interfaces_Table_get_cell_instance/9 (read) interfaces_Table_get_next_cell_instance/10 (read) 
+  Availability: not_available
+  Varpool flags:
+snmp_mib2_interface_root/16 (snmp_mib2_interface_root) @060ec3a8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: interface_nodes/15 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+interface_nodes/15 (interface_nodes) @060ec318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: interfaces_Number/12 (addr) interfaces_Table/14 (addr) 
+  Referring: snmp_mib2_interface_root/16 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+interfaces_Table/14 (interfaces_Table) @060ec288
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: snmp_table_get_instance/27 (addr) snmp_table_get_next_instance/28 (addr) interfaces_Table_columns/13 (addr) interfaces_Table_get_cell_instance/9 (addr) interfaces_Table_get_next_cell_instance/10 (addr) interfaces_Table_get_value/11 (addr) 
+  Referring: interface_nodes/15 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+interfaces_Table_columns/13 (interfaces_Table_columns) @060ec1b0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: interfaces_Table/14 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+interfaces_Number/12 (interfaces_Number) @060ec0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: snmp_scalar_get_instance/25 (addr) snmp_scalar_get_next_instance/26 (addr) interfaces_get_value/1 (addr) 
+  Referring: interface_nodes/15 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+interfaces_Table_get_value/11 (interfaces_Table_get_value) @060e3700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: snmp_zero_dot_zero/24 (read) snmp_zero_dot_zero/24 (read) 
+  Referring: interfaces_Table/14 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memcpy/23 memcpy/23 memcpy/23 netif_to_num/19 
+interfaces_Table_get_next_cell_instance/10 (interfaces_Table_get_next_cell_instance) @060e30e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: netif_list/17 (read) 
+  Referring: interfaces_Table/14 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_oid_assign/22 snmp_next_oid_check/21 netif_to_num/19 snmp_next_oid_init/20 
+interfaces_Table_get_cell_instance/9 (interfaces_Table_get_cell_instance) @060b8a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: interfaces_Table_oid_ranges/2 (addr) netif_list/17 (read) 
+  Referring: interfaces_Table/14 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_to_num/19 snmp_oid_in_range/18 
+iftable_ifAdminStatus_down/8 (iftable_ifAdminStatus_down) @060b2b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+iftable_ifAdminStatus_lowerLayerDown/7 (iftable_ifAdminStatus_lowerLayerDown) @060b2ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+iftable_ifAdminStatus_up/6 (iftable_ifAdminStatus_up) @060b2a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+iftable_ifOperStatus_down/5 (iftable_ifOperStatus_down) @060b2990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+iftable_ifOperStatus_up/4 (iftable_ifOperStatus_up) @060b2900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+iftable_ifOutQLen/3 (iftable_ifOutQLen) @060b2870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+interfaces_Table_oid_ranges/2 (interfaces_Table_oid_ranges) @060b27e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: interfaces_Table_get_cell_instance/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+interfaces_get_value/1 (interfaces_get_value) @060afb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: netif_list/17 (read) 
+  Referring: interfaces_Number/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+interfaces_Table_get_value (struct snmp_node_instance * instance, void * value)
+{
+  u16_t value_len;
+  s32_t * value_s32;
+  u32_t * value_u32;
+  struct netif * netif;
+  s16_t D.7649;
+  long unsigned int _1;
+  unsigned char _2;
+  long int _3;
+  char[2] * _4;
+  unsigned int _5;
+  unsigned char _6;
+  long int _7;
+  short unsigned int _8;
+  long int _9;
+  long unsigned int _10;
+  u8_t[6] * _11;
+  unsigned int _12;
+  unsigned char _13;
+  _Bool _14;
+  unsigned char iftable_ifOperStatus_up.0_15;
+  long int _16;
+  unsigned char iftable_ifOperStatus_down.1_17;
+  long int _18;
+  unsigned char _19;
+  _Bool _20;
+  unsigned char _21;
+  unsigned int _22;
+  unsigned int _23;
+  _Bool _24;
+  unsigned char iftable_ifAdminStatus_up.2_25;
+  long int _26;
+  unsigned char iftable_ifAdminStatus_lowerLayerDown.3_27;
+  long int _28;
+  unsigned char iftable_ifAdminStatus_down.4_29;
+  long int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  unsigned char iftable_ifOutQLen.5_43;
+  long unsigned int _44;
+  unsigned char _45;
+  short unsigned int _46;
+  const u32_t * _47;
+  unsigned int _48;
+  s16_t _50;
+  s16_t _109;
+  s16_t _110;
+
+  <bb 2> :
+  netif_57 = instance_56(D)->reference.ptr;
+  value_u32_59 = value_58(D);
+  value_s32_60 = value_58(D);
+  _1 = instance_56(D)->instance_oid.id[1];
+  switch (_1) <default: <L31> [INV], case 1: <L0> [INV], case 2: <L1> [INV], case 3: <L2> [INV], case 4: <L3> [INV], case 5: <L4> [INV], case 6: <L5> [INV], case 7: <L6> [INV], case 8: <L10> [INV], case 9: <L17> [INV], case 10: <L18> [INV], case 11: <L19> [INV], case 12: <L20> [INV], case 13: <L21> [INV], case 14: <L22> [INV], case 15: <L23> [INV], case 16: <L24> [INV], case 17: <L25> [INV], case 18: <L26> [INV], case 19: <L27> [INV], case 20: <L28> [INV], case 21: <L29> [INV], case 22: <L30> [INV]>
+
+  <bb 3> :
+<L0>:
+  _2 = netif_to_num (netif_57);
+  _3 = (long int) _2;
+  *value_s32_60 = _3;
+  value_len_108 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 4> :
+<L1>:
+  value_len_104 = 2;
+  _4 = &netif_57->name;
+  _5 = (unsigned int) value_len_104;
+  memcpy (value_58(D), _4, _5);
+  goto <bb 34>; [INV]
+
+  <bb 5> :
+<L2>:
+  _6 = netif_57->link_type;
+  _7 = (long int) _6;
+  *value_s32_60 = _7;
+  value_len_103 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 6> :
+<L3>:
+  _8 = netif_57->mtu;
+  _9 = (long int) _8;
+  *value_s32_60 = _9;
+  value_len_101 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 7> :
+<L4>:
+  _10 = netif_57->link_speed;
+  *value_u32_59 = _10;
+  value_len_99 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 8> :
+<L5>:
+  value_len_96 = 6;
+  _11 = &netif_57->hwaddr;
+  _12 = (unsigned int) value_len_96;
+  memcpy (value_58(D), _11, _12);
+  goto <bb 34>; [INV]
+
+  <bb 9> :
+<L6>:
+  _13 = netif_57->flags;
+  _14 = (_Bool) _13;
+  if (_14 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftable_ifOperStatus_up.0_15 = 1;
+  _16 = (long int) iftable_ifOperStatus_up.0_15;
+  *value_s32_60 = _16;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  iftable_ifOperStatus_down.1_17 = 2;
+  _18 = (long int) iftable_ifOperStatus_down.1_17;
+  *value_s32_60 = _18;
+
+  <bb 12> :
+  value_len_95 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 13> :
+<L10>:
+  _19 = netif_57->flags;
+  _20 = (_Bool) _19;
+  if (_20 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  _21 = netif_57->flags;
+  _22 = (unsigned int) _21;
+  _23 = _22 >> 2;
+  _24 = (_Bool) _23;
+  if (_24 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftable_ifAdminStatus_up.2_25 = 1;
+  _26 = (long int) iftable_ifAdminStatus_up.2_25;
+  *value_s32_60 = _26;
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+  iftable_ifAdminStatus_lowerLayerDown.3_27 = 7;
+  _28 = (long int) iftable_ifAdminStatus_lowerLayerDown.3_27;
+  *value_s32_60 = _28;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftable_ifAdminStatus_down.4_29 = 2;
+  _30 = (long int) iftable_ifAdminStatus_down.4_29;
+  *value_s32_60 = _30;
+
+  <bb 18> :
+  value_len_92 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 19> :
+<L17>:
+  _31 = netif_57->ts;
+  *value_u32_59 = _31;
+  value_len_88 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 20> :
+<L18>:
+  _32 = netif_57->mib2_counters.ifinoctets;
+  *value_u32_59 = _32;
+  value_len_86 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 21> :
+<L19>:
+  _33 = netif_57->mib2_counters.ifinucastpkts;
+  *value_u32_59 = _33;
+  value_len_84 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 22> :
+<L20>:
+  _34 = netif_57->mib2_counters.ifinnucastpkts;
+  *value_u32_59 = _34;
+  value_len_82 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 23> :
+<L21>:
+  _35 = netif_57->mib2_counters.ifindiscards;
+  *value_u32_59 = _35;
+  value_len_80 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 24> :
+<L22>:
+  _36 = netif_57->mib2_counters.ifinerrors;
+  *value_u32_59 = _36;
+  value_len_78 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 25> :
+<L23>:
+  _37 = netif_57->mib2_counters.ifinunknownprotos;
+  *value_u32_59 = _37;
+  value_len_76 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 26> :
+<L24>:
+  _38 = netif_57->mib2_counters.ifoutoctets;
+  *value_u32_59 = _38;
+  value_len_74 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 27> :
+<L25>:
+  _39 = netif_57->mib2_counters.ifoutucastpkts;
+  *value_u32_59 = _39;
+  value_len_72 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 28> :
+<L26>:
+  _40 = netif_57->mib2_counters.ifoutnucastpkts;
+  *value_u32_59 = _40;
+  value_len_70 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 29> :
+<L27>:
+  _41 = netif_57->mib2_counters.ifoutdiscards;
+  *value_u32_59 = _41;
+  value_len_68 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 30> :
+<L28>:
+  _42 = netif_57->mib2_counters.ifouterrors;
+  *value_u32_59 = _42;
+  value_len_66 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 31> :
+<L29>:
+  iftable_ifOutQLen.5_43 = 0;
+  _44 = (long unsigned int) iftable_ifOutQLen.5_43;
+  *value_u32_59 = _44;
+  value_len_64 = 4;
+  goto <bb 34>; [INV]
+
+  <bb 32> :
+<L30>:
+  _45 = snmp_zero_dot_zero.len;
+  _46 = (short unsigned int) _45;
+  value_len_61 = _46 * 4;
+  _47 = snmp_zero_dot_zero.id;
+  _48 = (unsigned int) value_len_61;
+  memcpy (value_58(D), _47, _48);
+  goto <bb 34>; [INV]
+
+  <bb 33> :
+<L31>:
+  _110 = 0;
+  goto <bb 35>; [INV]
+
+  <bb 34> :
+  # value_len_49 = PHI <value_len_108(3), value_len_104(4), value_len_103(5), value_len_101(6), value_len_99(7), value_len_96(8), value_len_95(12), value_len_92(18), value_len_88(19), value_len_86(20), value_len_84(21), value_len_82(22), value_len_80(23), value_len_78(24), value_len_76(25), value_len_74(26), value_len_72(27), value_len_70(28), value_len_68(29), value_len_66(30), value_len_64(31), value_len_61(32)>
+  _109 = (s16_t) value_len_49;
+
+  <bb 35> :
+  # _50 = PHI <_110(33), _109(34)>
+<L33>:
+  return _50;
+
+}
+
+
+interfaces_Table_get_next_cell_instance (const u32_t * column, struct snmp_obj_id * row_oid, struct snmp_node_instance * cell_instance)
+{
+  u32_t test_oid[1];
+  u32_t result_temp[1];
+  struct snmp_next_oid_state state;
+  struct netif * netif;
+  snmp_err_t D.7637;
+  u32_t[50] * _1;
+  unsigned char _2;
+  unsigned char _3;
+  long unsigned int _4;
+  <unnamed type> _5;
+  u32_t * _6;
+  unsigned char _7;
+  void * _8;
+  snmp_err_t _10;
+  snmp_err_t _17;
+  snmp_err_t _21;
+
+  <bb 2> :
+  _1 = &row_oid_13(D)->id;
+  _2 = row_oid_13(D)->len;
+  snmp_next_oid_init (&state, _1, _2, &result_temp, 1);
+  netif_16 = netif_list;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = netif_to_num (netif_9);
+  _4 = (long unsigned int) _3;
+  test_oid[0] = _4;
+  snmp_next_oid_check (&state, &test_oid, 1, netif_9);
+  test_oid ={v} {CLOBBER};
+  netif_28 = netif_9->next;
+
+  <bb 4> :
+  # netif_9 = PHI <netif_16(2), netif_28(3)>
+  if (netif_9 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _5 = state.status;
+  if (_5 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _6 = state.next_oid;
+  _7 = state.next_oid_len;
+  snmp_oid_assign (row_oid_13(D), _6, _7);
+  _8 = state.reference;
+  cell_instance_19(D)->reference.ptr = _8;
+  _21 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _17 = 241;
+
+  <bb 8> :
+  # _10 = PHI <_21(6), _17(7)>
+  state ={v} {CLOBBER};
+  result_temp ={v} {CLOBBER};
+
+  <bb 9> :
+<L6>:
+  return _10;
+
+}
+
+
+interfaces_Table_get_cell_instance (const u32_t * column, const u32_t * row_oid, u8_t row_oid_len, struct snmp_node_instance * cell_instance)
+{
+  struct netif * netif;
+  u32_t ifIndex;
+  snmp_err_t D.7631;
+  unsigned char _1;
+  unsigned char _2;
+  long unsigned int _3;
+  snmp_err_t _5;
+  snmp_err_t _14;
+  snmp_err_t _19;
+  snmp_err_t _20;
+
+  <bb 2> :
+  _1 = snmp_oid_in_range (row_oid_9(D), row_oid_len_10(D), &interfaces_Table_oid_ranges, 1);
+  if (_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _20 = 241;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  ifIndex_12 = *row_oid_9(D);
+  netif_13 = netif_list;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _2 = netif_to_num (netif_4);
+  _3 = (long unsigned int) _2;
+  if (ifIndex_12 == _3)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  cell_instance_17(D)->reference.ptr = netif_4;
+  _19 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  netif_16 = netif_4->next;
+
+  <bb 8> :
+  # netif_4 = PHI <netif_13(4), netif_16(7)>
+  if (netif_4 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _14 = 241;
+
+  <bb 10> :
+  # _5 = PHI <_20(3), _19(6), _14(9)>
+<L7>:
+  return _5;
+
+}
+
+
+interfaces_get_value (struct snmp_node_instance * instance, void * value)
+{
+  struct netif * netif;
+  s32_t num_netifs;
+  s32_t * sint_ptr;
+  s16_t D.7627;
+  const struct snmp_node * _1;
+  long unsigned int _2;
+  s16_t _5;
+  s16_t _9;
+  s16_t _15;
+
+  <bb 2> :
+  _1 = instance_8(D)->node;
+  _2 = _1->oid;
+  if (_2 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  sint_ptr_11 = value_10(D);
+  num_netifs_12 = 0;
+  netif_13 = netif_list;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  num_netifs_16 = num_netifs_3 + 1;
+  netif_17 = netif_4->next;
+
+  <bb 5> :
+  # num_netifs_3 = PHI <num_netifs_12(3), num_netifs_16(4)>
+  # netif_4 = PHI <netif_13(3), netif_17(4)>
+  if (netif_4 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  *sint_ptr_11 = num_netifs_3;
+  _15 = 4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _9 = 0;
+
+  <bb 8> :
+  # _5 = PHI <_15(6), _9(7)>
+<L5>:
+  return _5;
+
+}
+
+

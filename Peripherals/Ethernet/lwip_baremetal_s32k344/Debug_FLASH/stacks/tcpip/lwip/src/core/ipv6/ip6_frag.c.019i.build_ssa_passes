@@ -1,0 +1,1402 @@
+ip6_frag (struct pbuf * p, struct netif * netif, const struct ip6_addr_t * dest)
+{
+  struct pbuf_custom_ref * pcr;
+  u16_t poff;
+  u16_t last;
+  u16_t fragment_offset;
+  const u16_t nfb;
+  const u16_t mtu;
+  u16_t cop;
+  u16_t left;
+  static u32_t identification;
+  u16_t left_to_copy;
+  u16_t newpbuflen;
+  struct pbuf * newpbuf;
+  struct pbuf * rambuf;
+  struct ip6_frag_hdr * frag_hdr;
+  struct ip6_hdr * ip6hdr;
+  struct ip6_hdr * original_ip6hdr;
+  err_t D.7657;
+  u16_t iftmp.13;
+
+  <bb 2> :
+  newpbuflen = 0;
+  mtu = nd6_get_destination_mtu (dest, netif);
+  _1 = mtu + 65488;
+  nfb = _1 & 65528;
+  fragment_offset = 0;
+  poff = 40;
+  identification.12_2 = identification;
+  _3 = identification.12_2 + 1;
+  identification = _3;
+  original_ip6hdr = p->payload;
+  _4 = p->tot_len;
+  if (_4 <= 39)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _5 = p->tot_len;
+  left = _5 + 65496;
+  goto <bb 23>; [INV]
+
+  <bb 5> :
+  _6 = left <= nfb;
+  last = (u16_t) _6;
+  if (last != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.13 = left;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.13 = nfb;
+
+  <bb 8> :
+  cop = iftmp.13;
+  rambuf = pbuf_alloc (14, 48, 640);
+  if (rambuf == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _7 = lwip_stats.ip6_frag.memerr;
+  _8 = _7 + 1;
+  lwip_stats.ip6_frag.memerr = _8;
+  D.7657 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 10> :
+  _9 = rambuf->len;
+  if (_9 <= 39)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 11>; [INV]
+
+  <bb 12> :
+  _10 = rambuf->payload;
+  memcpy (_10, original_ip6hdr, 40);
+  ip6hdr = rambuf->payload;
+  _11 = rambuf->payload;
+  frag_hdr = _11 + 40;
+  _12 = p->payload;
+  _13 = (sizetype) poff;
+  _14 = _12 + _13;
+  p->payload = _14;
+  _15 = p->len;
+  _16 = _15 - poff;
+  p->len = _16;
+  _17 = p->tot_len;
+  _18 = _17 - poff;
+  p->tot_len = _18;
+  left_to_copy = cop;
+  goto <bb 21>; [INV]
+
+  <bb 13> :
+  _19 = p->len;
+  newpbuflen = MIN_EXPR <left_to_copy, _19>;
+  if (newpbuflen == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  p = p->next;
+  // predicted unlikely by continue predictor.
+  goto <bb 21>; [INV]
+
+  <bb 15> :
+  pcr = ip6_frag_alloc_pbuf_custom_ref ();
+  if (pcr == 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  pbuf_free (rambuf);
+  _20 = lwip_stats.ip6_frag.memerr;
+  _21 = _20 + 1;
+  lwip_stats.ip6_frag.memerr = _21;
+  D.7657 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 17> :
+  _22 = &pcr->pc;
+  _23 = p->payload;
+  newpbuf = pbuf_alloced_custom (0, newpbuflen, 65, _22, _23, newpbuflen);
+  if (newpbuf == 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  ip6_frag_free_pbuf_custom_ref (pcr);
+  pbuf_free (rambuf);
+  _24 = lwip_stats.ip6_frag.memerr;
+  _25 = _24 + 1;
+  lwip_stats.ip6_frag.memerr = _25;
+  D.7657 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 19> :
+  pbuf_ref (p);
+  pcr->original = p;
+  pcr->pc.custom_free_function = ip6_frag_free_pbuf_custom;
+  pbuf_cat (rambuf, newpbuf);
+  left_to_copy = left_to_copy - newpbuflen;
+  if (left_to_copy != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  p = p->next;
+
+  <bb 21> :
+  if (left_to_copy != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  poff = newpbuflen;
+  _26 = original_ip6hdr->_nexth;
+  frag_hdr->_nexth = _26;
+  frag_hdr->reserved = 0;
+  fragment_offset.14_27 = (signed short) fragment_offset;
+  _28 = fragment_offset.14_27 & -8;
+  _29 = last == 0;
+  _30 = (int) _29;
+  _31 = (signed short) _30;
+  _32 = _28 | _31;
+  _33 = (short unsigned int) _32;
+  _34 = lwip_htons (_33);
+  frag_hdr->_fragment_offset = _34;
+  identification.15_35 = identification;
+  _36 = lwip_htonl (identification.15_35);
+  frag_hdr->_identification = _36;
+  ip6hdr->_nexth = 44;
+  _37 = cop + 8;
+  _38 = lwip_htons (_37);
+  ip6hdr->_plen = _38;
+  _39 = lwip_stats.ip6_frag.xmit;
+  _40 = _39 + 1;
+  lwip_stats.ip6_frag.xmit = _40;
+  _41 = netif->output_ip6;
+  _41 (netif, rambuf, dest);
+  pbuf_free (rambuf);
+  left = left - cop;
+  fragment_offset = fragment_offset + cop;
+
+  <bb 23> :
+  if (left != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  D.7657 = 0;
+
+  <bb 25> :
+<L25>:
+  return D.7657;
+
+}
+
+
+ip6_frag_free_pbuf_custom (struct pbuf * p)
+{
+  struct pbuf_custom_ref * pcr;
+
+  <bb 2> :
+  pcr = p;
+  if (pcr == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (pcr != p)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = pcr->original;
+  if (_1 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _2 = pcr->original;
+  pbuf_free (_2);
+
+  <bb 8> :
+  ip6_frag_free_pbuf_custom_ref (pcr);
+  return;
+
+}
+
+
+ip6_frag_free_pbuf_custom_ref (struct pbuf_custom_ref * p)
+{
+  <bb 2> :
+  if (p == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  memp_free (6, p);
+  return;
+
+}
+
+
+ip6_frag_alloc_pbuf_custom_ref ()
+{
+  struct pbuf_custom_ref * D.7639;
+
+  <bb 2> :
+  D.7639 = memp_malloc (6);
+
+  <bb 3> :
+<L0>:
+  return D.7639;
+
+}
+
+
+ip6_reass (struct pbuf * p)
+{
+  u8_t * ptr;
+  struct ip6_hdr * iphdr_ptr;
+  struct pbuf * next_pbuf;
+  struct pbuf * q;
+  u8_t valid;
+  u16_t clen;
+  ptrdiff_t hdrdiff;
+  u16_t end;
+  u16_t start;
+  u16_t len;
+  u16_t offset;
+  struct ip6_frag_hdr * frag_hdr;
+  struct ip6_reass_helper * iprh_prev;
+  struct ip6_reass_helper * iprh_tmp;
+  struct ip6_reass_helper * iprh;
+  struct ip6_reassdata * ipr_prev;
+  struct ip6_reassdata * ipr;
+  struct pbuf * D.7637;
+
+  <bb 2> :
+  iprh_prev = 0B;
+  valid = 1;
+  _1 = lwip_stats.ip6_frag.recv;
+  _2 = _1 + 1;
+  lwip_stats.ip6_frag.recv = _2;
+  _3 = p->len;
+  if (_3 <= 7)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  frag_hdr = p->payload;
+  clen = pbuf_clen (p);
+  _4 = frag_hdr->_fragment_offset;
+  offset = lwip_htons (_4);
+  _5 = ip_data.current_ip6_header;
+  _6 = MEM[(const struct ip6_hdr *)_5]._plen;
+  len = lwip_htons (_6);
+  _7 = p->payload;
+  _8 = ip_data.current_ip6_header;
+  hdrdiff = _7 - _8;
+  if (hdrdiff > 65535)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  if (hdrdiff <= 39)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  hdrdiff = hdrdiff + -40;
+  hdrdiff = hdrdiff + 8;
+  _9 = (int) len;
+  if (hdrdiff > _9)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _10 = lwip_stats.ip6_frag.proterr;
+  _11 = _10 + 1;
+  lwip_stats.ip6_frag.proterr = _11;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 10> :
+  _12 = (short unsigned int) hdrdiff;
+  len = len - _12;
+  start = offset & 65528;
+  _13 = (int) start;
+  _14 = (int) len;
+  _15 = 65535 - _14;
+  if (_13 > _15)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _16 = lwip_stats.ip6_frag.proterr;
+  _17 = _16 + 1;
+  lwip_stats.ip6_frag.proterr = _17;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 12> :
+  ipr = reassdatagrams;
+  ipr_prev = 0B;
+  goto <bb 26>; [INV]
+
+  <bb 13> :
+  _18 = frag_hdr->_identification;
+  _19 = ipr->identification;
+  if (_18 == _19)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 14> :
+  _20 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  _21 = ipr->iphdr;
+  _22 = _21->src.addr[0];
+  if (_20 == _22)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 15> :
+  _23 = ip_data.current_iphdr_src.u_addr.ip6.addr[1];
+  _24 = ipr->iphdr;
+  _25 = _24->src.addr[1];
+  if (_23 == _25)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 16> :
+  _26 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  _27 = ipr->iphdr;
+  _28 = _27->src.addr[2];
+  if (_26 == _28)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 17> :
+  _29 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  _30 = ipr->iphdr;
+  _31 = _30->src.addr[3];
+  if (_29 == _31)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 18> :
+  _32 = ip_data.current_iphdr_src.u_addr.ip6.zone;
+  _33 = ipr->src_zone;
+  if (_32 == _33)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 19> :
+  _34 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _35 = ipr->iphdr;
+  _36 = _35->dest.addr[0];
+  if (_34 == _36)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 20> :
+  _37 = ip_data.current_iphdr_dest.u_addr.ip6.addr[1];
+  _38 = ipr->iphdr;
+  _39 = _38->dest.addr[1];
+  if (_37 == _39)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 21> :
+  _40 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  _41 = ipr->iphdr;
+  _42 = _41->dest.addr[2];
+  if (_40 == _42)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 22> :
+  _43 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  _44 = ipr->iphdr;
+  _45 = _44->dest.addr[3];
+  if (_43 == _45)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 23> :
+  _46 = ip_data.current_iphdr_dest.u_addr.ip6.zone;
+  _47 = ipr->dest_zone;
+  if (_46 == _47)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _48 = lwip_stats.ip6_frag.cachehit;
+  _49 = _48 + 1;
+  lwip_stats.ip6_frag.cachehit = _49;
+  goto <bb 27>; [INV]
+
+  <bb 25> :
+  ipr_prev = ipr;
+  ipr = ipr->next;
+
+  <bb 26> :
+  if (ipr != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 27> :
+  if (ipr == 0B)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 28> :
+  ipr = memp_malloc (11);
+  if (ipr == 0B)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 29> :
+  _50 = (int) clen;
+  ip6_reass_remove_oldest_datagram (ipr, _50);
+  ipr = memp_malloc (11);
+  if (ipr != 0B)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 30> :
+  ipr_prev = reassdatagrams;
+  goto <bb 34>; [INV]
+
+  <bb 31> :
+  _51 = ipr_prev->next;
+  if (ipr == _51)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  goto <bb 35>; [INV]
+
+  <bb 33> :
+  ipr_prev = ipr_prev->next;
+
+  <bb 34> :
+  if (ipr_prev != 0B)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 35> :
+  goto <bb 37>; [INV]
+
+  <bb 36> :
+  _52 = lwip_stats.ip6_frag.memerr;
+  _53 = _52 + 1;
+  lwip_stats.ip6_frag.memerr = _53;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 37> :
+  memset (ipr, 0, 32);
+  ipr->timer = 60;
+  reassdatagrams.5_54 = reassdatagrams;
+  ipr->next = reassdatagrams.5_54;
+  reassdatagrams = ipr;
+  _55 = ip_data.current_ip6_header;
+  ipr->iphdr = _55;
+  _56 = ip_data.current_iphdr_src.u_addr.ip6.zone;
+  ipr->src_zone = _56;
+  _57 = ip_data.current_iphdr_dest.u_addr.ip6.zone;
+  ipr->dest_zone = _57;
+  _58 = frag_hdr->_identification;
+  ipr->identification = _58;
+  _59 = frag_hdr->_nexth;
+  ipr->nexth = _59;
+
+  <bb 38> :
+  ip6_reass_pbufcount.6_60 = ip6_reass_pbufcount;
+  _61 = (int) ip6_reass_pbufcount.6_60;
+  _62 = (int) clen;
+  _63 = _61 + _62;
+  if (_63 > 10)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 39> :
+  _64 = (int) clen;
+  ip6_reass_remove_oldest_datagram (ipr, _64);
+  ip6_reass_pbufcount.7_65 = ip6_reass_pbufcount;
+  _66 = (int) ip6_reass_pbufcount.7_65;
+  _67 = (int) clen;
+  _68 = _66 + _67;
+  if (_68 <= 10)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 40> :
+  ipr_prev = reassdatagrams;
+  goto <bb 44>; [INV]
+
+  <bb 41> :
+  _69 = ipr_prev->next;
+  if (ipr == _69)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 42> :
+  goto <bb 45>; [INV]
+
+  <bb 43> :
+  ipr_prev = ipr_prev->next;
+
+  <bb 44> :
+  if (ipr_prev != 0B)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 45> :
+  goto <bb 47>; [INV]
+
+  <bb 46> :
+  _70 = lwip_stats.ip6_frag.memerr;
+  _71 = _70 + 1;
+  lwip_stats.ip6_frag.memerr = _71;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 47> :
+  iprh = p->payload;
+  next_pbuf = 0B;
+  end = start + len;
+  q = ipr->p;
+  goto <bb 66>; [INV]
+
+  <bb 48> :
+  iprh_tmp = q->payload;
+  _72 = iprh_tmp->start;
+  if (start < _72)
+    goto <bb 49>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 49> :
+  _73 = iprh_tmp->start;
+  if (end > _73)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  _74 = lwip_stats.ip6_frag.proterr;
+  _75 = _74 + 1;
+  lwip_stats.ip6_frag.proterr = _75;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 51> :
+  if (iprh_prev != 0B)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 52> :
+  _76 = iprh_prev->end;
+  if (start < _76)
+    goto <bb 53>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 53> :
+  _77 = lwip_stats.ip6_frag.proterr;
+  _78 = _77 + 1;
+  lwip_stats.ip6_frag.proterr = _78;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 54> :
+  next_pbuf = q;
+  if (iprh_prev != 0B)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 55> :
+  iprh_prev->next_pbuf = p;
+  goto <bb 57>; [INV]
+
+  <bb 56> :
+  ipr->p = p;
+
+  <bb 57> :
+  goto <bb 67>; [INV]
+
+  <bb 58> :
+  _79 = iprh_tmp->start;
+  if (start == _79)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 59> :
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 60> :
+  _80 = iprh_tmp->end;
+  if (start < _80)
+    goto <bb 61>; [INV]
+  else
+    goto <bb 62>; [INV]
+
+  <bb 61> :
+  _81 = lwip_stats.ip6_frag.proterr;
+  _82 = _81 + 1;
+  lwip_stats.ip6_frag.proterr = _82;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 62> :
+  if (iprh_prev != 0B)
+    goto <bb 63>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 63> :
+  _83 = iprh_prev->end;
+  _84 = iprh_tmp->start;
+  if (_83 != _84)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 64> :
+  valid = 0;
+
+  <bb 65> :
+  q = iprh_tmp->next_pbuf;
+  iprh_prev = iprh_tmp;
+
+  <bb 66> :
+  if (q != 0B)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 67> :
+  if (q == 0B)
+    goto <bb 68>; [INV]
+  else
+    goto <bb 76>; [INV]
+
+  <bb 68> :
+  if (iprh_prev != 0B)
+    goto <bb 69>; [INV]
+  else
+    goto <bb 73>; [INV]
+
+  <bb 69> :
+  _85 = iprh_prev->end;
+  if (start < _85)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 71>; [INV]
+
+  <bb 70> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 70>; [INV]
+
+  <bb 71> :
+  iprh_prev->next_pbuf = p;
+  _86 = iprh_prev->end;
+  if (start != _86)
+    goto <bb 72>; [INV]
+  else
+    goto <bb 76>; [INV]
+
+  <bb 72> :
+  valid = 0;
+  goto <bb 76>; [INV]
+
+  <bb 73> :
+  _87 = ipr->p;
+  if (_87 != 0B)
+    goto <bb 74>; [INV]
+  else
+    goto <bb 75>; [INV]
+
+  <bb 74> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 74>; [INV]
+
+  <bb 75> :
+  ipr->p = p;
+
+  <bb 76> :
+  ip6_reass_pbufcount.8_88 = ip6_reass_pbufcount;
+  _89 = clen + ip6_reass_pbufcount.8_88;
+  ip6_reass_pbufcount = _89;
+  if (start == 0)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 77> :
+  _90 = ip_data.current_ip6_header;
+  ipr->iphdr = _90;
+  _91 = &ipr->orig_hdr;
+  _92 = p->payload;
+  memcpy (_91, _92, 8);
+
+  <bb 78> :
+  iprh->next_pbuf = next_pbuf;
+  iprh->start = start;
+  iprh->end = end;
+  _93 = (int) offset;
+  _94 = _93 & 1;
+  if (_94 == 0)
+    goto <bb 79>; [INV]
+  else
+    goto <bb 80>; [INV]
+
+  <bb 79> :
+  _95 = iprh->end;
+  ipr->datagram_len = _95;
+
+  <bb 80> :
+  _96 = ipr->p;
+  iprh_tmp = _96->payload;
+  _97 = iprh_tmp->start;
+  if (_97 != 0)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 82>; [INV]
+
+  <bb 81> :
+  valid = 0;
+
+  <bb 82> :
+  _98 = ipr->datagram_len;
+  if (_98 == 0)
+    goto <bb 83>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 83> :
+  valid = 0;
+
+  <bb 84> :
+  iprh_prev = iprh;
+  q = iprh->next_pbuf;
+  goto <bb 88>; [INV]
+
+  <bb 85> :
+  iprh = q->payload;
+  _99 = iprh_prev->end;
+  _100 = iprh->start;
+  if (_99 != _100)
+    goto <bb 86>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 86> :
+  valid = 0;
+  goto <bb 90>; [INV]
+
+  <bb 87> :
+  iprh_prev = iprh;
+  q = iprh->next_pbuf;
+
+  <bb 88> :
+  if (q != 0B)
+    goto <bb 89>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 89> :
+  if (valid != 0)
+    goto <bb 85>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 90> :
+  if (valid != 0)
+    goto <bb 91>; [INV]
+  else
+    goto <bb 113>; [INV]
+
+  <bb 91> :
+  _101 = ipr->p;
+  iprh = _101->payload;
+  goto <bb 96>; [INV]
+
+  <bb 92> :
+  next_pbuf = iprh->next_pbuf;
+  if (next_pbuf != 0B)
+    goto <bb 93>; [INV]
+  else
+    goto <bb 94>; [INV]
+
+  <bb 93> :
+  iprh_tmp = next_pbuf->payload;
+  pbuf_remove_header (next_pbuf, 8);
+  _102 = ipr->p;
+  pbuf_cat (_102, next_pbuf);
+  goto <bb 95>; [INV]
+
+  <bb 94> :
+  iprh_tmp = 0B;
+
+  <bb 95> :
+  iprh = iprh_tmp;
+
+  <bb 96> :
+  if (iprh != 0B)
+    goto <bb 92>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 97> :
+  p = ipr->p;
+  _103 = ipr->iphdr;
+  _104 = _103 + 8;
+  _105 = ipr->iphdr;
+  _106 = p->payload;
+  _107 = ipr->iphdr;
+  _108 = _106 - _107;
+  _109 = (unsigned int) _108;
+  memmove (_104, _105, _109);
+  _110 = ipr->iphdr;
+  iphdr_ptr = _110 + 8;
+  _111 = ipr->datagram_len;
+  _112 = p->payload;
+  _113 = _112 - iphdr_ptr;
+  _114 = (short unsigned int) _113;
+  _115 = _111 + _114;
+  _116 = _115 + 65496;
+  ipr->datagram_len = _116;
+  _117 = ipr->datagram_len;
+  _118 = lwip_htons (_117);
+  iphdr_ptr->_plen = _118;
+  _119 = iphdr_ptr->_nexth;
+  if (_119 == 44)
+    goto <bb 98>; [INV]
+  else
+    goto <bb 99>; [INV]
+
+  <bb 98> :
+  _120 = ipr->nexth;
+  iphdr_ptr->_nexth = _120;
+  goto <bb 103>; [INV]
+
+  <bb 99> :
+  ptr = iphdr_ptr + 40;
+  goto <bb 101>; [INV]
+
+  <bb 100> :
+  _121 = ptr + 1;
+  _122 = *_121;
+  _123 = (int) _122;
+  _124 = _123 + 1;
+  _125 = _124 * 8;
+  _126 = (sizetype) _125;
+  ptr = ptr + _126;
+
+  <bb 101> :
+  _127 = *ptr;
+  if (_127 != 44)
+    goto <bb 100>; [INV]
+  else
+    goto <bb 102>; [INV]
+
+  <bb 102> :
+  _128 = ipr->nexth;
+  *ptr = _128;
+
+  <bb 103> :
+  reassdatagrams.9_129 = reassdatagrams;
+  if (ipr == reassdatagrams.9_129)
+    goto <bb 104>; [INV]
+  else
+    goto <bb 105>; [INV]
+
+  <bb 104> :
+  _130 = ipr->next;
+  reassdatagrams = _130;
+  goto <bb 108>; [INV]
+
+  <bb 105> :
+  if (ipr_prev == 0B)
+    goto <bb 106>; [INV]
+  else
+    goto <bb 107>; [INV]
+
+  <bb 106> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 106>; [INV]
+
+  <bb 107> :
+  _131 = ipr->next;
+  ipr_prev->next = _131;
+
+  <bb 108> :
+  memp_free (11, ipr);
+  clen = pbuf_clen (p);
+  ip6_reass_pbufcount.10_132 = ip6_reass_pbufcount;
+  if (clen > ip6_reass_pbufcount.10_132)
+    goto <bb 109>; [INV]
+  else
+    goto <bb 110>; [INV]
+
+  <bb 109> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 109>; [INV]
+
+  <bb 110> :
+  ip6_reass_pbufcount.11_133 = ip6_reass_pbufcount;
+  _134 = ip6_reass_pbufcount.11_133 - clen;
+  ip6_reass_pbufcount = _134;
+  _135 = p->payload;
+  _136 = _135 - iphdr_ptr;
+  _137 = (short int) _136;
+  _138 = pbuf_header_force (p, _137);
+  if (_138 != 0)
+    goto <bb 111>; [INV]
+  else
+    goto <bb 112>; [INV]
+
+  <bb 111> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 111>; [INV]
+
+  <bb 112> :
+  D.7637 = p;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 115>; [INV]
+
+  <bb 113> :
+  D.7637 = 0B;
+  goto <bb 115>; [INV]
+
+  <bb 114> :
+nullreturn:
+  _139 = lwip_stats.ip6_frag.drop;
+  _140 = _139 + 1;
+  lwip_stats.ip6_frag.drop = _140;
+  pbuf_free (p);
+  D.7637 = 0B;
+
+  <bb 115> :
+<L141>:
+  return D.7637;
+
+}
+
+
+ip6_reass_remove_oldest_datagram (struct ip6_reassdata * ipr, int pbufs_needed)
+{
+  struct ip6_reassdata * oldest;
+  struct ip6_reassdata * r;
+
+  <bb 2> :
+  oldest = reassdatagrams;
+  r = oldest;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  if (r != ipr)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _1 = r->timer;
+  _2 = oldest->timer;
+  if (_1 <= _2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  oldest = r;
+
+  <bb 6> :
+  r = r->next;
+
+  <bb 7> :
+  if (r != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (oldest == ipr)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 14>; [INV]
+
+  <bb 10> :
+  if (oldest != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  ip6_reass_free_complete_datagram (oldest);
+
+  <bb 12> :
+  ip6_reass_pbufcount.3_3 = ip6_reass_pbufcount;
+  _4 = (int) ip6_reass_pbufcount.3_3;
+  _5 = pbufs_needed + _4;
+  if (_5 > 10)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  reassdatagrams.4_6 = reassdatagrams;
+  if (reassdatagrams.4_6 != 0B)
+    goto <bb 2>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+<L14>:
+  return;
+
+}
+
+
+ip6_reass_free_complete_datagram (struct ip6_reassdata * ipr)
+{
+  struct pbuf * pcur;
+  struct ip6_addr_t dest_addr;
+  struct ip6_addr_t src_addr;
+  unsigned int D.7516;
+  struct ip6_reass_helper * iprh;
+  struct pbuf * p;
+  u16_t clen;
+  u16_t pbufs_freed;
+  struct ip6_reassdata * prev;
+
+  <bb 2> :
+  pbufs_freed = 0;
+  _1 = ipr->p;
+  iprh = _1->payload;
+  _2 = iprh->start;
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  p = ipr->p;
+  _3 = iprh->next_pbuf;
+  ipr->p = _3;
+  _4 = p->payload;
+  _5 = &ipr->orig_hdr;
+  D.7516 = MEM <unsigned int> [(char * {ref-all})_5];
+  MEM <unsigned int> [(char * {ref-all})_4] = D.7516;
+  _6 = p->payload;
+  _7 = ipr->iphdr;
+  _8 = _6 - _7;
+  _9 = (short int) _8;
+  _10 = pbuf_header_force (p, _9);
+  if (_10 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  _11 = ipr->iphdr;
+  _12 = _11->src.addr[0];
+  src_addr.addr[0] = _12;
+  _13 = ipr->iphdr;
+  _14 = _13->src.addr[1];
+  src_addr.addr[1] = _14;
+  _15 = ipr->iphdr;
+  _16 = _15->src.addr[2];
+  src_addr.addr[2] = _16;
+  _17 = ipr->iphdr;
+  _18 = _17->src.addr[3];
+  src_addr.addr[3] = _18;
+  src_addr.zone = 0;
+  _19 = ipr->src_zone;
+  src_addr.zone = _19;
+  _20 = ipr->iphdr;
+  _21 = _20->dest.addr[0];
+  dest_addr.addr[0] = _21;
+  _22 = ipr->iphdr;
+  _23 = _22->dest.addr[1];
+  dest_addr.addr[1] = _23;
+  _24 = ipr->iphdr;
+  _25 = _24->dest.addr[2];
+  dest_addr.addr[2] = _25;
+  _26 = ipr->iphdr;
+  _27 = _26->dest.addr[3];
+  dest_addr.addr[3] = _27;
+  dest_addr.zone = 0;
+  _28 = ipr->dest_zone;
+  dest_addr.zone = _28;
+  icmp6_time_exceeded_with_addrs (p, 1, &src_addr, &dest_addr);
+  src_addr = {CLOBBER};
+  dest_addr = {CLOBBER};
+  clen = pbuf_clen (p);
+  _29 = (int) pbufs_freed;
+  _30 = (int) clen;
+  _31 = _29 + _30;
+  if (_31 > 65535)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  pbufs_freed = pbufs_freed + clen;
+  pbuf_free (p);
+
+  <bb 8> :
+  p = ipr->p;
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  iprh = p->payload;
+  pcur = p;
+  p = iprh->next_pbuf;
+  clen = pbuf_clen (pcur);
+  _32 = (int) pbufs_freed;
+  _33 = (int) clen;
+  _34 = _32 + _33;
+  if (_34 > 65535)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 10>; [INV]
+
+  <bb 11> :
+  pbufs_freed = pbufs_freed + clen;
+  pbuf_free (pcur);
+
+  <bb 12> :
+  if (p != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  reassdatagrams.0_35 = reassdatagrams;
+  if (ipr == reassdatagrams.0_35)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _36 = ipr->next;
+  reassdatagrams = _36;
+  goto <bb 22>; [INV]
+
+  <bb 15> :
+  prev = reassdatagrams;
+  goto <bb 19>; [INV]
+
+  <bb 16> :
+  _37 = prev->next;
+  if (ipr == _37)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  goto <bb 20>; [INV]
+
+  <bb 18> :
+  prev = prev->next;
+
+  <bb 19> :
+  if (prev != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  if (prev != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _38 = ipr->next;
+  prev->next = _38;
+
+  <bb 22> :
+  memp_free (11, ipr);
+  ip6_reass_pbufcount.1_39 = ip6_reass_pbufcount;
+  if (pbufs_freed > ip6_reass_pbufcount.1_39)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 23>; [INV]
+
+  <bb 24> :
+  ip6_reass_pbufcount.2_40 = ip6_reass_pbufcount;
+  _41 = ip6_reass_pbufcount.2_40 - pbufs_freed;
+  ip6_reass_pbufcount = _41;
+  return;
+
+}
+
+
+ip6_reass_tmr ()
+{
+  struct ip6_reassdata * tmp;
+  struct ip6_reassdata * r;
+
+  <bb 2> :
+
+  <bb 3> :
+  r = reassdatagrams;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _1 = r->timer;
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _2 = r->timer;
+  _3 = _2;
+  _4 = _3 + 255;
+  r->timer = _4;
+  r = r->next;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  tmp = r;
+  r = r->next;
+  ip6_reass_free_complete_datagram (tmp);
+
+  <bb 7> :
+  if (r != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  return;
+
+}
+
+

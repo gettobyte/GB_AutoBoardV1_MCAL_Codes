@@ -1,0 +1,92 @@
+netio_init ()
+{
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  pcb = tcp_new_ip_type (46);
+  tcp_bind (pcb, &ip_addr_any_type, 18767);
+  pcb = tcp_listen_with_backlog (pcb, 255);
+  tcp_accept (pcb, netio_accept);
+  return;
+
+}
+
+
+netio_accept (void * arg, struct tcp_pcb * pcb, err_t err)
+{
+  err_t D.7460;
+
+  <bb 2> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  tcp_arg (pcb, 0B);
+  tcp_sent (pcb, 0B);
+  tcp_recv (pcb, netio_recv);
+
+  <bb 4> :
+  D.7460 = 0;
+
+  <bb 5> :
+<L2>:
+  return D.7460;
+
+}
+
+
+netio_recv (void * arg, struct tcp_pcb * pcb, struct pbuf * p, err_t err)
+{
+  err_t D.7456;
+
+  <bb 2> :
+  if (err == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  if (p != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 = p->tot_len;
+  tcp_recved (pcb, _1);
+  pbuf_free (p);
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  pbuf_free (p);
+
+  <bb 6> :
+  if (err == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (p == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  tcp_arg (pcb, 0B);
+  tcp_sent (pcb, 0B);
+  tcp_recv (pcb, 0B);
+  tcp_close (pcb);
+
+  <bb 9> :
+  D.7456 = 0;
+
+  <bb 10> :
+<L8>:
+  return D.7456;
+
+}
+
+

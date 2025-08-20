@@ -1,0 +1,430 @@
+snmp_scalar_array_set_value (struct snmp_node_instance * instance, u16_t value_len, void * value)
+{
+  const struct snmp_scalar_array_node_def * array_node_def;
+  const struct snmp_scalar_array_node * array_node;
+  snmp_err_t result;
+  snmp_err_t D.6895;
+
+  <bb 2> :
+  result = 17;
+  array_node = instance->node;
+  array_node_def = instance->reference.const_ptr;
+  _1 = array_node->set_value;
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = array_node->set_value;
+  result = _2 (array_node_def, value_len, value);
+
+  <bb 4> :
+  D.6895 = result;
+
+  <bb 5> :
+<L2>:
+  return D.6895;
+
+}
+
+
+snmp_scalar_array_set_test (struct snmp_node_instance * instance, u16_t value_len, void * value)
+{
+  const struct snmp_scalar_array_node_def * array_node_def;
+  const struct snmp_scalar_array_node * array_node;
+  snmp_err_t result;
+  snmp_err_t D.6891;
+
+  <bb 2> :
+  result = 17;
+  array_node = instance->node;
+  array_node_def = instance->reference.const_ptr;
+  _1 = array_node->set_test;
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = array_node->set_test;
+  result = _2 (array_node_def, value_len, value);
+
+  <bb 4> :
+  D.6891 = result;
+
+  <bb 5> :
+<L2>:
+  return D.6891;
+
+}
+
+
+snmp_scalar_array_get_value (struct snmp_node_instance * instance, void * value)
+{
+  const struct snmp_scalar_array_node_def * array_node_def;
+  const struct snmp_scalar_array_node * array_node;
+  s16_t result;
+  s16_t D.6887;
+
+  <bb 2> :
+  result = -1;
+  array_node = instance->node;
+  array_node_def = instance->reference.const_ptr;
+  _1 = array_node->get_value;
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = array_node->get_value;
+  result = _2 (array_node_def, value);
+
+  <bb 4> :
+  D.6887 = result;
+
+  <bb 5> :
+<L2>:
+  return D.6887;
+
+}
+
+
+snmp_scalar_array_get_next_instance (const u32_t * root_oid, u8_t root_oid_len, struct snmp_node_instance * instance)
+{
+  u16_t i;
+  u32_t oid_dist;
+  u16_t i;
+  u16_t i;
+  const struct snmp_scalar_array_node_def * result;
+  const struct snmp_scalar_array_node_def * array_node_def;
+  const struct snmp_scalar_array_node * array_node;
+  snmp_err_t D.6883;
+
+  <bb 2> :
+  array_node = instance->node;
+  array_node_def = array_node->array_nodes;
+  result = 0B;
+  _1 = instance->instance_oid.len;
+  if (_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  _2 = array_node->array_node_count;
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  i = 0;
+  result = array_node_def;
+  array_node_def = array_node_def + 12;
+  i = 1;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _3 = array_node_def->oid;
+  _4 = result->oid;
+  if (_3 < _4)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  result = array_node_def;
+
+  <bb 7> :
+  array_node_def = array_node_def + 12;
+  i.0_5 = i;
+  i = i.0_5 + 1;
+
+  <bb 8> :
+  _6 = array_node->array_node_count;
+  if (i < _6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  goto <bb 24>; [INV]
+
+  <bb 10> :
+  _7 = instance->instance_oid.len;
+  if (_7 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 11> :
+  _8 = instance->instance_oid.len;
+  if (_8 == 1)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 12> :
+  i = 0;
+  goto <bb 16>; [INV]
+
+  <bb 13> :
+  _9 = array_node_def->oid;
+  _10 = instance->instance_oid.id[0];
+  if (_9 == _10)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  result = array_node_def;
+  goto <bb 17>; [INV]
+
+  <bb 15> :
+  array_node_def = array_node_def + 12;
+  i.1_11 = i;
+  i = i.1_11 + 1;
+
+  <bb 16> :
+  _12 = array_node->array_node_count;
+  if (i < _12)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  if (result == 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 18> :
+  oid_dist = 4294967295;
+  i = 0;
+  array_node_def = array_node->array_nodes;
+  goto <bb 23>; [INV]
+
+  <bb 19> :
+  _13 = array_node_def->oid;
+  _14 = instance->instance_oid.id[0];
+  if (_13 > _14)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 20> :
+  _15 = array_node_def->oid;
+  _16 = instance->instance_oid.id[0];
+  _17 = _15 - _16;
+  if (oid_dist > _17)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  result = array_node_def;
+  _18 = array_node_def->oid;
+  _19 = instance->instance_oid.id[0];
+  oid_dist = _18 - _19;
+
+  <bb 22> :
+  array_node_def = array_node_def + 12;
+  i.2_20 = i;
+  i = i.2_20 + 1;
+
+  <bb 23> :
+  _21 = array_node->array_node_count;
+  if (i < _21)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  if (result == 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  D.6883 = 241;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  instance->instance_oid.len = 2;
+  _22 = result->oid;
+  instance->instance_oid.id[0] = _22;
+  instance->instance_oid.id[1] = 0;
+  _23 = result->access;
+  instance->access = _23;
+  _24 = result->asn1_type;
+  instance->asn1_type = _24;
+  instance->get_value = snmp_scalar_array_get_value;
+  instance->set_test = snmp_scalar_array_set_test;
+  instance->set_value = snmp_scalar_array_set_value;
+  instance->reference.const_ptr = result;
+  D.6883 = 0;
+
+  <bb 27> :
+<L29>:
+  return D.6883;
+
+}
+
+
+snmp_scalar_array_get_instance (const u32_t * root_oid, u8_t root_oid_len, struct snmp_node_instance * instance)
+{
+  u32_t i;
+  const struct snmp_scalar_array_node_def * array_node_def;
+  const struct snmp_scalar_array_node * array_node;
+  snmp_err_t D.6861;
+
+  <bb 2> :
+  _1 = instance->instance_oid.len;
+  if (_1 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 3> :
+  _2 = instance->instance_oid.id[1];
+  if (_2 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 4> :
+  array_node = instance->node;
+  array_node_def = array_node->array_nodes;
+  i = 0;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _3 = array_node_def->oid;
+  _4 = instance->instance_oid.id[0];
+  if (_3 == _4)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  array_node_def = array_node_def + 12;
+  i = i + 1;
+
+  <bb 8> :
+  _5 = array_node->array_node_count;
+  _6 = (long unsigned int) _5;
+  if (i < _6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _7 = array_node->array_node_count;
+  _8 = (long unsigned int) _7;
+  if (i < _8)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _9 = array_node_def->access;
+  instance->access = _9;
+  _10 = array_node_def->asn1_type;
+  instance->asn1_type = _10;
+  instance->get_value = snmp_scalar_array_get_value;
+  instance->set_test = snmp_scalar_array_set_test;
+  instance->set_value = snmp_scalar_array_set_value;
+  instance->reference.const_ptr = array_node_def;
+  D.6861 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  D.6861 = 241;
+
+  <bb 12> :
+<L11>:
+  return D.6861;
+
+}
+
+
+snmp_scalar_get_next_instance (const u32_t * root_oid, u8_t root_oid_len, struct snmp_node_instance * instance)
+{
+  snmp_err_t D.6851;
+
+  <bb 2> :
+  _1 = instance->instance_oid.len;
+  if (_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  instance->instance_oid.len = 1;
+  instance->instance_oid.id[0] = 0;
+  D.6851 = snmp_scalar_get_instance (root_oid, root_oid_len, instance);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.6851 = 241;
+
+  <bb 5> :
+<L2>:
+  return D.6851;
+
+}
+
+
+snmp_scalar_get_instance (const u32_t * root_oid, u8_t root_oid_len, struct snmp_node_instance * instance)
+{
+  const struct snmp_scalar_node * scalar_node;
+  snmp_err_t D.6847;
+
+  <bb 2> :
+  scalar_node = instance->node;
+  _1 = instance->instance_oid.len;
+  if (_1 != 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _2 = instance->instance_oid.id[0];
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.6847 = 241;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = scalar_node->access;
+  instance->access = _3;
+  _4 = scalar_node->asn1_type;
+  instance->asn1_type = _4;
+  _5 = scalar_node->get_value;
+  instance->get_value = _5;
+  _6 = scalar_node->set_test;
+  instance->set_test = _6;
+  _7 = scalar_node->set_value;
+  instance->set_value = _7;
+  D.6847 = 0;
+
+  <bb 6> :
+<L3>:
+  return D.6847;
+
+}
+
+

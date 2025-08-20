@@ -1,0 +1,1758 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: snmp_asn1_enc_u64t/17 snmp_asn1_dec_u64t/16 snmp_asn1_enc_u64t_cnt/15 snmp_asn1_dec_raw/14 snmp_asn1_dec_oid/13 snmp_asn1_dec_s32t/12 snmp_asn1_dec_u32t/11 snmp_asn1_dec_tlv/10 snmp_asn1_enc_oid_cnt/9 snmp_asn1_enc_s32t_cnt/8 snmp_asn1_enc_u32t_cnt/7 snmp_asn1_enc_length_cnt/6 snmp_asn1_enc_oid/5 snmp_asn1_enc_s32t/4 snmp_asn1_enc_u32t/3 snmp_asn1_enc_raw/2 snmp_ans1_enc_tlv/1
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+snmp_pbuf_stream_read/20 (snmp_pbuf_stream_read) @06d1e380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_asn1_dec_u64t/16 snmp_asn1_dec_u64t/16 snmp_asn1_dec_raw/14 snmp_asn1_dec_oid/13 snmp_asn1_dec_oid/13 snmp_asn1_dec_oid/13 snmp_asn1_dec_s32t/12 snmp_asn1_dec_s32t/12 snmp_asn1_dec_u32t/11 snmp_asn1_dec_u32t/11 snmp_asn1_dec_tlv/10 snmp_asn1_dec_tlv/10 snmp_asn1_dec_tlv/10 
+  Calls: 
+snmp_pbuf_stream_writebuf/19 (snmp_pbuf_stream_writebuf) @06cc89a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_asn1_enc_raw/2 
+  Calls: 
+snmp_pbuf_stream_write/18 (snmp_pbuf_stream_write) @06cc87e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_asn1_enc_u64t/17 snmp_asn1_enc_u64t/17 snmp_asn1_enc_u64t/17 snmp_asn1_enc_oid/5 snmp_asn1_enc_oid/5 snmp_asn1_enc_oid/5 snmp_asn1_enc_s32t/4 snmp_asn1_enc_s32t/4 snmp_asn1_enc_u32t/3 snmp_asn1_enc_u32t/3 snmp_asn1_enc_u32t/3 snmp_ans1_enc_tlv/1 snmp_ans1_enc_tlv/1 snmp_ans1_enc_tlv/1 snmp_ans1_enc_tlv/1 
+  Calls: 
+snmp_asn1_enc_u64t/17 (snmp_asn1_enc_u64t) @06cc81c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 
+snmp_asn1_dec_u64t/16 (snmp_asn1_dec_u64t) @06cbeb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_read/20 snmp_pbuf_stream_read/20 
+snmp_asn1_enc_u64t_cnt/15 (snmp_asn1_enc_u64t_cnt) @06cbed20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_asn1_enc_u32t_cnt/7 snmp_asn1_enc_u32t_cnt/7 
+snmp_asn1_dec_raw/14 (snmp_asn1_dec_raw) @06cbea80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_read/20 
+snmp_asn1_dec_oid/13 (snmp_asn1_dec_oid) @06cbe700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_read/20 snmp_pbuf_stream_read/20 snmp_pbuf_stream_read/20 
+snmp_asn1_dec_s32t/12 (snmp_asn1_dec_s32t) @06cbe1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_read/20 snmp_pbuf_stream_read/20 
+snmp_asn1_dec_u32t/11 (snmp_asn1_dec_u32t) @06caf7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_read/20 snmp_pbuf_stream_read/20 
+snmp_asn1_dec_tlv/10 (snmp_asn1_dec_tlv) @06cafee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_read/20 snmp_pbuf_stream_read/20 snmp_pbuf_stream_read/20 
+snmp_asn1_enc_oid_cnt/9 (snmp_asn1_enc_oid_cnt) @06caf9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+snmp_asn1_enc_s32t_cnt/8 (snmp_asn1_enc_s32t_cnt) @06caf700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+snmp_asn1_enc_u32t_cnt/7 (snmp_asn1_enc_u32t_cnt) @06caf460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: snmp_asn1_enc_u64t_cnt/15 snmp_asn1_enc_u64t_cnt/15 
+  Calls: 
+snmp_asn1_enc_length_cnt/6 (snmp_asn1_enc_length_cnt) @06caf1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+snmp_asn1_enc_oid/5 (snmp_asn1_enc_oid) @06c9ee00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 
+snmp_asn1_enc_s32t/4 (snmp_asn1_enc_s32t) @06c9ed20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 
+snmp_asn1_enc_u32t/3 (snmp_asn1_enc_u32t) @06c9e9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 
+snmp_asn1_enc_raw/2 (snmp_asn1_enc_raw) @06c9e540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_writebuf/19 
+snmp_ans1_enc_tlv/1 (snmp_ans1_enc_tlv) @06c9e1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 snmp_pbuf_stream_write/18 
+snmp_asn1_enc_u64t (struct snmp_pbuf_stream * pbuf_stream, u16_t octets_needed, u64_t value)
+{
+  err_t D.7318;
+
+  <bb 2> :
+  if (octets_needed > 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7318 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 4> :
+  if (octets_needed == 9)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _1 = snmp_pbuf_stream_write (pbuf_stream, 0);
+  if (_1 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.7318 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 7> :
+  octets_needed.56_2 = octets_needed;
+  octets_needed = octets_needed.56_2 + 65535;
+
+  <bb 8> :
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+  octets_needed.57_3 = octets_needed;
+  octets_needed = octets_needed.57_3 + 65535;
+  _4 = (int) octets_needed;
+  _5 = _4 << 3;
+  _6 = value >> _5;
+  _7 = (unsigned char) _6;
+  _8 = snmp_pbuf_stream_write (pbuf_stream, _7);
+  if (_8 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  D.7318 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 11> :
+  if (octets_needed > 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _9 = (unsigned char) value;
+  _10 = snmp_pbuf_stream_write (pbuf_stream, _9);
+  if (_10 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  D.7318 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  D.7318 = 0;
+
+  <bb 15> :
+<L13>:
+  return D.7318;
+
+}
+
+
+snmp_asn1_dec_u64t (struct snmp_pbuf_stream * pbuf_stream, u16_t len, u64_t * value)
+{
+  u8_t data;
+  err_t D.7306;
+
+  <bb 2> :
+  if (len != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 3> :
+  if (len <= 9)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 4> :
+  _1 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7306 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 6> :
+  if (len == 9)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  data.49_2 = data;
+  if (data.49_2 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (len <= 8)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 9> :
+  data.50_3 = data;
+  data.51_4 = (signed char) data.50_3;
+  if (data.51_4 >= 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 10> :
+  data.52_5 = data;
+  _6 = (long long unsigned int) data.52_5;
+  *value = _6;
+  len.53_7 = len;
+  len = len.53_7 + 65535;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  _8 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_8 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  D.7306 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 13> :
+  _9 = *value;
+  _10 = _9 << 8;
+  *value = _10;
+  _11 = *value;
+  data.54_12 = data;
+  _13 = (long long unsigned int) data.54_12;
+  _14 = _11 | _13;
+  *value = _14;
+  len.55_15 = len;
+  len = len.55_15 + 65535;
+
+  <bb 14> :
+  if (len != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  D.7306 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  D.7306 = -6;
+
+  <bb 17> :
+  data = {CLOBBER};
+
+  <bb 18> :
+<L17>:
+  return D.7306;
+
+}
+
+
+snmp_asn1_enc_u64t_cnt (u64_t value, u16_t * octets_needed)
+{
+  <bb 2> :
+  _1 = value >> 32;
+  if (_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = (long unsigned int) value;
+  snmp_asn1_enc_u32t_cnt (_2, octets_needed);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = value >> 32;
+  _4 = (long unsigned int) _3;
+  snmp_asn1_enc_u32t_cnt (_4, octets_needed);
+  _5 = *octets_needed;
+  _6 = _5 + 4;
+  *octets_needed = _6;
+
+  <bb 5> :
+  return;
+
+}
+
+
+snmp_asn1_dec_raw (struct snmp_pbuf_stream * pbuf_stream, u16_t len, u8_t * buf, u16_t * buf_len, u16_t buf_max_len)
+{
+  err_t D.7293;
+
+  <bb 2> :
+  if (len > buf_max_len)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7293 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  *buf_len = len;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _1 = snmp_pbuf_stream_read (pbuf_stream, buf);
+  if (_1 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.7293 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  buf = buf + 1;
+  len.48_2 = len;
+  len = len.48_2 + 65535;
+
+  <bb 8> :
+  if (len != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  D.7293 = 0;
+
+  <bb 10> :
+<L7>:
+  return D.7293;
+
+}
+
+
+snmp_asn1_dec_oid (struct snmp_pbuf_stream * pbuf_stream, u16_t len, u32_t * oid, u8_t * oid_len, u8_t oid_max_len)
+{
+  u32_t sub_id;
+  u8_t data;
+  u32_t * oid_ptr;
+  err_t D.7263;
+
+  <bb 2> :
+  *oid_len = 0;
+  oid_ptr = oid;
+  if (len != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 3> :
+  if (oid_max_len <= 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.7263 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 5> :
+  _1 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_1 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.7263 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 7> :
+  len.30_2 = len;
+  len = len.30_2 + 65535;
+  data.31_3 = data;
+  if (data.31_3 == 43)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  *oid_ptr = 1;
+  oid_ptr = oid_ptr + 4;
+  *oid_ptr = 3;
+  oid_ptr = oid_ptr + 4;
+  goto <bb 14>; [INV]
+
+  <bb 9> :
+  data.32_4 = data;
+  if (data.32_4 <= 39)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  *oid_ptr = 0;
+  oid_ptr = oid_ptr + 4;
+  data.33_5 = data;
+  _6 = (long unsigned int) data.33_5;
+  *oid_ptr = _6;
+  oid_ptr = oid_ptr + 4;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  data.34_7 = data;
+  if (data.34_7 <= 79)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  *oid_ptr = 1;
+  oid_ptr = oid_ptr + 4;
+  data.35_8 = data;
+  _9 = (int) data.35_8;
+  _10 = _9 + -40;
+  _11 = (long unsigned int) _10;
+  *oid_ptr = _11;
+  oid_ptr = oid_ptr + 4;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  *oid_ptr = 2;
+  oid_ptr = oid_ptr + 4;
+  data.36_12 = data;
+  _13 = (int) data.36_12;
+  _14 = _13 + -80;
+  _15 = (long unsigned int) _14;
+  *oid_ptr = _15;
+  oid_ptr = oid_ptr + 4;
+
+  <bb 14> :
+  *oid_len = 2;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  D.7263 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 16> :
+  goto <bb 31>; [INV]
+
+  <bb 17> :
+  _16 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_16 != 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  D.7263 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 19> :
+  len.37_17 = len;
+  len = len.37_17 + 65535;
+  data.38_18 = data;
+  data.39_19 = (signed char) data.38_18;
+  if (data.39_19 >= 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  data.40_20 = data;
+  _21 = (long unsigned int) data.40_20;
+  *oid_ptr = _21;
+  goto <bb 30>; [INV]
+
+  <bb 21> :
+  data.41_22 = data;
+  _23 = (long unsigned int) data.41_22;
+  sub_id = _23 & 4294967167;
+  goto <bb 25>; [INV]
+
+  <bb 22> :
+  _24 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_24 != 0)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  D.7263 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 24> :
+  len.42_25 = len;
+  len = len.42_25 + 65535;
+  _26 = sub_id << 7;
+  data.43_27 = data;
+  _28 = (long unsigned int) data.43_27;
+  _29 = _28 & 4294967167;
+  sub_id = _26 + _29;
+
+  <bb 25> :
+  if (len != 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  data.44_30 = data;
+  data.45_31 = (signed char) data.44_30;
+  if (data.45_31 < 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 27> :
+  data.46_32 = data;
+  data.47_33 = (signed char) data.46_32;
+  if (data.47_33 < 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  D.7263 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 29> :
+  *oid_ptr = sub_id;
+
+  <bb 30> :
+  oid_ptr = oid_ptr + 4;
+  _34 = *oid_len;
+  _35 = _34;
+  _36 = _35 + 1;
+  *oid_len = _36;
+
+  <bb 31> :
+  if (len != 0)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  _37 = *oid_len;
+  if (oid_max_len > _37)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 33> :
+  if (len != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  D.7263 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 36>; [INV]
+
+  <bb 35> :
+  D.7263 = 0;
+
+  <bb 36> :
+  data = {CLOBBER};
+
+  <bb 37> :
+<L36>:
+  return D.7263;
+
+}
+
+
+snmp_asn1_dec_s32t (struct snmp_pbuf_stream * pbuf_stream, u16_t len, s32_t * value)
+{
+  u8_t data;
+  err_t D.7251;
+
+  <bb 2> :
+  if (len != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 3> :
+  if (len <= 4)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 4> :
+  _1 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7251 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 6> :
+  data.23_2 = data;
+  data.24_3 = (signed char) data.23_2;
+  if (data.24_3 < 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  *value = -1;
+  _4 = *value;
+  _5 = _4 << 8;
+  data.25_6 = data;
+  _7 = (long int) data.25_6;
+  _8 = _5 | _7;
+  *value = _8;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  data.26_9 = data;
+  _10 = (long int) data.26_9;
+  *value = _10;
+
+  <bb 9> :
+  len.27_11 = len;
+  len = len.27_11 + 65535;
+  goto <bb 13>; [INV]
+
+  <bb 10> :
+  _12 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_12 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  D.7251 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 12> :
+  _13 = *value;
+  _14 = _13 << 8;
+  data.28_15 = data;
+  _16 = (long int) data.28_15;
+  _17 = _14 | _16;
+  *value = _17;
+  len.29_18 = len;
+  len = len.29_18 + 65535;
+
+  <bb 13> :
+  if (len != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  D.7251 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  D.7251 = -6;
+
+  <bb 16> :
+  data = {CLOBBER};
+
+  <bb 17> :
+<L15>:
+  return D.7251;
+
+}
+
+
+snmp_asn1_dec_u32t (struct snmp_pbuf_stream * pbuf_stream, u16_t len, u32_t * value)
+{
+  u8_t data;
+  err_t D.7235;
+
+  <bb 2> :
+  if (len != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 3> :
+  if (len <= 5)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 4> :
+  _1 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7235 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 6> :
+  if (len == 5)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  data.16_2 = data;
+  if (data.16_2 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (len <= 4)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 9> :
+  data.17_3 = data;
+  data.18_4 = (signed char) data.17_3;
+  if (data.18_4 >= 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 10> :
+  data.19_5 = data;
+  _6 = (long unsigned int) data.19_5;
+  *value = _6;
+  len.20_7 = len;
+  len = len.20_7 + 65535;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  _8 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_8 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  D.7235 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 13> :
+  len.21_9 = len;
+  len = len.21_9 + 65535;
+  _10 = *value;
+  _11 = _10 << 8;
+  *value = _11;
+  _12 = *value;
+  data.22_13 = data;
+  _14 = (long unsigned int) data.22_13;
+  _15 = _12 | _14;
+  *value = _15;
+
+  <bb 14> :
+  if (len != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  D.7235 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  D.7235 = -6;
+
+  <bb 17> :
+  data = {CLOBBER};
+
+  <bb 18> :
+<L17>:
+  return D.7235;
+
+}
+
+
+snmp_asn1_dec_tlv (struct snmp_pbuf_stream * pbuf_stream, struct snmp_asn1_tlv * tlv)
+{
+  u8_t length_bytes;
+  u8_t data;
+  err_t D.7208;
+
+  <bb 2> :
+  _1 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7208 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 4> :
+  data.8_2 = data;
+  tlv->type = data.8_2;
+  _3 = tlv->type;
+  _4 = (int) _3;
+  _5 = _4 & 31;
+  if (_5 == 31)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7208 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 6> :
+  tlv->type_len = 1;
+  _6 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_6 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.7208 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 8> :
+  data.9_7 = data;
+  data.10_8 = (signed char) data.9_7;
+  if (data.10_8 >= 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  tlv->length_len = 1;
+  data.11_9 = data;
+  _10 = (short unsigned int) data.11_9;
+  tlv->value_len = _10;
+  goto <bb 23>; [INV]
+
+  <bb 10> :
+  data.12_11 = data;
+  if (data.12_11 > 128)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 11> :
+  data.13_12 = data;
+  length_bytes = data.13_12 + 128;
+  _13 = (short unsigned int) length_bytes;
+  _14 = pbuf_stream->length;
+  if (_13 > _14)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  D.7208 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 13> :
+  _15 = length_bytes + 1;
+  tlv->length_len = _15;
+  tlv->value_len = 0;
+  goto <bb 21>; [INV]
+
+  <bb 14> :
+  _16 = tlv->value_len;
+  if (_16 > 255)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  D.7208 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 16> :
+  _17 = snmp_pbuf_stream_read (pbuf_stream, &data);
+  if (_17 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  D.7208 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 18> :
+  _18 = tlv->value_len;
+  _19 = _18 << 8;
+  tlv->value_len = _19;
+  _20 = tlv->value_len;
+  data.14_21 = data;
+  _22 = (short unsigned int) data.14_21;
+  _23 = _20 | _22;
+  tlv->value_len = _23;
+  _24 = tlv->value_len;
+  if (_24 == 65535)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  D.7208 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 20> :
+  length_bytes.15_25 = length_bytes;
+  length_bytes = length_bytes.15_25 + 255;
+
+  <bb 21> :
+  if (length_bytes != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  D.7208 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  D.7208 = 0;
+
+  <bb 24> :
+  data = {CLOBBER};
+
+  <bb 25> :
+<L24>:
+  return D.7208;
+
+}
+
+
+snmp_asn1_enc_oid_cnt (const u32_t * oid, u16_t oid_len, u16_t * octets_needed)
+{
+  u32_t sub_id;
+
+  <bb 2> :
+  *octets_needed = 0;
+  if (oid_len > 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = *octets_needed;
+  _2 = _1;
+  _3 = _2 + 1;
+  *octets_needed = _3;
+  oid_len = oid_len + 65534;
+  oid = oid + 8;
+
+  <bb 4> :
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  oid_len.7_4 = oid_len;
+  oid_len = oid_len.7_4 + 65535;
+  sub_id = *oid;
+  sub_id = sub_id >> 7;
+  _5 = *octets_needed;
+  _6 = _5;
+  _7 = _6 + 1;
+  *octets_needed = _7;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  sub_id = sub_id >> 7;
+  _8 = *octets_needed;
+  _9 = _8;
+  _10 = _9 + 1;
+  *octets_needed = _10;
+
+  <bb 7> :
+  if (sub_id != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  oid = oid + 4;
+
+  <bb 9> :
+  if (oid_len != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  return;
+
+}
+
+
+snmp_asn1_enc_s32t_cnt (s32_t value, u16_t * octets_needed)
+{
+  <bb 2> :
+  if (value < 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  value = ~value;
+
+  <bb 4> :
+  if (value <= 127)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  *octets_needed = 1;
+  goto <bb 11>; [INV]
+
+  <bb 6> :
+  if (value <= 32767)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  *octets_needed = 2;
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  if (value <= 8388607)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  *octets_needed = 3;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  *octets_needed = 4;
+
+  <bb 11> :
+  return;
+
+}
+
+
+snmp_asn1_enc_u32t_cnt (u32_t value, u16_t * octets_needed)
+{
+  <bb 2> :
+  if (value <= 127)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  *octets_needed = 1;
+  goto <bb 11>; [INV]
+
+  <bb 4> :
+  if (value <= 32767)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  *octets_needed = 2;
+  goto <bb 11>; [INV]
+
+  <bb 6> :
+  if (value <= 8388607)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  *octets_needed = 3;
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  value.6_1 = (signed int) value;
+  if (value.6_1 >= 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  *octets_needed = 4;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  *octets_needed = 5;
+
+  <bb 11> :
+  return;
+
+}
+
+
+snmp_asn1_enc_length_cnt (u16_t length, u8_t * octets_needed)
+{
+  <bb 2> :
+  if (length <= 127)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  *octets_needed = 1;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  if (length <= 255)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  *octets_needed = 2;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  *octets_needed = 3;
+
+  <bb 7> :
+  return;
+
+}
+
+
+snmp_asn1_enc_oid (struct snmp_pbuf_stream * pbuf_stream, const u32_t * oid, u16_t oid_len)
+{
+  u8_t code;
+  u8_t tail;
+  u8_t shift;
+  u32_t sub_id;
+  u32_t compressed_byte;
+  err_t D.7165;
+
+  <bb 2> :
+  if (oid_len > 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = *oid;
+  _2 = _1 * 40;
+  _3 = oid + 4;
+  _4 = *_3;
+  compressed_byte = _2 + _4;
+  _5 = (unsigned char) compressed_byte;
+  _6 = snmp_pbuf_stream_write (pbuf_stream, _5);
+  if (_6 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.7165 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 5> :
+  oid_len = oid_len + 65534;
+  oid = oid + 8;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.7165 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 7> :
+  goto <bb 18>; [INV]
+
+  <bb 8> :
+  oid_len.5_7 = oid_len;
+  oid_len = oid_len.5_7 + 65535;
+  sub_id = *oid;
+  tail = 0;
+  shift = 28;
+  goto <bb 14>; [INV]
+
+  <bb 9> :
+  _8 = (int) shift;
+  _9 = sub_id >> _8;
+  code = (u8_t) _9;
+  if (code != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  if (tail != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  tail = 1;
+  _10 = code | 128;
+  _11 = snmp_pbuf_stream_write (pbuf_stream, _10);
+  if (_11 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  D.7165 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 13> :
+  shift = shift + 249;
+
+  <bb 14> :
+  if (shift != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  _12 = (unsigned char) sub_id;
+  _13 = _12 & 127;
+  _14 = snmp_pbuf_stream_write (pbuf_stream, _13);
+  if (_14 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  D.7165 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 17> :
+  oid = oid + 4;
+
+  <bb 18> :
+  if (oid_len != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  D.7165 = 0;
+
+  <bb 20> :
+<L18>:
+  return D.7165;
+
+}
+
+
+snmp_asn1_enc_s32t (struct snmp_pbuf_stream * pbuf_stream, u16_t octets_needed, s32_t value)
+{
+  err_t D.7157;
+
+  <bb 2> :
+  goto <bb 5>; [INV]
+
+  <bb 3> :
+  octets_needed.4_1 = octets_needed;
+  octets_needed = octets_needed.4_1 + 65535;
+  _2 = (int) octets_needed;
+  _3 = _2 << 3;
+  _4 = value >> _3;
+  _5 = (unsigned char) _4;
+  _6 = snmp_pbuf_stream_write (pbuf_stream, _5);
+  if (_6 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.7157 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  if (octets_needed > 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _7 = (unsigned char) value;
+  _8 = snmp_pbuf_stream_write (pbuf_stream, _7);
+  if (_8 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.7157 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.7157 = 0;
+
+  <bb 9> :
+<L7>:
+  return D.7157;
+
+}
+
+
+snmp_asn1_enc_u32t (struct snmp_pbuf_stream * pbuf_stream, u16_t octets_needed, u32_t value)
+{
+  err_t D.7145;
+
+  <bb 2> :
+  if (octets_needed > 5)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7145 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 4> :
+  if (octets_needed == 5)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _1 = snmp_pbuf_stream_write (pbuf_stream, 0);
+  if (_1 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.7145 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 7> :
+  octets_needed.2_2 = octets_needed;
+  octets_needed = octets_needed.2_2 + 65535;
+
+  <bb 8> :
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+  octets_needed.3_3 = octets_needed;
+  octets_needed = octets_needed.3_3 + 65535;
+  _4 = (int) octets_needed;
+  _5 = _4 << 3;
+  _6 = value >> _5;
+  _7 = (unsigned char) _6;
+  _8 = snmp_pbuf_stream_write (pbuf_stream, _7);
+  if (_8 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  D.7145 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 11> :
+  if (octets_needed > 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _9 = (unsigned char) value;
+  _10 = snmp_pbuf_stream_write (pbuf_stream, _9);
+  if (_10 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  D.7145 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  D.7145 = 0;
+
+  <bb 15> :
+<L13>:
+  return D.7145;
+
+}
+
+
+snmp_asn1_enc_raw (struct snmp_pbuf_stream * pbuf_stream, const u8_t * raw, u16_t raw_len)
+{
+  err_t D.7141;
+
+  <bb 2> :
+  _1 = snmp_pbuf_stream_writebuf (pbuf_stream, raw, raw_len);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7141 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.7141 = 0;
+
+  <bb 5> :
+<L2>:
+  return D.7141;
+
+}
+
+
+snmp_ans1_enc_tlv (struct snmp_pbuf_stream * pbuf_stream, struct snmp_asn1_tlv * tlv)
+{
+  u8_t length_bytes_required;
+  u8_t data;
+  err_t D.7111;
+
+  <bb 2> :
+  _1 = tlv->type;
+  _2 = (int) _1;
+  _3 = _2 & 31;
+  if (_3 == 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7111 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 4> :
+  _4 = tlv->type_len;
+  if (_4 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.7111 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 6> :
+  _5 = tlv->type;
+  _6 = snmp_pbuf_stream_write (pbuf_stream, _5);
+  if (_6 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.7111 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 8> :
+  tlv->type_len = 1;
+  _7 = tlv->value_len;
+  if (_7 <= 127)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  length_bytes_required = 1;
+  goto <bb 13>; [INV]
+
+  <bb 10> :
+  _8 = tlv->value_len;
+  if (_8 <= 255)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  length_bytes_required = 2;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  length_bytes_required = 3;
+
+  <bb 13> :
+  _9 = tlv->length_len;
+  if (_9 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  _10 = tlv->length_len;
+  if (length_bytes_required > _10)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  D.7111 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 16> :
+  length_bytes_required = tlv->length_len;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  tlv->length_len = length_bytes_required;
+
+  <bb 18> :
+  if (length_bytes_required > 1)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 19> :
+  length_bytes_required.0_11 = length_bytes_required;
+  length_bytes_required = length_bytes_required.0_11 + 255;
+  data = length_bytes_required | 128;
+  _12 = snmp_pbuf_stream_write (pbuf_stream, data);
+  if (_12 != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  D.7111 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 21> :
+  goto <bb 28>; [INV]
+
+  <bb 22> :
+  if (length_bytes_required == 2)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  _13 = tlv->value_len;
+  _14 = _13 >> 8;
+  data = (u8_t) _14;
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+  data = 0;
+
+  <bb 25> :
+  _15 = snmp_pbuf_stream_write (pbuf_stream, data);
+  if (_15 != 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  D.7111 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 27> :
+  length_bytes_required.1_16 = length_bytes_required;
+  length_bytes_required = length_bytes_required.1_16 + 255;
+
+  <bb 28> :
+  if (length_bytes_required > 1)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 29> :
+  _17 = tlv->value_len;
+  data = (u8_t) _17;
+  _18 = snmp_pbuf_stream_write (pbuf_stream, data);
+  if (_18 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  D.7111 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 31> :
+  D.7111 = 0;
+
+  <bb 32> :
+<L31>:
+  return D.7111;
+
+}
+
+

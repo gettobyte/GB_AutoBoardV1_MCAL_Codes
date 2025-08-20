@@ -1,0 +1,3202 @@
+Trivially needed symbols: mqtt_client_is_connected/38 mqtt_disconnect/37 mqtt_client_connect/36 mqtt_client_free/35 mqtt_client_new/34 mqtt_set_inpub_callback/33 mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_connect_cb/30 mqtt_tcp_poll_cb/29 mqtt_tcp_err_cb/28 mqtt_tcp_sent_cb/27 mqtt_tcp_recv_cb/26 mqtt_parse_incoming/25 mqtt_message_received/24 mqtt_incomming_suback/23 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 mqtt_close/20 mqtt_output_check_space/19 mqtt_output_append_fixed_header/18 mqtt_output_append_string/17 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_u8/14 mqtt_init_requests/13 mqtt_clear_requests/12 mqtt_request_time_elapsed/11 mqtt_take_request/10 mqtt_delete_request/9 mqtt_append_request/8 mqtt_create_request/7 mqtt_output_send/6 mqtt_ringbuf_len/5 mqtt_ringbuf_advance_get_idx/4 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_put/2 msg_generate_packet_id/1
+
+
+Initial Symbol table:
+
+tcp_connect/61 (tcp_connect) @06d38ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+ip_addr_any/60 (ip_addr_any) @06d4a8b8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/59 (tcp_bind) @06d38e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_arg/58 (tcp_arg) @06d38d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_new_ip_type/57 (tcp_new_ip_type) @06d38c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+memset/56 (memset) @06d38b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mem_free/55 (mem_free) @06d387e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_free/35 
+  Calls: 
+mem_calloc/54 (mem_calloc) @06d38620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_new/34 
+  Calls: 
+strlen/53 (strlen) @06d381c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+tcp_poll/52 (tcp_poll) @06d10460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 
+  Calls: 
+tcp_recved/51 (tcp_recved) @06d10c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_free/50 (pbuf_free) @06d10b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_copy_partial/49 (pbuf_copy_partial) @06d109a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+pbuf_get_at/48 (pbuf_get_at) @06d108c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+sys_timeout/47 (sys_timeout) @06d100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_cyclic_timer/21 
+  Calls: 
+sys_untimeout/46 (sys_untimeout) @06cb9e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_abort/45 (tcp_abort) @06cb9d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_close/44 (tcp_close) @06cb9c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_sent/43 (tcp_sent) @06cb9b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_close/20 
+  Calls: 
+tcp_err/42 (tcp_err) @06cb9a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_recv/41 (tcp_recv) @06cb99a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_close/20 
+  Calls: 
+tcp_output/40 (tcp_output) @06c99c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_output_send/6 
+  Calls: 
+tcp_write/39 (tcp_write) @06c99b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_client_is_connected/38 (mqtt_client_is_connected) @06c990e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_disconnect/37 (mqtt_disconnect) @06c8fee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c990e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_client_connect/36 (mqtt_client_connect) @06c8fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c8fee0
+  References: ip_addr_any/60 (addr) mqtt_tcp_connect_cb/30 (addr) mqtt_tcp_err_cb/28 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/45 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_u8/14 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 tcp_err/42 tcp_connect/61 tcp_bind/59 tcp_arg/58 tcp_new_ip_type/57 mqtt_output_check_space/19 strlen/53 strlen/53 strlen/53 strlen/53 strlen/53 mqtt_init_requests/13 memset/56 
+mqtt_client_free/35 (mqtt_client_free) @06c85a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c8fb60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mem_free/55 
+mqtt_client_new/34 (mqtt_client_new) @06c85ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c85a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mem_calloc/54 
+mqtt_set_inpub_callback/33 (mqtt_set_inpub_callback) @06c85c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c85ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_sub_unsub/32 (mqtt_sub_unsub) @06c859a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c85c40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_publish/31 (mqtt_publish) @06c851c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c859a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_tcp_connect_cb/30 (mqtt_tcp_connect_cb) @06c6ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c851c0
+  References: mqtt_tcp_recv_cb/26 (addr) mqtt_tcp_sent_cb/27 (addr) mqtt_tcp_poll_cb/29 (addr) mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_client_connect/36 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 sys_timeout/47 tcp_poll/52 tcp_sent/43 tcp_recv/41 
+mqtt_tcp_poll_cb/29 (mqtt_tcp_poll_cb) @06c6a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c6ac40
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 
+mqtt_tcp_err_cb/28 (mqtt_tcp_err_cb) @06c6a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c6a9a0
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_tcp_sent_cb/27 (mqtt_tcp_sent_cb) @06c6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c6a700
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_take_request/10 mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_tcp_recv_cb/26 (mqtt_tcp_recv_cb) @06c6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c6a460
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 pbuf_free/50 mqtt_parse_incoming/25 tcp_recved/51 pbuf_free/50 mqtt_close/20 
+mqtt_parse_incoming/25 (mqtt_parse_incoming) @06c572a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c6a1c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: mqtt_message_received/24 pbuf_copy_partial/49 mqtt_message_received/24 pbuf_get_at/48 
+mqtt_message_received/24 (mqtt_message_received) @06c57d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c572a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_parse_incoming/25 mqtt_parse_incoming/25 
+  Calls: mqtt_delete_request/9 mqtt_incomming_suback/23 mqtt_take_request/10 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+mqtt_incomming_suback/23 (mqtt_incomming_suback) @06c579a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c57d20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_message_received/24 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+pub_ack_rec_rel_response/22 (pub_ack_rec_rel_response) @06c57700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c579a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_message_received/24 mqtt_message_received/24 mqtt_message_received/24 
+  Calls: mqtt_output_send/6 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 
+mqtt_cyclic_timer/21 (mqtt_cyclic_timer) @06c57460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c57700
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_close/20 (addr) mqtt_cyclic_timer/21 (addr) mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/47 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 mqtt_close/20 mqtt_request_time_elapsed/11 mqtt_close/20 
+mqtt_close/20 (mqtt_close) @06c571c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c57460
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_disconnect/37 mqtt_tcp_err_cb/28 mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 mqtt_cyclic_timer/21 mqtt_cyclic_timer/21 
+  Calls: sys_untimeout/46 mqtt_clear_requests/12 tcp_abort/45 tcp_close/44 tcp_sent/43 tcp_err/42 tcp_recv/41 
+   Indirect call Num speculative call targets: 0
+mqtt_output_check_space/19 (mqtt_output_check_space) @06c4eee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c571c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_ringbuf_len/5 
+mqtt_output_append_fixed_header/18 (mqtt_output_append_fixed_header) @06c4ec40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c4eee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_output_append_u8/14 mqtt_output_append_u8/14 
+mqtt_output_append_string/17 (mqtt_output_append_string) @06c4e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c4ec40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_buf/16 (mqtt_output_append_buf) @06c4e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c4e9a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_output_append_u16/15 (mqtt_output_append_u16) @06c4e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c4e700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_u8/14 (mqtt_output_append_u8) @06c4e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c4e460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_output_append_fixed_header/18 mqtt_output_append_fixed_header/18 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_init_requests/13 (mqtt_init_requests) @06c43ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c4e1c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mqtt_clear_requests/12 (mqtt_clear_requests) @06c43c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c43ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_close/20 
+  Calls: mqtt_delete_request/9 
+mqtt_request_time_elapsed/11 (mqtt_request_time_elapsed) @06c439a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c43c40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_cyclic_timer/21 
+  Calls: mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_take_request/10 (mqtt_take_request) @06c43700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c439a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_tcp_sent_cb/27 mqtt_message_received/24 
+  Calls: 
+mqtt_delete_request/9 (mqtt_delete_request) @06c43460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c43700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_sent_cb/27 mqtt_message_received/24 mqtt_clear_requests/12 mqtt_request_time_elapsed/11 
+  Calls: 
+mqtt_append_request/8 (mqtt_append_request) @06c431c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c43460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_create_request/7 (mqtt_create_request) @06c38ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c431c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_output_send/6 (mqtt_output_send) @06c38c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c38ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_connect_cb/30 mqtt_tcp_poll_cb/29 mqtt_tcp_sent_cb/27 pub_ack_rec_rel_response/22 
+  Calls: tcp_output/40 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 
+mqtt_ringbuf_len/5 (mqtt_ringbuf_len) @06c38700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c38c40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_check_space/19 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_advance_get_idx/4 (mqtt_ringbuf_advance_get_idx) @06c38460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c38700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_get_ptr/3 (mqtt_ringbuf_get_ptr) @06c381c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c38460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_put/2 (mqtt_ringbuf_put) @06c34540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c381c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_u16/15 mqtt_output_append_u8/14 
+  Calls: 
+msg_generate_packet_id/1 (msg_generate_packet_id) @06c34d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c34540
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+DevAssert/0 (DevAssert) @06a562a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+tcp_connect/61 (tcp_connect) @06d38ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+ip_addr_any/60 (ip_addr_any) @06d4a8b8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/59 (tcp_bind) @06d38e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_arg/58 (tcp_arg) @06d38d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_new_ip_type/57 (tcp_new_ip_type) @06d38c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+memset/56 (memset) @06d38b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mem_free/55 (mem_free) @06d387e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_free/35 
+  Calls: 
+mem_calloc/54 (mem_calloc) @06d38620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_new/34 
+  Calls: 
+strlen/53 (strlen) @06d381c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+tcp_poll/52 (tcp_poll) @06d10460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 
+  Calls: 
+tcp_recved/51 (tcp_recved) @06d10c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_free/50 (pbuf_free) @06d10b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_copy_partial/49 (pbuf_copy_partial) @06d109a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+pbuf_get_at/48 (pbuf_get_at) @06d108c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+sys_timeout/47 (sys_timeout) @06d100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_cyclic_timer/21 
+  Calls: 
+sys_untimeout/46 (sys_untimeout) @06cb9e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_abort/45 (tcp_abort) @06cb9d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_close/44 (tcp_close) @06cb9c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_sent/43 (tcp_sent) @06cb9b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_close/20 
+  Calls: 
+tcp_err/42 (tcp_err) @06cb9a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_recv/41 (tcp_recv) @06cb99a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_close/20 
+  Calls: 
+tcp_output/40 (tcp_output) @06c99c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_output_send/6 
+  Calls: 
+tcp_write/39 (tcp_write) @06c99b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_client_is_connected/38 (mqtt_client_is_connected) @06c990e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_disconnect/37 (mqtt_disconnect) @06c8fee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_client_connect/36 (mqtt_client_connect) @06c8fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/60 (addr) mqtt_tcp_connect_cb/30 (addr) mqtt_tcp_err_cb/28 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/45 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_u8/14 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 tcp_err/42 tcp_connect/61 tcp_bind/59 tcp_arg/58 tcp_new_ip_type/57 mqtt_output_check_space/19 strlen/53 strlen/53 strlen/53 strlen/53 strlen/53 mqtt_init_requests/13 memset/56 
+mqtt_client_free/35 (mqtt_client_free) @06c85a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mem_free/55 
+mqtt_client_new/34 (mqtt_client_new) @06c85ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mem_calloc/54 
+mqtt_set_inpub_callback/33 (mqtt_set_inpub_callback) @06c85c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_sub_unsub/32 (mqtt_sub_unsub) @06c859a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_publish/31 (mqtt_publish) @06c851c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_tcp_connect_cb/30 (mqtt_tcp_connect_cb) @06c6ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: mqtt_tcp_recv_cb/26 (addr) mqtt_tcp_sent_cb/27 (addr) mqtt_tcp_poll_cb/29 (addr) mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_client_connect/36 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 sys_timeout/47 tcp_poll/52 tcp_sent/43 tcp_recv/41 
+mqtt_tcp_poll_cb/29 (mqtt_tcp_poll_cb) @06c6a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 
+mqtt_tcp_err_cb/28 (mqtt_tcp_err_cb) @06c6a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_tcp_sent_cb/27 (mqtt_tcp_sent_cb) @06c6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_take_request/10 mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_tcp_recv_cb/26 (mqtt_tcp_recv_cb) @06c6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 pbuf_free/50 mqtt_parse_incoming/25 tcp_recved/51 pbuf_free/50 mqtt_close/20 
+mqtt_parse_incoming/25 (mqtt_parse_incoming) @06c572a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: mqtt_message_received/24 pbuf_copy_partial/49 mqtt_message_received/24 pbuf_get_at/48 
+mqtt_message_received/24 (mqtt_message_received) @06c57d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_parse_incoming/25 mqtt_parse_incoming/25 
+  Calls: mqtt_delete_request/9 mqtt_incomming_suback/23 mqtt_take_request/10 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+mqtt_incomming_suback/23 (mqtt_incomming_suback) @06c579a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_message_received/24 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+pub_ack_rec_rel_response/22 (pub_ack_rec_rel_response) @06c57700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_message_received/24 mqtt_message_received/24 mqtt_message_received/24 
+  Calls: mqtt_output_send/6 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 
+mqtt_cyclic_timer/21 (mqtt_cyclic_timer) @06c57460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_close/20 (addr) mqtt_cyclic_timer/21 (addr) mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/47 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 mqtt_close/20 mqtt_request_time_elapsed/11 mqtt_close/20 
+mqtt_close/20 (mqtt_close) @06c571c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_disconnect/37 mqtt_tcp_err_cb/28 mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 mqtt_cyclic_timer/21 mqtt_cyclic_timer/21 
+  Calls: sys_untimeout/46 mqtt_clear_requests/12 tcp_abort/45 tcp_close/44 tcp_sent/43 tcp_err/42 tcp_recv/41 
+   Indirect call Num speculative call targets: 0
+mqtt_output_check_space/19 (mqtt_output_check_space) @06c4eee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_ringbuf_len/5 
+mqtt_output_append_fixed_header/18 (mqtt_output_append_fixed_header) @06c4ec40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_output_append_u8/14 mqtt_output_append_u8/14 
+mqtt_output_append_string/17 (mqtt_output_append_string) @06c4e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_buf/16 (mqtt_output_append_buf) @06c4e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_output_append_u16/15 (mqtt_output_append_u16) @06c4e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_u8/14 (mqtt_output_append_u8) @06c4e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_output_append_fixed_header/18 mqtt_output_append_fixed_header/18 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_init_requests/13 (mqtt_init_requests) @06c43ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mqtt_clear_requests/12 (mqtt_clear_requests) @06c43c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_close/20 
+  Calls: mqtt_delete_request/9 
+mqtt_request_time_elapsed/11 (mqtt_request_time_elapsed) @06c439a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_cyclic_timer/21 
+  Calls: mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_take_request/10 (mqtt_take_request) @06c43700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_tcp_sent_cb/27 mqtt_message_received/24 
+  Calls: 
+mqtt_delete_request/9 (mqtt_delete_request) @06c43460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_sent_cb/27 mqtt_message_received/24 mqtt_clear_requests/12 mqtt_request_time_elapsed/11 
+  Calls: 
+mqtt_append_request/8 (mqtt_append_request) @06c431c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_create_request/7 (mqtt_create_request) @06c38ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_output_send/6 (mqtt_output_send) @06c38c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_connect_cb/30 mqtt_tcp_poll_cb/29 mqtt_tcp_sent_cb/27 pub_ack_rec_rel_response/22 
+  Calls: tcp_output/40 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 
+mqtt_ringbuf_len/5 (mqtt_ringbuf_len) @06c38700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_check_space/19 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_advance_get_idx/4 (mqtt_ringbuf_advance_get_idx) @06c38460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_get_ptr/3 (mqtt_ringbuf_get_ptr) @06c381c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_put/2 (mqtt_ringbuf_put) @06c34540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_u16/15 mqtt_output_append_u8/14 
+  Calls: 
+msg_generate_packet_id/1 (msg_generate_packet_id) @06c34d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+
+
+Initial Symbol table:
+
+tcp_connect/61 (tcp_connect) @06d38ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+ip_addr_any/60 (ip_addr_any) @06d4a8b8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/59 (tcp_bind) @06d38e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_arg/58 (tcp_arg) @06d38d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_new_ip_type/57 (tcp_new_ip_type) @06d38c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+memset/56 (memset) @06d38b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mem_free/55 (mem_free) @06d387e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_free/35 
+  Calls: 
+mem_calloc/54 (mem_calloc) @06d38620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_new/34 
+  Calls: 
+strlen/53 (strlen) @06d381c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+tcp_poll/52 (tcp_poll) @06d10460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 
+  Calls: 
+tcp_recved/51 (tcp_recved) @06d10c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_free/50 (pbuf_free) @06d10b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_copy_partial/49 (pbuf_copy_partial) @06d109a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+pbuf_get_at/48 (pbuf_get_at) @06d108c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+sys_timeout/47 (sys_timeout) @06d100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_cyclic_timer/21 
+  Calls: 
+sys_untimeout/46 (sys_untimeout) @06cb9e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_abort/45 (tcp_abort) @06cb9d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_close/44 (tcp_close) @06cb9c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_sent/43 (tcp_sent) @06cb9b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_close/20 
+  Calls: 
+tcp_err/42 (tcp_err) @06cb9a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_recv/41 (tcp_recv) @06cb99a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_close/20 
+  Calls: 
+tcp_output/40 (tcp_output) @06c99c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_output_send/6 
+  Calls: 
+tcp_write/39 (tcp_write) @06c99b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_client_is_connected/38 (mqtt_client_is_connected) @06c990e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_disconnect/37 (mqtt_disconnect) @06c8fee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_client_connect/36 (mqtt_client_connect) @06c8fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/60 (addr) mqtt_tcp_connect_cb/30 (addr) mqtt_tcp_err_cb/28 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/45 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_u8/14 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 tcp_err/42 tcp_connect/61 tcp_bind/59 tcp_arg/58 tcp_new_ip_type/57 mqtt_output_check_space/19 strlen/53 strlen/53 strlen/53 strlen/53 strlen/53 mqtt_init_requests/13 memset/56 
+mqtt_client_free/35 (mqtt_client_free) @06c85a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mem_free/55 
+mqtt_client_new/34 (mqtt_client_new) @06c85ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mem_calloc/54 
+mqtt_set_inpub_callback/33 (mqtt_set_inpub_callback) @06c85c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_sub_unsub/32 (mqtt_sub_unsub) @06c859a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_publish/31 (mqtt_publish) @06c851c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_tcp_connect_cb/30 (mqtt_tcp_connect_cb) @06c6ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: mqtt_tcp_recv_cb/26 (addr) mqtt_tcp_sent_cb/27 (addr) mqtt_tcp_poll_cb/29 (addr) mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_client_connect/36 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 sys_timeout/47 tcp_poll/52 tcp_sent/43 tcp_recv/41 
+mqtt_tcp_poll_cb/29 (mqtt_tcp_poll_cb) @06c6a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 
+mqtt_tcp_err_cb/28 (mqtt_tcp_err_cb) @06c6a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_tcp_sent_cb/27 (mqtt_tcp_sent_cb) @06c6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_take_request/10 mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_tcp_recv_cb/26 (mqtt_tcp_recv_cb) @06c6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 pbuf_free/50 mqtt_parse_incoming/25 tcp_recved/51 pbuf_free/50 mqtt_close/20 
+mqtt_parse_incoming/25 (mqtt_parse_incoming) @06c572a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: mqtt_message_received/24 pbuf_copy_partial/49 mqtt_message_received/24 pbuf_get_at/48 
+mqtt_message_received/24 (mqtt_message_received) @06c57d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_parse_incoming/25 mqtt_parse_incoming/25 
+  Calls: mqtt_delete_request/9 mqtt_incomming_suback/23 mqtt_take_request/10 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+mqtt_incomming_suback/23 (mqtt_incomming_suback) @06c579a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_message_received/24 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+pub_ack_rec_rel_response/22 (pub_ack_rec_rel_response) @06c57700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_message_received/24 mqtt_message_received/24 mqtt_message_received/24 
+  Calls: mqtt_output_send/6 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 
+mqtt_cyclic_timer/21 (mqtt_cyclic_timer) @06c57460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_close/20 (addr) mqtt_cyclic_timer/21 (addr) mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/47 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 mqtt_close/20 mqtt_request_time_elapsed/11 mqtt_close/20 
+mqtt_close/20 (mqtt_close) @06c571c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_disconnect/37 mqtt_tcp_err_cb/28 mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 mqtt_cyclic_timer/21 mqtt_cyclic_timer/21 
+  Calls: sys_untimeout/46 mqtt_clear_requests/12 tcp_abort/45 tcp_close/44 tcp_sent/43 tcp_err/42 tcp_recv/41 
+   Indirect call Num speculative call targets: 0
+mqtt_output_check_space/19 (mqtt_output_check_space) @06c4eee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_ringbuf_len/5 
+mqtt_output_append_fixed_header/18 (mqtt_output_append_fixed_header) @06c4ec40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_output_append_u8/14 mqtt_output_append_u8/14 
+mqtt_output_append_string/17 (mqtt_output_append_string) @06c4e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_buf/16 (mqtt_output_append_buf) @06c4e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_output_append_u16/15 (mqtt_output_append_u16) @06c4e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_u8/14 (mqtt_output_append_u8) @06c4e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_output_append_fixed_header/18 mqtt_output_append_fixed_header/18 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_init_requests/13 (mqtt_init_requests) @06c43ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mqtt_clear_requests/12 (mqtt_clear_requests) @06c43c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_close/20 
+  Calls: mqtt_delete_request/9 
+mqtt_request_time_elapsed/11 (mqtt_request_time_elapsed) @06c439a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_cyclic_timer/21 
+  Calls: mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_take_request/10 (mqtt_take_request) @06c43700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_tcp_sent_cb/27 mqtt_message_received/24 
+  Calls: 
+mqtt_delete_request/9 (mqtt_delete_request) @06c43460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_sent_cb/27 mqtt_message_received/24 mqtt_clear_requests/12 mqtt_request_time_elapsed/11 
+  Calls: 
+mqtt_append_request/8 (mqtt_append_request) @06c431c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_create_request/7 (mqtt_create_request) @06c38ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_output_send/6 (mqtt_output_send) @06c38c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_connect_cb/30 mqtt_tcp_poll_cb/29 mqtt_tcp_sent_cb/27 pub_ack_rec_rel_response/22 
+  Calls: tcp_output/40 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 
+mqtt_ringbuf_len/5 (mqtt_ringbuf_len) @06c38700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_check_space/19 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_advance_get_idx/4 (mqtt_ringbuf_advance_get_idx) @06c38460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_get_ptr/3 (mqtt_ringbuf_get_ptr) @06c381c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_put/2 (mqtt_ringbuf_put) @06c34540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_u16/15 mqtt_output_append_u8/14 
+  Calls: 
+msg_generate_packet_id/1 (msg_generate_packet_id) @06c34d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+tcp_connect/61 (tcp_connect) @06d38ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+ip_addr_any/60 (ip_addr_any) @06d4a8b8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/59 (tcp_bind) @06d38e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_arg/58 (tcp_arg) @06d38d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_new_ip_type/57 (tcp_new_ip_type) @06d38c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+memset/56 (memset) @06d38b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mem_free/55 (mem_free) @06d387e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_free/35 
+  Calls: 
+mem_calloc/54 (mem_calloc) @06d38620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_new/34 
+  Calls: 
+strlen/53 (strlen) @06d381c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+tcp_poll/52 (tcp_poll) @06d10460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 
+  Calls: 
+tcp_recved/51 (tcp_recved) @06d10c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_free/50 (pbuf_free) @06d10b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_copy_partial/49 (pbuf_copy_partial) @06d109a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+pbuf_get_at/48 (pbuf_get_at) @06d108c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+sys_timeout/47 (sys_timeout) @06d100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_cyclic_timer/21 
+  Calls: 
+sys_untimeout/46 (sys_untimeout) @06cb9e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_abort/45 (tcp_abort) @06cb9d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_close/44 (tcp_close) @06cb9c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_sent/43 (tcp_sent) @06cb9b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_close/20 
+  Calls: 
+tcp_err/42 (tcp_err) @06cb9a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_recv/41 (tcp_recv) @06cb99a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 mqtt_close/20 
+  Calls: 
+tcp_output/40 (tcp_output) @06c99c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_output_send/6 
+  Calls: 
+tcp_write/39 (tcp_write) @06c99b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_client_is_connected/38 (mqtt_client_is_connected) @06c990e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_disconnect/37 (mqtt_disconnect) @06c8fee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_client_connect/36 (mqtt_client_connect) @06c8fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/60 (addr) mqtt_tcp_connect_cb/30 (addr) mqtt_tcp_err_cb/28 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/45 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_u8/14 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 tcp_err/42 tcp_connect/61 tcp_bind/59 tcp_arg/58 tcp_new_ip_type/57 mqtt_output_check_space/19 strlen/53 strlen/53 strlen/53 strlen/53 strlen/53 mqtt_init_requests/13 memset/56 
+mqtt_client_free/35 (mqtt_client_free) @06c85a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mem_free/55 
+mqtt_client_new/34 (mqtt_client_new) @06c85ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mem_calloc/54 
+mqtt_set_inpub_callback/33 (mqtt_set_inpub_callback) @06c85c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_sub_unsub/32 (mqtt_sub_unsub) @06c859a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_publish/31 (mqtt_publish) @06c851c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_tcp_connect_cb/30 (mqtt_tcp_connect_cb) @06c6ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: mqtt_tcp_recv_cb/26 (addr) mqtt_tcp_sent_cb/27 (addr) mqtt_tcp_poll_cb/29 (addr) mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_client_connect/36 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 sys_timeout/47 tcp_poll/52 tcp_sent/43 tcp_recv/41 
+mqtt_tcp_poll_cb/29 (mqtt_tcp_poll_cb) @06c6a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 
+mqtt_tcp_err_cb/28 (mqtt_tcp_err_cb) @06c6a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_tcp_sent_cb/27 (mqtt_tcp_sent_cb) @06c6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_take_request/10 mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_tcp_recv_cb/26 (mqtt_tcp_recv_cb) @06c6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 pbuf_free/50 mqtt_parse_incoming/25 tcp_recved/51 pbuf_free/50 mqtt_close/20 
+mqtt_parse_incoming/25 (mqtt_parse_incoming) @06c572a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: mqtt_message_received/24 pbuf_copy_partial/49 mqtt_message_received/24 pbuf_get_at/48 
+mqtt_message_received/24 (mqtt_message_received) @06c57d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_parse_incoming/25 mqtt_parse_incoming/25 
+  Calls: mqtt_delete_request/9 mqtt_incomming_suback/23 mqtt_take_request/10 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+mqtt_incomming_suback/23 (mqtt_incomming_suback) @06c579a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_message_received/24 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+pub_ack_rec_rel_response/22 (pub_ack_rec_rel_response) @06c57700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_message_received/24 mqtt_message_received/24 mqtt_message_received/24 
+  Calls: mqtt_output_send/6 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 
+mqtt_cyclic_timer/21 (mqtt_cyclic_timer) @06c57460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_close/20 (addr) mqtt_cyclic_timer/21 (addr) mqtt_tcp_connect_cb/30 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/47 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 mqtt_close/20 mqtt_request_time_elapsed/11 mqtt_close/20 
+mqtt_close/20 (mqtt_close) @06c571c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_disconnect/37 mqtt_tcp_err_cb/28 mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 mqtt_cyclic_timer/21 mqtt_cyclic_timer/21 
+  Calls: sys_untimeout/46 mqtt_clear_requests/12 tcp_abort/45 tcp_close/44 tcp_sent/43 tcp_err/42 tcp_recv/41 
+   Indirect call Num speculative call targets: 0
+mqtt_output_check_space/19 (mqtt_output_check_space) @06c4eee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_ringbuf_len/5 
+mqtt_output_append_fixed_header/18 (mqtt_output_append_fixed_header) @06c4ec40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_output_append_u8/14 mqtt_output_append_u8/14 
+mqtt_output_append_string/17 (mqtt_output_append_string) @06c4e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_buf/16 (mqtt_output_append_buf) @06c4e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_output_append_u16/15 (mqtt_output_append_u16) @06c4e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_u8/14 (mqtt_output_append_u8) @06c4e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_output_append_fixed_header/18 mqtt_output_append_fixed_header/18 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_init_requests/13 (mqtt_init_requests) @06c43ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mqtt_clear_requests/12 (mqtt_clear_requests) @06c43c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_close/20 
+  Calls: mqtt_delete_request/9 
+mqtt_request_time_elapsed/11 (mqtt_request_time_elapsed) @06c439a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_cyclic_timer/21 
+  Calls: mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_take_request/10 (mqtt_take_request) @06c43700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_tcp_sent_cb/27 mqtt_message_received/24 
+  Calls: 
+mqtt_delete_request/9 (mqtt_delete_request) @06c43460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_sent_cb/27 mqtt_message_received/24 mqtt_clear_requests/12 mqtt_request_time_elapsed/11 
+  Calls: 
+mqtt_append_request/8 (mqtt_append_request) @06c431c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_create_request/7 (mqtt_create_request) @06c38ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_output_send/6 (mqtt_output_send) @06c38c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_tcp_connect_cb/30 mqtt_tcp_poll_cb/29 mqtt_tcp_sent_cb/27 pub_ack_rec_rel_response/22 
+  Calls: tcp_output/40 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 
+mqtt_ringbuf_len/5 (mqtt_ringbuf_len) @06c38700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_check_space/19 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_advance_get_idx/4 (mqtt_ringbuf_advance_get_idx) @06c38460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_get_ptr/3 (mqtt_ringbuf_get_ptr) @06c381c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_put/2 (mqtt_ringbuf_put) @06c34540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_u16/15 mqtt_output_append_u8/14 
+  Calls: 
+msg_generate_packet_id/1 (msg_generate_packet_id) @06c34d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+tcp_connect/61 (tcp_connect) @06d38ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+ip_addr_any/60 (ip_addr_any) @06d4a8b8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/59 (tcp_bind) @06d38e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_arg/58 (tcp_arg) @06d38d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+tcp_new_ip_type/57 (tcp_new_ip_type) @06d38c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+memset/56 (memset) @06d38b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mem_free/55 (mem_free) @06d387e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_free/35 
+  Calls: 
+mem_calloc/54 (mem_calloc) @06d38620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_new/34 
+  Calls: 
+strlen/53 (strlen) @06d381c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+tcp_poll/52 (tcp_poll) @06d10460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_tcp_connect_cb/30 
+  Calls: 
+tcp_recved/51 (tcp_recved) @06d10c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_free/50 (pbuf_free) @06d10b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 
+  Calls: 
+pbuf_copy_partial/49 (pbuf_copy_partial) @06d109a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+pbuf_get_at/48 (pbuf_get_at) @06d108c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_parse_incoming/25 
+  Calls: 
+sys_timeout/47 (sys_timeout) @06d100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_cyclic_timer/21 mqtt_tcp_connect_cb/30 
+  Calls: 
+sys_untimeout/46 (sys_untimeout) @06cb9e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_abort/45 (tcp_abort) @06cb9d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_close/44 (tcp_close) @06cb9c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_close/20 
+  Calls: 
+tcp_sent/43 (tcp_sent) @06cb9b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_close/20 mqtt_tcp_connect_cb/30 
+  Calls: 
+tcp_err/42 (tcp_err) @06cb9a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_client_connect/36 mqtt_close/20 
+  Calls: 
+tcp_recv/41 (tcp_recv) @06cb99a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_close/20 mqtt_tcp_connect_cb/30 
+  Calls: 
+tcp_output/40 (tcp_output) @06c99c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_output_send/6 
+  Calls: 
+tcp_write/39 (tcp_write) @06c99b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_client_is_connected/38 (mqtt_client_is_connected) @06c990e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_disconnect/37 (mqtt_disconnect) @06c8fee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_client_connect/36 (mqtt_client_connect) @06c8fb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/60 (addr) mqtt_tcp_connect_cb/30 (addr) mqtt_tcp_err_cb/28 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/45 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_u8/14 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 tcp_err/42 tcp_connect/61 tcp_bind/59 tcp_arg/58 tcp_new_ip_type/57 mqtt_output_check_space/19 strlen/53 strlen/53 strlen/53 strlen/53 strlen/53 mqtt_init_requests/13 memset/56 
+mqtt_client_free/35 (mqtt_client_free) @06c85a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mem_free/55 
+mqtt_client_new/34 (mqtt_client_new) @06c85ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mem_calloc/54 
+mqtt_set_inpub_callback/33 (mqtt_set_inpub_callback) @06c85c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+mqtt_sub_unsub/32 (mqtt_sub_unsub) @06c859a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_u8/14 mqtt_output_append_string/17 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_publish/31 (mqtt_publish) @06c851c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_append_request/8 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_string/17 mqtt_output_append_fixed_header/18 mqtt_delete_request/9 mqtt_output_check_space/19 mqtt_create_request/7 msg_generate_packet_id/1 strlen/53 
+mqtt_tcp_connect_cb/30 (mqtt_tcp_connect_cb) @06c6ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: mqtt_tcp_recv_cb/26 (addr) mqtt_tcp_sent_cb/27 (addr) mqtt_tcp_poll_cb/29 (addr) mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_client_connect/36 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 sys_timeout/47 tcp_poll/52 tcp_sent/43 tcp_recv/41 
+mqtt_tcp_poll_cb/29 (mqtt_tcp_poll_cb) @06c6a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 
+mqtt_tcp_err_cb/28 (mqtt_tcp_err_cb) @06c6a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: mqtt_client_connect/36 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 
+mqtt_tcp_sent_cb/27 (mqtt_tcp_sent_cb) @06c6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mqtt_output_send/6 mqtt_take_request/10 mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_tcp_recv_cb/26 (mqtt_tcp_recv_cb) @06c6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: mqtt_tcp_connect_cb/30 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: mqtt_close/20 pbuf_free/50 mqtt_parse_incoming/25 tcp_recved/51 pbuf_free/50 mqtt_close/20 
+mqtt_parse_incoming/25 (mqtt_parse_incoming) @06c572a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_tcp_recv_cb/26 
+  Calls: mqtt_message_received/24 pbuf_copy_partial/49 mqtt_message_received/24 pbuf_get_at/48 
+mqtt_message_received/24 (mqtt_message_received) @06c57d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_parse_incoming/25 mqtt_parse_incoming/25 
+  Calls: mqtt_delete_request/9 mqtt_incomming_suback/23 mqtt_take_request/10 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 pub_ack_rec_rel_response/22 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+mqtt_incomming_suback/23 (mqtt_incomming_suback) @06c579a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_message_received/24 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+pub_ack_rec_rel_response/22 (pub_ack_rec_rel_response) @06c57700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_message_received/24 mqtt_message_received/24 mqtt_message_received/24 
+  Calls: mqtt_output_send/6 mqtt_output_append_u16/15 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 
+mqtt_cyclic_timer/21 (mqtt_cyclic_timer) @06c57460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: mqtt_close/20 (addr) mqtt_tcp_connect_cb/30 (addr) mqtt_cyclic_timer/21 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/47 mqtt_output_append_fixed_header/18 mqtt_output_check_space/19 mqtt_close/20 mqtt_request_time_elapsed/11 mqtt_close/20 
+mqtt_close/20 (mqtt_close) @06c571c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: mqtt_cyclic_timer/21 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_disconnect/37 mqtt_tcp_recv_cb/26 mqtt_tcp_recv_cb/26 mqtt_tcp_err_cb/28 mqtt_cyclic_timer/21 mqtt_cyclic_timer/21 
+  Calls: sys_untimeout/46 mqtt_clear_requests/12 tcp_abort/45 tcp_close/44 tcp_sent/43 tcp_err/42 tcp_recv/41 
+   Indirect call Num speculative call targets: 0
+mqtt_output_check_space/19 (mqtt_output_check_space) @06c4eee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_ringbuf_len/5 
+mqtt_output_append_fixed_header/18 (mqtt_output_append_fixed_header) @06c4ec40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_cyclic_timer/21 
+  Calls: mqtt_output_append_u8/14 mqtt_output_append_u8/14 
+mqtt_output_append_string/17 (mqtt_output_append_string) @06c4e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_buf/16 (mqtt_output_append_buf) @06c4e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_publish/31 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_output_append_u16/15 (mqtt_output_append_u16) @06c4e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 
+  Calls: mqtt_ringbuf_put/2 mqtt_ringbuf_put/2 
+mqtt_output_append_u8/14 (mqtt_output_append_u8) @06c4e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_client_connect/36 mqtt_client_connect/36 mqtt_sub_unsub/32 mqtt_output_append_fixed_header/18 mqtt_output_append_fixed_header/18 
+  Calls: mqtt_ringbuf_put/2 
+mqtt_init_requests/13 (mqtt_init_requests) @06c43ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_client_connect/36 
+  Calls: 
+mqtt_clear_requests/12 (mqtt_clear_requests) @06c43c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_close/20 
+  Calls: mqtt_delete_request/9 
+mqtt_request_time_elapsed/11 (mqtt_request_time_elapsed) @06c439a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_cyclic_timer/21 
+  Calls: mqtt_delete_request/9 
+   Indirect call Num speculative call targets: 0
+mqtt_take_request/10 (mqtt_take_request) @06c43700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_message_received/24 mqtt_tcp_sent_cb/27 
+  Calls: 
+mqtt_delete_request/9 (mqtt_delete_request) @06c43460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 mqtt_message_received/24 mqtt_clear_requests/12 mqtt_request_time_elapsed/11 mqtt_tcp_sent_cb/27 
+  Calls: 
+mqtt_append_request/8 (mqtt_append_request) @06c431c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_create_request/7 (mqtt_create_request) @06c38ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+mqtt_output_send/6 (mqtt_output_send) @06c38c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 pub_ack_rec_rel_response/22 mqtt_tcp_sent_cb/27 mqtt_tcp_connect_cb/30 mqtt_tcp_poll_cb/29 
+  Calls: tcp_output/40 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_advance_get_idx/4 tcp_write/39 mqtt_ringbuf_get_ptr/3 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 mqtt_ringbuf_len/5 
+mqtt_ringbuf_len/5 (mqtt_ringbuf_len) @06c38700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_output_check_space/19 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_advance_get_idx/4 (mqtt_ringbuf_advance_get_idx) @06c38460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_get_ptr/3 (mqtt_ringbuf_get_ptr) @06c381c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_output_send/6 mqtt_output_send/6 
+  Calls: 
+mqtt_ringbuf_put/2 (mqtt_ringbuf_put) @06c34540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_string/17 mqtt_output_append_buf/16 mqtt_output_append_u16/15 mqtt_output_append_u16/15 mqtt_output_append_u8/14 
+  Calls: 
+msg_generate_packet_id/1 (msg_generate_packet_id) @06c34d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: mqtt_sub_unsub/32 mqtt_publish/31 
+  Calls: 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables:
+Removing variables:
+
+Final Symbol table:
+
+tcp_connect/61 (tcp_connect) @06d38ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_addr_any/60 (ip_addr_any) @06d4a8b8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/59 (tcp_bind) @06d38e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_arg/58 (tcp_arg) @06d38d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_new_ip_type/57 (tcp_new_ip_type) @06d38c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memset/56 (memset) @06d38b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mem_free/55 (mem_free) @06d387e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mem_calloc/54 (mem_calloc) @06d38620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+strlen/53 (strlen) @06d381c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_poll/52 (tcp_poll) @06d10460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recved/51 (tcp_recved) @06d10c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_free/50 (pbuf_free) @06d10b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_copy_partial/49 (pbuf_copy_partial) @06d109a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_get_at/48 (pbuf_get_at) @06d108c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_timeout/47 (sys_timeout) @06d100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_untimeout/46 (sys_untimeout) @06cb9e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_abort/45 (tcp_abort) @06cb9d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_close/44 (tcp_close) @06cb9c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_sent/43 (tcp_sent) @06cb9b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_err/42 (tcp_err) @06cb9a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recv/41 (tcp_recv) @06cb99a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_output/40 (tcp_output) @06c99c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_write/39 (tcp_write) @06c99b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_client_is_connected/38 (mqtt_client_is_connected) @06c990e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_disconnect/37 (mqtt_disconnect) @06c8fee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_client_connect/36 (mqtt_client_connect) @06c8fb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_client_free/35 (mqtt_client_free) @06c85a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_client_new/34 (mqtt_client_new) @06c85ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_set_inpub_callback/33 (mqtt_set_inpub_callback) @06c85c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_sub_unsub/32 (mqtt_sub_unsub) @06c859a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_publish/31 (mqtt_publish) @06c851c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_tcp_connect_cb/30 (mqtt_tcp_connect_cb) @06c6ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_tcp_poll_cb/29 (mqtt_tcp_poll_cb) @06c6a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_tcp_err_cb/28 (mqtt_tcp_err_cb) @06c6a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_tcp_sent_cb/27 (mqtt_tcp_sent_cb) @06c6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_tcp_recv_cb/26 (mqtt_tcp_recv_cb) @06c6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_parse_incoming/25 (mqtt_parse_incoming) @06c572a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_message_received/24 (mqtt_message_received) @06c57d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_incomming_suback/23 (mqtt_incomming_suback) @06c579a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+pub_ack_rec_rel_response/22 (pub_ack_rec_rel_response) @06c57700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_cyclic_timer/21 (mqtt_cyclic_timer) @06c57460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_close/20 (mqtt_close) @06c571c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_output_check_space/19 (mqtt_output_check_space) @06c4eee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_output_append_fixed_header/18 (mqtt_output_append_fixed_header) @06c4ec40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_output_append_string/17 (mqtt_output_append_string) @06c4e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_output_append_buf/16 (mqtt_output_append_buf) @06c4e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_output_append_u16/15 (mqtt_output_append_u16) @06c4e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_output_append_u8/14 (mqtt_output_append_u8) @06c4e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_init_requests/13 (mqtt_init_requests) @06c43ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_clear_requests/12 (mqtt_clear_requests) @06c43c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_request_time_elapsed/11 (mqtt_request_time_elapsed) @06c439a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_take_request/10 (mqtt_take_request) @06c43700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_delete_request/9 (mqtt_delete_request) @06c43460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_append_request/8 (mqtt_append_request) @06c431c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_create_request/7 (mqtt_create_request) @06c38ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_output_send/6 (mqtt_output_send) @06c38c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_ringbuf_len/5 (mqtt_ringbuf_len) @06c38700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_ringbuf_advance_get_idx/4 (mqtt_ringbuf_advance_get_idx) @06c38460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_ringbuf_get_ptr/3 (mqtt_ringbuf_get_ptr) @06c381c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+mqtt_ringbuf_put/2 (mqtt_ringbuf_put) @06c34540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+msg_generate_packet_id/1 (msg_generate_packet_id) @06c34d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 

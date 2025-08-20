@@ -1,0 +1,411 @@
+IPA summary for init_data_bss_core2/1 is missing.
+IPA summary for init_data_bss/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+IPA summary for init_data_bss_core2/1 is missing.
+IPA summary for init_data_bss/0 is missing.
+Symbol table:
+
+__INDEX_COPY_CORE2/4 (__INDEX_COPY_CORE2) @06ad93f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: init_data_bss_core2/1 (addr) 
+  Availability: not_available
+  Varpool flags:
+__ZERO_TABLE/3 (__ZERO_TABLE) @06ad9000
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: init_data_bss/0 (addr) 
+  Availability: not_available
+  Varpool flags:
+__INIT_TABLE/2 (__INIT_TABLE) @06abdf78
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: init_data_bss/0 (addr) init_data_bss_core2/1 (addr) 
+  Availability: not_available
+  Varpool flags:
+init_data_bss_core2/1 (init_data_bss_core2) @06ab7b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: __INIT_TABLE/2 (addr) __INDEX_COPY_CORE2/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+init_data_bss/0 (init_data_bss) @06ab78c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: __INIT_TABLE/2 (addr) __ZERO_TABLE/3 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+
+;; Function init_data_bss (init_data_bss, funcdef_no=0, decl_uid=5574, cgraph_uid=1, symbol_order=0)
+
+init_data_bss ()
+{
+  const uint32 * zeroTable_Ptr;
+  const uint32 * initTable_Ptr;
+  uint32 j;
+  uint32 i;
+  uint32 size;
+  uint32 len;
+  uint8 dataPad;
+  uint8 * ram8;
+  uint32 * ram;
+  const uint8 * rom8;
+  const uint32 * rom;
+  const struct Sys_ZeroLayoutType * zero_layout;
+  const struct Sys_CopyLayoutType * copy_layout;
+  long unsigned int _1;
+  const struct Sys_CopyLayoutType * _2;
+  long unsigned int _3;
+  const struct Sys_CopyLayoutType * _4;
+  long unsigned int _5;
+  const struct Sys_CopyLayoutType * _6;
+  uint32 * _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  const struct Sys_CopyLayoutType * _10;
+  uint32 * _11;
+  long unsigned int _12;
+  unsigned char _13;
+  long unsigned int _14;
+  const uint32 * _15;
+  long unsigned int _16;
+  uint32 * _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  const uint8 * _24;
+  uint8 * _25;
+  unsigned char _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  const struct Sys_ZeroLayoutType * _29;
+  long unsigned int _30;
+  const struct Sys_ZeroLayoutType * _31;
+  uint32 * _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  const struct Sys_ZeroLayoutType * _35;
+  uint32 * _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  uint32 * _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  uint32 * _43;
+
+  <bb 2> :
+  len_55 = 0;
+  size_56 = 0;
+  i_57 = 0;
+  j_58 = 0;
+  initTable_Ptr_59 = &__INIT_TABLE;
+  zeroTable_Ptr_60 = &__ZERO_TABLE;
+  len_62 = *initTable_Ptr_59;
+  initTable_Ptr_63 = initTable_Ptr_59 + 4;
+  copy_layout_64 = initTable_Ptr_63;
+  i_65 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = i_44 * 12;
+  _2 = copy_layout_64 + _1;
+  rom_77 = _2->rom_start;
+  _3 = i_44 * 12;
+  _4 = copy_layout_64 + _3;
+  ram_78 = _4->ram_start;
+  _5 = i_44 * 12;
+  _6 = copy_layout_64 + _5;
+  _7 = _6->rom_end;
+  _8 = (long unsigned int) _7;
+  _9 = i_44 * 12;
+  _10 = copy_layout_64 + _9;
+  _11 = _10->rom_start;
+  _12 = (long unsigned int) _11;
+  size_79 = _8 - _12;
+  _13 = (unsigned char) size_79;
+  dataPad_80 = _13 & 3;
+  j_81 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _14 = j_46 * 4;
+  _15 = rom_77 + _14;
+  _16 = j_46 * 4;
+  _17 = ram_78 + _16;
+  _18 = *_15;
+  *_17 = _18;
+  j_89 = j_46 + 1;
+
+  <bb 5> :
+  # j_46 = PHI <j_81(3), j_89(4)>
+  _19 = (long unsigned int) dataPad_80;
+  _20 = size_79 - _19;
+  _21 = _20 >> 2;
+  if (j_46 < _21)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _22 = j_46 * 4;
+  rom8_82 = rom_77 + _22;
+  _23 = j_46 * 4;
+  ram8_83 = ram_78 + _23;
+  j_84 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _24 = rom8_82 + j_47;
+  _25 = ram8_83 + j_47;
+  _26 = *_24;
+  *_25 = _26;
+  j_87 = j_47 + 1;
+
+  <bb 8> :
+  # j_47 = PHI <j_84(6), j_87(7)>
+  _27 = (long unsigned int) dataPad_80;
+  if (j_47 < _27)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i_85 = i_44 + 1;
+
+  <bb 10> :
+  # i_44 = PHI <i_65(2), i_85(9)>
+  if (i_44 < len_62)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  len_66 = *zeroTable_Ptr_60;
+  zeroTable_Ptr_67 = zeroTable_Ptr_60 + 4;
+  zero_layout_68 = zeroTable_Ptr_67;
+  i_69 = 0;
+  goto <bb 18>; [INV]
+
+  <bb 12> :
+  _28 = i_45 * 8;
+  _29 = zero_layout_68 + _28;
+  ram_70 = _29->ram_start;
+  _30 = i_45 * 8;
+  _31 = zero_layout_68 + _30;
+  _32 = _31->ram_end;
+  _33 = (long unsigned int) _32;
+  _34 = i_45 * 8;
+  _35 = zero_layout_68 + _34;
+  _36 = _35->ram_start;
+  _37 = (long unsigned int) _36;
+  size_71 = _33 - _37;
+  j_72 = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _38 = j_48 * 4;
+  _39 = ram_70 + _38;
+  *_39 = 0;
+  j_76 = j_48 + 1;
+
+  <bb 14> :
+  # j_48 = PHI <j_72(12), j_76(13)>
+  _40 = size_71 >> 2;
+  if (j_48 < _40)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  _41 = size_71 & 3;
+  if (_41 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _42 = j_48 * 4;
+  _43 = ram_70 + _42;
+  *_43 = 0;
+
+  <bb 17> :
+  i_74 = i_45 + 1;
+
+  <bb 18> :
+  # i_45 = PHI <i_69(11), i_74(17)>
+  if (i_45 < len_66)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  return;
+
+}
+
+
+
+;; Function init_data_bss_core2 (init_data_bss_core2, funcdef_no=1, decl_uid=5576, cgraph_uid=2, symbol_order=1)
+
+init_data_bss_core2 ()
+{
+  const uint32 * initTable_Ptr;
+  uint32 j;
+  uint32 i;
+  uint32 size;
+  uint32 len;
+  uint8 dataPad;
+  uint8 * ram8;
+  uint32 * ram;
+  const uint8 * rom8;
+  const uint32 * rom;
+  const struct Sys_CopyLayoutType * copy_layout;
+  long unsigned int _1;
+  const struct Sys_CopyLayoutType * _2;
+  long unsigned int _3;
+  const struct Sys_CopyLayoutType * _4;
+  long unsigned int _5;
+  const struct Sys_CopyLayoutType * _6;
+  uint32 * _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  const struct Sys_CopyLayoutType * _10;
+  uint32 * _11;
+  long unsigned int _12;
+  unsigned char _13;
+  long unsigned int _14;
+  const uint32 * _15;
+  long unsigned int _16;
+  uint32 * _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  const uint8 * _24;
+  uint8 * _25;
+  unsigned char _26;
+  long unsigned int _27;
+
+  <bb 2> :
+  len_34 = 0;
+  size_35 = 0;
+  i_36 = 0;
+  j_37 = 0;
+  initTable_Ptr_38 = &__INIT_TABLE;
+  len_40 = *initTable_Ptr_38;
+  initTable_Ptr_41 = initTable_Ptr_38 + 4;
+  copy_layout_42 = initTable_Ptr_41;
+  i_43 = (uint32) &__INDEX_COPY_CORE2;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = i_28 * 12;
+  _2 = copy_layout_42 + _1;
+  rom_44 = _2->rom_start;
+  _3 = i_28 * 12;
+  _4 = copy_layout_42 + _3;
+  ram_45 = _4->ram_start;
+  _5 = i_28 * 12;
+  _6 = copy_layout_42 + _5;
+  _7 = _6->rom_end;
+  _8 = (long unsigned int) _7;
+  _9 = i_28 * 12;
+  _10 = copy_layout_42 + _9;
+  _11 = _10->rom_start;
+  _12 = (long unsigned int) _11;
+  size_46 = _8 - _12;
+  _13 = (unsigned char) size_46;
+  dataPad_47 = _13 & 3;
+  j_48 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _14 = j_29 * 4;
+  _15 = rom_44 + _14;
+  _16 = j_29 * 4;
+  _17 = ram_45 + _16;
+  _18 = *_15;
+  *_17 = _18;
+  j_56 = j_29 + 1;
+
+  <bb 5> :
+  # j_29 = PHI <j_48(3), j_56(4)>
+  _19 = (long unsigned int) dataPad_47;
+  _20 = size_46 - _19;
+  _21 = _20 >> 2;
+  if (j_29 < _21)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _22 = j_29 * 4;
+  rom8_49 = rom_44 + _22;
+  _23 = j_29 * 4;
+  ram8_50 = ram_45 + _23;
+  j_51 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _24 = rom8_49 + j_30;
+  _25 = ram8_50 + j_30;
+  _26 = *_24;
+  *_25 = _26;
+  j_54 = j_30 + 1;
+
+  <bb 8> :
+  # j_30 = PHI <j_51(6), j_54(7)>
+  _27 = (long unsigned int) dataPad_47;
+  if (j_30 < _27)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i_52 = i_28 + 1;
+
+  <bb 10> :
+  # i_28 = PHI <i_43(2), i_52(9)>
+  if (i_28 < len_40)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  return;
+
+}
+
+

@@ -1,0 +1,6233 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: tcp_tcp_get_tcp_addrinfo/65 tcp_debug_state_str/64 tcp_netif_ip_addr_changed/63 tcp_eff_send_mss_netif/61 tcp_next_iss/60 tcp_pcb_remove/59 tcp_pcb_purge/58 tcp_poll/57 tcp_accept/56 tcp_err/55 tcp_sent/54 tcp_recv/53 tcp_arg/52 tcp_new_ip_type/51 tcp_new/50 tcp_alloc/49 tcp_recv_null/44 tcp_setprio/43 tcp_seg_free/42 tcp_segs_free/41 tcp_process_refused_data/40 tcp_txnow/39 tcp_fasttmr/38 tcp_slowtmr/37 tcp_connect/36 tcp_recved/34 tcp_update_rcv_ann_wnd/33 tcp_listen_with_backlog_and_err/32 tcp_listen_with_backlog/31 tcp_bind_netif/29 tcp_bind/28 tcp_abort/27 tcp_abandon/26 tcp_shutdown/25 tcp_close/24 tcp_backlog_accepted/21 tcp_backlog_delayed/20 tcp_tmr/17 tcp_free/15 tcp_init/14
+
+
+Marking externally visible variables: tcp_active_pcbs_changed/11 tcp_pcb_lists/10 tcp_tw_pcbs/9 tcp_active_pcbs/8 tcp_listen_pcbs/7 tcp_bound_pcbs/6 tcp_ticks/3
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+nd6_get_destination_mtu/90 (nd6_get_destination_mtu) @06ee7380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_eff_send_mss_netif/61 
+  Calls: 
+iss.0/89 (iss) @06ee6ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_next_iss/60 (read) tcp_next_iss/60 (write) tcp_next_iss/60 (read) 
+  Availability: available
+  Varpool flags: initialized
+memset/88 (memset) @06ed2620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_alloc/49 
+  Calls: 
+tcp_keepalive/87 (tcp_keepalive) @06e85380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_commit/86 (tcp_rexmit_rto_commit) @06e852a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_prepare/85 (tcp_rexmit_rto_prepare) @06e85ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_split_unsent_seg/84 (tcp_split_unsent_seg) @06e85e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_zero_window_probe/83 (tcp_zero_window_probe) @06e85d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_enqueue_flags/82 (tcp_enqueue_flags) @06e857e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip6_select_source_address/81 (ip6_select_source_address) @06e85700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip4_route/80 (ip4_route) @06e85620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+netif_get_by_index/79 (netif_get_by_index) @06e85540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+memp_malloc/78 (memp_malloc) @06e55620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_listen_with_backlog_and_err/32 
+  Calls: 
+tcp_timer_needed/77 (tcp_timer_needed) @06e559a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 tcp_listen_with_backlog_and_err/32 tcp_bind/28 
+  Calls: 
+ip6_route/76 (ip6_route) @06e558c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+ip_addr_any/75 (ip_addr_any) @06e76c18
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcp_bind/28 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+pbuf_free/74 (pbuf_free) @06e550e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_pcb_purge/58 tcp_recv_null/44 tcp_seg_free/42 tcp_shutdown/25 
+  Calls: 
+tcp_output/73 (tcp_output) @06e42ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_pcb_remove/59 tcp_txnow/39 tcp_fasttmr/38 tcp_slowtmr/37 tcp_slowtmr/37 tcp_connect/36 tcp_recved/34 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_send_fin/72 (tcp_send_fin) @06e42d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 
+  Calls: 
+lwip_stats/71 (lwip_stats) @06e522d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_connect/36 (read) tcp_connect/36 (write) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) 
+  Availability: not_available
+  Varpool flags:
+tcp_trigger_input_pcb_close/70 (tcp_trigger_input_pcb_close) @06e42b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_close_shutdown/22 
+  Calls: 
+tcp_input_pcb/69 (tcp_input_pcb) @06e52048
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) 
+  Availability: not_available
+  Varpool flags:
+tcp_rst/68 (tcp_rst) @06e429a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 tcp_abandon/26 tcp_close_shutdown/22 
+  Calls: 
+memp_free/67 (memp_free) @06e420e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_seg_free/42 tcp_free_listen/16 tcp_free/15 
+  Calls: 
+rand/66 (rand) @06e1aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_init/14 
+  Calls: 
+tcp_tcp_get_tcp_addrinfo/65 (tcp_tcp_get_tcp_addrinfo) @06e1ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_debug_state_str/64 (tcp_debug_state_str) @06e1a9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_state_str/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_netif_ip_addr_changed/63 (tcp_netif_ip_addr_changed) @06e1a700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_active_pcbs/8 (read) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_netif_ip_addr_changed_pcblist/62 tcp_netif_ip_addr_changed_pcblist/62 
+tcp_netif_ip_addr_changed_pcblist/62 (tcp_netif_ip_addr_changed_pcblist) @06e068c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed/63 tcp_netif_ip_addr_changed/63 
+  Calls: tcp_abort/27 
+tcp_eff_send_mss_netif/61 (tcp_eff_send_mss_netif) @06e062a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: nd6_get_destination_mtu/90 
+tcp_next_iss/60 (tcp_next_iss) @06dfba80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: iss.0/89 (read) tcp_ticks/3 (read) iss.0/89 (write) iss.0/89 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: 
+tcp_pcb_remove/59 (tcp_pcb_remove) @06dfb540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_pcb_purge/58 
+tcp_pcb_purge/58 (tcp_pcb_purge) @06dfbee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_pcb_remove/59 tcp_slowtmr/37 tcp_slowtmr/37 tcp_close_shutdown/22 
+  Calls: tcp_segs_free/41 tcp_segs_free/41 pbuf_free/74 tcp_backlog_accepted/21 
+tcp_poll/57 (tcp_poll) @06dfbc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_accept/56 (tcp_accept) @06dfb9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_err/55 (tcp_err) @06dfb700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_sent/54 (tcp_sent) @06dfb460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_recv/53 (tcp_recv) @06dfb1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_arg/52 (tcp_arg) @06df4c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_new_ip_type/51 (tcp_new_ip_type) @06df4700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_new/50 (tcp_new) @06df4b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_alloc/49 (tcp_alloc) @06df48c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) tcp_ticks/3 (read) tcp_timer_ctr/13 (read) tcp_recv_null/44 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_new_ip_type/51 tcp_new/50 
+  Calls: memset/88 memp_malloc/78 tcp_kill_prio/45 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_timewait/47 tcp_handle_closepend/48 memp_malloc/78 
+tcp_handle_closepend/48 (tcp_handle_closepend) @06df4620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_close_shutdown_fin/23 
+tcp_kill_timewait/47 (tcp_kill_timewait) @06df4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_kill_state/46 (tcp_kill_state) @06df40e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_alloc/49 tcp_alloc/49 
+  Calls: tcp_abandon/26 
+tcp_kill_prio/45 (tcp_kill_prio) @06dc4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_recv_null/44 (tcp_recv_null) @06dc42a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: 
+  Referring: tcp_alloc/49 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: tcp_process_refused_data/40 
+  Calls: tcp_close/24 pbuf_free/74 tcp_recved/34 
+tcp_setprio/43 (tcp_setprio) @06dc4ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_seg_free/42 (tcp_seg_free) @06dc4c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_segs_free/41 
+  Calls: memp_free/67 pbuf_free/74 
+tcp_segs_free/41 (tcp_segs_free) @06dc49a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_pcb_purge/58 tcp_abandon/26 tcp_abandon/26 
+  Calls: tcp_seg_free/42 
+tcp_process_refused_data/40 (tcp_process_refused_data) @06dc4700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_fasttmr/38 
+  Calls: tcp_recv_null/44 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_txnow/39 (tcp_txnow) @06dc4460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 
+tcp_fasttmr/38 (tcp_fasttmr) @06dc41c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_process_refused_data/40 tcp_close_shutdown_fin/23 tcp_output/73 
+tcp_slowtmr/37 (tcp_slowtmr) @06da5620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_ticks/3 (read) tcp_ticks/3 (write) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_persist_backoff/5 (read) tcp_backoff/4 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_free/15 tcp_pcb_purge/58 tcp_output/73 tcp_free/15 tcp_rst/68 tcp_pcb_purge/58 tcp_keepalive/87 tcp_rexmit_rto_commit/86 tcp_rexmit_rto_prepare/85 tcp_output/73 tcp_split_unsent_seg/84 tcp_zero_window_probe/83 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_connect/36 (tcp_connect) @06da5540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 tcp_timer_needed/77 tcp_enqueue_flags/82 tcp_eff_send_mss_netif/61 tcp_next_iss/60 tcp_new_port/35 ip6_select_source_address/81 ip4_route/80 ip6_route/76 netif_get_by_index/79 
+tcp_new_port/35 (tcp_new_port) @06d77000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_port/2 (read) tcp_port/2 (write) tcp_port/2 (read) tcp_port/2 (write) tcp_pcb_lists/10 (read) tcp_port/2 (read) tcp_port/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+tcp_recved/34 (tcp_recved) @06d2fb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_output/73 tcp_update_rcv_ann_wnd/33 
+tcp_update_rcv_ann_wnd/33 (tcp_update_rcv_ann_wnd) @06d2fe00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_recved/34 
+  Calls: 
+tcp_listen_with_backlog_and_err/32 (tcp_listen_with_backlog_and_err) @06d2fa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_accept_null/30 (addr) tcp_listen_pcbs/7 (read) tcp_listen_pcbs/7 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_listen_with_backlog/31 
+  Calls: tcp_timer_needed/77 tcp_free/15 memp_malloc/78 
+tcp_listen_with_backlog/31 (tcp_listen_with_backlog) @06d2f000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_listen_with_backlog_and_err/32 
+tcp_accept_null/30 (tcp_accept_null) @06d14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: tcp_listen_with_backlog_and_err/32 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/27 
+tcp_bind_netif/29 (tcp_bind_netif) @06d14c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_bind/28 (tcp_bind) @06d149a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/75 (addr) tcp_pcb_lists/10 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_timer_needed/77 tcp_new_port/35 ip6_route/76 
+tcp_abort/27 (tcp_abort) @06ccfa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed_pcblist/62 tcp_kill_timewait/47 tcp_kill_prio/45 tcp_accept_null/30 
+  Calls: tcp_abandon/26 
+tcp_abandon/26 (tcp_abandon) @06ccf540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_tw_pcbs/9 (addr) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_kill_state/46 tcp_abort/27 
+  Calls: tcp_free/15 tcp_rst/68 tcp_backlog_accepted/21 tcp_segs_free/41 tcp_segs_free/41 tcp_pcb_remove/59 tcp_free/15 tcp_pcb_remove/59 
+   Indirect call Num speculative call targets: 0
+tcp_shutdown/25 (tcp_shutdown) @06ccfc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_close_shutdown/22 pbuf_free/74 tcp_close_shutdown/22 
+tcp_close/24 (tcp_close) @06ccf9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_close_shutdown/22 
+tcp_close_shutdown_fin/23 (tcp_close_shutdown_fin) @06ccf700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_handle_closepend/48 tcp_fasttmr/38 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_send_fin/72 tcp_send_fin/72 tcp_backlog_accepted/21 tcp_send_fin/72 
+tcp_close_shutdown/22 (tcp_close_shutdown) @06ccf460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs/8 (read) tcp_active_pcbs_changed/11 (write) tcp_input_pcb/69 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (addr) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_shutdown/25 tcp_shutdown/25 tcp_close/24 
+  Calls: tcp_close_shutdown_fin/23 tcp_free/15 tcp_pcb_remove/59 tcp_free_listen/16 tcp_pcb_remove/59 tcp_listen_closed/19 tcp_free/15 tcp_free/15 tcp_trigger_input_pcb_close/70 tcp_pcb_purge/58 tcp_rst/68 
+tcp_backlog_accepted/21 (tcp_backlog_accepted) @06ccf000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_abandon/26 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_backlog_delayed/20 (tcp_backlog_delayed) @06cb3620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_listen_closed/19 (tcp_listen_closed) @06cb3e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_pcb_lists/10 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: tcp_remove_listener/18 
+tcp_remove_listener/18 (tcp_remove_listener) @06cb3a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_listen_closed/19 
+  Calls: 
+tcp_tmr/17 (tcp_tmr) @06cb37e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_timer/12 (read) tcp_timer/12 (write) tcp_timer/12 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_slowtmr/37 tcp_fasttmr/38 
+tcp_free_listen/16 (tcp_free_listen) @06cb3540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_free/15 (tcp_free) @06cb32a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_slowtmr/37 tcp_slowtmr/37 tcp_listen_with_backlog_and_err/32 tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_init/14 (tcp_init) @06cb3000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_port/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: rand/66 
+tcp_timer_ctr/13 (tcp_timer_ctr) @06cadca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_fasttmr/38 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) tcp_fasttmr/38 (read) tcp_alloc/49 (read) 
+  Availability: available
+  Varpool flags:
+tcp_timer/12 (tcp_timer) @06cadc18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_tmr/17 (read) tcp_tmr/17 (write) tcp_tmr/17 (read) 
+  Availability: available
+  Varpool flags:
+tcp_active_pcbs_changed/11 (tcp_active_pcbs_changed) @06cadb88
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (write) tcp_abandon/26 (write) tcp_connect/36 (write) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) 
+  Availability: available
+  Varpool flags:
+tcp_pcb_lists/10 (tcp_pcb_lists) @06cadb40
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_listen_pcbs/7 (addr) tcp_bound_pcbs/6 (addr) tcp_active_pcbs/8 (addr) tcp_tw_pcbs/9 (addr) 
+  Referring: tcp_listen_closed/19 (read) tcp_bind/28 (read) tcp_new_port/35 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_tw_pcbs/9 (tcp_tw_pcbs) @06cadaf8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_abandon/26 (addr) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_kill_timewait/47 (read) 
+  Availability: available
+  Varpool flags:
+tcp_active_pcbs/8 (tcp_active_pcbs) @06cadab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (addr) tcp_abandon/26 (addr) tcp_connect/36 (read) tcp_connect/36 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_fasttmr/38 (read) tcp_txnow/39 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_handle_closepend/48 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: available
+  Varpool flags:
+tcp_listen_pcbs/7 (tcp_listen_pcbs) @06cada68
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (addr) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: available
+  Varpool flags:
+tcp_bound_pcbs/6 (tcp_bound_pcbs) @06cada20
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_abandon/26 (read) tcp_abandon/26 (read) tcp_abandon/26 (write) tcp_abandon/26 (read) tcp_bind/28 (read) tcp_bind/28 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_connect/36 (read) tcp_connect/36 (read) tcp_connect/36 (write) tcp_connect/36 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: available
+  Varpool flags:
+tcp_persist_backoff/5 (tcp_persist_backoff) @06cad9d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_backoff/4 (tcp_backoff) @06cad900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_ticks/3 (tcp_ticks) @06cad828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_kill_prio/45 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_kill_state/46 (read) tcp_kill_timewait/47 (read) tcp_kill_timewait/47 (read) tcp_alloc/49 (read) tcp_next_iss/60 (read) 
+  Availability: available
+  Varpool flags:
+tcp_port/2 (tcp_port) @06cad7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_init/14 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (read) 
+  Availability: available
+  Varpool flags: initialized
+tcp_state_str/1 (tcp_state_str) @06cad750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_debug_state_str/64 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_tcp_get_tcp_addrinfo (struct tcp_pcb * pcb, int local, struct ip_addr_t * addr, u16_t * port)
+{
+  err_t D.8961;
+
+  <bb 2> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 3> :
+  if (local != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  if (addr != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  *addr = pcb->local_ip;
+
+  <bb 6> :
+  if (port != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 7> :
+  _1 = pcb->local_port;
+  *port = _1;
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+  if (addr != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  *addr = pcb->remote_ip;
+
+  <bb 10> :
+  if (port != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _2 = pcb->remote_port;
+  *port = _2;
+
+  <bb 12> :
+  D.8961 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  D.8961 = -6;
+
+  <bb 14> :
+<L13>:
+  return D.8961;
+
+}
+
+
+tcp_debug_state_str (tcp_state s)
+{
+  const char * D.8946;
+
+  <bb 2> :
+  D.8946 = tcp_state_str[s];
+
+  <bb 3> :
+<L0>:
+  return D.8946;
+
+}
+
+
+tcp_netif_ip_addr_changed (const struct ip_addr_t * old_addr, const struct ip_addr_t * new_addr)
+{
+  struct tcp_pcb_listen * lpcb;
+  int iftmp.102;
+  _Bool iftmp.101;
+  _Bool iftmp.100;
+  int iftmp.99;
+  int iftmp.98;
+  _Bool iftmp.97;
+  _Bool iftmp.96;
+  int iftmp.93;
+  int iftmp.92;
+  _Bool iftmp.91;
+  _Bool iftmp.90;
+
+  <bb 2> :
+  if (old_addr != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 3> :
+  if (old_addr != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 4> :
+  _1 = old_addr->type;
+  if (_1 == 6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 5> :
+  _2 = &old_addr->u_addr.ip6;
+  if (_2 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 6> :
+  _3 = old_addr->u_addr.ip6.addr[0];
+  if (_3 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _4 = old_addr->u_addr.ip6.addr[1];
+  if (_4 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _5 = old_addr->u_addr.ip6.addr[2];
+  if (_5 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _6 = old_addr->u_addr.ip6.addr[3];
+  if (_6 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.92 = 1;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  iftmp.92 = 0;
+
+  <bb 12> :
+  iftmp.91 = (_Bool) iftmp.92;
+  goto <bb 18>; [INV]
+
+  <bb 13> :
+  _7 = &old_addr->u_addr.ip4;
+  if (_7 != 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  _8 = old_addr->u_addr.ip4.addr;
+  if (_8 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftmp.93 = 1;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.93 = 0;
+
+  <bb 17> :
+  iftmp.91 = (_Bool) iftmp.93;
+
+  <bb 18> :
+  iftmp.90 = iftmp.91;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  iftmp.90 = 0;
+
+  <bb 20> :
+  if (iftmp.90 != 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 21> :
+  tcp_active_pcbs.94_9 = tcp_active_pcbs;
+  tcp_netif_ip_addr_changed_pcblist (old_addr, tcp_active_pcbs.94_9);
+  tcp_bound_pcbs.95_10 = tcp_bound_pcbs;
+  tcp_netif_ip_addr_changed_pcblist (old_addr, tcp_bound_pcbs.95_10);
+  if (new_addr != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 22> :
+  if (new_addr != 0B)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 23> :
+  _11 = new_addr->type;
+  if (_11 == 6)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 24> :
+  _12 = &new_addr->u_addr.ip6;
+  if (_12 != 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 25> :
+  _13 = new_addr->u_addr.ip6.addr[0];
+  if (_13 != 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 26> :
+  _14 = new_addr->u_addr.ip6.addr[1];
+  if (_14 != 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 27> :
+  _15 = new_addr->u_addr.ip6.addr[2];
+  if (_15 != 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 28> :
+  _16 = new_addr->u_addr.ip6.addr[3];
+  if (_16 != 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  iftmp.98 = 1;
+  goto <bb 31>; [INV]
+
+  <bb 30> :
+  iftmp.98 = 0;
+
+  <bb 31> :
+  iftmp.97 = (_Bool) iftmp.98;
+  goto <bb 37>; [INV]
+
+  <bb 32> :
+  _17 = &new_addr->u_addr.ip4;
+  if (_17 != 0B)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 33> :
+  _18 = new_addr->u_addr.ip4.addr;
+  if (_18 != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  iftmp.99 = 1;
+  goto <bb 36>; [INV]
+
+  <bb 35> :
+  iftmp.99 = 0;
+
+  <bb 36> :
+  iftmp.97 = (_Bool) iftmp.99;
+
+  <bb 37> :
+  iftmp.96 = iftmp.97;
+  goto <bb 39>; [INV]
+
+  <bb 38> :
+  iftmp.96 = 0;
+
+  <bb 39> :
+  if (iftmp.96 != 0)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 40> :
+  lpcb = tcp_listen_pcbs.listen_pcbs;
+  goto <bb 59>; [INV]
+
+  <bb 41> :
+  _19 = lpcb->local_ip.type;
+  _20 = old_addr->type;
+  if (_19 == _20)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 42> :
+  _21 = lpcb->local_ip.type;
+  if (_21 == 6)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 43> :
+  _22 = lpcb->local_ip.u_addr.ip6.addr[0];
+  _23 = old_addr->u_addr.ip6.addr[0];
+  if (_22 == _23)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 44> :
+  _24 = lpcb->local_ip.u_addr.ip6.addr[1];
+  _25 = old_addr->u_addr.ip6.addr[1];
+  if (_24 == _25)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 45> :
+  _26 = lpcb->local_ip.u_addr.ip6.addr[2];
+  _27 = old_addr->u_addr.ip6.addr[2];
+  if (_26 == _27)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 46> :
+  _28 = lpcb->local_ip.u_addr.ip6.addr[3];
+  _29 = old_addr->u_addr.ip6.addr[3];
+  if (_28 == _29)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 47> :
+  _30 = lpcb->local_ip.u_addr.ip6.zone;
+  _31 = old_addr->u_addr.ip6.zone;
+  if (_30 == _31)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 48> :
+  iftmp.102 = 1;
+  goto <bb 50>; [INV]
+
+  <bb 49> :
+  iftmp.102 = 0;
+
+  <bb 50> :
+  iftmp.101 = (_Bool) iftmp.102;
+  goto <bb 52>; [INV]
+
+  <bb 51> :
+  _32 = lpcb->local_ip.u_addr.ip4.addr;
+  _33 = old_addr->u_addr.ip4.addr;
+  iftmp.101 = _32 == _33;
+
+  <bb 52> :
+  iftmp.100 = iftmp.101;
+  goto <bb 54>; [INV]
+
+  <bb 53> :
+  iftmp.100 = 0;
+
+  <bb 54> :
+  if (iftmp.100 != 0)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 55> :
+  _34 = new_addr->type;
+  lpcb->local_ip.type = _34;
+  _35 = new_addr->type;
+  if (_35 == 6)
+    goto <bb 56>; [INV]
+  else
+    goto <bb 57>; [INV]
+
+  <bb 56> :
+  _36 = new_addr->u_addr.ip6.addr[0];
+  lpcb->local_ip.u_addr.ip6.addr[0] = _36;
+  _37 = new_addr->u_addr.ip6.addr[1];
+  lpcb->local_ip.u_addr.ip6.addr[1] = _37;
+  _38 = new_addr->u_addr.ip6.addr[2];
+  lpcb->local_ip.u_addr.ip6.addr[2] = _38;
+  _39 = new_addr->u_addr.ip6.addr[3];
+  lpcb->local_ip.u_addr.ip6.addr[3] = _39;
+  _40 = new_addr->u_addr.ip6.zone;
+  lpcb->local_ip.u_addr.ip6.zone = _40;
+  goto <bb 58>; [INV]
+
+  <bb 57> :
+  _41 = new_addr->u_addr.ip4.addr;
+  lpcb->local_ip.u_addr.ip4.addr = _41;
+  lpcb->local_ip.u_addr.ip6.addr[3] = 0;
+  _42 = lpcb->local_ip.u_addr.ip6.addr[3];
+  lpcb->local_ip.u_addr.ip6.addr[2] = _42;
+  _43 = lpcb->local_ip.u_addr.ip6.addr[2];
+  lpcb->local_ip.u_addr.ip6.addr[1] = _43;
+  lpcb->local_ip.u_addr.ip6.zone = 0;
+
+  <bb 58> :
+  lpcb = lpcb->next;
+
+  <bb 59> :
+  if (lpcb != 0B)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 60> :
+  return;
+
+}
+
+
+tcp_netif_ip_addr_changed_pcblist (const struct ip_addr_t * old_addr, struct tcp_pcb * pcb_list)
+{
+  struct tcp_pcb * next;
+  struct tcp_pcb * pcb;
+  int iftmp.89;
+  _Bool iftmp.88;
+  _Bool iftmp.87;
+
+  <bb 2> :
+  pcb = pcb_list;
+  if (old_addr == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  goto <bb 21>; [INV]
+
+  <bb 5> :
+  _1 = pcb->local_ip.type;
+  _2 = old_addr->type;
+  if (_1 == _2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 6> :
+  _3 = pcb->local_ip.type;
+  if (_3 == 6)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 7> :
+  _4 = pcb->local_ip.u_addr.ip6.addr[0];
+  _5 = old_addr->u_addr.ip6.addr[0];
+  if (_4 == _5)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  _6 = pcb->local_ip.u_addr.ip6.addr[1];
+  _7 = old_addr->u_addr.ip6.addr[1];
+  if (_6 == _7)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 9> :
+  _8 = pcb->local_ip.u_addr.ip6.addr[2];
+  _9 = old_addr->u_addr.ip6.addr[2];
+  if (_8 == _9)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  _10 = pcb->local_ip.u_addr.ip6.addr[3];
+  _11 = old_addr->u_addr.ip6.addr[3];
+  if (_10 == _11)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  _12 = pcb->local_ip.u_addr.ip6.zone;
+  _13 = old_addr->u_addr.ip6.zone;
+  if (_12 == _13)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.89 = 1;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.89 = 0;
+
+  <bb 14> :
+  iftmp.88 = (_Bool) iftmp.89;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  _14 = pcb->local_ip.u_addr.ip4.addr;
+  _15 = old_addr->u_addr.ip4.addr;
+  iftmp.88 = _14 == _15;
+
+  <bb 16> :
+  iftmp.87 = iftmp.88;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.87 = 0;
+
+  <bb 18> :
+  if (iftmp.87 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  next = pcb->next;
+  tcp_abort (pcb);
+  pcb = next;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  pcb = pcb->next;
+
+  <bb 21> :
+  if (pcb != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  return;
+
+}
+
+
+tcp_eff_send_mss_netif (u16_t sendmss, struct netif * outif, const struct ip_addr_t * dest)
+{
+  u16_t offset;
+  u16_t mtu;
+  u16_t mss_s;
+  u16_t iftmp.86;
+  u16_t D.8844;
+
+  <bb 2> :
+  if (dest == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (dest != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _1 = dest->type;
+  if (_1 == 6)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _2 = &dest->u_addr.ip6;
+  mtu = nd6_get_destination_mtu (_2, outif);
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  if (outif == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.8844 = sendmss;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 9> :
+  mtu = outif->mtu;
+
+  <bb 10> :
+  if (mtu != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 11> :
+  if (dest != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  _3 = dest->type;
+  if (_3 == 6)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  offset = 60;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  offset = 40;
+
+  <bb 15> :
+  if (mtu > offset)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.86 = mtu - offset;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.86 = 0;
+
+  <bb 18> :
+  mss_s = iftmp.86;
+  sendmss = MIN_EXPR <mss_s, sendmss>;
+
+  <bb 19> :
+  D.8844 = sendmss;
+
+  <bb 20> :
+<L18>:
+  return D.8844;
+
+}
+
+
+tcp_next_iss (struct tcp_pcb * pcb)
+{
+  static u32_t iss = 6510;
+  u32_t D.8834;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  iss.84_1 = iss;
+  tcp_ticks.85_2 = tcp_ticks;
+  _3 = iss.84_1 + tcp_ticks.85_2;
+  iss = _3;
+  D.8834 = iss;
+
+  <bb 5> :
+<L3>:
+  return D.8834;
+
+}
+
+
+tcp_pcb_remove (struct tcp_pcb * * pcblist, struct tcp_pcb * pcb)
+{
+  struct tcp_pcb * tcp_tmp_pcb;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (pcblist == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = *pcblist;
+  if (pcb == _1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _2 = *pcblist;
+  _3 = _2->next;
+  *pcblist = _3;
+  goto <bb 13>; [INV]
+
+  <bb 8> :
+  tcp_tmp_pcb = *pcblist;
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  _4 = tcp_tmp_pcb->next;
+  if (pcb == _4)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _5 = pcb->next;
+  tcp_tmp_pcb->next = _5;
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+  tcp_tmp_pcb = tcp_tmp_pcb->next;
+
+  <bb 12> :
+  if (tcp_tmp_pcb != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  pcb->next = 0B;
+  tcp_pcb_purge (pcb);
+  _6 = pcb->state;
+  if (_6 != 10)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  _7 = pcb->state;
+  if (_7 != 1)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 15> :
+  _8 = pcb->flags;
+  _9 = (unsigned int) _8;
+  _10 = _9 & 1;
+  if (_10 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _11 = pcb->flags;
+  _12 = _11 | 2;
+  pcb->flags = _12;
+  tcp_output (pcb);
+
+  <bb 17> :
+  _13 = pcb->state;
+  if (_13 != 1)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 18> :
+  _14 = pcb->unsent;
+  if (_14 != 0B)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 19>; [INV]
+
+  <bb 20> :
+  _15 = pcb->unacked;
+  if (_15 != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 21>; [INV]
+
+  <bb 22> :
+  pcb->state = 0;
+  pcb->local_port = 0;
+
+  <bb 23> :
+  return;
+
+}
+
+
+tcp_pcb_purge (struct tcp_pcb * pcb)
+{
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 5> :
+  _2 = pcb->state;
+  if (_2 != 10)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 6> :
+  _3 = pcb->state;
+  if (_3 != 1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 7> :
+  tcp_backlog_accepted (pcb);
+  _4 = pcb->refused_data;
+  if (_4 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _5 = pcb->refused_data;
+  pbuf_free (_5);
+  pcb->refused_data = 0B;
+
+  <bb 9> :
+  _6 = pcb->unsent;
+
+  <bb 10> :
+  _7 = pcb->unacked;
+
+  <bb 11> :
+  pcb->rtime = -1;
+  _8 = pcb->unsent;
+  tcp_segs_free (_8);
+  _9 = pcb->unacked;
+  tcp_segs_free (_9);
+  pcb->unsent = 0B;
+  _10 = pcb->unsent;
+  pcb->unacked = _10;
+  pcb->unsent_oversize = 0;
+
+  <bb 12> :
+<L14>:
+  return;
+
+}
+
+
+tcp_poll (struct tcp_pcb * pcb, err_t (*tcp_poll_fn) (void *, struct tcp_pcb *) poll, u8_t interval)
+{
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  pcb->poll = poll;
+  pcb->pollinterval = interval;
+
+  <bb 7> :
+<L5>:
+  return;
+
+}
+
+
+tcp_accept (struct tcp_pcb * pcb, err_t (*tcp_accept_fn) (void *, struct tcp_pcb *, err_t) accept)
+{
+  struct tcp_pcb_listen * lpcb;
+
+  <bb 2> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  lpcb = pcb;
+  lpcb->accept = accept;
+
+  <bb 5> :
+  return;
+
+}
+
+
+tcp_err (struct tcp_pcb * pcb, void (*tcp_err_fn) (void *, err_t) err)
+{
+  <bb 2> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  pcb->errf = err;
+
+  <bb 6> :
+  return;
+
+}
+
+
+tcp_sent (struct tcp_pcb * pcb, err_t (*tcp_sent_fn) (void *, struct tcp_pcb *, u16_t) sent)
+{
+  <bb 2> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  pcb->sent = sent;
+
+  <bb 6> :
+  return;
+
+}
+
+
+tcp_recv (struct tcp_pcb * pcb, err_t (*tcp_recv_fn) (void *, struct tcp_pcb *, struct pbuf *, err_t) recv)
+{
+  <bb 2> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  pcb->recv = recv;
+
+  <bb 6> :
+  return;
+
+}
+
+
+tcp_arg (struct tcp_pcb * pcb, void * arg)
+{
+  <bb 2> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  pcb->callback_arg = arg;
+
+  <bb 4> :
+  return;
+
+}
+
+
+tcp_new_ip_type (u8_t type)
+{
+  struct tcp_pcb * pcb;
+  struct tcp_pcb * D.8769;
+
+  <bb 2> :
+  pcb = tcp_alloc (64);
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  pcb->local_ip.type = type;
+  pcb->remote_ip.type = type;
+
+  <bb 4> :
+  D.8769 = pcb;
+
+  <bb 5> :
+<L2>:
+  return D.8769;
+
+}
+
+
+tcp_new ()
+{
+  struct tcp_pcb * D.8765;
+
+  <bb 2> :
+  D.8765 = tcp_alloc (64);
+
+  <bb 3> :
+<L0>:
+  return D.8765;
+
+}
+
+
+tcp_alloc (u8_t prio)
+{
+  struct tcp_pcb * pcb;
+  struct tcp_pcb * D.8763;
+
+  <bb 2> :
+  pcb = memp_malloc (2);
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 3> :
+  tcp_handle_closepend ();
+  tcp_kill_timewait ();
+  pcb = memp_malloc (2);
+  if (pcb == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 4> :
+  tcp_kill_state (9);
+  pcb = memp_malloc (2);
+  if (pcb == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 5> :
+  tcp_kill_state (8);
+  pcb = memp_malloc (2);
+  if (pcb == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  tcp_kill_prio (prio);
+  pcb = memp_malloc (2);
+  if (pcb != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _1 = lwip_stats.memp[2];
+  _2 = _1->err;
+  _3 = _2 + 65535;
+  _1->err = _3;
+
+  <bb 8> :
+  if (pcb != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _4 = lwip_stats.memp[2];
+  _5 = _4->err;
+  _6 = _5 + 65535;
+  _4->err = _6;
+
+  <bb 10> :
+  if (pcb != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _7 = lwip_stats.memp[2];
+  _8 = _7->err;
+  _9 = _8 + 65535;
+  _7->err = _9;
+
+  <bb 12> :
+  if (pcb != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _10 = lwip_stats.memp[2];
+  _11 = _10->err;
+  _12 = _11 + 65535;
+  _10->err = _12;
+
+  <bb 14> :
+  if (pcb != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  memset (pcb, 0, 196);
+  pcb->prio = prio;
+  pcb->snd_buf = 7300;
+  pcb->rcv_ann_wnd = 7300;
+  _13 = pcb->rcv_ann_wnd;
+  pcb->rcv_wnd = _13;
+  pcb->ttl = 255;
+  pcb->mss = 536;
+  pcb->rto = 6;
+  pcb->sv = 6;
+  pcb->rtime = -1;
+  pcb->cwnd = 1;
+  tcp_ticks.82_14 = tcp_ticks;
+  pcb->tmr = tcp_ticks.82_14;
+  tcp_timer_ctr.83_15 = tcp_timer_ctr;
+  pcb->last_timer = tcp_timer_ctr.83_15;
+  pcb->ssthresh = 7300;
+  pcb->recv = tcp_recv_null;
+  pcb->keep_idle = 7200000;
+
+  <bb 16> :
+  D.8763 = pcb;
+
+  <bb 17> :
+<L18>:
+  return D.8763;
+
+}
+
+
+tcp_handle_closepend ()
+{
+  struct tcp_pcb * next;
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  pcb = tcp_active_pcbs;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  next = pcb->next;
+  _1 = pcb->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 8;
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _4 = pcb->flags;
+  _5 = _4 & 65527;
+  pcb->flags = _5;
+  tcp_close_shutdown_fin (pcb);
+
+  <bb 5> :
+  pcb = next;
+
+  <bb 6> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+tcp_kill_timewait ()
+{
+  u32_t inactivity;
+  struct tcp_pcb * inactive;
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  inactivity = 0;
+  inactive = 0B;
+  pcb = tcp_tw_pcbs;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  tcp_ticks.80_1 = tcp_ticks;
+  _2 = pcb->tmr;
+  _3 = tcp_ticks.80_1 - _2;
+  if (inactivity <= _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  tcp_ticks.81_4 = tcp_ticks;
+  _5 = pcb->tmr;
+  inactivity = tcp_ticks.81_4 - _5;
+  inactive = pcb;
+
+  <bb 5> :
+  pcb = pcb->next;
+
+  <bb 6> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (inactive != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  tcp_abort (inactive);
+
+  <bb 9> :
+  return;
+
+}
+
+
+tcp_kill_state (tcp_state state)
+{
+  u32_t inactivity;
+  struct tcp_pcb * inactive;
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  if (state != 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  if (state != 9)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  inactivity = 0;
+  inactive = 0B;
+  pcb = tcp_active_pcbs;
+  goto <bb 10>; [INV]
+
+  <bb 6> :
+  _1 = pcb->state;
+  if (state == _1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  tcp_ticks.78_2 = tcp_ticks;
+  _3 = pcb->tmr;
+  _4 = tcp_ticks.78_2 - _3;
+  if (inactivity <= _4)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  tcp_ticks.79_5 = tcp_ticks;
+  _6 = pcb->tmr;
+  inactivity = tcp_ticks.79_5 - _6;
+  inactive = pcb;
+
+  <bb 9> :
+  pcb = pcb->next;
+
+  <bb 10> :
+  if (pcb != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  if (inactive != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  tcp_abandon (inactive, 0);
+
+  <bb 13> :
+  return;
+
+}
+
+
+tcp_kill_prio (u8_t prio)
+{
+  u8_t mprio;
+  u32_t inactivity;
+  struct tcp_pcb * inactive;
+  struct tcp_pcb * pcb;
+  u8_t iftmp.73;
+
+  <bb 2> :
+  prio.74_1 = (signed char) prio;
+  if (prio.74_1 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.73 = prio;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.73 = 127;
+
+  <bb 5> :
+  mprio = iftmp.73;
+  if (mprio == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 7> :
+  mprio.75_2 = mprio;
+  mprio = mprio.75_2 + 255;
+  inactivity = 0;
+  inactive = 0B;
+  pcb = tcp_active_pcbs;
+  goto <bb 13>; [INV]
+
+  <bb 8> :
+  _3 = pcb->prio;
+  if (mprio > _3)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _4 = pcb->prio;
+  if (mprio == _4)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  tcp_ticks.76_5 = tcp_ticks;
+  _6 = pcb->tmr;
+  _7 = tcp_ticks.76_5 - _6;
+  if (inactivity <= _7)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  tcp_ticks.77_8 = tcp_ticks;
+  _9 = pcb->tmr;
+  inactivity = tcp_ticks.77_8 - _9;
+  inactive = pcb;
+  mprio = pcb->prio;
+
+  <bb 12> :
+  pcb = pcb->next;
+
+  <bb 13> :
+  if (pcb != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  if (inactive != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  tcp_abort (inactive);
+
+  <bb 16> :
+<L14>:
+  return;
+
+}
+
+
+tcp_recv_null (void * arg, struct tcp_pcb * pcb, struct pbuf * p, err_t err)
+{
+  err_t D.8709;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8709 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 4> :
+  if (p != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _1 = p->tot_len;
+  tcp_recved (pcb, _1);
+  pbuf_free (p);
+  goto <bb 8>; [INV]
+
+  <bb 6> :
+  if (err == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8709 = tcp_close (pcb);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.8709 = 0;
+
+  <bb 9> :
+<L7>:
+  return D.8709;
+
+}
+
+
+tcp_setprio (struct tcp_pcb * pcb, u8_t prio)
+{
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  pcb->prio = prio;
+
+  <bb 5> :
+<L2>:
+  return;
+
+}
+
+
+tcp_seg_free (struct tcp_seg * seg)
+{
+  <bb 2> :
+  if (seg != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = seg->p;
+  if (_1 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = seg->p;
+  pbuf_free (_2);
+
+  <bb 5> :
+  memp_free (4, seg);
+
+  <bb 6> :
+  return;
+
+}
+
+
+tcp_segs_free (struct tcp_seg * seg)
+{
+  struct tcp_seg * next;
+
+  <bb 2> :
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  next = seg->next;
+  tcp_seg_free (seg);
+  seg = next;
+
+  <bb 4> :
+  if (seg != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+tcp_process_refused_data (struct tcp_pcb * pcb)
+{
+  struct pbuf * refused_data;
+  u8_t refused_flags;
+  err_t err;
+  err_t D.8681;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8681 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 4> :
+  _1 = pcb->refused_data;
+  refused_flags = _1->flags;
+  refused_data = pcb->refused_data;
+  pcb->refused_data = 0B;
+  _2 = pcb->recv;
+  if (_2 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = pcb->recv;
+  _4 = pcb->callback_arg;
+  err = _3 (_4, pcb, refused_data, 0);
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  err = tcp_recv_null (0B, pcb, refused_data, 0);
+
+  <bb 7> :
+  if (err == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 8> :
+  _5 = (unsigned int) refused_flags;
+  _6 = _5 & 32;
+  if (_6 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 9> :
+  _7 = pcb->rcv_wnd;
+  if (_7 != 7300)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _8 = pcb->rcv_wnd;
+  _9 = _8;
+  _10 = _9 + 1;
+  pcb->rcv_wnd = _10;
+
+  <bb 11> :
+  _11 = pcb->recv;
+  if (_11 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _12 = pcb->recv;
+  _13 = pcb->callback_arg;
+  err = _12 (_13, pcb, 0B, 0);
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  err = 0;
+
+  <bb 14> :
+  if (err == -13)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 15> :
+  D.8681 = -13;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 16> :
+  if (err == -13)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  D.8681 = -13;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 18> :
+  pcb->refused_data = refused_data;
+  D.8681 = -5;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  D.8681 = 0;
+
+  <bb 20> :
+<L19>:
+  return D.8681;
+
+}
+
+
+tcp_txnow ()
+{
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  pcb = tcp_active_pcbs;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = pcb->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 128;
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  tcp_output (pcb);
+
+  <bb 5> :
+  pcb = pcb->next;
+
+  <bb 6> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+tcp_fasttmr ()
+{
+  struct tcp_pcb * next;
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  tcp_timer_ctr.69_1 = tcp_timer_ctr;
+  _2 = tcp_timer_ctr.69_1 + 1;
+  tcp_timer_ctr = _2;
+
+  <bb 3> :
+tcp_fasttmr_start:
+  pcb = tcp_active_pcbs;
+  goto <bb 14>; [INV]
+
+  <bb 4> :
+  _3 = pcb->last_timer;
+  tcp_timer_ctr.70_4 = tcp_timer_ctr;
+  if (_3 != tcp_timer_ctr.70_4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 5> :
+  tcp_timer_ctr.71_5 = tcp_timer_ctr;
+  pcb->last_timer = tcp_timer_ctr.71_5;
+  _6 = pcb->flags;
+  _7 = (unsigned int) _6;
+  _8 = _7 & 1;
+  if (_8 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _9 = pcb->flags;
+  _10 = _9 | 2;
+  pcb->flags = _10;
+  tcp_output (pcb);
+  _11 = pcb->flags;
+  _12 = _11 & 65532;
+  pcb->flags = _12;
+
+  <bb 7> :
+  _13 = pcb->flags;
+  _14 = (unsigned int) _13;
+  _15 = _14 & 8;
+  if (_15 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _16 = pcb->flags;
+  _17 = _16 & 65527;
+  pcb->flags = _17;
+  tcp_close_shutdown_fin (pcb);
+
+  <bb 9> :
+  next = pcb->next;
+  _18 = pcb->refused_data;
+  if (_18 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  tcp_active_pcbs_changed = 0;
+  tcp_process_refused_data (pcb);
+  tcp_active_pcbs_changed.72_19 = tcp_active_pcbs_changed;
+  if (tcp_active_pcbs_changed.72_19 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  // predicted unlikely by goto predictor.
+  goto <bb 3>; [INV]
+
+  <bb 12> :
+  pcb = next;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  pcb = pcb->next;
+
+  <bb 14> :
+  if (pcb != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  return;
+
+}
+
+
+tcp_slowtmr ()
+{
+  struct tcp_pcb * pcb2;
+  tcp_state last_state;
+  void * err_arg;
+  void (*tcp_err_fn) (void *, err_t) err_fn;
+  struct tcp_pcb * pcb2;
+  int calc_rto;
+  u8_t backoff_idx;
+  int next_slot;
+  u8_t backoff_cnt;
+  err_t err;
+  u8_t pcb_reset;
+  u8_t pcb_remove;
+  tcpwnd_size_t eff_wnd;
+  struct tcp_pcb * prev;
+  struct tcp_pcb * pcb;
+  short int iftmp.56;
+
+  <bb 2> :
+  err = 0;
+  tcp_ticks.52_1 = tcp_ticks;
+  _2 = tcp_ticks.52_1 + 1;
+  tcp_ticks = _2;
+  tcp_timer_ctr.53_3 = tcp_timer_ctr;
+  _4 = tcp_timer_ctr.53_3 + 1;
+  tcp_timer_ctr = _4;
+
+  <bb 3> :
+tcp_slowtmr_start:
+  prev = 0B;
+  pcb = tcp_active_pcbs;
+
+  <bb 4> :
+  goto <bb 93>; [INV]
+
+  <bb 5> :
+  _5 = pcb->state;
+  if (_5 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  _6 = pcb->state;
+  if (_6 == 1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  _7 = pcb->state;
+  if (_7 == 10)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 10>; [INV]
+
+  <bb 11> :
+  _8 = pcb->last_timer;
+  tcp_timer_ctr.54_9 = tcp_timer_ctr;
+  if (_8 == tcp_timer_ctr.54_9)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  prev = pcb;
+  pcb = pcb->next;
+  // predicted unlikely by continue predictor.
+  goto <bb 93>; [INV]
+
+  <bb 13> :
+  tcp_timer_ctr.55_10 = tcp_timer_ctr;
+  pcb->last_timer = tcp_timer_ctr.55_10;
+  pcb_remove = 0;
+  pcb_reset = 0;
+  _11 = pcb->state;
+  if (_11 == 2)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  _12 = pcb->nrtx;
+  if (_12 > 1)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  pcb_remove = pcb_remove + 1;
+  goto <bb 52>; [INV]
+
+  <bb 16> :
+  _13 = pcb->nrtx;
+  if (_13 > 1)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  pcb_remove = pcb_remove + 1;
+  goto <bb 52>; [INV]
+
+  <bb 18> :
+  _14 = pcb->persist_backoff;
+  if (_14 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 19> :
+  _15 = pcb->unacked;
+  if (_15 != 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 20>; [INV]
+
+  <bb 21> :
+  _16 = pcb->unsent;
+  if (_16 == 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 22>; [INV]
+
+  <bb 23> :
+  _17 = pcb->persist_probe;
+  if (_17 > 1)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  pcb_remove = pcb_remove + 1;
+  goto <bb 52>; [INV]
+
+  <bb 25> :
+  _18 = pcb->persist_backoff;
+  _19 = (int) _18;
+  _20 = _19 + -1;
+  backoff_cnt = tcp_persist_backoff[_20];
+  _21 = pcb->persist_cnt;
+  if (backoff_cnt > _21)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  _22 = pcb->persist_cnt;
+  _23 = _22;
+  _24 = _23 + 1;
+  pcb->persist_cnt = _24;
+
+  <bb 27> :
+  _25 = pcb->persist_cnt;
+  if (backoff_cnt <= _25)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 28> :
+  next_slot = 1;
+  _26 = pcb->snd_wnd;
+  if (_26 == 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 29> :
+  _27 = tcp_zero_window_probe (pcb);
+  if (_27 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 30> :
+  next_slot = 0;
+  goto <bb 34>; [INV]
+
+  <bb 31> :
+  _28 = pcb->snd_wnd;
+  _29 = tcp_split_unsent_seg (pcb, _28);
+  if (_29 == 0)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 32> :
+  _30 = tcp_output (pcb);
+  if (_30 == 0)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  next_slot = 0;
+
+  <bb 34> :
+  if (next_slot != 0)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 35> :
+  pcb->persist_cnt = 0;
+  _31 = pcb->persist_backoff;
+  if (_31 <= 6)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 36> :
+  _32 = pcb->persist_backoff;
+  _33 = _32;
+  _34 = _33 + 1;
+  pcb->persist_backoff = _34;
+  goto <bb 52>; [INV]
+
+  <bb 37> :
+  _35 = pcb->rtime;
+  if (_35 >= 0)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 38> :
+  _36 = pcb->rtime;
+  if (_36 != 32767)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 39> :
+  _37 = pcb->rtime;
+  _38 = (unsigned short) _37;
+  _39 = _38 + 1;
+  _40 = (short int) _39;
+  pcb->rtime = _40;
+
+  <bb 40> :
+  _41 = pcb->rtime;
+  _42 = pcb->rto;
+  if (_41 >= _42)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 41> :
+  _43 = tcp_rexmit_rto_prepare (pcb);
+  if (_43 == 0)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 42> :
+  _44 = pcb->unacked;
+  if (_44 == 0B)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 43> :
+  _45 = pcb->unsent;
+  if (_45 != 0B)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 44> :
+  _46 = pcb->state;
+  if (_46 != 2)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 45> :
+  _47 = pcb->nrtx;
+  backoff_idx = MIN_EXPR <_47, 12>;
+  _48 = pcb->sa;
+  _49 = _48 >> 3;
+  _50 = (int) _49;
+  _51 = pcb->sv;
+  _52 = (int) _51;
+  _53 = _50 + _52;
+  _54 = (int) backoff_idx;
+  _55 = tcp_backoff[_54];
+  _56 = (int) _55;
+  calc_rto = _53 << _56;
+  if (calc_rto <= 32766)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 46> :
+  iftmp.56 = (short int) calc_rto;
+  goto <bb 48>; [INV]
+
+  <bb 47> :
+  iftmp.56 = 32767;
+
+  <bb 48> :
+  pcb->rto = iftmp.56;
+
+  <bb 49> :
+  pcb->rtime = 0;
+  _57 = pcb->snd_wnd;
+  _58 = pcb->cwnd;
+  eff_wnd = MIN_EXPR <_57, _58>;
+  _59 = eff_wnd >> 1;
+  pcb->ssthresh = _59;
+  _60 = pcb->ssthresh;
+  _61 = pcb->mss;
+  _62 = _61 << 1;
+  if (_60 < _62)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  _63 = pcb->mss;
+  _64 = _63 << 1;
+  pcb->ssthresh = _64;
+
+  <bb 51> :
+  _65 = pcb->mss;
+  pcb->cwnd = _65;
+  pcb->bytes_acked = 0;
+  tcp_rexmit_rto_commit (pcb);
+
+  <bb 52> :
+  _66 = pcb->state;
+  if (_66 == 6)
+    goto <bb 53>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 53> :
+  _67 = pcb->flags;
+  _68 = (unsigned int) _67;
+  _69 = _68 & 16;
+  if (_69 != 0)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 54> :
+  tcp_ticks.57_70 = tcp_ticks;
+  _71 = pcb->tmr;
+  _72 = tcp_ticks.57_70 - _71;
+  if (_72 > 40)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 55> :
+  pcb_remove = pcb_remove + 1;
+
+  <bb 56> :
+  _73 = pcb->so_options;
+  _74 = (unsigned int) _73;
+  _75 = _74 & 8;
+  if (_75 != 0)
+    goto <bb 57>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 57> :
+  _76 = pcb->state;
+  if (_76 == 4)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 58> :
+  _77 = pcb->state;
+  if (_77 == 7)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 59> :
+  tcp_ticks.58_78 = tcp_ticks;
+  _79 = pcb->tmr;
+  _80 = tcp_ticks.58_78 - _79;
+  _81 = pcb->keep_idle;
+  _82 = _81 + 675000;
+  _83 = _82 / 500;
+  if (_80 > _83)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 62>; [INV]
+
+  <bb 60> :
+  _84 = pcb->remote_ip.type;
+
+  <bb 61> :
+  pcb_remove = pcb_remove + 1;
+  pcb_reset = pcb_reset + 1;
+  goto <bb 65>; [INV]
+
+  <bb 62> :
+  tcp_ticks.59_85 = tcp_ticks;
+  _86 = pcb->tmr;
+  _87 = tcp_ticks.59_85 - _86;
+  _88 = pcb->keep_idle;
+  _89 = pcb->keep_cnt_sent;
+  _90 = (long unsigned int) _89;
+  _91 = _90 * 75000;
+  _92 = _88 + _91;
+  _93 = _92 / 500;
+  if (_87 > _93)
+    goto <bb 63>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 63> :
+  err = tcp_keepalive (pcb);
+  if (err == 0)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 64> :
+  _94 = pcb->keep_cnt_sent;
+  _95 = _94;
+  _96 = _95 + 1;
+  pcb->keep_cnt_sent = _96;
+
+  <bb 65> :
+  _97 = pcb->state;
+  if (_97 == 3)
+    goto <bb 66>; [INV]
+  else
+    goto <bb 68>; [INV]
+
+  <bb 66> :
+  tcp_ticks.60_98 = tcp_ticks;
+  _99 = pcb->tmr;
+  _100 = tcp_ticks.60_98 - _99;
+  if (_100 > 40)
+    goto <bb 67>; [INV]
+  else
+    goto <bb 68>; [INV]
+
+  <bb 67> :
+  pcb_remove = pcb_remove + 1;
+
+  <bb 68> :
+  _101 = pcb->state;
+  if (_101 == 9)
+    goto <bb 69>; [INV]
+  else
+    goto <bb 71>; [INV]
+
+  <bb 69> :
+  tcp_ticks.61_102 = tcp_ticks;
+  _103 = pcb->tmr;
+  _104 = tcp_ticks.61_102 - _103;
+  if (_104 > 240)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 71>; [INV]
+
+  <bb 70> :
+  pcb_remove = pcb_remove + 1;
+
+  <bb 71> :
+  if (pcb_remove != 0)
+    goto <bb 72>; [INV]
+  else
+    goto <bb 85>; [INV]
+
+  <bb 72> :
+  err_fn = pcb->errf;
+  tcp_pcb_purge (pcb);
+  if (prev != 0B)
+    goto <bb 73>; [INV]
+  else
+    goto <bb 76>; [INV]
+
+  <bb 73> :
+  tcp_active_pcbs.62_105 = tcp_active_pcbs;
+  if (pcb == tcp_active_pcbs.62_105)
+    goto <bb 74>; [INV]
+  else
+    goto <bb 75>; [INV]
+
+  <bb 74> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 74>; [INV]
+
+  <bb 75> :
+  _106 = pcb->next;
+  prev->next = _106;
+  goto <bb 79>; [INV]
+
+  <bb 76> :
+  tcp_active_pcbs.63_107 = tcp_active_pcbs;
+  if (pcb != tcp_active_pcbs.63_107)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 77> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 77>; [INV]
+
+  <bb 78> :
+  _108 = pcb->next;
+  tcp_active_pcbs = _108;
+
+  <bb 79> :
+  if (pcb_reset != 0)
+    goto <bb 80>; [INV]
+  else
+    goto <bb 81>; [INV]
+
+  <bb 80> :
+  _109 = pcb->snd_nxt;
+  _110 = pcb->rcv_nxt;
+  _111 = &pcb->local_ip;
+  _112 = &pcb->remote_ip;
+  _113 = pcb->local_port;
+  _114 = pcb->remote_port;
+  tcp_rst (pcb, _109, _110, _111, _112, _113, _114);
+
+  <bb 81> :
+  err_arg = pcb->callback_arg;
+  last_state = pcb->state;
+  pcb2 = pcb;
+  pcb = pcb->next;
+  tcp_free (pcb2);
+  tcp_active_pcbs_changed = 0;
+  if (err_fn != 0B)
+    goto <bb 82>; [INV]
+  else
+    goto <bb 83>; [INV]
+
+  <bb 82> :
+  err_fn (err_arg, -13);
+
+  <bb 83> :
+  tcp_active_pcbs_changed.64_115 = tcp_active_pcbs_changed;
+  if (tcp_active_pcbs_changed.64_115 != 0)
+    goto <bb 84>; [INV]
+  else
+    goto <bb 93>; [INV]
+
+  <bb 84> :
+  // predicted unlikely by goto predictor.
+  goto <bb 3>; [INV]
+
+  <bb 85> :
+  prev = pcb;
+  pcb = pcb->next;
+  _116 = prev->polltmr;
+  _117 = _116 + 1;
+  prev->polltmr = _117;
+  _118 = prev->polltmr;
+  _119 = prev->pollinterval;
+  if (_118 >= _119)
+    goto <bb 86>; [INV]
+  else
+    goto <bb 93>; [INV]
+
+  <bb 86> :
+  prev->polltmr = 0;
+  tcp_active_pcbs_changed = 0;
+  _120 = prev->poll;
+  if (_120 != 0B)
+    goto <bb 87>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 87> :
+  _121 = prev->poll;
+  _122 = prev->callback_arg;
+  err = _121 (_122, prev);
+  goto <bb 89>; [INV]
+
+  <bb 88> :
+  err = 0;
+
+  <bb 89> :
+  tcp_active_pcbs_changed.65_123 = tcp_active_pcbs_changed;
+  if (tcp_active_pcbs_changed.65_123 != 0)
+    goto <bb 90>; [INV]
+  else
+    goto <bb 91>; [INV]
+
+  <bb 90> :
+  // predicted unlikely by goto predictor.
+  goto <bb 3>; [INV]
+
+  <bb 91> :
+  if (err == 0)
+    goto <bb 92>; [INV]
+  else
+    goto <bb 93>; [INV]
+
+  <bb 92> :
+  tcp_output (prev);
+
+  <bb 93> :
+  if (pcb != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 94>; [INV]
+
+  <bb 94> :
+  prev = 0B;
+  pcb = tcp_tw_pcbs;
+  goto <bb 109>; [INV]
+
+  <bb 95> :
+  _124 = pcb->state;
+  if (_124 != 10)
+    goto <bb 96>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 96> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 96>; [INV]
+
+  <bb 97> :
+  pcb_remove = 0;
+  tcp_ticks.66_125 = tcp_ticks;
+  _126 = pcb->tmr;
+  _127 = tcp_ticks.66_125 - _126;
+  if (_127 > 240)
+    goto <bb 98>; [INV]
+  else
+    goto <bb 99>; [INV]
+
+  <bb 98> :
+  pcb_remove = pcb_remove + 1;
+
+  <bb 99> :
+  if (pcb_remove != 0)
+    goto <bb 100>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 100> :
+  tcp_pcb_purge (pcb);
+  if (prev != 0B)
+    goto <bb 101>; [INV]
+  else
+    goto <bb 104>; [INV]
+
+  <bb 101> :
+  tcp_tw_pcbs.67_128 = tcp_tw_pcbs;
+  if (pcb == tcp_tw_pcbs.67_128)
+    goto <bb 102>; [INV]
+  else
+    goto <bb 103>; [INV]
+
+  <bb 102> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 102>; [INV]
+
+  <bb 103> :
+  _129 = pcb->next;
+  prev->next = _129;
+  goto <bb 107>; [INV]
+
+  <bb 104> :
+  tcp_tw_pcbs.68_130 = tcp_tw_pcbs;
+  if (pcb != tcp_tw_pcbs.68_130)
+    goto <bb 105>; [INV]
+  else
+    goto <bb 106>; [INV]
+
+  <bb 105> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 105>; [INV]
+
+  <bb 106> :
+  _131 = pcb->next;
+  tcp_tw_pcbs = _131;
+
+  <bb 107> :
+  pcb2 = pcb;
+  pcb = pcb->next;
+  tcp_free (pcb2);
+  goto <bb 109>; [INV]
+
+  <bb 108> :
+  prev = pcb;
+  pcb = pcb->next;
+
+  <bb 109> :
+  if (pcb != 0B)
+    goto <bb 95>; [INV]
+  else
+    goto <bb 110>; [INV]
+
+  <bb 110> :
+  return;
+
+}
+
+
+tcp_connect (struct tcp_pcb * pcb, const struct ip_addr_t * ipaddr, u16_t port, err_t (*tcp_connected_fn) (void *, struct tcp_pcb *, err_t) connected)
+{
+  struct tcp_pcb * tcp_tmp_pcb;
+  const struct ip_addr_t * local_ip;
+  u16_t old_local_port;
+  u32_t iss;
+  err_t ret;
+  struct netif * netif;
+  u8_t iftmp.48;
+  const struct ip_addr_t * iftmp.47;
+  const struct ip_addr_t * iftmp.46;
+  const struct ip_addr_t * iftmp.45;
+  int iftmp.44;
+  int iftmp.43;
+  _Bool iftmp.42;
+  _Bool iftmp.41;
+  struct netif * iftmp.40;
+  const long unsigned int iftmp.39;
+  u8_t iftmp.38;
+  const long unsigned int iftmp.37;
+  const long unsigned int iftmp.36;
+  const long unsigned int iftmp.35;
+  const long unsigned int iftmp.34;
+  err_t D.8422;
+
+  <bb 2> :
+  netif = 0B;
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8422 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 98>; [INV]
+
+  <bb 4> :
+  if (ipaddr == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.8422 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 98>; [INV]
+
+  <bb 6> :
+  _1 = pcb->state;
+  if (_1 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8422 = -10;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 98>; [INV]
+
+  <bb 8> :
+  _2 = &pcb->remote_ip;
+  if (_2 != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _3 = ipaddr->type;
+  pcb->remote_ip.type = _3;
+
+  <bb 10> :
+  if (ipaddr != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 11> :
+  _4 = ipaddr->type;
+  if (_4 == 6)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 12> :
+  _5 = &ipaddr->u_addr.ip6;
+  if (_5 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.34 = ipaddr->u_addr.ip6.addr[0];
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.34 = 0;
+
+  <bb 15> :
+  pcb->remote_ip.u_addr.ip6.addr[0] = iftmp.34;
+  _6 = &ipaddr->u_addr.ip6;
+  if (_6 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.35 = ipaddr->u_addr.ip6.addr[1];
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.35 = 0;
+
+  <bb 18> :
+  pcb->remote_ip.u_addr.ip6.addr[1] = iftmp.35;
+  _7 = &ipaddr->u_addr.ip6;
+  if (_7 != 0B)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  iftmp.36 = ipaddr->u_addr.ip6.addr[2];
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  iftmp.36 = 0;
+
+  <bb 21> :
+  pcb->remote_ip.u_addr.ip6.addr[2] = iftmp.36;
+  _8 = &ipaddr->u_addr.ip6;
+  if (_8 != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  iftmp.37 = ipaddr->u_addr.ip6.addr[3];
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  iftmp.37 = 0;
+
+  <bb 24> :
+  pcb->remote_ip.u_addr.ip6.addr[3] = iftmp.37;
+  _9 = &ipaddr->u_addr.ip6;
+  if (_9 != 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  iftmp.38 = ipaddr->u_addr.ip6.zone;
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  iftmp.38 = 0;
+
+  <bb 27> :
+  pcb->remote_ip.u_addr.ip6.zone = iftmp.38;
+  goto <bb 32>; [INV]
+
+  <bb 28> :
+  _10 = &ipaddr->u_addr.ip4;
+  if (_10 != 0B)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  iftmp.39 = ipaddr->u_addr.ip4.addr;
+  goto <bb 31>; [INV]
+
+  <bb 30> :
+  iftmp.39 = 0;
+
+  <bb 31> :
+  pcb->remote_ip.u_addr.ip4.addr = iftmp.39;
+  pcb->remote_ip.u_addr.ip6.addr[3] = 0;
+  _11 = pcb->remote_ip.u_addr.ip6.addr[3];
+  pcb->remote_ip.u_addr.ip6.addr[2] = _11;
+  _12 = pcb->remote_ip.u_addr.ip6.addr[2];
+  pcb->remote_ip.u_addr.ip6.addr[1] = _12;
+  pcb->remote_ip.u_addr.ip6.zone = 0;
+
+  <bb 32> :
+  pcb->remote_port = port;
+  _13 = pcb->netif_idx;
+  if (_13 != 0)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  _14 = pcb->netif_idx;
+  netif = netif_get_by_index (_14);
+  goto <bb 39>; [INV]
+
+  <bb 34> :
+  _15 = &pcb->remote_ip;
+  if (_15 != 0B)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 35> :
+  _16 = pcb->remote_ip.type;
+  if (_16 == 6)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  _17 = &pcb->local_ip.u_addr.ip6;
+  _18 = &pcb->remote_ip.u_addr.ip6;
+  iftmp.40 = ip6_route (_17, _18);
+  goto <bb 38>; [INV]
+
+  <bb 37> :
+  _19 = &pcb->remote_ip.u_addr.ip4;
+  iftmp.40 = ip4_route (_19);
+
+  <bb 38> :
+  netif = iftmp.40;
+
+  <bb 39> :
+  if (netif == 0B)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 40> :
+  D.8422 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 98>; [INV]
+
+  <bb 41> :
+  _20 = &pcb->local_ip;
+  if (_20 != 0B)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 42> :
+  _21 = &pcb->local_ip;
+  if (_21 != 0B)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 43> :
+  _22 = pcb->local_ip.type;
+  if (_22 == 6)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 44> :
+  _23 = &pcb->local_ip.u_addr.ip6;
+  if (_23 == 0B)
+    goto <bb 49>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 45> :
+  _24 = pcb->local_ip.u_addr.ip6.addr[0];
+  if (_24 == 0)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 50>; [INV]
+
+  <bb 46> :
+  _25 = pcb->local_ip.u_addr.ip6.addr[1];
+  if (_25 == 0)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 50>; [INV]
+
+  <bb 47> :
+  _26 = pcb->local_ip.u_addr.ip6.addr[2];
+  if (_26 == 0)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 50>; [INV]
+
+  <bb 48> :
+  _27 = pcb->local_ip.u_addr.ip6.addr[3];
+  if (_27 == 0)
+    goto <bb 49>; [INV]
+  else
+    goto <bb 50>; [INV]
+
+  <bb 49> :
+  iftmp.43 = 1;
+  goto <bb 51>; [INV]
+
+  <bb 50> :
+  iftmp.43 = 0;
+
+  <bb 51> :
+  iftmp.42 = (_Bool) iftmp.43;
+  goto <bb 57>; [INV]
+
+  <bb 52> :
+  _28 = &pcb->local_ip.u_addr.ip4;
+  if (_28 == 0B)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 53> :
+  _29 = pcb->local_ip.u_addr.ip4.addr;
+  if (_29 == 0)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 55>; [INV]
+
+  <bb 54> :
+  iftmp.44 = 1;
+  goto <bb 56>; [INV]
+
+  <bb 55> :
+  iftmp.44 = 0;
+
+  <bb 56> :
+  iftmp.42 = (_Bool) iftmp.44;
+
+  <bb 57> :
+  iftmp.41 = iftmp.42;
+  goto <bb 59>; [INV]
+
+  <bb 58> :
+  iftmp.41 = 1;
+
+  <bb 59> :
+  if (iftmp.41 != 0)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 75>; [INV]
+
+  <bb 60> :
+  if (ipaddr != 0B)
+    goto <bb 61>; [INV]
+  else
+    goto <bb 66>; [INV]
+
+  <bb 61> :
+  _30 = ipaddr->type;
+  if (_30 == 6)
+    goto <bb 62>; [INV]
+  else
+    goto <bb 66>; [INV]
+
+  <bb 62> :
+  if (netif != 0B)
+    goto <bb 63>; [INV]
+  else
+    goto <bb 64>; [INV]
+
+  <bb 63> :
+  _31 = &ipaddr->u_addr.ip6;
+  iftmp.46 = ip6_select_source_address (netif, _31);
+  goto <bb 65>; [INV]
+
+  <bb 64> :
+  iftmp.46 = 0B;
+
+  <bb 65> :
+  iftmp.45 = iftmp.46;
+  goto <bb 70>; [INV]
+
+  <bb 66> :
+  if (netif != 0B)
+    goto <bb 67>; [INV]
+  else
+    goto <bb 68>; [INV]
+
+  <bb 67> :
+  iftmp.47 = &netif->ip_addr;
+  goto <bb 69>; [INV]
+
+  <bb 68> :
+  iftmp.47 = 0B;
+
+  <bb 69> :
+  iftmp.45 = iftmp.47;
+
+  <bb 70> :
+  local_ip = iftmp.45;
+  if (local_ip == 0B)
+    goto <bb 71>; [INV]
+  else
+    goto <bb 72>; [INV]
+
+  <bb 71> :
+  D.8422 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 98>; [INV]
+
+  <bb 72> :
+  _32 = local_ip->type;
+  pcb->local_ip.type = _32;
+  _33 = local_ip->type;
+  if (_33 == 6)
+    goto <bb 73>; [INV]
+  else
+    goto <bb 74>; [INV]
+
+  <bb 73> :
+  _34 = local_ip->u_addr.ip6.addr[0];
+  pcb->local_ip.u_addr.ip6.addr[0] = _34;
+  _35 = local_ip->u_addr.ip6.addr[1];
+  pcb->local_ip.u_addr.ip6.addr[1] = _35;
+  _36 = local_ip->u_addr.ip6.addr[2];
+  pcb->local_ip.u_addr.ip6.addr[2] = _36;
+  _37 = local_ip->u_addr.ip6.addr[3];
+  pcb->local_ip.u_addr.ip6.addr[3] = _37;
+  _38 = local_ip->u_addr.ip6.zone;
+  pcb->local_ip.u_addr.ip6.zone = _38;
+  goto <bb 75>; [INV]
+
+  <bb 74> :
+  _39 = local_ip->u_addr.ip4.addr;
+  pcb->local_ip.u_addr.ip4.addr = _39;
+  pcb->local_ip.u_addr.ip6.addr[3] = 0;
+  _40 = pcb->local_ip.u_addr.ip6.addr[3];
+  pcb->local_ip.u_addr.ip6.addr[2] = _40;
+  _41 = pcb->local_ip.u_addr.ip6.addr[2];
+  pcb->local_ip.u_addr.ip6.addr[1] = _41;
+  pcb->local_ip.u_addr.ip6.zone = 0;
+
+  <bb 75> :
+  _42 = &pcb->remote_ip;
+  if (_42 != 0B)
+    goto <bb 76>; [INV]
+  else
+    goto <bb 83>; [INV]
+
+  <bb 76> :
+  _43 = pcb->remote_ip.type;
+  if (_43 == 6)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 83>; [INV]
+
+  <bb 77> :
+  _44 = pcb->remote_ip.u_addr.ip6.zone;
+  if (_44 == 0)
+    goto <bb 78>; [INV]
+  else
+    goto <bb 83>; [INV]
+
+  <bb 78> :
+  _45 = pcb->remote_ip.u_addr.ip6.addr[0];
+  _46 = _45 & 49407;
+  if (_46 == 33022)
+    goto <bb 79>; [INV]
+  else
+    goto <bb 83>; [INV]
+
+  <bb 79> :
+  _47 = pcb->remote_ip.u_addr.ip6.addr[0];
+  _48 = _47 & 49407;
+  if (_48 == 33022)
+    goto <bb 80>; [INV]
+  else
+    goto <bb 81>; [INV]
+
+  <bb 80> :
+  _49 = netif->num;
+  iftmp.48 = _49 + 1;
+  goto <bb 82>; [INV]
+
+  <bb 81> :
+  iftmp.48 = 0;
+
+  <bb 82> :
+  pcb->remote_ip.u_addr.ip6.zone = iftmp.48;
+
+  <bb 83> :
+  old_local_port = pcb->local_port;
+  _50 = pcb->local_port;
+  if (_50 == 0)
+    goto <bb 84>; [INV]
+  else
+    goto <bb 86>; [INV]
+
+  <bb 84> :
+  _51 = tcp_new_port ();
+  pcb->local_port = _51;
+  _52 = pcb->local_port;
+  if (_52 == 0)
+    goto <bb 85>; [INV]
+  else
+    goto <bb 86>; [INV]
+
+  <bb 85> :
+  D.8422 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 98>; [INV]
+
+  <bb 86> :
+  iss = tcp_next_iss (pcb);
+  pcb->rcv_nxt = 0;
+  pcb->snd_nxt = iss;
+  _53 = iss + 4294967295;
+  pcb->lastack = _53;
+  _54 = iss + 4294967295;
+  pcb->snd_wl2 = _54;
+  _55 = iss + 4294967295;
+  pcb->snd_lbb = _55;
+  pcb->rcv_ann_wnd = 7300;
+  _56 = pcb->rcv_ann_wnd;
+  pcb->rcv_wnd = _56;
+  _57 = pcb->rcv_nxt;
+  pcb->rcv_ann_right_edge = _57;
+  pcb->snd_wnd = 7300;
+  pcb->mss = 536;
+  _58 = pcb->mss;
+  _59 = &pcb->remote_ip;
+  _60 = tcp_eff_send_mss_netif (_58, netif, _59);
+  pcb->mss = _60;
+  pcb->cwnd = 1;
+  pcb->connected = connected;
+  ret = tcp_enqueue_flags (pcb, 2);
+  if (ret == 0)
+    goto <bb 87>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 87> :
+  pcb->state = 2;
+  if (old_local_port != 0)
+    goto <bb 88>; [INV]
+  else
+    goto <bb 96>; [INV]
+
+  <bb 88> :
+  tcp_bound_pcbs.49_61 = tcp_bound_pcbs;
+  if (pcb == tcp_bound_pcbs.49_61)
+    goto <bb 89>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 89> :
+  tcp_bound_pcbs.50_62 = tcp_bound_pcbs;
+  _63 = tcp_bound_pcbs.50_62->next;
+  tcp_bound_pcbs = _63;
+  goto <bb 95>; [INV]
+
+  <bb 90> :
+  tcp_tmp_pcb = tcp_bound_pcbs;
+  goto <bb 94>; [INV]
+
+  <bb 91> :
+  _64 = tcp_tmp_pcb->next;
+  if (pcb == _64)
+    goto <bb 92>; [INV]
+  else
+    goto <bb 93>; [INV]
+
+  <bb 92> :
+  _65 = pcb->next;
+  tcp_tmp_pcb->next = _65;
+  goto <bb 95>; [INV]
+
+  <bb 93> :
+  tcp_tmp_pcb = tcp_tmp_pcb->next;
+
+  <bb 94> :
+  if (tcp_tmp_pcb != 0B)
+    goto <bb 91>; [INV]
+  else
+    goto <bb 95>; [INV]
+
+  <bb 95> :
+  pcb->next = 0B;
+
+  <bb 96> :
+  tcp_active_pcbs.51_66 = tcp_active_pcbs;
+  pcb->next = tcp_active_pcbs.51_66;
+  tcp_active_pcbs = pcb;
+  tcp_timer_needed ();
+  tcp_active_pcbs_changed = 1;
+  _67 = lwip_stats.mib2.tcpactiveopens;
+  _68 = _67 + 1;
+  lwip_stats.mib2.tcpactiveopens = _68;
+  tcp_output (pcb);
+
+  <bb 97> :
+  D.8422 = ret;
+
+  <bb 98> :
+<L102>:
+  return D.8422;
+
+}
+
+
+tcp_new_port ()
+{
+  struct tcp_pcb * pcb;
+  u16_t n;
+  u8_t i;
+  u16_t D.8418;
+
+  <bb 2> :
+  n = 0;
+
+  <bb 3> :
+again:
+  tcp_port.28_1 = tcp_port;
+  tcp_port.29_2 = tcp_port.28_1;
+  _3 = tcp_port.29_2 + 1;
+  tcp_port = _3;
+  tcp_port.30_4 = tcp_port;
+  if (tcp_port.30_4 == 65535)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  tcp_port = 49152;
+
+  <bb 5> :
+  i = 0;
+  goto <bb 14>; [INV]
+
+  <bb 6> :
+  _5 = (int) i;
+  _6 = tcp_pcb_lists[_5];
+  pcb = *_6;
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+  _7 = pcb->local_port;
+  tcp_port.31_8 = tcp_port;
+  if (_7 == tcp_port.31_8)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  n.32_9 = n;
+  n = n.32_9 + 1;
+  if (n > 16383)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  D.8418 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 10> :
+  // predicted unlikely by goto predictor.
+  goto <bb 3>; [INV]
+
+  <bb 11> :
+  pcb = pcb->next;
+
+  <bb 12> :
+  if (pcb != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  i.33_10 = i;
+  i = i.33_10 + 1;
+
+  <bb 14> :
+  if (i <= 3)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  D.8418 = tcp_port;
+
+  <bb 16> :
+<L13>:
+  return D.8418;
+
+}
+
+
+tcp_recved (struct tcp_pcb * pcb, u16_t len)
+{
+  tcpwnd_size_t rcv_wnd;
+  u32_t wnd_inflation;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _2 = pcb->rcv_wnd;
+  rcv_wnd = len + _2;
+  if (rcv_wnd > 7300)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _3 = pcb->rcv_wnd;
+  if (rcv_wnd < _3)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  pcb->rcv_wnd = 7300;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  pcb->rcv_wnd = rcv_wnd;
+
+  <bb 10> :
+  wnd_inflation = tcp_update_rcv_ann_wnd (pcb);
+  if (wnd_inflation > 1824)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _4 = pcb->flags;
+  _5 = _4 | 2;
+  pcb->flags = _5;
+  tcp_output (pcb);
+
+  <bb 12> :
+<L11>:
+  return;
+
+}
+
+
+tcp_update_rcv_ann_wnd (struct tcp_pcb * pcb)
+{
+  u32_t new_rcv_ann_wnd;
+  u32_t new_right_edge;
+  u32_t D.8394;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb->rcv_nxt;
+  _2 = pcb->rcv_wnd;
+  _3 = (long unsigned int) _2;
+  new_right_edge = _1 + _3;
+  _4 = pcb->rcv_ann_right_edge;
+  _5 = pcb->mss;
+  _6 = MIN_EXPR <_5, 3650>;
+  _7 = (long unsigned int) _6;
+  _8 = _4 + _7;
+  _9 = new_right_edge - _8;
+  _10 = (long int) _9;
+  if (_10 >= 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _11 = pcb->rcv_wnd;
+  pcb->rcv_ann_wnd = _11;
+  _12 = pcb->rcv_ann_right_edge;
+  D.8394 = new_right_edge - _12;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 6> :
+  _13 = pcb->rcv_nxt;
+  _14 = pcb->rcv_ann_right_edge;
+  _15 = _13 - _14;
+  _16 = (long int) _15;
+  if (_16 > 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  pcb->rcv_ann_wnd = 0;
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  _17 = pcb->rcv_ann_right_edge;
+  _18 = pcb->rcv_nxt;
+  new_rcv_ann_wnd = _17 - _18;
+  if (new_rcv_ann_wnd > 65535)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 9>; [INV]
+
+  <bb 10> :
+  _19 = (short unsigned int) new_rcv_ann_wnd;
+  pcb->rcv_ann_wnd = _19;
+
+  <bb 11> :
+  D.8394 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 12> :
+<L11>:
+  return D.8394;
+
+}
+
+
+tcp_listen_with_backlog_and_err (struct tcp_pcb * pcb, u8_t backlog, err_t * err)
+{
+  struct tcp_pcb * tcp_tmp_pcb;
+  err_t res;
+  struct tcp_pcb_listen * lpcb;
+  struct tcp_pcb * D.8388;
+  u8_t iftmp.27;
+
+  <bb 2> :
+  lpcb = 0B;
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  res = -16;
+  // predicted unlikely by goto predictor.
+  goto <bb 28>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  res = -15;
+  // predicted unlikely by goto predictor.
+  goto <bb 28>; [INV]
+
+  <bb 6> :
+  _2 = pcb->state;
+  if (_2 == 1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  lpcb = pcb;
+  res = -9;
+  // predicted unlikely by goto predictor.
+  goto <bb 28>; [INV]
+
+  <bb 8> :
+  lpcb = memp_malloc (3);
+  if (lpcb == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  res = -1;
+  // predicted unlikely by goto predictor.
+  goto <bb 28>; [INV]
+
+  <bb 10> :
+  _3 = pcb->callback_arg;
+  lpcb->callback_arg = _3;
+  _4 = pcb->local_port;
+  lpcb->local_port = _4;
+  lpcb->state = 1;
+  _5 = pcb->prio;
+  lpcb->prio = _5;
+  _6 = pcb->so_options;
+  lpcb->so_options = _6;
+  _7 = pcb->netif_idx;
+  lpcb->netif_idx = _7;
+  _8 = pcb->ttl;
+  lpcb->ttl = _8;
+  _9 = pcb->tos;
+  lpcb->tos = _9;
+  _10 = pcb->local_ip.type;
+  lpcb->remote_ip.type = _10;
+  _11 = pcb->local_ip.type;
+  lpcb->local_ip.type = _11;
+  _12 = pcb->local_ip.type;
+  if (_12 == 6)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _13 = pcb->local_ip.u_addr.ip6.addr[0];
+  lpcb->local_ip.u_addr.ip6.addr[0] = _13;
+  _14 = pcb->local_ip.u_addr.ip6.addr[1];
+  lpcb->local_ip.u_addr.ip6.addr[1] = _14;
+  _15 = pcb->local_ip.u_addr.ip6.addr[2];
+  lpcb->local_ip.u_addr.ip6.addr[2] = _15;
+  _16 = pcb->local_ip.u_addr.ip6.addr[3];
+  lpcb->local_ip.u_addr.ip6.addr[3] = _16;
+  _17 = pcb->local_ip.u_addr.ip6.zone;
+  lpcb->local_ip.u_addr.ip6.zone = _17;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _18 = pcb->local_ip.u_addr.ip4.addr;
+  lpcb->local_ip.u_addr.ip4.addr = _18;
+  lpcb->local_ip.u_addr.ip6.addr[3] = 0;
+  _19 = lpcb->local_ip.u_addr.ip6.addr[3];
+  lpcb->local_ip.u_addr.ip6.addr[2] = _19;
+  _20 = lpcb->local_ip.u_addr.ip6.addr[2];
+  lpcb->local_ip.u_addr.ip6.addr[1] = _20;
+  lpcb->local_ip.u_addr.ip6.zone = 0;
+
+  <bb 13> :
+  _21 = pcb->local_port;
+  if (_21 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 14> :
+  tcp_bound_pcbs.25_22 = tcp_bound_pcbs;
+  if (pcb == tcp_bound_pcbs.25_22)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  tcp_bound_pcbs.26_23 = tcp_bound_pcbs;
+  _24 = tcp_bound_pcbs.26_23->next;
+  tcp_bound_pcbs = _24;
+  goto <bb 21>; [INV]
+
+  <bb 16> :
+  tcp_tmp_pcb = tcp_bound_pcbs;
+  goto <bb 20>; [INV]
+
+  <bb 17> :
+  _25 = tcp_tmp_pcb->next;
+  if (pcb == _25)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _26 = pcb->next;
+  tcp_tmp_pcb->next = _26;
+  goto <bb 21>; [INV]
+
+  <bb 19> :
+  tcp_tmp_pcb = tcp_tmp_pcb->next;
+
+  <bb 20> :
+  if (tcp_tmp_pcb != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 21> :
+  pcb->next = 0B;
+
+  <bb 22> :
+  tcp_free (pcb);
+  lpcb->accept = tcp_accept_null;
+  lpcb->accepts_pending = 0;
+  _27 = lpcb->state;
+  if (_27 != 1)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 23>; [INV]
+
+  <bb 24> :
+  if (backlog != 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  iftmp.27 = backlog;
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  iftmp.27 = 1;
+
+  <bb 27> :
+  lpcb->backlog = iftmp.27;
+  _28 = tcp_listen_pcbs.pcbs;
+  MEM[(struct tcp_pcb *)lpcb].next = _28;
+  tcp_listen_pcbs.pcbs = lpcb;
+  tcp_timer_needed ();
+  res = 0;
+
+  <bb 28> :
+done:
+  if (err != 0B)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  *err = res;
+
+  <bb 30> :
+  D.8388 = lpcb;
+
+  <bb 31> :
+<L30>:
+  return D.8388;
+
+}
+
+
+tcp_listen_with_backlog (struct tcp_pcb * pcb, u8_t backlog)
+{
+  struct tcp_pcb * D.8360;
+
+  <bb 2> :
+  D.8360 = tcp_listen_with_backlog_and_err (pcb, backlog, 0B);
+
+  <bb 3> :
+<L0>:
+  return D.8360;
+
+}
+
+
+tcp_accept_null (void * arg, struct tcp_pcb * pcb, err_t err)
+{
+  err_t D.8358;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  tcp_abort (pcb);
+  D.8358 = -13;
+
+  <bb 5> :
+<L3>:
+  return D.8358;
+
+}
+
+
+tcp_bind_netif (struct tcp_pcb * pcb, const struct netif * netif)
+{
+  <bb 2> :
+  if (netif != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = netif->num;
+  _2 = _1 + 1;
+  pcb->netif_idx = _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  pcb->netif_idx = 0;
+
+  <bb 5> :
+  return;
+
+}
+
+
+tcp_bind (struct tcp_pcb * pcb, const struct ip_addr_t * ipaddr, u16_t port)
+{
+  struct netif * selected_netif;
+  struct ip_addr_t zoned_ipaddr;
+  struct tcp_pcb * cpcb;
+  int max_pcb_list;
+  int i;
+  const long unsigned int iftmp.23;
+  u8_t iftmp.22;
+  const long unsigned int iftmp.21;
+  const long unsigned int iftmp.20;
+  const long unsigned int iftmp.19;
+  const long unsigned int iftmp.18;
+  int iftmp.17;
+  int iftmp.16;
+  int iftmp.15;
+  int iftmp.14;
+  int iftmp.13;
+  int iftmp.12;
+  int iftmp.11;
+  int iftmp.10;
+  u8_t iftmp.9;
+  err_t D.8200;
+
+  <bb 2> :
+  max_pcb_list = 4;
+  if (ipaddr == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  ipaddr = &ip_addr_any;
+
+  <bb 4> :
+  if (pcb == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.8200 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 130>; [INV]
+
+  <bb 6> :
+  _1 = pcb->state;
+  if (_1 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8200 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 130>; [INV]
+
+  <bb 8> :
+  if (ipaddr != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 9> :
+  _2 = ipaddr->type;
+  if (_2 == 6)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 10> :
+  _3 = ipaddr->u_addr.ip6.zone;
+  if (_3 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 11> :
+  _4 = ipaddr->u_addr.ip6.addr[0];
+  _5 = _4 & 49407;
+  if (_5 == 33022)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 12> :
+  _6 = ipaddr->type;
+  zoned_ipaddr.type = _6;
+  _7 = ipaddr->type;
+  if (_7 == 6)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _8 = ipaddr->u_addr.ip6.addr[0];
+  zoned_ipaddr.u_addr.ip6.addr[0] = _8;
+  _9 = ipaddr->u_addr.ip6.addr[1];
+  zoned_ipaddr.u_addr.ip6.addr[1] = _9;
+  _10 = ipaddr->u_addr.ip6.addr[2];
+  zoned_ipaddr.u_addr.ip6.addr[2] = _10;
+  _11 = ipaddr->u_addr.ip6.addr[3];
+  zoned_ipaddr.u_addr.ip6.addr[3] = _11;
+  _12 = ipaddr->u_addr.ip6.zone;
+  zoned_ipaddr.u_addr.ip6.zone = _12;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  _13 = ipaddr->u_addr.ip4.addr;
+  zoned_ipaddr.u_addr.ip4.addr = _13;
+  zoned_ipaddr.u_addr.ip6.addr[3] = 0;
+  _14 = zoned_ipaddr.u_addr.ip6.addr[3];
+  zoned_ipaddr.u_addr.ip6.addr[2] = _14;
+  _15 = zoned_ipaddr.u_addr.ip6.addr[2];
+  zoned_ipaddr.u_addr.ip6.addr[1] = _15;
+  zoned_ipaddr.u_addr.ip6.zone = 0;
+
+  <bb 15> :
+  selected_netif = ip6_route (&zoned_ipaddr.u_addr.ip6, &zoned_ipaddr.u_addr.ip6);
+  if (selected_netif != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 16> :
+  _16 = zoned_ipaddr.u_addr.ip6.addr[0];
+  _17 = _16 & 49407;
+  if (_17 == 33022)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  _18 = zoned_ipaddr.u_addr.ip6.addr[0];
+  _19 = _18 & 36863;
+  if (_19 == 511)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  _20 = zoned_ipaddr.u_addr.ip6.addr[0];
+  _21 = _20 & 36863;
+  if (_21 == 767)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  _22 = selected_netif->num;
+  iftmp.9 = _22 + 1;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  iftmp.9 = 0;
+
+  <bb 21> :
+  zoned_ipaddr.u_addr.ip6.zone = iftmp.9;
+
+  <bb 22> :
+  ipaddr = &zoned_ipaddr;
+
+  <bb 23> :
+  if (port == 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 24> :
+  port = tcp_new_port ();
+  if (port == 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 86>; [INV]
+
+  <bb 25> :
+  D.8200 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 130>; [INV]
+
+  <bb 26> :
+  i = 0;
+  goto <bb 85>; [INV]
+
+  <bb 27> :
+  _23 = tcp_pcb_lists[i];
+  cpcb = *_23;
+  goto <bb 83>; [INV]
+
+  <bb 28> :
+  _24 = cpcb->local_port;
+  if (port == _24)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 82>; [INV]
+
+  <bb 29> :
+  if (ipaddr != 0B)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 30> :
+  _25 = ipaddr->type;
+  if (_25 == 6)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 31> :
+  iftmp.10 = 1;
+  goto <bb 33>; [INV]
+
+  <bb 32> :
+  iftmp.10 = 0;
+
+  <bb 33> :
+  _26 = (_Bool) iftmp.10;
+  _27 = ~_26;
+  _28 = cpcb->local_ip.type;
+  _29 = _28 == 6;
+  _30 = _27 ^ _29;
+  if (_30 != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 82>; [INV]
+
+  <bb 34> :
+  _31 = &cpcb->local_ip;
+  if (_31 != 0B)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 81>; [INV]
+
+  <bb 35> :
+  _32 = &cpcb->local_ip;
+  if (_32 != 0B)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 36> :
+  _33 = cpcb->local_ip.type;
+  if (_33 == 6)
+    goto <bb 37>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 37> :
+  _34 = &cpcb->local_ip.u_addr.ip6;
+  if (_34 == 0B)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 38> :
+  _35 = cpcb->local_ip.u_addr.ip6.addr[0];
+  if (_35 == 0)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 39> :
+  _36 = cpcb->local_ip.u_addr.ip6.addr[1];
+  if (_36 == 0)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 40> :
+  _37 = cpcb->local_ip.u_addr.ip6.addr[2];
+  if (_37 == 0)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 41> :
+  _38 = cpcb->local_ip.u_addr.ip6.addr[3];
+  if (_38 == 0)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 42> :
+  iftmp.11 = 1;
+  goto <bb 44>; [INV]
+
+  <bb 43> :
+  iftmp.11 = 0;
+
+  <bb 44> :
+  _39 = (_Bool) iftmp.11;
+  if (_39 != 0)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 45> :
+  goto <bb 51>; [INV]
+
+  <bb 46> :
+  _40 = &cpcb->local_ip.u_addr.ip4;
+  if (_40 == 0B)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 47> :
+  _41 = cpcb->local_ip.u_addr.ip4.addr;
+  if (_41 == 0)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 48> :
+  iftmp.12 = 1;
+  goto <bb 50>; [INV]
+
+  <bb 49> :
+  iftmp.12 = 0;
+
+  <bb 50> :
+  _42 = (_Bool) iftmp.12;
+  if (_42 != 0)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 51> :
+
+  <bb 52> :
+  if (ipaddr != 0B)
+    goto <bb 53>; [INV]
+  else
+    goto <bb 81>; [INV]
+
+  <bb 53> :
+  if (ipaddr != 0B)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 64>; [INV]
+
+  <bb 54> :
+  _43 = ipaddr->type;
+  if (_43 == 6)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 64>; [INV]
+
+  <bb 55> :
+  _44 = &ipaddr->u_addr.ip6;
+  if (_44 == 0B)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 56> :
+  _45 = ipaddr->u_addr.ip6.addr[0];
+  if (_45 == 0)
+    goto <bb 57>; [INV]
+  else
+    goto <bb 61>; [INV]
+
+  <bb 57> :
+  _46 = ipaddr->u_addr.ip6.addr[1];
+  if (_46 == 0)
+    goto <bb 58>; [INV]
+  else
+    goto <bb 61>; [INV]
+
+  <bb 58> :
+  _47 = ipaddr->u_addr.ip6.addr[2];
+  if (_47 == 0)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 61>; [INV]
+
+  <bb 59> :
+  _48 = ipaddr->u_addr.ip6.addr[3];
+  if (_48 == 0)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 61>; [INV]
+
+  <bb 60> :
+  iftmp.13 = 1;
+  goto <bb 62>; [INV]
+
+  <bb 61> :
+  iftmp.13 = 0;
+
+  <bb 62> :
+  _49 = (_Bool) iftmp.13;
+  if (_49 != 0)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 63>; [INV]
+
+  <bb 63> :
+  goto <bb 69>; [INV]
+
+  <bb 64> :
+  _50 = &ipaddr->u_addr.ip4;
+  if (_50 == 0B)
+    goto <bb 66>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 65> :
+  _51 = ipaddr->u_addr.ip4.addr;
+  if (_51 == 0)
+    goto <bb 66>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 66> :
+  iftmp.14 = 1;
+  goto <bb 68>; [INV]
+
+  <bb 67> :
+  iftmp.14 = 0;
+
+  <bb 68> :
+  _52 = (_Bool) iftmp.14;
+  if (_52 != 0)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 69> :
+
+  <bb 70> :
+  _53 = cpcb->local_ip.type;
+  _54 = ipaddr->type;
+  if (_53 == _54)
+    goto <bb 71>; [INV]
+  else
+    goto <bb 82>; [INV]
+
+  <bb 71> :
+  _55 = cpcb->local_ip.type;
+  if (_55 == 6)
+    goto <bb 72>; [INV]
+  else
+    goto <bb 80>; [INV]
+
+  <bb 72> :
+  _56 = cpcb->local_ip.u_addr.ip6.addr[0];
+  _57 = ipaddr->u_addr.ip6.addr[0];
+  if (_56 == _57)
+    goto <bb 73>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 73> :
+  _58 = cpcb->local_ip.u_addr.ip6.addr[1];
+  _59 = ipaddr->u_addr.ip6.addr[1];
+  if (_58 == _59)
+    goto <bb 74>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 74> :
+  _60 = cpcb->local_ip.u_addr.ip6.addr[2];
+  _61 = ipaddr->u_addr.ip6.addr[2];
+  if (_60 == _61)
+    goto <bb 75>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 75> :
+  _62 = cpcb->local_ip.u_addr.ip6.addr[3];
+  _63 = ipaddr->u_addr.ip6.addr[3];
+  if (_62 == _63)
+    goto <bb 76>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 76> :
+  _64 = cpcb->local_ip.u_addr.ip6.zone;
+  _65 = ipaddr->u_addr.ip6.zone;
+  if (_64 == _65)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 77> :
+  iftmp.15 = 1;
+  goto <bb 79>; [INV]
+
+  <bb 78> :
+  iftmp.15 = 0;
+
+  <bb 79> :
+  _66 = (_Bool) iftmp.15;
+  if (_66 != 0)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 82>; [INV]
+
+  <bb 80> :
+  _67 = cpcb->local_ip.u_addr.ip4.addr;
+  _68 = ipaddr->u_addr.ip4.addr;
+  if (_67 == _68)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 82>; [INV]
+
+  <bb 81> :
+  D.8200 = -8;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 130>; [INV]
+
+  <bb 82> :
+  cpcb = cpcb->next;
+
+  <bb 83> :
+  if (cpcb != 0B)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 84> :
+  i = i + 1;
+
+  <bb 85> :
+  if (i < max_pcb_list)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 86>; [INV]
+
+  <bb 86> :
+  if (ipaddr != 0B)
+    goto <bb 87>; [INV]
+  else
+    goto <bb 104>; [INV]
+
+  <bb 87> :
+  if (ipaddr != 0B)
+    goto <bb 88>; [INV]
+  else
+    goto <bb 98>; [INV]
+
+  <bb 88> :
+  _69 = ipaddr->type;
+  if (_69 == 6)
+    goto <bb 89>; [INV]
+  else
+    goto <bb 98>; [INV]
+
+  <bb 89> :
+  _70 = &ipaddr->u_addr.ip6;
+  if (_70 != 0B)
+    goto <bb 90>; [INV]
+  else
+    goto <bb 95>; [INV]
+
+  <bb 90> :
+  _71 = ipaddr->u_addr.ip6.addr[0];
+  if (_71 != 0)
+    goto <bb 94>; [INV]
+  else
+    goto <bb 91>; [INV]
+
+  <bb 91> :
+  _72 = ipaddr->u_addr.ip6.addr[1];
+  if (_72 != 0)
+    goto <bb 94>; [INV]
+  else
+    goto <bb 92>; [INV]
+
+  <bb 92> :
+  _73 = ipaddr->u_addr.ip6.addr[2];
+  if (_73 != 0)
+    goto <bb 94>; [INV]
+  else
+    goto <bb 93>; [INV]
+
+  <bb 93> :
+  _74 = ipaddr->u_addr.ip6.addr[3];
+  if (_74 != 0)
+    goto <bb 94>; [INV]
+  else
+    goto <bb 95>; [INV]
+
+  <bb 94> :
+  iftmp.16 = 1;
+  goto <bb 96>; [INV]
+
+  <bb 95> :
+  iftmp.16 = 0;
+
+  <bb 96> :
+  _75 = (_Bool) iftmp.16;
+  if (_75 != 0)
+    goto <bb 105>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 97> :
+  goto <bb 103>; [INV]
+
+  <bb 98> :
+  _76 = &ipaddr->u_addr.ip4;
+  if (_76 != 0B)
+    goto <bb 99>; [INV]
+  else
+    goto <bb 101>; [INV]
+
+  <bb 99> :
+  _77 = ipaddr->u_addr.ip4.addr;
+  if (_77 != 0)
+    goto <bb 100>; [INV]
+  else
+    goto <bb 101>; [INV]
+
+  <bb 100> :
+  iftmp.17 = 1;
+  goto <bb 102>; [INV]
+
+  <bb 101> :
+  iftmp.17 = 0;
+
+  <bb 102> :
+  _78 = (_Bool) iftmp.17;
+  if (_78 != 0)
+    goto <bb 105>; [INV]
+  else
+    goto <bb 103>; [INV]
+
+  <bb 103> :
+
+  <bb 104> :
+  _79 = ipaddr->type;
+  _80 = pcb->local_ip.type;
+  if (_79 != _80)
+    goto <bb 105>; [INV]
+  else
+    goto <bb 129>; [INV]
+
+  <bb 105> :
+  _81 = &pcb->local_ip;
+  if (_81 != 0B)
+    goto <bb 106>; [INV]
+  else
+    goto <bb 107>; [INV]
+
+  <bb 106> :
+  _82 = ipaddr->type;
+  pcb->local_ip.type = _82;
+
+  <bb 107> :
+  if (ipaddr != 0B)
+    goto <bb 108>; [INV]
+  else
+    goto <bb 125>; [INV]
+
+  <bb 108> :
+  _83 = ipaddr->type;
+  if (_83 == 6)
+    goto <bb 109>; [INV]
+  else
+    goto <bb 125>; [INV]
+
+  <bb 109> :
+  _84 = &ipaddr->u_addr.ip6;
+  if (_84 != 0B)
+    goto <bb 110>; [INV]
+  else
+    goto <bb 111>; [INV]
+
+  <bb 110> :
+  iftmp.18 = ipaddr->u_addr.ip6.addr[0];
+  goto <bb 112>; [INV]
+
+  <bb 111> :
+  iftmp.18 = 0;
+
+  <bb 112> :
+  pcb->local_ip.u_addr.ip6.addr[0] = iftmp.18;
+  _85 = &ipaddr->u_addr.ip6;
+  if (_85 != 0B)
+    goto <bb 113>; [INV]
+  else
+    goto <bb 114>; [INV]
+
+  <bb 113> :
+  iftmp.19 = ipaddr->u_addr.ip6.addr[1];
+  goto <bb 115>; [INV]
+
+  <bb 114> :
+  iftmp.19 = 0;
+
+  <bb 115> :
+  pcb->local_ip.u_addr.ip6.addr[1] = iftmp.19;
+  _86 = &ipaddr->u_addr.ip6;
+  if (_86 != 0B)
+    goto <bb 116>; [INV]
+  else
+    goto <bb 117>; [INV]
+
+  <bb 116> :
+  iftmp.20 = ipaddr->u_addr.ip6.addr[2];
+  goto <bb 118>; [INV]
+
+  <bb 117> :
+  iftmp.20 = 0;
+
+  <bb 118> :
+  pcb->local_ip.u_addr.ip6.addr[2] = iftmp.20;
+  _87 = &ipaddr->u_addr.ip6;
+  if (_87 != 0B)
+    goto <bb 119>; [INV]
+  else
+    goto <bb 120>; [INV]
+
+  <bb 119> :
+  iftmp.21 = ipaddr->u_addr.ip6.addr[3];
+  goto <bb 121>; [INV]
+
+  <bb 120> :
+  iftmp.21 = 0;
+
+  <bb 121> :
+  pcb->local_ip.u_addr.ip6.addr[3] = iftmp.21;
+  _88 = &ipaddr->u_addr.ip6;
+  if (_88 != 0B)
+    goto <bb 122>; [INV]
+  else
+    goto <bb 123>; [INV]
+
+  <bb 122> :
+  iftmp.22 = ipaddr->u_addr.ip6.zone;
+  goto <bb 124>; [INV]
+
+  <bb 123> :
+  iftmp.22 = 0;
+
+  <bb 124> :
+  pcb->local_ip.u_addr.ip6.zone = iftmp.22;
+  goto <bb 129>; [INV]
+
+  <bb 125> :
+  _89 = &ipaddr->u_addr.ip4;
+  if (_89 != 0B)
+    goto <bb 126>; [INV]
+  else
+    goto <bb 127>; [INV]
+
+  <bb 126> :
+  iftmp.23 = ipaddr->u_addr.ip4.addr;
+  goto <bb 128>; [INV]
+
+  <bb 127> :
+  iftmp.23 = 0;
+
+  <bb 128> :
+  pcb->local_ip.u_addr.ip4.addr = iftmp.23;
+  pcb->local_ip.u_addr.ip6.addr[3] = 0;
+  _90 = pcb->local_ip.u_addr.ip6.addr[3];
+  pcb->local_ip.u_addr.ip6.addr[2] = _90;
+  _91 = pcb->local_ip.u_addr.ip6.addr[2];
+  pcb->local_ip.u_addr.ip6.addr[1] = _91;
+  pcb->local_ip.u_addr.ip6.zone = 0;
+
+  <bb 129> :
+  pcb->local_port = port;
+  tcp_bound_pcbs.24_92 = tcp_bound_pcbs;
+  pcb->next = tcp_bound_pcbs.24_92;
+  tcp_bound_pcbs = pcb;
+  tcp_timer_needed ();
+  D.8200 = 0;
+
+  <bb 130> :
+  zoned_ipaddr = {CLOBBER};
+
+  <bb 131> :
+<L146>:
+  return D.8200;
+
+}
+
+
+tcp_abort (struct tcp_pcb * pcb)
+{
+  <bb 2> :
+  tcp_abandon (pcb, 1);
+  return;
+
+}
+
+
+tcp_abandon (struct tcp_pcb * pcb, int reset)
+{
+  struct tcp_pcb * tcp_tmp_pcb;
+  tcp_state last_state;
+  u16_t local_port;
+  int send_rst;
+  void * errf_arg;
+  void (*tcp_err_fn) (void *, err_t) errf;
+  u32_t ackno;
+  u32_t seqno;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 27>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _2 = pcb->state;
+  if (_2 == 10)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  tcp_pcb_remove (&tcp_tw_pcbs, pcb);
+  tcp_free (pcb);
+  goto <bb 27>; [INV]
+
+  <bb 8> :
+  send_rst = 0;
+  local_port = 0;
+  seqno = pcb->snd_nxt;
+  ackno = pcb->rcv_nxt;
+  errf = pcb->errf;
+  errf_arg = pcb->callback_arg;
+  _3 = pcb->state;
+  if (_3 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 9> :
+  _4 = pcb->local_port;
+  if (_4 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 10> :
+  tcp_bound_pcbs.7_5 = tcp_bound_pcbs;
+  if (pcb == tcp_bound_pcbs.7_5)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  tcp_bound_pcbs.8_6 = tcp_bound_pcbs;
+  _7 = tcp_bound_pcbs.8_6->next;
+  tcp_bound_pcbs = _7;
+  goto <bb 17>; [INV]
+
+  <bb 12> :
+  tcp_tmp_pcb = tcp_bound_pcbs;
+  goto <bb 16>; [INV]
+
+  <bb 13> :
+  _8 = tcp_tmp_pcb->next;
+  if (pcb == _8)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _9 = pcb->next;
+  tcp_tmp_pcb->next = _9;
+  goto <bb 17>; [INV]
+
+  <bb 15> :
+  tcp_tmp_pcb = tcp_tmp_pcb->next;
+
+  <bb 16> :
+  if (tcp_tmp_pcb != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  pcb->next = 0B;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  send_rst = reset;
+  local_port = pcb->local_port;
+  tcp_pcb_remove (&tcp_active_pcbs, pcb);
+  tcp_active_pcbs_changed = 1;
+
+  <bb 19> :
+  _10 = pcb->unacked;
+  if (_10 != 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _11 = pcb->unacked;
+  tcp_segs_free (_11);
+
+  <bb 21> :
+  _12 = pcb->unsent;
+  if (_12 != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  _13 = pcb->unsent;
+  tcp_segs_free (_13);
+
+  <bb 23> :
+  tcp_backlog_accepted (pcb);
+  if (send_rst != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _14 = &pcb->local_ip;
+  _15 = &pcb->remote_ip;
+  _16 = pcb->remote_port;
+  tcp_rst (pcb, seqno, ackno, _14, _15, local_port, _16);
+
+  <bb 25> :
+  last_state = pcb->state;
+  tcp_free (pcb);
+  if (errf != 0B)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  errf (errf_arg, -13);
+
+  <bb 27> :
+<L29>:
+  return;
+
+}
+
+
+tcp_shutdown (struct tcp_pcb * pcb, int shut_rx, int shut_tx)
+{
+  err_t D.8158;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8158 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.8158 = -11;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 6> :
+  if (shut_rx != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 7> :
+  _2 = pcb->flags;
+  _3 = _2 | 16;
+  pcb->flags = _3;
+  if (shut_tx != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.8158 = tcp_close_shutdown (pcb, 1);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 9> :
+  _4 = pcb->refused_data;
+  if (_4 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _5 = pcb->refused_data;
+  pbuf_free (_5);
+  pcb->refused_data = 0B;
+
+  <bb 11> :
+  if (shut_tx != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 12> :
+  _6 = pcb->state;
+  switch (_6) <default: <L14> [INV], case 3 ... 4: <L11> [INV], case 7: <L11> [INV]>
+
+  <bb 13> :
+<L11>:
+  _7 = (unsigned char) shut_rx;
+  D.8158 = tcp_close_shutdown (pcb, _7);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 14> :
+<L14>:
+  D.8158 = -11;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  D.8158 = 0;
+
+  <bb 16> :
+<L16>:
+  return D.8158;
+
+}
+
+
+tcp_close (struct tcp_pcb * pcb)
+{
+  err_t D.8152;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8152 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  if (_1 != 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _2 = pcb->flags;
+  _3 = _2 | 16;
+  pcb->flags = _3;
+
+  <bb 6> :
+  D.8152 = tcp_close_shutdown (pcb, 1);
+
+  <bb 7> :
+<L4>:
+  return D.8152;
+
+}
+
+
+tcp_close_shutdown_fin (struct tcp_pcb * pcb)
+{
+  err_t err;
+  err_t D.8143;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  switch (_1) <default: <L12> [INV], case 3: <L3> [INV], case 4: <L6> [INV], case 7: <L9> [INV]>
+
+  <bb 5> :
+<L3>:
+  err = tcp_send_fin (pcb);
+  if (err == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  tcp_backlog_accepted (pcb);
+  _2 = lwip_stats.mib2.tcpattemptfails;
+  _3 = _2 + 1;
+  lwip_stats.mib2.tcpattemptfails = _3;
+  pcb->state = 5;
+
+  <bb 7> :
+  goto <bb 15>; [INV]
+
+  <bb 8> :
+<L6>:
+  err = tcp_send_fin (pcb);
+  if (err == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _4 = lwip_stats.mib2.tcpestabresets;
+  _5 = _4 + 1;
+  lwip_stats.mib2.tcpestabresets = _5;
+  pcb->state = 5;
+
+  <bb 10> :
+  goto <bb 15>; [INV]
+
+  <bb 11> :
+<L9>:
+  err = tcp_send_fin (pcb);
+  if (err == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _6 = lwip_stats.mib2.tcpestabresets;
+  _7 = _6 + 1;
+  lwip_stats.mib2.tcpestabresets = _7;
+  pcb->state = 9;
+
+  <bb 13> :
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+<L12>:
+  D.8143 = 0;
+  goto <bb 20>; [INV]
+
+  <bb 15> :
+  if (err == 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  tcp_output (pcb);
+  goto <bb 19>; [INV]
+
+  <bb 17> :
+  if (err == -1)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _8 = pcb->flags;
+  _9 = _8 | 8;
+  pcb->flags = _9;
+  D.8143 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  D.8143 = err;
+
+  <bb 20> :
+<L19>:
+  return D.8143;
+
+}
+
+
+tcp_close_shutdown (struct tcp_pcb * pcb, u8_t rst_on_unacked_data)
+{
+  struct tcp_pcb * tcp_tmp_pcb;
+  struct tcp_pcb * tcp_tmp_pcb;
+  err_t D.8126;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (rst_on_unacked_data != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 5> :
+  _1 = pcb->state;
+  if (_1 == 4)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _2 = pcb->state;
+  if (_2 == 7)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 7> :
+  _3 = pcb->refused_data;
+  if (_3 != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _4 = pcb->rcv_wnd;
+  if (_4 != 7300)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 9> :
+  _5 = pcb->flags;
+  _6 = (unsigned int) _5;
+  _7 = _6 & 16;
+  if (_7 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 10>; [INV]
+
+  <bb 11> :
+  _8 = pcb->snd_nxt;
+  _9 = pcb->rcv_nxt;
+  _10 = &pcb->local_ip;
+  _11 = &pcb->remote_ip;
+  _12 = pcb->local_port;
+  _13 = pcb->remote_port;
+  tcp_rst (pcb, _8, _9, _10, _11, _12, _13);
+  tcp_pcb_purge (pcb);
+  tcp_active_pcbs.2_14 = tcp_active_pcbs;
+  if (pcb == tcp_active_pcbs.2_14)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  tcp_active_pcbs.3_15 = tcp_active_pcbs;
+  _16 = tcp_active_pcbs.3_15->next;
+  tcp_active_pcbs = _16;
+  goto <bb 18>; [INV]
+
+  <bb 13> :
+  tcp_tmp_pcb = tcp_active_pcbs;
+  goto <bb 17>; [INV]
+
+  <bb 14> :
+  _17 = tcp_tmp_pcb->next;
+  if (pcb == _17)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _18 = pcb->next;
+  tcp_tmp_pcb->next = _18;
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+  tcp_tmp_pcb = tcp_tmp_pcb->next;
+
+  <bb 17> :
+  if (tcp_tmp_pcb != 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  pcb->next = 0B;
+  tcp_active_pcbs_changed = 1;
+  tcp_input_pcb.4_19 = tcp_input_pcb;
+  if (pcb == tcp_input_pcb.4_19)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  tcp_trigger_input_pcb_close ();
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  tcp_free (pcb);
+
+  <bb 21> :
+  D.8126 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 37>; [INV]
+
+  <bb 22> :
+  _20 = pcb->state;
+  switch (_20) <default: <L38> [INV], case 0: <L25> [INV], case 1: <L36> [INV], case 2: <L37> [INV]>
+
+  <bb 23> :
+<L25>:
+  _21 = pcb->local_port;
+  if (_21 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 24> :
+  tcp_bound_pcbs.5_22 = tcp_bound_pcbs;
+  if (pcb == tcp_bound_pcbs.5_22)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  tcp_bound_pcbs.6_23 = tcp_bound_pcbs;
+  _24 = tcp_bound_pcbs.6_23->next;
+  tcp_bound_pcbs = _24;
+  goto <bb 31>; [INV]
+
+  <bb 26> :
+  tcp_tmp_pcb = tcp_bound_pcbs;
+  goto <bb 30>; [INV]
+
+  <bb 27> :
+  _25 = tcp_tmp_pcb->next;
+  if (pcb == _25)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  _26 = pcb->next;
+  tcp_tmp_pcb->next = _26;
+  goto <bb 31>; [INV]
+
+  <bb 29> :
+  tcp_tmp_pcb = tcp_tmp_pcb->next;
+
+  <bb 30> :
+  if (tcp_tmp_pcb != 0B)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 31> :
+  pcb->next = 0B;
+
+  <bb 32> :
+  tcp_free (pcb);
+  goto <bb 36>; [INV]
+
+  <bb 33> :
+<L36>:
+  tcp_listen_closed (pcb);
+  tcp_pcb_remove (&tcp_listen_pcbs.pcbs, pcb);
+  tcp_free_listen (pcb);
+  goto <bb 36>; [INV]
+
+  <bb 34> :
+<L37>:
+  tcp_pcb_remove (&tcp_active_pcbs, pcb);
+  tcp_active_pcbs_changed = 1;
+  tcp_free (pcb);
+  _27 = lwip_stats.mib2.tcpattemptfails;
+  _28 = _27 + 1;
+  lwip_stats.mib2.tcpattemptfails = _28;
+  goto <bb 36>; [INV]
+
+  <bb 35> :
+<L38>:
+  D.8126 = tcp_close_shutdown_fin (pcb);
+  goto <bb 37>; [INV]
+
+  <bb 36> :
+  D.8126 = 0;
+
+  <bb 37> :
+<L40>:
+  return D.8126;
+
+}
+
+
+tcp_backlog_accepted (struct tcp_pcb * pcb)
+{
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 512;
+  if (_3 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  _4 = pcb->listener;
+  if (_4 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _5 = pcb->listener;
+  _6 = _5->accepts_pending;
+  if (_6 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  _7 = pcb->listener;
+  _8 = _7->accepts_pending;
+  _9 = _8;
+  _10 = _9 + 255;
+  _7->accepts_pending = _10;
+  _11 = pcb->flags;
+  _12 = _11 & 65023;
+  pcb->flags = _12;
+
+  <bb 9> :
+  return;
+
+}
+
+
+tcp_backlog_delayed (struct tcp_pcb * pcb)
+{
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 512;
+  if (_3 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  _4 = pcb->listener;
+  if (_4 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _5 = pcb->listener;
+  _6 = _5->accepts_pending;
+  _7 = _6;
+  _8 = _7 + 1;
+  _5->accepts_pending = _8;
+  _9 = pcb->listener;
+  _10 = _9->accepts_pending;
+  if (_10 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  _11 = pcb->flags;
+  _12 = _11 | 512;
+  pcb->flags = _12;
+
+  <bb 9> :
+  return;
+
+}
+
+
+tcp_listen_closed (struct tcp_pcb * pcb)
+{
+  size_t i;
+
+  <bb 2> :
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb->state;
+  if (_1 != 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  i = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _2 = tcp_pcb_lists[i];
+  _3 = *_2;
+  tcp_remove_listener (_3, pcb);
+  i = i + 1;
+
+  <bb 8> :
+  if (i <= 3)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  return;
+
+}
+
+
+tcp_remove_listener (struct tcp_pcb * list, struct tcp_pcb_listen * lpcb)
+{
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  if (lpcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  pcb = list;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _1 = pcb->listener;
+  if (lpcb == _1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  pcb->listener = 0B;
+
+  <bb 7> :
+  pcb = pcb->next;
+
+  <bb 8> :
+  if (pcb != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  return;
+
+}
+
+
+tcp_tmr ()
+{
+  <bb 2> :
+  tcp_fasttmr ();
+  tcp_timer.0_1 = tcp_timer;
+  _2 = tcp_timer.0_1 + 1;
+  tcp_timer = _2;
+  tcp_timer.1_3 = tcp_timer;
+  _4 = (int) tcp_timer.1_3;
+  _5 = _4 & 1;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  tcp_slowtmr ();
+
+  <bb 4> :
+  return;
+
+}
+
+
+tcp_free_listen (struct tcp_pcb * pcb)
+{
+  <bb 2> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  memp_free (3, pcb);
+  return;
+
+}
+
+
+tcp_free (struct tcp_pcb * pcb)
+{
+  <bb 2> :
+  _1 = pcb->state;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  memp_free (2, pcb);
+  return;
+
+}
+
+
+tcp_init ()
+{
+  <bb 2> :
+  _1 = rand ();
+  _2 = (short unsigned int) _1;
+  _3 = _2 & 16383;
+  _4 = _3 + 49152;
+  tcp_port = _4;
+  return;
+
+}
+
+

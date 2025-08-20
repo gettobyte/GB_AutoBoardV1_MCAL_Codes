@@ -1,0 +1,3078 @@
+Symbol table:
+
+atoi/57 (atoi) @06dfda80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_find/36 
+  Calls: 
+lwip_itoa/56 (lwip_itoa) @06dfd7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_index_to_name/34 
+  Calls: 
+lwip_htonl/55 (lwip_htonl) @06dfd1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_create_ip6_linklocal_address/29 netif_create_ip6_linklocal_address/29 netif_create_ip6_linklocal_address/29 
+  Calls: 
+nd6_adjust_mld_membership/54 (nd6_adjust_mld_membership) @06de6e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_ip6_addr_set_state/27 
+  Calls: 
+nd6_cleanup_netif/53 (nd6_cleanup_netif) @06de6700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_set_down/21 
+  Calls: 
+etharp_cleanup_netif/52 (etharp_cleanup_netif) @06de6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_set_down/21 
+  Calls: 
+mld6_report_groups/51 (mld6_report_groups) @06de6460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_issue_reports/20 
+  Calls: 
+igmp_report_groups/50 (igmp_report_groups) @06de6380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_issue_reports/20 
+  Calls: 
+etharp_request/49 (etharp_request) @06de62a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_issue_reports/20 
+  Calls: 
+sys_now/48 (sys_now) @06de60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_set_down/21 netif_set_up/19 
+  Calls: 
+mld6_stop/47 (mld6_stop) @06dd1e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_remove/17 
+  Calls: 
+igmp_stop/46 (igmp_stop) @06dd1d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_remove/17 
+  Calls: 
+raw_netif_ip_addr_changed/45 (raw_netif_ip_addr_changed) @06dd12a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_do_ip_addr_changed/9 
+  Calls: 
+udp_netif_ip_addr_changed/44 (udp_netif_ip_addr_changed) @06dd11c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_do_ip_addr_changed/9 
+  Calls: 
+tcp_netif_ip_addr_changed/43 (tcp_netif_ip_addr_changed) @06dd10e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_do_ip_addr_changed/9 
+  Calls: 
+igmp_start/42 (igmp_start) @06d60ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_add/8 
+  Calls: 
+nd6_restart_netif/41 (nd6_restart_netif) @06d602a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_set_link_up/22 netif_set_up/19 netif_add/8 
+  Calls: 
+memset/40 (memset) @06d60000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_add/8 
+  Calls: 
+ip_addr_any/39 (ip_addr_any) @06d8adc8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: netif_set_addr/16 (addr) netif_set_addr/16 (addr) netif_set_ipaddr/11 (addr) netif_set_netmask/13 (addr) netif_set_gw/15 (addr) netif_set_addr/16 (addr) netif_add/8 (addr) netif_add/8 (addr) netif_add/8 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+ip_input/38 (ip_input) @06d60a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_input/6 
+  Calls: 
+ethernet_input/37 (ethernet_input) @06d609a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netif_input/6 
+  Calls: 
+netif_find/36 (netif_find) @06d60460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netif_list/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_name_to_index/33 
+  Calls: atoi/57 
+netif_get_by_index/35 (netif_get_by_index) @06d601c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netif_list/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_index_to_name/34 
+  Calls: 
+netif_index_to_name/34 (netif_index_to_name) @06d51ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: lwip_itoa/56 netif_get_by_index/35 
+netif_name_to_index/33 (netif_name_to_index) @06d519a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_find/36 
+netif_null_output_ip4/32 (netif_null_output_ip4) @06d51e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: netif_add/8 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+netif_null_output_ip6/31 (netif_null_output_ip6) @06d51b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: netif_add/8 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+netif_add_ip6_address/30 (netif_add_ip6_address) @06d518c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_ip6_addr_set_state/27 netif_get_ip6_addr_match/28 
+netif_create_ip6_linklocal_address/29 (netif_create_ip6_linklocal_address) @06d511c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_ip6_addr_set_state/27 lwip_htonl/55 lwip_htonl/55 lwip_htonl/55 
+netif_get_ip6_addr_match/28 (netif_get_ip6_addr_match) @06d47a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_add_ip6_address/30 
+  Calls: 
+netif_ip6_addr_set_state/27 (netif_ip6_addr_set_state) @06d47460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_add_ip6_address/30 netif_create_ip6_linklocal_address/29 
+  Calls: netif_issue_reports/20 netif_do_ip_addr_changed/9 nd6_adjust_mld_membership/54 
+netif_ip6_addr_set_parts/26 (netif_ip6_addr_set_parts) @06d470e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_ip6_addr_set/25 
+  Calls: netif_issue_reports/20 netif_do_ip_addr_changed/9 
+netif_ip6_addr_set/25 (netif_ip6_addr_set) @06d361c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_ip6_addr_set_parts/26 
+netif_alloc_client_data_id/24 (netif_alloc_client_data_id) @06d1ad20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netif_client_id/4 (read) netif_client_id/4 (read) netif_client_id/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+netif_set_link_down/23 (netif_set_link_down) @06d1a380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+netif_set_link_up/22 (netif_set_link_up) @06d1aee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: nd6_restart_netif/41 netif_issue_reports/20 
+netif_set_down/21 (netif_set_down) @06d1ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_remove/17 
+  Calls: nd6_cleanup_netif/53 etharp_cleanup_netif/52 sys_now/48 
+netif_issue_reports/20 (netif_issue_reports) @06d1a8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_ip6_addr_set_state/27 netif_ip6_addr_set_parts/26 netif_set_link_up/22 netif_set_up/19 netif_do_set_ipaddr/10 
+  Calls: mld6_report_groups/51 igmp_report_groups/50 etharp_request/49 
+netif_set_up/19 (netif_set_up) @06d1a2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: nd6_restart_netif/41 netif_issue_reports/20 sys_now/48 
+netif_set_default/18 (netif_set_default) @06d158c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netif_default/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_remove/17 
+  Calls: 
+netif_remove/17 (netif_remove) @06d152a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netif_default/2 (read) netif_list/1 (read) netif_list/1 (write) netif_list/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_set_default/18 netif_set_down/21 mld6_stop/47 netif_do_ip_addr_changed/9 igmp_stop/46 netif_do_ip_addr_changed/9 
+netif_set_addr/16 (netif_set_addr) @06d157e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/39 (addr) ip_addr_any/39 (addr) ip_addr_any/39 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_add/8 
+  Calls: netif_do_set_ipaddr/10 netif_do_set_gw/14 netif_do_set_netmask/12 netif_do_set_ipaddr/10 
+netif_set_gw/15 (netif_set_gw) @06d15460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/39 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_do_set_gw/14 
+netif_do_set_gw/14 (netif_do_set_gw) @06d151c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_set_addr/16 netif_set_gw/15 
+  Calls: 
+netif_set_netmask/13 (netif_set_netmask) @06cead20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/39 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_do_set_netmask/12 
+netif_do_set_netmask/12 (netif_do_set_netmask) @06ceaa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_set_addr/16 netif_set_netmask/13 
+  Calls: 
+netif_set_ipaddr/11 (netif_set_ipaddr) @06cea460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/39 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_do_set_ipaddr/10 
+netif_do_set_ipaddr/10 (netif_do_set_ipaddr) @06cea1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_set_addr/16 netif_set_addr/16 netif_set_ipaddr/11 
+  Calls: netif_issue_reports/20 netif_do_ip_addr_changed/9 
+netif_do_ip_addr_changed/9 (netif_do_ip_addr_changed) @06ce0460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_ip6_addr_set_state/27 netif_ip6_addr_set_parts/26 netif_remove/17 netif_remove/17 netif_do_set_ipaddr/10 
+  Calls: raw_netif_ip_addr_changed/45 udp_netif_ip_addr_changed/44 tcp_netif_ip_addr_changed/43 
+netif_add/8 (netif_add) @06ce01c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/39 (addr) ip_addr_any/39 (addr) ip_addr_any/39 (addr) netif_null_output_ip4/32 (addr) netif_null_output_ip6/31 (addr) netif_num/3 (read) netif_list/1 (read) netif_num/3 (write) netif_num/3 (write) netif_list/1 (read) netif_list/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netif_add_noaddr/7 
+  Calls: igmp_start/42 netif_set_addr/16 nd6_restart_netif/41 memset/40 
+   Indirect call Num speculative call targets: 0
+netif_add_noaddr/7 (netif_add_noaddr) @06cc3d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: netif_add/8 
+netif_input/6 (netif_input) @06cc3a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ip_input/38 ethernet_input/37 
+netif_init/5 (netif_init) @06cc37e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+netif_client_id/4 (netif_client_id) @06cbdab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: netif_alloc_client_data_id/24 (read) netif_alloc_client_data_id/24 (read) netif_alloc_client_data_id/24 (write) 
+  Availability: available
+  Varpool flags:
+netif_num/3 (netif_num) @06cbda20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: netif_add/8 (read) netif_add/8 (write) netif_add/8 (write) 
+  Availability: available
+  Varpool flags:
+netif_default/2 (netif_default) @06cbd948
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: netif_set_default/18 (write) netif_remove/17 (read) 
+  Availability: available
+  Varpool flags:
+netif_list/1 (netif_list) @06cbd900
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: netif_get_by_index/35 (read) netif_add/8 (write) netif_remove/17 (read) netif_add/8 (read) netif_add/8 (read) netif_remove/17 (read) netif_remove/17 (write) netif_find/36 (read) 
+  Availability: available
+  Varpool flags:
+netif_find (const char * name)
+{
+  u8_t num;
+  struct netif * netif;
+  struct netif * D.8533;
+  const char * _1;
+  int _2;
+  const char * _3;
+  char _4;
+  unsigned char _5;
+  char _6;
+  char _7;
+  const char * _8;
+  char _9;
+  char _10;
+  struct netif * _12;
+  struct netif * _18;
+  struct netif * _20;
+  struct netif * _21;
+  struct netif * _23;
+
+  <bb 2> :
+  if (name_14(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _23 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 4> :
+  _1 = name_14(D) + 2;
+  _2 = atoi (_1);
+  num_17 = (u8_t) _2;
+  if (num_17 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _3 = name_14(D) + 2;
+  _4 = *_3;
+  if (_4 != 48)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _18 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 7> :
+  netif_19 = netif_list;
+  goto <bb 13>; [INV]
+
+  <bb 8> :
+  _5 = netif_11->num;
+  if (num_17 == _5)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  _6 = *name_14(D);
+  _7 = netif_11->name[0];
+  if (_6 == _7)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  _8 = name_14(D) + 1;
+  _9 = *_8;
+  _10 = netif_11->name[1];
+  if (_9 == _10)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _21 = netif_11;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 12> :
+  netif_22 = netif_11->next;
+
+  <bb 13> :
+  # netif_11 = PHI <netif_19(7), netif_22(12)>
+  if (netif_11 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  _20 = 0B;
+
+  <bb 15> :
+  # _12 = PHI <_23(3), _18(6), _21(11), _20(14)>
+<L15>:
+  return _12;
+
+}
+
+
+netif_get_by_index (u8_t idx)
+{
+  struct netif * netif;
+  struct netif * D.8529;
+  unsigned char _1;
+  unsigned char _2;
+  struct netif * _4;
+  struct netif * _9;
+  struct netif * _10;
+
+  <bb 2> :
+  if (idx_5(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  netif_7 = netif_list;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _1 = netif_3->num;
+  _2 = _1 + 1;
+  if (idx_5(D) == _2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _9 = netif_3;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  netif_8 = netif_3->next;
+
+  <bb 7> :
+  # netif_3 = PHI <netif_7(3), netif_8(6)>
+  if (netif_3 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _10 = 0B;
+
+  <bb 9> :
+  # _4 = PHI <_9(5), _10(8)>
+<L7>:
+  return _4;
+
+}
+
+
+netif_index_to_name (u8_t idx, char * name)
+{
+  struct netif * netif;
+  char * D.8523;
+  char _1;
+  char * _2;
+  char _3;
+  char * _4;
+  int _5;
+  int _6;
+  char * _7;
+  char * _13;
+  char * _18;
+
+  <bb 2> :
+  netif_12 = netif_get_by_index (idx_10(D));
+  if (netif_12 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = netif_12->name[0];
+  *name_14(D) = _1;
+  _2 = name_14(D) + 1;
+  _3 = netif_12->name[1];
+  *_2 = _3;
+  _4 = name_14(D) + 2;
+  _5 = (int) idx_10(D);
+  _6 = _5 + -1;
+  lwip_itoa (_4, 4, _6);
+  _18 = name_14(D);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _13 = 0B;
+
+  <bb 5> :
+  # _7 = PHI <_18(3), _13(4)>
+<L2>:
+  return _7;
+
+}
+
+
+netif_name_to_index (const char * name)
+{
+  struct netif * netif;
+  u8_t D.8519;
+  unsigned char _1;
+  u8_t _2;
+  u8_t _7;
+  u8_t _8;
+
+  <bb 2> :
+  netif_6 = netif_find (name_4(D));
+  if (netif_6 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = netif_6->num;
+  _8 = _1 + 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _7 = 0;
+
+  <bb 5> :
+  # _2 = PHI <_8(3), _7(4)>
+<L2>:
+  return _2;
+
+}
+
+
+netif_null_output_ip4 (struct netif * netif, struct pbuf * p, const struct ip4_addr_t * ipaddr)
+{
+  err_t D.8515;
+  err_t _1;
+
+  <bb 2> :
+  _1 = -12;
+
+  <bb 3> :
+<L0>:
+  return _1;
+
+}
+
+
+netif_null_output_ip6 (struct netif * netif, struct pbuf * p, const struct ip6_addr_t * ipaddr)
+{
+  err_t D.8513;
+  err_t _1;
+
+  <bb 2> :
+  _1 = -12;
+
+  <bb 3> :
+<L0>:
+  return _1;
+
+}
+
+
+netif_add_ip6_address (struct netif * netif, const struct ip6_addr_t * ip6addr, s8_t * chosen_idx)
+{
+  s8_t i;
+  u8_t iftmp.18;
+  err_t D.8501;
+  long unsigned int _1;
+  long unsigned int _2;
+  _Bool _3;
+  int _4;
+  unsigned char _5;
+  int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  int _10;
+  long unsigned int _11;
+  int _12;
+  long unsigned int _13;
+  int _14;
+  unsigned char _15;
+  int _16;
+  int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  unsigned char _20;
+  int _21;
+  signed char i.19_22;
+  unsigned char i.20_23;
+  unsigned char _24;
+  err_t _26;
+  u8_t iftmp.18_27;
+  err_t _42;
+  u8_t iftmp.18_50;
+  u8_t iftmp.18_51;
+  err_t _55;
+  err_t _57;
+
+  <bb 2> :
+  if (netif_34(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (ip6addr_36(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  i_38 = netif_get_ip6_addr_match (netif_34(D), ip6addr_36(D));
+  if (i_38 >= 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 7> :
+  if (chosen_idx_40(D) != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  *chosen_idx_40(D) = i_38;
+
+  <bb 9> :
+  _57 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 10> :
+  _1 = ip6addr_36(D)->addr[0];
+  _2 = _1 & 49407;
+  _3 = _2 != 33022;
+  i_39 = (s8_t) _3;
+  goto <bb 19>; [INV]
+
+  <bb 11> :
+  _4 = (int) i_25;
+  _5 = netif_34(D)->ip6_addr_state[_4];
+  if (_5 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 12> :
+  _6 = (int) i_25;
+  _7 = ip6addr_36(D)->addr[0];
+  netif_34(D)->ip6_addr[_6].u_addr.ip6.addr[0] = _7;
+  _8 = (int) i_25;
+  _9 = ip6addr_36(D)->addr[1];
+  netif_34(D)->ip6_addr[_8].u_addr.ip6.addr[1] = _9;
+  _10 = (int) i_25;
+  _11 = ip6addr_36(D)->addr[2];
+  netif_34(D)->ip6_addr[_10].u_addr.ip6.addr[2] = _11;
+  _12 = (int) i_25;
+  _13 = ip6addr_36(D)->addr[3];
+  netif_34(D)->ip6_addr[_12].u_addr.ip6.addr[3] = _13;
+  _14 = (int) i_25;
+  _15 = ip6addr_36(D)->zone;
+  netif_34(D)->ip6_addr[_14].u_addr.ip6.zone = _15;
+  _16 = (int) i_25;
+  netif_34(D)->ip6_addr[_16].type = 6;
+  _17 = (int) i_25;
+  _18 = netif_34(D)->ip6_addr[_17].u_addr.ip6.addr[0];
+  _19 = _18 & 49407;
+  if (_19 == 33022)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _20 = netif_34(D)->num;
+  iftmp.18_51 = _20 + 1;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.18_50 = 0;
+
+  <bb 15> :
+  # iftmp.18_27 = PHI <iftmp.18_51(13), iftmp.18_50(14)>
+  _21 = (int) i_25;
+  netif_34(D)->ip6_addr[_21].u_addr.ip6.zone = iftmp.18_27;
+  netif_ip6_addr_set_state (netif_34(D), i_25, 8);
+  if (chosen_idx_40(D) != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  *chosen_idx_40(D) = i_25;
+
+  <bb 17> :
+  _55 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 18> :
+  i.19_22 = i_25;
+  i.20_23 = (unsigned char) i.19_22;
+  _24 = i.20_23 + 1;
+  i_43 = (s8_t) _24;
+
+  <bb 19> :
+  # i_25 = PHI <i_39(10), i_43(18)>
+  if (i_25 <= 2)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  if (chosen_idx_40(D) != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  *chosen_idx_40(D) = -1;
+
+  <bb 22> :
+  _42 = -6;
+
+  <bb 23> :
+  # _26 = PHI <_57(9), _55(17), _42(22)>
+<L22>:
+  return _26;
+
+}
+
+
+netif_create_ip6_linklocal_address (struct netif * netif, u8_t from_mac_48bit)
+{
+  u8_t addr_index;
+  u8_t i;
+  u8_t iftmp.17;
+  long unsigned int D.8487;
+  unsigned char _1;
+  unsigned char _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  unsigned char _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  unsigned char _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  unsigned char _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  unsigned char _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  unsigned char _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  unsigned char addr_index.15_27;
+  unsigned char _28;
+  int _29;
+  int _30;
+  int _31;
+  int _32;
+  unsigned char _33;
+  long unsigned int _34;
+  int _35;
+  int _36;
+  int _37;
+  long unsigned int _38;
+  int _39;
+  long unsigned int _40;
+  int _41;
+  long unsigned int _42;
+  unsigned char i.16_43;
+  unsigned char _44;
+  long unsigned int _45;
+  long unsigned int _46;
+  unsigned char _47;
+  u8_t iftmp.17_51;
+  long unsigned int _66;
+  u8_t iftmp.17_73;
+  u8_t iftmp.17_74;
+
+  <bb 2> :
+  if (netif_55(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  netif_55(D)->ip6_addr[0].u_addr.ip6.addr[0] = 33022;
+  netif_55(D)->ip6_addr[0].u_addr.ip6.addr[1] = 0;
+  if (from_mac_48bit_59(D) != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _1 = netif_55(D)->hwaddr[0];
+  _2 = _1 ^ 2;
+  _3 = (long unsigned int) _2;
+  _4 = _3 << 24;
+  _5 = netif_55(D)->hwaddr[1];
+  _6 = (long unsigned int) _5;
+  _7 = _6 << 16;
+  _8 = _4 | _7;
+  _9 = netif_55(D)->hwaddr[2];
+  _10 = (long unsigned int) _9;
+  _11 = _10 << 8;
+  _12 = _8 | _11;
+  _13 = _12 | 255;
+  _14 = lwip_htonl (_13);
+  netif_55(D)->ip6_addr[0].u_addr.ip6.addr[2] = _14;
+  _15 = netif_55(D)->hwaddr[3];
+  _16 = (long unsigned int) _15;
+  _17 = _16 << 16;
+  _18 = netif_55(D)->hwaddr[4];
+  _19 = (long unsigned int) _18;
+  _20 = _19 << 8;
+  _21 = _17 | _20;
+  _22 = netif_55(D)->hwaddr[5];
+  _23 = (long unsigned int) _22;
+  _24 = _21 | _23;
+  _25 = _24 | 4261412864;
+  _26 = lwip_htonl (_25);
+  netif_55(D)->ip6_addr[0].u_addr.ip6.addr[3] = _26;
+  goto <bb 12>; [INV]
+
+  <bb 6> :
+  netif_55(D)->ip6_addr[0].u_addr.ip6.addr[2] = 0;
+  netif_55(D)->ip6_addr[0].u_addr.ip6.addr[3] = 0;
+  addr_index_62 = 3;
+  i_63 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  if (i_48 == 4)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  addr_index.15_27 = addr_index_50;
+  addr_index_64 = addr_index.15_27 + 255;
+
+  <bb 9> :
+  # addr_index_49 = PHI <addr_index_50(7), addr_index_64(8)>
+  _28 = netif_55(D)->hwaddr_len;
+  _29 = (int) _28;
+  _30 = (int) i_48;
+  _31 = _29 - _30;
+  _32 = _31 + -1;
+  _33 = netif_55(D)->hwaddr[_32];
+  _34 = (long unsigned int) _33;
+  _35 = (int) i_48;
+  _36 = _35 & 3;
+  _37 = _36 * 8;
+  _38 = _34 << _37;
+  _66 = lwip_htonl (_38);
+  _39 = (int) addr_index_49;
+  _40 = netif_55(D)->ip6_addr[0].u_addr.ip6.addr[_39];
+  _41 = (int) addr_index_49;
+  _42 = _66 | _40;
+  netif_55(D)->ip6_addr[0].u_addr.ip6.addr[_41] = _42;
+  i.16_43 = i_48;
+  i_68 = i.16_43 + 1;
+
+  <bb 10> :
+  # i_48 = PHI <i_63(6), i_68(9)>
+  # addr_index_50 = PHI <addr_index_62(6), addr_index_49(9)>
+  if (i_48 <= 7)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _44 = netif_55(D)->hwaddr_len;
+  if (i_48 < _44)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _45 = netif_55(D)->ip6_addr[0].u_addr.ip6.addr[0];
+  _46 = _45 & 49407;
+  if (_46 == 33022)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _47 = netif_55(D)->num;
+  iftmp.17_74 = _47 + 1;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.17_73 = 0;
+
+  <bb 15> :
+  # iftmp.17_51 = PHI <iftmp.17_74(13), iftmp.17_73(14)>
+  netif_55(D)->ip6_addr[0].u_addr.ip6.zone = iftmp.17_51;
+  netif_ip6_addr_set_state (netif_55(D), 0, 8);
+  return;
+
+}
+
+
+netif_get_ip6_addr_match (struct netif * netif, const struct ip6_addr_t * ip6addr)
+{
+  s8_t i;
+  s8_t D.8468;
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _4;
+  int _5;
+  unsigned char _6;
+  int _7;
+  struct ip6_addr_t * _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  int _11;
+  struct ip6_addr_t * _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  int _15;
+  struct ip6_addr_t * _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  int _19;
+  struct ip6_addr_t * _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  signed char i.13_23;
+  unsigned char i.14_24;
+  unsigned char _25;
+  s8_t _27;
+  s8_t _33;
+  s8_t _35;
+  s8_t _36;
+
+  <bb 2> :
+  if (netif_30(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (ip6addr_32(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = ip6addr_32(D)->zone;
+  if (_1 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _2 = ip6addr_32(D)->zone;
+  _3 = netif_30(D)->num;
+  _4 = _3 + 1;
+  if (_2 != _4)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _33 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 19>; [INV]
+
+  <bb 9> :
+  i_34 = 0;
+  goto <bb 17>; [INV]
+
+  <bb 10> :
+  _5 = (int) i_26;
+  _6 = netif_30(D)->ip6_addr_state[_5];
+  if (_6 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 11> :
+  _7 = (int) i_26;
+  _8 = &netif_30(D)->ip6_addr[_7].u_addr.ip6;
+  _9 = MEM[(const struct ip6_addr_t *)_8].addr[0];
+  _10 = ip6addr_32(D)->addr[0];
+  if (_9 == _10)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 12> :
+  _11 = (int) i_26;
+  _12 = &netif_30(D)->ip6_addr[_11].u_addr.ip6;
+  _13 = MEM[(const struct ip6_addr_t *)_12].addr[1];
+  _14 = ip6addr_32(D)->addr[1];
+  if (_13 == _14)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 13> :
+  _15 = (int) i_26;
+  _16 = &netif_30(D)->ip6_addr[_15].u_addr.ip6;
+  _17 = MEM[(const struct ip6_addr_t *)_16].addr[2];
+  _18 = ip6addr_32(D)->addr[2];
+  if (_17 == _18)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  _19 = (int) i_26;
+  _20 = &netif_30(D)->ip6_addr[_19].u_addr.ip6;
+  _21 = MEM[(const struct ip6_addr_t *)_20].addr[3];
+  _22 = ip6addr_32(D)->addr[3];
+  if (_21 == _22)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _36 = i_26;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 19>; [INV]
+
+  <bb 16> :
+  i.13_23 = i_26;
+  i.14_24 = (unsigned char) i.13_23;
+  _25 = i.14_24 + 1;
+  i_37 = (s8_t) _25;
+
+  <bb 17> :
+  # i_26 = PHI <i_34(9), i_37(16)>
+  if (i_26 <= 2)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  _35 = -1;
+
+  <bb 19> :
+  # _27 = PHI <_33(8), _36(15), _35(18)>
+<L23>:
+  return _27;
+
+}
+
+
+netif_ip6_addr_set_state (struct netif * netif, s8_t addr_idx, u8_t state)
+{
+  u8_t new_valid;
+  u8_t old_valid;
+  u8_t old_state;
+  int _1;
+  unsigned char _2;
+  unsigned int _3;
+  unsigned int _4;
+  int _5;
+  struct ip_addr_t * _6;
+  int _7;
+  unsigned char _8;
+  int _9;
+  int _10;
+
+  <bb 2> :
+  if (netif_17(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (addr_idx_19(D) > 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = (int) addr_idx_19(D);
+  old_state_20 = netif_17(D)->ip6_addr_state[_1];
+  if (old_state_20 != state_21(D))
+    goto <bb 7>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 7> :
+  old_valid_22 = old_state_20 & 16;
+  new_valid_23 = state_21(D) & 16;
+  _2 = netif_17(D)->flags;
+  _3 = (unsigned int) _2;
+  _4 = _3 & 64;
+  if (_4 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  nd6_adjust_mld_membership (netif_17(D), addr_idx_19(D), state_21(D));
+
+  <bb 9> :
+  if (old_valid_22 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  if (new_valid_23 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _5 = (int) addr_idx_19(D);
+  _6 = &netif_17(D)->ip6_addr[_5];
+  netif_do_ip_addr_changed (_6, 0B);
+
+  <bb 12> :
+  _7 = (int) addr_idx_19(D);
+  netif_17(D)->ip6_addr_state[_7] = state_21(D);
+  if (old_valid_22 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 13> :
+  if (new_valid_23 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  netif_issue_reports (netif_17(D), 2);
+
+  <bb 15> :
+  _8 = old_state_20 ^ state_21(D);
+  _9 = (int) _8;
+  _10 = _9 & -8;
+
+  <bb 16> :
+  return;
+
+}
+
+
+netif_ip6_addr_set_parts (struct netif * netif, s8_t addr_idx, u32_t i0, u32_t i1, u32_t i2, u32_t i3)
+{
+  struct ip_addr_t new_ipaddr;
+  struct ip_addr_t old_addr;
+  u8_t iftmp.12;
+  int _1;
+  struct ip6_addr_t * _2;
+  long unsigned int _3;
+  int _4;
+  struct ip6_addr_t * _5;
+  long unsigned int _6;
+  int _7;
+  struct ip6_addr_t * _8;
+  long unsigned int _9;
+  int _10;
+  struct ip6_addr_t * _11;
+  long unsigned int _12;
+  int _13;
+  struct ip6_addr_t * _14;
+  unsigned char _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  unsigned char _22;
+  int _23;
+  unsigned char _24;
+  int _25;
+  int _26;
+  int _27;
+  struct ip_addr_t * _28;
+  int _29;
+  unsigned char _30;
+  unsigned char _31;
+  int _32;
+  long unsigned int _33;
+  int _34;
+  long unsigned int _35;
+  int _36;
+  long unsigned int _37;
+  int _38;
+  long unsigned int _39;
+  int _40;
+  unsigned char _41;
+  int _42;
+  long unsigned int _43;
+  int _44;
+  int _45;
+  long unsigned int _46;
+  int _47;
+  long unsigned int _48;
+  int _49;
+  int _50;
+  unsigned char _51;
+  int _52;
+  int _53;
+  u8_t iftmp.12_54;
+  u8_t iftmp.12_79;
+  u8_t iftmp.12_80;
+
+  <bb 2> :
+  if (netif_60(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (addr_idx_62(D) > 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = (int) addr_idx_62(D);
+  _2 = &netif_60(D)->ip6_addr[_1].u_addr.ip6;
+  _3 = MEM[(const struct ip6_addr_t *)_2].addr[0];
+  old_addr.u_addr.ip6.addr[0] = _3;
+  _4 = (int) addr_idx_62(D);
+  _5 = &netif_60(D)->ip6_addr[_4].u_addr.ip6;
+  _6 = MEM[(const struct ip6_addr_t *)_5].addr[1];
+  old_addr.u_addr.ip6.addr[1] = _6;
+  _7 = (int) addr_idx_62(D);
+  _8 = &netif_60(D)->ip6_addr[_7].u_addr.ip6;
+  _9 = MEM[(const struct ip6_addr_t *)_8].addr[2];
+  old_addr.u_addr.ip6.addr[2] = _9;
+  _10 = (int) addr_idx_62(D);
+  _11 = &netif_60(D)->ip6_addr[_10].u_addr.ip6;
+  _12 = MEM[(const struct ip6_addr_t *)_11].addr[3];
+  old_addr.u_addr.ip6.addr[3] = _12;
+  _13 = (int) addr_idx_62(D);
+  _14 = &netif_60(D)->ip6_addr[_13].u_addr.ip6;
+  _15 = MEM[(const struct ip6_addr_t *)_14].zone;
+  old_addr.u_addr.ip6.zone = _15;
+  old_addr.type = 6;
+  _16 = old_addr.u_addr.ip6.addr[0];
+  if (i0_69(D) != _16)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _17 = old_addr.u_addr.ip6.addr[1];
+  if (i1_70(D) != _17)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _18 = old_addr.u_addr.ip6.addr[2];
+  if (i2_71(D) != _18)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _19 = old_addr.u_addr.ip6.addr[3];
+  if (i3_72(D) != _19)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 10> :
+  new_ipaddr.u_addr.ip6.addr[0] = i0_69(D);
+  new_ipaddr.u_addr.ip6.addr[1] = i1_70(D);
+  new_ipaddr.u_addr.ip6.addr[2] = i2_71(D);
+  new_ipaddr.u_addr.ip6.addr[3] = i3_72(D);
+  new_ipaddr.u_addr.ip6.zone = 0;
+  new_ipaddr.type = 6;
+  _20 = new_ipaddr.u_addr.ip6.addr[0];
+  _21 = _20 & 49407;
+  if (_21 == 33022)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _22 = netif_60(D)->num;
+  iftmp.12_80 = _22 + 1;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.12_79 = 0;
+
+  <bb 13> :
+  # iftmp.12_54 = PHI <iftmp.12_80(11), iftmp.12_79(12)>
+  new_ipaddr.u_addr.ip6.zone = iftmp.12_54;
+  _23 = (int) addr_idx_62(D);
+  _24 = netif_60(D)->ip6_addr_state[_23];
+  _25 = (int) _24;
+  _26 = _25 & 16;
+  if (_26 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _27 = (int) addr_idx_62(D);
+  _28 = &netif_60(D)->ip6_addr[_27];
+  netif_do_ip_addr_changed (_28, &new_ipaddr);
+
+  <bb 15> :
+  _29 = (int) addr_idx_62(D);
+  _30 = new_ipaddr.type;
+  netif_60(D)->ip6_addr[_29].type = _30;
+  _31 = new_ipaddr.type;
+  if (_31 == 6)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _32 = (int) addr_idx_62(D);
+  _33 = new_ipaddr.u_addr.ip6.addr[0];
+  netif_60(D)->ip6_addr[_32].u_addr.ip6.addr[0] = _33;
+  _34 = (int) addr_idx_62(D);
+  _35 = new_ipaddr.u_addr.ip6.addr[1];
+  netif_60(D)->ip6_addr[_34].u_addr.ip6.addr[1] = _35;
+  _36 = (int) addr_idx_62(D);
+  _37 = new_ipaddr.u_addr.ip6.addr[2];
+  netif_60(D)->ip6_addr[_36].u_addr.ip6.addr[2] = _37;
+  _38 = (int) addr_idx_62(D);
+  _39 = new_ipaddr.u_addr.ip6.addr[3];
+  netif_60(D)->ip6_addr[_38].u_addr.ip6.addr[3] = _39;
+  _40 = (int) addr_idx_62(D);
+  _41 = new_ipaddr.u_addr.ip6.zone;
+  netif_60(D)->ip6_addr[_40].u_addr.ip6.zone = _41;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  _42 = (int) addr_idx_62(D);
+  _43 = new_ipaddr.u_addr.ip4.addr;
+  netif_60(D)->ip6_addr[_42].u_addr.ip4.addr = _43;
+  _44 = (int) addr_idx_62(D);
+  netif_60(D)->ip6_addr[_44].u_addr.ip6.addr[3] = 0;
+  _45 = (int) addr_idx_62(D);
+  _46 = netif_60(D)->ip6_addr[_44].u_addr.ip6.addr[3];
+  netif_60(D)->ip6_addr[_45].u_addr.ip6.addr[2] = _46;
+  _47 = (int) addr_idx_62(D);
+  _48 = netif_60(D)->ip6_addr[_45].u_addr.ip6.addr[2];
+  netif_60(D)->ip6_addr[_47].u_addr.ip6.addr[1] = _48;
+  _49 = (int) addr_idx_62(D);
+  netif_60(D)->ip6_addr[_49].u_addr.ip6.zone = 0;
+
+  <bb 18> :
+  _50 = (int) addr_idx_62(D);
+  _51 = netif_60(D)->ip6_addr_state[_50];
+  _52 = (int) _51;
+  _53 = _52 & 16;
+  if (_53 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  netif_issue_reports (netif_60(D), 2);
+
+  <bb 20> :
+  old_addr ={v} {CLOBBER};
+  new_ipaddr ={v} {CLOBBER};
+  return;
+
+}
+
+
+netif_ip6_addr_set (struct netif * netif, s8_t addr_idx, const struct ip6_addr_t * addr6)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  if (netif_7(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (addr6_9(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = addr6_9(D)->addr[0];
+  _2 = addr6_9(D)->addr[1];
+  _3 = addr6_9(D)->addr[2];
+  _4 = addr6_9(D)->addr[3];
+  netif_ip6_addr_set_parts (netif_7(D), addr_idx_10(D), _1, _2, _3, _4);
+  return;
+
+}
+
+
+netif_alloc_client_data_id ()
+{
+  u8_t result;
+  u8_t D.8416;
+  unsigned char netif_client_id.10_1;
+  unsigned char netif_client_id.11_2;
+  unsigned char _3;
+  u8_t _8;
+
+  <bb 2> :
+  result_6 = netif_client_id;
+  netif_client_id.10_1 = netif_client_id;
+  netif_client_id.11_2 = netif_client_id.10_1;
+  _3 = netif_client_id.11_2 + 1;
+  netif_client_id = _3;
+  if (result_6 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _8 = result_6 + 2;
+
+  <bb 5> :
+<L3>:
+  return _8;
+
+}
+
+
+netif_set_link_down (struct netif * netif)
+{
+  unsigned char _1;
+  unsigned int _2;
+  unsigned int _3;
+  unsigned char _4;
+  unsigned char _5;
+  short unsigned int _6;
+
+  <bb 2> :
+  if (netif_8(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+  _1 = netif_8(D)->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 4;
+  if (_3 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = netif_8(D)->flags;
+  _5 = _4 & 251;
+  netif_8(D)->flags = _5;
+  _6 = netif_8(D)->mtu;
+  netif_8(D)->mtu6 = _6;
+
+  <bb 6> :
+<L4>:
+  return;
+
+}
+
+
+netif_set_link_up (struct netif * netif)
+{
+  unsigned char _1;
+  unsigned int _2;
+  unsigned int _3;
+  unsigned char _4;
+  unsigned char _5;
+
+  <bb 2> :
+  if (netif_7(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+  _1 = netif_7(D)->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 4;
+  if (_3 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = netif_7(D)->flags;
+  _5 = _4 | 4;
+  netif_7(D)->flags = _5;
+  netif_issue_reports (netif_7(D), 3);
+  nd6_restart_netif (netif_7(D));
+
+  <bb 6> :
+<L4>:
+  return;
+
+}
+
+
+netif_set_down (struct netif * netif)
+{
+  unsigned char _1;
+  unsigned int _2;
+  unsigned int _3;
+  unsigned char _4;
+  unsigned char _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  unsigned char _8;
+  unsigned int _9;
+  unsigned int _10;
+
+  <bb 2> :
+  if (netif_13(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _1 = netif_13(D)->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 1;
+  if (_3 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _4 = netif_13(D)->flags;
+  _5 = _4 & 254;
+  netif_13(D)->flags = _5;
+  _6 = sys_now ();
+  _7 = _6 / 10;
+  netif_13(D)->ts = _7;
+  _8 = netif_13(D)->flags;
+  _9 = (unsigned int) _8;
+  _10 = _9 & 8;
+  if (_10 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  etharp_cleanup_netif (netif_13(D));
+
+  <bb 7> :
+  nd6_cleanup_netif (netif_13(D));
+
+  <bb 8> :
+<L6>:
+  return;
+
+}
+
+
+netif_issue_reports (struct netif * netif, u8_t report_type)
+{
+  unsigned char _1;
+  unsigned int _2;
+  unsigned int _3;
+  unsigned char _4;
+  unsigned int _5;
+  unsigned int _6;
+  int _7;
+  int _8;
+  struct ip4_addr_t * _9;
+  long unsigned int _10;
+  unsigned char _11;
+  unsigned int _12;
+  unsigned int _13;
+  struct ip4_addr_t * _14;
+  unsigned char _15;
+  unsigned int _16;
+  unsigned int _17;
+  int _18;
+  int _19;
+
+  <bb 2> :
+  if (netif_24(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = netif_24(D)->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 4;
+  if (_3 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _4 = netif_24(D)->flags;
+  _5 = (unsigned int) _4;
+  _6 = _5 & 1;
+  if (_6 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 7> :
+  _7 = (int) report_type_26(D);
+  _8 = _7 & 1;
+  if (_8 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  _9 = &netif_24(D)->ip_addr.u_addr.ip4;
+  _10 = MEM[(const struct ip4_addr_t *)_9].addr;
+  if (_10 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 9> :
+  _11 = netif_24(D)->flags;
+  _12 = (unsigned int) _11;
+  _13 = _12 & 8;
+  if (_13 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _14 = &netif_24(D)->ip_addr.u_addr.ip4;
+  etharp_request (netif_24(D), _14);
+
+  <bb 11> :
+  _15 = netif_24(D)->flags;
+  _16 = (unsigned int) _15;
+  _17 = _16 & 32;
+  if (_17 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  igmp_report_groups (netif_24(D));
+
+  <bb 13> :
+  _18 = (int) report_type_26(D);
+  _19 = _18 & 2;
+  if (_19 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  mld6_report_groups (netif_24(D));
+
+  <bb 15> :
+<L16>:
+  return;
+
+}
+
+
+netif_set_up (struct netif * netif)
+{
+  unsigned char _1;
+  unsigned int _2;
+  unsigned int _3;
+  unsigned char _4;
+  unsigned char _5;
+  long unsigned int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  if (netif_9(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+  _1 = netif_9(D)->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 1;
+  if (_3 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = netif_9(D)->flags;
+  _5 = _4 | 1;
+  netif_9(D)->flags = _5;
+  _6 = sys_now ();
+  _7 = _6 / 10;
+  netif_9(D)->ts = _7;
+  netif_issue_reports (netif_9(D), 3);
+  nd6_restart_netif (netif_9(D));
+
+  <bb 6> :
+<L4>:
+  return;
+
+}
+
+
+netif_set_default (struct netif * netif)
+{
+  <bb 2> :
+
+  <bb 3> :
+  netif_default = netif_2(D);
+  return;
+
+}
+
+
+netif_remove (struct netif * netif)
+{
+  struct netif * tmp_netif;
+  int i;
+  struct ip4_addr_t * _1;
+  long unsigned int _2;
+  struct ip_addr_t * _3;
+  unsigned char _4;
+  unsigned int _5;
+  unsigned int _6;
+  unsigned char _7;
+  int _8;
+  int _9;
+  struct ip_addr_t * _10;
+  unsigned char _11;
+  _Bool _12;
+  struct netif * netif_default.8_13;
+  struct netif * netif_list.9_14;
+  struct netif * _15;
+  struct netif * _16;
+  struct netif * _17;
+
+  <bb 2> :
+  if (netif_28(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 26>; [INV]
+
+  <bb 4> :
+  _1 = &netif_28(D)->ip_addr.u_addr.ip4;
+  _2 = MEM[(const struct ip4_addr_t *)_1].addr;
+  if (_2 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = &netif_28(D)->ip_addr;
+  netif_do_ip_addr_changed (_3, 0B);
+
+  <bb 6> :
+  _4 = netif_28(D)->flags;
+  _5 = (unsigned int) _4;
+  _6 = _5 & 32;
+  if (_6 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  igmp_stop (netif_28(D));
+
+  <bb 8> :
+  i_32 = 0;
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  _7 = netif_28(D)->ip6_addr_state[i_18];
+  _8 = (int) _7;
+  _9 = _8 & 16;
+  if (_9 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _10 = &netif_28(D)->ip6_addr[i_18];
+  netif_do_ip_addr_changed (_10, 0B);
+
+  <bb 11> :
+  i_41 = i_18 + 1;
+
+  <bb 12> :
+  # i_18 = PHI <i_32(8), i_41(11)>
+  if (i_18 <= 2)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  mld6_stop (netif_28(D));
+  _11 = netif_28(D)->flags;
+  _12 = (_Bool) _11;
+  if (_12 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  netif_set_down (netif_28(D));
+
+  <bb 15> :
+  netif_default.8_13 = netif_default;
+  if (netif_28(D) == netif_default.8_13)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  netif_set_default (0B);
+
+  <bb 17> :
+  netif_list.9_14 = netif_list;
+  if (netif_28(D) == netif_list.9_14)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _15 = netif_28(D)->next;
+  netif_list = _15;
+  goto <bb 26>; [INV]
+
+  <bb 19> :
+  tmp_netif_36 = netif_list;
+  goto <bb 23>; [INV]
+
+  <bb 20> :
+  _16 = tmp_netif_19->next;
+  if (netif_28(D) == _16)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _17 = netif_28(D)->next;
+  tmp_netif_19->next = _17;
+  goto <bb 24>; [INV]
+
+  <bb 22> :
+  tmp_netif_37 = tmp_netif_19->next;
+
+  <bb 23> :
+  # tmp_netif_19 = PHI <tmp_netif_36(19), tmp_netif_37(22)>
+  if (tmp_netif_19 != 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  if (tmp_netif_19 == 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 26> :
+<L25>:
+  return;
+
+}
+
+
+netif_set_addr (struct netif * netif, const struct ip4_addr_t * ipaddr, const struct ip4_addr_t * netmask, const struct ip4_addr_t * gw)
+{
+  int remove;
+  struct ip_addr_t old_addr;
+  struct ip_addr_t * old_gw;
+  struct ip_addr_t * old_nm;
+  int iftmp.7;
+  long unsigned int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _5;
+  int iftmp.7_9;
+  int iftmp.7_21;
+  int iftmp.7_22;
+
+  <bb 2> :
+  old_nm_12 = 0B;
+  old_gw_13 = 0B;
+  if (ipaddr_14(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  ipaddr_15 = &ip_addr_any.u_addr.ip4;
+
+  <bb 4> :
+  # ipaddr_6 = PHI <ipaddr_14(D)(2), ipaddr_15(3)>
+  if (netmask_16(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  netmask_17 = &ip_addr_any.u_addr.ip4;
+
+  <bb 6> :
+  # netmask_7 = PHI <netmask_16(D)(4), netmask_17(5)>
+  if (gw_18(D) == 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  gw_19 = &ip_addr_any.u_addr.ip4;
+
+  <bb 8> :
+  # gw_8 = PHI <gw_18(D)(6), gw_19(7)>
+  if (ipaddr_6 == 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _1 = ipaddr_6->addr;
+  if (_1 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.7_22 = 1;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  iftmp.7_21 = 0;
+
+  <bb 12> :
+  # iftmp.7_9 = PHI <iftmp.7_22(10), iftmp.7_21(11)>
+  remove_23 = iftmp.7_9;
+  if (remove_23 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _2 = netif_do_set_ipaddr (netif_24(D), ipaddr_6, &old_addr);
+
+  <bb 14> :
+  _3 = netif_do_set_netmask (netif_24(D), netmask_7, old_nm_12);
+
+  <bb 15> :
+  _4 = netif_do_set_gw (netif_24(D), gw_8, old_gw_13);
+
+  <bb 16> :
+  if (remove_23 == 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  _5 = netif_do_set_ipaddr (netif_24(D), ipaddr_6, &old_addr);
+
+  <bb 18> :
+  old_addr ={v} {CLOBBER};
+  return;
+
+}
+
+
+netif_set_gw (struct netif * netif, const struct ip4_addr_t * gw)
+{
+  struct ip_addr_t * old_gw;
+  int _1;
+
+  <bb 2> :
+  old_gw_4 = 0B;
+  if (netif_5(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  if (gw_6(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  gw_7 = &ip_addr_any.u_addr.ip4;
+
+  <bb 6> :
+  # gw_2 = PHI <gw_6(D)(4), gw_7(5)>
+  _1 = netif_do_set_gw (netif_5(D), gw_2, old_gw_4);
+
+  <bb 7> :
+<L6>:
+  return;
+
+}
+
+
+netif_do_set_gw (struct netif * netif, const struct ip4_addr_t * gw, struct ip_addr_t * old_gw)
+{
+  int D.8321;
+  const long unsigned int iftmp.6;
+  long unsigned int _1;
+  struct ip4_addr_t * _2;
+  long unsigned int _3;
+  const long unsigned int iftmp.6_4;
+  int _5;
+  int _10;
+  const long unsigned int iftmp.6_11;
+  const long unsigned int iftmp.6_12;
+  int _15;
+
+  <bb 2> :
+  _1 = gw_8(D)->addr;
+  _2 = &netif_9(D)->gw.u_addr.ip4;
+  _3 = MEM[(const struct ip4_addr_t *)_2].addr;
+  if (_1 != _3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  if (gw_8(D) != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.6_12 = gw_8(D)->addr;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.6_11 = 0;
+
+  <bb 6> :
+  # iftmp.6_4 = PHI <iftmp.6_12(4), iftmp.6_11(5)>
+  netif_9(D)->gw.u_addr.ip4.addr = iftmp.6_4;
+  netif_9(D)->gw.type = 0;
+  _15 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _10 = 0;
+
+  <bb 8> :
+  # _5 = PHI <_15(6), _10(7)>
+<L5>:
+  return _5;
+
+}
+
+
+netif_set_netmask (struct netif * netif, const struct ip4_addr_t * netmask)
+{
+  struct ip_addr_t * old_nm;
+  int _1;
+
+  <bb 2> :
+  old_nm_4 = 0B;
+  if (netif_5(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  if (netmask_6(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  netmask_7 = &ip_addr_any.u_addr.ip4;
+
+  <bb 6> :
+  # netmask_2 = PHI <netmask_6(D)(4), netmask_7(5)>
+  _1 = netif_do_set_netmask (netif_5(D), netmask_2, old_nm_4);
+
+  <bb 7> :
+<L6>:
+  return;
+
+}
+
+
+netif_do_set_netmask (struct netif * netif, const struct ip4_addr_t * netmask, struct ip_addr_t * old_nm)
+{
+  int D.8306;
+  const long unsigned int iftmp.5;
+  long unsigned int _1;
+  struct ip4_addr_t * _2;
+  long unsigned int _3;
+  const long unsigned int iftmp.5_4;
+  int _5;
+  int _10;
+  const long unsigned int iftmp.5_11;
+  const long unsigned int iftmp.5_12;
+  int _15;
+
+  <bb 2> :
+  _1 = netmask_8(D)->addr;
+  _2 = &netif_9(D)->netmask.u_addr.ip4;
+  _3 = MEM[(const struct ip4_addr_t *)_2].addr;
+  if (_1 != _3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  if (netmask_8(D) != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.5_12 = netmask_8(D)->addr;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.5_11 = 0;
+
+  <bb 6> :
+  # iftmp.5_4 = PHI <iftmp.5_12(4), iftmp.5_11(5)>
+  netif_9(D)->netmask.u_addr.ip4.addr = iftmp.5_4;
+  netif_9(D)->netmask.type = 0;
+  _15 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _10 = 0;
+
+  <bb 8> :
+  # _5 = PHI <_15(6), _10(7)>
+<L5>:
+  return _5;
+
+}
+
+
+netif_set_ipaddr (struct netif * netif, const struct ip4_addr_t * ipaddr)
+{
+  struct ip_addr_t old_addr;
+  int _1;
+
+  <bb 2> :
+  if (netif_4(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  old_addr ={v} {CLOBBER};
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  if (ipaddr_5(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  ipaddr_6 = &ip_addr_any.u_addr.ip4;
+
+  <bb 6> :
+  # ipaddr_2 = PHI <ipaddr_5(D)(4), ipaddr_6(5)>
+  _1 = netif_do_set_ipaddr (netif_4(D), ipaddr_2, &old_addr);
+  old_addr ={v} {CLOBBER};
+
+  <bb 7> :
+<L8>:
+  return;
+
+}
+
+
+netif_do_set_ipaddr (struct netif * netif, const struct ip4_addr_t * ipaddr, struct ip_addr_t * old_addr)
+{
+  struct ip_addr_t new_addr;
+  int D.8288;
+  const long unsigned int iftmp.4;
+  long unsigned int _1;
+  struct ip4_addr_t * _2;
+  long unsigned int _3;
+  struct ip_addr_t * _4;
+  unsigned char _5;
+  struct ip_addr_t * _6;
+  unsigned char _7;
+  struct ip_addr_t * _8;
+  long unsigned int _9;
+  struct ip_addr_t * _10;
+  long unsigned int _11;
+  struct ip_addr_t * _12;
+  long unsigned int _13;
+  struct ip_addr_t * _14;
+  long unsigned int _15;
+  struct ip_addr_t * _16;
+  unsigned char _17;
+  struct ip_addr_t * _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  const long unsigned int iftmp.4_22;
+  int _23;
+  int _32;
+  const long unsigned int iftmp.4_47;
+  const long unsigned int iftmp.4_48;
+  int _52;
+
+  <bb 2> :
+  if (ipaddr_28(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (old_addr_30(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = ipaddr_28(D)->addr;
+  _2 = &netif_31(D)->ip_addr.u_addr.ip4;
+  _3 = MEM[(const struct ip4_addr_t *)_2].addr;
+  if (_1 != _3)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 7> :
+  new_addr.u_addr.ip4 = *ipaddr_28(D);
+  new_addr.type = 0;
+  _4 = &netif_31(D)->ip_addr;
+  _5 = MEM[(const struct ip_addr_t *)_4].type;
+  old_addr_30(D)->type = _5;
+  _6 = &netif_31(D)->ip_addr;
+  _7 = MEM[(const struct ip_addr_t *)_6].type;
+  if (_7 == 6)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _8 = &netif_31(D)->ip_addr;
+  _9 = MEM[(const struct ip_addr_t *)_8].u_addr.ip6.addr[0];
+  old_addr_30(D)->u_addr.ip6.addr[0] = _9;
+  _10 = &netif_31(D)->ip_addr;
+  _11 = MEM[(const struct ip_addr_t *)_10].u_addr.ip6.addr[1];
+  old_addr_30(D)->u_addr.ip6.addr[1] = _11;
+  _12 = &netif_31(D)->ip_addr;
+  _13 = MEM[(const struct ip_addr_t *)_12].u_addr.ip6.addr[2];
+  old_addr_30(D)->u_addr.ip6.addr[2] = _13;
+  _14 = &netif_31(D)->ip_addr;
+  _15 = MEM[(const struct ip_addr_t *)_14].u_addr.ip6.addr[3];
+  old_addr_30(D)->u_addr.ip6.addr[3] = _15;
+  _16 = &netif_31(D)->ip_addr;
+  _17 = MEM[(const struct ip_addr_t *)_16].u_addr.ip6.zone;
+  old_addr_30(D)->u_addr.ip6.zone = _17;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _18 = &netif_31(D)->ip_addr;
+  _19 = MEM[(const struct ip_addr_t *)_18].u_addr.ip4.addr;
+  old_addr_30(D)->u_addr.ip4.addr = _19;
+  old_addr_30(D)->u_addr.ip6.addr[3] = 0;
+  _20 = old_addr_30(D)->u_addr.ip6.addr[3];
+  old_addr_30(D)->u_addr.ip6.addr[2] = _20;
+  _21 = old_addr_30(D)->u_addr.ip6.addr[2];
+  old_addr_30(D)->u_addr.ip6.addr[1] = _21;
+  old_addr_30(D)->u_addr.ip6.zone = 0;
+
+  <bb 10> :
+  netif_do_ip_addr_changed (old_addr_30(D), &new_addr);
+  if (ipaddr_28(D) != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  iftmp.4_48 = ipaddr_28(D)->addr;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.4_47 = 0;
+
+  <bb 13> :
+  # iftmp.4_22 = PHI <iftmp.4_48(11), iftmp.4_47(12)>
+  netif_31(D)->ip_addr.u_addr.ip4.addr = iftmp.4_22;
+  netif_31(D)->ip_addr.type = 0;
+  netif_issue_reports (netif_31(D), 1);
+  _52 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  new_addr ={v} {CLOBBER};
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  _32 = 0;
+
+  <bb 15> :
+  # _23 = PHI <_52(13), _32(14)>
+<L15>:
+  return _23;
+
+}
+
+
+netif_do_ip_addr_changed (const struct ip_addr_t * old_addr, const struct ip_addr_t * new_addr)
+{
+  <bb 2> :
+  tcp_netif_ip_addr_changed (old_addr_2(D), new_addr_3(D));
+  udp_netif_ip_addr_changed (old_addr_2(D), new_addr_3(D));
+  raw_netif_ip_addr_changed (old_addr_2(D), new_addr_3(D));
+  return;
+
+}
+
+
+netif_add (struct netif * netif, const struct ip4_addr_t * ipaddr, const struct ip4_addr_t * netmask, const struct ip4_addr_t * gw, void * state, err_t (*netif_init_fn) (struct netif *) init, err_t (*netif_input_fn) (struct pbuf *, struct netif *) input)
+{
+  int num_netifs;
+  struct netif * netif2;
+  s8_t i;
+  struct netif * D.8242;
+  struct ip_addr_t * _1;
+  struct ip_addr_t * _2;
+  struct ip_addr_t * _3;
+  int _4;
+  int _5;
+  int _6;
+  int _7;
+  int _8;
+  int _9;
+  struct ip_addr_t * _10;
+  int _11;
+  int _12;
+  int _13;
+  int _14;
+  signed char i.0_15;
+  unsigned char i.1_16;
+  unsigned char _17;
+  void *[3] * _18;
+  unsigned char netif_num.2_19;
+  signed char _20;
+  short unsigned int _21;
+  unsigned char _22;
+  unsigned char _23;
+  unsigned char _24;
+  unsigned char _25;
+  unsigned char _26;
+  unsigned char _27;
+  unsigned char _28;
+  unsigned char _29;
+  unsigned char _30;
+  struct netif * netif_list.3_31;
+  unsigned char _32;
+  unsigned int _33;
+  unsigned int _34;
+  struct netif * _41;
+  struct netif * _113;
+  struct netif * _114;
+  struct netif * _125;
+  struct netif * _126;
+
+  <bb 2> :
+  if (netif_55(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _126 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 44>; [INV]
+
+  <bb 4> :
+  if (init_56(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _125 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 44>; [INV]
+
+  <bb 6> :
+  if (ipaddr_57(D) == 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  ipaddr_58 = &ip_addr_any.u_addr.ip4;
+
+  <bb 8> :
+  # ipaddr_35 = PHI <ipaddr_57(D)(6), ipaddr_58(7)>
+  if (netmask_59(D) == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  netmask_60 = &ip_addr_any.u_addr.ip4;
+
+  <bb 10> :
+  # netmask_36 = PHI <netmask_59(D)(8), netmask_60(9)>
+  if (gw_61(D) == 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  gw_62 = &ip_addr_any.u_addr.ip4;
+
+  <bb 12> :
+  # gw_37 = PHI <gw_61(D)(10), gw_62(11)>
+  netif_55(D)->ip_addr.u_addr.ip6.addr[0] = 0;
+  netif_55(D)->ip_addr.u_addr.ip6.addr[1] = 0;
+  netif_55(D)->ip_addr.u_addr.ip6.addr[2] = 0;
+  netif_55(D)->ip_addr.u_addr.ip6.addr[3] = 0;
+  netif_55(D)->ip_addr.u_addr.ip6.zone = 0;
+  _1 = &netif_55(D)->ip_addr;
+  if (_1 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  netif_55(D)->ip_addr.type = 0;
+
+  <bb 14> :
+  netif_55(D)->netmask.u_addr.ip6.addr[0] = 0;
+  netif_55(D)->netmask.u_addr.ip6.addr[1] = 0;
+  netif_55(D)->netmask.u_addr.ip6.addr[2] = 0;
+  netif_55(D)->netmask.u_addr.ip6.addr[3] = 0;
+  netif_55(D)->netmask.u_addr.ip6.zone = 0;
+  _2 = &netif_55(D)->netmask;
+  if (_2 != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  netif_55(D)->netmask.type = 0;
+
+  <bb 16> :
+  netif_55(D)->gw.u_addr.ip6.addr[0] = 0;
+  netif_55(D)->gw.u_addr.ip6.addr[1] = 0;
+  netif_55(D)->gw.u_addr.ip6.addr[2] = 0;
+  netif_55(D)->gw.u_addr.ip6.addr[3] = 0;
+  netif_55(D)->gw.u_addr.ip6.zone = 0;
+  _3 = &netif_55(D)->gw;
+  if (_3 != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  netif_55(D)->gw.type = 0;
+
+  <bb 18> :
+  netif_55(D)->output = netif_null_output_ip4;
+  i_83 = 0;
+  goto <bb 22>; [INV]
+
+  <bb 19> :
+  _4 = (int) i_38;
+  netif_55(D)->ip6_addr[_4].u_addr.ip6.addr[0] = 0;
+  _5 = (int) i_38;
+  netif_55(D)->ip6_addr[_5].u_addr.ip6.addr[1] = 0;
+  _6 = (int) i_38;
+  netif_55(D)->ip6_addr[_6].u_addr.ip6.addr[2] = 0;
+  _7 = (int) i_38;
+  netif_55(D)->ip6_addr[_7].u_addr.ip6.addr[3] = 0;
+  _8 = (int) i_38;
+  netif_55(D)->ip6_addr[_8].u_addr.ip6.zone = 0;
+  _9 = (int) i_38;
+  _10 = &netif_55(D)->ip6_addr[_9];
+  if (_10 != 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _11 = (int) i_38;
+  netif_55(D)->ip6_addr[_11].type = 6;
+
+  <bb 21> :
+  _12 = (int) i_38;
+  netif_55(D)->ip6_addr_state[_12] = 0;
+  _13 = (int) i_38;
+  netif_55(D)->ip6_addr_valid_life[_13] = 0;
+  _14 = (int) i_38;
+  netif_55(D)->ip6_addr_pref_life[_14] = 0;
+  i.0_15 = i_38;
+  i.1_16 = (unsigned char) i.0_15;
+  _17 = i.1_16 + 1;
+  i_124 = (s8_t) _17;
+
+  <bb 22> :
+  # i_38 = PHI <i_83(18), i_124(21)>
+  if (i_38 <= 2)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  netif_55(D)->output_ip6 = netif_null_output_ip6;
+  netif_55(D)->mtu = 0;
+  netif_55(D)->flags = 0;
+  _18 = &netif_55(D)->client_data;
+  memset (_18, 0, 12);
+  netif_55(D)->ip6_autoconfig_enabled = 0;
+  nd6_restart_netif (netif_55(D));
+  netif_55(D)->igmp_mac_filter = 0B;
+  netif_55(D)->mld_mac_filter = 0B;
+  netif_55(D)->state = state_92(D);
+  netif_num.2_19 = netif_num;
+  netif_55(D)->num = netif_num.2_19;
+  netif_55(D)->input = input_95(D);
+  netif_set_addr (netif_55(D), ipaddr_35, netmask_36, gw_37);
+  _20 = init_56(D) (netif_55(D));
+  if (_20 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _114 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 44>; [INV]
+
+  <bb 25> :
+  _21 = netif_55(D)->mtu;
+  netif_55(D)->mtu6 = _21;
+
+  <bb 26> :
+  _22 = netif_55(D)->num;
+  if (_22 == 255)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 27> :
+  netif_55(D)->num = 0;
+
+  <bb 28> :
+  num_netifs_101 = 0;
+  netif2_102 = netif_list;
+  goto <bb 36>; [INV]
+
+  <bb 29> :
+  if (netif2_39 == netif_55(D))
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 30>; [INV]
+
+  <bb 31> :
+  num_netifs_103 = num_netifs_40 + 1;
+  if (num_netifs_103 > 255)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 32>; [INV]
+
+  <bb 33> :
+  _23 = netif2_39->num;
+  _24 = netif_55(D)->num;
+  if (_23 == _24)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  _25 = netif_55(D)->num;
+  _26 = _25;
+  _27 = _26 + 1;
+  netif_55(D)->num = _27;
+  goto <bb 37>; [INV]
+
+  <bb 35> :
+  netif2_104 = netif2_39->next;
+
+  <bb 36> :
+  # netif2_39 = PHI <netif2_102(28), netif2_104(35)>
+  # num_netifs_40 = PHI <num_netifs_101(28), num_netifs_103(35)>
+  if (netif2_39 != 0B)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 37> :
+  if (netif2_39 != 0B)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 38> :
+  _28 = netif_55(D)->num;
+  if (_28 == 254)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 39> :
+  netif_num = 0;
+  goto <bb 41>; [INV]
+
+  <bb 40> :
+  _29 = netif_55(D)->num;
+  _30 = _29 + 1;
+  netif_num = _30;
+
+  <bb 41> :
+  netif_list.3_31 = netif_list;
+  netif_55(D)->next = netif_list.3_31;
+  netif_list = netif_55(D);
+  _32 = netif_55(D)->flags;
+  _33 = (unsigned int) _32;
+  _34 = _33 & 32;
+  if (_34 != 0)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 42> :
+  igmp_start (netif_55(D));
+
+  <bb 43> :
+  _113 = netif_55(D);
+
+  <bb 44> :
+  # _41 = PHI <_126(3), _125(5), _114(24), _113(43)>
+<L43>:
+  return _41;
+
+}
+
+
+netif_add_noaddr (struct netif * netif, void * state, err_t (*netif_init_fn) (struct netif *) init, err_t (*netif_input_fn) (struct pbuf *, struct netif *) input)
+{
+  struct netif * D.8238;
+  struct netif * _7;
+
+  <bb 2> :
+  _7 = netif_add (netif_2(D), 0B, 0B, 0B, state_3(D), init_4(D), input_5(D));
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+netif_input (struct pbuf * p, struct netif * inp)
+{
+  err_t D.8236;
+  unsigned char _1;
+  unsigned int _2;
+  unsigned int _3;
+  err_t _4;
+  err_t _12;
+  err_t _14;
+
+  <bb 2> :
+  if (p_8(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (inp_10(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = inp_10(D)->flags;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 24;
+  if (_3 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _14 = ethernet_input (p_8(D), inp_10(D));
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _12 = ip_input (p_8(D), inp_10(D));
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 9> :
+  # _4 = PHI <_14(7), _12(8)>
+<L8>:
+  return _4;
+
+}
+
+
+netif_init ()
+{
+  <bb 2> :
+  return;
+
+}
+
+

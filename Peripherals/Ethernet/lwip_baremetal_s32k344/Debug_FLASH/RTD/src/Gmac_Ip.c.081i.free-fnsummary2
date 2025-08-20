@@ -1,0 +1,7899 @@
+Gmac_Ip_SetTxThreshold (uint8 Instance, uint8 Ring, Gmac_Ip_TxThresholdType ThresholdValue)
+{
+  _Bool _1;
+  short unsigned int _2;
+  int _3;
+  struct Gmac_Ip_StateType * _4;
+  short unsigned int _5;
+  _Bool _6;
+  int _7;
+  int _8;
+  struct Gmac_Ip_QueueType * _9;
+
+  <bb 2> :
+  _1 = Instance_10(D) == 0;
+  DevAssert (_1);
+  _2 = (short unsigned int) Ring_13(D);
+  _3 = (int) Instance_10(D);
+  _4 = Gmac_apxState[_3];
+  _5 = _4->TxRingCount;
+  _6 = _2 < _5;
+  DevAssert (_6);
+  _7 = (int) Instance_10(D);
+  _8 = (int) Ring_13(D);
+  _9 = Gmac_apxQueueBases[_7][_8];
+  GMAC_SetTxThreshold (_9, ThresholdValue_15(D));
+  return;
+
+}
+
+
+Gmac_Ip_EnableTxStoreAndForward (uint8 Instance, uint8 Ring)
+{
+  _Bool _1;
+  short unsigned int _2;
+  int _3;
+  struct Gmac_Ip_StateType * _4;
+  short unsigned int _5;
+  _Bool _6;
+  int _7;
+  int _8;
+  struct Gmac_Ip_QueueType * _9;
+
+  <bb 2> :
+  _1 = Instance_10(D) == 0;
+  DevAssert (_1);
+  _2 = (short unsigned int) Ring_13(D);
+  _3 = (int) Instance_10(D);
+  _4 = Gmac_apxState[_3];
+  _5 = _4->TxRingCount;
+  _6 = _2 < _5;
+  DevAssert (_6);
+  _7 = (int) Instance_10(D);
+  _8 = (int) Ring_13(D);
+  _9 = Gmac_apxQueueBases[_7][_8];
+  GMAC_SetTxStoreAndForward (_9);
+  return;
+
+}
+
+
+Gmac_Ip_SetTxRingWeight (uint8 Instance, uint8 Ring, uint32 Weight)
+{
+  int iftmp.52;
+  _Bool _1;
+  short unsigned int _2;
+  int _3;
+  struct Gmac_Ip_StateType * _4;
+  short unsigned int _5;
+  _Bool _6;
+  _Bool _7;
+  int _8;
+  struct Gmac_Ip_StateType * _9;
+  short unsigned int _10;
+  int _11;
+  int _12;
+  struct Gmac_Ip_QueueType * _13;
+  int iftmp.52_14;
+  int iftmp.52_22;
+  int iftmp.52_23;
+
+  <bb 2> :
+  _1 = Instance_16(D) == 0;
+  DevAssert (_1);
+  _2 = (short unsigned int) Ring_19(D);
+  _3 = (int) Instance_16(D);
+  _4 = Gmac_apxState[_3];
+  _5 = _4->TxRingCount;
+  _6 = _2 < _5;
+  DevAssert (_6);
+  if (Weight_21(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  if (Weight_21(D) <= 100)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.52_22 = 1;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.52_23 = 0;
+
+  <bb 6> :
+  # iftmp.52_14 = PHI <iftmp.52_22(4), iftmp.52_23(5)>
+  _7 = (_Bool) iftmp.52_14;
+  DevAssert (_7);
+  _8 = (int) Instance_16(D);
+  _9 = Gmac_apxState[_8];
+  _10 = _9->TxRingCount;
+  if (_10 > 1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _11 = (int) Instance_16(D);
+  _12 = (int) Ring_19(D);
+  _13 = Gmac_apxQueueBases[_11][_12];
+  GMAC_SetTxQueueQuantumWeight (_13, Weight_21(D));
+
+  <bb 8> :
+  return;
+
+}
+
+
+Gmac_Ip_SetTxSchedAlgo (uint8 Instance, Gmac_Ip_TxSchedAlgoType SchedAlgo)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+
+  <bb 2> :
+  _1 = Instance_3(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_3(D);
+  Base_6 = Gmac_apxBases[_2];
+  GMAC_SetSchedAlg (Base_6, SchedAlgo_7(D));
+  return;
+
+}
+
+
+Gmac_Ip_GetSysTime (uint8 Instance, struct Gmac_Ip_TimestampType * Timestamp)
+{
+  const struct GMAC_Type * Base;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  long unsigned int _4;
+  short unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  _1 = Instance_8(D) == 0;
+  DevAssert (_1);
+  _2 = Timestamp_11(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_8(D);
+  Base_13 = Gmac_apxBases[_3];
+  _4 ={v} Base_13->MAC_SYSTEM_TIME_HIGHER_WORD_SECONDS;
+  _5 = (short unsigned int) _4;
+  Timestamp_11(D)->secondsHi = _5;
+  _6 ={v} Base_13->MAC_SYSTEM_TIME_SECONDS;
+  Timestamp_11(D)->seconds = _6;
+  _7 ={v} Base_13->MAC_SYSTEM_TIME_NANOSECONDS;
+  Timestamp_11(D)->nanoseconds = _7;
+  return;
+
+}
+
+
+Gmac_Ip_SetRateRatioCorr (uint8 Instance, float64 RateRatio)
+{
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.8007;
+  int _1;
+  double _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int TimeoutTicks.51_8;
+  _Bool _9;
+  _Bool _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  Gmac_Ip_StatusType _27;
+
+  <bb 2> :
+  Status_16 = 3;
+  _1 = (int) Instance_17(D);
+  Base_19 = Gmac_apxBases[_1];
+  _2 = 4.294967296e+9 / RateRatio_20(D);
+  _3 = (long unsigned int) _2;
+  Base_19->MAC_TIMESTAMP_ADDEND ={v} _3;
+  _4 ={v} Base_19->MAC_TIMESTAMP_CONTROL;
+  _5 = _4 | 32;
+  Base_19->MAC_TIMESTAMP_CONTROL ={v} _5;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 3> :
+  _6 ={v} Base_19->MAC_TIMESTAMP_CONTROL;
+  _7 = _6 & 32;
+  if (_7 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_25 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  TimeoutTicks.51_8 = TimeoutTicks;
+  _9 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.51_8);
+  _10 = ~_9;
+  if (_10 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # Status_13 = PHI <Status_25(4), Status_16(5)>
+  _11 ={v} Base_19->MAC_TIMESTAMP_CONTROL;
+  _12 = _11 | 2;
+  Base_19->MAC_TIMESTAMP_CONTROL ={v} _12;
+  _27 = Status_13;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 7> :
+<L5>:
+  return _27;
+
+}
+
+
+Gmac_Ip_SetSysTimeCorr (uint8 Instance, Gmac_Ip_SysTimeCorrOffsetType Offset, uint32 SecondsUpdate, uint32 NanoSecondsUpdate)
+{
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType Status;
+  uint32 Nanoseconds;
+  uint32 seconds;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.8002;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int TimeoutTicks.50_10;
+  _Bool _11;
+  _Bool _12;
+  Gmac_Ip_StatusType _36;
+
+  <bb 2> :
+  Status_18 = 3;
+  _1 = Instance_19(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_19(D);
+  Base_22 = Gmac_apxBases[_2];
+  if (Offset_23(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  seconds_28 = -SecondsUpdate_24(D);
+  Nanoseconds_29 = 1000000000 - NanoSecondsUpdate_26(D);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  seconds_25 = SecondsUpdate_24(D);
+  Nanoseconds_27 = NanoSecondsUpdate_26(D);
+
+  <bb 5> :
+  # seconds_13 = PHI <seconds_28(3), seconds_25(4)>
+  # Nanoseconds_14 = PHI <Nanoseconds_29(3), Nanoseconds_27(4)>
+  _3 = Offset_23(D) << 31;
+  _4 = Nanoseconds_14 & 2147483647;
+  _5 = _3 | _4;
+  Base_22->MAC_SYSTEM_TIME_NANOSECONDS_UPDATE ={v} _5;
+  Base_22->MAC_SYSTEM_TIME_SECONDS_UPDATE ={v} seconds_13;
+  _6 ={v} Base_22->MAC_TIMESTAMP_CONTROL;
+  _7 = _6 | 8;
+  Base_22->MAC_TIMESTAMP_CONTROL ={v} _7;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 6> :
+  _8 ={v} Base_22->MAC_TIMESTAMP_CONTROL;
+  _9 = _8 & 8;
+  if (_9 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status_35 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  TimeoutTicks.50_10 = TimeoutTicks;
+  _11 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.50_10);
+  _12 = ~_11;
+  if (_12 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  # Status_15 = PHI <Status_35(7), Status_18(8)>
+  _36 = Status_15;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 10> :
+<L8>:
+  return _36;
+
+}
+
+
+Gmac_Ip_InitSysTime (const uint8 Instance, const struct Gmac_Ip_SysTimeConfigType * SysTimeConfig)
+{
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  uint32 TimestampADDENDValue;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType D.7994;
+  _Bool _1;
+  _Bool _2;
+  struct Gmac_Ip_TimestampType * _3;
+  _Bool _4;
+  int _5;
+  unsigned char _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  unsigned char _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  double _15;
+  double _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int TimeoutTicks.49_23;
+  _Bool _24;
+  _Bool _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  struct Gmac_Ip_TimestampType * _28;
+  short unsigned int _29;
+  long unsigned int _30;
+  struct Gmac_Ip_TimestampType * _31;
+  long unsigned int _32;
+  struct Gmac_Ip_TimestampType * _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  Gmac_Ip_StatusType _62;
+
+  <bb 2> :
+  _1 = Instance_41(D) == 0;
+  DevAssert (_1);
+  _2 = SysTimeConfig_44(D) != 0B;
+  DevAssert (_2);
+  _3 = SysTimeConfig_44(D)->InitialTimestamp;
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (int) Instance_41(D);
+  Base_47 = Gmac_apxBases[_5];
+  Status_48 = 3;
+  _6 = SysTimeConfig_44(D)->SubSecondInc;
+  _7 = (long unsigned int) _6;
+  _8 = _7 << 16;
+  _9 = _8 & 16711680;
+  _10 = SysTimeConfig_44(D)->SubNanoSecondsInc;
+  _11 = (long unsigned int) _10;
+  _12 = _11 << 8;
+  _13 = _12 & 65535;
+  _14 = _9 | _13;
+  Base_47->MAC_SUB_SECOND_INCREMENT ={v} _14;
+  _15 = SysTimeConfig_44(D)->MultiplyRatioCompensation;
+  _16 = 4.294967296e+9 / _15;
+  TimestampADDENDValue_50 = (uint32) _16;
+  _17 ={v} Base_47->MAC_TIMESTAMP_ADDEND;
+  _18 = TimestampADDENDValue_50 | _17;
+  Base_47->MAC_TIMESTAMP_ADDEND ={v} _18;
+  _19 ={v} Base_47->MAC_TIMESTAMP_CONTROL;
+  _20 = _19 | 32;
+  Base_47->MAC_TIMESTAMP_CONTROL ={v} _20;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 3> :
+  _21 ={v} Base_47->MAC_TIMESTAMP_CONTROL;
+  _22 = _21 & 32;
+  if (_22 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_55 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  TimeoutTicks.49_23 = TimeoutTicks;
+  _24 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.49_23);
+  _25 = ~_24;
+  if (_25 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # Status_38 = PHI <Status_55(4), Status_48(5)>
+  Base_47->MAC_TIMESTAMP_CONTROL ={v} 769;
+  _26 ={v} Base_47->MAC_TIMESTAMP_CONTROL;
+  _27 = _26 | 2;
+  Base_47->MAC_TIMESTAMP_CONTROL ={v} _27;
+  _28 = SysTimeConfig_44(D)->InitialTimestamp;
+  _29 = _28->secondsHi;
+  _30 = (long unsigned int) _29;
+  Base_47->MAC_SYSTEM_TIME_HIGHER_WORD_SECONDS ={v} _30;
+  _31 = SysTimeConfig_44(D)->InitialTimestamp;
+  _32 = _31->seconds;
+  Base_47->MAC_SYSTEM_TIME_SECONDS_UPDATE ={v} _32;
+  _33 = SysTimeConfig_44(D)->InitialTimestamp;
+  _34 = _33->nanoseconds;
+  _35 = _34 & 2147483647;
+  Base_47->MAC_SYSTEM_TIME_NANOSECONDS_UPDATE ={v} _35;
+  _36 ={v} Base_47->MAC_TIMESTAMP_CONTROL;
+  _37 = _36 | 4;
+  Base_47->MAC_TIMESTAMP_CONTROL ={v} _37;
+  _62 = Status_38;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 7> :
+<L5>:
+  return _62;
+
+}
+
+
+Gmac_Ip_RemoveVlanTagFromHashTable (uint8 Instance, uint16 VlanTag)
+{
+  const uint8 * Tag;
+  uint32 Tag32;
+  uint32 Crc;
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+
+  <bb 2> :
+  _1 = Instance_4(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_4(D);
+  Base_7 = Gmac_apxBases[_2];
+  _3 = (long unsigned int) VlanTag_8(D);
+  Tag32 = _3;
+  Tag_10 = &Tag32;
+  Crc_12 = Gmac_Ip_ComputeCRC32 (Tag_10, 2);
+  GMAC_RemoveVlanFromHashTable (Base_7, Crc_12);
+  Tag32 ={v} {CLOBBER};
+  return;
+
+}
+
+
+Gmac_Ip_AddVlanTagToHashTable (uint8 Instance, uint16 VlanTag)
+{
+  const uint8 * tag;
+  uint32 tag32;
+  uint32 crc;
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+
+  <bb 2> :
+  _1 = Instance_4(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_4(D);
+  Base_7 = Gmac_apxBases[_2];
+  _3 = (long unsigned int) VlanTag_8(D);
+  tag32 = _3;
+  tag_10 = &tag32;
+  crc_12 = Gmac_Ip_ComputeCRC32 (tag_10, 2);
+  GMAC_AddVlanToHashTable (Base_7, crc_12);
+  tag32 ={v} {CLOBBER};
+  return;
+
+}
+
+
+Gmac_Ip_ClearVlanTagRxFilter (uint8 Instance, uint8 FilterIdx)
+{
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7989;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int TimeoutTicks.48_18;
+  _Bool _19;
+  _Bool _20;
+  Gmac_Ip_StatusType _39;
+
+  <bb 2> :
+  Status_24 = 3;
+  _1 = Instance_25(D) == 0;
+  DevAssert (_1);
+  _2 = FilterIdx_28(D) <= 3;
+  DevAssert (_2);
+  _3 = (int) Instance_25(D);
+  Base_30 = Gmac_apxBases[_3];
+  _4 ={v} Base_30->MAC_VLAN_TAG.MAC_VLAN_TAG_DATA;
+  _5 = _4 & 4294836224;
+  Base_30->MAC_VLAN_TAG.MAC_VLAN_TAG_DATA ={v} _5;
+  _6 ={v} Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _7 = _6 & 4294967283;
+  Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _7;
+  _8 ={v} Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _9 = (long unsigned int) FilterIdx_28(D);
+  _10 = _9 << 2;
+  _11 = _8 | _10;
+  Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _11;
+  _12 ={v} Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _13 = _12 & 4294967293;
+  Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _13;
+  _14 ={v} Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _15 = _14 | 1;
+  Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _15;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 3> :
+  _16 ={v} Base_30->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _17 = _16 & 1;
+  if (_17 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_38 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  TimeoutTicks.48_18 = TimeoutTicks;
+  _19 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.48_18);
+  _20 = ~_19;
+  if (_20 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # Status_21 = PHI <Status_38(4), Status_24(5)>
+  _39 = Status_21;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 7> :
+<L5>:
+  return _39;
+
+}
+
+
+Gmac_Ip_ReadVlanTagRxFilter (uint8 Instance, uint8 FilterIdx, uint16 * VlanTag)
+{
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7985;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  Gmac_Ip_StatusType _12;
+
+  <bb 2> :
+  _1 = Instance_4(D) == 0;
+  DevAssert (_1);
+  _2 = FilterIdx_7(D) <= 3;
+  DevAssert (_2);
+  _3 = (int) Instance_4(D);
+  Base_9 = Gmac_apxBases[_3];
+  _12 = GMAC_ReadVlanTagRxFilter (Base_9, FilterIdx_7(D), VlanTag_10(D));
+
+  <bb 3> :
+<L0>:
+  return _12;
+
+}
+
+
+Gmac_Ip_AddVlanTagToRxFilter (uint8 Instance, uint8 FilterIdx, uint16 VlanTag)
+{
+  uint16 Tag;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7982;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int TimeoutTicks.47_22;
+  _Bool _23;
+  _Bool _24;
+  Gmac_Ip_StatusType _46;
+
+  <bb 2> :
+  Status_28 = 3;
+  _1 = Instance_29(D) == 0;
+  DevAssert (_1);
+  _2 = FilterIdx_32(D) <= 3;
+  DevAssert (_2);
+  _3 = (int) Instance_29(D);
+  Base_34 = Gmac_apxBases[_3];
+  _4 ={v} Base_34->MAC_VLAN_TAG.MAC_VLAN_TAG_DATA;
+  _5 = _4 & 4294901760;
+  Base_34->MAC_VLAN_TAG.MAC_VLAN_TAG_DATA ={v} _5;
+  _6 ={v} Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _7 = _6 & 4294967283;
+  Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _7;
+  _8 ={v} Base_34->MAC_VLAN_TAG.MAC_VLAN_TAG_DATA;
+  _9 = (long unsigned int) VlanTag_37(D);
+  _10 = _8 | _9;
+  _11 = _10 | 65536;
+  Base_34->MAC_VLAN_TAG.MAC_VLAN_TAG_DATA ={v} _11;
+  _12 ={v} Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _13 = (long unsigned int) FilterIdx_32(D);
+  _14 = _13 << 2;
+  _15 = _12 | _14;
+  Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _15;
+  _16 ={v} Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _17 = _16 & 4294967293;
+  Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _17;
+  _18 ={v} Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _19 = _18 | 1;
+  Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _19;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 3> :
+  _20 ={v} Base_34->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _21 = _20 & 1;
+  if (_21 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_44 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  TimeoutTicks.47_22 = TimeoutTicks;
+  _23 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.47_22);
+  _24 = ~_23;
+  if (_24 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # Status_25 = PHI <Status_44(4), Status_28(5)>
+  GMAC_ReadVlanTagRxFilter (Base_34, FilterIdx_32(D), &Tag);
+  _46 = Status_25;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+  Tag ={v} {CLOBBER};
+
+  <bb 7> :
+<L5>:
+  return _46;
+
+}
+
+
+Gmac_Ip_SetVlanTagRxFilter (uint8 Instance, boolean Enable, const struct Gmac_Ip_VlanRxFilterType * RxFilter)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  _Bool _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  _Bool _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  _Bool _11;
+  _Bool _12;
+  _Bool _13;
+  _Bool _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+
+  <bb 2> :
+  _1 = Instance_20(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_20(D);
+  Base_23 = Gmac_apxBases[_2];
+  if (Enable_24(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = RxFilter_27(D) != 0B;
+  DevAssert (_3);
+  _4 ={v} Base_23->MAC_PACKET_FILTER;
+  _5 = _4 | 65536;
+  Base_23->MAC_PACKET_FILTER ={v} _5;
+  _6 ={v} Base_23->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _7 = _6 | 33554432;
+  Base_23->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _7;
+  _8 = RxFilter_27(D)->EnInverseMatch;
+  GMAC_SetVlanTagInvMatch (Base_23, _8);
+  _9 ={v} Base_23->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _10 = _9 | 33554432;
+  Base_23->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _10;
+  _11 = RxFilter_27(D)->EnInnerVlanMatch;
+  _12 = RxFilter_27(D)->EnSvlanMatch;
+  _13 = RxFilter_27(D)->DisVlanTypeMatch;
+  _14 = RxFilter_27(D)->En12bitMatch;
+  GMAC_SetVlanTagDataRxMatch (Base_23, _11, _12, _13, _14);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _15 ={v} Base_23->MAC_PACKET_FILTER;
+  _16 = _15 & 4294901759;
+  Base_23->MAC_PACKET_FILTER ={v} _16;
+  _17 ={v} Base_23->MAC_VLAN.MAC_VLAN_TAG_CTRL;
+  _18 = _17 & 4261412863;
+  Base_23->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _18;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Gmac_Ip_SetTxInnerVlanTag (uint8 Instance, Gmac_Ip_VlanType VlanType, uint16 VlanTag)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+
+  <bb 2> :
+  _1 = Instance_10(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_10(D);
+  Base_13 = Gmac_apxBases[_2];
+  _3 ={v} Base_13->MAC_INNER_VLAN_INCL;
+  _4 = _3 & 4294377472;
+  Base_13->MAC_INNER_VLAN_INCL ={v} _4;
+  _5 ={v} Base_13->MAC_INNER_VLAN_INCL;
+  _6 = VlanType_15(D) << 19;
+  _7 = (long unsigned int) VlanTag_16(D);
+  _8 = _6 | _7;
+  _9 = _5 | _8;
+  Base_13->MAC_INNER_VLAN_INCL ={v} _9;
+  return;
+
+}
+
+
+Gmac_Ip_SetTxOuterVlanTagForReplacement (uint8 Instance, Gmac_Ip_VlanType VlanType, uint16 VlanTag)
+{
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7975;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  Gmac_Ip_StatusType _25;
+
+  <bb 2> :
+  Status_15 = 0;
+  _1 = Instance_16(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_16(D);
+  Base_19 = Gmac_apxBases[_2];
+  _3 ={v} Base_19->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _4 = _3 >> 16;
+  _5 = _4 & 3;
+  if (_5 == 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 ={v} Base_19->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _7 = _6 & 4294377472;
+  Base_19->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _7;
+  _8 ={v} Base_19->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _9 = VlanType_22(D) << 19;
+  _10 = (long unsigned int) VlanTag_23(D);
+  _11 = _9 | _10;
+  _12 = _8 | _11;
+  Base_19->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _12;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_20 = 4;
+
+  <bb 5> :
+  # Status_13 = PHI <Status_15(3), Status_20(4)>
+  _25 = Status_13;
+
+  <bb 6> :
+<L3>:
+  return _25;
+
+}
+
+
+Gmac_Ip_SetTxOuterVlanTagForInsertion (uint8 Instance, uint8 Ring, Gmac_Ip_VlanType VlanType, uint16 VlanTag)
+{
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7969;
+  _Bool _1;
+  short unsigned int _2;
+  int _3;
+  struct Gmac_Ip_StateType * _4;
+  short unsigned int _5;
+  _Bool _6;
+  int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  signed int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  signed int _31;
+  long unsigned int TimeoutTicks.46_32;
+  _Bool _33;
+  _Bool _34;
+  Gmac_Ip_StatusType _60;
+
+  <bb 2> :
+  Status_40 = 3;
+  _1 = Instance_41(D) == 0;
+  DevAssert (_1);
+  _2 = (short unsigned int) Ring_44(D);
+  _3 = (int) Instance_41(D);
+  _4 = Gmac_apxState[_3];
+  _5 = _4->TxRingCount;
+  _6 = _2 < _5;
+  DevAssert (_6);
+  _7 = (int) Instance_41(D);
+  Base_46 = Gmac_apxBases[_7];
+  _8 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _9 = _8 >> 16;
+  _10 = _9 & 3;
+  if (_10 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  _11 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _12 = (signed int) _11;
+  if (_12 < 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_59 = 2;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  _13 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _14 = _13 & 4278190079;
+  Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _14;
+  _15 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _16 = (long unsigned int) Ring_44(D);
+  _17 = _16 << 24;
+  _18 = _15 | _17;
+  Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _18;
+  _19 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _20 = _19 | 1073741824;
+  Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _20;
+  _21 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _22 = _21 & 4294377472;
+  Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _22;
+  _23 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _24 = VlanType_52(D) << 19;
+  _25 = (long unsigned int) VlanTag_53(D);
+  _26 = _24 | _25;
+  _27 = _23 | _26;
+  Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _27;
+  _28 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _29 = _28 & 3221225471;
+  Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _29;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 6> :
+  _30 ={v} Base_46->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _31 = (signed int) _30;
+  if (_31 >= 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status_58 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  TimeoutTicks.46_32 = TimeoutTicks;
+  _33 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.46_32);
+  _34 = ~_33;
+  if (_34 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  # Status_35 = PHI <Status_59(4), Status_58(7), Status_40(8)>
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  Status_47 = 4;
+
+  <bb 11> :
+  # Status_36 = PHI <Status_35(9), Status_47(10)>
+  _60 = Status_36;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 12> :
+<L11>:
+  return _60;
+
+}
+
+
+Gmac_Ip_EnableVlan (uint8 Instance, const struct Gmac_Ip_VlanConfigType * VlanConfig)
+{
+  struct GMAC_Type * Base;
+  long unsigned int iftmp.45;
+  long unsigned int iftmp.44;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  long unsigned int _6;
+  <unnamed type> _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  <unnamed type> _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  <unnamed type> _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  <unnamed type> _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  <unnamed type> _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int iftmp.44_25;
+  long unsigned int iftmp.45_26;
+  long unsigned int iftmp.44_34;
+  long unsigned int iftmp.44_35;
+  long unsigned int iftmp.45_36;
+  long unsigned int iftmp.45_37;
+
+  <bb 2> :
+  _1 = Instance_28(D) == 0;
+  DevAssert (_1);
+  _2 = VlanConfig_31(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_28(D);
+  Base_33 = Gmac_apxBases[_3];
+  _4 = VlanConfig_31(D)->EnDoubleVlan;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.44_35 = 67108864;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.44_34 = 0;
+
+  <bb 5> :
+  # iftmp.44_25 = PHI <iftmp.44_35(3), iftmp.44_34(4)>
+  _5 = VlanConfig_31(D)->EnSvlan;
+  if (_5 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.45_37 = 262144;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.45_36 = 0;
+
+  <bb 8> :
+  # iftmp.45_26 = PHI <iftmp.45_37(6), iftmp.45_36(7)>
+  _6 = iftmp.44_25 | iftmp.45_26;
+  _7 = VlanConfig_31(D)->InnerVlanStrip;
+  _8 = _7 << 28;
+  _9 = _8 & 805306368;
+  _10 = _6 | _9;
+  _11 = VlanConfig_31(D)->OuterVlanStrip;
+  _12 = _11 << 21;
+  _13 = _12 & 6291456;
+  _14 = _10 | _13;
+  _15 = _14 | 2164260864;
+  Base_33->MAC_VLAN.MAC_VLAN_TAG_CTRL ={v} _15;
+  _16 = VlanConfig_31(D)->OuterVlanIns;
+  _17 = _16 << 16;
+  _18 = _17 | 262144;
+  Base_33->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _18;
+  _19 = VlanConfig_31(D)->OuterVlanIns;
+  if (_19 == 2)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _20 ={v} Base_33->MAC_VLAN_INCL.MAC_VLAN_INCL;
+  _21 = _20 | 2097152;
+  Base_33->MAC_VLAN_INCL.MAC_VLAN_INCL ={v} _21;
+
+  <bb 10> :
+  _22 = VlanConfig_31(D)->InnerVlanIns;
+  _23 = _22 << 16;
+  _24 = _23 | 262144;
+  Base_33->MAC_INNER_VLAN_INCL ={v} _24;
+  return;
+
+}
+
+
+Gmac_Ip_SetAddrPerfectFilter (uint8 Instance, const uint8 * MacAddr, const uint8 Mask, const Gmac_Ip_MacAddrFilterType AddrType, boolean Enable)
+{
+  struct GMAC_Type * Base;
+  uint32 Address;
+  _Bool _1;
+  int _2;
+  _Bool _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  const uint8 * _14;
+  unsigned char _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  const uint8 * _18;
+  unsigned char _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  const uint8 * _24;
+  unsigned char _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  const uint8 * _28;
+  unsigned char _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  const uint8 * _33;
+  unsigned char _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  unsigned char _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  long unsigned int _43;
+
+  <bb 2> :
+  _1 = Instance_47(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_47(D);
+  Base_50 = Gmac_apxBases[_2];
+  if (Enable_51(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  _3 = MacAddr_56(D) != 0B;
+  DevAssert (_3);
+  if (AddrType_58(D) != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _4 ={v} Base_50->MAC_PACKET_FILTER;
+  _5 = _4 | 512;
+  Base_50->MAC_PACKET_FILTER ={v} _5;
+  if (AddrType_58(D) == 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _6 ={v} Base_50->MAC_PACKET_FILTER;
+  _7 = _6 | 256;
+  Base_50->MAC_PACKET_FILTER ={v} _7;
+
+  <bb 6> :
+  Base_50->MAC_ADDRESS1_HIGH ={v} 1073741824;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  Base_50->MAC_ADDRESS1_HIGH ={v} 0;
+
+  <bb 8> :
+  _8 ={v} Base_50->MAC_ADDRESS1_HIGH;
+  _9 = (long unsigned int) Mask_63(D);
+  _10 = _9 << 24;
+  _11 = _10 & 1056964608;
+  _12 = _8 | _11;
+  Base_50->MAC_ADDRESS1_HIGH ={v} _12;
+  _13 ={v} Base_50->MAC_ADDRESS1_HIGH;
+  _14 = MacAddr_56(D) + 5;
+  _15 = *_14;
+  _16 = (long unsigned int) _15;
+  _17 = _16 << 8;
+  _18 = MacAddr_56(D) + 4;
+  _19 = *_18;
+  _20 = (long unsigned int) _19;
+  _21 = _17 | _20;
+  _22 = _13 | _21;
+  _23 = _22 | 2147483648;
+  Base_50->MAC_ADDRESS1_HIGH ={v} _23;
+  _24 = MacAddr_56(D) + 3;
+  _25 = *_24;
+  _26 = (long unsigned int) _25;
+  _27 = _26 << 24;
+  _28 = MacAddr_56(D) + 2;
+  _29 = *_28;
+  _30 = (long unsigned int) _29;
+  _31 = _30 << 16;
+  _32 = _27 | _31;
+  _33 = MacAddr_56(D) + 1;
+  _34 = *_33;
+  _35 = (long unsigned int) _34;
+  _36 = _35 << 8;
+  _37 = _32 | _36;
+  _38 = *MacAddr_56(D);
+  _39 = (long unsigned int) _38;
+  Address_66 = _37 | _39;
+  Base_50->MAC_ADDRESS1_LOW ={v} Address_66;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  Base_50->MAC_ADDRESS1_HIGH ={v} 65535;
+  Base_50->MAC_ADDRESS1_LOW ={v} 4294967295;
+  _40 ={v} Base_50->MAC_PACKET_FILTER;
+  _41 = _40 & 4294966783;
+  Base_50->MAC_PACKET_FILTER ={v} _41;
+  _42 ={v} Base_50->MAC_PACKET_FILTER;
+  _43 = _42 & 4294967039;
+  Base_50->MAC_PACKET_FILTER ={v} _43;
+
+  <bb 10> :
+  return;
+
+}
+
+
+Gmac_Ip_RemoveDstAddrFromHashFilter (uint8 Instance, const uint8 * MacAddr)
+{
+  uint32 Crc;
+  const struct GMAC_Type * Base;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+
+  <bb 2> :
+  _1 = Instance_4(D) == 0;
+  DevAssert (_1);
+  _2 = MacAddr_7(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_4(D);
+  Base_9 = Gmac_apxBases[_3];
+  Crc_11 = Gmac_Ip_ComputeCRC32 (MacAddr_7(D), 6);
+  GMAC_RemoveFromHashTable (Base_9, Crc_11);
+  return;
+
+}
+
+
+Gmac_Ip_AddDstAddrToHashFilter (uint8 Instance, const uint8 * MacAddr)
+{
+  uint32 Crc;
+  const struct GMAC_Type * Base;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+
+  <bb 2> :
+  _1 = Instance_4(D) == 0;
+  DevAssert (_1);
+  _2 = MacAddr_7(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_4(D);
+  Base_9 = Gmac_apxBases[_3];
+  Crc_11 = Gmac_Ip_ComputeCRC32 (MacAddr_7(D), 6);
+  GMAC_AddToHashTable (Base_9, Crc_11);
+  return;
+
+}
+
+
+Gmac_Ip_SetHashOrPerfectFilter (uint8 Instance, boolean Enable)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> :
+  _1 = Instance_12(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_12(D);
+  Base_15 = Gmac_apxBases[_2];
+  if (Enable_16(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} Base_15->MAC_PACKET_FILTER;
+  _4 = _3 & 2147483647;
+  Base_15->MAC_PACKET_FILTER ={v} _4;
+  _5 ={v} Base_15->MAC_PACKET_FILTER;
+  _6 = _5 & 4294967294;
+  Base_15->MAC_PACKET_FILTER ={v} _6;
+  _7 ={v} Base_15->MAC_PACKET_FILTER;
+  _8 = _7 | 1024;
+  Base_15->MAC_PACKET_FILTER ={v} _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 ={v} Base_15->MAC_PACKET_FILTER;
+  _10 = _9 & 4294966271;
+  Base_15->MAC_PACKET_FILTER ={v} _10;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Gmac_Ip_SetMulticastHashFilter (uint8 Instance, boolean Enable)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> :
+  _1 = Instance_12(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_12(D);
+  Base_15 = Gmac_apxBases[_2];
+  if (Enable_16(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} Base_15->MAC_PACKET_FILTER;
+  _4 = _3 & 2147483647;
+  Base_15->MAC_PACKET_FILTER ={v} _4;
+  _5 ={v} Base_15->MAC_PACKET_FILTER;
+  _6 = _5 & 4294967294;
+  Base_15->MAC_PACKET_FILTER ={v} _6;
+  _7 ={v} Base_15->MAC_PACKET_FILTER;
+  _8 = _7 | 4;
+  Base_15->MAC_PACKET_FILTER ={v} _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 ={v} Base_15->MAC_PACKET_FILTER;
+  _10 = _9 & 4294967291;
+  Base_15->MAC_PACKET_FILTER ={v} _10;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Gmac_Ip_SetUnicastHashFilter (uint8 Instance, boolean Enable)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> :
+  _1 = Instance_12(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_12(D);
+  Base_15 = Gmac_apxBases[_2];
+  if (Enable_16(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} Base_15->MAC_PACKET_FILTER;
+  _4 = _3 & 2147483647;
+  Base_15->MAC_PACKET_FILTER ={v} _4;
+  _5 ={v} Base_15->MAC_PACKET_FILTER;
+  _6 = _5 & 4294967294;
+  Base_15->MAC_PACKET_FILTER ={v} _6;
+  _7 ={v} Base_15->MAC_PACKET_FILTER;
+  _8 = _7 | 2;
+  Base_15->MAC_PACKET_FILTER ={v} _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 ={v} Base_15->MAC_PACKET_FILTER;
+  _10 = _9 & 4294967293;
+  Base_15->MAC_PACKET_FILTER ={v} _10;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Gmac_Ip_SetMulticastForwardAll (uint8 Instance, boolean Enable)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+
+  <bb 2> :
+  _1 = Instance_14(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_14(D);
+  Base_17 = Gmac_apxBases[_2];
+  if (Enable_18(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} Base_17->MAC_PACKET_FILTER;
+  _4 = _3 | 16;
+  Base_17->MAC_PACKET_FILTER ={v} _4;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 ={v} Base_17->MAC_PACKET_FILTER;
+  _6 = _5 & 2147483647;
+  Base_17->MAC_PACKET_FILTER ={v} _6;
+  _7 ={v} Base_17->MAC_PACKET_FILTER;
+  _8 = _7 & 4294967294;
+  Base_17->MAC_PACKET_FILTER ={v} _8;
+  _9 ={v} Base_17->MAC_PACKET_FILTER;
+  _10 = _9 & 4294967279;
+  Base_17->MAC_PACKET_FILTER ={v} _10;
+  _11 ={v} Base_17->MAC_PACKET_FILTER;
+  _12 = _11 & 4294967291;
+  Base_17->MAC_PACKET_FILTER ={v} _12;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Gmac_Ip_SetBroadcastForwardAll (uint8 Instance, boolean Enable)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> :
+  _1 = Instance_12(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_12(D);
+  Base_15 = Gmac_apxBases[_2];
+  if (Enable_16(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} Base_15->MAC_PACKET_FILTER;
+  _4 = _3 & 4294967263;
+  Base_15->MAC_PACKET_FILTER ={v} _4;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 ={v} Base_15->MAC_PACKET_FILTER;
+  _6 = _5 & 2147483647;
+  Base_15->MAC_PACKET_FILTER ={v} _6;
+  _7 ={v} Base_15->MAC_PACKET_FILTER;
+  _8 = _7 & 4294967294;
+  Base_15->MAC_PACKET_FILTER ={v} _8;
+  _9 ={v} Base_15->MAC_PACKET_FILTER;
+  _10 = _9 | 32;
+  Base_15->MAC_PACKET_FILTER ={v} _10;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Gmac_Ip_GetChInterruptFlags (uint8 Instance, uint8 Channel)
+{
+  const struct Gmac_Ip_ChannelType * Base;
+  uint32 D.7926;
+  _Bool _1;
+  int _2;
+  int _3;
+  uint32 _9;
+
+  <bb 2> :
+  _1 = Instance_4(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_4(D);
+  _3 = (int) Channel_7(D);
+  Base_8 = Gmac_apxChBases[_2][_3];
+  _9 ={v} Base_8->DMA_STATUS;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Gmac_Ip_GetInterruptFlags (uint8 Instance)
+{
+  const struct GMAC_Type * Base;
+  uint32 D.7924;
+  _Bool _1;
+  int _2;
+  uint32 _7;
+
+  <bb 2> :
+  _1 = Instance_3(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_3(D);
+  Base_6 = Gmac_apxBases[_2];
+  _7 ={v} Base_6->MAC_INTERRUPT_STATUS;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Gmac_Ip_GetMacAddr (uint8 Instance, uint8 * MacAddr)
+{
+  uint32 Address;
+  const struct GMAC_Type * Base;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  unsigned char _4;
+  long unsigned int _5;
+  uint8 * _6;
+  unsigned char _7;
+  long unsigned int _8;
+  uint8 * _9;
+  unsigned char _10;
+  long unsigned int _11;
+  uint8 * _12;
+  unsigned char _13;
+  long unsigned int _14;
+  uint8 * _15;
+  unsigned char _16;
+  long unsigned int _17;
+  uint8 * _18;
+  unsigned char _19;
+
+  <bb 2> :
+  _1 = Instance_20(D) == 0;
+  DevAssert (_1);
+  _2 = MacAddr_23(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_20(D);
+  Base_25 = Gmac_apxBases[_3];
+  Address_26 ={v} Base_25->MAC_ADDRESS0_LOW;
+  _4 = (unsigned char) Address_26;
+  *MacAddr_23(D) = _4;
+  _5 = Address_26 >> 8;
+  _6 = MacAddr_23(D) + 1;
+  _7 = (unsigned char) _5;
+  *_6 = _7;
+  _8 = Address_26 >> 16;
+  _9 = MacAddr_23(D) + 2;
+  _10 = (unsigned char) _8;
+  *_9 = _10;
+  _11 = Address_26 >> 24;
+  _12 = MacAddr_23(D) + 3;
+  _13 = (unsigned char) _11;
+  *_12 = _13;
+  _14 ={v} Base_25->MAC_ADDRESS0_HIGH;
+  Address_31 = _14 & 65535;
+  _15 = MacAddr_23(D) + 4;
+  _16 = (unsigned char) Address_31;
+  *_15 = _16;
+  _17 = Address_31 >> 8;
+  _18 = MacAddr_23(D) + 5;
+  _19 = (unsigned char) _17;
+  *_18 = _19;
+  return;
+
+}
+
+
+Gmac_Ip_SetMacAddr (uint8 Instance, const uint8 * MacAddr)
+{
+  struct GMAC_Type * Base;
+  uint32 Address;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  const uint8 * _4;
+  unsigned char _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  const uint8 * _8;
+  unsigned char _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  const uint8 * _13;
+  unsigned char _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  const uint8 * _17;
+  unsigned char _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  const uint8 * _22;
+  unsigned char _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  unsigned char _27;
+  long unsigned int _28;
+
+  <bb 2> :
+  _1 = Instance_29(D) == 0;
+  DevAssert (_1);
+  _2 = MacAddr_32(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_29(D);
+  Base_34 = Gmac_apxBases[_3];
+  _4 = MacAddr_32(D) + 5;
+  _5 = *_4;
+  _6 = (long unsigned int) _5;
+  _7 = _6 << 8;
+  _8 = MacAddr_32(D) + 4;
+  _9 = *_8;
+  _10 = (long unsigned int) _9;
+  _11 = _7 | _10;
+  _12 = _11 | 2147483648;
+  Base_34->MAC_ADDRESS0_HIGH ={v} _12;
+  _13 = MacAddr_32(D) + 3;
+  _14 = *_13;
+  _15 = (long unsigned int) _14;
+  _16 = _15 << 24;
+  _17 = MacAddr_32(D) + 2;
+  _18 = *_17;
+  _19 = (long unsigned int) _18;
+  _20 = _19 << 16;
+  _21 = _16 | _20;
+  _22 = MacAddr_32(D) + 1;
+  _23 = *_22;
+  _24 = (long unsigned int) _23;
+  _25 = _24 << 8;
+  _26 = _21 | _25;
+  _27 = *MacAddr_32(D);
+  _28 = (long unsigned int) _27;
+  Address_36 = _26 | _28;
+  Base_34->MAC_ADDRESS0_LOW ={v} Address_36;
+  return;
+
+}
+
+
+Gmac_Ip_MDIOWriteMMD (uint8 Instance, uint8 PhyAddr, uint8 Mmd, uint16 PhyReg, uint16 Data, uint32 TimeoutMs)
+{
+  struct Gmac_Ip_ManagementInfo ManageInfo;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7921;
+  _Bool _1;
+  int _2;
+  short unsigned int _3;
+  long unsigned int _4;
+  Gmac_Ip_StatusType _22;
+
+  <bb 2> :
+  _1 = Instance_5(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_5(D);
+  Base_8 = Gmac_apxBases[_2];
+  ManageInfo.PhysAddr = PhyAddr_9(D);
+  ManageInfo.PhysReg = PhyReg_11(D);
+  _3 = (short unsigned int) Mmd_13(D);
+  ManageInfo.MmdAddr = _3;
+  ManageInfo.OpFrameType = 0;
+  ManageInfo.FrameData = Data_16(D);
+  ManageInfo.SupportedClause45 = 1;
+  _4 = TimeoutMs_19(D) * 1000;
+  Status_21 = GMAC_WriteManagementFrame (Base_8, &ManageInfo, _4);
+  _22 = Status_21;
+  ManageInfo ={v} {CLOBBER};
+
+  <bb 3> :
+<L1>:
+  return _22;
+
+}
+
+
+Gmac_Ip_MDIOReadMMD (uint8 Instance, uint8 PhyAddr, uint8 Mmd, uint16 PhyReg, uint16 * Data, uint32 TimeoutMs)
+{
+  struct Gmac_Ip_ManagementInfo ManageInfo;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7918;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  short unsigned int _4;
+  long unsigned int _5;
+  short unsigned int _6;
+  Gmac_Ip_StatusType _28;
+
+  <bb 2> :
+  _1 = Instance_8(D) == 0;
+  DevAssert (_1);
+  _2 = Data_11(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_8(D);
+  Base_13 = Gmac_apxBases[_3];
+  ManageInfo.PhysAddr = PhyAddr_14(D);
+  ManageInfo.PhysReg = PhyReg_16(D);
+  _4 = (short unsigned int) Mmd_18(D);
+  ManageInfo.MmdAddr = _4;
+  ManageInfo.OpFrameType = 1;
+  ManageInfo.FrameData = 0;
+  ManageInfo.SupportedClause45 = 1;
+  _5 = TimeoutMs_23(D) * 1000;
+  Status_25 = GMAC_WriteManagementFrame (Base_13, &ManageInfo, _5);
+  if (Status_25 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = GMAC_ReadManagementFrameData (Base_13);
+  *Data_11(D) = _6;
+
+  <bb 4> :
+  _28 = Status_25;
+  ManageInfo ={v} {CLOBBER};
+
+  <bb 5> :
+<L3>:
+  return _28;
+
+}
+
+
+Gmac_Ip_MDIOWrite (uint8 Instance, uint8 PhyAddr, uint8 PhyReg, uint16 Data, uint32 TimeoutMs)
+{
+  struct Gmac_Ip_ManagementInfo ManageInfo;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7913;
+  _Bool _1;
+  int _2;
+  short unsigned int _3;
+  long unsigned int _4;
+  Gmac_Ip_StatusType _21;
+
+  <bb 2> :
+  _1 = Instance_5(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_5(D);
+  Base_8 = Gmac_apxBases[_2];
+  ManageInfo.PhysAddr = PhyAddr_9(D);
+  _3 = (short unsigned int) PhyReg_11(D);
+  ManageInfo.PhysReg = _3;
+  ManageInfo.MmdAddr = 0;
+  ManageInfo.OpFrameType = 0;
+  ManageInfo.FrameData = Data_15(D);
+  ManageInfo.SupportedClause45 = 0;
+  _4 = TimeoutMs_18(D) * 1000;
+  Status_20 = GMAC_WriteManagementFrame (Base_8, &ManageInfo, _4);
+  _21 = Status_20;
+  ManageInfo ={v} {CLOBBER};
+
+  <bb 3> :
+<L1>:
+  return _21;
+
+}
+
+
+Gmac_Ip_MDIORead (uint8 Instance, uint8 PhyAddr, uint8 PhyReg, uint16 * Data, uint32 TimeoutMs)
+{
+  struct Gmac_Ip_ManagementInfo ManageInfo;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7908;
+  _Bool _1;
+  _Bool _2;
+  int _3;
+  short unsigned int _4;
+  long unsigned int _5;
+  short unsigned int _6;
+  Gmac_Ip_StatusType _27;
+
+  <bb 2> :
+  _1 = Instance_8(D) == 0;
+  DevAssert (_1);
+  _2 = Data_11(D) != 0B;
+  DevAssert (_2);
+  _3 = (int) Instance_8(D);
+  Base_13 = Gmac_apxBases[_3];
+  ManageInfo.PhysAddr = PhyAddr_14(D);
+  _4 = (short unsigned int) PhyReg_16(D);
+  ManageInfo.PhysReg = _4;
+  ManageInfo.MmdAddr = 0;
+  ManageInfo.OpFrameType = 1;
+  ManageInfo.FrameData = 0;
+  ManageInfo.SupportedClause45 = 0;
+  _5 = TimeoutMs_22(D) * 1000;
+  Status_24 = GMAC_WriteManagementFrame (Base_13, &ManageInfo, _5);
+  if (Status_24 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = GMAC_ReadManagementFrameData (Base_13);
+  *Data_11(D) = _6;
+
+  <bb 4> :
+  _27 = Status_24;
+  ManageInfo ={v} {CLOBBER};
+
+  <bb 5> :
+<L3>:
+  return _27;
+
+}
+
+
+Gmac_Ip_EnableMDIO (uint8 Instance, boolean MiiPreambleDisabled, uint32 ModuleClk)
+{
+  uint8 i;
+  uint8 Csr;
+  struct GMAC_Type * Base;
+  static const uint8 CsrValues[9] = "\x02\x02\x03\x00\x01\x04\x05\x06\x07";
+  static const uint32 Freq[9] = {20000000, 35000000, 60000000, 100000000, 150000000, 250000000, 300000000, 500000000, 800000000};
+  long unsigned int iftmp.43;
+  _Bool _1;
+  int _2;
+  _Bool _3;
+  int _4;
+  long unsigned int _5;
+  int _6;
+  unsigned char i.42_7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int iftmp.43_14;
+  long unsigned int iftmp.43_26;
+  long unsigned int iftmp.43_27;
+
+  <bb 2> :
+  _1 = Instance_15(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_15(D);
+  Base_18 = Gmac_apxBases[_2];
+  _3 = ModuleClk_19(D) != 0;
+  DevAssert (_3);
+  Csr_21 = 0;
+  i_22 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _4 = (int) i_13;
+  _5 = Freq[_4];
+  if (ModuleClk_19(D) <= _5)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _6 = (int) i_13;
+  Csr_24 = CsrValues[_6];
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  i.42_7 = i_13;
+  i_23 = i.42_7 + 1;
+
+  <bb 6> :
+  # i_13 = PHI <i_22(2), i_23(5)>
+  if (i_13 <= 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  # Csr_12 = PHI <Csr_24(4), Csr_21(6)>
+  if (MiiPreambleDisabled_25(D) != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.43_27 = 134217728;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.43_26 = 0;
+
+  <bb 10> :
+  # iftmp.43_14 = PHI <iftmp.43_27(8), iftmp.43_26(9)>
+  _8 = (long unsigned int) Csr_12;
+  _9 = _8 << 8;
+  _10 = _9 & 3840;
+  _11 = iftmp.43_14 | _10;
+  Base_18->MAC_MDIO_ADDRESS ={v} _11;
+  return;
+
+}
+
+
+Gmac_Ip_GetCounter (uint8 Instance, Gmac_Ip_CounterType Counter)
+{
+  volatile uint32[53] * Count_Reg;
+  volatile uint32 CounterAddr;
+  const struct GMAC_Type * Base;
+  uint32 D.7898;
+  _Bool _1;
+  int _2;
+  const uint32_t * _3;
+  long unsigned int _4;
+  long unsigned int CounterAddr.41_5;
+  uint32 _13;
+
+  <bb 2> :
+  _1 = Instance_6(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_6(D);
+  Base_9 = Gmac_apxBases[_2];
+  _3 = &Base_9->TX_OCTET_COUNT_GOOD_BAD;
+  _4 = (long unsigned int) _3;
+  CounterAddr ={v} _4;
+  CounterAddr.41_5 ={v} CounterAddr;
+  Count_Reg_11 = (volatile uint32[53] *) CounterAddr.41_5;
+  _13 ={v} (*Count_Reg_11)[Counter_12(D)];
+
+  <bb 3> :
+<L0>:
+  return _13;
+
+}
+
+
+Gmac_Ip_GetTransmitStatus (uint8 Instance, uint8 Ring, const struct Gmac_Ip_BufferType * Buff, struct Gmac_Ip_TxInfoType * Info)
+{
+  uint32 RingLength;
+  uint32 i;
+  Gmac_Ip_StatusType Status;
+  const struct Gmac_Ip_BufferDescriptorType * StartBd;
+  struct Gmac_Ip_BufferDescriptorType * Bd;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  const struct Gmac_Ip_ChannelType * ChBase;
+  const struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7896;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  short unsigned int _5;
+  int _6;
+  struct Gmac_Ip_StateType * _7;
+  short unsigned int _8;
+  _Bool _9;
+  _Bool _10;
+  int _11;
+  int _12;
+  int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  uint8 * _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  sizetype _21;
+  sizetype _22;
+  struct Gmac_Ip_BufferDescriptorType * _23;
+  long unsigned int _24;
+  long unsigned int Bd.40_25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  signed int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  signed int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  struct Gmac_Ip_TimestampType * _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  Gmac_Ip_StatusType _83;
+
+  <bb 2> :
+  Status_52 = 2563;
+  _1 = Instance_53(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_53(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (short unsigned int) Ring_57(D);
+  _6 = (int) Instance_53(D);
+  _7 = Gmac_apxState[_6];
+  _8 = _7->TxRingCount;
+  _9 = _5 < _8;
+  DevAssert (_9);
+  _10 = Buff_59(D) != 0B;
+  DevAssert (_10);
+  _11 = (int) Instance_53(D);
+  Base_61 = Gmac_apxBases[_11];
+  _12 = (int) Instance_53(D);
+  _13 = (int) Ring_57(D);
+  ChBase_62 = Gmac_apxChBases[_12][_13];
+  _14 ={v} ChBase_62->DMA_TXDESC_LIST_ADDRESS;
+  ListBd_63 = (struct Gmac_Ip_BufferDescriptorType *) _14;
+  Bd_64 = ListBd_63;
+  RingLength_65 ={v} ChBase_62->DMA_TXDESC_RING_LENGTH;
+  i_66 = 0;
+  goto <bb 19>; [INV]
+
+  <bb 3> :
+  _15 = Bd_43->Info0;
+  _16 = Buff_59(D)->Data;
+  _17 = (long unsigned int) _16;
+  if (_15 == _17)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 4> :
+  StartBd_69 = Bd_43;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  _18 = Bd_41->Info0;
+  Bd_41->Des0 = _18;
+  Bd_41->Info0 = 0;
+  _19 = Bd_41->Info1;
+  _20 = _19 & 4026531839;
+  Bd_41->Info1 = _20;
+  Bd_73 = Bd_41 + 32;
+  _21 = RingLength_65 + 1;
+  _22 = _21 * 32;
+  _23 = ListBd_63 + _22;
+  _24 = (long unsigned int) _23;
+  Bd.40_25 = (long unsigned int) Bd_73;
+  if (_24 <= Bd.40_25)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Bd_74 = ListBd_63;
+
+  <bb 7> :
+  # Bd_40 = PHI <Bd_73(5), Bd_74(6)>
+  if (Bd_40 == StartBd_69)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+  # Bd_41 = PHI <Bd_43(4), Bd_40(7)>
+  _26 = Bd_41->Des3;
+  _27 = _26 & 268435456;
+  if (_27 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _28 = Bd_41->Des3;
+  _29 = (signed int) _28;
+  if (_29 >= 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  # Bd_42 = PHI <Bd_40(8), Bd_41(9), Bd_41(10)>
+  _30 = Bd_42->Des3;
+  _31 = _30 & 268435456;
+  if (_31 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 12> :
+  _32 = Bd_42->Des3;
+  _33 = (signed int) _32;
+  if (_33 >= 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 13> :
+  Status_75 = 0;
+  if (Info_76(D) != 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _34 = Bd_42->Des3;
+  _35 = _34 & 32525;
+  Info_76(D)->ErrMask = _35;
+  _36 = &Info_76(D)->Timestamp;
+  Gmac_Ip_GetTimestamp (Base_61, Bd_42, _36);
+
+  <bb 15> :
+  _37 = Bd_42->Info0;
+  Bd_42->Des0 = _37;
+  Bd_42->Info0 = 0;
+  _38 = Bd_42->Info1;
+  _39 = _38 & 4026531839;
+  Bd_42->Info1 = _39;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  Status_82 = 2;
+
+  <bb 17> :
+  # Status_44 = PHI <Status_75(15), Status_82(16)>
+  goto <bb 20>; [INV]
+
+  <bb 18> :
+  Bd_67 = Bd_43 + 32;
+  i_68 = i_46 + 1;
+
+  <bb 19> :
+  # Bd_43 = PHI <Bd_64(2), Bd_67(18)>
+  # i_46 = PHI <i_66(2), i_68(18)>
+  if (i_46 <= RingLength_65)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  # Status_45 = PHI <Status_44(17), Status_52(19)>
+  _83 = Status_45;
+
+  <bb 21> :
+<L19>:
+  return _83;
+
+}
+
+
+Gmac_Ip_IsFrameAvailable (uint8 Instance, uint8 Ring)
+{
+  boolean IsFrameAvailable;
+  const struct Gmac_Ip_BufferDescriptorType * Bd;
+  boolean D.7881;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  short unsigned int _5;
+  int _6;
+  struct Gmac_Ip_StateType * _7;
+  short unsigned int _8;
+  _Bool _9;
+  int _10;
+  struct Gmac_Ip_StateType * _11;
+  int _12;
+  long unsigned int _13;
+  signed int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  boolean _28;
+
+  <bb 2> :
+  IsFrameAvailable_19 = 0;
+  _1 = Instance_20(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_20(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (short unsigned int) Ring_24(D);
+  _6 = (int) Instance_20(D);
+  _7 = Gmac_apxState[_6];
+  _8 = _7->RxRingCount;
+  _9 = _5 < _8;
+  DevAssert (_9);
+  _10 = (int) Instance_20(D);
+  _11 = Gmac_apxState[_10];
+  _12 = (int) Ring_24(D);
+  Bd_26 = _11->RxCurrentDesc[_12];
+  _13 = Bd_26->Des3;
+  _14 = (signed int) _13;
+  if (_14 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _15 = Bd_26->Info1;
+  _16 = _15 & 16777216;
+  if (_16 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _17 = Bd_26->Info0;
+  if (_17 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  IsFrameAvailable_27 = 1;
+
+  <bb 6> :
+  # IsFrameAvailable_18 = PHI <IsFrameAvailable_19(2), IsFrameAvailable_19(3), IsFrameAvailable_19(4), IsFrameAvailable_27(5)>
+  _28 = IsFrameAvailable_18;
+
+  <bb 7> :
+<L6>:
+  return _28;
+
+}
+
+
+Gmac_Ip_ProvideRxBuff (uint8 Instance, uint8 Ring, const struct Gmac_Ip_BufferType * Buff)
+{
+  uint32 RingLength;
+  uint32 TailPtr;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  struct Gmac_Ip_BufferDescriptorType * CtxtBd;
+  struct Gmac_Ip_BufferDescriptorType * Bd;
+  struct Gmac_Ip_ChannelType * Base;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.39;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  short unsigned int _5;
+  int _6;
+  struct Gmac_Ip_StateType * _7;
+  short unsigned int _8;
+  _Bool _9;
+  _Bool _10;
+  uint8 * _11;
+  _Bool _12;
+  int _13;
+  int _14;
+  int _15;
+  struct Gmac_Ip_StateType * _16;
+  int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  signed int _21;
+  _Bool _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  struct Gmac_Ip_BufferDescriptorType * _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  struct Gmac_Ip_BufferDescriptorType * _30;
+  long unsigned int _31;
+  _Bool _32;
+  int _33;
+  struct Gmac_Ip_StateType * _34;
+  int _35;
+  uint8 * _36;
+  long unsigned int _37;
+  uint8 * _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  int _42;
+  struct Gmac_Ip_StateType * _43;
+  int _44;
+  struct Gmac_Ip_BufferDescriptorType * _45;
+  struct Gmac_Ip_BufferDescriptorType * _46;
+  int _47;
+  struct Gmac_Ip_StateType * _48;
+  int _49;
+  struct Gmac_Ip_BufferDescriptorType * _50;
+  long unsigned int _51;
+  long unsigned int _52;
+  struct Gmac_Ip_BufferDescriptorType * _53;
+  long unsigned int _54;
+  int _55;
+  struct Gmac_Ip_StateType * _56;
+  int _57;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.39_58;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.39_76;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.39_77;
+
+  <bb 2> :
+  _1 = Instance_61(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_61(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (short unsigned int) Ring_65(D);
+  _6 = (int) Instance_61(D);
+  _7 = Gmac_apxState[_6];
+  _8 = _7->RxRingCount;
+  _9 = _5 < _8;
+  DevAssert (_9);
+  _10 = Buff_67(D) != 0B;
+  DevAssert (_10);
+  _11 = Buff_67(D)->Data;
+  _12 = _11 != 0B;
+  DevAssert (_12);
+  _13 = (int) Instance_61(D);
+  _14 = (int) Ring_65(D);
+  Base_70 = Gmac_apxChBases[_13][_14];
+  _15 = (int) Instance_61(D);
+  _16 = Gmac_apxState[_15];
+  _17 = (int) Ring_65(D);
+  Bd_71 = _16->RxAllocDesc[_17];
+  _18 ={v} Base_70->DMA_RXDESC_LIST_ADDRESS;
+  ListBd_72 = (struct Gmac_Ip_BufferDescriptorType *) _18;
+  TailPtr_73 ={v} Base_70->DMA_RXDESC_TAIL_POINTER;
+  _19 ={v} Base_70->DMA_RXDESC_RING_LENGTH;
+  RingLength_74 = _19 + 1;
+  _20 = Bd_71->Des3;
+  _21 = (signed int) _20;
+  _22 = _21 >= 0;
+  DevAssert (_22);
+  _23 = Bd_71->Des1;
+  _24 = _23 & 16384;
+  if (_24 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  _25 = Bd_71->Des3;
+  _26 = _25 & 268435456;
+  if (_26 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _27 = Bd_71 + 32;
+  _28 = (long unsigned int) _27;
+  _29 = RingLength_74 * 32;
+  _30 = ListBd_72 + _29;
+  _31 = (long unsigned int) _30;
+  if (_28 < _31)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.39_77 = Bd_71 + 32;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.39_76 = ListBd_72;
+
+  <bb 7> :
+  # iftmp.39_58 = PHI <iftmp.39_77(5), iftmp.39_76(6)>
+  CtxtBd_78 = iftmp.39_58;
+  _32 = Gmac_Ip_RestoreRxCtxtDescr (CtxtBd_78);
+  if (_32 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _33 = (int) Instance_61(D);
+  _34 = Gmac_apxState[_33];
+  _35 = (int) Ring_65(D);
+  _34->RxAllocDesc[_35] = CtxtBd_78;
+
+  <bb 9> :
+  _36 = Buff_67(D)->Data;
+  _37 = (long unsigned int) _36;
+  Bd_71->Des0 = _37;
+  Bd_71->Des1 = 0;
+  Bd_71->Des2 = 0;
+  _38 = Buff_67(D)->Data;
+  _39 = (long unsigned int) _38;
+  Bd_71->Info0 = _39;
+  _40 = Bd_71->Info1;
+  _41 = _40 & 4278190079;
+  Bd_71->Info1 = _41;
+  __asm__ __volatile__(" DSB");
+  Bd_71->Des3 = 3238002688;
+  _42 = (int) Instance_61(D);
+  _43 = Gmac_apxState[_42];
+  _44 = (int) Ring_65(D);
+  _45 = _43->RxAllocDesc[_44];
+  _46 = _45 + 32;
+  _43->RxAllocDesc[_44] = _46;
+  _47 = (int) Instance_61(D);
+  _48 = Gmac_apxState[_47];
+  _49 = (int) Ring_65(D);
+  _50 = _48->RxAllocDesc[_49];
+  _51 = (long unsigned int) _50;
+  _52 = RingLength_74 * 32;
+  _53 = ListBd_72 + _52;
+  _54 = (long unsigned int) _53;
+  if (_51 >= _54)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _55 = (int) Instance_61(D);
+  _56 = Gmac_apxState[_55];
+  _57 = (int) Ring_65(D);
+  _56->RxAllocDesc[_57] = ListBd_72;
+
+  <bb 11> :
+  __asm__ __volatile__(" DSB");
+  Base_70->DMA_RXDESC_TAIL_POINTER ={v} TailPtr_73;
+  return;
+
+}
+
+
+Gmac_Ip_SetRxExternalBuffer (uint8 Instance, uint8 Ring, const struct Gmac_Ip_BufferType * Buff)
+{
+  uint32 RingLength;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  struct Gmac_Ip_BufferDescriptorType * Bd;
+  struct Gmac_Ip_ChannelType * Base;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  short unsigned int _5;
+  int _6;
+  struct Gmac_Ip_StateType * _7;
+  short unsigned int _8;
+  _Bool _9;
+  _Bool _10;
+  uint8 * _11;
+  _Bool _12;
+  int _13;
+  int _14;
+  int _15;
+  struct Gmac_Ip_StateType * _16;
+  int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  uint8 * _20;
+  long unsigned int _21;
+  uint8 * _22;
+  long unsigned int _23;
+  int _24;
+  short unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  int _28;
+  struct Gmac_Ip_StateType * _29;
+  int _30;
+  struct Gmac_Ip_BufferDescriptorType * _31;
+  struct Gmac_Ip_BufferDescriptorType * _32;
+  int _33;
+  struct Gmac_Ip_StateType * _34;
+  int _35;
+  struct Gmac_Ip_BufferDescriptorType * _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  struct Gmac_Ip_BufferDescriptorType * _39;
+  long unsigned int _40;
+  int _41;
+  struct Gmac_Ip_StateType * _42;
+  int _43;
+
+  <bb 2> :
+  _1 = Instance_45(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_45(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (short unsigned int) Ring_49(D);
+  _6 = (int) Instance_45(D);
+  _7 = Gmac_apxState[_6];
+  _8 = _7->RxRingCount;
+  _9 = _5 < _8;
+  DevAssert (_9);
+  _10 = Buff_51(D) != 0B;
+  DevAssert (_10);
+  _11 = Buff_51(D)->Data;
+  _12 = _11 != 0B;
+  DevAssert (_12);
+  _13 = (int) Instance_45(D);
+  _14 = (int) Ring_49(D);
+  Base_54 = Gmac_apxChBases[_13][_14];
+  _15 = (int) Instance_45(D);
+  _16 = Gmac_apxState[_15];
+  _17 = (int) Ring_49(D);
+  Bd_55 = _16->RxAllocDesc[_17];
+  _18 ={v} Base_54->DMA_RXDESC_LIST_ADDRESS;
+  ListBd_56 = (struct Gmac_Ip_BufferDescriptorType *) _18;
+  _19 ={v} Base_54->DMA_RXDESC_RING_LENGTH;
+  RingLength_57 = _19 + 1;
+  _20 = Buff_51(D)->Data;
+  _21 = (long unsigned int) _20;
+  Bd_55->Des0 = _21;
+  Bd_55->Des1 = 0;
+  Bd_55->Des2 = 0;
+  _22 = Buff_51(D)->Data;
+  _23 = (long unsigned int) _22;
+  Bd_55->Info0 = _23;
+  _24 = (int) Instance_45(D);
+  _25 = Gmac_aRxExternalBuffLength[_24];
+  _26 = (long unsigned int) _25;
+  _27 = _26 & 16383;
+  Bd_55->Info1 = _27;
+  Bd_55->Des3 = 3238002688;
+  _28 = (int) Instance_45(D);
+  _29 = Gmac_apxState[_28];
+  _30 = (int) Ring_49(D);
+  _31 = _29->RxAllocDesc[_30];
+  _32 = _31 + 32;
+  _29->RxAllocDesc[_30] = _32;
+  _33 = (int) Instance_45(D);
+  _34 = Gmac_apxState[_33];
+  _35 = (int) Ring_49(D);
+  _36 = _34->RxAllocDesc[_35];
+  _37 = (long unsigned int) _36;
+  _38 = RingLength_57 * 32;
+  _39 = ListBd_56 + _38;
+  _40 = (long unsigned int) _39;
+  if (_37 >= _40)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _41 = (int) Instance_45(D);
+  _42 = Gmac_apxState[_41];
+  _43 = (int) Ring_49(D);
+  _42->RxAllocDesc[_43] = ListBd_56;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Gmac_Ip_ReadFrame (uint8 Instance, uint8 Ring, struct Gmac_Ip_BufferType * Buff, struct Gmac_Ip_RxInfoType * Info)
+{
+  Gmac_Ip_StatusType Status;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  struct Gmac_Ip_BufferDescriptorType * Bd;
+  const struct Gmac_Ip_ChannelType * ChBase;
+  Gmac_Ip_StatusType D.7859;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  short unsigned int _5;
+  int _6;
+  struct Gmac_Ip_StateType * _7;
+  short unsigned int _8;
+  _Bool _9;
+  _Bool _10;
+  int _11;
+  int _12;
+  int _13;
+  struct Gmac_Ip_StateType * _14;
+  int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  signed int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  uint8 * _23;
+  long unsigned int _24;
+  short unsigned int _25;
+  short unsigned int _26;
+  short unsigned int _27;
+  int _28;
+  long unsigned int _29;
+  short unsigned int _30;
+  int _31;
+  int _32;
+  long unsigned int _33;
+  short unsigned int _34;
+  short unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  short unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  long unsigned int _43;
+  long unsigned int _44;
+  _Bool _45;
+  long unsigned int _46;
+  long unsigned int _47;
+  _Bool _48;
+  long unsigned int _49;
+  long unsigned int _50;
+  _Bool _51;
+  long unsigned int _52;
+  long unsigned int _53;
+  _Bool _54;
+  long unsigned int _55;
+  long unsigned int _56;
+  <unnamed type> _57;
+  long unsigned int _58;
+  long unsigned int _59;
+  long unsigned int _60;
+  short unsigned int _61;
+  long unsigned int _62;
+  long unsigned int _63;
+  short unsigned int _64;
+  int _65;
+  struct Gmac_Ip_StateType * _66;
+  int _67;
+  struct Gmac_Ip_BufferDescriptorType * _68;
+  struct Gmac_Ip_BufferDescriptorType * _69;
+  int _70;
+  struct Gmac_Ip_StateType * _71;
+  int _72;
+  struct Gmac_Ip_BufferDescriptorType * _73;
+  long unsigned int _74;
+  long unsigned int _75;
+  sizetype _76;
+  sizetype _77;
+  struct Gmac_Ip_BufferDescriptorType * _78;
+  long unsigned int _79;
+  int _80;
+  struct Gmac_Ip_StateType * _81;
+  int _82;
+  Gmac_Ip_StatusType _123;
+
+  <bb 2> :
+  Status_89 = 0;
+  _1 = Instance_90(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_90(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (short unsigned int) Ring_94(D);
+  _6 = (int) Instance_90(D);
+  _7 = Gmac_apxState[_6];
+  _8 = _7->RxRingCount;
+  _9 = _5 < _8;
+  DevAssert (_9);
+  _10 = Buff_96(D) != 0B;
+  DevAssert (_10);
+  _11 = (int) Instance_90(D);
+  _12 = (int) Ring_94(D);
+  ChBase_98 = Gmac_apxChBases[_11][_12];
+  _13 = (int) Instance_90(D);
+  _14 = Gmac_apxState[_13];
+  _15 = (int) Ring_94(D);
+  Bd_99 = _14->RxCurrentDesc[_15];
+  _16 ={v} ChBase_98->DMA_RXDESC_LIST_ADDRESS;
+  ListBd_100 = (struct Gmac_Ip_BufferDescriptorType *) _16;
+  _17 = Bd_99->Des3;
+  _18 = (signed int) _17;
+  if (_18 < 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _19 = Bd_99->Info1;
+  _20 = _19 & 16777216;
+  if (_20 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _21 = Bd_99->Info0;
+  if (_21 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Status_122 = 2561;
+  goto <bb 17>; [INV]
+
+  <bb 6> :
+  _22 = Bd_99->Info0;
+  _23 = (uint8 *) _22;
+  Buff_96(D)->Data = _23;
+  _24 = Bd_99->Des3;
+  _25 = (short unsigned int) _24;
+  _26 = _25 & 32767;
+  Buff_96(D)->Length = _26;
+  _27 = Buff_96(D)->Length;
+  _28 = (int) _27;
+  _29 = Bd_99->Info1;
+  _30 = (short unsigned int) _29;
+  _31 = (int) _30;
+  _32 = _31 & 16383;
+  if (_28 > _32)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _33 = Bd_99->Info1;
+  _34 = (short unsigned int) _33;
+  _35 = _34 & 16383;
+  Buff_96(D)->Length = _35;
+
+  <bb 8> :
+  Bd_99->Info0 = 0;
+  _36 = Bd_99->Info1;
+  _37 = _36 | 16777216;
+  Bd_99->Info1 = _37;
+  if (Info_106(D) != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 9> :
+  _38 = Bd_99->Des3;
+  _39 = _38 & 33030144;
+  Info_106(D)->ErrMask = _39;
+  _40 = Buff_96(D)->Length;
+  Info_106(D)->PktLen = _40;
+  _41 = Bd_99->Des3;
+  _42 = _41 & 67108864;
+  if (_42 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _43 = Bd_99->Des1;
+  _44 = _43 & 8;
+  _45 = _44 != 0;
+  Info_106(D)->IpHeaderErr = _45;
+  _46 = Bd_99->Des1;
+  _47 = _46 & 128;
+  _48 = _47 != 0;
+  Info_106(D)->IpPayloadErr = _48;
+  _49 = Bd_99->Des1;
+  _50 = _49 & 16;
+  _51 = _50 != 0;
+  Info_106(D)->Ipv4 = _51;
+  _52 = Bd_99->Des1;
+  _53 = _52 & 32;
+  _54 = _53 != 0;
+  Info_106(D)->Ipv6 = _54;
+  _55 = Bd_99->Des1;
+  _56 = _55 & 7;
+  _57 = Gmac_Ip_GetPayloadType (_56);
+  Info_106(D)->PayloadType = _57;
+
+  <bb 11> :
+  _58 = Bd_99->Des3;
+  _59 = _58 & 33554432;
+  if (_59 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _60 = Bd_99->Des0;
+  _61 = (short unsigned int) _60;
+  Info_106(D)->OuterVlanTag = _61;
+  _62 = Bd_99->Des0;
+  _63 = _62 >> 16;
+  _64 = (short unsigned int) _63;
+  Info_106(D)->InnerVlanTag = _64;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  Info_106(D)->OuterVlanTag = 0;
+  Info_106(D)->InnerVlanTag = 0;
+
+  <bb 14> :
+  Gmac_Ip_ReadTimeStampInfo (Instance_90(D), Ring_94(D), Info_106(D));
+
+  <bb 15> :
+  _65 = (int) Instance_90(D);
+  _66 = Gmac_apxState[_65];
+  _67 = (int) Ring_94(D);
+  _68 = _66->RxCurrentDesc[_67];
+  _69 = _68 + 32;
+  _66->RxCurrentDesc[_67] = _69;
+  _70 = (int) Instance_90(D);
+  _71 = Gmac_apxState[_70];
+  _72 = (int) Ring_94(D);
+  _73 = _71->RxCurrentDesc[_72];
+  _74 = (long unsigned int) _73;
+  _75 ={v} ChBase_98->DMA_RXDESC_RING_LENGTH;
+  _76 = _75 + 1;
+  _77 = _76 * 32;
+  _78 = ListBd_100 + _77;
+  _79 = (long unsigned int) _78;
+  if (_74 >= _79)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _80 = (int) Instance_90(D);
+  _81 = Gmac_apxState[_80];
+  _82 = (int) Ring_94(D);
+  _81->RxCurrentDesc[_82] = ListBd_100;
+
+  <bb 17> :
+  # Status_83 = PHI <Status_122(5), Status_89(15), Status_89(16)>
+  _123 = Status_83;
+
+  <bb 18> :
+<L16>:
+  return _123;
+
+}
+
+
+Gmac_Ip_SendMultiBufferFrame (uint8 Instance, uint8 Ring, const struct Gmac_Ip_BufferType * Buffers, const struct Gmac_Ip_TxOptionsType * Options, uint32 NumBuffers)
+{
+  boolean DeAllocate;
+  uint32 RingLength;
+  uint32 i;
+  Gmac_Ip_StatusType Status;
+  struct Gmac_Ip_BufferDescriptorType * LastBd;
+  struct Gmac_Ip_BufferDescriptorType * FirstBd;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  struct Gmac_Ip_BufferDescriptorType * Bd;
+  struct Gmac_Ip_ChannelType * Base;
+  Gmac_Ip_StatusType D.7841;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.36;
+  long unsigned int iftmp.34;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.32;
+  long unsigned int iftmp.31;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  short unsigned int _5;
+  int _6;
+  struct Gmac_Ip_StateType * _7;
+  short unsigned int _8;
+  _Bool _9;
+  _Bool _10;
+  _Bool _11;
+  _Bool _12;
+  int _13;
+  int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  _Bool _17;
+  long unsigned int _18;
+  const struct Gmac_Ip_BufferType * _19;
+  uint8 * _20;
+  _Bool _21;
+  long unsigned int _22;
+  const struct Gmac_Ip_BufferType * _23;
+  short unsigned int _24;
+  _Bool _25;
+  long unsigned int _26;
+  signed int _27;
+  long unsigned int _28;
+  const struct Gmac_Ip_BufferType * _29;
+  uint8 * _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  const struct Gmac_Ip_BufferType * _33;
+  short unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  const struct Gmac_Ip_BufferType * _37;
+  uint8 * _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  const struct Gmac_Ip_BufferType * _41;
+  short unsigned int _42;
+  long unsigned int _43;
+  long unsigned int _44;
+  sizetype _45;
+  sizetype _46;
+  struct Gmac_Ip_BufferDescriptorType * _47;
+  long unsigned int _48;
+  long unsigned int Bd.33_49;
+  long unsigned int _50;
+  _Bool _51;
+  long unsigned int _52;
+  long unsigned int _53;
+  long unsigned int _54;
+  long unsigned int _55;
+  <unnamed type> _56;
+  long unsigned int _57;
+  long unsigned int _58;
+  <unnamed type> _59;
+  long unsigned int _60;
+  long unsigned int _61;
+  long unsigned int _62;
+  long unsigned int _63;
+  long unsigned int _64;
+  long unsigned int Bd.35_65;
+  long unsigned int Bd.37_66;
+  long unsigned int ListBd.38_67;
+  long unsigned int _68;
+  long unsigned int _69;
+  long unsigned int _70;
+  long unsigned int iftmp.31_77;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.32_78;
+  long unsigned int iftmp.34_79;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.36_80;
+  long unsigned int iftmp.31_114;
+  long unsigned int iftmp.31_115;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.32_119;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.32_120;
+  long unsigned int iftmp.34_125;
+  long unsigned int iftmp.34_126;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.36_133;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.36_134;
+  Gmac_Ip_StatusType _137;
+
+  <bb 2> :
+  Status_86 = 0;
+  i_87 = 0;
+  RingLength_88 = 0;
+  DeAllocate_89 = 0;
+  _1 = Instance_90(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_90(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (short unsigned int) Ring_94(D);
+  _6 = (int) Instance_90(D);
+  _7 = Gmac_apxState[_6];
+  _8 = _7->TxRingCount;
+  _9 = _5 < _8;
+  DevAssert (_9);
+  _10 = Buffers_96(D) != 0B;
+  DevAssert (_10);
+  _11 = Options_98(D) != 0B;
+  DevAssert (_11);
+  _12 = NumBuffers_100(D) != 0;
+  DevAssert (_12);
+  _13 = (int) Instance_90(D);
+  _14 = (int) Ring_94(D);
+  Base_102 = Gmac_apxChBases[_13][_14];
+  _15 ={v} Base_102->DMA_TXDESC_TAIL_POINTER;
+  Bd_103 = (struct Gmac_Ip_BufferDescriptorType *) _15;
+  _16 ={v} Base_102->DMA_TXDESC_LIST_ADDRESS;
+  ListBd_104 = (struct Gmac_Ip_BufferDescriptorType *) _16;
+  RingLength_105 ={v} Base_102->DMA_TXDESC_RING_LENGTH;
+  _17 = NumBuffers_100(D) <= RingLength_105;
+  DevAssert (_17);
+  FirstBd_107 = Bd_103;
+  LastBd_108 = Bd_103;
+  goto <bb 12>; [INV]
+
+  <bb 3> :
+  _18 = i_75 * 8;
+  _19 = Buffers_96(D) + _18;
+  _20 = _19->Data;
+  _21 = _20 != 0B;
+  DevAssert (_21);
+  _22 = i_75 * 8;
+  _23 = Buffers_96(D) + _22;
+  _24 = _23->Length;
+  _25 = _24 != 0;
+  DevAssert (_25);
+  _26 = Bd_71->Des3;
+  _27 = (signed int) _26;
+  if (_27 < 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_123 = 2562;
+  goto <bb 13>; [INV]
+
+  <bb 5> :
+  _28 = i_75 * 8;
+  _29 = Buffers_96(D) + _28;
+  _30 = _29->Data;
+  _31 = (long unsigned int) _30;
+  Bd_71->Des0 = _31;
+  _32 = i_75 * 8;
+  _33 = Buffers_96(D) + _32;
+  _34 = _33->Length;
+  _35 = (long unsigned int) _34;
+  Bd_71->Des2 = _35;
+  _36 = i_75 * 8;
+  _37 = Buffers_96(D) + _36;
+  _38 = _37->Data;
+  _39 = (long unsigned int) _38;
+  Bd_71->Info0 = _39;
+  _40 = i_75 * 8;
+  _41 = Buffers_96(D) + _40;
+  _42 = _41->Length;
+  _43 = (long unsigned int) _42;
+  if (Bd_71 == FirstBd_107)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.31_115 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.31_114 = 2147483648;
+
+  <bb 8> :
+  # iftmp.31_77 = PHI <iftmp.31_115(6), iftmp.31_114(7)>
+  _44 = iftmp.31_77 | _43;
+  Bd_71->Des3 = _44;
+  LastBd_117 = Bd_71;
+  Bd_118 = Bd_71 + 32;
+  _45 = RingLength_105 + 1;
+  _46 = _45 * 32;
+  _47 = ListBd_104 + _46;
+  _48 = (long unsigned int) _47;
+  Bd.33_49 = (long unsigned int) Bd_118;
+  if (_48 <= Bd.33_49)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.32_120 = ListBd_104;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.32_119 = Bd_118;
+
+  <bb 11> :
+  # iftmp.32_78 = PHI <iftmp.32_120(9), iftmp.32_119(10)>
+  Bd_121 = iftmp.32_78;
+  i_122 = i_75 + 1;
+
+  <bb 12> :
+  # Bd_71 = PHI <Bd_103(2), Bd_121(11)>
+  # LastBd_73 = PHI <LastBd_108(2), LastBd_117(11)>
+  # i_75 = PHI <i_87(2), i_122(11)>
+  if (i_75 < NumBuffers_100(D))
+    goto <bb 3>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  # Status_74 = PHI <Status_123(4), Status_86(12)>
+  if (i_75 == NumBuffers_100(D))
+    goto <bb 14>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 14> :
+  _50 = LastBd_73->Des2;
+  _51 = Options_98(D)->NoInt;
+  if (_51 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftmp.34_126 = 1073741824;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.34_125 = 3221225472;
+
+  <bb 17> :
+  # iftmp.34_79 = PHI <iftmp.34_126(15), iftmp.34_125(16)>
+  _52 = iftmp.34_79 | _50;
+  LastBd_73->Des2 = _52;
+  _53 = LastBd_73->Des3;
+  _54 = _53 | 268435456;
+  LastBd_73->Des3 = _54;
+  _55 = FirstBd_107->Des3;
+  _56 = Options_98(D)->CrcPadIns;
+  _57 = _56 << 26;
+  _58 = _57 & 201326592;
+  _59 = Options_98(D)->ChecksumIns;
+  _60 = _59 << 16;
+  _61 = _60 & 196608;
+  _62 = _58 | _61;
+  _63 = _55 | _62;
+  _64 = _63 | 2684354560;
+  FirstBd_107->Des3 = _64;
+  __asm__ __volatile__(" DSB");
+  Bd.35_65 = (long unsigned int) Bd_71;
+  Base_102->DMA_TXDESC_TAIL_POINTER ={v} Bd.35_65;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  DeAllocate_124 = 1;
+
+  <bb 19> :
+  # DeAllocate_76 = PHI <DeAllocate_89(17), DeAllocate_124(18)>
+  if (DeAllocate_76 != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 20> :
+  goto <bb 25>; [INV]
+
+  <bb 21> :
+  Bd_132 = Bd_72 + 4294967264;
+  Bd.37_66 = (long unsigned int) Bd_132;
+  ListBd.38_67 = (long unsigned int) ListBd_104;
+  if (Bd.37_66 < ListBd.38_67)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  _68 = RingLength_105 * 32;
+  iftmp.36_134 = ListBd_104 + _68;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  iftmp.36_133 = Bd_132;
+
+  <bb 24> :
+  # iftmp.36_80 = PHI <iftmp.36_134(22), iftmp.36_133(23)>
+  Bd_135 = iftmp.36_80;
+  _69 = Bd_135->Des3;
+  _70 = _69 & 2147483647;
+  Bd_135->Des3 = _70;
+
+  <bb 25> :
+  # Bd_72 = PHI <Bd_71(20), Bd_135(24)>
+  if (Bd_72 != FirstBd_107)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 26> :
+  _137 = Status_74;
+
+  <bb 27> :
+<L25>:
+  return _137;
+
+}
+
+
+Gmac_Ip_SendFrame (uint8 Instance, uint8 Ring, const struct Gmac_Ip_BufferType * Buff, const struct Gmac_Ip_TxOptionsType * Options)
+{
+  Gmac_Ip_StatusType Status;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  struct Gmac_Ip_BufferDescriptorType * Bd;
+  struct Gmac_Ip_ChannelType * Base;
+  Gmac_Ip_StatusType D.7816;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.28;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  short unsigned int _5;
+  int _6;
+  struct Gmac_Ip_StateType * _7;
+  short unsigned int _8;
+  _Bool _9;
+  _Bool _10;
+  uint8 * _11;
+  _Bool _12;
+  short unsigned int _13;
+  _Bool _14;
+  int _15;
+  int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  signed int _20;
+  uint8 * _21;
+  long unsigned int _22;
+  short unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  uint8 * _26;
+  long unsigned int _27;
+  short unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  _Bool _31;
+  long unsigned int _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  <unnamed type> _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  <unnamed type> _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  long unsigned int _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  sizetype _46;
+  sizetype _47;
+  struct Gmac_Ip_BufferDescriptorType * _48;
+  long unsigned int _49;
+  long unsigned int Bd.29_50;
+  long unsigned int iftmp.30_51;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.28_53;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.28_82;
+  struct Gmac_Ip_BufferDescriptorType * iftmp.28_83;
+  Gmac_Ip_StatusType _86;
+
+  <bb 2> :
+  Status_57 = 0;
+  _1 = Instance_58(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_58(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (short unsigned int) Ring_62(D);
+  _6 = (int) Instance_58(D);
+  _7 = Gmac_apxState[_6];
+  _8 = _7->TxRingCount;
+  _9 = _5 < _8;
+  DevAssert (_9);
+  _10 = Buff_64(D) != 0B;
+  DevAssert (_10);
+  _11 = Buff_64(D)->Data;
+  _12 = _11 != 0B;
+  DevAssert (_12);
+  _13 = Buff_64(D)->Length;
+  _14 = _13 != 0;
+  DevAssert (_14);
+  _15 = (int) Instance_58(D);
+  _16 = (int) Ring_62(D);
+  Base_68 = Gmac_apxChBases[_15][_16];
+  _17 ={v} Base_68->DMA_TXDESC_TAIL_POINTER;
+  Bd_69 = (struct Gmac_Ip_BufferDescriptorType *) _17;
+  _18 ={v} Base_68->DMA_TXDESC_LIST_ADDRESS;
+  ListBd_70 = (struct Gmac_Ip_BufferDescriptorType *) _18;
+  _19 = Bd_69->Des3;
+  _20 = (signed int) _19;
+  if (_20 < 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status_85 = 2562;
+  goto <bb 12>; [INV]
+
+  <bb 4> :
+  _21 = Buff_64(D)->Data;
+  _22 = (long unsigned int) _21;
+  Bd_69->Des0 = _22;
+  _23 = Buff_64(D)->Length;
+  _24 = (long unsigned int) _23;
+  _25 = _24 | 3221225472;
+  Bd_69->Des2 = _25;
+  _26 = Buff_64(D)->Data;
+  _27 = (long unsigned int) _26;
+  Bd_69->Info0 = _27;
+  __asm__ __volatile__(" DSB");
+  _28 = Buff_64(D)->Length;
+  _29 = (long unsigned int) _28;
+  _30 = _29 | 805306368;
+  Bd_69->Des3 = _30;
+  if (Options_76(D) != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _31 = Options_76(D)->NoInt;
+  if (_31 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _32 = Bd_69->Des2;
+  _33 = _32 & 2147483647;
+  Bd_69->Des2 = _33;
+
+  <bb 7> :
+  _34 = Bd_69->Des3;
+  _35 = Options_76(D)->CrcPadIns;
+  _36 = _35 << 26;
+  _37 = _36 & 201326592;
+  _38 = Options_76(D)->ChecksumIns;
+  _39 = _38 << 16;
+  _40 = _39 & 196608;
+  _41 = _37 | _40;
+  _42 = _34 | _41;
+  Bd_69->Des3 = _42;
+
+  <bb 8> :
+  _43 = Bd_69->Des3;
+  _44 = _43 | 2147483648;
+  Bd_69->Des3 = _44;
+  Bd_80 = Bd_69 + 32;
+  __asm__ __volatile__(" DSB");
+  _45 ={v} Base_68->DMA_TXDESC_RING_LENGTH;
+  _46 = _45 + 1;
+  _47 = _46 * 32;
+  _48 = ListBd_70 + _47;
+  _49 = (long unsigned int) _48;
+  Bd.29_50 = (long unsigned int) Bd_80;
+  if (_49 <= Bd.29_50)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.28_83 = ListBd_70;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.28_82 = Bd_80;
+
+  <bb 11> :
+  # iftmp.28_53 = PHI <iftmp.28_83(9), iftmp.28_82(10)>
+  iftmp.30_51 = (long unsigned int) iftmp.28_53;
+  Base_68->DMA_TXDESC_TAIL_POINTER ={v} iftmp.30_51;
+
+  <bb 12> :
+  # Status_52 = PHI <Status_85(3), Status_57(11)>
+  _86 = Status_52;
+
+  <bb 13> :
+<L10>:
+  return _86;
+
+}
+
+
+Gmac_Ip_GetTxMultiBuff (uint8 Instance, uint8 ring, uint16 NumBuffers, const uint16 * BufferLength, uint16 * buffId)
+{
+  uint16 FreeBuffers;
+  Gmac_Ip_StatusType Status;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  const struct Gmac_Ip_ChannelType * ChBase;
+  struct Gmac_Ip_BufferDescriptorType * Bd;
+  Gmac_Ip_StatusType D.7803;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  _Bool _5;
+  short unsigned int _6;
+  int _7;
+  struct Gmac_Ip_StateType * _8;
+  short unsigned int _9;
+  _Bool _10;
+  int _11;
+  int _12;
+  int _13;
+  struct Gmac_Ip_StateType * _14;
+  int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  signed int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  unsigned int _21;
+  unsigned int _22;
+  const uint16 * _23;
+  short unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  short unsigned int FreeBuffers.26_28;
+  long unsigned int _29;
+  sizetype _30;
+  sizetype _31;
+  struct Gmac_Ip_BufferDescriptorType * _32;
+  long unsigned int _33;
+  long unsigned int Bd.27_34;
+  int _35;
+  struct Gmac_Ip_StateType * _36;
+  int _37;
+  struct Gmac_Ip_BufferDescriptorType * _38;
+  int _39;
+  int _40;
+  short unsigned int _41;
+  Gmac_Ip_StatusType _67;
+
+  <bb 2> :
+  Status_46 = 0;
+  FreeBuffers_47 = 0;
+  _1 = Instance_48(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_48(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = buffId_52(D) != 0B;
+  DevAssert (_5);
+  _6 = (short unsigned int) ring_54(D);
+  _7 = (int) Instance_48(D);
+  _8 = Gmac_apxState[_7];
+  _9 = _8->TxRingCount;
+  _10 = _6 < _9;
+  DevAssert (_10);
+  _11 = (int) Instance_48(D);
+  _12 = (int) ring_54(D);
+  ChBase_56 = Gmac_apxChBases[_11][_12];
+  _13 = (int) Instance_48(D);
+  _14 = Gmac_apxState[_13];
+  _15 = (int) ring_54(D);
+  Bd_57 = _14->TxCurrentDesc[_15];
+  _16 ={v} ChBase_56->DMA_TXDESC_LIST_ADDRESS;
+  ListBd_58 = (struct Gmac_Ip_BufferDescriptorType *) _16;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _17 = Bd_42->Des3;
+  _18 = (signed int) _17;
+  if (_18 < 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _19 = Bd_42->Info1;
+  _20 = _19 & 268435456;
+  if (_20 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Status_65 = 2564;
+  goto <bb 10>; [INV]
+
+  <bb 6> :
+  _21 = (unsigned int) FreeBuffers_44;
+  _22 = _21 * 2;
+  _23 = BufferLength_60(D) + _22;
+  _24 = *_23;
+  _25 = (long unsigned int) _24;
+  _26 = Bd_42->Info1;
+  _27 = _26 & 16383;
+  if (_25 > _27)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status_64 = 2565;
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+  FreeBuffers.26_28 = FreeBuffers_44;
+  FreeBuffers_61 = FreeBuffers.26_28 + 1;
+  Bd_62 = Bd_42 + 32;
+  _29 ={v} ChBase_56->DMA_TXDESC_RING_LENGTH;
+  _30 = _29 + 1;
+  _31 = _30 * 32;
+  _32 = ListBd_58 + _31;
+  _33 = (long unsigned int) _32;
+  Bd.27_34 = (long unsigned int) Bd_62;
+  if (_33 <= Bd.27_34)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  Bd_63 = ListBd_58;
+
+  <bb 10> :
+  # Bd_42 = PHI <Bd_57(2), Bd_42(5), Bd_42(7), Bd_62(8), Bd_63(9)>
+  # Status_43 = PHI <Status_46(2), Status_65(5), Status_64(7), Status_43(8), Status_43(9)>
+  # FreeBuffers_44 = PHI <FreeBuffers_47(2), FreeBuffers_44(5), FreeBuffers_44(7), FreeBuffers_61(8), FreeBuffers_61(9)>
+  if (FreeBuffers_44 < NumBuffers_59(D))
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  if (Status_43 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (FreeBuffers_44 == NumBuffers_59(D))
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _35 = (int) Instance_48(D);
+  _36 = Gmac_apxState[_35];
+  _37 = (int) ring_54(D);
+  _38 = _36->TxCurrentDesc[_37];
+  _39 = _38 - ListBd_58;
+  _40 = _39 /[ex] 32;
+  _41 = (short unsigned int) _40;
+  *buffId_52(D) = _41;
+
+  <bb 14> :
+  _67 = Status_43;
+
+  <bb 15> :
+<L15>:
+  return _67;
+
+}
+
+
+Gmac_Ip_GetTxBuff (uint8 Instance, uint8 Ring, struct Gmac_Ip_BufferType * Buff, uint16 * BuffId)
+{
+  Gmac_Ip_StatusType Status;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  const struct Gmac_Ip_ChannelType * ChBase;
+  struct Gmac_Ip_BufferDescriptorType * Bd;
+  Gmac_Ip_StatusType D.7789;
+  _Bool _1;
+  int _2;
+  struct Gmac_Ip_StateType * _3;
+  _Bool _4;
+  short unsigned int _5;
+  int _6;
+  struct Gmac_Ip_StateType * _7;
+  short unsigned int _8;
+  _Bool _9;
+  _Bool _10;
+  int _11;
+  int _12;
+  int _13;
+  struct Gmac_Ip_StateType * _14;
+  int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  signed int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  short unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  short unsigned int _26;
+  short unsigned int _27;
+  int _28;
+  _Bool _29;
+  _Bool _30;
+  long unsigned int _31;
+  uint8 * _32;
+  long unsigned int _33;
+  short unsigned int _34;
+  short unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  int _38;
+  int _39;
+  short unsigned int _40;
+  int _41;
+  struct Gmac_Ip_StateType * _42;
+  int _43;
+  struct Gmac_Ip_BufferDescriptorType * _44;
+  struct Gmac_Ip_BufferDescriptorType * _45;
+  int _46;
+  struct Gmac_Ip_StateType * _47;
+  int _48;
+  struct Gmac_Ip_BufferDescriptorType * _49;
+  long unsigned int _50;
+  long unsigned int _51;
+  sizetype _52;
+  sizetype _53;
+  struct Gmac_Ip_BufferDescriptorType * _54;
+  long unsigned int _55;
+  int _56;
+  struct Gmac_Ip_StateType * _57;
+  int _58;
+  Gmac_Ip_StatusType _84;
+
+  <bb 2> :
+  Status_62 = 0;
+  _1 = Instance_63(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_63(D);
+  _3 = Gmac_apxState[_2];
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = (short unsigned int) Ring_67(D);
+  _6 = (int) Instance_63(D);
+  _7 = Gmac_apxState[_6];
+  _8 = _7->TxRingCount;
+  _9 = _5 < _8;
+  DevAssert (_9);
+  _10 = Buff_69(D) != 0B;
+  DevAssert (_10);
+  _11 = (int) Instance_63(D);
+  _12 = (int) Ring_67(D);
+  ChBase_71 = Gmac_apxChBases[_11][_12];
+  _13 = (int) Instance_63(D);
+  _14 = Gmac_apxState[_13];
+  _15 = (int) Ring_67(D);
+  Bd_72 = _14->TxCurrentDesc[_15];
+  _16 ={v} ChBase_71->DMA_TXDESC_LIST_ADDRESS;
+  ListBd_73 = (struct Gmac_Ip_BufferDescriptorType *) _16;
+  _17 = Bd_72->Des3;
+  _18 = (signed int) _17;
+  if (_18 < 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _19 = Bd_72->Info1;
+  _20 = _19 & 268435456;
+  if (_20 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_83 = 2564;
+  goto <bb 12>; [INV]
+
+  <bb 5> :
+  _21 = Buff_69(D)->Length;
+  _22 = (long unsigned int) _21;
+  _23 = Bd_72->Info1;
+  _24 = _23 & 16383;
+  if (_22 > _24)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Status_81 = 2565;
+  _25 = Bd_72->Info1;
+  _26 = (short unsigned int) _25;
+  _27 = _26 & 16383;
+  Buff_69(D)->Length = _27;
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+  _28 = (int) Instance_63(D);
+  _29 = 1;
+  _30 = ~_29;
+  if (_30 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 8> :
+  _31 = Bd_72->Des0;
+  _32 = (uint8 *) _31;
+  Buff_69(D)->Data = _32;
+  _33 = Bd_72->Info1;
+  _34 = (short unsigned int) _33;
+  _35 = _34 & 16383;
+  Buff_69(D)->Length = _35;
+  _36 = Bd_72->Info1;
+  _37 = _36 | 268435456;
+  Bd_72->Info1 = _37;
+  if (BuffId_77(D) != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _38 = Bd_72 - ListBd_73;
+  _39 = _38 /[ex] 32;
+  _40 = (short unsigned int) _39;
+  *BuffId_77(D) = _40;
+
+  <bb 10> :
+  _41 = (int) Instance_63(D);
+  _42 = Gmac_apxState[_41];
+  _43 = (int) Ring_67(D);
+  _44 = _42->TxCurrentDesc[_43];
+  _45 = _44 + 32;
+  _42->TxCurrentDesc[_43] = _45;
+  _46 = (int) Instance_63(D);
+  _47 = Gmac_apxState[_46];
+  _48 = (int) Ring_67(D);
+  _49 = _47->TxCurrentDesc[_48];
+  _50 = (long unsigned int) _49;
+  _51 ={v} ChBase_71->DMA_TXDESC_RING_LENGTH;
+  _52 = _51 + 1;
+  _53 = _52 * 32;
+  _54 = ListBd_73 + _53;
+  _55 = (long unsigned int) _54;
+  if (_50 >= _55)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _56 = (int) Instance_63(D);
+  _57 = Gmac_apxState[_56];
+  _58 = (int) Ring_67(D);
+  _57->TxCurrentDesc[_58] = ListBd_73;
+
+  <bb 12> :
+  # Status_59 = PHI <Status_83(4), Status_81(6), Status_62(7), Status_62(10), Status_62(11)>
+  _84 = Status_59;
+
+  <bb 13> :
+<L13>:
+  return _84;
+
+}
+
+
+Gmac_Ip_SetSpeed (uint8 Instance, Gmac_Ip_SpeedType Speed)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+
+  <bb 2> :
+  _1 = Instance_3(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_3(D);
+  Base_6 = Gmac_apxBases[_2];
+  GMAC_SetSpeed (Base_6, Speed_7(D));
+  return;
+
+}
+
+
+Gmac_Ip_DisableController (uint8 Instance)
+{
+  uint32 i;
+  Gmac_Ip_StatusType Status;
+  Gmac_Ip_StatusType D.7774;
+  int _1;
+  struct Gmac_Ip_ChannelType * _2;
+  long unsigned int _3;
+  int _4;
+  struct Gmac_Ip_ChannelType * _5;
+  long unsigned int _6;
+  int _7;
+  struct Gmac_Ip_QueueType * _8;
+  long unsigned int _9;
+  int _10;
+  struct Gmac_Ip_QueueType * _11;
+  long unsigned int _12;
+  int _13;
+  struct Gmac_Ip_StateType * _14;
+  short unsigned int _15;
+  long unsigned int _16;
+  int _17;
+  struct Gmac_Ip_StateType * _18;
+  short unsigned int _19;
+  int _20;
+  struct GMAC_Type * _21;
+  long unsigned int _22;
+  int _23;
+  struct GMAC_Type * _24;
+  long unsigned int _25;
+  int _26;
+  struct Gmac_Ip_ChannelType * _27;
+  long unsigned int _28;
+  int _29;
+  struct Gmac_Ip_ChannelType * _30;
+  long unsigned int _31;
+  int _32;
+  struct Gmac_Ip_ChannelType * _33;
+  long unsigned int _34;
+  int _35;
+  struct Gmac_Ip_ChannelType * _36;
+  long unsigned int _37;
+  int _38;
+  struct Gmac_Ip_StateType * _39;
+  short unsigned int _40;
+  long unsigned int _41;
+  int _42;
+  struct Gmac_Ip_StateType * _43;
+  short unsigned int _44;
+  Gmac_Ip_StatusType _65;
+
+  <bb 2> :
+  i_51 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) Instance_53(D);
+  _2 = Gmac_apxChBases[_1][i_46];
+  _3 ={v} _2->DMA_TX_CONTROL;
+  _4 = (int) Instance_53(D);
+  _5 = Gmac_apxChBases[_4][i_46];
+  _6 = _3 & 4294967294;
+  _5->DMA_TX_CONTROL ={v} _6;
+  _7 = (int) Instance_53(D);
+  _8 = Gmac_apxQueueBases[_7][i_46];
+  _9 ={v} _8->MTL_TXQ_OPERATION_MODE;
+  _10 = (int) Instance_53(D);
+  _11 = Gmac_apxQueueBases[_10][i_46];
+  _12 = _9 | 1;
+  _11->MTL_TXQ_OPERATION_MODE ={v} _12;
+  i_68 = i_46 + 1;
+
+  <bb 4> :
+  # i_46 = PHI <i_51(2), i_68(3)>
+  _13 = (int) Instance_53(D);
+  _14 = Gmac_apxState[_13];
+  _15 = _14->TxRingCount;
+  _16 = (long unsigned int) _15;
+  if (i_46 < _16)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _17 = (int) Instance_53(D);
+  _18 = Gmac_apxState[_17];
+  _19 = _18->TxRingCount;
+  Status_55 = Gmac_Ip_CheckMTLEmpty (Instance_53(D), _19, 1);
+  if (Status_55 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 6> :
+  _20 = (int) Instance_53(D);
+  _21 = Gmac_apxBases[_20];
+  _22 ={v} _21->MAC_CONFIGURATION;
+  _23 = (int) Instance_53(D);
+  _24 = Gmac_apxBases[_23];
+  _25 = _22 & 4294967292;
+  _24->MAC_CONFIGURATION ={v} _25;
+  i_57 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _26 = (int) Instance_53(D);
+  _27 = Gmac_apxChBases[_26][i_47];
+  _28 ={v} _27->DMA_RX_CONTROL;
+  _29 = (int) Instance_53(D);
+  _30 = Gmac_apxChBases[_29][i_47];
+  _31 = _28 & 4294967294;
+  _30->DMA_RX_CONTROL ={v} _31;
+  _32 = (int) Instance_53(D);
+  _33 = Gmac_apxChBases[_32][i_47];
+  _34 ={v} _33->DMA_RX_CONTROL;
+  _35 = (int) Instance_53(D);
+  _36 = Gmac_apxChBases[_35][i_47];
+  _37 = _34 | 2147483648;
+  _36->DMA_RX_CONTROL ={v} _37;
+  i_64 = i_47 + 1;
+
+  <bb 8> :
+  # i_47 = PHI <i_57(6), i_64(7)>
+  _38 = (int) Instance_53(D);
+  _39 = Gmac_apxState[_38];
+  _40 = _39->RxRingCount;
+  _41 = (long unsigned int) _40;
+  if (i_47 < _41)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _42 = (int) Instance_53(D);
+  _43 = Gmac_apxState[_42];
+  _44 = _43->RxRingCount;
+  Status_59 = Gmac_Ip_CheckMTLEmpty (Instance_53(D), _44, 0);
+  if (Status_59 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  Gmac_Ip_RestoreTxDescr (Instance_53(D));
+  Gmac_Ip_RestoreRxDescr (Instance_53(D));
+
+  <bb 11> :
+  # Status_45 = PHI <Status_55(5), Status_59(9), Status_59(10)>
+  _65 = Status_45;
+
+  <bb 12> :
+<L10>:
+  return _65;
+
+}
+
+
+Gmac_Ip_EnableController (uint8 Instance)
+{
+  uint32 i;
+  int _1;
+  struct Gmac_Ip_ChannelType * _2;
+  long unsigned int _3;
+  int _4;
+  struct Gmac_Ip_ChannelType * _5;
+  long unsigned int _6;
+  int _7;
+  struct Gmac_Ip_StateType * _8;
+  short unsigned int _9;
+  long unsigned int _10;
+  int _11;
+  struct Gmac_Ip_ChannelType * _12;
+  long unsigned int _13;
+  int _14;
+  struct Gmac_Ip_ChannelType * _15;
+  long unsigned int _16;
+  int _17;
+  struct Gmac_Ip_StateType * _18;
+  short unsigned int _19;
+  long unsigned int _20;
+  int _21;
+  struct GMAC_Type * _22;
+  long unsigned int _23;
+  int _24;
+  struct GMAC_Type * _25;
+  long unsigned int _26;
+
+  <bb 2> :
+  i_31 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) Instance_33(D);
+  _2 = Gmac_apxChBases[_1][i_27];
+  _3 ={v} _2->DMA_TX_CONTROL;
+  _4 = (int) Instance_33(D);
+  _5 = Gmac_apxChBases[_4][i_27];
+  _6 = _3 | 1;
+  _5->DMA_TX_CONTROL ={v} _6;
+  i_39 = i_27 + 1;
+
+  <bb 4> :
+  # i_27 = PHI <i_31(2), i_39(3)>
+  _7 = (int) Instance_33(D);
+  _8 = Gmac_apxState[_7];
+  _9 = _8->TxRingCount;
+  _10 = (long unsigned int) _9;
+  if (i_27 < _10)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  i_34 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _11 = (int) Instance_33(D);
+  _12 = Gmac_apxChBases[_11][i_28];
+  _13 ={v} _12->DMA_RX_CONTROL;
+  _14 = (int) Instance_33(D);
+  _15 = Gmac_apxChBases[_14][i_28];
+  _16 = _13 | 1;
+  _15->DMA_RX_CONTROL ={v} _16;
+  i_37 = i_28 + 1;
+
+  <bb 7> :
+  # i_28 = PHI <i_34(5), i_37(6)>
+  _17 = (int) Instance_33(D);
+  _18 = Gmac_apxState[_17];
+  _19 = _18->RxRingCount;
+  _20 = (long unsigned int) _19;
+  if (i_28 < _20)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _21 = (int) Instance_33(D);
+  _22 = Gmac_apxBases[_21];
+  _23 ={v} _22->MAC_CONFIGURATION;
+  _24 = (int) Instance_33(D);
+  _25 = Gmac_apxBases[_24];
+  _26 = _23 | 3;
+  _25->MAC_CONFIGURATION ={v} _26;
+  return;
+
+}
+
+
+Gmac_Ip_SetPowerState (uint8 Instance, Gmac_Ip_PowerStateType PowerState)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+
+  <bb 2> :
+  _1 = Instance_3(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_3(D);
+  Base_6 = Gmac_apxBases[_2];
+  GMAC_SetPowerState (Base_6, PowerState_7(D));
+  return;
+
+}
+
+
+Gmac_Ip_GetPowerState (uint8 Instance)
+{
+  const struct GMAC_Type * Base;
+  Gmac_Ip_PowerStateType D.7768;
+  _Bool _1;
+  int _2;
+  Gmac_Ip_PowerStateType _8;
+
+  <bb 2> :
+  _1 = Instance_3(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_3(D);
+  Base_6 = Gmac_apxBases[_2];
+  _8 = GMAC_GetPowerState (Base_6);
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+Gmac_Ip_Deinit (uint8 Instance)
+{
+  struct GMAC_Type * Base;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  int _5;
+
+  <bb 2> :
+  _1 = Instance_6(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_6(D);
+  Base_9 = Gmac_apxBases[_2];
+  _3 ={v} Base_9->DMA_MODE;
+  _4 = _3 | 1;
+  Base_9->DMA_MODE ={v} _4;
+
+  <bb 3> :
+  _5 = (int) Instance_6(D);
+  Gmac_apxState[_5] = 0B;
+  return;
+
+}
+
+
+Gmac_Ip_EnableTimeGateScheduling (uint8 Instance, const boolean Enable)
+{
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  boolean TimeoutOccurred;
+  boolean SwitchToSWList;
+  Gmac_Ip_StatusType Status;
+  Gmac_Ip_StatusType D.7763;
+  _Bool _1;
+  int _2;
+  struct GMAC_Type * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  struct GMAC_Type * _7;
+  long unsigned int _8;
+  int _9;
+  struct GMAC_Type * _10;
+  long unsigned int _11;
+  int _12;
+  struct GMAC_Type * _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int TimeoutTicks.25_16;
+  _Bool _17;
+  _Bool _18;
+  _Bool _19;
+  int _20;
+  struct GMAC_Type * _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  _Bool _24;
+  int _25;
+  struct GMAC_Type * _26;
+  long unsigned int _27;
+  int _28;
+  struct GMAC_Type * _29;
+  long unsigned int _30;
+  Gmac_Ip_StatusType _50;
+
+  <bb 2> :
+  Status_34 = 0;
+  SwitchToSWList_35 = 0;
+  TimeoutOccurred_36 = 0;
+  _1 = Instance_37(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_37(D);
+  _3 = Gmac_apxBases[_2];
+  _4 ={v} _3->MTL_EST_CONTROL;
+  _5 = _4 & 1;
+  if (_5 != 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 3> :
+  if (Enable_40(D) != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 4> :
+  Status_43 = Gmac_Ip_ConfigTimeGateScheduling (Instance_37(D));
+  _6 = (int) Instance_37(D);
+  _7 = Gmac_apxBases[_6];
+  _8 ={v} _7->MTL_EST_CONTROL;
+  _9 = (int) Instance_37(D);
+  _10 = Gmac_apxBases[_9];
+  _11 = _8 | 4099;
+  _10->MTL_EST_CONTROL ={v} _11;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 5> :
+  _12 = (int) Instance_37(D);
+  _13 = Gmac_apxBases[_12];
+  _14 ={v} _13->MTL_EST_CONTROL;
+  _15 = _14 & 2;
+  SwitchToSWList_46 = _15 == 0;
+  TimeoutTicks.25_16 = TimeoutTicks;
+  TimeoutOccurred_48 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.25_16);
+  _17 = ~SwitchToSWList_46;
+  if (_17 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _18 = ~TimeoutOccurred_48;
+  if (_18 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _19 = ~TimeoutOccurred_48;
+  if (_19 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (Status_43 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _20 = (int) Instance_37(D);
+  _21 = Gmac_apxBases[_20];
+  _22 ={v} _21->MTL_EST_STATUS;
+  _23 = _22 & 2;
+  if (_23 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  Status_49 = 1;
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+  _24 = ~Enable_40(D);
+  if (_24 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _25 = (int) Instance_37(D);
+  _26 = Gmac_apxBases[_25];
+  _27 ={v} _26->MTL_EST_CONTROL;
+  _28 = (int) Instance_37(D);
+  _29 = Gmac_apxBases[_28];
+  _30 = _27 & 4294967294;
+  _29->MTL_EST_CONTROL ={v} _30;
+
+  <bb 13> :
+  # Status_31 = PHI <Status_43(9), Status_34(11), Status_34(12), Status_34(3), Status_49(10)>
+  _50 = Status_31;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 14> :
+<L15>:
+  return _50;
+
+}
+
+
+Gmac_Ip_Init (uint8 Instance, const struct Gmac_CtrlConfigType * Config)
+{
+  uint32 i;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7749;
+  int iftmp.24;
+  int iftmp.23;
+  int iftmp.22;
+  int iftmp.21;
+  _Bool _1;
+  _Bool _2;
+  struct sGmac_Ip_StateType * _3;
+  _Bool _4;
+  const struct sGmac_Ip_ConfigType * _5;
+  _Bool _6;
+  const struct sGmac_Ip_RxRingConfigType * _7;
+  _Bool _8;
+  const struct sGmac_Ip_TxRingConfigType * _9;
+  _Bool _10;
+  const uint8 * _11;
+  _Bool _12;
+  const struct sGmac_Ip_ConfigType * _13;
+  unsigned char _14;
+  const struct sGmac_Ip_ConfigType * _15;
+  unsigned char _16;
+  _Bool _17;
+  const struct sGmac_Ip_ConfigType * _18;
+  unsigned char _19;
+  const struct sGmac_Ip_ConfigType * _20;
+  unsigned char _21;
+  _Bool _22;
+  const struct sGmac_Ip_RxRingConfigType * _23;
+  long unsigned int _24;
+  const struct sGmac_Ip_RxRingConfigType * _25;
+  struct Gmac_Ip_BufferDescriptorType * _26;
+  _Bool _27;
+  const struct sGmac_Ip_RxRingConfigType * _28;
+  long unsigned int _29;
+  const struct sGmac_Ip_RxRingConfigType * _30;
+  short unsigned int _31;
+  _Bool _32;
+  const struct sGmac_Ip_RxRingConfigType * _33;
+  long unsigned int _34;
+  const struct sGmac_Ip_RxRingConfigType * _35;
+  struct Gmac_Ip_BufferDescriptorType * _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  _Bool _39;
+  const struct sGmac_Ip_RxRingConfigType * _40;
+  long unsigned int _41;
+  const struct sGmac_Ip_RxRingConfigType * _42;
+  uint8 * _43;
+  const struct sGmac_Ip_RxRingConfigType * _44;
+  long unsigned int _45;
+  const struct sGmac_Ip_RxRingConfigType * _46;
+  uint8 * _47;
+  long unsigned int _48;
+  long unsigned int _49;
+  _Bool _50;
+  const struct sGmac_Ip_RxRingConfigType * _51;
+  long unsigned int _52;
+  const struct sGmac_Ip_RxRingConfigType * _53;
+  short unsigned int _54;
+  long unsigned int _55;
+  long unsigned int _56;
+  _Bool _57;
+  const struct sGmac_Ip_RxRingConfigType * _58;
+  long unsigned int _59;
+  const struct sGmac_Ip_RxRingConfigType * _60;
+  short unsigned int _61;
+  long unsigned int _62;
+  const struct sGmac_Ip_RxRingConfigType * _63;
+  long unsigned int _64;
+  const struct sGmac_Ip_RxRingConfigType * _65;
+  short unsigned int _66;
+  long unsigned int _67;
+  long unsigned int _68;
+  long unsigned int _69;
+  _Bool _70;
+  const struct sGmac_Ip_ConfigType * _71;
+  unsigned char _72;
+  long unsigned int _73;
+  const struct sGmac_Ip_TxRingConfigType * _74;
+  long unsigned int _75;
+  const struct sGmac_Ip_TxRingConfigType * _76;
+  struct Gmac_Ip_BufferDescriptorType * _77;
+  _Bool _78;
+  const struct sGmac_Ip_TxRingConfigType * _79;
+  long unsigned int _80;
+  const struct sGmac_Ip_TxRingConfigType * _81;
+  short unsigned int _82;
+  _Bool _83;
+  const struct sGmac_Ip_TxRingConfigType * _84;
+  long unsigned int _85;
+  const struct sGmac_Ip_TxRingConfigType * _86;
+  struct Gmac_Ip_BufferDescriptorType * _87;
+  long unsigned int _88;
+  long unsigned int _89;
+  _Bool _90;
+  const struct sGmac_Ip_TxRingConfigType * _91;
+  long unsigned int _92;
+  const struct sGmac_Ip_TxRingConfigType * _93;
+  uint8 * _94;
+  const struct sGmac_Ip_TxRingConfigType * _95;
+  long unsigned int _96;
+  const struct sGmac_Ip_TxRingConfigType * _97;
+  uint8 * _98;
+  long unsigned int _99;
+  long unsigned int _100;
+  _Bool _101;
+  const struct sGmac_Ip_TxRingConfigType * _102;
+  long unsigned int _103;
+  const struct sGmac_Ip_TxRingConfigType * _104;
+  short unsigned int _105;
+  long unsigned int _106;
+  long unsigned int _107;
+  _Bool _108;
+  const struct sGmac_Ip_TxRingConfigType * _109;
+  long unsigned int _110;
+  const struct sGmac_Ip_TxRingConfigType * _111;
+  short unsigned int _112;
+  long unsigned int _113;
+  const struct sGmac_Ip_TxRingConfigType * _114;
+  long unsigned int _115;
+  const struct sGmac_Ip_TxRingConfigType * _116;
+  short unsigned int _117;
+  long unsigned int _118;
+  long unsigned int _119;
+  long unsigned int _120;
+  _Bool _121;
+  const struct sGmac_Ip_ConfigType * _122;
+  unsigned char _123;
+  long unsigned int _124;
+  int _125;
+  const struct sGmac_Ip_ConfigType * _126;
+  const uint8 * _127;
+  int iftmp.21_130;
+  int iftmp.22_131;
+  int iftmp.23_132;
+  int iftmp.24_133;
+  int iftmp.21_147;
+  int iftmp.21_148;
+  int iftmp.22_150;
+  int iftmp.22_151;
+  Gmac_Ip_StatusType _164;
+  int iftmp.24_168;
+  int iftmp.24_169;
+  int iftmp.23_177;
+  int iftmp.23_178;
+
+  <bb 2> :
+  _1 = Instance_137(D) == 0;
+  DevAssert (_1);
+  _2 = Config_140(D) != 0B;
+  DevAssert (_2);
+  _3 = Config_140(D)->Gmac_pCtrlState;
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = Config_140(D)->Gmac_pCtrlConfig;
+  _6 = _5 != 0B;
+  DevAssert (_6);
+  _7 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _8 = _7 != 0B;
+  DevAssert (_8);
+  _9 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _10 = _9 != 0B;
+  DevAssert (_10);
+  _11 = Config_140(D)->Gmac_pau8CtrlPhysAddr;
+  _12 = _11 != 0B;
+  DevAssert (_12);
+  _13 = Config_140(D)->Gmac_pCtrlConfig;
+  _14 = _13->RxRingCount;
+  if (_14 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _15 = Config_140(D)->Gmac_pCtrlConfig;
+  _16 = _15->RxRingCount;
+  if (_16 <= 2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.21_147 = 1;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.21_148 = 0;
+
+  <bb 6> :
+  # iftmp.21_130 = PHI <iftmp.21_147(4), iftmp.21_148(5)>
+  _17 = (_Bool) iftmp.21_130;
+  DevAssert (_17);
+  _18 = Config_140(D)->Gmac_pCtrlConfig;
+  _19 = _18->TxRingCount;
+  if (_19 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _20 = Config_140(D)->Gmac_pCtrlConfig;
+  _21 = _20->TxRingCount;
+  if (_21 <= 2)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.22_150 = 1;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.22_151 = 0;
+
+  <bb 10> :
+  # iftmp.22_131 = PHI <iftmp.22_150(8), iftmp.22_151(9)>
+  _22 = (_Bool) iftmp.22_131;
+  DevAssert (_22);
+  i_153 = 0;
+  goto <bb 16>; [INV]
+
+  <bb 11> :
+  _23 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _24 = i_128 * 24;
+  _25 = _23 + _24;
+  _26 = _25->RingDesc;
+  _27 = _26 != 0B;
+  DevAssert (_27);
+  _28 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _29 = i_128 * 24;
+  _30 = _28 + _29;
+  _31 = _30->RingSize;
+  _32 = _31 > 1;
+  DevAssert (_32);
+  _33 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _34 = i_128 * 24;
+  _35 = _33 + _34;
+  _36 = _35->RingDesc;
+  _37 = (long unsigned int) _36;
+  _38 = _37 & 3;
+  _39 = _38 == 0;
+  DevAssert (_39);
+  _40 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _41 = i_128 * 24;
+  _42 = _40 + _41;
+  _43 = _42->Buffer;
+  if (_43 == 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _44 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _45 = i_128 * 24;
+  _46 = _44 + _45;
+  _47 = _46->Buffer;
+  _48 = (long unsigned int) _47;
+  _49 = _48 & 63;
+  if (_49 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.23_178 = 1;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.23_177 = 0;
+
+  <bb 15> :
+  # iftmp.23_132 = PHI <iftmp.23_178(13), iftmp.23_177(14)>
+  _50 = (_Bool) iftmp.23_132;
+  DevAssert (_50);
+  _51 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _52 = i_128 * 24;
+  _53 = _51 + _52;
+  _54 = _53->BufferLen;
+  _55 = (long unsigned int) _54;
+  _56 = _55 & 3;
+  _57 = _56 == 0;
+  DevAssert (_57);
+  _58 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _59 = i_128 * 24;
+  _60 = _58 + _59;
+  _61 = _60->RingSize;
+  _62 = (long unsigned int) _61;
+  _63 = Config_140(D)->Gmac_paCtrlRxRingConfig;
+  _64 = i_128 * 24;
+  _65 = _63 + _64;
+  _66 = _65->BufferLen;
+  _67 = (long unsigned int) _66;
+  _68 = _62 * _67;
+  _69 = _68 & 255;
+  _70 = _69 == 0;
+  DevAssert (_70);
+  i_182 = i_128 + 1;
+
+  <bb 16> :
+  # i_128 = PHI <i_153(10), i_182(15)>
+  _71 = Config_140(D)->Gmac_pCtrlConfig;
+  _72 = _71->RxRingCount;
+  _73 = (long unsigned int) _72;
+  if (i_128 < _73)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  i_154 = 0;
+  goto <bb 23>; [INV]
+
+  <bb 18> :
+  _74 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _75 = i_129 * 48;
+  _76 = _74 + _75;
+  _77 = _76->RingDesc;
+  _78 = _77 != 0B;
+  DevAssert (_78);
+  _79 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _80 = i_129 * 48;
+  _81 = _79 + _80;
+  _82 = _81->RingSize;
+  _83 = _82 > 1;
+  DevAssert (_83);
+  _84 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _85 = i_129 * 48;
+  _86 = _84 + _85;
+  _87 = _86->RingDesc;
+  _88 = (long unsigned int) _87;
+  _89 = _88 & 3;
+  _90 = _89 == 0;
+  DevAssert (_90);
+  _91 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _92 = i_129 * 48;
+  _93 = _91 + _92;
+  _94 = _93->Buffer;
+  if (_94 == 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  _95 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _96 = i_129 * 48;
+  _97 = _95 + _96;
+  _98 = _97->Buffer;
+  _99 = (long unsigned int) _98;
+  _100 = _99 & 63;
+  if (_100 == 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  iftmp.24_169 = 1;
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  iftmp.24_168 = 0;
+
+  <bb 22> :
+  # iftmp.24_133 = PHI <iftmp.24_169(20), iftmp.24_168(21)>
+  _101 = (_Bool) iftmp.24_133;
+  DevAssert (_101);
+  _102 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _103 = i_129 * 48;
+  _104 = _102 + _103;
+  _105 = _104->BufferLen;
+  _106 = (long unsigned int) _105;
+  _107 = _106 & 3;
+  _108 = _107 == 0;
+  DevAssert (_108);
+  _109 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _110 = i_129 * 48;
+  _111 = _109 + _110;
+  _112 = _111->RingSize;
+  _113 = (long unsigned int) _112;
+  _114 = Config_140(D)->Gmac_paCtrlTxRingConfig;
+  _115 = i_129 * 48;
+  _116 = _114 + _115;
+  _117 = _116->BufferLen;
+  _118 = (long unsigned int) _117;
+  _119 = _113 * _118;
+  _120 = _119 & 255;
+  _121 = _120 == 0;
+  DevAssert (_121);
+  i_173 = i_129 + 1;
+
+  <bb 23> :
+  # i_129 = PHI <i_154(17), i_173(22)>
+  _122 = Config_140(D)->Gmac_pCtrlConfig;
+  _123 = _122->TxRingCount;
+  _124 = (long unsigned int) _123;
+  if (i_129 < _124)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  _125 = (int) Instance_137(D);
+  Base_155 = Gmac_apxBases[_125];
+
+  <bb 25> :
+  Status_157 = Gmac_Ip_InitDMA (Instance_137(D), Config_140(D));
+  if (Status_157 == 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  _126 = Config_140(D)->Gmac_pCtrlConfig;
+  Gmac_Ip_InitSafetyEvents (Base_155, _126);
+  Gmac_Ip_InitMTL (Instance_137(D), Config_140(D));
+  _127 = Config_140(D)->Gmac_pau8CtrlPhysAddr;
+  Gmac_Ip_SetMacAddr (Instance_137(D), _127);
+  Gmac_Ip_InitMAC (Base_155, Config_140(D));
+  Gmac_Ip_InitStateStructure (Instance_137(D), Config_140(D));
+  Gmac_Ip_TxTimeAwareShaperInit (Instance_137(D), Config_140(D));
+
+  <bb 27> :
+  _164 = Status_157;
+
+  <bb 28> :
+<L26>:
+  return _164;
+
+}
+
+
+Gmac_Ip_TxTimeAwareShaperInit (uint8 Instance, const struct Gmac_CtrlConfigType * Config)
+{
+  uint16 GateListNum;
+  _Bool _1;
+  _Bool _2;
+  const struct sGmac_Ip_TxTimeAwareShaper * _3;
+  _Bool _4;
+  const struct sGmac_Ip_TxTimeAwareShaper * _5;
+  int _6;
+  short unsigned int _7;
+  const struct sGmac_Ip_TxTimeAwareShaper * _8;
+  int _9;
+  unsigned char _10;
+  const struct sGmac_Ip_TxTimeAwareShaper * _11;
+  int _12;
+  short unsigned int _13;
+  const struct sGmac_Ip_TxTimeAwareShaper * _14;
+  int _15;
+  short unsigned int _16;
+  const struct sGmac_Ip_TxTimeAwareShaper * _17;
+  struct Gmac_Ip_TxGateControl * _18;
+  unsigned int _19;
+  unsigned int _20;
+  struct Gmac_Ip_TxGateControl * _21;
+  int _22;
+  struct Gmac_Ip_TxGateControl * _23;
+  unsigned int _24;
+  unsigned int _25;
+  struct Gmac_Ip_TxGateControl * _26;
+  unsigned char _27;
+  const struct sGmac_Ip_TxTimeAwareShaper * _28;
+  struct Gmac_Ip_TxGateControl * _29;
+  unsigned int _30;
+  unsigned int _31;
+  struct Gmac_Ip_TxGateControl * _32;
+  int _33;
+  struct Gmac_Ip_TxGateControl * _34;
+  unsigned int _35;
+  unsigned int _36;
+  struct Gmac_Ip_TxGateControl * _37;
+  long unsigned int _38;
+  short unsigned int GateListNum.20_39;
+  int _40;
+  short unsigned int _41;
+  const struct sGmac_Ip_TxTimeAwareShaper * _42;
+  int _43;
+  long unsigned int _44;
+  const struct sGmac_Ip_TxTimeAwareShaper * _45;
+  int _46;
+  long unsigned int _47;
+  const struct sGmac_Ip_TxTimeAwareShaper * _48;
+  int _49;
+  long unsigned int _50;
+  const struct sGmac_Ip_TxTimeAwareShaper * _51;
+  int _52;
+  long unsigned int _53;
+  const struct sGmac_Ip_TxTimeAwareShaper * _54;
+  int _55;
+  long unsigned int _56;
+
+  <bb 2> :
+  _1 = Instance_59(D) == 0;
+  DevAssert (_1);
+  _2 = Config_62(D) != 0B;
+  DevAssert (_2);
+  _3 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _4 = _3 != 0B;
+  DevAssert (_4);
+  _5 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _6 = (int) Instance_59(D);
+  _7 = _5->ReleaseAdvanceTime;
+  Gmac_Ip_TxTimeAwareShaperData[_6].ReleaseAdvanceTime = _7;
+  _8 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _9 = (int) Instance_59(D);
+  _10 = _8->PreemptionClassic;
+  Gmac_Ip_TxTimeAwareShaperData[_9].PreemptionClassic = _10;
+  _11 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _12 = (int) Instance_59(D);
+  _13 = _11->HoldAdvanceTime;
+  Gmac_Ip_TxTimeAwareShaperData[_12].HoldAdvanceTime = _13;
+  _14 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _15 = (int) Instance_59(D);
+  _16 = _14->GateControlDepth;
+  Gmac_Ip_TxTimeAwareShaperData[_15].GateControlDepth = _16;
+  GateListNum_69 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _17 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _18 = _17->GateControlList;
+  _19 = (unsigned int) GateListNum_57;
+  _20 = _19 * 8;
+  _21 = _18 + _20;
+  _22 = (int) Instance_59(D);
+  _23 = Gmac_Ip_TxTimeAwareShaperData[_22].GateControlList;
+  _24 = (unsigned int) GateListNum_57;
+  _25 = _24 * 8;
+  _26 = _23 + _25;
+  _27 = _21->GateControl;
+  _26->GateControl = _27;
+  _28 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _29 = _28->GateControlList;
+  _30 = (unsigned int) GateListNum_57;
+  _31 = _30 * 8;
+  _32 = _29 + _31;
+  _33 = (int) Instance_59(D);
+  _34 = Gmac_Ip_TxTimeAwareShaperData[_33].GateControlList;
+  _35 = (unsigned int) GateListNum_57;
+  _36 = _35 * 8;
+  _37 = _34 + _36;
+  _38 = _32->TimeInterval;
+  _37->TimeInterval = _38;
+  GateListNum.20_39 = GateListNum_57;
+  GateListNum_77 = GateListNum.20_39 + 1;
+
+  <bb 4> :
+  # GateListNum_57 = PHI <GateListNum_69(2), GateListNum_77(3)>
+  _40 = (int) Instance_59(D);
+  _41 = Gmac_Ip_TxTimeAwareShaperData[_40].GateControlDepth;
+  if (GateListNum_57 < _41)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _42 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _43 = (int) Instance_59(D);
+  _44 = _42->BaseTimeSecond;
+  Gmac_Ip_TxTimeAwareShaperData[_43].BaseTimeSecond = _44;
+  _45 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _46 = (int) Instance_59(D);
+  _47 = _45->BaseTimeNanoSecond;
+  Gmac_Ip_TxTimeAwareShaperData[_46].BaseTimeNanoSecond = _47;
+  _48 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _49 = (int) Instance_59(D);
+  _50 = _48->CycleTimeSecond;
+  Gmac_Ip_TxTimeAwareShaperData[_49].CycleTimeSecond = _50;
+  _51 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _52 = (int) Instance_59(D);
+  _53 = _51->CycleTimeNanoSecond;
+  Gmac_Ip_TxTimeAwareShaperData[_52].CycleTimeNanoSecond = _53;
+  _54 = Config_62(D)->Gmac_pCtrlTxTimeAwareShaper;
+  _55 = (int) Instance_59(D);
+  _56 = _54->ExtendedTime;
+  Gmac_Ip_TxTimeAwareShaperData[_55].ExtendedTime = _56;
+  return;
+
+}
+
+
+Gmac_Ip_GetPayloadType (uint32 PayloadTypeVal)
+{
+  Gmac_Ip_PayloadType PayloadType;
+  Gmac_Ip_PayloadType D.7723;
+  Gmac_Ip_PayloadType _7;
+
+  <bb 2> :
+  if (PayloadTypeVal_2(D) == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  PayloadType_6 = 1;
+  goto <bb 9>; [INV]
+
+  <bb 4> :
+  if (PayloadTypeVal_2(D) == 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  PayloadType_5 = 2;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  if (PayloadTypeVal_2(D) == 3)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  PayloadType_4 = 3;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  PayloadType_3 = 0;
+
+  <bb 9> :
+  # PayloadType_1 = PHI <PayloadType_6(3), PayloadType_5(5), PayloadType_4(7), PayloadType_3(8)>
+  _7 = PayloadType_1;
+
+  <bb 10> :
+<L9>:
+  return _7;
+
+}
+
+
+Gmac_Ip_CheckMTLEmpty (uint8 Instance, uint16 NumQueues, boolean IsTransmit)
+{
+  uint16 i;
+  boolean QueueEmpty;
+  boolean TimeoutOccurred;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType iftmp.19;
+  Gmac_Ip_StatusType D.7707;
+  int _1;
+  int _2;
+  struct Gmac_Ip_QueueType * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  int _7;
+  struct Gmac_Ip_QueueType * _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int TimeoutTicks.17_11;
+  _Bool _12;
+  _Bool _13;
+  short unsigned int i.18_14;
+  _Bool _15;
+  Gmac_Ip_StatusType iftmp.19_19;
+  Gmac_Ip_StatusType iftmp.19_34;
+  Gmac_Ip_StatusType iftmp.19_35;
+  Gmac_Ip_StatusType _36;
+
+  <bb 2> :
+  TimeoutOccurred_22 = 0;
+  i_23 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 4> :
+  if (IsTransmit_27(D) != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _1 = (int) Instance_28(D);
+  _2 = (int) i_18;
+  _3 = Gmac_apxQueueBases[_1][_2];
+  _4 ={v} _3->MTL_TXQ_DEBUG;
+  _5 = _4 & 16;
+  QueueEmpty_30 = _5 == 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _6 = (int) Instance_28(D);
+  _7 = (int) i_18;
+  _8 = Gmac_apxQueueBases[_6][_7];
+  _9 ={v} _8->MTL_RXQ_DEBUG;
+  _10 = _9 & 48;
+  QueueEmpty_29 = _10 == 0;
+
+  <bb 7> :
+  # QueueEmpty_17 = PHI <QueueEmpty_30(5), QueueEmpty_29(6)>
+  TimeoutTicks.17_11 = TimeoutTicks;
+  TimeoutOccurred_32 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.17_11);
+  _12 = ~QueueEmpty_17;
+  if (_12 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _13 = ~TimeoutOccurred_32;
+  if (_13 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i.18_14 = i_18;
+  i_33 = i.18_14 + 1;
+
+  <bb 10> :
+  # TimeoutOccurred_16 = PHI <TimeoutOccurred_22(2), TimeoutOccurred_32(9)>
+  # i_18 = PHI <i_23(2), i_33(9)>
+  if (i_18 < NumQueues_25(D))
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _15 = ~TimeoutOccurred_16;
+  if (_15 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (TimeoutOccurred_16 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.19_35 = 3;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.19_34 = 0;
+
+  <bb 15> :
+  # iftmp.19_19 = PHI <iftmp.19_35(13), iftmp.19_34(14)>
+  _36 = iftmp.19_19;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 16> :
+<L14>:
+  return _36;
+
+}
+
+
+Gmac_Ip_RestoreRxDescr (uint8 Instance)
+{
+  uint32 j;
+  uint32 i;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  uint32 iftmp.16;
+  int _1;
+  struct Gmac_Ip_ChannelType * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct Gmac_Ip_BufferDescriptorType * _5;
+  long unsigned int _6;
+  struct Gmac_Ip_BufferDescriptorType * _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct Gmac_Ip_BufferDescriptorType * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  struct Gmac_Ip_BufferDescriptorType * _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  struct Gmac_Ip_BufferDescriptorType * _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  struct Gmac_Ip_BufferDescriptorType * _19;
+  int _20;
+  struct Gmac_Ip_ChannelType * _21;
+  long unsigned int _22;
+  int _23;
+  struct Gmac_Ip_StateType * _24;
+  short unsigned int _25;
+  long unsigned int _26;
+  uint32 iftmp.16_29;
+  uint32 iftmp.16_40;
+  uint32 iftmp.16_41;
+
+  <bb 2> :
+  i_32 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = (int) Instance_34(D);
+  _2 = Gmac_apxChBases[_1][i_27];
+  _3 ={v} _2->DMA_RXDESC_LIST_ADDRESS;
+  ListBd_35 = (struct Gmac_Ip_BufferDescriptorType *) _3;
+  j_36 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _4 = j_28 * 32;
+  _5 = ListBd_35 + _4;
+  _6 = j_28 * 32;
+  _7 = ListBd_35 + _6;
+  _8 = _5->Info0;
+  _7->Des0 = _8;
+  _9 = j_28 * 32;
+  _10 = ListBd_35 + _9;
+  _11 = _10->Info1;
+  _12 = j_28 * 32;
+  _13 = ListBd_35 + _12;
+  _14 = _11 & 4278190079;
+  _13->Info1 = _14;
+  _15 = j_28 * 32;
+  _16 = ListBd_35 + _15;
+  _17 = _16->Info0;
+  if (_17 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.16_41 = 3238002688;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.16_40 = 1090519040;
+
+  <bb 7> :
+  # iftmp.16_29 = PHI <iftmp.16_41(5), iftmp.16_40(6)>
+  _18 = j_28 * 32;
+  _19 = ListBd_35 + _18;
+  _19->Des3 = iftmp.16_29;
+  j_43 = j_28 + 1;
+
+  <bb 8> :
+  # j_28 = PHI <j_36(3), j_43(7)>
+  _20 = (int) Instance_34(D);
+  _21 = Gmac_apxChBases[_20][i_27];
+  _22 ={v} _21->DMA_RXDESC_RING_LENGTH;
+  if (j_28 <= _22)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i_37 = i_27 + 1;
+
+  <bb 10> :
+  # i_27 = PHI <i_32(2), i_37(9)>
+  _23 = (int) Instance_34(D);
+  _24 = Gmac_apxState[_23];
+  _25 = _24->RxRingCount;
+  _26 = (long unsigned int) _25;
+  if (i_27 < _26)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  return;
+
+}
+
+
+Gmac_Ip_RestoreTxDescr (uint8 Instance)
+{
+  uint32 j;
+  uint32 i;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  int _1;
+  struct Gmac_Ip_ChannelType * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct Gmac_Ip_BufferDescriptorType * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  struct Gmac_Ip_BufferDescriptorType * _8;
+  long unsigned int _9;
+  struct Gmac_Ip_BufferDescriptorType * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  struct Gmac_Ip_BufferDescriptorType * _13;
+  long unsigned int _14;
+  struct Gmac_Ip_BufferDescriptorType * _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  struct Gmac_Ip_BufferDescriptorType * _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  struct Gmac_Ip_BufferDescriptorType * _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  struct Gmac_Ip_BufferDescriptorType * _24;
+  long unsigned int _25;
+  int _26;
+  struct Gmac_Ip_ChannelType * _27;
+  long unsigned int _28;
+  int _29;
+  struct Gmac_Ip_StateType * _30;
+  short unsigned int _31;
+  long unsigned int _32;
+
+  <bb 2> :
+  i_38 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 3> :
+  _1 = (int) Instance_40(D);
+  _2 = Gmac_apxChBases[_1][i_33];
+  _3 ={v} _2->DMA_TXDESC_LIST_ADDRESS;
+  ListBd_41 = (struct Gmac_Ip_BufferDescriptorType *) _3;
+  j_42 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _4 = j_34 * 32;
+  _5 = ListBd_41 + _4;
+  _6 = _5->Info0;
+  if (_6 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _7 = j_34 * 32;
+  _8 = ListBd_41 + _7;
+  _9 = j_34 * 32;
+  _10 = ListBd_41 + _9;
+  _11 = _8->Info0;
+  _10->Des0 = _11;
+  _12 = j_34 * 32;
+  _13 = ListBd_41 + _12;
+  _13->Info0 = 0;
+
+  <bb 6> :
+  _14 = j_34 * 32;
+  _15 = ListBd_41 + _14;
+  _16 = _15->Des3;
+  _17 = j_34 * 32;
+  _18 = ListBd_41 + _17;
+  _19 = _16 & 2147483647;
+  _18->Des3 = _19;
+  _20 = j_34 * 32;
+  _21 = ListBd_41 + _20;
+  _22 = _21->Info1;
+  _23 = j_34 * 32;
+  _24 = ListBd_41 + _23;
+  _25 = _22 & 4026531839;
+  _24->Info1 = _25;
+  j_48 = j_34 + 1;
+
+  <bb 7> :
+  # j_34 = PHI <j_42(3), j_48(6)>
+  _26 = (int) Instance_40(D);
+  _27 = Gmac_apxChBases[_26][i_33];
+  _28 ={v} _27->DMA_TXDESC_RING_LENGTH;
+  if (j_34 <= _28)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  i_43 = i_33 + 1;
+
+  <bb 9> :
+  # i_33 = PHI <i_38(2), i_43(8)>
+  _29 = (int) Instance_40(D);
+  _30 = Gmac_apxState[_29];
+  _31 = _30->TxRingCount;
+  _32 = (long unsigned int) _31;
+  if (i_33 < _32)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  return;
+
+}
+
+
+Gmac_Ip_RestoreRxCtxtDescr (struct Gmac_Ip_BufferDescriptorType * Bd)
+{
+  boolean restored;
+  boolean D.7694;
+  long unsigned int _1;
+  signed int _2;
+  _Bool _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  _Bool _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  boolean _24;
+
+  <bb 2> :
+  restored_13 = 0;
+  _1 = Bd_15(D)->Des3;
+  _2 = (signed int) _1;
+  _3 = _2 >= 0;
+  DevAssert (_3);
+  _4 = Bd_15(D)->Des3;
+  _5 = _4 & 1073741824;
+  _6 = _5 != 0;
+  DevAssert (_6);
+  _7 = Bd_15(D)->Info0;
+  if (_7 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _8 = Bd_15(D)->Info0;
+  Bd_15(D)->Des0 = _8;
+  Bd_15(D)->Des1 = 0;
+  Bd_15(D)->Des2 = 0;
+  _9 = Bd_15(D)->Info1;
+  _10 = _9 & 4278190079;
+  Bd_15(D)->Info1 = _10;
+  Bd_15(D)->Des3 = 3238002688;
+  restored_23 = 1;
+
+  <bb 4> :
+  # restored_11 = PHI <restored_13(2), restored_23(3)>
+  _24 = restored_11;
+
+  <bb 5> :
+<L2>:
+  return _24;
+
+}
+
+
+Gmac_Ip_GetTimestamp (const struct GMAC_Type * Base, const struct Gmac_Ip_BufferDescriptorType * Bd, struct Gmac_Ip_TimestampType * Timestamp)
+{
+  uint32 BdSec;
+  uint32 CurrTimeSec;
+  uint16 CurrTimeSecHi;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  short unsigned int _4;
+  long unsigned int _5;
+
+  <bb 2> :
+  _1 = Bd_9(D)->Des3;
+  _2 = _1 & 131072;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  CurrTimeSec_15 ={v} Base_14(D)->MAC_SYSTEM_TIME_SECONDS;
+  _3 ={v} Base_14(D)->MAC_SYSTEM_TIME_HIGHER_WORD_SECONDS;
+  CurrTimeSecHi_16 = (uint16) _3;
+  BdSec_17 = Bd_9(D)->Des1;
+  if (BdSec_17 <= CurrTimeSec_15)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Timestamp_10(D)->secondsHi = CurrTimeSecHi_16;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = CurrTimeSecHi_16 + 65535;
+  Timestamp_10(D)->secondsHi = _4;
+
+  <bb 6> :
+  Timestamp_10(D)->seconds = BdSec_17;
+  _5 = Bd_9(D)->Des0;
+  Timestamp_10(D)->nanoseconds = _5;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  Timestamp_10(D)->secondsHi = 0;
+  Timestamp_10(D)->seconds = 0;
+  Timestamp_10(D)->nanoseconds = 0;
+
+  <bb 8> :
+  return;
+
+}
+
+
+Gmac_Ip_InitRxBD (uint8 Instance, const struct Gmac_Ip_ConfigType * Config, const struct Gmac_Ip_RxRingConfigType * RxRingConfig)
+{
+  uint16 j;
+  uint8 i;
+  long unsigned int iftmp.14;
+  long unsigned int iftmp.13;
+  unsigned int _1;
+  unsigned int _2;
+  const struct Gmac_Ip_RxRingConfigType * _3;
+  uint8 * _4;
+  unsigned int _5;
+  unsigned int _6;
+  const struct Gmac_Ip_RxRingConfigType * _7;
+  uint8 * _8;
+  unsigned int _9;
+  unsigned int _10;
+  const struct Gmac_Ip_RxRingConfigType * _11;
+  short unsigned int _12;
+  int _13;
+  int _14;
+  int _15;
+  sizetype _16;
+  uint8 * _17;
+  unsigned int _18;
+  unsigned int _19;
+  const struct Gmac_Ip_RxRingConfigType * _20;
+  struct Gmac_Ip_BufferDescriptorType * _21;
+  unsigned int _22;
+  unsigned int _23;
+  struct Gmac_Ip_BufferDescriptorType * _24;
+  long unsigned int _25;
+  unsigned int _26;
+  unsigned int _27;
+  const struct Gmac_Ip_RxRingConfigType * _28;
+  struct Gmac_Ip_BufferDescriptorType * _29;
+  unsigned int _30;
+  unsigned int _31;
+  struct Gmac_Ip_BufferDescriptorType * _32;
+  unsigned int _33;
+  unsigned int _34;
+  const struct Gmac_Ip_RxRingConfigType * _35;
+  struct Gmac_Ip_BufferDescriptorType * _36;
+  unsigned int _37;
+  unsigned int _38;
+  struct Gmac_Ip_BufferDescriptorType * _39;
+  unsigned int _40;
+  unsigned int _41;
+  const struct Gmac_Ip_RxRingConfigType * _42;
+  struct Gmac_Ip_BufferDescriptorType * _43;
+  unsigned int _44;
+  unsigned int _45;
+  struct Gmac_Ip_BufferDescriptorType * _46;
+  unsigned int _47;
+  unsigned int _48;
+  const struct Gmac_Ip_RxRingConfigType * _49;
+  struct Gmac_Ip_BufferDescriptorType * _50;
+  unsigned int _51;
+  unsigned int _52;
+  struct Gmac_Ip_BufferDescriptorType * _53;
+  long unsigned int _54;
+  unsigned int _55;
+  unsigned int _56;
+  const struct Gmac_Ip_RxRingConfigType * _57;
+  short unsigned int _58;
+  long unsigned int _59;
+  unsigned int _60;
+  unsigned int _61;
+  const struct Gmac_Ip_RxRingConfigType * _62;
+  struct Gmac_Ip_BufferDescriptorType * _63;
+  unsigned int _64;
+  unsigned int _65;
+  struct Gmac_Ip_BufferDescriptorType * _66;
+  long unsigned int _67;
+  unsigned int _68;
+  unsigned int _69;
+  const struct Gmac_Ip_RxRingConfigType * _70;
+  struct Gmac_Ip_BufferDescriptorType * _71;
+  unsigned int _72;
+  unsigned int _73;
+  struct Gmac_Ip_BufferDescriptorType * _74;
+  unsigned int _75;
+  unsigned int _76;
+  const struct Gmac_Ip_RxRingConfigType * _77;
+  struct Gmac_Ip_BufferDescriptorType * _78;
+  unsigned int _79;
+  unsigned int _80;
+  struct Gmac_Ip_BufferDescriptorType * _81;
+  unsigned int _82;
+  unsigned int _83;
+  const struct Gmac_Ip_RxRingConfigType * _84;
+  struct Gmac_Ip_BufferDescriptorType * _85;
+  unsigned int _86;
+  unsigned int _87;
+  struct Gmac_Ip_BufferDescriptorType * _88;
+  unsigned int _89;
+  unsigned int _90;
+  const struct Gmac_Ip_RxRingConfigType * _91;
+  struct Gmac_Ip_BufferDescriptorType * _92;
+  unsigned int _93;
+  unsigned int _94;
+  struct Gmac_Ip_BufferDescriptorType * _95;
+  unsigned int _96;
+  unsigned int _97;
+  const struct Gmac_Ip_RxRingConfigType * _98;
+  struct Gmac_Ip_BufferDescriptorType * _99;
+  unsigned int _100;
+  unsigned int _101;
+  struct Gmac_Ip_BufferDescriptorType * _102;
+  unsigned int _103;
+  unsigned int _104;
+  const struct Gmac_Ip_RxRingConfigType * _105;
+  short unsigned int _106;
+  long unsigned int _107;
+  unsigned int _108;
+  unsigned int _109;
+  const struct Gmac_Ip_RxRingConfigType * _110;
+  struct Gmac_Ip_BufferDescriptorType * _111;
+  unsigned int _112;
+  unsigned int _113;
+  struct Gmac_Ip_BufferDescriptorType * _114;
+  long unsigned int _115;
+  unsigned int _116;
+  unsigned int _117;
+  const struct Gmac_Ip_RxRingConfigType * _118;
+  struct Gmac_Ip_BufferDescriptorType * _119;
+  unsigned int _120;
+  unsigned int _121;
+  struct Gmac_Ip_BufferDescriptorType * _122;
+  short unsigned int j.12_123;
+  unsigned int _124;
+  unsigned int _125;
+  const struct Gmac_Ip_RxRingConfigType * _126;
+  short unsigned int _127;
+  unsigned int _128;
+  unsigned int _129;
+  const struct Gmac_Ip_RxRingConfigType * _130;
+  struct Gmac_Ip_BufferDescriptorType * _131;
+  unsigned int _132;
+  unsigned int _133;
+  const struct Gmac_Ip_RxRingConfigType * _134;
+  short unsigned int _135;
+  unsigned int _136;
+  unsigned int _137;
+  struct Gmac_Ip_BufferDescriptorType * _138;
+  int _139;
+  int _140;
+  struct Gmac_Ip_ChannelType * _141;
+  long unsigned int _142;
+  unsigned int _143;
+  unsigned int _144;
+  const struct Gmac_Ip_RxRingConfigType * _145;
+  struct Gmac_Ip_BufferDescriptorType * _146;
+  int _147;
+  int _148;
+  struct Gmac_Ip_ChannelType * _149;
+  long unsigned int _150;
+  unsigned int _151;
+  unsigned int _152;
+  const struct Gmac_Ip_RxRingConfigType * _153;
+  short unsigned int _154;
+  long unsigned int _155;
+  int _156;
+  int _157;
+  struct Gmac_Ip_ChannelType * _158;
+  long unsigned int _159;
+  unsigned int _160;
+  unsigned int _161;
+  const struct Gmac_Ip_RxRingConfigType * _162;
+  unsigned char _163;
+  int _164;
+  int _165;
+  struct Gmac_Ip_ChannelType * _166;
+  unsigned int _167;
+  unsigned int _168;
+  const struct Gmac_Ip_RxRingConfigType * _169;
+  unsigned char _170;
+  unsigned char _171;
+  long unsigned int _172;
+  long unsigned int _173;
+  long unsigned int _174;
+  unsigned int _175;
+  unsigned int _176;
+  const struct Gmac_Ip_RxRingConfigType * _177;
+  short unsigned int _178;
+  short unsigned int _179;
+  long unsigned int _180;
+  long unsigned int _181;
+  long unsigned int _182;
+  int _183;
+  int _184;
+  struct Gmac_Ip_ChannelType * _185;
+  long unsigned int _186;
+  int _187;
+  int _188;
+  struct Gmac_Ip_ChannelType * _189;
+  unsigned int _190;
+  unsigned int _191;
+  const struct Gmac_Ip_RxRingConfigType * _192;
+  unsigned char _193;
+  long unsigned int _194;
+  long unsigned int _195;
+  long unsigned int _196;
+  unsigned int _197;
+  unsigned int _198;
+  const struct Gmac_Ip_RxRingConfigType * _199;
+  short unsigned int _200;
+  short unsigned int _201;
+  long unsigned int _202;
+  long unsigned int _203;
+  long unsigned int _204;
+  int _205;
+  int _206;
+  struct Gmac_Ip_ChannelType * _207;
+  long unsigned int _208;
+  int _209;
+  int _210;
+  struct Gmac_Ip_ChannelType * _211;
+  long unsigned int _212;
+  unsigned int _213;
+  unsigned int _214;
+  const struct Gmac_Ip_RxRingConfigType * _215;
+  long unsigned int _216;
+  unsigned int _217;
+  unsigned int _218;
+  const struct Gmac_Ip_RxRingConfigType * _219;
+  long unsigned int _220;
+  long unsigned int _221;
+  long unsigned int _222;
+  unsigned int _223;
+  unsigned int _224;
+  const struct Gmac_Ip_RxRingConfigType * _225;
+  long unsigned int _226;
+  long unsigned int _227;
+  long unsigned int _228;
+  int _229;
+  int _230;
+  struct Gmac_Ip_ChannelType * _231;
+  long unsigned int _232;
+  _Bool _233;
+  int _234;
+  int _235;
+  struct Gmac_Ip_ChannelType * _236;
+  long unsigned int _237;
+  int _238;
+  int _239;
+  struct Gmac_Ip_ChannelType * _240;
+  long unsigned int _241;
+  unsigned char i.15_242;
+  unsigned char _243;
+  long unsigned int iftmp.13_246;
+  long unsigned int iftmp.14_247;
+  long unsigned int iftmp.13_266;
+  long unsigned int iftmp.13_267;
+  long unsigned int iftmp.14_268;
+  long unsigned int iftmp.14_269;
+
+  <bb 2> :
+  i_253 = 0;
+  goto <bb 21>; [INV]
+
+  <bb 3> :
+  j_256 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _1 = (unsigned int) i_244;
+  _2 = _1 * 24;
+  _3 = RxRingConfig_257(D) + _2;
+  _4 = _3->Buffer;
+  if (_4 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _5 = (unsigned int) i_244;
+  _6 = _5 * 24;
+  _7 = RxRingConfig_257(D) + _6;
+  _8 = _7->Buffer;
+  _9 = (unsigned int) i_244;
+  _10 = _9 * 24;
+  _11 = RxRingConfig_257(D) + _10;
+  _12 = _11->BufferLen;
+  _13 = (int) _12;
+  _14 = (int) j_245;
+  _15 = _13 * _14;
+  _16 = (sizetype) _15;
+  _17 = _8 + _16;
+  _18 = (unsigned int) i_244;
+  _19 = _18 * 24;
+  _20 = RxRingConfig_257(D) + _19;
+  _21 = _20->RingDesc;
+  _22 = (unsigned int) j_245;
+  _23 = _22 * 32;
+  _24 = _21 + _23;
+  _25 = (long unsigned int) _17;
+  _24->Des0 = _25;
+  _26 = (unsigned int) i_244;
+  _27 = _26 * 24;
+  _28 = RxRingConfig_257(D) + _27;
+  _29 = _28->RingDesc;
+  _30 = (unsigned int) j_245;
+  _31 = _30 * 32;
+  _32 = _29 + _31;
+  _32->Des1 = 0;
+  _33 = (unsigned int) i_244;
+  _34 = _33 * 24;
+  _35 = RxRingConfig_257(D) + _34;
+  _36 = _35->RingDesc;
+  _37 = (unsigned int) j_245;
+  _38 = _37 * 32;
+  _39 = _36 + _38;
+  _39->Des2 = 0;
+  _40 = (unsigned int) i_244;
+  _41 = _40 * 24;
+  _42 = RxRingConfig_257(D) + _41;
+  _43 = _42->RingDesc;
+  _44 = (unsigned int) j_245;
+  _45 = _44 * 32;
+  _46 = _43 + _45;
+  _47 = (unsigned int) i_244;
+  _48 = _47 * 24;
+  _49 = RxRingConfig_257(D) + _48;
+  _50 = _49->RingDesc;
+  _51 = (unsigned int) j_245;
+  _52 = _51 * 32;
+  _53 = _50 + _52;
+  _54 = _46->Des0;
+  _53->Info0 = _54;
+  _55 = (unsigned int) i_244;
+  _56 = _55 * 24;
+  _57 = RxRingConfig_257(D) + _56;
+  _58 = _57->BufferLen;
+  _59 = (long unsigned int) _58;
+  _60 = (unsigned int) i_244;
+  _61 = _60 * 24;
+  _62 = RxRingConfig_257(D) + _61;
+  _63 = _62->RingDesc;
+  _64 = (unsigned int) j_245;
+  _65 = _64 * 32;
+  _66 = _63 + _65;
+  _67 = _59 & 16383;
+  _66->Info1 = _67;
+  _68 = (unsigned int) i_244;
+  _69 = _68 * 24;
+  _70 = RxRingConfig_257(D) + _69;
+  _71 = _70->RingDesc;
+  _72 = (unsigned int) j_245;
+  _73 = _72 * 32;
+  _74 = _71 + _73;
+  _74->Des3 = 3238002688;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _75 = (unsigned int) i_244;
+  _76 = _75 * 24;
+  _77 = RxRingConfig_257(D) + _76;
+  _78 = _77->RingDesc;
+  _79 = (unsigned int) j_245;
+  _80 = _79 * 32;
+  _81 = _78 + _80;
+  _81->Des0 = 0;
+  _82 = (unsigned int) i_244;
+  _83 = _82 * 24;
+  _84 = RxRingConfig_257(D) + _83;
+  _85 = _84->RingDesc;
+  _86 = (unsigned int) j_245;
+  _87 = _86 * 32;
+  _88 = _85 + _87;
+  _88->Des1 = 0;
+  _89 = (unsigned int) i_244;
+  _90 = _89 * 24;
+  _91 = RxRingConfig_257(D) + _90;
+  _92 = _91->RingDesc;
+  _93 = (unsigned int) j_245;
+  _94 = _93 * 32;
+  _95 = _92 + _94;
+  _95->Des2 = 0;
+  _96 = (unsigned int) i_244;
+  _97 = _96 * 24;
+  _98 = RxRingConfig_257(D) + _97;
+  _99 = _98->RingDesc;
+  _100 = (unsigned int) j_245;
+  _101 = _100 * 32;
+  _102 = _99 + _101;
+  _102->Info0 = 0;
+  _103 = (unsigned int) i_244;
+  _104 = _103 * 24;
+  _105 = RxRingConfig_257(D) + _104;
+  _106 = _105->BufferLen;
+  _107 = (long unsigned int) _106;
+  _108 = (unsigned int) i_244;
+  _109 = _108 * 24;
+  _110 = RxRingConfig_257(D) + _109;
+  _111 = _110->RingDesc;
+  _112 = (unsigned int) j_245;
+  _113 = _112 * 32;
+  _114 = _111 + _113;
+  _115 = _107 & 16383;
+  _114->Info1 = _115;
+  _116 = (unsigned int) i_244;
+  _117 = _116 * 24;
+  _118 = RxRingConfig_257(D) + _117;
+  _119 = _118->RingDesc;
+  _120 = (unsigned int) j_245;
+  _121 = _120 * 32;
+  _122 = _119 + _121;
+  _122->Des3 = 1090519040;
+
+  <bb 7> :
+  j.12_123 = j_245;
+  j_285 = j.12_123 + 1;
+
+  <bb 8> :
+  # j_245 = PHI <j_256(3), j_285(7)>
+  _124 = (unsigned int) i_244;
+  _125 = _124 * 24;
+  _126 = RxRingConfig_257(D) + _125;
+  _127 = _126->RingSize;
+  if (j_245 < _127)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _128 = (unsigned int) i_244;
+  _129 = _128 * 24;
+  _130 = RxRingConfig_257(D) + _129;
+  _131 = _130->RingDesc;
+  _132 = (unsigned int) i_244;
+  _133 = _132 * 24;
+  _134 = RxRingConfig_257(D) + _133;
+  _135 = _134->RingSize;
+  _136 = (unsigned int) _135;
+  _137 = _136 * 32;
+  _138 = _131 + _137;
+  _139 = (int) Instance_258(D);
+  _140 = (int) i_244;
+  _141 = Gmac_apxChBases[_139][_140];
+  _142 = (long unsigned int) _138;
+  _141->DMA_RXDESC_TAIL_POINTER ={v} _142;
+  _143 = (unsigned int) i_244;
+  _144 = _143 * 24;
+  _145 = RxRingConfig_257(D) + _144;
+  _146 = _145->RingDesc;
+  _147 = (int) Instance_258(D);
+  _148 = (int) i_244;
+  _149 = Gmac_apxChBases[_147][_148];
+  _150 = (long unsigned int) _146;
+  _149->DMA_RXDESC_LIST_ADDRESS ={v} _150;
+  _151 = (unsigned int) i_244;
+  _152 = _151 * 24;
+  _153 = RxRingConfig_257(D) + _152;
+  _154 = _153->RingSize;
+  _155 = (long unsigned int) _154;
+  _156 = (int) Instance_258(D);
+  _157 = (int) i_244;
+  _158 = Gmac_apxChBases[_156][_157];
+  _159 = _155 + 4294967295;
+  _158->DMA_RXDESC_RING_LENGTH ={v} _159;
+  _160 = (unsigned int) i_244;
+  _161 = _160 * 24;
+  _162 = RxRingConfig_257(D) + _161;
+  _163 = _162->DmaBurstLength;
+  if (_163 > 32)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _164 = (int) Instance_258(D);
+  _165 = (int) i_244;
+  _166 = Gmac_apxChBases[_164][_165];
+  _166->DMA_CONTROL ={v} 1114112;
+  _167 = (unsigned int) i_244;
+  _168 = _167 * 24;
+  _169 = RxRingConfig_257(D) + _168;
+  _170 = _169->DmaBurstLength;
+  _171 = _170 / 8;
+  _172 = (long unsigned int) _171;
+  _173 = _172 << 16;
+  _174 = _173 & 4128768;
+  _175 = (unsigned int) i_244;
+  _176 = _175 * 24;
+  _177 = RxRingConfig_257(D) + _176;
+  _178 = _177->BufferLen;
+  _179 = _178 >> 2;
+  _180 = (long unsigned int) _179;
+  _181 = _180 << 3;
+  _182 = _181 & 32760;
+  _183 = (int) Instance_258(D);
+  _184 = (int) i_244;
+  _185 = Gmac_apxChBases[_183][_184];
+  _186 = _174 | _182;
+  _185->DMA_RX_CONTROL ={v} _186;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _187 = (int) Instance_258(D);
+  _188 = (int) i_244;
+  _189 = Gmac_apxChBases[_187][_188];
+  _189->DMA_CONTROL ={v} 1048576;
+  _190 = (unsigned int) i_244;
+  _191 = _190 * 24;
+  _192 = RxRingConfig_257(D) + _191;
+  _193 = _192->DmaBurstLength;
+  _194 = (long unsigned int) _193;
+  _195 = _194 << 16;
+  _196 = _195 & 4128768;
+  _197 = (unsigned int) i_244;
+  _198 = _197 * 24;
+  _199 = RxRingConfig_257(D) + _198;
+  _200 = _199->BufferLen;
+  _201 = _200 >> 2;
+  _202 = (long unsigned int) _201;
+  _203 = _202 << 3;
+  _204 = _203 & 32760;
+  _205 = (int) Instance_258(D);
+  _206 = (int) i_244;
+  _207 = Gmac_apxChBases[_205][_206];
+  _208 = _196 | _204;
+  _207->DMA_RX_CONTROL ={v} _208;
+
+  <bb 12> :
+  _209 = (int) Instance_258(D);
+  _210 = (int) i_244;
+  _211 = Gmac_apxChBases[_209][_210];
+  _212 ={v} _211->DMA_INTERRUPT_ENABLE;
+  _213 = (unsigned int) i_244;
+  _214 = _213 * 24;
+  _215 = RxRingConfig_257(D) + _214;
+  _216 = _215->Interrupts;
+  _217 = (unsigned int) i_244;
+  _218 = _217 * 24;
+  _219 = RxRingConfig_257(D) + _218;
+  _220 = _219->Interrupts;
+  _221 = _220 & 2117;
+  if (_221 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.13_267 = 32768;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.13_266 = 0;
+
+  <bb 15> :
+  # iftmp.13_246 = PHI <iftmp.13_267(13), iftmp.13_266(14)>
+  _222 = iftmp.13_246 | _216;
+  _223 = (unsigned int) i_244;
+  _224 = _223 * 24;
+  _225 = RxRingConfig_257(D) + _224;
+  _226 = _225->Interrupts;
+  _227 = _226 & 13698;
+  if (_227 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.14_269 = 16384;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.14_268 = 0;
+
+  <bb 18> :
+  # iftmp.14_247 = PHI <iftmp.14_269(16), iftmp.14_268(17)>
+  _228 = iftmp.14_247 | _222;
+  _229 = (int) Instance_258(D);
+  _230 = (int) i_244;
+  _231 = Gmac_apxChBases[_229][_230];
+  _232 = _212 | _228;
+  _231->DMA_INTERRUPT_ENABLE ={v} _232;
+  _233 = Config_255(D)->EnableCtrl;
+  if (_233 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  _234 = (int) Instance_258(D);
+  _235 = (int) i_244;
+  _236 = Gmac_apxChBases[_234][_235];
+  _237 ={v} _236->DMA_RX_CONTROL;
+  _238 = (int) Instance_258(D);
+  _239 = (int) i_244;
+  _240 = Gmac_apxChBases[_238][_239];
+  _241 = _237 | 1;
+  _240->DMA_RX_CONTROL ={v} _241;
+
+  <bb 20> :
+  i.15_242 = i_244;
+  i_272 = i.15_242 + 1;
+
+  <bb 21> :
+  # i_244 = PHI <i_253(2), i_272(20)>
+  _243 = Config_255(D)->RxRingCount;
+  if (i_244 < _243)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  return;
+
+}
+
+
+Gmac_Ip_InitTxBD (uint8 Instance, const struct Gmac_Ip_ConfigType * Config, const struct Gmac_Ip_TxRingConfigType * TxRingConfig)
+{
+  uint16 j;
+  uint8 i;
+  long unsigned int iftmp.10;
+  long unsigned int iftmp.9;
+  long unsigned int iftmp.7;
+  unsigned int _1;
+  unsigned int _2;
+  const struct Gmac_Ip_TxRingConfigType * _3;
+  uint8 * _4;
+  unsigned int _5;
+  unsigned int _6;
+  const struct Gmac_Ip_TxRingConfigType * _7;
+  uint8 * _8;
+  unsigned int _9;
+  unsigned int _10;
+  const struct Gmac_Ip_TxRingConfigType * _11;
+  short unsigned int _12;
+  int _13;
+  int _14;
+  int _15;
+  sizetype _16;
+  uint8 * _17;
+  unsigned int _18;
+  unsigned int _19;
+  const struct Gmac_Ip_TxRingConfigType * _20;
+  struct Gmac_Ip_BufferDescriptorType * _21;
+  unsigned int _22;
+  unsigned int _23;
+  struct Gmac_Ip_BufferDescriptorType * _24;
+  unsigned int _25;
+  unsigned int _26;
+  const struct Gmac_Ip_TxRingConfigType * _27;
+  struct Gmac_Ip_BufferDescriptorType * _28;
+  unsigned int _29;
+  unsigned int _30;
+  struct Gmac_Ip_BufferDescriptorType * _31;
+  unsigned int _32;
+  unsigned int _33;
+  const struct Gmac_Ip_TxRingConfigType * _34;
+  struct Gmac_Ip_BufferDescriptorType * _35;
+  unsigned int _36;
+  unsigned int _37;
+  struct Gmac_Ip_BufferDescriptorType * _38;
+  unsigned int _39;
+  unsigned int _40;
+  const struct Gmac_Ip_TxRingConfigType * _41;
+  struct Gmac_Ip_BufferDescriptorType * _42;
+  unsigned int _43;
+  unsigned int _44;
+  struct Gmac_Ip_BufferDescriptorType * _45;
+  unsigned int _46;
+  unsigned int _47;
+  const struct Gmac_Ip_TxRingConfigType * _48;
+  struct Gmac_Ip_BufferDescriptorType * _49;
+  unsigned int _50;
+  unsigned int _51;
+  struct Gmac_Ip_BufferDescriptorType * _52;
+  unsigned int _53;
+  unsigned int _54;
+  const struct Gmac_Ip_TxRingConfigType * _55;
+  short unsigned int _56;
+  long unsigned int _57;
+  unsigned int _58;
+  unsigned int _59;
+  const struct Gmac_Ip_TxRingConfigType * _60;
+  struct Gmac_Ip_BufferDescriptorType * _61;
+  unsigned int _62;
+  unsigned int _63;
+  struct Gmac_Ip_BufferDescriptorType * _64;
+  long unsigned int _65;
+  short unsigned int j.8_66;
+  unsigned int _67;
+  unsigned int _68;
+  const struct Gmac_Ip_TxRingConfigType * _69;
+  short unsigned int _70;
+  unsigned int _71;
+  unsigned int _72;
+  const struct Gmac_Ip_TxRingConfigType * _73;
+  struct Gmac_Ip_BufferDescriptorType * _74;
+  int _75;
+  int _76;
+  struct Gmac_Ip_ChannelType * _77;
+  long unsigned int _78;
+  unsigned int _79;
+  unsigned int _80;
+  const struct Gmac_Ip_TxRingConfigType * _81;
+  struct Gmac_Ip_BufferDescriptorType * _82;
+  int _83;
+  int _84;
+  struct Gmac_Ip_ChannelType * _85;
+  long unsigned int _86;
+  unsigned int _87;
+  unsigned int _88;
+  const struct Gmac_Ip_TxRingConfigType * _89;
+  short unsigned int _90;
+  long unsigned int _91;
+  int _92;
+  int _93;
+  struct Gmac_Ip_ChannelType * _94;
+  long unsigned int _95;
+  unsigned int _96;
+  unsigned int _97;
+  const struct Gmac_Ip_TxRingConfigType * _98;
+  unsigned char _99;
+  int _100;
+  int _101;
+  struct Gmac_Ip_ChannelType * _102;
+  unsigned int _103;
+  unsigned int _104;
+  const struct Gmac_Ip_TxRingConfigType * _105;
+  unsigned char _106;
+  unsigned char _107;
+  long unsigned int _108;
+  long unsigned int _109;
+  long unsigned int _110;
+  int _111;
+  int _112;
+  struct Gmac_Ip_ChannelType * _113;
+  long unsigned int _114;
+  int _115;
+  int _116;
+  struct Gmac_Ip_ChannelType * _117;
+  unsigned int _118;
+  unsigned int _119;
+  const struct Gmac_Ip_TxRingConfigType * _120;
+  unsigned char _121;
+  long unsigned int _122;
+  long unsigned int _123;
+  long unsigned int _124;
+  int _125;
+  int _126;
+  struct Gmac_Ip_ChannelType * _127;
+  long unsigned int _128;
+  unsigned int _129;
+  unsigned int _130;
+  const struct Gmac_Ip_TxRingConfigType * _131;
+  long unsigned int _132;
+  unsigned int _133;
+  unsigned int _134;
+  const struct Gmac_Ip_TxRingConfigType * _135;
+  long unsigned int _136;
+  long unsigned int _137;
+  long unsigned int _138;
+  unsigned int _139;
+  unsigned int _140;
+  const struct Gmac_Ip_TxRingConfigType * _141;
+  long unsigned int _142;
+  long unsigned int _143;
+  int _144;
+  int _145;
+  struct Gmac_Ip_ChannelType * _146;
+  long unsigned int _147;
+  _Bool _148;
+  int _149;
+  int _150;
+  struct Gmac_Ip_ChannelType * _151;
+  long unsigned int _152;
+  int _153;
+  int _154;
+  struct Gmac_Ip_ChannelType * _155;
+  long unsigned int _156;
+  unsigned char i.11_157;
+  unsigned char _158;
+  long unsigned int iftmp.7_161;
+  long unsigned int iftmp.9_162;
+  long unsigned int iftmp.10_163;
+  long unsigned int iftmp.9_181;
+  long unsigned int iftmp.9_182;
+  long unsigned int iftmp.10_183;
+  long unsigned int iftmp.10_184;
+  long unsigned int iftmp.7_188;
+  long unsigned int iftmp.7_189;
+
+  <bb 2> :
+  i_168 = 0;
+  goto <bb 21>; [INV]
+
+  <bb 3> :
+  j_171 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _1 = (unsigned int) i_159;
+  _2 = _1 * 48;
+  _3 = TxRingConfig_172(D) + _2;
+  _4 = _3->Buffer;
+  if (_4 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _5 = (unsigned int) i_159;
+  _6 = _5 * 48;
+  _7 = TxRingConfig_172(D) + _6;
+  _8 = _7->Buffer;
+  _9 = (unsigned int) i_159;
+  _10 = _9 * 48;
+  _11 = TxRingConfig_172(D) + _10;
+  _12 = _11->BufferLen;
+  _13 = (int) _12;
+  _14 = (int) j_160;
+  _15 = _13 * _14;
+  _16 = (sizetype) _15;
+  _17 = _8 + _16;
+  iftmp.7_189 = (long unsigned int) _17;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.7_188 = 0;
+
+  <bb 7> :
+  # iftmp.7_161 = PHI <iftmp.7_189(5), iftmp.7_188(6)>
+  _18 = (unsigned int) i_159;
+  _19 = _18 * 48;
+  _20 = TxRingConfig_172(D) + _19;
+  _21 = _20->RingDesc;
+  _22 = (unsigned int) j_160;
+  _23 = _22 * 32;
+  _24 = _21 + _23;
+  _24->Des0 = iftmp.7_161;
+  _25 = (unsigned int) i_159;
+  _26 = _25 * 48;
+  _27 = TxRingConfig_172(D) + _26;
+  _28 = _27->RingDesc;
+  _29 = (unsigned int) j_160;
+  _30 = _29 * 32;
+  _31 = _28 + _30;
+  _31->Des1 = 0;
+  _32 = (unsigned int) i_159;
+  _33 = _32 * 48;
+  _34 = TxRingConfig_172(D) + _33;
+  _35 = _34->RingDesc;
+  _36 = (unsigned int) j_160;
+  _37 = _36 * 32;
+  _38 = _35 + _37;
+  _38->Des2 = 0;
+  _39 = (unsigned int) i_159;
+  _40 = _39 * 48;
+  _41 = TxRingConfig_172(D) + _40;
+  _42 = _41->RingDesc;
+  _43 = (unsigned int) j_160;
+  _44 = _43 * 32;
+  _45 = _42 + _44;
+  _45->Des3 = 0;
+  _46 = (unsigned int) i_159;
+  _47 = _46 * 48;
+  _48 = TxRingConfig_172(D) + _47;
+  _49 = _48->RingDesc;
+  _50 = (unsigned int) j_160;
+  _51 = _50 * 32;
+  _52 = _49 + _51;
+  _52->Info0 = 0;
+  _53 = (unsigned int) i_159;
+  _54 = _53 * 48;
+  _55 = TxRingConfig_172(D) + _54;
+  _56 = _55->BufferLen;
+  _57 = (long unsigned int) _56;
+  _58 = (unsigned int) i_159;
+  _59 = _58 * 48;
+  _60 = TxRingConfig_172(D) + _59;
+  _61 = _60->RingDesc;
+  _62 = (unsigned int) j_160;
+  _63 = _62 * 32;
+  _64 = _61 + _63;
+  _65 = _57 & 16383;
+  _64->Info1 = _65;
+  j.8_66 = j_160;
+  j_196 = j.8_66 + 1;
+
+  <bb 8> :
+  # j_160 = PHI <j_171(3), j_196(7)>
+  _67 = (unsigned int) i_159;
+  _68 = _67 * 48;
+  _69 = TxRingConfig_172(D) + _68;
+  _70 = _69->RingSize;
+  if (j_160 < _70)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _71 = (unsigned int) i_159;
+  _72 = _71 * 48;
+  _73 = TxRingConfig_172(D) + _72;
+  _74 = _73->RingDesc;
+  _75 = (int) Instance_173(D);
+  _76 = (int) i_159;
+  _77 = Gmac_apxChBases[_75][_76];
+  _78 = (long unsigned int) _74;
+  _77->DMA_TXDESC_TAIL_POINTER ={v} _78;
+  _79 = (unsigned int) i_159;
+  _80 = _79 * 48;
+  _81 = TxRingConfig_172(D) + _80;
+  _82 = _81->RingDesc;
+  _83 = (int) Instance_173(D);
+  _84 = (int) i_159;
+  _85 = Gmac_apxChBases[_83][_84];
+  _86 = (long unsigned int) _82;
+  _85->DMA_TXDESC_LIST_ADDRESS ={v} _86;
+  _87 = (unsigned int) i_159;
+  _88 = _87 * 48;
+  _89 = TxRingConfig_172(D) + _88;
+  _90 = _89->RingSize;
+  _91 = (long unsigned int) _90;
+  _92 = (int) Instance_173(D);
+  _93 = (int) i_159;
+  _94 = Gmac_apxChBases[_92][_93];
+  _95 = _91 + 4294967295;
+  _94->DMA_TXDESC_RING_LENGTH ={v} _95;
+  _96 = (unsigned int) i_159;
+  _97 = _96 * 48;
+  _98 = TxRingConfig_172(D) + _97;
+  _99 = _98->DmaBurstLength;
+  if (_99 > 32)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _100 = (int) Instance_173(D);
+  _101 = (int) i_159;
+  _102 = Gmac_apxChBases[_100][_101];
+  _102->DMA_CONTROL ={v} 1114112;
+  _103 = (unsigned int) i_159;
+  _104 = _103 * 48;
+  _105 = TxRingConfig_172(D) + _104;
+  _106 = _105->DmaBurstLength;
+  _107 = _106 / 8;
+  _108 = (long unsigned int) _107;
+  _109 = _108 << 16;
+  _110 = _109 & 4128768;
+  _111 = (int) Instance_173(D);
+  _112 = (int) i_159;
+  _113 = Gmac_apxChBases[_111][_112];
+  _114 = _110 | 16;
+  _113->DMA_TX_CONTROL ={v} _114;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _115 = (int) Instance_173(D);
+  _116 = (int) i_159;
+  _117 = Gmac_apxChBases[_115][_116];
+  _117->DMA_CONTROL ={v} 1048576;
+  _118 = (unsigned int) i_159;
+  _119 = _118 * 48;
+  _120 = TxRingConfig_172(D) + _119;
+  _121 = _120->DmaBurstLength;
+  _122 = (long unsigned int) _121;
+  _123 = _122 << 16;
+  _124 = _123 & 4128768;
+  _125 = (int) Instance_173(D);
+  _126 = (int) i_159;
+  _127 = Gmac_apxChBases[_125][_126];
+  _128 = _124 | 16;
+  _127->DMA_TX_CONTROL ={v} _128;
+
+  <bb 12> :
+  _129 = (unsigned int) i_159;
+  _130 = _129 * 48;
+  _131 = TxRingConfig_172(D) + _130;
+  _132 = _131->Interrupts;
+  _133 = (unsigned int) i_159;
+  _134 = _133 * 48;
+  _135 = TxRingConfig_172(D) + _134;
+  _136 = _135->Interrupts;
+  _137 = _136 & 2117;
+  if (_137 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.9_182 = 32768;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.9_181 = 0;
+
+  <bb 15> :
+  # iftmp.9_162 = PHI <iftmp.9_182(13), iftmp.9_181(14)>
+  _138 = iftmp.9_162 | _132;
+  _139 = (unsigned int) i_159;
+  _140 = _139 * 48;
+  _141 = TxRingConfig_172(D) + _140;
+  _142 = _141->Interrupts;
+  _143 = _142 & 13698;
+  if (_143 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.10_184 = 16384;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.10_183 = 0;
+
+  <bb 18> :
+  # iftmp.10_163 = PHI <iftmp.10_184(16), iftmp.10_183(17)>
+  _144 = (int) Instance_173(D);
+  _145 = (int) i_159;
+  _146 = Gmac_apxChBases[_144][_145];
+  _147 = iftmp.10_163 | _138;
+  _146->DMA_INTERRUPT_ENABLE ={v} _147;
+  _148 = Config_170(D)->EnableCtrl;
+  if (_148 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  _149 = (int) Instance_173(D);
+  _150 = (int) i_159;
+  _151 = Gmac_apxChBases[_149][_150];
+  _152 ={v} _151->DMA_TX_CONTROL;
+  _153 = (int) Instance_173(D);
+  _154 = (int) i_159;
+  _155 = Gmac_apxChBases[_153][_154];
+  _156 = _152 | 1;
+  _155->DMA_TX_CONTROL ={v} _156;
+
+  <bb 20> :
+  i.11_157 = i_159;
+  i_187 = i.11_157 + 1;
+
+  <bb 21> :
+  # i_159 = PHI <i_168(2), i_187(20)>
+  _158 = Config_170(D)->TxRingCount;
+  if (i_159 < _158)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  return;
+
+}
+
+
+Gmac_Ip_InitStateStructure (uint8 Instance, const struct Gmac_CtrlConfigType * Config)
+{
+  uint8 i;
+  const struct sGmac_Ip_ConfigType * _1;
+  struct sGmac_Ip_StateType * _2;
+  void (*<T575>) (const uint8, const Gmac_Ip_SafetyErrorType) _3;
+  const struct sGmac_Ip_ConfigType * _4;
+  struct sGmac_Ip_StateType * _5;
+  void (*<T57a>) (const uint8) _6;
+  const struct sGmac_Ip_ConfigType * _7;
+  unsigned char _8;
+  struct sGmac_Ip_StateType * _9;
+  short unsigned int _10;
+  const struct sGmac_Ip_ConfigType * _11;
+  unsigned char _12;
+  struct sGmac_Ip_StateType * _13;
+  short unsigned int _14;
+  const struct sGmac_Ip_RxRingConfigType * _15;
+  unsigned int _16;
+  unsigned int _17;
+  const struct sGmac_Ip_RxRingConfigType * _18;
+  struct sGmac_Ip_StateType * _19;
+  int _20;
+  void (*<T57f>) (const uint8, const uint8) _21;
+  const struct sGmac_Ip_RxRingConfigType * _22;
+  unsigned int _23;
+  unsigned int _24;
+  const struct sGmac_Ip_RxRingConfigType * _25;
+  struct sGmac_Ip_StateType * _26;
+  int _27;
+  struct Gmac_Ip_BufferDescriptorType * _28;
+  const struct sGmac_Ip_RxRingConfigType * _29;
+  unsigned int _30;
+  unsigned int _31;
+  const struct sGmac_Ip_RxRingConfigType * _32;
+  struct sGmac_Ip_StateType * _33;
+  int _34;
+  struct Gmac_Ip_BufferDescriptorType * _35;
+  unsigned char i.5_36;
+  const struct sGmac_Ip_ConfigType * _37;
+  unsigned char _38;
+  const struct sGmac_Ip_TxRingConfigType * _39;
+  unsigned int _40;
+  unsigned int _41;
+  const struct sGmac_Ip_TxRingConfigType * _42;
+  struct sGmac_Ip_StateType * _43;
+  int _44;
+  void (*<T57f>) (const uint8, const uint8) _45;
+  const struct sGmac_Ip_TxRingConfigType * _46;
+  unsigned int _47;
+  unsigned int _48;
+  const struct sGmac_Ip_TxRingConfigType * _49;
+  struct sGmac_Ip_StateType * _50;
+  int _51;
+  struct Gmac_Ip_BufferDescriptorType * _52;
+  unsigned char i.6_53;
+  const struct sGmac_Ip_ConfigType * _54;
+  unsigned char _55;
+  int _56;
+  struct sGmac_Ip_StateType * _57;
+
+  <bb 2> :
+  _1 = Config_63(D)->Gmac_pCtrlConfig;
+  _2 = Config_63(D)->Gmac_pCtrlState;
+  _3 = _1->SafetyCallback;
+  _2->SafetyCallback = _3;
+  _4 = Config_63(D)->Gmac_pCtrlConfig;
+  _5 = Config_63(D)->Gmac_pCtrlState;
+  _6 = _4->Callback;
+  _5->Callback = _6;
+  _7 = Config_63(D)->Gmac_pCtrlConfig;
+  _8 = _7->RxRingCount;
+  _9 = Config_63(D)->Gmac_pCtrlState;
+  _10 = (short unsigned int) _8;
+  _9->RxRingCount = _10;
+  _11 = Config_63(D)->Gmac_pCtrlConfig;
+  _12 = _11->TxRingCount;
+  _13 = Config_63(D)->Gmac_pCtrlState;
+  _14 = (short unsigned int) _12;
+  _13->TxRingCount = _14;
+  i_68 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _15 = Config_63(D)->Gmac_paCtrlRxRingConfig;
+  _16 = (unsigned int) i_58;
+  _17 = _16 * 24;
+  _18 = _15 + _17;
+  _19 = Config_63(D)->Gmac_pCtrlState;
+  _20 = (int) i_58;
+  _21 = _18->Callback;
+  _19->RxChCallback[_20] = _21;
+  _22 = Config_63(D)->Gmac_paCtrlRxRingConfig;
+  _23 = (unsigned int) i_58;
+  _24 = _23 * 24;
+  _25 = _22 + _24;
+  _26 = Config_63(D)->Gmac_pCtrlState;
+  _27 = (int) i_58;
+  _28 = _25->RingDesc;
+  _26->RxCurrentDesc[_27] = _28;
+  _29 = Config_63(D)->Gmac_paCtrlRxRingConfig;
+  _30 = (unsigned int) i_58;
+  _31 = _30 * 24;
+  _32 = _29 + _31;
+  _33 = Config_63(D)->Gmac_pCtrlState;
+  _34 = (int) i_58;
+  _35 = _32->RingDesc;
+  _33->RxAllocDesc[_34] = _35;
+  i.5_36 = i_58;
+  i_78 = i.5_36 + 1;
+
+  <bb 4> :
+  # i_58 = PHI <i_68(2), i_78(3)>
+  _37 = Config_63(D)->Gmac_pCtrlConfig;
+  _38 = _37->RxRingCount;
+  if (i_58 < _38)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  i_69 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _39 = Config_63(D)->Gmac_paCtrlTxRingConfig;
+  _40 = (unsigned int) i_59;
+  _41 = _40 * 48;
+  _42 = _39 + _41;
+  _43 = Config_63(D)->Gmac_pCtrlState;
+  _44 = (int) i_59;
+  _45 = _42->Callback;
+  _43->TxChCallback[_44] = _45;
+  _46 = Config_63(D)->Gmac_paCtrlTxRingConfig;
+  _47 = (unsigned int) i_59;
+  _48 = _47 * 48;
+  _49 = _46 + _48;
+  _50 = Config_63(D)->Gmac_pCtrlState;
+  _51 = (int) i_59;
+  _52 = _49->RingDesc;
+  _50->TxCurrentDesc[_51] = _52;
+  i.6_53 = i_59;
+  i_74 = i.6_53 + 1;
+
+  <bb 7> :
+  # i_59 = PHI <i_69(5), i_74(6)>
+  _54 = Config_63(D)->Gmac_pCtrlConfig;
+  _55 = _54->TxRingCount;
+  if (i_59 < _55)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _56 = (int) Instance_70(D);
+  _57 = Config_63(D)->Gmac_pCtrlState;
+  Gmac_apxState[_56] = _57;
+  return;
+
+}
+
+
+Gmac_Ip_InitMAC (struct GMAC_Type * Base, const struct Gmac_CtrlConfigType * Config)
+{
+  const struct sGmac_Ip_ConfigType * _1;
+  long unsigned int _2;
+  const struct sGmac_Ip_ConfigType * _3;
+  long unsigned int _4;
+  const struct sGmac_Ip_ConfigType * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  const struct sGmac_Ip_ConfigType * _8;
+  <unnamed type> _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  const struct sGmac_Ip_ConfigType * _13;
+  <unnamed type> _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  const struct sGmac_Ip_ConfigType * _18;
+  _Bool _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  const struct sGmac_Ip_ConfigType * _22;
+  long unsigned int _23;
+
+  <bb 2> :
+  Base_26(D)->MAC_Q0_TX_FLOW_CTRL ={v} 0;
+  _1 = Config_28(D)->Gmac_pCtrlConfig;
+  _2 = _1->Interrupts;
+  Base_26(D)->MAC_INTERRUPT_ENABLE ={v} _2;
+  _3 = Config_28(D)->Gmac_pCtrlConfig;
+  _4 = _3->MacConfig;
+  Base_26(D)->MAC_CONFIGURATION ={v} _4;
+  _5 = Config_28(D)->Gmac_pCtrlConfig;
+  _6 = _5->ExtendedMacConfig;
+  Base_26(D)->MAC_EXT_CONFIGURATION ={v} _6;
+  _7 ={v} Base_26(D)->MAC_CONFIGURATION;
+  _8 = Config_28(D)->Gmac_pCtrlConfig;
+  _9 = _8->Speed;
+  _10 = _9 << 14;
+  _11 = _7 | _10;
+  Base_26(D)->MAC_CONFIGURATION ={v} _11;
+  _12 ={v} Base_26(D)->MAC_CONFIGURATION;
+  _13 = Config_28(D)->Gmac_pCtrlConfig;
+  _14 = _13->Duplex;
+  _15 = _14 << 13;
+  _16 = _15 & 8192;
+  _17 = _12 | _16;
+  Base_26(D)->MAC_CONFIGURATION ={v} _17;
+  _18 = Config_28(D)->Gmac_pCtrlConfig;
+  _19 = _18->EnableCtrl;
+  if (_19 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _20 ={v} Base_26(D)->MAC_CONFIGURATION;
+  _21 = _20 | 3;
+  Base_26(D)->MAC_CONFIGURATION ={v} _21;
+
+  <bb 4> :
+  _22 = Config_28(D)->Gmac_pCtrlConfig;
+  _23 = _22->MacPktFilterConfig;
+  Base_26(D)->MAC_PACKET_FILTER ={v} _23;
+  Base_26(D)->MMC_TX_INTERRUPT_MASK ={v} 67108863;
+  Base_26(D)->MMC_RX_INTERRUPT_MASK ={v} 67108863;
+  return;
+
+}
+
+
+Gmac_Ip_InitMTL (uint8 Instance, const struct Gmac_CtrlConfigType * Config)
+{
+  uint8 i;
+  uint32 FifoSize;
+  const struct sGmac_Ip_ConfigType * _1;
+  <unnamed type> _2;
+  long unsigned int _3;
+  int _4;
+  struct GMAC_Type * _5;
+  long unsigned int _6;
+  const struct sGmac_Ip_TxRingConfigType * _7;
+  unsigned int _8;
+  unsigned int _9;
+  const struct sGmac_Ip_TxRingConfigType * _10;
+  short unsigned int _11;
+  long unsigned int _12;
+  const struct sGmac_Ip_TxRingConfigType * _13;
+  unsigned int _14;
+  unsigned int _15;
+  const struct sGmac_Ip_TxRingConfigType * _16;
+  short unsigned int _17;
+  long unsigned int _18;
+  const struct sGmac_Ip_TxRingConfigType * _19;
+  unsigned int _20;
+  unsigned int _21;
+  const struct sGmac_Ip_TxRingConfigType * _22;
+  <unnamed type> _23;
+  const struct sGmac_Ip_ConfigType * _24;
+  unsigned char _25;
+  int _26;
+  int _27;
+  struct Gmac_Ip_QueueType * _28;
+  const struct sGmac_Ip_TxRingConfigType * _29;
+  unsigned int _30;
+  unsigned int _31;
+  const struct sGmac_Ip_TxRingConfigType * _32;
+  long unsigned int _33;
+  const struct sGmac_Ip_TxRingConfigType * _34;
+  unsigned int _35;
+  unsigned int _36;
+  const struct sGmac_Ip_TxRingConfigType * _37;
+  <unnamed type> _38;
+  int _39;
+  int _40;
+  struct Gmac_Ip_QueueType * _41;
+  const struct sGmac_Ip_TxRingConfigType * _42;
+  unsigned int _43;
+  unsigned int _44;
+  const struct sGmac_Ip_TxRingConfigType * _45;
+  long unsigned int _46;
+  int _47;
+  int _48;
+  struct Gmac_Ip_QueueType * _49;
+  const struct sGmac_Ip_TxRingConfigType * _50;
+  unsigned int _51;
+  unsigned int _52;
+  const struct sGmac_Ip_TxRingConfigType * _53;
+  long unsigned int _54;
+  const struct sGmac_Ip_TxRingConfigType * _55;
+  unsigned int _56;
+  unsigned int _57;
+  const struct sGmac_Ip_TxRingConfigType * _58;
+  long unsigned int _59;
+  const struct sGmac_Ip_TxRingConfigType * _60;
+  unsigned int _61;
+  unsigned int _62;
+  const struct sGmac_Ip_TxRingConfigType * _63;
+  long int _64;
+  int _65;
+  int _66;
+  struct Gmac_Ip_QueueType * _67;
+  const struct sGmac_Ip_TxRingConfigType * _68;
+  unsigned int _69;
+  unsigned int _70;
+  const struct sGmac_Ip_TxRingConfigType * _71;
+  <unnamed type> _72;
+  const struct sGmac_Ip_ConfigType * _73;
+  unsigned char _74;
+  int _75;
+  struct GMAC_Type * _76;
+  long unsigned int _77;
+  int _78;
+  struct GMAC_Type * _79;
+  long unsigned int _80;
+  int _81;
+  struct GMAC_Type * _82;
+  const struct sGmac_Ip_ConfigType * _83;
+  unsigned char _84;
+  const struct sGmac_Ip_RxRingConfigType * _85;
+  unsigned int _86;
+  unsigned int _87;
+  const struct sGmac_Ip_RxRingConfigType * _88;
+  short unsigned int _89;
+  long unsigned int _90;
+  const struct sGmac_Ip_RxRingConfigType * _91;
+  unsigned int _92;
+  unsigned int _93;
+  const struct sGmac_Ip_RxRingConfigType * _94;
+  short unsigned int _95;
+  long unsigned int _96;
+  int _97;
+  int _98;
+  struct Gmac_Ip_QueueType * _99;
+  int _100;
+  struct GMAC_Type * _101;
+  const struct sGmac_Ip_RxRingConfigType * _102;
+  unsigned int _103;
+  unsigned int _104;
+  const struct sGmac_Ip_RxRingConfigType * _105;
+  unsigned char _106;
+  const struct sGmac_Ip_ConfigType * _107;
+  unsigned char _108;
+
+  <bb 2> :
+  _1 = Config_115(D)->Gmac_pCtrlConfig;
+  _2 = _1->TxSchedAlgo;
+  _3 = _2 << 5;
+  _4 = (int) Instance_116(D);
+  _5 = Gmac_apxBases[_4];
+  _6 = _3 & 96;
+  _5->MTL_OPERATION_MODE ={v} _6;
+  i_118 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _7 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _8 = (unsigned int) i_109;
+  _9 = _8 * 48;
+  _10 = _7 + _9;
+  _11 = _10->RingSize;
+  _12 = (long unsigned int) _11;
+  _13 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _14 = (unsigned int) i_109;
+  _15 = _14 * 48;
+  _16 = _13 + _15;
+  _17 = _16->BufferLen;
+  _18 = (long unsigned int) _17;
+  FifoSize_126 = _12 * _18;
+  _19 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _20 = (unsigned int) i_109;
+  _21 = _20 * 48;
+  _22 = _19 + _21;
+  _23 = _22->QueueOpMode;
+  if (_23 == 2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _24 = Config_115(D)->Gmac_pCtrlConfig;
+  _25 = _24->TxRingCount;
+  if (_25 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _26 = (int) Instance_116(D);
+  _27 = (int) i_109;
+  _28 = Gmac_apxQueueBases[_26][_27];
+  _29 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _30 = (unsigned int) i_109;
+  _31 = _30 * 48;
+  _32 = _29 + _31;
+  _33 = _32->Weight;
+  GMAC_SetTxQueueQuantumWeight (_28, _33);
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  _34 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _35 = (unsigned int) i_109;
+  _36 = _35 * 48;
+  _37 = _34 + _36;
+  _38 = _37->QueueOpMode;
+  if (_38 == 1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (i_109 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _39 = (int) Instance_116(D);
+  _40 = (int) i_109;
+  _41 = Gmac_apxQueueBases[_39][_40];
+  _42 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _43 = (unsigned int) i_109;
+  _44 = _43 * 48;
+  _45 = _42 + _44;
+  _46 = _45->IdleSlopeCredit;
+  GMAC_SetTxQueueQuantumWeight (_41, _46);
+  _47 = (int) Instance_116(D);
+  _48 = (int) i_109;
+  _49 = Gmac_apxQueueBases[_47][_48];
+  _50 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _51 = (unsigned int) i_109;
+  _52 = _51 * 48;
+  _53 = _50 + _52;
+  _54 = _53->SendSlopeCredit;
+  _55 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _56 = (unsigned int) i_109;
+  _57 = _56 * 48;
+  _58 = _55 + _57;
+  _59 = _58->HiCredit;
+  _60 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _61 = (unsigned int) i_109;
+  _62 = _61 * 48;
+  _63 = _60 + _62;
+  _64 = _63->LoCredit;
+  GMAC_SetTxQueueCreditBasedShaper (_49, _54, _59, _64);
+
+  <bb 9> :
+  _65 = (int) Instance_116(D);
+  _66 = (int) i_109;
+  _67 = Gmac_apxQueueBases[_65][_66];
+  _68 = Config_115(D)->Gmac_paCtrlTxRingConfig;
+  _69 = (unsigned int) i_109;
+  _70 = _69 * 48;
+  _71 = _68 + _70;
+  _72 = _71->QueueOpMode;
+  GMAC_SetTxQueueOperationMode (_67, _72, FifoSize_126);
+  i_131 = i_109 + 1;
+
+  <bb 10> :
+  # i_109 = PHI <i_118(2), i_131(9)>
+  _73 = Config_115(D)->Gmac_pCtrlConfig;
+  _74 = _73->TxRingCount;
+  if (i_109 < _74)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _75 = (int) Instance_116(D);
+  _76 = Gmac_apxBases[_75];
+  _77 ={v} _76->MTL_OPERATION_MODE;
+  _78 = (int) Instance_116(D);
+  _79 = Gmac_apxBases[_78];
+  _80 = _77 & 4294967291;
+  _79->MTL_OPERATION_MODE ={v} _80;
+  _81 = (int) Instance_116(D);
+  _82 = Gmac_apxBases[_81];
+  _83 = Config_115(D)->Gmac_pCtrlConfig;
+  _84 = _83->RxRingCount;
+  GMAC_SetRxQueuesDmaChMap (_82, _84);
+  i_121 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _85 = Config_115(D)->Gmac_paCtrlRxRingConfig;
+  _86 = (unsigned int) i_110;
+  _87 = _86 * 24;
+  _88 = _85 + _87;
+  _89 = _88->RingSize;
+  _90 = (long unsigned int) _89;
+  _91 = Config_115(D)->Gmac_paCtrlRxRingConfig;
+  _92 = (unsigned int) i_110;
+  _93 = _92 * 24;
+  _94 = _91 + _93;
+  _95 = _94->BufferLen;
+  _96 = (long unsigned int) _95;
+  FifoSize_122 = _90 * _96;
+  _97 = (int) Instance_116(D);
+  _98 = (int) i_110;
+  _99 = Gmac_apxQueueBases[_97][_98];
+  GMAC_SetRxQueueOperationMode (_99, FifoSize_122);
+  _100 = (int) Instance_116(D);
+  _101 = Gmac_apxBases[_100];
+  _102 = Config_115(D)->Gmac_paCtrlRxRingConfig;
+  _103 = (unsigned int) i_110;
+  _104 = _103 * 24;
+  _105 = _102 + _104;
+  _106 = _105->PriorityMask;
+  GMAC_EnableRxQueue (_101, _106, i_110);
+  i_125 = i_110 + 1;
+
+  <bb 13> :
+  # i_110 = PHI <i_121(11), i_125(12)>
+  _107 = Config_115(D)->Gmac_pCtrlConfig;
+  _108 = _107->RxRingCount;
+  if (i_110 < _108)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  return;
+
+}
+
+
+Gmac_Ip_ConfigTimeGateScheduling (uint8 Instance)
+{
+  uint64 TempTimeNanoSecond;
+  uint64 TempTimeSecond;
+  uint64 TempTimeHigher;
+  uint64 CurrentTime;
+  uint64 NewBaseTime;
+  uint64 BaseTime;
+  uint64 CycleTime;
+  uint64 CycleFactor;
+  uint32 WriteData;
+  uint16 GateListNum;
+  uint8 ErrorCnt;
+  Gmac_Ip_StatusType Status;
+  Gmac_Ip_StatusType D.7640;
+  Gmac_Ip_StatusType iftmp.4;
+  unsigned char D.7635;
+  unsigned char D.7634;
+  unsigned char D.7633;
+  unsigned char D.7632;
+  unsigned char D.7631;
+  unsigned char D.7630;
+  unsigned char D.7626;
+  _Bool _1;
+  int _2;
+  short unsigned int _3;
+  int _4;
+  struct GMAC_Type * _5;
+  long unsigned int _6;
+  int _7;
+  struct GMAC_Type * _8;
+  long unsigned int _9;
+  int _10;
+  unsigned char _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  int _14;
+  struct GMAC_Type * _15;
+  long unsigned int _16;
+  int _17;
+  short unsigned int _18;
+  long unsigned int _19;
+  int _20;
+  short unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  int _24;
+  struct GMAC_Type * _25;
+  long unsigned int _26;
+  int _27;
+  struct Gmac_Ip_TxGateControl * _28;
+  unsigned int _29;
+  unsigned int _30;
+  struct Gmac_Ip_TxGateControl * _31;
+  unsigned char _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  int _35;
+  struct Gmac_Ip_TxGateControl * _36;
+  unsigned int _37;
+  unsigned int _38;
+  struct Gmac_Ip_TxGateControl * _39;
+  long unsigned int _40;
+  short unsigned int GateListNum.3_41;
+  int _42;
+  short unsigned int _43;
+  int _44;
+  struct GMAC_Type * _45;
+  long unsigned int _46;
+  long long unsigned int _47;
+  int _48;
+  struct GMAC_Type * _49;
+  long unsigned int _50;
+  long long unsigned int _51;
+  int _52;
+  struct GMAC_Type * _53;
+  long unsigned int _54;
+  int _55;
+  long unsigned int _56;
+  long long unsigned int _57;
+  long long unsigned int _58;
+  int _59;
+  long unsigned int _60;
+  long long unsigned int _61;
+  long long unsigned int _62;
+  int _63;
+  long unsigned int _64;
+  long long unsigned int _65;
+  long long unsigned int _66;
+  int _67;
+  long unsigned int _68;
+  long long unsigned int _69;
+  long long unsigned int _70;
+  long long unsigned int _71;
+  long long unsigned int _72;
+  long unsigned int _73;
+  long unsigned int _74;
+  long unsigned int _75;
+  long unsigned int _76;
+  int _77;
+  long unsigned int _78;
+  int _79;
+  long unsigned int _80;
+  int _81;
+  long unsigned int _82;
+  int _83;
+  short unsigned int _84;
+  long unsigned int _85;
+  int _86;
+  struct GMAC_Type * _87;
+  long unsigned int _88;
+  int _89;
+  struct GMAC_Type * _90;
+  long unsigned int _91;
+  Gmac_Ip_StatusType iftmp.4_95;
+  unsigned char _117;
+  unsigned char _120;
+  unsigned char _123;
+  unsigned char _126;
+  unsigned char _129;
+  unsigned char _132;
+  Gmac_Ip_StatusType iftmp.4_135;
+  Gmac_Ip_StatusType iftmp.4_136;
+  Gmac_Ip_StatusType _138;
+  unsigned char _141;
+
+  <bb 2> :
+  ErrorCnt_98 = 0;
+  CurrentTime_99 = 0;
+  _1 = Instance_100(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_100(D);
+  _3 = Gmac_Ip_TxTimeAwareShaperData[_2].ReleaseAdvanceTime;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = (int) Instance_100(D);
+  _5 = Gmac_apxBases[_4];
+  _6 ={v} _5->MAC_FPE_CTRL_STS;
+  _7 = (int) Instance_100(D);
+  _8 = Gmac_apxBases[_7];
+  _9 = _6 | 1;
+  _8->MAC_FPE_CTRL_STS ={v} _9;
+  _10 = (int) Instance_100(D);
+  _11 = Gmac_Ip_TxTimeAwareShaperData[_10].PreemptionClassic;
+  _12 = (long unsigned int) _11;
+  _13 = _12 << 8;
+  _14 = (int) Instance_100(D);
+  _15 = Gmac_apxBases[_14];
+  _16 = _13 & 768;
+  _15->MTL_FPE_CTRL_STS ={v} _16;
+  _17 = (int) Instance_100(D);
+  _18 = Gmac_Ip_TxTimeAwareShaperData[_17].HoldAdvanceTime;
+  _19 = (long unsigned int) _18;
+  _20 = (int) Instance_100(D);
+  _21 = Gmac_Ip_TxTimeAwareShaperData[_20].ReleaseAdvanceTime;
+  _22 = (long unsigned int) _21;
+  _23 = _22 << 16;
+  _24 = (int) Instance_100(D);
+  _25 = Gmac_apxBases[_24];
+  _26 = _19 | _23;
+  _25->MTL_FPE_ADVANCE ={v} _26;
+
+  <bb 4> :
+  GateListNum_106 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _27 = (int) Instance_100(D);
+  _28 = Gmac_Ip_TxTimeAwareShaperData[_27].GateControlList;
+  _29 = (unsigned int) GateListNum_93;
+  _30 = _29 * 8;
+  _31 = _28 + _30;
+  _32 = _31->GateControl;
+  _33 = (long unsigned int) _32;
+  _34 = _33 << 24;
+  _35 = (int) Instance_100(D);
+  _36 = Gmac_Ip_TxTimeAwareShaperData[_35].GateControlList;
+  _37 = (unsigned int) GateListNum_93;
+  _38 = _37 * 8;
+  _39 = _36 + _38;
+  _40 = _39->TimeInterval;
+  WriteData_139 = _34 | _40;
+  _141 = Gmac_Ip_WriteGateControlList (Instance_100(D), GateListNum_93, WriteData_139, 1);
+  ErrorCnt_142 = _141 + ErrorCnt_92;
+  GateListNum.3_41 = GateListNum_93;
+  GateListNum_143 = GateListNum.3_41 + 1;
+
+  <bb 6> :
+  # ErrorCnt_92 = PHI <ErrorCnt_98(4), ErrorCnt_142(5)>
+  # GateListNum_93 = PHI <GateListNum_106(4), GateListNum_143(5)>
+  _42 = (int) Instance_100(D);
+  _43 = Gmac_Ip_TxTimeAwareShaperData[_42].GateControlDepth;
+  if (GateListNum_93 < _43)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _44 = (int) Instance_100(D);
+  _45 = Gmac_apxBases[_44];
+  _46 ={v} _45->MAC_SYSTEM_TIME_HIGHER_WORD_SECONDS;
+  _47 = (long long unsigned int) _46;
+  TempTimeHigher_107 = _47 * 1000000000;
+  _48 = (int) Instance_100(D);
+  _49 = Gmac_apxBases[_48];
+  _50 ={v} _49->MAC_SYSTEM_TIME_SECONDS;
+  _51 = (long long unsigned int) _50;
+  TempTimeSecond_108 = _51 * 1000000000;
+  _52 = (int) Instance_100(D);
+  _53 = Gmac_apxBases[_52];
+  _54 ={v} _53->MAC_SYSTEM_TIME_NANOSECONDS;
+  TempTimeNanoSecond_109 = (uint64) _54;
+  _55 = (int) Instance_100(D);
+  _56 = Gmac_Ip_TxTimeAwareShaperData[_55].BaseTimeSecond;
+  _57 = (long long unsigned int) _56;
+  _58 = _57 * 1000000000;
+  _59 = (int) Instance_100(D);
+  _60 = Gmac_Ip_TxTimeAwareShaperData[_59].BaseTimeNanoSecond;
+  _61 = (long long unsigned int) _60;
+  BaseTime_110 = _58 + _61;
+  _62 = TempTimeHigher_107 + TempTimeSecond_108;
+  CurrentTime_111 = TempTimeNanoSecond_109 + _62;
+  _63 = (int) Instance_100(D);
+  _64 = Gmac_Ip_TxTimeAwareShaperData[_63].CycleTimeSecond;
+  _65 = (long long unsigned int) _64;
+  _66 = _65 * 1000000000;
+  _67 = (int) Instance_100(D);
+  _68 = Gmac_Ip_TxTimeAwareShaperData[_67].CycleTimeNanoSecond;
+  _69 = (long long unsigned int) _68;
+  CycleTime_112 = _66 + _69;
+  if (BaseTime_110 >= CurrentTime_111)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  NewBaseTime_115 = BaseTime_110;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _70 = CurrentTime_111 - BaseTime_110;
+  CycleFactor_113 = _70 / CycleTime_112;
+  _71 = CycleFactor_113 + 1;
+  _72 = CycleTime_112 * _71;
+  NewBaseTime_114 = BaseTime_110 + _72;
+
+  <bb 10> :
+  # NewBaseTime_94 = PHI <NewBaseTime_115(8), NewBaseTime_114(9)>
+  _73 = (long unsigned int) NewBaseTime_94;
+  _74 = _73 / 1000000000;
+  _117 = Gmac_Ip_WriteGateControlList (Instance_100(D), 1, _74, 0);
+  ErrorCnt_118 = _117 + ErrorCnt_92;
+  _75 = (long unsigned int) NewBaseTime_94;
+  _76 = _75 % 1000000000;
+  _120 = Gmac_Ip_WriteGateControlList (Instance_100(D), 0, _76, 0);
+  ErrorCnt_121 = _120 + ErrorCnt_118;
+  _77 = (int) Instance_100(D);
+  _78 = Gmac_Ip_TxTimeAwareShaperData[_77].CycleTimeSecond;
+  _123 = Gmac_Ip_WriteGateControlList (Instance_100(D), 3, _78, 0);
+  ErrorCnt_124 = _123 + ErrorCnt_121;
+  _79 = (int) Instance_100(D);
+  _80 = Gmac_Ip_TxTimeAwareShaperData[_79].CycleTimeNanoSecond;
+  _126 = Gmac_Ip_WriteGateControlList (Instance_100(D), 2, _80, 0);
+  ErrorCnt_127 = _126 + ErrorCnt_124;
+  _81 = (int) Instance_100(D);
+  _82 = Gmac_Ip_TxTimeAwareShaperData[_81].ExtendedTime;
+  _129 = Gmac_Ip_WriteGateControlList (Instance_100(D), 4, _82, 0);
+  ErrorCnt_130 = _129 + ErrorCnt_127;
+  _83 = (int) Instance_100(D);
+  _84 = Gmac_Ip_TxTimeAwareShaperData[_83].GateControlDepth;
+  _85 = (long unsigned int) _84;
+  _132 = Gmac_Ip_WriteGateControlList (Instance_100(D), 5, _85, 0);
+  ErrorCnt_133 = _132 + ErrorCnt_130;
+  _86 = (int) Instance_100(D);
+  _87 = Gmac_apxBases[_86];
+  _88 ={v} _87->MTL_EST_CONTROL;
+  _89 = (int) Instance_100(D);
+  _90 = Gmac_apxBases[_89];
+  _91 = _88 | 16;
+  _90->MTL_EST_CONTROL ={v} _91;
+  if (ErrorCnt_133 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  iftmp.4_136 = 3;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.4_135 = 0;
+
+  <bb 13> :
+  # iftmp.4_95 = PHI <iftmp.4_136(11), iftmp.4_135(12)>
+  Status_137 = iftmp.4_95;
+  _138 = Status_137;
+
+  <bb 14> :
+<L11>:
+  return _138;
+
+}
+
+
+Gmac_Ip_WriteGateControlList (uint8 Instance, uint16 AddrGateList, uint32 Data, boolean IsGCLA)
+{
+  uint8 u8ErrorNum;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType Status;
+  uint8 D.7618;
+  _Bool _1;
+  int _2;
+  struct GMAC_Type * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  struct GMAC_Type * _7;
+  long unsigned int _8;
+  _Bool _9;
+  int _10;
+  struct GMAC_Type * _11;
+  long unsigned int _12;
+  int _13;
+  struct GMAC_Type * _14;
+  long unsigned int _15;
+  int _16;
+  struct GMAC_Type * _17;
+  long unsigned int _18;
+  int _19;
+  struct GMAC_Type * _20;
+  long unsigned int _21;
+  int _22;
+  struct GMAC_Type * _23;
+  int _24;
+  struct GMAC_Type * _25;
+  long unsigned int _26;
+  int _27;
+  struct GMAC_Type * _28;
+  long unsigned int _29;
+  int _30;
+  struct GMAC_Type * _31;
+  long unsigned int _32;
+  int _33;
+  struct GMAC_Type * _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int TimeoutTicks.1_37;
+  _Bool _38;
+  _Bool _39;
+  _Bool _40;
+  uint8 _63;
+
+  <bb 2> :
+  Status_45 = 3;
+  u8ErrorNum_46 = 0;
+  _1 = Instance_47(D) == 0;
+  DevAssert (_1);
+  _2 = (int) Instance_47(D);
+  _3 = Gmac_apxBases[_2];
+  _3->MTL_EST_GCL_DATA ={v} Data_50(D);
+  _4 = (long unsigned int) AddrGateList_52(D);
+  _5 = _4 << 8;
+  _6 = (int) Instance_47(D);
+  _7 = Gmac_apxBases[_6];
+  _8 = _5 & 65535;
+  _7->MTL_EST_GCL_CONTROL ={v} _8;
+  _9 = ~IsGCLA_54(D);
+  if (_9 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _10 = (int) Instance_47(D);
+  _11 = Gmac_apxBases[_10];
+  _12 ={v} _11->MTL_EST_GCL_CONTROL;
+  _13 = (int) Instance_47(D);
+  _14 = Gmac_apxBases[_13];
+  _15 = _12 | 4;
+  _14->MTL_EST_GCL_CONTROL ={v} _15;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _16 = (int) Instance_47(D);
+  _17 = Gmac_apxBases[_16];
+  _18 ={v} _17->MTL_EST_GCL_CONTROL;
+  _19 = (int) Instance_47(D);
+  _20 = Gmac_apxBases[_19];
+  _21 = _18 & 4294967291;
+  _20->MTL_EST_GCL_CONTROL ={v} _21;
+
+  <bb 5> :
+  _22 = (int) Instance_47(D);
+  _23 = Gmac_apxBases[_22];
+  _24 = (int) Instance_47(D);
+  _25 = Gmac_apxBases[_24];
+  _26 ={v} _23->MTL_EST_GCL_CONTROL;
+  _25->MTL_EST_GCL_CONTROL ={v} _26;
+  _27 = (int) Instance_47(D);
+  _28 = Gmac_apxBases[_27];
+  _29 ={v} _28->MTL_EST_GCL_CONTROL;
+  _30 = (int) Instance_47(D);
+  _31 = Gmac_apxBases[_30];
+  _32 = _29 | 1;
+  _31->MTL_EST_GCL_CONTROL ={v} _32;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 6> :
+  _33 = (int) Instance_47(D);
+  _34 = Gmac_apxBases[_33];
+  _35 ={v} _34->MTL_EST_GCL_CONTROL;
+  _36 = _35 & 1;
+  if (_36 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status_61 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  TimeoutTicks.1_37 = TimeoutTicks;
+  _38 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.1_37);
+  _39 = ~_38;
+  if (_39 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  # Status_41 = PHI <Status_61(7), Status_45(8)>
+  _40 = Status_41 == 3;
+  u8ErrorNum_62 = (uint8) _40;
+  _63 = u8ErrorNum_62;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 10> :
+<L8>:
+  return _63;
+
+}
+
+
+Gmac_Ip_InitSafetyEvents (struct GMAC_Type * Base, const struct Gmac_Ip_ConfigType * Config)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+
+  <bb 2> :
+  Base_34(D)->MTL_ECC_INTERRUPT_ENABLE ={v} 0;
+  _1 = Config_36(D)->SafetyInterrupts;
+  _2 = _1 & 2;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 ={v} Base_34(D)->MTL_ECC_CONTROL;
+  _4 = _3 | 7;
+  Base_34(D)->MTL_ECC_CONTROL ={v} _4;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 ={v} Base_34(D)->MTL_ECC_CONTROL;
+  _6 = _5 & 4294967288;
+  Base_34(D)->MTL_ECC_CONTROL ={v} _6;
+
+  <bb 5> :
+  _7 = Config_36(D)->SafetyInterrupts;
+  _8 = _7 & 16;
+  if (_8 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _9 ={v} Base_34(D)->MTL_DPP_CONTROL;
+  _10 = _9 | 3;
+  Base_34(D)->MTL_DPP_CONTROL ={v} _10;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _11 ={v} Base_34(D)->MTL_DPP_CONTROL;
+  _12 = _11 & 4294967292;
+  Base_34(D)->MTL_DPP_CONTROL ={v} _12;
+
+  <bb 8> :
+  _13 = Config_36(D)->SafetyInterrupts;
+  _14 = _13 & 4;
+  if (_14 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _15 ={v} Base_34(D)->MAC_FSM_CONTROL;
+  _16 = _15 | 2;
+  Base_34(D)->MAC_FSM_CONTROL ={v} _16;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _17 ={v} Base_34(D)->MAC_FSM_CONTROL;
+  _18 = _17 & 4294967293;
+  Base_34(D)->MAC_FSM_CONTROL ={v} _18;
+
+  <bb 11> :
+  _19 = Config_36(D)->SafetyInterrupts;
+  _20 = _19 & 8;
+  if (_20 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _21 ={v} Base_34(D)->MAC_FSM_ACT_TIMER;
+  _22 = _21 & 4279238655;
+  Base_34(D)->MAC_FSM_ACT_TIMER ={v} _22;
+  _23 ={v} Base_34(D)->MAC_FSM_ACT_TIMER;
+  _24 = _23 | 131152;
+  Base_34(D)->MAC_FSM_ACT_TIMER ={v} _24;
+  _25 ={v} Base_34(D)->MAC_FSM_CONTROL;
+  _26 = _25 | 1;
+  Base_34(D)->MAC_FSM_CONTROL ={v} _26;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _27 ={v} Base_34(D)->MAC_FSM_CONTROL;
+  _28 = _27 & 4294967294;
+  Base_34(D)->MAC_FSM_CONTROL ={v} _28;
+
+  <bb 14> :
+  return;
+
+}
+
+
+Gmac_Ip_InitDMA (uint8 Instance, const struct Gmac_CtrlConfigType * Config)
+{
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  Gmac_Ip_StatusType Status;
+  struct GMAC_Type * Base;
+  Gmac_Ip_StatusType D.7598;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int TimeoutTicks.0_6;
+  _Bool _7;
+  _Bool _8;
+  const struct sGmac_Ip_ConfigType * _9;
+  const struct sGmac_Ip_TxRingConfigType * _10;
+  const struct sGmac_Ip_ConfigType * _11;
+  const struct sGmac_Ip_RxRingConfigType * _12;
+  Gmac_Ip_StatusType _30;
+
+  <bb 2> :
+  Status_17 = 3;
+  _1 = (int) Instance_18(D);
+  Base_20 = Gmac_apxBases[_1];
+  _2 ={v} Base_20->DMA_MODE;
+  _3 = _2 | 1;
+  Base_20->DMA_MODE ={v} _3;
+  GMAC_StartTimeOut (&StartTime, &ElapsedTime, &TimeoutTicks, 1000);
+
+  <bb 3> :
+  _4 ={v} Base_20->DMA_MODE;
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_24 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  TimeoutTicks.0_6 = TimeoutTicks;
+  _7 = GMAC_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.0_6);
+  _8 = ~_7;
+  if (_8 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # Status_13 = PHI <Status_24(4), Status_17(5)>
+  if (Status_13 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Base_20->DMA_MODE ={v} 65536;
+  Base_20->DMA_SYSBUS_MODE ={v} 4096;
+  _9 = Config_27(D)->Gmac_pCtrlConfig;
+  _10 = Config_27(D)->Gmac_paCtrlTxRingConfig;
+  Gmac_Ip_InitTxBD (Instance_18(D), _9, _10);
+  _11 = Config_27(D)->Gmac_pCtrlConfig;
+  _12 = Config_27(D)->Gmac_paCtrlRxRingConfig;
+  Gmac_Ip_InitRxBD (Instance_18(D), _11, _12);
+
+  <bb 8> :
+  _30 = Status_13;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 9> :
+<L7>:
+  return _30;
+
+}
+
+
+Gmac_Ip_ReadTimeStampInfo (uint8 Instance, uint8 Ring, struct Gmac_Ip_RxInfoType * Info)
+{
+  uint32 BdSec;
+  uint32 CurrTimeSec;
+  uint16 CurrTimeSecHi;
+  struct Gmac_Ip_BufferDescriptorType * ListBd;
+  const struct Gmac_Ip_BufferDescriptorType * Bd;
+  const struct Gmac_Ip_ChannelType * ChBase;
+  const struct GMAC_Type * Base;
+  int _1;
+  int _2;
+  int _3;
+  long unsigned int _4;
+  int _5;
+  struct Gmac_Ip_StateType * _6;
+  int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  int _12;
+  struct Gmac_Ip_StateType * _13;
+  int _14;
+  struct Gmac_Ip_BufferDescriptorType * _15;
+  struct Gmac_Ip_BufferDescriptorType * _16;
+  int _17;
+  struct Gmac_Ip_StateType * _18;
+  int _19;
+  struct Gmac_Ip_BufferDescriptorType * _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  sizetype _23;
+  sizetype _24;
+  struct Gmac_Ip_BufferDescriptorType * _25;
+  long unsigned int _26;
+  int _27;
+  struct Gmac_Ip_StateType * _28;
+  int _29;
+  long unsigned int _30;
+  short unsigned int _31;
+  long unsigned int _32;
+
+  <bb 2> :
+  _1 = (int) Instance_37(D);
+  Base_39 = Gmac_apxBases[_1];
+  _2 = (int) Instance_37(D);
+  _3 = (int) Ring_40(D);
+  ChBase_41 = Gmac_apxChBases[_2][_3];
+  _4 ={v} ChBase_41->DMA_RXDESC_LIST_ADDRESS;
+  ListBd_42 = (struct Gmac_Ip_BufferDescriptorType *) _4;
+  _5 = (int) Instance_37(D);
+  _6 = Gmac_apxState[_5];
+  _7 = (int) Ring_40(D);
+  Bd_43 = _6->RxCurrentDesc[_7];
+  _8 = Bd_43->Des1;
+  _9 = _8 & 16384;
+  if (_9 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  _10 = Bd_43->Des3;
+  _11 = _10 & 268435456;
+  if (_11 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  Bd_44 = Bd_43 + 32;
+  _12 = (int) Instance_37(D);
+  _13 = Gmac_apxState[_12];
+  _14 = (int) Ring_40(D);
+  _15 = _13->RxCurrentDesc[_14];
+  _16 = _15 + 32;
+  _13->RxCurrentDesc[_14] = _16;
+  _17 = (int) Instance_37(D);
+  _18 = Gmac_apxState[_17];
+  _19 = (int) Ring_40(D);
+  _20 = _18->RxCurrentDesc[_19];
+  _21 = (long unsigned int) _20;
+  _22 ={v} ChBase_41->DMA_RXDESC_RING_LENGTH;
+  _23 = _22 + 1;
+  _24 = _23 * 32;
+  _25 = ListBd_42 + _24;
+  _26 = (long unsigned int) _25;
+  if (_21 >= _26)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _27 = (int) Instance_37(D);
+  _28 = Gmac_apxState[_27];
+  _29 = (int) Ring_40(D);
+  _28->RxCurrentDesc[_29] = ListBd_42;
+  Bd_47 = ListBd_42;
+
+  <bb 6> :
+  # Bd_33 = PHI <Bd_44(4), Bd_47(5)>
+  CurrTimeSec_48 ={v} Base_39->MAC_SYSTEM_TIME_SECONDS;
+  _30 ={v} Base_39->MAC_SYSTEM_TIME_HIGHER_WORD_SECONDS;
+  CurrTimeSecHi_49 = (uint16) _30;
+  BdSec_50 = Bd_33->Des1;
+  if (BdSec_50 <= CurrTimeSec_48)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Info_51(D)->Timestamp.secondsHi = CurrTimeSecHi_49;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _31 = CurrTimeSecHi_49 + 65535;
+  Info_51(D)->Timestamp.secondsHi = _31;
+
+  <bb 9> :
+  Info_51(D)->Timestamp.seconds = BdSec_50;
+  _32 = Bd_33->Des0;
+  Info_51(D)->Timestamp.nanoseconds = _32;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  Info_51(D)->Timestamp.secondsHi = 0;
+  Info_51(D)->Timestamp.seconds = 0;
+  Info_51(D)->Timestamp.nanoseconds = 0;
+
+  <bb 11> :
+  return;
+
+}
+
+
+Gmac_Ip_ComputeCRC32 (const uint8 * Mac, uint8 Size)
+{
+  uint32 j;
+  uint32 i;
+  uint32 Crc;
+  uint32 D.7583;
+  const uint8 * _1;
+  unsigned char _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  uint32 _15;
+
+  <bb 2> :
+  Crc_12 = 4294967295;
+  i_13 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = Mac_17(D) + i_10;
+  _2 = *_1;
+  _3 = (long unsigned int) _2;
+  Crc_18 = Crc_9 ^ _3;
+  j_19 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _4 = Crc_8 & 1;
+  if (_4 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _5 = Crc_8 >> 1;
+  Crc_22 = _5 ^ 3988292384;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  Crc_21 = Crc_8 >> 1;
+
+  <bb 7> :
+  # Crc_7 = PHI <Crc_22(5), Crc_21(6)>
+  j_23 = j_11 + 1;
+
+  <bb 8> :
+  # Crc_8 = PHI <Crc_18(3), Crc_7(7)>
+  # j_11 = PHI <j_19(3), j_23(7)>
+  if (j_11 <= 7)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i_20 = i_10 + 1;
+
+  <bb 10> :
+  # Crc_9 = PHI <Crc_12(2), Crc_8(9)>
+  # i_10 = PHI <i_13(2), i_20(9)>
+  _6 = (long unsigned int) Size_14(D);
+  if (i_10 < _6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _15 = ~Crc_9;
+
+  <bb 12> :
+<L9>:
+  return _15;
+
+}
+
+
+DevAssert (volatile boolean x)
+{
+  _Bool x.2_1;
+
+  <bb 2> :
+  x.2_1 ={v} x;
+  if (x.2_1 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  return;
+
+}
+
+
+GMAC_ReadManagementFrameData (const struct GMAC_Type * Base)
+{
+  uint16 D.7911;
+  long unsigned int _1;
+  uint16 _4;
+
+  <bb 2> :
+  _1 ={v} Base_3(D)->MAC_MDIO_DATA;
+  _4 = (uint16) _1;
+
+  <bb 3> :
+<L0>:
+  return _4;
+
+}
+
+

@@ -1,0 +1,1286 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: GmacIf_TxNotification/17 GmacIf_RxNotification/16 memcpy_custom/15 memcpy_64/14 gmacif_register_rx_buff_process_condition_handler/13 igmp_gmac_filter/12 mld_gmac_filter/11 gmac_ethernetif_shutdown/10 gmac_ethernetif_init/9
+
+
+Marking externally visible variables: rx_bufs/5 tx_pbufs/4 gmacif_DataBuffer/3 g_netif/1
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Gmac_Ip_GetTransmitStatus/36 (Gmac_Ip_GetTransmitStatus) @066b17e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: GmacIf_TxNotification/17 
+  Calls: 
+Gmac_Ip_ReadFrame/35 (Gmac_Ip_ReadFrame) @066b1620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: GmacIf_RxNotification/16 
+  Calls: 
+memcpy/34 (memcpy) @066b1460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: memcpy_custom/15 memcpy_custom/15 memcpy_custom/15 memcpy_custom/15 
+  Calls: 
+Gmac_Ip_RemoveDstAddrFromHashFilter/33 (Gmac_Ip_RemoveDstAddrFromHashFilter) @066b1000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: igmp_gmac_filter/12 mld_gmac_filter/11 
+  Calls: 
+Gmac_Ip_AddDstAddrToHashFilter/32 (Gmac_Ip_AddDstAddrToHashFilter) @06673b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: igmp_gmac_filter/12 mld_gmac_filter/11 
+  Calls: 
+lwip_htonl/31 (lwip_htonl) @06673540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: mld_gmac_filter/11 mld_gmac_filter/11 mld_gmac_filter/11 mld_gmac_filter/11 
+  Calls: 
+Gmac_Ip_Deinit/30 (Gmac_Ip_Deinit) @06673e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: gmac_ethernetif_shutdown/10 
+  Calls: 
+ethip6_output/29 (ethip6_output) @06673c40
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: gmac_ethernetif_init/9 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_output/28 (etharp_output) @06673a80
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: gmac_ethernetif_init/9 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+netif_set_link_up/27 (netif_set_link_up) @066738c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: gmacif_low_level_init/8 
+  Calls: 
+Gmac_Ip_SetMulticastHashFilter/26 (Gmac_Ip_SetMulticastHashFilter) @066737e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: gmacif_low_level_init/8 
+  Calls: 
+Gmac_Ip_EnableController/25 (Gmac_Ip_EnableController) @06673700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: gmacif_low_level_init/8 
+  Calls: 
+Gmac_Ip_ProvideRxBuff/24 (Gmac_Ip_ProvideRxBuff) @06673620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: GmacIf_RxNotification/16 GmacIf_RxNotification/16 gmacif_low_level_init/8 
+  Calls: 
+pbuf_alloc/23 (pbuf_alloc) @06673380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: gmacif_input/7 
+  Calls: 
+pbuf_free/22 (pbuf_free) @066731c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: GmacIf_TxNotification/17 gmacif_input/7 gmacif_low_level_output/6 
+  Calls: 
+Gmac_Ip_SendMultiBufferFrame/21 (Gmac_Ip_SendMultiBufferFrame) @066730e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: gmacif_low_level_output/6 
+  Calls: 
+netif_cfg/20 (netif_cfg) @06667f30
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: gmac_ethernetif_init/9 (read) gmacif_low_level_output/6 (read) gmac_ethernetif_shutdown/10 (read) gmacif_low_level_init/8 (read) mld_gmac_filter/11 (read) mld_gmac_filter/11 (read) gmacif_low_level_init/8 (read) gmacif_low_level_init/8 (read) gmacif_low_level_init/8 (read) igmp_gmac_filter/12 (read) igmp_gmac_filter/12 (read) gmacif_low_level_init/8 (read) gmac_ethernetif_init/9 (read) gmac_ethernetif_init/9 (read) gmac_ethernetif_init/9 (read) gmac_ethernetif_init/9 (read) GmacIf_RxNotification/16 (read) 
+  Availability: not_available
+  Varpool flags:
+pbuf_clen/19 (pbuf_clen) @06673000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: gmacif_low_level_output/6 
+  Calls: 
+pbuf_ref/18 (pbuf_ref) @0666ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: gmacif_low_level_output/6 
+  Calls: 
+GmacIf_TxNotification/17 (GmacIf_TxNotification) @0666ae00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tx_pbufs/4 (read) tx_pbufs/4 (read) tx_pbufs/4 (read) tx_pbufs/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/22 Gmac_Ip_GetTransmitStatus/36 
+GmacIf_RxNotification/16 (GmacIf_RxNotification) @0666ab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: rx_buff_process_handler/2 (read) rx_buff_process_handler/2 (read) netif_cfg/20 (read) g_netif/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gmac_Ip_ProvideRxBuff/24 gmacif_input/7 Gmac_Ip_ProvideRxBuff/24 Gmac_Ip_ReadFrame/35 
+   Indirect call Num speculative call targets: 0
+memcpy_custom/15 (memcpy_custom) @0666a8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memcpy/34 memcpy/34 memcpy_64/14 memcpy/34 memcpy/34 
+memcpy_64/14 (memcpy_64) @0666a620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: memcpy_custom/15 
+  Calls: 
+gmacif_register_rx_buff_process_condition_handler/13 (gmacif_register_rx_buff_process_condition_handler) @0666a380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: rx_buff_process_handler/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+igmp_gmac_filter/12 (igmp_gmac_filter) @0666a0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: netif_cfg/20 (read) netif_cfg/20 (read) 
+  Referring: gmacif_low_level_init/8 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gmac_Ip_RemoveDstAddrFromHashFilter/33 Gmac_Ip_AddDstAddrToHashFilter/32 
+mld_gmac_filter/11 (mld_gmac_filter) @0664aee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: netif_cfg/20 (read) netif_cfg/20 (read) 
+  Referring: gmacif_low_level_init/8 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gmac_Ip_RemoveDstAddrFromHashFilter/33 Gmac_Ip_AddDstAddrToHashFilter/32 lwip_htonl/31 lwip_htonl/31 lwip_htonl/31 lwip_htonl/31 
+gmac_ethernetif_shutdown/10 (gmac_ethernetif_shutdown) @0664a8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netif_cfg/20 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gmac_Ip_Deinit/30 
+gmac_ethernetif_init/9 (gmac_ethernetif_init) @0664a620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tx_pbufs/4 (write) netif_cfg/20 (read) netif_cfg/20 (read) etharp_output/28 (addr) netif_cfg/20 (read) ethip6_output/29 (addr) gmacif_low_level_output/6 (addr) netif_cfg/20 (read) netif_cfg/20 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: gmacif_low_level_init/8 
+gmacif_low_level_init/8 (gmacif_low_level_init) @0664a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: netif_cfg/20 (read) igmp_gmac_filter/12 (addr) g_netif/1 (write) gmacif_DataBuffer/3 (addr) netif_cfg/20 (read) rx_bufs/5 (write) netif_cfg/20 (read) netif_cfg/20 (read) netif_cfg/20 (read) mld_gmac_filter/11 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: gmac_ethernetif_init/9 
+  Calls: netif_set_link_up/27 Gmac_Ip_SetMulticastHashFilter/26 Gmac_Ip_EnableController/25 Gmac_Ip_ProvideRxBuff/24 
+   Indirect call Num speculative call targets: 0
+gmacif_input/7 (gmacif_input) @0664a0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: GmacIf_RxNotification/16 
+  Calls: pbuf_free/22 pbuf_alloc/23 
+   Indirect call Num speculative call targets: 0
+gmacif_low_level_output/6 (gmacif_low_level_output) @066ccee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: tx_pbufs/4 (read) netif_cfg/20 (read) tx_pbufs/4 (write) tx_pbufs/4 (write) 
+  Referring: gmac_ethernetif_init/9 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/22 Gmac_Ip_SendMultiBufferFrame/21 pbuf_clen/19 pbuf_ref/18 
+rx_bufs/5 (rx_bufs) @066c94c8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: gmacif_low_level_init/8 (write) 
+  Availability: available
+  Varpool flags:
+tx_pbufs/4 (tx_pbufs) @066c9438
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: gmacif_low_level_output/6 (read) gmacif_low_level_output/6 (write) gmacif_low_level_output/6 (write) gmac_ethernetif_init/9 (write) GmacIf_TxNotification/17 (read) GmacIf_TxNotification/17 (read) GmacIf_TxNotification/17 (read) GmacIf_TxNotification/17 (write) 
+  Availability: available
+  Varpool flags:
+gmacif_DataBuffer/3 (gmacif_DataBuffer) @066c93a8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: gmacif_low_level_init/8 (addr) 
+  Availability: available
+  Varpool flags:
+rx_buff_process_handler/2 (rx_buff_process_handler) @066c9318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: gmacif_register_rx_buff_process_condition_handler/13 (write) GmacIf_RxNotification/16 (read) GmacIf_RxNotification/16 (read) 
+  Availability: available
+  Varpool flags: initialized
+g_netif/1 (g_netif) @066c9240
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: gmacif_low_level_init/8 (write) GmacIf_RxNotification/16 (read) 
+  Availability: available
+  Varpool flags: initialized
+GmacIf_TxNotification (uint8 instance, uint8 channel)
+{
+  uint8_t i;
+  int _1;
+  struct pbuf * _2;
+  int _3;
+  struct pbuf * _4;
+  void * _5;
+  <unnamed type> _6;
+  int _7;
+  struct pbuf * _8;
+  int _9;
+  unsigned char i.10_10;
+
+  <bb 2> :
+  i_14 = 0;
+  i_15 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = (int) i_11;
+  _2 ={v} tx_pbufs[_1];
+  if (_2 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _3 = (int) i_11;
+  _4 ={v} tx_pbufs[_3];
+  _5 = _4->payload;
+  _6 = Gmac_Ip_GetTransmitStatus (instance_17(D), channel_18(D), _5, 0B);
+  if (_6 != 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _7 = (int) i_11;
+  _8 ={v} tx_pbufs[_7];
+  pbuf_free (_8);
+  _9 = (int) i_11;
+  tx_pbufs[_9] ={v} 0B;
+
+  <bb 6> :
+  i.10_10 = i_11;
+  i_22 = i.10_10 + 1;
+
+  <bb 7> :
+  # i_11 = PHI <i_15(2), i_22(6)>
+  if (i_11 <= 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  return;
+
+}
+
+
+GmacIf_RxNotification (uint8 instance, uint8 channel)
+{
+  uint32_t i;
+  err_t ret;
+  Gmac_Ip_StatusType gmac_status;
+  struct Gmac_Ip_RxInfoType info;
+  struct Gmac_Ip_BufferType bd;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  unsigned int (*<T8f9>) (uint8_t, struct Gmac_Ip_BufferType *) rx_buff_process_handler.8_4;
+  unsigned int (*<T8f9>) (uint8_t, struct Gmac_Ip_BufferType *) rx_buff_process_handler.9_5;
+  unsigned int _6;
+  struct netif_custom_t * _7;
+  unsigned char _8;
+  struct netif * _9;
+  uint8 * _10;
+  short unsigned int _11;
+
+  <bb 2> :
+  gmac_status_17 = 2561;
+  ret_18 = -6;
+
+  <bb 3> :
+  gmac_status_23 = Gmac_Ip_ReadFrame (instance_20(D), channel_21(D), &bd, &info);
+  if (gmac_status_23 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 4> :
+  _1 = info.ErrMask;
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  ret_29 = -12;
+  _2 = info.ErrMask;
+  _3 = _2 | 2097152;
+  if (_3 != 2097152)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 6> :
+  Gmac_Ip_ProvideRxBuff (instance_20(D), channel_21(D), &bd);
+  goto <bb 14>; [INV]
+
+  <bb 7> :
+  rx_buff_process_handler.8_4 = rx_buff_process_handler;
+  if (rx_buff_process_handler.8_4 == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  rx_buff_process_handler.9_5 = rx_buff_process_handler;
+  _6 = rx_buff_process_handler.9_5 (instance_20(D), &bd);
+  if (_6 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 9> :
+  i_25 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 10> :
+  _7 = netif_cfg[i_12];
+  _8 = _7->num;
+  if (instance_20(D) == _8)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _9 = g_netif[i_12];
+  _10 = bd.Data;
+  _11 = bd.Length;
+  ret_28 = gmacif_input (_9, _10, _11);
+  goto <bb 14>; [INV]
+
+  <bb 12> :
+  i_26 = i_12 + 1;
+
+  <bb 13> :
+  # i_12 = PHI <i_25(9), i_26(12)>
+  if (i_12 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  Gmac_Ip_ProvideRxBuff (instance_20(D), channel_21(D), &bd);
+
+  <bb 15> :
+  if (gmac_status_23 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  bd ={v} {CLOBBER};
+  info ={v} {CLOBBER};
+  return;
+
+}
+
+
+memcpy_custom (void * dst, const void * src, unsigned int len)
+{
+  unsigned int alignment;
+  const char * ps;
+  char * pd;
+  unsigned int last_dest;
+  unsigned int last_src;
+  unsigned int _1;
+  unsigned int _2;
+  unsigned int _3;
+  sizetype _4;
+  sizetype _5;
+  unsigned int _6;
+
+  <bb 2> :
+  if (len_8(D) <= 32)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  memcpy (dst_11(D), src_9(D), len_8(D));
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  last_src_10 = (unsigned int) src_9(D);
+  last_dest_12 = (unsigned int) dst_11(D);
+  pd_13 = dst_11(D);
+  ps_14 = src_9(D);
+  _1 = last_src_10 ^ last_dest_12;
+  _2 = _1 & 15;
+  if (_2 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  alignment_17 = last_dest_12 & 15;
+  alignment_18 = 16 - alignment_17;
+  memcpy (pd_13, ps_14, alignment_18);
+  pd_20 = pd_13 + alignment_18;
+  ps_21 = ps_14 + alignment_18;
+  len_22 = len_8(D) - alignment_18;
+  memcpy_64 (pd_20, ps_21, len_22);
+  _3 = len_22 & 15;
+  if (_3 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _4 = len_22 & 4294967288;
+  pd_24 = pd_20 + _4;
+  _5 = len_22 & 4294967288;
+  ps_25 = ps_21 + _5;
+  _6 = len_22 & 15;
+  memcpy (pd_24, ps_25, _6);
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  memcpy (dst_11(D), src_9(D), len_8(D));
+
+  <bb 8> :
+  return;
+
+}
+
+
+memcpy_64 (uint64_t * dst, uint64_t * src, unsigned int len)
+{
+  uint64_t * src.5_1;
+  uint64_t * dst.6_2;
+  long long unsigned int _3;
+  unsigned int len.7_4;
+
+  <bb 2> :
+  len_10 = len_9(D) >> 3;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  src.5_1 = src_6;
+  src_15 = src.5_1 + 8;
+  dst.6_2 = dst_5;
+  dst_16 = dst.6_2 + 8;
+  _3 = *src.5_1;
+  *dst.6_2 = _3;
+
+  <bb 4> :
+  # dst_5 = PHI <dst_11(D)(2), dst_16(3)>
+  # src_6 = PHI <src_12(D)(2), src_15(3)>
+  # len_7 = PHI <len_10(2), len_14(3)>
+  len.7_4 = len_7;
+  len_14 = len.7_4 + 4294967295;
+  if (len.7_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+gmacif_register_rx_buff_process_condition_handler (unsigned int (*rx_buff_process_condition_handler_t) (uint8_t, struct Gmac_Ip_BufferType *) handler)
+{
+  <bb 2> :
+  rx_buff_process_handler = handler_2(D);
+  return;
+
+}
+
+
+igmp_gmac_filter (struct netif * netif, const struct ip4_addr_t * group, netif_mac_filter_action action)
+{
+  uint8_t group_MAC[6];
+  err_t D.8581;
+  const u32_t * _1;
+  const u8_t * _2;
+  unsigned char _3;
+  unsigned char _4;
+  const u32_t * _5;
+  const u8_t * _6;
+  unsigned char _7;
+  const u32_t * _8;
+  const u8_t * _9;
+  unsigned char _10;
+  unsigned char _11;
+  int _12;
+  struct netif_custom_t * _13;
+  unsigned char _14;
+  unsigned char _15;
+  int _16;
+  struct netif_custom_t * _17;
+  unsigned char _18;
+  err_t _32;
+
+  <bb 2> :
+  group_MAC[0] = 1;
+  group_MAC[1] = 0;
+  group_MAC[2] = 94;
+  _1 = &group_24(D)->addr;
+  _2 = _1 + 1;
+  _3 = *_2;
+  _4 = _3 & 127;
+  group_MAC[3] = _4;
+  _5 = &group_24(D)->addr;
+  _6 = _5 + 2;
+  _7 = *_6;
+  group_MAC[4] = _7;
+  _8 = &group_24(D)->addr;
+  _9 = _8 + 3;
+  _10 = *_9;
+  group_MAC[5] = _10;
+  if (action_28(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _11 = netif_29(D)->num;
+  _12 = (int) _11;
+  _13 = netif_cfg[_12];
+  _14 = _13->num;
+  Gmac_Ip_AddDstAddrToHashFilter (_14, &group_MAC);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _15 = netif_29(D)->num;
+  _16 = (int) _15;
+  _17 = netif_cfg[_16];
+  _18 = _17->num;
+  Gmac_Ip_RemoveDstAddrFromHashFilter (_18, &group_MAC);
+
+  <bb 5> :
+  _32 = 0;
+  group_MAC ={v} {CLOBBER};
+
+  <bb 6> :
+<L4>:
+  return _32;
+
+}
+
+
+mld_gmac_filter (struct netif * netif, const struct ip6_addr_t * group, netif_mac_filter_action action)
+{
+  uint8_t group_MAC[6];
+  err_t D.8575;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  unsigned char _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  unsigned char _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  short unsigned int _13;
+  short unsigned int _14;
+  unsigned char _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  unsigned char _18;
+  unsigned char _19;
+  int _20;
+  struct netif_custom_t * _21;
+  unsigned char _22;
+  unsigned char _23;
+  int _24;
+  struct netif_custom_t * _25;
+  unsigned char _26;
+  err_t _44;
+
+  <bb 2> :
+  group_MAC[0] = 51;
+  group_MAC[1] = 51;
+  _1 = group_31(D)->addr[3];
+  _2 = lwip_htonl (_1);
+  _3 = _2 >> 16;
+  _4 = (short unsigned int) _3;
+  _5 = _4 >> 8;
+  _6 = (unsigned char) _5;
+  group_MAC[2] = _6;
+  _7 = group_31(D)->addr[3];
+  _8 = lwip_htonl (_7);
+  _9 = _8 >> 16;
+  _10 = (unsigned char) _9;
+  group_MAC[3] = _10;
+  _11 = group_31(D)->addr[3];
+  _12 = lwip_htonl (_11);
+  _13 = (short unsigned int) _12;
+  _14 = _13 >> 8;
+  _15 = (unsigned char) _14;
+  group_MAC[4] = _15;
+  _16 = group_31(D)->addr[3];
+  _17 = lwip_htonl (_16);
+  _18 = (unsigned char) _17;
+  group_MAC[5] = _18;
+  if (action_40(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _19 = netif_41(D)->num;
+  _20 = (int) _19;
+  _21 = netif_cfg[_20];
+  _22 = _21->num;
+  Gmac_Ip_AddDstAddrToHashFilter (_22, &group_MAC);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _23 = netif_41(D)->num;
+  _24 = (int) _23;
+  _25 = netif_cfg[_24];
+  _26 = _25->num;
+  Gmac_Ip_RemoveDstAddrFromHashFilter (_26, &group_MAC);
+
+  <bb 5> :
+  _44 = 0;
+  group_MAC ={v} {CLOBBER};
+
+  <bb 6> :
+<L4>:
+  return _44;
+
+}
+
+
+gmac_ethernetif_shutdown (struct netif * netif)
+{
+  unsigned char _1;
+  int _2;
+  struct netif_custom_t * _3;
+  unsigned char _4;
+
+  <bb 2> :
+  _1 = netif_6(D)->num;
+  _2 = (int) _1;
+  _3 = netif_cfg[_2];
+  _4 = _3->num;
+  Gmac_Ip_Deinit (_4);
+  return;
+
+}
+
+
+gmac_ethernetif_init (struct netif * netif)
+{
+  uint8_t i;
+  err_t ret;
+  err_t D.8570;
+  int _1;
+  unsigned char i.4_2;
+  unsigned char _3;
+  int _4;
+  struct netif_custom_t * _5;
+  char _6;
+  unsigned char _7;
+  int _8;
+  struct netif_custom_t * _9;
+  char _10;
+  unsigned char _11;
+  int _12;
+  struct netif_custom_t * _13;
+  _Bool _14;
+  unsigned char _15;
+  int _16;
+  struct netif_custom_t * _17;
+  const char * _18;
+  unsigned char _19;
+  int _20;
+  struct netif_custom_t * _21;
+  const char * _22;
+  err_t _53;
+
+  <bb 2> :
+  ret_28 = 0;
+  if (netif_29(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  i_31 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _1 = (int) i_23;
+  tx_pbufs[_1] ={v} 0B;
+  i.4_2 = i_23;
+  i_55 = i.4_2 + 1;
+
+  <bb 6> :
+  # i_23 = PHI <i_31(4), i_55(5)>
+  if (i_23 <= 4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _3 = netif_29(D)->num;
+  _4 = (int) _3;
+  _5 = netif_cfg[_4];
+  _6 = _5->name[0];
+  netif_29(D)->name[0] = _6;
+  _7 = netif_29(D)->num;
+  _8 = (int) _7;
+  _9 = netif_cfg[_8];
+  _10 = _9->name[1];
+  netif_29(D)->name[1] = _10;
+  netif_29(D)->output = etharp_output;
+  _11 = netif_29(D)->num;
+  _12 = (int) _11;
+  _13 = netif_cfg[_12];
+  _14 = _13->has_IPv6;
+  if (_14 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  netif_29(D)->output_ip6 = ethip6_output;
+
+  <bb 9> :
+  netif_29(D)->linkoutput = gmacif_low_level_output;
+  _15 = netif_29(D)->num;
+  _16 = (int) _15;
+  _17 = netif_cfg[_16];
+  _18 = _17->hostname;
+  if (_18 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _19 = netif_29(D)->num;
+  _20 = (int) _19;
+  _21 = netif_cfg[_20];
+  _22 = _21->hostname;
+  netif_29(D)->hostname = _22;
+
+  <bb 11> :
+  netif_29(D)->link_type = 6;
+  netif_29(D)->link_speed = 100000000;
+  netif_29(D)->ts = 0;
+  netif_29(D)->mib2_counters.ifinoctets = 0;
+  netif_29(D)->mib2_counters.ifinucastpkts = 0;
+  netif_29(D)->mib2_counters.ifinnucastpkts = 0;
+  netif_29(D)->mib2_counters.ifindiscards = 0;
+  netif_29(D)->mib2_counters.ifinerrors = 0;
+  netif_29(D)->mib2_counters.ifinunknownprotos = 0;
+  netif_29(D)->mib2_counters.ifoutoctets = 0;
+  netif_29(D)->mib2_counters.ifoutucastpkts = 0;
+  netif_29(D)->mib2_counters.ifoutnucastpkts = 0;
+  netif_29(D)->mib2_counters.ifoutdiscards = 0;
+  netif_29(D)->mib2_counters.ifouterrors = 0;
+  gmacif_low_level_init (netif_29(D));
+  _53 = ret_28;
+
+  <bb 12> :
+<L10>:
+  return _53;
+
+}
+
+
+gmacif_low_level_init (struct netif * netif)
+{
+  struct ip6_addr_t ip6_allnodes_ll;
+  uint8_t i;
+  uint8_t i;
+  struct Gmac_Ip_BufferType bd;
+  unsigned char _1;
+  int _2;
+  struct netif_custom_t * _3;
+  int _4;
+  int _5;
+  unsigned char _6;
+  unsigned char i.2_7;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _10;
+  int _11;
+  int _12;
+  int _13;
+  uint8 * _14;
+  unsigned char _15;
+  int _16;
+  struct netif_custom_t * _17;
+  unsigned char _18;
+  int _19;
+  unsigned char i.3_20;
+  unsigned char _21;
+  int _22;
+  struct netif_custom_t * _23;
+  unsigned char _24;
+  unsigned char _25;
+  int _26;
+  struct netif_custom_t * _27;
+  unsigned char _28;
+  unsigned char _29;
+  int _30;
+  struct netif_custom_t * _31;
+  _Bool _32;
+  unsigned char _33;
+  unsigned char _34;
+  err_t (*<T717>) (struct netif *, const struct ip6_addr_t *, netif_mac_filter_action) _35;
+
+  <bb 2> :
+  i_41 = 0;
+  netif_43(D)->hwaddr_len = 6;
+  i_45 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = netif_43(D)->num;
+  _2 = (int) _1;
+  _3 = netif_cfg[_2];
+  _4 = (int) i_36;
+  _5 = (int) i_36;
+  _6 = _3->hwaddr[_4];
+  netif_43(D)->hwaddr[_5] = _6;
+  i.2_7 = i_36;
+  i_70 = i.2_7 + 1;
+
+  <bb 4> :
+  # i_36 = PHI <i_45(2), i_70(3)>
+  if (i_36 <= 5)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  netif_43(D)->mtu = 1500;
+  netif_43(D)->flags = 26;
+  _8 = netif_43(D)->flags;
+  _9 = _8 | 32;
+  netif_43(D)->flags = _9;
+  netif_43(D)->igmp_mac_filter = igmp_gmac_filter;
+  _10 = netif_43(D)->num;
+  _11 = (int) _10;
+  g_netif[_11] = netif_43(D);
+  i_51 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _12 = (int) i_37;
+  _13 = _12 * 1536;
+  _14 = &gmacif_DataBuffer[_13];
+  bd.Data = _14;
+  _15 = netif_43(D)->num;
+  _16 = (int) _15;
+  _17 = netif_cfg[_16];
+  _18 = _17->num;
+  Gmac_Ip_ProvideRxBuff (_18, 0, &bd);
+  _19 = (int) i_37;
+  rx_bufs[_19] = 0B;
+  i.3_20 = i_37;
+  i_68 = i.3_20 + 1;
+
+  <bb 7> :
+  # i_37 = PHI <i_51(5), i_68(6)>
+  if (i_37 <= 4)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _21 = netif_43(D)->num;
+  _22 = (int) _21;
+  _23 = netif_cfg[_22];
+  _24 = _23->num;
+  Gmac_Ip_EnableController (_24);
+  _25 = netif_43(D)->num;
+  _26 = (int) _25;
+  _27 = netif_cfg[_26];
+  _28 = _27->num;
+  Gmac_Ip_SetMulticastHashFilter (_28, 1);
+  _29 = netif_43(D)->num;
+  _30 = (int) _29;
+  _31 = netif_cfg[_30];
+  _32 = _31->has_IPv6;
+  if (_32 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _33 = netif_43(D)->flags;
+  _34 = _33 | 64;
+  netif_43(D)->flags = _34;
+  netif_43(D)->mld_mac_filter = mld_gmac_filter;
+  ip6_allnodes_ll.addr[0] = 767;
+  ip6_allnodes_ll.addr[1] = 0;
+  ip6_allnodes_ll.addr[2] = 0;
+  ip6_allnodes_ll.addr[3] = 16777216;
+  ip6_allnodes_ll.zone = 0;
+  _35 = netif_43(D)->mld_mac_filter;
+  _35 (netif_43(D), &ip6_allnodes_ll, 1);
+  ip6_allnodes_ll ={v} {CLOBBER};
+
+  <bb 10> :
+  netif_set_link_up (netif_43(D));
+  bd ={v} {CLOBBER};
+  return;
+
+}
+
+
+gmacif_input (struct netif * netif, uint8_t * data, uint16_t size)
+{
+  struct pbuf * p;
+  err_t ret;
+  err_t D.8560;
+  err_t (*<T6fb>) (struct pbuf *, struct netif *) _1;
+  signed char _2;
+  err_t _16;
+
+  <bb 2> :
+  ret_5 = -1;
+  p_9 = pbuf_alloc (0, size_7(D), 65);
+  if (p_9 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  ret_10 = 0;
+  p_9->payload = data_11(D);
+  _1 = netif_13(D)->input;
+  _2 = _1 (p_9, netif_13(D));
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  pbuf_free (p_9);
+
+  <bb 5> :
+  # ret_3 = PHI <ret_5(2), ret_10(3), ret_10(4)>
+  _16 = ret_3;
+
+  <bb 6> :
+<L4>:
+  return _16;
+
+}
+
+
+gmacif_low_level_output (struct netif * netif, struct pbuf * p)
+{
+  uint8_t i;
+  uint8_t bufs_num;
+  struct Gmac_Ip_BufferType bd_array[24];
+  uint64_t retries;
+  uint8_t pbuf_chain_type;
+  struct Gmac_Ip_TxOptionsType options;
+  struct Gmac_Ip_BufferType bd;
+  err_t pbuf_status;
+  Gmac_Ip_StatusType status;
+  struct pbuf * q;
+  err_t D.8553;
+  short unsigned int _1;
+  int _2;
+  void * _3;
+  int _4;
+  short unsigned int _5;
+  unsigned char i.0_6;
+  int _7;
+  struct pbuf * _8;
+  unsigned char _9;
+  int _10;
+  struct netif_custom_t * _11;
+  unsigned char _12;
+  long unsigned int _13;
+  int _14;
+  unsigned char i.1_15;
+  int _16;
+  err_t _58;
+
+  <bb 2> :
+  status_36 = 1;
+  pbuf_status_37 = 0;
+  pbuf_chain_type_38 = 1;
+  retries_39 = 0;
+  if (p_40(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  pbuf_ref (p_40(D));
+  options.NoInt = 1;
+  options.CrcPadIns = 0;
+  options.ChecksumIns = 3;
+  options.NoInt = 0;
+  pbuf_status_47 = -2;
+  _1 = pbuf_clen (p_40(D));
+  bufs_num_49 = (uint8_t) _1;
+  if (bufs_num_49 > 24)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  q_50 = p_40(D);
+  i_51 = 0;
+
+  <bb 7> :
+  # q_17 = PHI <q_50(6), q_55(7)>
+  # i_25 = PHI <i_51(6), i_54(7)>
+  _2 = (int) i_25;
+  _3 = q_17->payload;
+  bd_array[_2].Data = _3;
+  _4 = (int) i_25;
+  _5 = q_17->len;
+  bd_array[_4].Length = _5;
+  i.0_6 = i_25;
+  i_54 = i.0_6 + 1;
+  q_55 = q_17->next;
+  if (q_55 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  goto <bb 17>; [INV]
+
+  <bb 9> :
+  i_62 = 0;
+  goto <bb 16>; [INV]
+
+  <bb 10> :
+  _7 = (int) i_26;
+  _8 ={v} tx_pbufs[_7];
+  if (_8 == 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 11> :
+  __asm__ __volatile__(" cpsid i");
+  _9 = netif_64(D)->num;
+  _10 = (int) _9;
+  _11 = netif_cfg[_10];
+  _12 = _11->num;
+  _13 = (long unsigned int) bufs_num_49;
+  status_66 = Gmac_Ip_SendMultiBufferFrame (_12, 0, &bd_array, &options, _13);
+  if (status_66 != 2562)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _14 = (int) i_26;
+  tx_pbufs[_14] ={v} p_40(D);
+  pbuf_status_68 = 0;
+
+  <bb 13> :
+  # pbuf_status_21 = PHI <pbuf_status_23(11), pbuf_status_68(12)>
+  __asm__ __volatile__(" cpsie i");
+  if (pbuf_status_21 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  goto <bb 17>; [INV]
+
+  <bb 15> :
+  # status_18 = PHI <status_19(10), status_66(13)>
+  # pbuf_status_22 = PHI <pbuf_status_23(10), pbuf_status_21(13)>
+  i.1_15 = i_26;
+  i_70 = i.1_15 + 1;
+
+  <bb 16> :
+  # status_19 = PHI <status_20(9), status_18(15)>
+  # pbuf_status_23 = PHI <pbuf_status_24(9), pbuf_status_22(15)>
+  # i_26 = PHI <i_62(9), i_70(15)>
+  if (i_26 <= 4)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  # status_20 = PHI <status_36(8), status_66(14), status_19(16)>
+  # pbuf_status_24 = PHI <pbuf_status_47(8), pbuf_status_21(14), pbuf_status_23(16)>
+  # i_27 = PHI <i_54(8), i_26(14), i_26(16)>
+  if (pbuf_status_24 == -2)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  if (status_20 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  pbuf_free (p_40(D));
+  _16 = (int) i_27;
+  tx_pbufs[_16] ={v} 0B;
+
+  <bb 20> :
+  _58 = pbuf_status_24;
+  bd ={v} {CLOBBER};
+  options ={v} {CLOBBER};
+  bd_array ={v} {CLOBBER};
+
+  <bb 21> :
+<L23>:
+  return _58;
+
+}
+
+

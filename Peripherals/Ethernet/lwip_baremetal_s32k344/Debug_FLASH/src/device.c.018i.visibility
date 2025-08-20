@@ -1,0 +1,563 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: device_init/4
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Gmac_0_ConfigPB/30 (Gmac_0_ConfigPB) @07f341f8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Gmac_Ip_Init/29 (Gmac_Ip_Init) @07f33c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+OsIf_SetTimerFrequency/28 (OsIf_SetTimerFrequency) @07f33b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+Pit_Ip_StartChannel/27 (Pit_Ip_StartChannel) @07f33a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+Clock_Ip_GetClockFrequency/26 (Clock_Ip_GetClockFrequency) @07f339a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+Pit_Ip_EnableChannelInterrupt/25 (Pit_Ip_EnableChannelInterrupt) @07f338c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+PIT_0_ChannelConfig_PB/24 (PIT_0_ChannelConfig_PB) @07f34048
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Pit_Ip_InitChannel/23 (Pit_Ip_InitChannel) @07f337e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+PIT_0_InitConfig_PB/22 (PIT_0_InitConfig_PB) @07f30f78
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Pit_Ip_Init/21 (Pit_Ip_Init) @07f33700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+OsIf_Init/20 (OsIf_Init) @07f33620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+GMAC0_Common_IRQHandler/19 (GMAC0_Common_IRQHandler) @07f33540
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+GMAC0_CH_RX_IRQHandler/18 (GMAC0_CH_RX_IRQHandler) @07f33380
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+GMAC0_CH_TX_IRQHandler/17 (GMAC0_CH_TX_IRQHandler) @07f332a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+IntCtrl_Ip_EnableIrq/16 (IntCtrl_Ip_EnableIrq) @07f331c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 device_init/4 device_init/4 device_init/4 
+  Calls: 
+IntCtrl_Ip_SetPriority/15 (IntCtrl_Ip_SetPriority) @07f330e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 device_init/4 device_init/4 device_init/4 
+  Calls: 
+PIT_0_ISR/14 (PIT_0_ISR) @07f33000
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+IntCtrl_Ip_InstallHandler/13 (IntCtrl_Ip_InstallHandler) @07f26540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 device_init/4 device_init/4 device_init/4 
+  Calls: 
+Clock_Ip_aClockConfig/12 (Clock_Ip_aClockConfig) @07f30af8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Clock_Ip_Init/11 (Clock_Ip_Init) @07f261c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+g_pin_mux_InitConfigArr_PortContainer_0_VS_0/10 (g_pin_mux_InitConfigArr_PortContainer_0_VS_0) @07f30a68
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: device_init/4 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Siul2_Port_Ip_Init/9 (Siul2_Port_Ip_Init) @07f26ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: device_init/4 
+  Calls: 
+Gmac_Ip_MDIOReadMMD/8 (Gmac_Ip_MDIOReadMMD) @07f26c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Eth_T_InitPhys/2 
+  Calls: 
+Gmac_Ip_MDIOWrite/7 (Gmac_Ip_MDIOWrite) @07f26b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 
+  Calls: 
+Gmac_Ip_MDIORead/6 (Gmac_Ip_MDIORead) @07f26a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 Eth_T_InitPhys/2 
+  Calls: 
+Gmac_Ip_EnableMDIO/5 (Gmac_Ip_EnableMDIO) @07f269a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Eth_T_InitPhys/2 
+  Calls: 
+device_init/4 (device_init) @07f26460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: g_pin_mux_InitConfigArr_PortContainer_0_VS_0/10 (addr) Clock_Ip_aClockConfig/12 (addr) PIT_0_ISR/14 (addr) GMAC0_CH_TX_IRQHandler/17 (addr) GMAC0_CH_RX_IRQHandler/18 (addr) GMAC0_Common_IRQHandler/19 (addr) PIT_0_InitConfig_PB/22 (addr) PIT_0_ChannelConfig_PB/24 (addr) Gmac_0_ConfigPB/30 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Eth_T_InitPhys/2 Gmac_Ip_Init/29 OsIf_SetTimerFrequency/28 Pit_Ip_StartChannel/27 Clock_Ip_GetClockFrequency/26 Pit_Ip_EnableChannelInterrupt/25 Pit_Ip_InitChannel/23 Pit_Ip_Init/21 OsIf_Init/20 Eth_T_EnableIRQs/3 IntCtrl_Ip_EnableIrq/16 IntCtrl_Ip_SetPriority/15 IntCtrl_Ip_InstallHandler/13 IntCtrl_Ip_EnableIrq/16 IntCtrl_Ip_SetPriority/15 IntCtrl_Ip_InstallHandler/13 IntCtrl_Ip_EnableIrq/16 IntCtrl_Ip_SetPriority/15 IntCtrl_Ip_InstallHandler/13 IntCtrl_Ip_EnableIrq/16 IntCtrl_Ip_SetPriority/15 IntCtrl_Ip_InstallHandler/13 Clock_Ip_Init/11 Siul2_Port_Ip_Init/9 
+Eth_T_EnableIRQs/3 (Eth_T_EnableIRQs) @07f260e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: device_init/4 
+  Calls: 
+Eth_T_InitPhys/2 (Eth_T_InitPhys) @07f19e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: device_init/4 
+  Calls: Gmac_Ip_MDIORead/6 Gmac_Ip_MDIOReadMMD/8 Gmac_Ip_MDIOWrite/7 Gmac_Ip_MDIORead/6 Gmac_Ip_MDIOWrite/7 Gmac_Ip_MDIORead/6 Gmac_Ip_MDIOWrite/7 Gmac_Ip_MDIOWrite/7 Gmac_Ip_MDIORead/6 Gmac_Ip_MDIORead/6 Gmac_Ip_MDIOWrite/7 Gmac_Ip_MDIORead/6 Gmac_Ip_MDIOWrite/7 Gmac_Ip_MDIORead/6 Gmac_Ip_MDIORead/6 Gmac_Ip_EnableMDIO/5 
+device_init ()
+{
+  uint16 PitPeriod;
+
+  <bb 2> :
+  _1 = 1076543488B;
+  _2 = _1->DCMRWF1;
+  _3 = _2 & 4294967103;
+  _4 = 1076543488B;
+  _5 = _3 | 128;
+  _4->DCMRWF1 = _5;
+  Siul2_Port_Ip_Init (10, &g_pin_mux_InitConfigArr_PortContainer_0_VS_0);
+  Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  IntCtrl_Ip_InstallHandler (96, PIT_0_ISR, 0B);
+  IntCtrl_Ip_SetPriority (96, 5);
+  IntCtrl_Ip_EnableIrq (96);
+  IntCtrl_Ip_InstallHandler (106, GMAC0_CH_TX_IRQHandler, 0B);
+  IntCtrl_Ip_SetPriority (106, 8);
+  IntCtrl_Ip_EnableIrq (106);
+  IntCtrl_Ip_InstallHandler (107, GMAC0_CH_RX_IRQHandler, 0B);
+  IntCtrl_Ip_SetPriority (107, 7);
+  IntCtrl_Ip_EnableIrq (107);
+  IntCtrl_Ip_InstallHandler (105, GMAC0_Common_IRQHandler, 0B);
+  IntCtrl_Ip_SetPriority (105, 6);
+  IntCtrl_Ip_EnableIrq (105);
+  Eth_T_EnableIRQs ();
+  OsIf_Init (0B);
+  Pit_Ip_Init (0, &PIT_0_InitConfig_PB);
+  Pit_Ip_InitChannel (0, &PIT_0_ChannelConfig_PB[0]);
+  Pit_Ip_EnableChannelInterrupt (0, 0);
+  _6 = Clock_Ip_GetClockFrequency (116);
+  _7 = _6 / 1000;
+  PitPeriod = (uint16) _7;
+  _8 = (long unsigned int) PitPeriod;
+  Pit_Ip_StartChannel (0, 0, _8);
+  OsIf_SetTimerFrequency (160000000, 0);
+  Gmac_Ip_Init (0, &Gmac_0_ConfigPB);
+  Eth_T_InitPhys ();
+  return;
+
+}
+
+
+Eth_T_EnableIRQs ()
+{
+  uint32 instance;
+
+  <bb 2> :
+  instance = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  instance = instance + 1;
+
+  <bb 4> :
+  if (instance == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Eth_T_InitPhys ()
+{
+  uint16 phy_addr;
+  uint16 phy_reg_val1;
+  uint16 phy_reg_val0;
+  uint16 rmii_sel;
+
+  <bb 2> :
+  rmii_sel = 0;
+  Gmac_Ip_EnableMDIO (0, 0, 48000000);
+  phy_addr = 0;
+  goto <bb 12>; [INV]
+
+  <bb 3> :
+  _1 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIORead (0, _1, 2, &phy_reg_val0, 1);
+  _2 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIORead (0, _2, 3, &phy_reg_val1, 1);
+  phy_reg_val0.0_3 = phy_reg_val0;
+  if (phy_reg_val0.0_3 == 384)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  phy_reg_val0.1_4 = phy_reg_val0;
+  if (phy_reg_val0.1_4 == 27)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  phy_reg_val1.2_5 = phy_reg_val1;
+  if (phy_reg_val1.2_5 == 56385)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  phy_reg_val1.3_6 = phy_reg_val1;
+  if (phy_reg_val1.3_6 == 56577)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  phy_reg_val1.4_7 = phy_reg_val1;
+  if (phy_reg_val1.4_7 == 45075)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  phy_reg_val0.5_8 = phy_reg_val0;
+  if (phy_reg_val0.5_8 == 8192)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  phy_reg_val1.6_9 = phy_reg_val1;
+  _10 = (unsigned int) phy_reg_val1.6_9;
+  _11 = _10 & 65520;
+  if (_11 == 23696)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  phy_reg_val1.7_12 = phy_reg_val1;
+  _13 = (unsigned int) phy_reg_val1.7_12;
+  _14 = _13 & 65520;
+  if (_14 == 41488)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  phy_addr = phy_addr + 1;
+
+  <bb 12> :
+  if (phy_addr <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  _15 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIOWrite (0, _15, 0, 32768, 1);
+
+  <bb 14> :
+  _16 = (unsigned char) phy_addr;
+  _17 = Gmac_Ip_MDIORead (0, _16, 0, &phy_reg_val0, 1);
+  _18 = _17 & 32768;
+  if (_18 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  phy_reg_val0.8_19 = phy_reg_val0;
+  phy_reg_val0 = phy_reg_val0.8_19;
+  phy_reg_val0.9_20 = phy_reg_val0;
+  _21 = phy_reg_val0.9_20 & 61439;
+  phy_reg_val0 = _21;
+  phy_reg_val0.10_22 = phy_reg_val0;
+  _23 = phy_reg_val0.10_22 | 8192;
+  phy_reg_val0 = _23;
+  rmii_sel = 1;
+  phy_reg_val0.11_24 = phy_reg_val0;
+  _25 = phy_reg_val0.11_24 | 256;
+  phy_reg_val0 = _25;
+  phy_reg_val1.12_26 = phy_reg_val1;
+  _27 = (unsigned int) phy_reg_val1.12_26;
+  _28 = _27 & 65520;
+  if (_28 == 23696)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  phy_reg_val1.13_29 = phy_reg_val1;
+  _30 = (unsigned int) phy_reg_val1.13_29;
+  _31 = _30 & 65520;
+  if (_31 == 41488)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  phy_reg_val0.14_32 = phy_reg_val0;
+  _33 = phy_reg_val0.14_32 & 61439;
+  phy_reg_val0 = _33;
+  phy_reg_val0.15_34 = phy_reg_val0;
+  _35 = phy_reg_val0.15_34 & 65023;
+  phy_reg_val0 = _35;
+  _36 = (unsigned char) phy_addr;
+  phy_reg_val0.16_37 = phy_reg_val0;
+  Gmac_Ip_MDIOWrite (0, _36, 0, phy_reg_val0.16_37, 1);
+  _38 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIORead (0, _38, 0, &phy_reg_val0, 1);
+  _39 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIORead (0, _39, 23, &phy_reg_val0, 1);
+  _40 = (int) rmii_sel;
+  _41 = _40 << 5;
+  _42 = (signed short) _41;
+  phy_reg_val0.17_43 = phy_reg_val0;
+  phy_reg_val0.18_44 = (signed short) phy_reg_val0.17_43;
+  _45 = _42 | phy_reg_val0.18_44;
+  _46 = (short unsigned int) _45;
+  phy_reg_val0 = _46;
+  _47 = (unsigned char) phy_addr;
+  phy_reg_val0.19_48 = phy_reg_val0;
+  Gmac_Ip_MDIOWrite (0, _47, 23, phy_reg_val0.19_48, 1);
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  phy_reg_val0.20_49 = phy_reg_val0;
+  _50 = phy_reg_val0.20_49 & 65471;
+  phy_reg_val0 = _50;
+  _51 = (unsigned char) phy_addr;
+  phy_reg_val0.21_52 = phy_reg_val0;
+  Gmac_Ip_MDIOWrite (0, _51, 0, phy_reg_val0.21_52, 1);
+  _53 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIORead (0, _53, 17, &phy_reg_val0, 1);
+  phy_reg_val0.22_54 = phy_reg_val0;
+  _55 = phy_reg_val0.22_54 | 4;
+  phy_reg_val0 = _55;
+  _56 = (unsigned char) phy_addr;
+  phy_reg_val0.23_57 = phy_reg_val0;
+  Gmac_Ip_MDIOWrite (0, _56, 17, phy_reg_val0.23_57, 1);
+  _58 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIORead (0, _58, 18, &phy_reg_val0, 1);
+  phy_reg_val0.24_59 = phy_reg_val0;
+  _60 = phy_reg_val0.24_59 & 64759;
+  phy_reg_val0 = _60;
+  _61 = (int) rmii_sel;
+  _62 = _61 << 9;
+  _63 = (signed short) _62;
+  phy_reg_val0.25_64 = phy_reg_val0;
+  phy_reg_val0.26_65 = (signed short) phy_reg_val0.25_64;
+  _66 = _63 | phy_reg_val0.26_65;
+  _67 = (short unsigned int) _66;
+  _68 = _67 | 8;
+  phy_reg_val0 = _68;
+  _69 = (unsigned char) phy_addr;
+  phy_reg_val0.27_70 = phy_reg_val0;
+  Gmac_Ip_MDIOWrite (0, _69, 18, phy_reg_val0.27_70, 1);
+
+  <bb 19> :
+  phy_reg_val1.28_71 = phy_reg_val1;
+  if (phy_reg_val1.28_71 == 45075)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _72 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIOReadMMD (0, _72, 30, 33026, &phy_reg_val0, 1);
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  _73 = (unsigned char) phy_addr;
+  Gmac_Ip_MDIORead (0, _73, 1, &phy_reg_val0, 1);
+
+  <bb 22> :
+  phy_reg_val0.29_74 = phy_reg_val0;
+  _75 = (unsigned int) phy_reg_val0.29_74;
+  _76 = _75 & 4;
+  if (_76 == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  phy_reg_val0 = {CLOBBER};
+  phy_reg_val1 = {CLOBBER};
+  return;
+
+}
+
+

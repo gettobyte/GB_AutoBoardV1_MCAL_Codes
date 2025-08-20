@@ -1,0 +1,50 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+start_example/2 (start_example) @06a2a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/0 
+  Calls: 
+device_init/1 (device_init) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/0 
+  Calls: 
+main/0 (main) @06a2a2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: start_example/2 device_init/1 
+main ()
+{
+  int D.5527;
+  int _4;
+
+  <bb 2> :
+  device_init ();
+  start_example ();
+  _4 = 0;
+
+  <bb 3> :
+<L0>:
+  return _4;
+
+}
+
+

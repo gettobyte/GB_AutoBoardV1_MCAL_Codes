@@ -1,0 +1,67 @@
+IPA summary for main/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        2 calls, 2.000000 freq, 0 count
+IPA summary for main/0 is missing.
+Symbol table:
+
+start_example/2 (start_example) @06a2a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/0 
+  Calls: 
+device_init/1 (device_init) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/0 
+  Calls: 
+main/0 (main) @06a2a2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: start_example/2 device_init/1 
+
+;; Function main (main, funcdef_no=0, decl_uid=5521, cgraph_uid=1, symbol_order=0)
+
+main ()
+{
+  int D.5527;
+  int _4;
+
+  <bb 2> :
+  device_init ();
+  start_example ();
+  _4 = 0;
+
+  <bb 3> :
+<L0>:
+  return _4;
+
+}
+
+

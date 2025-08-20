@@ -1,0 +1,321 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: init_data_bss_core2/1 init_data_bss/0
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+__INDEX_COPY_CORE2/4 (__INDEX_COPY_CORE2) @06ad93f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: init_data_bss_core2/1 (addr) 
+  Availability: not_available
+  Varpool flags:
+__ZERO_TABLE/3 (__ZERO_TABLE) @06ad9000
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: init_data_bss/0 (addr) 
+  Availability: not_available
+  Varpool flags:
+__INIT_TABLE/2 (__INIT_TABLE) @06abdf78
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: init_data_bss/0 (addr) init_data_bss_core2/1 (addr) 
+  Availability: not_available
+  Varpool flags:
+init_data_bss_core2/1 (init_data_bss_core2) @06ab7b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: __INIT_TABLE/2 (addr) __INDEX_COPY_CORE2/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+init_data_bss/0 (init_data_bss) @06ab78c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: __INIT_TABLE/2 (addr) __ZERO_TABLE/3 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+init_data_bss_core2 ()
+{
+  const uint32 * initTable_Ptr;
+  uint32 j;
+  uint32 i;
+  uint32 size;
+  uint32 len;
+  uint8 dataPad;
+  uint8 * ram8;
+  uint32 * ram;
+  const uint8 * rom8;
+  const uint32 * rom;
+  const struct Sys_CopyLayoutType * copy_layout;
+
+  <bb 2> :
+  len = 0;
+  size = 0;
+  i = 0;
+  j = 0;
+  initTable_Ptr = &__INIT_TABLE;
+  len = *initTable_Ptr;
+  initTable_Ptr = initTable_Ptr + 4;
+  copy_layout = initTable_Ptr;
+  i = (uint32) &__INDEX_COPY_CORE2;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = i * 12;
+  _2 = copy_layout + _1;
+  rom = _2->rom_start;
+  _3 = i * 12;
+  _4 = copy_layout + _3;
+  ram = _4->ram_start;
+  _5 = i * 12;
+  _6 = copy_layout + _5;
+  _7 = _6->rom_end;
+  _8 = (long unsigned int) _7;
+  _9 = i * 12;
+  _10 = copy_layout + _9;
+  _11 = _10->rom_start;
+  _12 = (long unsigned int) _11;
+  size = _8 - _12;
+  _13 = (unsigned char) size;
+  dataPad = _13 & 3;
+  j = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _14 = j * 4;
+  _15 = rom + _14;
+  _16 = j * 4;
+  _17 = ram + _16;
+  _18 = *_15;
+  *_17 = _18;
+  j = j + 1;
+
+  <bb 5> :
+  _19 = (long unsigned int) dataPad;
+  _20 = size - _19;
+  _21 = _20 >> 2;
+  if (j < _21)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _22 = j * 4;
+  rom8 = rom + _22;
+  _23 = j * 4;
+  ram8 = ram + _23;
+  j = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _24 = rom8 + j;
+  _25 = ram8 + j;
+  _26 = *_24;
+  *_25 = _26;
+  j = j + 1;
+
+  <bb 8> :
+  _27 = (long unsigned int) dataPad;
+  if (j < _27)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i = i + 1;
+
+  <bb 10> :
+  if (i < len)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  return;
+
+}
+
+
+init_data_bss ()
+{
+  const uint32 * zeroTable_Ptr;
+  const uint32 * initTable_Ptr;
+  uint32 j;
+  uint32 i;
+  uint32 size;
+  uint32 len;
+  uint8 dataPad;
+  uint8 * ram8;
+  uint32 * ram;
+  const uint8 * rom8;
+  const uint32 * rom;
+  const struct Sys_ZeroLayoutType * zero_layout;
+  const struct Sys_CopyLayoutType * copy_layout;
+
+  <bb 2> :
+  len = 0;
+  size = 0;
+  i = 0;
+  j = 0;
+  initTable_Ptr = &__INIT_TABLE;
+  zeroTable_Ptr = &__ZERO_TABLE;
+  len = *initTable_Ptr;
+  initTable_Ptr = initTable_Ptr + 4;
+  copy_layout = initTable_Ptr;
+  i = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = i * 12;
+  _2 = copy_layout + _1;
+  rom = _2->rom_start;
+  _3 = i * 12;
+  _4 = copy_layout + _3;
+  ram = _4->ram_start;
+  _5 = i * 12;
+  _6 = copy_layout + _5;
+  _7 = _6->rom_end;
+  _8 = (long unsigned int) _7;
+  _9 = i * 12;
+  _10 = copy_layout + _9;
+  _11 = _10->rom_start;
+  _12 = (long unsigned int) _11;
+  size = _8 - _12;
+  _13 = (unsigned char) size;
+  dataPad = _13 & 3;
+  j = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _14 = j * 4;
+  _15 = rom + _14;
+  _16 = j * 4;
+  _17 = ram + _16;
+  _18 = *_15;
+  *_17 = _18;
+  j = j + 1;
+
+  <bb 5> :
+  _19 = (long unsigned int) dataPad;
+  _20 = size - _19;
+  _21 = _20 >> 2;
+  if (j < _21)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _22 = j * 4;
+  rom8 = rom + _22;
+  _23 = j * 4;
+  ram8 = ram + _23;
+  j = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _24 = rom8 + j;
+  _25 = ram8 + j;
+  _26 = *_24;
+  *_25 = _26;
+  j = j + 1;
+
+  <bb 8> :
+  _27 = (long unsigned int) dataPad;
+  if (j < _27)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i = i + 1;
+
+  <bb 10> :
+  if (i < len)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  len = *zeroTable_Ptr;
+  zeroTable_Ptr = zeroTable_Ptr + 4;
+  zero_layout = zeroTable_Ptr;
+  i = 0;
+  goto <bb 18>; [INV]
+
+  <bb 12> :
+  _28 = i * 8;
+  _29 = zero_layout + _28;
+  ram = _29->ram_start;
+  _30 = i * 8;
+  _31 = zero_layout + _30;
+  _32 = _31->ram_end;
+  _33 = (long unsigned int) _32;
+  _34 = i * 8;
+  _35 = zero_layout + _34;
+  _36 = _35->ram_start;
+  _37 = (long unsigned int) _36;
+  size = _33 - _37;
+  j = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _38 = j * 4;
+  _39 = ram + _38;
+  *_39 = 0;
+  j = j + 1;
+
+  <bb 14> :
+  _40 = size >> 2;
+  if (j < _40)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  _41 = size & 3;
+  if (_41 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _42 = j * 4;
+  _43 = ram + _42;
+  *_43 = 0;
+
+  <bb 17> :
+  i = i + 1;
+
+  <bb 18> :
+  if (i < len)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  return;
+
+}
+
+

@@ -1,0 +1,1958 @@
+Symbol table:
+
+lwip_htonl/30 (lwip_htonl) @06d68460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 
+  Calls: 
+pbuf_ref/29 (pbuf_ref) @06d68380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 
+  Calls: 
+pbuf_alloced_custom/28 (pbuf_alloced_custom) @06d682a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 
+  Calls: 
+pbuf_alloc/27 (pbuf_alloc) @06d680e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 
+  Calls: 
+identification.0/26 (identification) @06d66360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: ip6_frag/10 (read) ip6_frag/10 (write) ip6_frag/10 (read) 
+  Availability: available
+  Varpool flags:
+nd6_get_destination_mtu/25 (nd6_get_destination_mtu) @06d68000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 
+  Calls: 
+memmove/24 (memmove) @06d01d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_reass/6 
+  Calls: 
+pbuf_cat/23 (pbuf_cat) @06d01c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 ip6_reass/6 
+  Calls: 
+pbuf_remove_header/22 (pbuf_remove_header) @06d01b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_reass/6 
+  Calls: 
+memcpy/21 (memcpy) @06d01a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 ip6_reass/6 
+  Calls: 
+memset/20 (memset) @06d019a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_reass/6 
+  Calls: 
+memp_malloc/19 (memp_malloc) @06d018c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag_alloc_pbuf_custom_ref/7 ip6_reass/6 ip6_reass/6 
+  Calls: 
+ip_data/18 (ip_data) @06d55f30
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) 
+  Availability: not_available
+  Varpool flags:
+lwip_htons/17 (lwip_htons) @06d01700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 ip6_frag/10 ip6_reass/6 ip6_reass/6 ip6_reass/6 
+  Calls: 
+lwip_stats/16 (lwip_stats) @06d55e58
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (write) ip6_frag/10 (read) ip6_frag/10 (write) ip6_frag/10 (read) ip6_frag/10 (write) ip6_frag/10 (read) ip6_frag/10 (write) ip6_frag/10 (read) ip6_frag/10 (write) 
+  Availability: not_available
+  Varpool flags:
+memp_free/15 (memp_free) @06d011c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag_free_pbuf_custom_ref/8 ip6_reass/6 ip6_reass_free_complete_datagram/4 
+  Calls: 
+pbuf_free/14 (pbuf_free) @06d010e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_frag/10 ip6_frag/10 ip6_frag/10 ip6_frag_free_pbuf_custom/9 ip6_reass/6 ip6_reass_free_complete_datagram/4 ip6_reass_free_complete_datagram/4 
+  Calls: 
+pbuf_clen/13 (pbuf_clen) @06d01000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_reass/6 ip6_reass/6 ip6_reass_free_complete_datagram/4 ip6_reass_free_complete_datagram/4 
+  Calls: 
+icmp6_time_exceeded_with_addrs/12 (icmp6_time_exceeded_with_addrs) @06ceb460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_reass_free_complete_datagram/4 
+  Calls: 
+pbuf_header_force/11 (pbuf_header_force) @06cebee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_reass/6 ip6_reass_free_complete_datagram/4 
+  Calls: 
+ip6_frag/10 (ip6_frag) @06ceb7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: identification.0/26 (read) identification.0/26 (write) lwip_stats/16 (read) lwip_stats/16 (write) lwip_stats/16 (read) lwip_stats/16 (write) lwip_stats/16 (read) lwip_stats/16 (write) ip6_frag_free_pbuf_custom/9 (addr) identification.0/26 (read) lwip_stats/16 (read) lwip_stats/16 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/14 lwip_htons/17 lwip_htonl/30 lwip_htons/17 pbuf_cat/23 pbuf_ref/29 pbuf_free/14 ip6_frag_free_pbuf_custom_ref/8 pbuf_alloced_custom/28 pbuf_free/14 ip6_frag_alloc_pbuf_custom_ref/7 memcpy/21 pbuf_alloc/27 nd6_get_destination_mtu/25 
+   Indirect call Num speculative call targets: 0
+ip6_frag_free_pbuf_custom/9 (ip6_frag_free_pbuf_custom) @06ceb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: ip6_frag/10 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ip6_frag_free_pbuf_custom_ref/8 pbuf_free/14 
+ip6_frag_free_pbuf_custom_ref/8 (ip6_frag_free_pbuf_custom_ref) @06ceb0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_frag/10 ip6_frag_free_pbuf_custom/9 
+  Calls: memp_free/15 
+ip6_frag_alloc_pbuf_custom_ref/7 (ip6_frag_alloc_pbuf_custom_ref) @06cd20e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_frag/10 
+  Calls: memp_malloc/19 
+ip6_reass/6 (ip6_reass) @06cd2d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/16 (read) lwip_stats/16 (write) ip_data/18 (read) ip_data/18 (read) lwip_stats/16 (read) lwip_stats/16 (write) lwip_stats/16 (read) lwip_stats/16 (write) reassdatagrams/1 (read) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) lwip_stats/16 (read) lwip_stats/16 (write) reassdatagrams/1 (read) lwip_stats/16 (read) lwip_stats/16 (write) reassdatagrams/1 (read) reassdatagrams/1 (write) ip_data/18 (read) ip_data/18 (read) ip_data/18 (read) ip6_reass_pbufcount/2 (read) ip6_reass_pbufcount/2 (read) reassdatagrams/1 (read) lwip_stats/16 (read) lwip_stats/16 (write) lwip_stats/16 (read) lwip_stats/16 (write) lwip_stats/16 (read) lwip_stats/16 (write) lwip_stats/16 (read) lwip_stats/16 (write) ip6_reass_pbufcount/2 (read) ip6_reass_pbufcount/2 (write) ip_data/18 (read) reassdatagrams/1 (read) reassdatagrams/1 (write) ip6_reass_pbufcount/2 (read) ip6_reass_pbufcount/2 (read) ip6_reass_pbufcount/2 (write) lwip_stats/16 (read) lwip_stats/16 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/14 pbuf_header_force/11 pbuf_clen/13 memp_free/15 lwip_htons/17 memmove/24 pbuf_cat/23 pbuf_remove_header/22 memcpy/21 ip6_reass_remove_oldest_datagram/5 memset/20 memp_malloc/19 ip6_reass_remove_oldest_datagram/5 memp_malloc/19 lwip_htons/17 lwip_htons/17 pbuf_clen/13 
+ip6_reass_remove_oldest_datagram/5 (ip6_reass_remove_oldest_datagram) @06cd22a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: reassdatagrams/1 (read) ip6_reass_pbufcount/2 (read) reassdatagrams/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_reass/6 ip6_reass/6 
+  Calls: ip6_reass_free_complete_datagram/4 
+ip6_reass_free_complete_datagram/4 (ip6_reass_free_complete_datagram) @06cd2000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: reassdatagrams/1 (read) reassdatagrams/1 (write) reassdatagrams/1 (read) ip6_reass_pbufcount/2 (read) ip6_reass_pbufcount/2 (read) ip6_reass_pbufcount/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_reass_remove_oldest_datagram/5 ip6_reass_tmr/3 
+  Calls: memp_free/15 pbuf_free/14 pbuf_clen/13 pbuf_free/14 pbuf_clen/13 icmp6_time_exceeded_with_addrs/12 pbuf_header_force/11 
+ip6_reass_tmr/3 (ip6_reass_tmr) @06cc0a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reassdatagrams/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ip6_reass_free_complete_datagram/4 
+ip6_reass_pbufcount/2 (ip6_reass_pbufcount) @06cb9e58
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: ip6_reass_free_complete_datagram/4 (read) ip6_reass_free_complete_datagram/4 (read) ip6_reass_free_complete_datagram/4 (write) ip6_reass_remove_oldest_datagram/5 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (write) 
+  Availability: available
+  Varpool flags:
+reassdatagrams/1 (reassdatagrams) @06cb9dc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: ip6_reass_remove_oldest_datagram/5 (read) ip6_reass_free_complete_datagram/4 (read) ip6_reass_free_complete_datagram/4 (write) ip6_reass_tmr/3 (read) ip6_reass_remove_oldest_datagram/5 (read) ip6_reass_free_complete_datagram/4 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (write) ip6_reass/6 (read) ip6_reass/6 (read) ip6_reass/6 (write) 
+  Availability: available
+  Varpool flags:
+ip6_frag (struct pbuf * p, struct netif * netif, const struct ip6_addr_t * dest)
+{
+  struct pbuf_custom_ref * pcr;
+  u16_t poff;
+  u16_t last;
+  u16_t fragment_offset;
+  const u16_t nfb;
+  const u16_t mtu;
+  u16_t cop;
+  u16_t left;
+  static u32_t identification;
+  u16_t left_to_copy;
+  u16_t newpbuflen;
+  struct pbuf * newpbuf;
+  struct pbuf * rambuf;
+  struct ip6_frag_hdr * frag_hdr;
+  struct ip6_hdr * ip6hdr;
+  struct ip6_hdr * original_ip6hdr;
+  err_t D.7657;
+  u16_t iftmp.13;
+  unsigned short _1;
+  long unsigned int identification.12_2;
+  long unsigned int _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  _Bool _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  short unsigned int _9;
+  void * _10;
+  void * _11;
+  void * _12;
+  sizetype _13;
+  void * _14;
+  short unsigned int _15;
+  short unsigned int _16;
+  short unsigned int _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  short unsigned int _20;
+  short unsigned int _21;
+  struct pbuf_custom * _22;
+  void * _23;
+  short unsigned int _24;
+  short unsigned int _25;
+  unsigned char _26;
+  signed short fragment_offset.14_27;
+  signed short _28;
+  _Bool _29;
+  int _30;
+  signed short _31;
+  signed short _32;
+  short unsigned int _33;
+  short unsigned int _34;
+  long unsigned int identification.15_35;
+  long unsigned int _36;
+  short unsigned int _37;
+  short unsigned int _38;
+  short unsigned int _39;
+  short unsigned int _40;
+  err_t (*<T6e5>) (struct netif *, struct pbuf *, const struct ip6_addr_t *) _41;
+  u16_t iftmp.13_50;
+  err_t _51;
+  err_t _70;
+  u16_t iftmp.13_72;
+  u16_t iftmp.13_73;
+  err_t _113;
+  err_t _116;
+  err_t _120;
+
+  <bb 2> :
+  newpbuflen_57 = 0;
+  mtu_62 = nd6_get_destination_mtu (dest_59(D), netif_60(D));
+  _1 = mtu_62 + 65488;
+  nfb_63 = _1 & 65528;
+  fragment_offset_64 = 0;
+  poff_65 = 40;
+  identification.12_2 = identification;
+  _3 = identification.12_2 + 1;
+  identification = _3;
+  original_ip6hdr_68 = p_67(D)->payload;
+  _4 = p_67(D)->tot_len;
+  if (_4 <= 39)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _5 = p_67(D)->tot_len;
+  left_69 = _5 + 65496;
+  goto <bb 23>; [INV]
+
+  <bb 5> :
+  _6 = left_47 <= nfb_63;
+  last_71 = (u16_t) _6;
+  if (last_71 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.13_73 = left_47;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.13_72 = nfb_63;
+
+  <bb 8> :
+  # iftmp.13_50 = PHI <iftmp.13_73(6), iftmp.13_72(7)>
+  cop_74 = iftmp.13_50;
+  rambuf_76 = pbuf_alloc (14, 48, 640);
+  if (rambuf_76 == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _7 = lwip_stats.ip6_frag.memerr;
+  _8 = _7 + 1;
+  lwip_stats.ip6_frag.memerr = _8;
+  _120 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 10> :
+  _9 = rambuf_76->len;
+  if (_9 <= 39)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 11>; [INV]
+
+  <bb 12> :
+  _10 = rambuf_76->payload;
+  memcpy (_10, original_ip6hdr_68, 40);
+  ip6hdr_78 = rambuf_76->payload;
+  _11 = rambuf_76->payload;
+  frag_hdr_79 = _11 + 40;
+  _12 = p_43->payload;
+  _13 = (sizetype) poff_49;
+  _14 = _12 + _13;
+  p_43->payload = _14;
+  _15 = p_43->len;
+  _16 = _15 - poff_49;
+  p_43->len = _16;
+  _17 = p_43->tot_len;
+  _18 = _17 - poff_49;
+  p_43->tot_len = _18;
+  left_to_copy_83 = cop_74;
+  goto <bb 21>; [INV]
+
+  <bb 13> :
+  _19 = p_42->len;
+  newpbuflen_99 = MIN_EXPR <left_to_copy_46, _19>;
+  if (newpbuflen_99 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  p_117 = p_42->next;
+  // predicted unlikely by continue predictor.
+  goto <bb 21>; [INV]
+
+  <bb 15> :
+  pcr_101 = ip6_frag_alloc_pbuf_custom_ref ();
+  if (pcr_101 == 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  pbuf_free (rambuf_76);
+  _20 = lwip_stats.ip6_frag.memerr;
+  _21 = _20 + 1;
+  lwip_stats.ip6_frag.memerr = _21;
+  _116 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 17> :
+  _22 = &pcr_101->pc;
+  _23 = p_42->payload;
+  newpbuf_103 = pbuf_alloced_custom (0, newpbuflen_99, 65, _22, _23, newpbuflen_99);
+  if (newpbuf_103 == 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  ip6_frag_free_pbuf_custom_ref (pcr_101);
+  pbuf_free (rambuf_76);
+  _24 = lwip_stats.ip6_frag.memerr;
+  _25 = _24 + 1;
+  lwip_stats.ip6_frag.memerr = _25;
+  _113 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 19> :
+  pbuf_ref (p_42);
+  pcr_101->original = p_42;
+  pcr_101->pc.custom_free_function = ip6_frag_free_pbuf_custom;
+  pbuf_cat (rambuf_76, newpbuf_103);
+  left_to_copy_108 = left_to_copy_46 - newpbuflen_99;
+  if (left_to_copy_108 != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  p_109 = p_42->next;
+
+  <bb 21> :
+  # p_42 = PHI <p_43(12), p_117(14), p_42(19), p_109(20)>
+  # newpbuflen_44 = PHI <newpbuflen_45(12), newpbuflen_99(14), newpbuflen_99(19), newpbuflen_99(20)>
+  # left_to_copy_46 = PHI <left_to_copy_83(12), left_to_copy_46(14), left_to_copy_108(19), left_to_copy_108(20)>
+  if (left_to_copy_46 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  poff_84 = newpbuflen_44;
+  _26 = original_ip6hdr_68->_nexth;
+  frag_hdr_79->_nexth = _26;
+  frag_hdr_79->reserved = 0;
+  fragment_offset.14_27 = (signed short) fragment_offset_48;
+  _28 = fragment_offset.14_27 & -8;
+  _29 = last_71 == 0;
+  _30 = (int) _29;
+  _31 = (signed short) _30;
+  _32 = _28 | _31;
+  _33 = (short unsigned int) _32;
+  _34 = lwip_htons (_33);
+  frag_hdr_79->_fragment_offset = _34;
+  identification.15_35 = identification;
+  _36 = lwip_htonl (identification.15_35);
+  frag_hdr_79->_identification = _36;
+  ip6hdr_78->_nexth = 44;
+  _37 = cop_74 + 8;
+  _38 = lwip_htons (_37);
+  ip6hdr_78->_plen = _38;
+  _39 = lwip_stats.ip6_frag.xmit;
+  _40 = _39 + 1;
+  lwip_stats.ip6_frag.xmit = _40;
+  _41 = netif_60(D)->output_ip6;
+  _41 (netif_60(D), rambuf_76, dest_59(D));
+  pbuf_free (rambuf_76);
+  left_97 = left_47 - cop_74;
+  fragment_offset_98 = fragment_offset_48 + cop_74;
+
+  <bb 23> :
+  # p_43 = PHI <p_67(D)(4), p_42(22)>
+  # newpbuflen_45 = PHI <newpbuflen_57(4), newpbuflen_44(22)>
+  # left_47 = PHI <left_69(4), left_97(22)>
+  # fragment_offset_48 = PHI <fragment_offset_64(4), fragment_offset_98(22)>
+  # poff_49 = PHI <poff_65(4), poff_84(22)>
+  if (left_47 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  _70 = 0;
+
+  <bb 25> :
+  # _51 = PHI <_120(9), _116(16), _113(18), _70(24)>
+<L25>:
+  return _51;
+
+}
+
+
+ip6_frag_free_pbuf_custom (struct pbuf * p)
+{
+  struct pbuf_custom_ref * pcr;
+  struct pbuf * _1;
+  struct pbuf * _2;
+
+  <bb 2> :
+  pcr_7 = p_6(D);
+  if (pcr_7 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (pcr_7 != p_6(D))
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = pcr_7->original;
+  if (_1 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _2 = pcr_7->original;
+  pbuf_free (_2);
+
+  <bb 8> :
+  ip6_frag_free_pbuf_custom_ref (pcr_7);
+  return;
+
+}
+
+
+ip6_frag_free_pbuf_custom_ref (struct pbuf_custom_ref * p)
+{
+  <bb 2> :
+  if (p_2(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  memp_free (6, p_2(D));
+  return;
+
+}
+
+
+ip6_frag_alloc_pbuf_custom_ref ()
+{
+  struct pbuf_custom_ref * D.7639;
+  struct pbuf_custom_ref * _3;
+
+  <bb 2> :
+  _3 = memp_malloc (6);
+
+  <bb 3> :
+<L0>:
+  return _3;
+
+}
+
+
+ip6_reass (struct pbuf * p)
+{
+  u8_t * ptr;
+  struct ip6_hdr * iphdr_ptr;
+  struct pbuf * next_pbuf;
+  struct pbuf * q;
+  u8_t valid;
+  u16_t clen;
+  ptrdiff_t hdrdiff;
+  u16_t end;
+  u16_t start;
+  u16_t len;
+  u16_t offset;
+  struct ip6_frag_hdr * frag_hdr;
+  struct ip6_reass_helper * iprh_prev;
+  struct ip6_reass_helper * iprh_tmp;
+  struct ip6_reass_helper * iprh;
+  struct ip6_reassdata * ipr_prev;
+  struct ip6_reassdata * ipr;
+  struct pbuf * D.7637;
+  short unsigned int _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  short unsigned int _4;
+  struct ip6_hdr * _5;
+  short unsigned int _6;
+  void * _7;
+  struct ip6_hdr * _8;
+  int _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  int _13;
+  int _14;
+  int _15;
+  short unsigned int _16;
+  short unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  struct ip6_hdr * _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  struct ip6_hdr * _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  struct ip6_hdr * _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  struct ip6_hdr * _30;
+  long unsigned int _31;
+  unsigned char _32;
+  unsigned char _33;
+  long unsigned int _34;
+  struct ip6_hdr * _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  struct ip6_hdr * _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  struct ip6_hdr * _41;
+  long unsigned int _42;
+  long unsigned int _43;
+  struct ip6_hdr * _44;
+  long unsigned int _45;
+  unsigned char _46;
+  unsigned char _47;
+  short unsigned int _48;
+  short unsigned int _49;
+  int _50;
+  struct ip6_reassdata * _51;
+  short unsigned int _52;
+  short unsigned int _53;
+  struct ip6_reassdata * reassdatagrams.5_54;
+  struct ip6_hdr * _55;
+  unsigned char _56;
+  unsigned char _57;
+  long unsigned int _58;
+  unsigned char _59;
+  short unsigned int ip6_reass_pbufcount.6_60;
+  int _61;
+  int _62;
+  int _63;
+  int _64;
+  short unsigned int ip6_reass_pbufcount.7_65;
+  int _66;
+  int _67;
+  int _68;
+  struct ip6_reassdata * _69;
+  short unsigned int _70;
+  short unsigned int _71;
+  short unsigned int _72;
+  short unsigned int _73;
+  short unsigned int _74;
+  short unsigned int _75;
+  short unsigned int _76;
+  short unsigned int _77;
+  short unsigned int _78;
+  short unsigned int _79;
+  short unsigned int _80;
+  short unsigned int _81;
+  short unsigned int _82;
+  short unsigned int _83;
+  short unsigned int _84;
+  short unsigned int _85;
+  short unsigned int _86;
+  struct pbuf * _87;
+  short unsigned int ip6_reass_pbufcount.8_88;
+  short unsigned int _89;
+  struct ip6_hdr * _90;
+  u8_t[8] * _91;
+  void * _92;
+  int _93;
+  int _94;
+  short unsigned int _95;
+  struct pbuf * _96;
+  short unsigned int _97;
+  short unsigned int _98;
+  short unsigned int _99;
+  short unsigned int _100;
+  struct pbuf * _101;
+  struct pbuf * _102;
+  struct ip6_hdr * _103;
+  void * _104;
+  struct ip6_hdr * _105;
+  void * _106;
+  struct ip6_hdr * _107;
+  int _108;
+  unsigned int _109;
+  struct ip6_hdr * _110;
+  short unsigned int _111;
+  void * _112;
+  int _113;
+  short unsigned int _114;
+  short unsigned int _115;
+  short unsigned int _116;
+  short unsigned int _117;
+  short unsigned int _118;
+  unsigned char _119;
+  unsigned char _120;
+  u8_t * _121;
+  unsigned char _122;
+  int _123;
+  int _124;
+  int _125;
+  sizetype _126;
+  unsigned char _127;
+  unsigned char _128;
+  struct ip6_reassdata * reassdatagrams.9_129;
+  struct ip6_reassdata * _130;
+  struct ip6_reassdata * _131;
+  short unsigned int ip6_reass_pbufcount.10_132;
+  short unsigned int ip6_reass_pbufcount.11_133;
+  short unsigned int _134;
+  void * _135;
+  int _136;
+  short int _137;
+  unsigned char _138;
+  short unsigned int _139;
+  short unsigned int _140;
+  struct pbuf * _164;
+  struct pbuf * _266;
+  struct pbuf * _286;
+  struct pbuf * _299;
+
+  <bb 2> :
+  iprh_prev_188 = 0B;
+  valid_189 = 1;
+  _1 = lwip_stats.ip6_frag.recv;
+  _2 = _1 + 1;
+  lwip_stats.ip6_frag.recv = _2;
+  _3 = p_192(D)->len;
+  if (_3 <= 7)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  frag_hdr_193 = p_192(D)->payload;
+  clen_195 = pbuf_clen (p_192(D));
+  _4 = frag_hdr_193->_fragment_offset;
+  offset_197 = lwip_htons (_4);
+  _5 = ip_data.current_ip6_header;
+  _6 = MEM[(const struct ip6_hdr *)_5]._plen;
+  len_199 = lwip_htons (_6);
+  _7 = p_192(D)->payload;
+  _8 = ip_data.current_ip6_header;
+  hdrdiff_200 = _7 - _8;
+  if (hdrdiff_200 > 65535)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  if (hdrdiff_200 <= 39)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  hdrdiff_201 = hdrdiff_200 + -40;
+  hdrdiff_202 = hdrdiff_201 + 8;
+  _9 = (int) len_199;
+  if (hdrdiff_202 > _9)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _10 = lwip_stats.ip6_frag.proterr;
+  _11 = _10 + 1;
+  lwip_stats.ip6_frag.proterr = _11;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 10> :
+  _12 = (short unsigned int) hdrdiff_202;
+  len_203 = len_199 - _12;
+  start_204 = offset_197 & 65528;
+  _13 = (int) start_204;
+  _14 = (int) len_203;
+  _15 = 65535 - _14;
+  if (_13 > _15)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _16 = lwip_stats.ip6_frag.proterr;
+  _17 = _16 + 1;
+  lwip_stats.ip6_frag.proterr = _17;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 12> :
+  ipr_205 = reassdatagrams;
+  ipr_prev_206 = 0B;
+  goto <bb 26>; [INV]
+
+  <bb 13> :
+  _18 = frag_hdr_193->_identification;
+  _19 = ipr_141->identification;
+  if (_18 == _19)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 14> :
+  _20 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  _21 = ipr_141->iphdr;
+  _22 = _21->src.addr[0];
+  if (_20 == _22)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 15> :
+  _23 = ip_data.current_iphdr_src.u_addr.ip6.addr[1];
+  _24 = ipr_141->iphdr;
+  _25 = _24->src.addr[1];
+  if (_23 == _25)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 16> :
+  _26 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  _27 = ipr_141->iphdr;
+  _28 = _27->src.addr[2];
+  if (_26 == _28)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 17> :
+  _29 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  _30 = ipr_141->iphdr;
+  _31 = _30->src.addr[3];
+  if (_29 == _31)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 18> :
+  _32 = ip_data.current_iphdr_src.u_addr.ip6.zone;
+  _33 = ipr_141->src_zone;
+  if (_32 == _33)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 19> :
+  _34 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _35 = ipr_141->iphdr;
+  _36 = _35->dest.addr[0];
+  if (_34 == _36)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 20> :
+  _37 = ip_data.current_iphdr_dest.u_addr.ip6.addr[1];
+  _38 = ipr_141->iphdr;
+  _39 = _38->dest.addr[1];
+  if (_37 == _39)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 21> :
+  _40 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  _41 = ipr_141->iphdr;
+  _42 = _41->dest.addr[2];
+  if (_40 == _42)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 22> :
+  _43 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  _44 = ipr_141->iphdr;
+  _45 = _44->dest.addr[3];
+  if (_43 == _45)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 23> :
+  _46 = ip_data.current_iphdr_dest.u_addr.ip6.zone;
+  _47 = ipr_141->dest_zone;
+  if (_46 == _47)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _48 = lwip_stats.ip6_frag.cachehit;
+  _49 = _48 + 1;
+  lwip_stats.ip6_frag.cachehit = _49;
+  goto <bb 27>; [INV]
+
+  <bb 25> :
+  ipr_prev_208 = ipr_141;
+  ipr_209 = ipr_141->next;
+
+  <bb 26> :
+  # ipr_141 = PHI <ipr_205(12), ipr_209(25)>
+  # ipr_prev_144 = PHI <ipr_prev_206(12), ipr_prev_208(25)>
+  if (ipr_141 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 27> :
+  if (ipr_141 == 0B)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 28> :
+  ipr_211 = memp_malloc (11);
+  if (ipr_211 == 0B)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 29> :
+  _50 = (int) clen_195;
+  ip6_reass_remove_oldest_datagram (ipr_211, _50);
+  ipr_214 = memp_malloc (11);
+  if (ipr_214 != 0B)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 30> :
+  ipr_prev_216 = reassdatagrams;
+  goto <bb 34>; [INV]
+
+  <bb 31> :
+  _51 = ipr_prev_145->next;
+  if (ipr_214 == _51)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  goto <bb 35>; [INV]
+
+  <bb 33> :
+  ipr_prev_217 = ipr_prev_145->next;
+
+  <bb 34> :
+  # ipr_prev_145 = PHI <ipr_prev_216(30), ipr_prev_217(33)>
+  if (ipr_prev_145 != 0B)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 35> :
+  goto <bb 37>; [INV]
+
+  <bb 36> :
+  _52 = lwip_stats.ip6_frag.memerr;
+  _53 = _52 + 1;
+  lwip_stats.ip6_frag.memerr = _53;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 37> :
+  # ipr_142 = PHI <ipr_211(28), ipr_214(35)>
+  # ipr_prev_146 = PHI <ipr_prev_144(28), ipr_prev_145(35)>
+  memset (ipr_142, 0, 32);
+  ipr_142->timer = 60;
+  reassdatagrams.5_54 = reassdatagrams;
+  ipr_142->next = reassdatagrams.5_54;
+  reassdatagrams = ipr_142;
+  _55 = ip_data.current_ip6_header;
+  ipr_142->iphdr = _55;
+  _56 = ip_data.current_iphdr_src.u_addr.ip6.zone;
+  ipr_142->src_zone = _56;
+  _57 = ip_data.current_iphdr_dest.u_addr.ip6.zone;
+  ipr_142->dest_zone = _57;
+  _58 = frag_hdr_193->_identification;
+  ipr_142->identification = _58;
+  _59 = frag_hdr_193->_nexth;
+  ipr_142->nexth = _59;
+
+  <bb 38> :
+  # ipr_143 = PHI <ipr_141(27), ipr_142(37)>
+  # ipr_prev_147 = PHI <ipr_prev_144(27), ipr_prev_146(37)>
+  ip6_reass_pbufcount.6_60 = ip6_reass_pbufcount;
+  _61 = (int) ip6_reass_pbufcount.6_60;
+  _62 = (int) clen_195;
+  _63 = _61 + _62;
+  if (_63 > 10)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 39> :
+  _64 = (int) clen_195;
+  ip6_reass_remove_oldest_datagram (ipr_143, _64);
+  ip6_reass_pbufcount.7_65 = ip6_reass_pbufcount;
+  _66 = (int) ip6_reass_pbufcount.7_65;
+  _67 = (int) clen_195;
+  _68 = _66 + _67;
+  if (_68 <= 10)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 40> :
+  ipr_prev_229 = reassdatagrams;
+  goto <bb 44>; [INV]
+
+  <bb 41> :
+  _69 = ipr_prev_148->next;
+  if (ipr_143 == _69)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 42> :
+  goto <bb 45>; [INV]
+
+  <bb 43> :
+  ipr_prev_230 = ipr_prev_148->next;
+
+  <bb 44> :
+  # ipr_prev_148 = PHI <ipr_prev_229(40), ipr_prev_230(43)>
+  if (ipr_prev_148 != 0B)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 45> :
+  goto <bb 47>; [INV]
+
+  <bb 46> :
+  _70 = lwip_stats.ip6_frag.memerr;
+  _71 = _70 + 1;
+  lwip_stats.ip6_frag.memerr = _71;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 47> :
+  # ipr_prev_149 = PHI <ipr_prev_148(45), ipr_prev_147(38)>
+  iprh_231 = p_192(D)->payload;
+  next_pbuf_232 = 0B;
+  end_233 = start_204 + len_203;
+  q_234 = ipr_143->p;
+  goto <bb 66>; [INV]
+
+  <bb 48> :
+  iprh_tmp_235 = q_160->payload;
+  _72 = iprh_tmp_235->start;
+  if (start_204 < _72)
+    goto <bb 49>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 49> :
+  _73 = iprh_tmp_235->start;
+  if (end_233 > _73)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  _74 = lwip_stats.ip6_frag.proterr;
+  _75 = _74 + 1;
+  lwip_stats.ip6_frag.proterr = _75;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 51> :
+  if (iprh_prev_152 != 0B)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 52> :
+  _76 = iprh_prev_152->end;
+  if (start_204 < _76)
+    goto <bb 53>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 53> :
+  _77 = lwip_stats.ip6_frag.proterr;
+  _78 = _77 + 1;
+  lwip_stats.ip6_frag.proterr = _78;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 54> :
+  next_pbuf_241 = q_160;
+  if (iprh_prev_152 != 0B)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 55> :
+  iprh_prev_152->next_pbuf = p_192(D);
+  goto <bb 57>; [INV]
+
+  <bb 56> :
+  ipr_143->p = p_192(D);
+
+  <bb 57> :
+  goto <bb 67>; [INV]
+
+  <bb 58> :
+  _79 = iprh_tmp_235->start;
+  if (start_204 == _79)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 59> :
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 60> :
+  _80 = iprh_tmp_235->end;
+  if (start_204 < _80)
+    goto <bb 61>; [INV]
+  else
+    goto <bb 62>; [INV]
+
+  <bb 61> :
+  _81 = lwip_stats.ip6_frag.proterr;
+  _82 = _81 + 1;
+  lwip_stats.ip6_frag.proterr = _82;
+  // predicted unlikely by goto predictor.
+  goto <bb 114>; [INV]
+
+  <bb 62> :
+  if (iprh_prev_152 != 0B)
+    goto <bb 63>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 63> :
+  _83 = iprh_prev_152->end;
+  _84 = iprh_tmp_235->start;
+  if (_83 != _84)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 64> :
+  valid_236 = 0;
+
+  <bb 65> :
+  # valid_154 = PHI <valid_155(62), valid_155(63), valid_236(64)>
+  q_237 = iprh_tmp_235->next_pbuf;
+  iprh_prev_238 = iprh_tmp_235;
+
+  <bb 66> :
+  # iprh_prev_152 = PHI <iprh_prev_188(47), iprh_prev_238(65)>
+  # valid_155 = PHI <valid_189(47), valid_154(65)>
+  # q_160 = PHI <q_234(47), q_237(65)>
+  if (q_160 != 0B)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 67> :
+  # next_pbuf_162 = PHI <next_pbuf_241(57), next_pbuf_232(66)>
+  if (q_160 == 0B)
+    goto <bb 68>; [INV]
+  else
+    goto <bb 76>; [INV]
+
+  <bb 68> :
+  if (iprh_prev_152 != 0B)
+    goto <bb 69>; [INV]
+  else
+    goto <bb 73>; [INV]
+
+  <bb 69> :
+  _85 = iprh_prev_152->end;
+  if (start_204 < _85)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 71>; [INV]
+
+  <bb 70> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 70>; [INV]
+
+  <bb 71> :
+  iprh_prev_152->next_pbuf = p_192(D);
+  _86 = iprh_prev_152->end;
+  if (start_204 != _86)
+    goto <bb 72>; [INV]
+  else
+    goto <bb 76>; [INV]
+
+  <bb 72> :
+  valid_248 = 0;
+  goto <bb 76>; [INV]
+
+  <bb 73> :
+  _87 = ipr_143->p;
+  if (_87 != 0B)
+    goto <bb 74>; [INV]
+  else
+    goto <bb 75>; [INV]
+
+  <bb 74> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 74>; [INV]
+
+  <bb 75> :
+  ipr_143->p = p_192(D);
+
+  <bb 76> :
+  # valid_156 = PHI <valid_155(67), valid_248(72), valid_155(75), valid_155(71)>
+  ip6_reass_pbufcount.8_88 = ip6_reass_pbufcount;
+  _89 = clen_195 + ip6_reass_pbufcount.8_88;
+  ip6_reass_pbufcount = _89;
+  if (start_204 == 0)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 77> :
+  _90 = ip_data.current_ip6_header;
+  ipr_143->iphdr = _90;
+  _91 = &ipr_143->orig_hdr;
+  _92 = p_192(D)->payload;
+  memcpy (_91, _92, 8);
+
+  <bb 78> :
+  iprh_231->next_pbuf = next_pbuf_162;
+  iprh_231->start = start_204;
+  iprh_231->end = end_233;
+  _93 = (int) offset_197;
+  _94 = _93 & 1;
+  if (_94 == 0)
+    goto <bb 79>; [INV]
+  else
+    goto <bb 80>; [INV]
+
+  <bb 79> :
+  _95 = iprh_231->end;
+  ipr_143->datagram_len = _95;
+
+  <bb 80> :
+  _96 = ipr_143->p;
+  iprh_tmp_257 = _96->payload;
+  _97 = iprh_tmp_257->start;
+  if (_97 != 0)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 82>; [INV]
+
+  <bb 81> :
+  valid_258 = 0;
+
+  <bb 82> :
+  # valid_157 = PHI <valid_156(80), valid_258(81)>
+  _98 = ipr_143->datagram_len;
+  if (_98 == 0)
+    goto <bb 83>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 83> :
+  valid_259 = 0;
+
+  <bb 84> :
+  # valid_158 = PHI <valid_157(82), valid_259(83)>
+  iprh_prev_260 = iprh_231;
+  q_261 = iprh_231->next_pbuf;
+  goto <bb 88>; [INV]
+
+  <bb 85> :
+  iprh_262 = q_161->payload;
+  _99 = iprh_prev_153->end;
+  _100 = iprh_262->start;
+  if (_99 != _100)
+    goto <bb 86>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 86> :
+  valid_265 = 0;
+  goto <bb 90>; [INV]
+
+  <bb 87> :
+  iprh_prev_263 = iprh_262;
+  q_264 = iprh_262->next_pbuf;
+
+  <bb 88> :
+  # iprh_prev_153 = PHI <iprh_prev_260(84), iprh_prev_263(87)>
+  # q_161 = PHI <q_261(84), q_264(87)>
+  if (q_161 != 0B)
+    goto <bb 89>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 89> :
+  if (valid_158 != 0)
+    goto <bb 85>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 90> :
+  # valid_159 = PHI <valid_265(86), valid_158(88), valid_158(89)>
+  if (valid_159 != 0)
+    goto <bb 91>; [INV]
+  else
+    goto <bb 113>; [INV]
+
+  <bb 91> :
+  _101 = ipr_143->p;
+  iprh_267 = _101->payload;
+  goto <bb 96>; [INV]
+
+  <bb 92> :
+  next_pbuf_289 = iprh_150->next_pbuf;
+  if (next_pbuf_289 != 0B)
+    goto <bb 93>; [INV]
+  else
+    goto <bb 94>; [INV]
+
+  <bb 93> :
+  iprh_tmp_291 = next_pbuf_289->payload;
+  pbuf_remove_header (next_pbuf_289, 8);
+  _102 = ipr_143->p;
+  pbuf_cat (_102, next_pbuf_289);
+  goto <bb 95>; [INV]
+
+  <bb 94> :
+  iprh_tmp_290 = 0B;
+
+  <bb 95> :
+  # iprh_tmp_151 = PHI <iprh_tmp_291(93), iprh_tmp_290(94)>
+  iprh_294 = iprh_tmp_151;
+
+  <bb 96> :
+  # iprh_150 = PHI <iprh_267(91), iprh_294(95)>
+  if (iprh_150 != 0B)
+    goto <bb 92>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 97> :
+  p_268 = ipr_143->p;
+  _103 = ipr_143->iphdr;
+  _104 = _103 + 8;
+  _105 = ipr_143->iphdr;
+  _106 = p_268->payload;
+  _107 = ipr_143->iphdr;
+  _108 = _106 - _107;
+  _109 = (unsigned int) _108;
+  memmove (_104, _105, _109);
+  _110 = ipr_143->iphdr;
+  iphdr_ptr_270 = _110 + 8;
+  _111 = ipr_143->datagram_len;
+  _112 = p_268->payload;
+  _113 = _112 - iphdr_ptr_270;
+  _114 = (short unsigned int) _113;
+  _115 = _111 + _114;
+  _116 = _115 + 65496;
+  ipr_143->datagram_len = _116;
+  _117 = ipr_143->datagram_len;
+  _118 = lwip_htons (_117);
+  iphdr_ptr_270->_plen = _118;
+  _119 = iphdr_ptr_270->_nexth;
+  if (_119 == 44)
+    goto <bb 98>; [INV]
+  else
+    goto <bb 99>; [INV]
+
+  <bb 98> :
+  _120 = ipr_143->nexth;
+  iphdr_ptr_270->_nexth = _120;
+  goto <bb 103>; [INV]
+
+  <bb 99> :
+  ptr_274 = iphdr_ptr_270 + 40;
+  goto <bb 101>; [INV]
+
+  <bb 100> :
+  _121 = ptr_163 + 1;
+  _122 = *_121;
+  _123 = (int) _122;
+  _124 = _123 + 1;
+  _125 = _124 * 8;
+  _126 = (sizetype) _125;
+  ptr_276 = ptr_163 + _126;
+
+  <bb 101> :
+  # ptr_163 = PHI <ptr_274(99), ptr_276(100)>
+  _127 = *ptr_163;
+  if (_127 != 44)
+    goto <bb 100>; [INV]
+  else
+    goto <bb 102>; [INV]
+
+  <bb 102> :
+  _128 = ipr_143->nexth;
+  *ptr_163 = _128;
+
+  <bb 103> :
+  reassdatagrams.9_129 = reassdatagrams;
+  if (ipr_143 == reassdatagrams.9_129)
+    goto <bb 104>; [INV]
+  else
+    goto <bb 105>; [INV]
+
+  <bb 104> :
+  _130 = ipr_143->next;
+  reassdatagrams = _130;
+  goto <bb 108>; [INV]
+
+  <bb 105> :
+  if (ipr_prev_149 == 0B)
+    goto <bb 106>; [INV]
+  else
+    goto <bb 107>; [INV]
+
+  <bb 106> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 106>; [INV]
+
+  <bb 107> :
+  _131 = ipr_143->next;
+  ipr_prev_149->next = _131;
+
+  <bb 108> :
+  memp_free (11, ipr_143);
+  clen_283 = pbuf_clen (p_268);
+  ip6_reass_pbufcount.10_132 = ip6_reass_pbufcount;
+  if (clen_283 > ip6_reass_pbufcount.10_132)
+    goto <bb 109>; [INV]
+  else
+    goto <bb 110>; [INV]
+
+  <bb 109> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 109>; [INV]
+
+  <bb 110> :
+  ip6_reass_pbufcount.11_133 = ip6_reass_pbufcount;
+  _134 = ip6_reass_pbufcount.11_133 - clen_283;
+  ip6_reass_pbufcount = _134;
+  _135 = p_268->payload;
+  _136 = _135 - iphdr_ptr_270;
+  _137 = (short int) _136;
+  _138 = pbuf_header_force (p_268, _137);
+  if (_138 != 0)
+    goto <bb 111>; [INV]
+  else
+    goto <bb 112>; [INV]
+
+  <bb 111> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 111>; [INV]
+
+  <bb 112> :
+  _286 = p_268;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 115>; [INV]
+
+  <bb 113> :
+  _266 = 0B;
+  goto <bb 115>; [INV]
+
+  <bb 114> :
+nullreturn:
+  _139 = lwip_stats.ip6_frag.drop;
+  _140 = _139 + 1;
+  lwip_stats.ip6_frag.drop = _140;
+  pbuf_free (p_192(D));
+  _299 = 0B;
+
+  <bb 115> :
+  # _164 = PHI <_299(114), _286(112), _266(113)>
+<L141>:
+  return _164;
+
+}
+
+
+ip6_reass_remove_oldest_datagram (struct ip6_reassdata * ipr, int pbufs_needed)
+{
+  struct ip6_reassdata * oldest;
+  struct ip6_reassdata * r;
+  unsigned char _1;
+  unsigned char _2;
+  short unsigned int ip6_reass_pbufcount.3_3;
+  int _4;
+  int _5;
+  struct ip6_reassdata * reassdatagrams.4_6;
+
+  <bb 2> :
+  oldest_14 = reassdatagrams;
+  r_15 = oldest_14;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  if (r_7 != ipr_16(D))
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _1 = r_7->timer;
+  _2 = oldest_9->timer;
+  if (_1 <= _2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  oldest_19 = r_7;
+
+  <bb 6> :
+  # oldest_8 = PHI <oldest_9(3), oldest_9(4), oldest_19(5)>
+  r_20 = r_7->next;
+
+  <bb 7> :
+  # r_7 = PHI <r_15(2), r_20(6)>
+  # oldest_9 = PHI <oldest_14(2), oldest_8(6)>
+  if (r_7 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (oldest_9 == ipr_16(D))
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 14>; [INV]
+
+  <bb 10> :
+  if (oldest_9 != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  ip6_reass_free_complete_datagram (oldest_9);
+
+  <bb 12> :
+  ip6_reass_pbufcount.3_3 = ip6_reass_pbufcount;
+  _4 = (int) ip6_reass_pbufcount.3_3;
+  _5 = pbufs_needed_18(D) + _4;
+  if (_5 > 10)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  reassdatagrams.4_6 = reassdatagrams;
+  if (reassdatagrams.4_6 != 0B)
+    goto <bb 2>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+<L14>:
+  return;
+
+}
+
+
+ip6_reass_free_complete_datagram (struct ip6_reassdata * ipr)
+{
+  struct pbuf * pcur;
+  struct ip6_addr_t dest_addr;
+  struct ip6_addr_t src_addr;
+  unsigned int D.7516;
+  struct ip6_reass_helper * iprh;
+  struct pbuf * p;
+  u16_t clen;
+  u16_t pbufs_freed;
+  struct ip6_reassdata * prev;
+  struct pbuf * _1;
+  short unsigned int _2;
+  struct pbuf * _3;
+  void * _4;
+  u8_t[8] * _5;
+  void * _6;
+  struct ip6_hdr * _7;
+  int _8;
+  short int _9;
+  unsigned char _10;
+  struct ip6_hdr * _11;
+  long unsigned int _12;
+  struct ip6_hdr * _13;
+  long unsigned int _14;
+  struct ip6_hdr * _15;
+  long unsigned int _16;
+  struct ip6_hdr * _17;
+  long unsigned int _18;
+  unsigned char _19;
+  struct ip6_hdr * _20;
+  long unsigned int _21;
+  struct ip6_hdr * _22;
+  long unsigned int _23;
+  struct ip6_hdr * _24;
+  long unsigned int _25;
+  struct ip6_hdr * _26;
+  long unsigned int _27;
+  unsigned char _28;
+  int _29;
+  int _30;
+  int _31;
+  int _32;
+  int _33;
+  int _34;
+  struct ip6_reassdata * reassdatagrams.0_35;
+  struct ip6_reassdata * _36;
+  struct ip6_reassdata * _37;
+  struct ip6_reassdata * _38;
+  short unsigned int ip6_reass_pbufcount.1_39;
+  short unsigned int ip6_reass_pbufcount.2_40;
+  short unsigned int _41;
+  unsigned int _59;
+
+  <bb 2> :
+  pbufs_freed_53 = 0;
+  _1 = ipr_55(D)->p;
+  iprh_56 = _1->payload;
+  _2 = iprh_56->start;
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  p_57 = ipr_55(D)->p;
+  _3 = iprh_56->next_pbuf;
+  ipr_55(D)->p = _3;
+  _4 = p_57->payload;
+  _5 = &ipr_55(D)->orig_hdr;
+  _59 = MEM <unsigned int> [(char * {ref-all})_5];
+  MEM <unsigned int> [(char * {ref-all})_4] = _59;
+  _6 = p_57->payload;
+  _7 = ipr_55(D)->iphdr;
+  _8 = _6 - _7;
+  _9 = (short int) _8;
+  _10 = pbuf_header_force (p_57, _9);
+  if (_10 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  _11 = ipr_55(D)->iphdr;
+  _12 = _11->src.addr[0];
+  src_addr.addr[0] = _12;
+  _13 = ipr_55(D)->iphdr;
+  _14 = _13->src.addr[1];
+  src_addr.addr[1] = _14;
+  _15 = ipr_55(D)->iphdr;
+  _16 = _15->src.addr[2];
+  src_addr.addr[2] = _16;
+  _17 = ipr_55(D)->iphdr;
+  _18 = _17->src.addr[3];
+  src_addr.addr[3] = _18;
+  src_addr.zone = 0;
+  _19 = ipr_55(D)->src_zone;
+  src_addr.zone = _19;
+  _20 = ipr_55(D)->iphdr;
+  _21 = _20->dest.addr[0];
+  dest_addr.addr[0] = _21;
+  _22 = ipr_55(D)->iphdr;
+  _23 = _22->dest.addr[1];
+  dest_addr.addr[1] = _23;
+  _24 = ipr_55(D)->iphdr;
+  _25 = _24->dest.addr[2];
+  dest_addr.addr[2] = _25;
+  _26 = ipr_55(D)->iphdr;
+  _27 = _26->dest.addr[3];
+  dest_addr.addr[3] = _27;
+  dest_addr.zone = 0;
+  _28 = ipr_55(D)->dest_zone;
+  dest_addr.zone = _28;
+  icmp6_time_exceeded_with_addrs (p_57, 1, &src_addr, &dest_addr);
+  src_addr ={v} {CLOBBER};
+  dest_addr ={v} {CLOBBER};
+  clen_78 = pbuf_clen (p_57);
+  _29 = (int) pbufs_freed_53;
+  _30 = (int) clen_78;
+  _31 = _29 + _30;
+  if (_31 > 65535)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  pbufs_freed_79 = pbufs_freed_53 + clen_78;
+  pbuf_free (p_57);
+
+  <bb 8> :
+  # pbufs_freed_43 = PHI <pbufs_freed_53(2), pbufs_freed_79(7)>
+  p_83 = ipr_55(D)->p;
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  iprh_91 = p_45->payload;
+  pcur_92 = p_45;
+  p_93 = iprh_91->next_pbuf;
+  clen_95 = pbuf_clen (pcur_92);
+  _32 = (int) pbufs_freed_44;
+  _33 = (int) clen_95;
+  _34 = _32 + _33;
+  if (_34 > 65535)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 10>; [INV]
+
+  <bb 11> :
+  pbufs_freed_96 = pbufs_freed_44 + clen_95;
+  pbuf_free (pcur_92);
+
+  <bb 12> :
+  # pbufs_freed_44 = PHI <pbufs_freed_43(8), pbufs_freed_96(11)>
+  # p_45 = PHI <p_83(8), p_93(11)>
+  if (p_45 != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  reassdatagrams.0_35 = reassdatagrams;
+  if (ipr_55(D) == reassdatagrams.0_35)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _36 = ipr_55(D)->next;
+  reassdatagrams = _36;
+  goto <bb 22>; [INV]
+
+  <bb 15> :
+  prev_84 = reassdatagrams;
+  goto <bb 19>; [INV]
+
+  <bb 16> :
+  _37 = prev_42->next;
+  if (ipr_55(D) == _37)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  goto <bb 20>; [INV]
+
+  <bb 18> :
+  prev_85 = prev_42->next;
+
+  <bb 19> :
+  # prev_42 = PHI <prev_84(15), prev_85(18)>
+  if (prev_42 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  if (prev_42 != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _38 = ipr_55(D)->next;
+  prev_42->next = _38;
+
+  <bb 22> :
+  memp_free (11, ipr_55(D));
+  ip6_reass_pbufcount.1_39 = ip6_reass_pbufcount;
+  if (pbufs_freed_44 > ip6_reass_pbufcount.1_39)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 23>; [INV]
+
+  <bb 24> :
+  ip6_reass_pbufcount.2_40 = ip6_reass_pbufcount;
+  _41 = ip6_reass_pbufcount.2_40 - pbufs_freed_44;
+  ip6_reass_pbufcount = _41;
+  return;
+
+}
+
+
+ip6_reass_tmr ()
+{
+  struct ip6_reassdata * tmp;
+  struct ip6_reassdata * r;
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _4;
+
+  <bb 2> :
+
+  <bb 3> :
+  r_8 = reassdatagrams;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _1 = r_5->timer;
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _2 = r_5->timer;
+  _3 = _2;
+  _4 = _3 + 255;
+  r_5->timer = _4;
+  r_13 = r_5->next;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  tmp_9 = r_5;
+  r_10 = r_5->next;
+  ip6_reass_free_complete_datagram (tmp_9);
+
+  <bb 7> :
+  # r_5 = PHI <r_8(3), r_13(5), r_10(6)>
+  if (r_5 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  return;
+
+}
+
+

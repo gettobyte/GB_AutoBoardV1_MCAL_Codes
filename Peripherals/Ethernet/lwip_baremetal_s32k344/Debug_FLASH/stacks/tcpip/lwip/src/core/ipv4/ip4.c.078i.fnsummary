@@ -1,0 +1,1716 @@
+Symbol table:
+
+ip4_frag/35 (ip4_frag) @06deba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_output_if_opt_src/11 
+  Calls: 
+ip_addr_any/34 (ip_addr_any) @06deee10
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip4_output_if_opt_src/11 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+memset/33 (memset) @06deb9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_output_if_opt_src/11 
+  Calls: 
+memcpy/32 (memcpy) @06deb8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_output_if_opt_src/11 
+  Calls: 
+pbuf_add_header/31 (pbuf_add_header) @06deb7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_output_if_opt_src/11 ip4_output_if_opt_src/11 
+  Calls: 
+icmp_dest_unreach/30 (icmp_dest_unreach) @06deb0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+pbuf_header_force/29 (pbuf_header_force) @06deb000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+igmp_input/28 (igmp_input) @06d829a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+icmp_input/27 (icmp_input) @06d827e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+tcp_input/26 (tcp_input) @06d82700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+udp_input/25 (udp_input) @06d82620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+pbuf_remove_header/24 (pbuf_remove_header) @06d82380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+raw_input/23 (raw_input) @06d82ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+ip4_reass/22 (ip4_reass) @06d82e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+igmp_lookfor_group/21 (igmp_lookfor_group) @06d82d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+inet_chksum/20 (inet_chksum) @06d82c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+pbuf_realloc/19 (pbuf_realloc) @06d82b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 
+  Calls: 
+lwip_htons/18 (lwip_htons) @06d82a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_output_if_opt_src/11 ip4_output_if_opt_src/11 ip4_input/7 
+  Calls: 
+pbuf_free/17 (pbuf_free) @06d828c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 ip4_input/7 ip4_input/7 ip4_input/7 ip4_input/7 ip4_input/7 
+  Calls: 
+ip4_addr_isbroadcast_u32/16 (ip4_addr_isbroadcast_u32) @06d82540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip4_input/7 ip4_input/7 ip4_input_accept/5 
+  Calls: 
+lwip_stats/15 (lwip_stats) @06d85240
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip4_route/4 (read) ip4_route/4 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_route/4 (read) ip4_route/4 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) ip4_output/12 (read) ip4_output/12 (write) 
+  Availability: not_available
+  Varpool flags:
+netif_default/14 (netif_default) @06d851f8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip4_route/4 (read) ip4_route/4 (read) ip4_route/4 (read) ip4_route/4 (read) ip4_route/4 (read) 
+  Availability: not_available
+  Varpool flags:
+netif_list/13 (netif_list) @06d851b0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip4_route/4 (read) ip4_input/7 (read) 
+  Availability: not_available
+  Varpool flags:
+ip4_output/12 (ip4_output) @06d52620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/15 (read) lwip_stats/15 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ip4_output_if/8 ip4_route/4 
+ip4_output_if_opt_src/11 (ip4_output_if_opt_src) @06d52e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) ip_id/1 (read) ip_id/1 (read) ip_id/1 (write) ip_addr_any/34 (read) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip4_output_if_src/10 ip4_output_if_opt/9 
+  Calls: ip4_frag/35 lwip_htons/18 lwip_htons/18 pbuf_add_header/31 memset/33 memcpy/32 pbuf_add_header/31 
+   Indirect call Num speculative call targets: 0
+ip4_output_if_src/10 (ip4_output_if_src) @06d527e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ip4_output_if_opt_src/11 
+ip4_output_if_opt/9 (ip4_output_if_opt) @06d52540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip4_output_if/8 
+  Calls: ip4_output_if_opt_src/11 
+ip4_output_if/8 (ip4_output_if) @06d52000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip4_output/12 
+  Calls: ip4_output_if_opt/9 
+ip4_input/7 (ip4_input) @06d41e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (read) ip_data/6 (write) ip_data/6 (read) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (read) ip_data/6 (write) ip_data/6 (read) ip_data/6 (write) ip_data/6 (write) ip_data/6 (read) ip_data/6 (addr) ip_data/6 (read) ip_data/6 (read) ip_data/6 (read) netif_list/13 (read) ip_data/6 (read) ip_data/6 (read) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) ip_data/6 (addr) lwip_stats/15 (read) lwip_stats/15 (write) ip_data/6 (read) ip_data/6 (read) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) ip_data/6 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/17 icmp_dest_unreach/30 pbuf_header_force/29 ip4_addr_isbroadcast_u32/16 igmp_input/28 icmp_input/27 tcp_input/26 udp_input/25 pbuf_remove_header/24 raw_input/23 ip4_reass/22 pbuf_free/17 pbuf_free/17 ip4_addr_isbroadcast_u32/16 ip4_input_accept/5 ip4_input_accept/5 igmp_lookfor_group/21 pbuf_free/17 inet_chksum/20 pbuf_free/17 pbuf_realloc/19 lwip_htons/18 pbuf_free/17 
+ip_data/6 (ip_data) @06d2ce10
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip4_input_accept/5 (read) ip4_input_accept/5 (read) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (read) ip4_input/7 (addr) ip4_input/7 (read) ip4_input/7 (read) ip4_input/7 (read) ip4_input/7 (read) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (addr) ip4_input/7 (read) ip4_input/7 (read) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) ip4_input/7 (write) 
+  Availability: not_available
+  Varpool flags:
+ip4_input_accept/5 (ip4_input_accept) @06d38700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: ip_data/6 (read) ip_data/6 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip4_input/7 ip4_input/7 
+  Calls: ip4_addr_isbroadcast_u32/16 
+ip4_route/4 (ip4_route) @06d2ee00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip4_default_multicast_netif/2 (read) ip4_default_multicast_netif/2 (read) netif_list/13 (read) netif_default/14 (read) netif_default/14 (read) netif_default/14 (read) netif_default/14 (read) lwip_stats/15 (read) lwip_stats/15 (write) lwip_stats/15 (read) lwip_stats/15 (write) netif_default/14 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip4_output/12 
+  Calls: 
+ip4_set_default_multicast_netif/3 (ip4_set_default_multicast_netif) @06d23c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip4_default_multicast_netif/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+ip4_default_multicast_netif/2 (ip4_default_multicast_netif) @06d2c7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: ip4_set_default_multicast_netif/3 (write) ip4_route/4 (read) ip4_route/4 (read) 
+  Availability: available
+  Varpool flags:
+ip_id/1 (ip_id) @06d2c750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (read) ip4_output_if_opt_src/11 (write) 
+  Availability: available
+  Varpool flags:
+ip4_output (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto)
+{
+  struct netif * netif;
+  err_t D.8133;
+  unsigned char _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  err_t _4;
+  err_t _17;
+  err_t _19;
+
+  <bb 2> :
+  _1 = p_8(D)->ref;
+  if (_1 != 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  netif_11 = ip4_route (dest_9(D));
+  if (netif_11 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _2 = lwip_stats.ip.rterr;
+  _3 = _2 + 1;
+  lwip_stats.ip.rterr = _3;
+  _19 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _17 = ip4_output_if (p_8(D), src_12(D), dest_9(D), ttl_13(D), tos_14(D), proto_15(D), netif_11);
+
+  <bb 7> :
+  # _4 = PHI <_19(5), _17(6)>
+<L5>:
+  return _4;
+
+}
+
+
+ip4_output_if_opt_src (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto, struct netif * netif, void * ip_options, u16_t optlen)
+{
+  int i;
+  u16_t optlen_aligned;
+  u16_t ip_hlen;
+  u32_t chk_sum;
+  struct ip4_addr_t dest_addr;
+  struct ip_hdr * iphdr;
+  err_t D.8108;
+  unsigned char _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  unsigned short _8;
+  unsigned int _9;
+  unsigned char _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  void * _15;
+  unsigned int _16;
+  void * _17;
+  sizetype _18;
+  void * _19;
+  int _20;
+  int _21;
+  int _22;
+  unsigned int _23;
+  void * _24;
+  unsigned int i.6_25;
+  unsigned int _26;
+  u16_t * _27;
+  short unsigned int _28;
+  long unsigned int _29;
+  short unsigned int _30;
+  int _31;
+  unsigned char _32;
+  short unsigned int _33;
+  short unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  short unsigned int _37;
+  int _38;
+  int _39;
+  int _40;
+  int _41;
+  int _42;
+  signed short _43;
+  int _44;
+  int _45;
+  int _46;
+  int _47;
+  int _48;
+  signed short _49;
+  signed short _50;
+  signed short _51;
+  short unsigned int _52;
+  long unsigned int _53;
+  long unsigned int _54;
+  long unsigned int _55;
+  long unsigned int _56;
+  long unsigned int _57;
+  long unsigned int _58;
+  short unsigned int _59;
+  unsigned char _60;
+  unsigned char _61;
+  int _62;
+  unsigned char _63;
+  int _64;
+  int _65;
+  int _66;
+  int _67;
+  signed short _68;
+  int _69;
+  unsigned char _70;
+  int _71;
+  int _72;
+  int _73;
+  int _74;
+  signed short _75;
+  signed short _76;
+  signed short _77;
+  short unsigned int _78;
+  long unsigned int _79;
+  short unsigned int _80;
+  short unsigned int _81;
+  short unsigned int _82;
+  long unsigned int _83;
+  short unsigned int ip_id.7_84;
+  short unsigned int _85;
+  short unsigned int _86;
+  long unsigned int _87;
+  short unsigned int ip_id.8_88;
+  short unsigned int _89;
+  long unsigned int _90;
+  long unsigned int _91;
+  long unsigned int _92;
+  long unsigned int _93;
+  long unsigned int _94;
+  long unsigned int _95;
+  long unsigned int _96;
+  long unsigned int _97;
+  long unsigned int _98;
+  short unsigned int _99;
+  short unsigned int _100;
+  short unsigned int _101;
+  short unsigned int _102;
+  long unsigned int _103;
+  long unsigned int _104;
+  long unsigned int _105;
+  short unsigned int _106;
+  short unsigned int _107;
+  short unsigned int _108;
+  short unsigned int _109;
+  short unsigned int _110;
+  err_t (*<T6d8>) (struct netif *, struct pbuf *, const struct ip4_addr_t *) _111;
+  err_t _117;
+  err_t _135;
+  err_t _150;
+  err_t _153;
+  err_t _188;
+  err_t _192;
+  err_t _194;
+
+  <bb 2> :
+  chk_sum_125 = 0;
+  _1 = p_127(D)->ref;
+  if (_1 != 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _2 = lwip_stats.mib2.ipoutrequests;
+  _3 = _2 + 1;
+  lwip_stats.mib2.ipoutrequests = _3;
+  if (dest_129(D) != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 5> :
+  ip_hlen_136 = 20;
+  optlen_aligned_137 = 0;
+  if (optlen_138(D) != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 6> :
+  if (optlen_138(D) > 40)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _4 = lwip_stats.ip.err;
+  _5 = _4 + 1;
+  lwip_stats.ip.err = _5;
+  _6 = lwip_stats.mib2.ipoutdiscards;
+  _7 = _6 + 1;
+  lwip_stats.mib2.ipoutdiscards = _7;
+  _153 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 8> :
+  _8 = optlen_138(D) + 3;
+  optlen_aligned_139 = _8 & 65532;
+  ip_hlen_140 = ip_hlen_136 + optlen_aligned_139;
+  _9 = (unsigned int) optlen_aligned_139;
+  _10 = pbuf_add_header (p_127(D), _9);
+  if (_10 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _11 = lwip_stats.ip.err;
+  _12 = _11 + 1;
+  lwip_stats.ip.err = _12;
+  _13 = lwip_stats.mib2.ipoutdiscards;
+  _14 = _13 + 1;
+  lwip_stats.mib2.ipoutdiscards = _14;
+  _150 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 10> :
+  _15 = p_127(D)->payload;
+  _16 = (unsigned int) optlen_138(D);
+  memcpy (_15, ip_options_142(D), _16);
+  if (optlen_138(D) < optlen_aligned_139)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _17 = p_127(D)->payload;
+  _18 = (sizetype) optlen_138(D);
+  _19 = _17 + _18;
+  _20 = (int) optlen_aligned_139;
+  _21 = (int) optlen_138(D);
+  _22 = _20 - _21;
+  _23 = (unsigned int) _22;
+  memset (_19, 0, _23);
+
+  <bb 12> :
+  i_145 = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _24 = p_127(D)->payload;
+  i.6_25 = (unsigned int) i_116;
+  _26 = i.6_25 * 2;
+  _27 = _24 + _26;
+  _28 = *_27;
+  _29 = (long unsigned int) _28;
+  chk_sum_146 = chk_sum_113 + _29;
+  i_147 = i_116 + 1;
+
+  <bb 14> :
+  # chk_sum_113 = PHI <chk_sum_125(12), chk_sum_146(13)>
+  # i_116 = PHI <i_145(12), i_147(13)>
+  _30 = optlen_aligned_139 / 2;
+  _31 = (int) _30;
+  if (i_116 < _31)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  # chk_sum_114 = PHI <chk_sum_125(5), chk_sum_113(14)>
+  # ip_hlen_115 = PHI <ip_hlen_136(5), ip_hlen_140(14)>
+  _32 = pbuf_add_header (p_127(D), 20);
+  if (_32 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _33 = lwip_stats.ip.err;
+  _34 = _33 + 1;
+  lwip_stats.ip.err = _34;
+  _35 = lwip_stats.mib2.ipoutdiscards;
+  _36 = _35 + 1;
+  lwip_stats.mib2.ipoutdiscards = _36;
+  _188 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 17> :
+  iphdr_155 = p_127(D)->payload;
+  _37 = p_127(D)->len;
+  if (_37 <= 19)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 18>; [INV]
+
+  <bb 19> :
+  iphdr_155->_ttl = ttl_156(D);
+  iphdr_155->_proto = proto_158(D);
+  _38 = (int) proto_158(D);
+  _39 = (int) ttl_156(D);
+  _40 = _39 << 8;
+  _41 = _38 | _40;
+  _42 = _41 << 8;
+  _43 = (signed short) _42;
+  _44 = (int) proto_158(D);
+  _45 = (int) ttl_156(D);
+  _46 = _45 << 8;
+  _47 = _44 | _46;
+  _48 = _47 >> 8;
+  _49 = (signed short) _48;
+  _50 = _49 & 255;
+  _51 = _43 | _50;
+  _52 = (short unsigned int) _51;
+  _53 = (long unsigned int) _52;
+  chk_sum_160 = chk_sum_114 + _53;
+  _54 = dest_129(D)->addr;
+  iphdr_155->dest.addr = _54;
+  _55 = iphdr_155->dest.addr;
+  _56 = _55 & 65535;
+  chk_sum_162 = chk_sum_160 + _56;
+  _57 = iphdr_155->dest.addr;
+  _58 = _57 >> 16;
+  chk_sum_163 = chk_sum_162 + _58;
+  _59 = ip_hlen_115 / 4;
+  _60 = (unsigned char) _59;
+  _61 = _60 | 64;
+  iphdr_155->_v_hl = _61;
+  iphdr_155->_tos = tos_165(D);
+  _62 = (int) tos_165(D);
+  _63 = iphdr_155->_v_hl;
+  _64 = (int) _63;
+  _65 = _64 << 8;
+  _66 = _62 | _65;
+  _67 = _66 << 8;
+  _68 = (signed short) _67;
+  _69 = (int) tos_165(D);
+  _70 = iphdr_155->_v_hl;
+  _71 = (int) _70;
+  _72 = _71 << 8;
+  _73 = _69 | _72;
+  _74 = _73 >> 8;
+  _75 = (signed short) _74;
+  _76 = _75 & 255;
+  _77 = _68 | _76;
+  _78 = (short unsigned int) _77;
+  _79 = (long unsigned int) _78;
+  chk_sum_167 = chk_sum_163 + _79;
+  _80 = p_127(D)->tot_len;
+  _81 = lwip_htons (_80);
+  iphdr_155->_len = _81;
+  _82 = iphdr_155->_len;
+  _83 = (long unsigned int) _82;
+  chk_sum_170 = chk_sum_167 + _83;
+  iphdr_155->_offset = 0;
+  ip_id.7_84 = ip_id;
+  _85 = lwip_htons (ip_id.7_84);
+  iphdr_155->_id = _85;
+  _86 = iphdr_155->_id;
+  _87 = (long unsigned int) _86;
+  chk_sum_174 = chk_sum_170 + _87;
+  ip_id.8_88 = ip_id;
+  _89 = ip_id.8_88 + 1;
+  ip_id = _89;
+  if (src_176(D) == 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _90 = ip_addr_any.u_addr.ip4.addr;
+  iphdr_155->src.addr = _90;
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  _91 = src_176(D)->addr;
+  iphdr_155->src.addr = _91;
+
+  <bb 22> :
+  _92 = iphdr_155->src.addr;
+  _93 = _92 & 65535;
+  chk_sum_179 = chk_sum_174 + _93;
+  _94 = iphdr_155->src.addr;
+  _95 = _94 >> 16;
+  chk_sum_180 = chk_sum_179 + _95;
+  _96 = chk_sum_180 >> 16;
+  _97 = chk_sum_180 & 65535;
+  chk_sum_181 = _96 + _97;
+  _98 = chk_sum_181 >> 16;
+  chk_sum_182 = chk_sum_181 + _98;
+  chk_sum_183 = ~chk_sum_182;
+  _99 = (short unsigned int) chk_sum_183;
+  iphdr_155->_chksum = _99;
+  goto <bb 26>; [INV]
+
+  <bb 23> :
+  _100 = p_127(D)->len;
+  if (_100 <= 19)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _101 = lwip_stats.ip.err;
+  _102 = _101 + 1;
+  lwip_stats.ip.err = _102;
+  _103 = lwip_stats.mib2.ipoutdiscards;
+  _104 = _103 + 1;
+  lwip_stats.mib2.ipoutdiscards = _104;
+  _135 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 25> :
+  iphdr_130 = p_127(D)->payload;
+  _105 = iphdr_130->dest.addr;
+  dest_addr.addr = _105;
+  dest_132 = &dest_addr;
+
+  <bb 26> :
+  # dest_112 = PHI <dest_129(D)(22), dest_132(25)>
+  _106 = lwip_stats.ip.xmit;
+  _107 = _106 + 1;
+  lwip_stats.ip.xmit = _107;
+  _108 = netif_190(D)->mtu;
+  if (_108 != 0)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 27> :
+  _109 = p_127(D)->tot_len;
+  _110 = netif_190(D)->mtu;
+  if (_109 > _110)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  _192 = ip4_frag (p_127(D), netif_190(D), dest_112);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  _111 = netif_190(D)->output;
+  _194 = _111 (netif_190(D), p_127(D), dest_112);
+
+  <bb 30> :
+  # _117 = PHI <_153(7), _150(9), _188(16), _135(24), _192(28), _194(29)>
+  dest_addr ={v} {CLOBBER};
+
+  <bb 31> :
+<L32>:
+  return _117;
+
+}
+
+
+ip4_output_if_src (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto, struct netif * netif)
+{
+  err_t D.8098;
+  err_t _10;
+
+  <bb 2> :
+  _10 = ip4_output_if_opt_src (p_2(D), src_3(D), dest_4(D), ttl_5(D), tos_6(D), proto_7(D), netif_8(D), 0B, 0);
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+ip4_output_if_opt (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto, struct netif * netif, void * ip_options, u16_t optlen)
+{
+  const struct ip4_addr_t * src_used;
+  err_t D.8096;
+  long unsigned int _1;
+  err_t _16;
+
+  <bb 2> :
+  src_used_4 = src_3(D);
+  if (dest_5(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  if (src_3(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _1 = src_3(D)->addr;
+  if (_1 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  src_used_8 = &netif_7(D)->ip_addr.u_addr.ip4;
+
+  <bb 6> :
+  # src_used_2 = PHI <src_used_4(2), src_used_4(4), src_used_8(5)>
+  _16 = ip4_output_if_opt_src (p_9(D), src_used_2, dest_5(D), ttl_10(D), tos_11(D), proto_12(D), netif_7(D), ip_options_13(D), optlen_14(D));
+
+  <bb 7> :
+<L5>:
+  return _16;
+
+}
+
+
+ip4_output_if (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto, struct netif * netif)
+{
+  err_t D.8089;
+  err_t _10;
+
+  <bb 2> :
+  _10 = ip4_output_if_opt (p_2(D), src_3(D), dest_4(D), ttl_5(D), tos_6(D), proto_7(D), netif_8(D), 0B, 0);
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+ip4_input (struct pbuf * p, struct netif * inp)
+{
+  struct ip4_addr_t allsystems;
+  raw_input_state_t raw_status;
+  int check_ip_src;
+  u16_t iphdr_len;
+  u16_t iphdr_hlen;
+  struct netif * netif;
+  const struct ip_hdr * iphdr;
+  err_t D.8033;
+  short unsigned int _1;
+  short unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  unsigned char _5;
+  unsigned char _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  short unsigned int _9;
+  short unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  unsigned char _13;
+  unsigned char _14;
+  unsigned char _15;
+  short unsigned int _16;
+  short unsigned int _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  short unsigned int _20;
+  short unsigned int _21;
+  short unsigned int _22;
+  short unsigned int _23;
+  short unsigned int _24;
+  short unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  short unsigned int _28;
+  short unsigned int _29;
+  short unsigned int _30;
+  short unsigned int _31;
+  short unsigned int _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  unsigned char _43;
+  unsigned int _44;
+  unsigned int _45;
+  struct igmp_group * _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  long unsigned int _49;
+  int _50;
+  long unsigned int _51;
+  long unsigned int _52;
+  int _53;
+  long unsigned int _54;
+  unsigned char _55;
+  long unsigned int _56;
+  long unsigned int _57;
+  short unsigned int _58;
+  short unsigned int _59;
+  long unsigned int _60;
+  long unsigned int _61;
+  long unsigned int _62;
+  long unsigned int _63;
+  short unsigned int _64;
+  short unsigned int _65;
+  long unsigned int _66;
+  long unsigned int _67;
+  long unsigned int _68;
+  long unsigned int _69;
+  short unsigned int _70;
+  int _71;
+  int _72;
+  unsigned char _73;
+  unsigned char _74;
+  unsigned char _75;
+  short unsigned int _76;
+  unsigned int _77;
+  unsigned char _78;
+  int _79;
+  long unsigned int _80;
+  long unsigned int _81;
+  long unsigned int _82;
+  long unsigned int _83;
+  long unsigned int _84;
+  long unsigned int _85;
+  long unsigned int _86;
+  long unsigned int _87;
+  long unsigned int _88;
+  unsigned char _89;
+  long unsigned int _90;
+  long unsigned int _91;
+  short int iphdr_hlen.5_92;
+  short unsigned int _93;
+  short unsigned int _94;
+  short unsigned int _95;
+  short unsigned int _96;
+  long unsigned int _97;
+  long unsigned int _98;
+  err_t _107;
+  err_t _161;
+  err_t _165;
+  err_t _194;
+  err_t _199;
+  err_t _204;
+  err_t _209;
+  err_t _214;
+
+  <bb 2> :
+  check_ip_src_120 = 1;
+  _1 = lwip_stats.ip.recv;
+  _2 = _1 + 1;
+  lwip_stats.ip.recv = _2;
+  _3 = lwip_stats.mib2.ipinreceives;
+  _4 = _3 + 1;
+  lwip_stats.mib2.ipinreceives = _4;
+  iphdr_125 = p_124(D)->payload;
+  _5 = iphdr_125->_v_hl;
+  _6 = _5 >> 4;
+  if (_6 != 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  pbuf_free (p_124(D));
+  _7 = lwip_stats.ip.err;
+  _8 = _7 + 1;
+  lwip_stats.ip.err = _8;
+  _9 = lwip_stats.ip.drop;
+  _10 = _9 + 1;
+  lwip_stats.ip.drop = _10;
+  _11 = lwip_stats.mib2.ipinhdrerrors;
+  _12 = _11 + 1;
+  lwip_stats.mib2.ipinhdrerrors = _12;
+  _214 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 4> :
+  _13 = iphdr_125->_v_hl;
+  _14 = _13 & 15;
+  _15 = _14 * 4;
+  iphdr_hlen_126 = (u16_t) _15;
+  _16 = iphdr_125->_len;
+  iphdr_len_128 = lwip_htons (_16);
+  _17 = p_124(D)->tot_len;
+  if (iphdr_len_128 < _17)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  pbuf_realloc (p_124(D), iphdr_len_128);
+
+  <bb 6> :
+  _18 = p_124(D)->len;
+  if (iphdr_hlen_126 > _18)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _19 = p_124(D)->tot_len;
+  if (iphdr_len_128 > _19)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (iphdr_hlen_126 <= 19)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  _20 = p_124(D)->len;
+
+  <bb 10> :
+  _21 = p_124(D)->tot_len;
+
+  <bb 11> :
+  pbuf_free (p_124(D));
+  _22 = lwip_stats.ip.lenerr;
+  _23 = _22 + 1;
+  lwip_stats.ip.lenerr = _23;
+  _24 = lwip_stats.ip.drop;
+  _25 = _24 + 1;
+  lwip_stats.ip.drop = _25;
+  _26 = lwip_stats.mib2.ipindiscards;
+  _27 = _26 + 1;
+  lwip_stats.mib2.ipindiscards = _27;
+  _209 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 12> :
+  _28 = inet_chksum (iphdr_125, iphdr_hlen_126);
+  if (_28 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  pbuf_free (p_124(D));
+  _29 = lwip_stats.ip.chkerr;
+  _30 = _29 + 1;
+  lwip_stats.ip.chkerr = _30;
+  _31 = lwip_stats.ip.drop;
+  _32 = _31 + 1;
+  lwip_stats.ip.drop = _32;
+  _33 = lwip_stats.mib2.ipinhdrerrors;
+  _34 = _33 + 1;
+  lwip_stats.mib2.ipinhdrerrors = _34;
+  _204 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 14> :
+  _35 = iphdr_125->dest.addr;
+  ip_data.current_iphdr_dest.u_addr.ip4.addr = _35;
+  ip_data.current_iphdr_dest.type = 0;
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[3] = 0;
+  _36 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[2] = _36;
+  _37 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[1] = _37;
+  ip_data.current_iphdr_dest.u_addr.ip6.zone = 0;
+  _38 = iphdr_125->src.addr;
+  ip_data.current_iphdr_src.u_addr.ip4.addr = _38;
+  ip_data.current_iphdr_src.type = 0;
+  ip_data.current_iphdr_src.u_addr.ip6.addr[3] = 0;
+  _39 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  ip_data.current_iphdr_src.u_addr.ip6.addr[2] = _39;
+  _40 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  ip_data.current_iphdr_src.u_addr.ip6.addr[1] = _40;
+  ip_data.current_iphdr_src.u_addr.ip6.zone = 0;
+  _41 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _42 = _41 & 240;
+  if (_42 == 224)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 15> :
+  _43 = inp_143(D)->flags;
+  _44 = (unsigned int) _43;
+  _45 = _44 & 32;
+  if (_45 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 16> :
+  _46 = igmp_lookfor_group (inp_143(D), &ip_data.current_iphdr_dest.u_addr.ip4);
+  if (_46 != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 17> :
+  allsystems.addr = 16777440;
+  _47 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _48 = allsystems.addr;
+  if (_47 == _48)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 18> :
+  _49 = ip_data.current_iphdr_src.u_addr.ip4.addr;
+  if (_49 == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  check_ip_src_152 = 0;
+
+  <bb 20> :
+  # check_ip_src_104 = PHI <check_ip_src_120(17), check_ip_src_120(18), check_ip_src_152(19)>
+  netif_153 = inp_143(D);
+  allsystems ={v} {CLOBBER};
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  netif_155 = 0B;
+
+  <bb 22> :
+  # netif_101 = PHI <netif_153(20), netif_155(21)>
+  # check_ip_src_105 = PHI <check_ip_src_104(20), check_ip_src_120(21)>
+  goto <bb 33>; [INV]
+
+  <bb 23> :
+  _50 = ip4_input_accept (inp_143(D));
+  if (_50 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  netif_149 = inp_143(D);
+  goto <bb 33>; [INV]
+
+  <bb 25> :
+  netif_145 = 0B;
+  _51 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _52 = _51 & 255;
+  if (_52 != 127)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 26> :
+  netif_146 = netif_list;
+  goto <bb 32>; [INV]
+
+  <bb 27> :
+  if (netif_102 == inp_143(D))
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  // predicted unlikely by continue predictor.
+  goto <bb 31>; [INV]
+
+  <bb 29> :
+  _53 = ip4_input_accept (netif_102);
+  if (_53 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  goto <bb 33>; [INV]
+
+  <bb 31> :
+  netif_148 = netif_102->next;
+
+  <bb 32> :
+  # netif_102 = PHI <netif_146(26), netif_148(31)>
+  if (netif_102 != 0B)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 33> :
+  # netif_103 = PHI <netif_101(22), netif_149(24), netif_145(25), netif_102(30), netif_102(32)>
+  # check_ip_src_106 = PHI <check_ip_src_105(22), check_ip_src_120(24), check_ip_src_120(25), check_ip_src_120(30), check_ip_src_120(32)>
+  if (check_ip_src_106 != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 34> :
+  _54 = ip_data.current_iphdr_src.u_addr.ip4.addr;
+  _55 = ip4_addr_isbroadcast_u32 (_54, inp_143(D));
+  if (_55 != 0)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 35> :
+  _56 = ip_data.current_iphdr_src.u_addr.ip4.addr;
+  _57 = _56 & 240;
+  if (_57 == 224)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  pbuf_free (p_124(D));
+  _58 = lwip_stats.ip.drop;
+  _59 = _58 + 1;
+  lwip_stats.ip.drop = _59;
+  _60 = lwip_stats.mib2.ipinaddrerrors;
+  _61 = _60 + 1;
+  lwip_stats.mib2.ipinaddrerrors = _61;
+  _62 = lwip_stats.mib2.ipindiscards;
+  _63 = _62 + 1;
+  lwip_stats.mib2.ipindiscards = _63;
+  _161 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 37> :
+  if (netif_103 == 0B)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 38> :
+  _64 = lwip_stats.ip.drop;
+  _65 = _64 + 1;
+  lwip_stats.ip.drop = _65;
+  _66 = lwip_stats.mib2.ipinaddrerrors;
+  _67 = _66 + 1;
+  lwip_stats.mib2.ipinaddrerrors = _67;
+  _68 = lwip_stats.mib2.ipindiscards;
+  _69 = _68 + 1;
+  lwip_stats.mib2.ipindiscards = _69;
+  pbuf_free (p_124(D));
+  _199 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 39> :
+  _70 = iphdr_125->_offset;
+  _71 = (int) _70;
+  _72 = _71 & 65343;
+  if (_72 != 0)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 40> :
+  p_163 = ip4_reass (p_124(D));
+  if (p_163 == 0B)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 41> :
+  _165 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 42> :
+  iphdr_164 = p_163->payload;
+
+  <bb 43> :
+  # p_99 = PHI <p_124(D)(39), p_163(42)>
+  # iphdr_100 = PHI <iphdr_125(39), iphdr_164(42)>
+  ip_data.current_netif = netif_103;
+  ip_data.current_input_netif = inp_143(D);
+  ip_data.current_ip4_header = iphdr_100;
+  _73 = iphdr_100->_v_hl;
+  _74 = _73 & 15;
+  _75 = _74 * 4;
+  _76 = (short unsigned int) _75;
+  ip_data.current_ip_header_tot_len = _76;
+  raw_status_171 = raw_input (p_99, inp_143(D));
+  if (raw_status_171 != 1)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 44> :
+  _77 = (unsigned int) iphdr_hlen_126;
+  pbuf_remove_header (p_99, _77);
+  _78 = iphdr_100->_proto;
+  _79 = (int) _78;
+  switch (_79) <default: <L57> [INV], case 1: <L55> [INV], case 2: <L56> [INV], case 6: <L54> [INV], case 17: <L52> [INV], case 136: <L52> [INV]>
+
+  <bb 45> :
+<L52>:
+  _80 = lwip_stats.mib2.ipindelivers;
+  _81 = _80 + 1;
+  lwip_stats.mib2.ipindelivers = _81;
+  udp_input (p_99, inp_143(D));
+  goto <bb 56>; [INV]
+
+  <bb 46> :
+<L54>:
+  _82 = lwip_stats.mib2.ipindelivers;
+  _83 = _82 + 1;
+  lwip_stats.mib2.ipindelivers = _83;
+  tcp_input (p_99, inp_143(D));
+  goto <bb 56>; [INV]
+
+  <bb 47> :
+<L55>:
+  _84 = lwip_stats.mib2.ipindelivers;
+  _85 = _84 + 1;
+  lwip_stats.mib2.ipindelivers = _85;
+  icmp_input (p_99, inp_143(D));
+  goto <bb 56>; [INV]
+
+  <bb 48> :
+<L56>:
+  igmp_input (p_99, inp_143(D), &ip_data.current_iphdr_dest.u_addr.ip4);
+  goto <bb 56>; [INV]
+
+  <bb 49> :
+<L57>:
+  if (raw_status_171 == 2)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  _86 = lwip_stats.mib2.ipindelivers;
+  _87 = _86 + 1;
+  lwip_stats.mib2.ipindelivers = _87;
+  goto <bb 55>; [INV]
+
+  <bb 51> :
+  _88 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _89 = ip4_addr_isbroadcast_u32 (_88, netif_103);
+  if (_89 == 0)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 52> :
+  _90 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _91 = _90 & 240;
+  if (_91 != 224)
+    goto <bb 53>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 53> :
+  iphdr_hlen.5_92 = (short int) iphdr_hlen_126;
+  pbuf_header_force (p_99, iphdr_hlen.5_92);
+  icmp_dest_unreach (p_99, 2);
+
+  <bb 54> :
+  _93 = lwip_stats.ip.proterr;
+  _94 = _93 + 1;
+  lwip_stats.ip.proterr = _94;
+  _95 = lwip_stats.ip.drop;
+  _96 = _95 + 1;
+  lwip_stats.ip.drop = _96;
+  _97 = lwip_stats.mib2.ipinunknownprotos;
+  _98 = _97 + 1;
+  lwip_stats.mib2.ipinunknownprotos = _98;
+
+  <bb 55> :
+  pbuf_free (p_99);
+
+  <bb 56> :
+  ip_data.current_netif = 0B;
+  ip_data.current_input_netif = 0B;
+  ip_data.current_ip4_header = 0B;
+  ip_data.current_ip_header_tot_len = 0;
+  ip_data.current_iphdr_src.u_addr.ip4.addr = 0;
+  ip_data.current_iphdr_dest.u_addr.ip4.addr = 0;
+  _194 = 0;
+
+  <bb 57> :
+  # _107 = PHI <_214(3), _209(11), _204(13), _161(36), _199(38), _165(41), _194(56)>
+<L67>:
+  return _107;
+
+}
+
+
+ip4_input_accept (struct netif * netif)
+{
+  int D.8029;
+  unsigned char _1;
+  _Bool _2;
+  struct ip4_addr_t * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  struct ip4_addr_t * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  unsigned char _9;
+  int _10;
+  int _17;
+  int _18;
+
+  <bb 2> :
+  _1 = netif_15(D)->flags;
+  _2 = (_Bool) _1;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _3 = &netif_15(D)->ip_addr.u_addr.ip4;
+  _4 = MEM[(const struct ip4_addr_t *)_3].addr;
+  if (_4 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _5 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _6 = &netif_15(D)->ip_addr.u_addr.ip4;
+  _7 = MEM[(const struct ip4_addr_t *)_6].addr;
+  if (_5 == _7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _8 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _9 = ip4_addr_isbroadcast_u32 (_8, netif_15(D));
+  if (_9 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _17 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _18 = 0;
+
+  <bb 8> :
+  # _10 = PHI <_17(6), _18(7)>
+<L7>:
+  return _10;
+
+}
+
+
+ip4_route (const struct ip4_addr_t * dest)
+{
+  struct netif * netif;
+  struct netif * D.8002;
+  long unsigned int _1;
+  long unsigned int _2;
+  struct netif * ip4_default_multicast_netif.0_3;
+  unsigned char _4;
+  _Bool _5;
+  unsigned char _6;
+  unsigned int _7;
+  unsigned int _8;
+  _Bool _9;
+  struct ip4_addr_t * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  struct ip4_addr_t * _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  struct ip4_addr_t * _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  unsigned char _19;
+  unsigned int _20;
+  unsigned int _21;
+  long unsigned int _22;
+  struct ip4_addr_t * _23;
+  long unsigned int _24;
+  struct netif * netif_default.1_25;
+  struct netif * netif_default.2_26;
+  unsigned char _27;
+  unsigned int _28;
+  unsigned int _29;
+  struct netif * netif_default.3_30;
+  unsigned char _31;
+  unsigned int _32;
+  unsigned int _33;
+  struct netif * netif_default.4_34;
+  struct ip4_addr_t * _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  short unsigned int _39;
+  short unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  struct netif * _44;
+  struct netif * _48;
+  struct netif * _50;
+  struct netif * _53;
+  struct netif * _54;
+  struct netif * _55;
+
+  <bb 2> :
+  _1 = dest_47(D)->addr;
+  _2 = _1 & 240;
+  if (_2 == 224)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  ip4_default_multicast_netif.0_3 = ip4_default_multicast_netif;
+  if (ip4_default_multicast_netif.0_3 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _48 = ip4_default_multicast_netif;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 5> :
+  netif_49 = netif_list;
+  goto <bb 15>; [INV]
+
+  <bb 6> :
+  _4 = netif_43->flags;
+  _5 = (_Bool) _4;
+  if (_5 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 7> :
+  _6 = netif_43->flags;
+  _7 = (unsigned int) _6;
+  _8 = _7 >> 2;
+  _9 = (_Bool) _8;
+  if (_9 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 8> :
+  _10 = &netif_43->ip_addr.u_addr.ip4;
+  _11 = MEM[(const struct ip4_addr_t *)_10].addr;
+  if (_11 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 9> :
+  _12 = dest_47(D)->addr;
+  _13 = &netif_43->ip_addr.u_addr.ip4;
+  _14 = MEM[(const struct ip4_addr_t *)_13].addr;
+  _15 = _12 ^ _14;
+  _16 = &netif_43->netmask.u_addr.ip4;
+  _17 = MEM[(const struct ip4_addr_t *)_16].addr;
+  _18 = _15 & _17;
+  if (_18 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _55 = netif_43;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 11> :
+  _19 = netif_43->flags;
+  _20 = (unsigned int) _19;
+  _21 = _20 & 2;
+  if (_21 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  _22 = dest_47(D)->addr;
+  _23 = &netif_43->gw.u_addr.ip4;
+  _24 = MEM[(const struct ip4_addr_t *)_23].addr;
+  if (_22 == _24)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _54 = netif_43;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 14> :
+  netif_56 = netif_43->next;
+
+  <bb 15> :
+  # netif_43 = PHI <netif_49(5), netif_56(14)>
+  if (netif_43 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  netif_default.1_25 = netif_default;
+  if (netif_default.1_25 == 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  netif_default.2_26 = netif_default;
+  _27 = netif_default.2_26->flags;
+  _28 = (unsigned int) _27;
+  _29 = _28 & 1;
+  if (_29 == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  netif_default.3_30 = netif_default;
+  _31 = netif_default.3_30->flags;
+  _32 = (unsigned int) _31;
+  _33 = _32 & 4;
+  if (_33 == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  netif_default.4_34 = netif_default;
+  _35 = &netif_default.4_34->ip_addr.u_addr.ip4;
+  _36 = MEM[(const struct ip4_addr_t *)_35].addr;
+  if (_36 == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  _37 = dest_47(D)->addr;
+  _38 = _37 & 255;
+  if (_38 == 127)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _39 = lwip_stats.ip.rterr;
+  _40 = _39 + 1;
+  lwip_stats.ip.rterr = _40;
+  _41 = lwip_stats.mib2.ipoutnoroutes;
+  _42 = _41 + 1;
+  lwip_stats.mib2.ipoutnoroutes = _42;
+  _53 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 22> :
+  _50 = netif_default;
+
+  <bb 23> :
+  # _44 = PHI <_48(4), _55(10), _54(13), _53(21), _50(22)>
+<L25>:
+  return _44;
+
+}
+
+
+ip4_set_default_multicast_netif (struct netif * default_multicast_netif)
+{
+  <bb 2> :
+  ip4_default_multicast_netif = default_multicast_netif_2(D);
+  return;
+
+}
+
+

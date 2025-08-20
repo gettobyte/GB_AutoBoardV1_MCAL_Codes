@@ -1,0 +1,552 @@
+IPA summary for lwip_itoa/6 is missing.
+IPA summary for lwip_strnicmp/5 is missing.
+IPA summary for lwip_stricmp/4 is missing.
+IPA summary for lwip_strnstr/3 is missing.
+IPA summary for lwip_htonl/2 is missing.
+IPA summary for lwip_htons/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        3 calls, 3.000000 freq, 0 count
+IPA summary for lwip_itoa/6 is missing.
+IPA summary for lwip_strnicmp/5 is missing.
+IPA summary for lwip_stricmp/4 is missing.
+IPA summary for lwip_strnstr/3 is missing.
+IPA summary for lwip_htonl/2 is missing.
+IPA summary for lwip_htons/1 is missing.
+Symbol table:
+
+memmove/9 (memmove) @06b771c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwip_itoa/6 
+  Calls: 
+strncmp/8 (strncmp) @06b6b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwip_strnstr/3 
+  Calls: 
+strlen/7 (strlen) @06b6b380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwip_strnstr/3 
+  Calls: 
+lwip_itoa/6 (lwip_itoa) @06b6ba80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memmove/9 
+lwip_strnicmp/5 (lwip_strnicmp) @06b6b7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+lwip_stricmp/4 (lwip_stricmp) @06b6b540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+lwip_strnstr/3 (lwip_strnstr) @06b6b2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: strncmp/8 strlen/7 
+lwip_htonl/2 (lwip_htonl) @06b6b000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+lwip_htons/1 (lwip_htons) @06b8ee00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+
+;; Function lwip_htons (lwip_htons, funcdef_no=1, decl_uid=6394, cgraph_uid=2, symbol_order=1)
+
+lwip_htons (u16_t n)
+{
+  u16_t D.6552;
+  int _1;
+  int _2;
+  signed short _3;
+  short unsigned int _4;
+  signed short _5;
+  signed short _6;
+  u16_t _8;
+
+  <bb 2> :
+  _1 = (int) n_7(D);
+  _2 = _1 << 8;
+  _3 = (signed short) _2;
+  _4 = n_7(D) >> 8;
+  _5 = (signed short) _4;
+  _6 = _3 | _5;
+  _8 = (u16_t) _6;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+
+;; Function lwip_htonl (lwip_htonl, funcdef_no=2, decl_uid=6396, cgraph_uid=3, symbol_order=2)
+
+lwip_htonl (u32_t n)
+{
+  u32_t D.6554;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  u32_t _10;
+
+  <bb 2> :
+  _1 = n_9(D) << 24;
+  _2 = n_9(D) << 8;
+  _3 = _2 & 16711680;
+  _4 = _1 | _3;
+  _5 = n_9(D) >> 8;
+  _6 = _5 & 65280;
+  _7 = _4 | _6;
+  _8 = n_9(D) >> 24;
+  _10 = _7 | _8;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+
+;; Function lwip_strnstr (lwip_strnstr, funcdef_no=3, decl_uid=6411, cgraph_uid=4, symbol_order=3)
+
+lwip_strnstr (const char * buffer, const char * token, size_t n)
+{
+  size_t tokenlen;
+  const char * p;
+  char * D.6558;
+  char _1;
+  char _2;
+  int _3;
+  char _4;
+  const char * _5;
+  const char * _6;
+  char * _8;
+  char * _15;
+  char * _17;
+  char * _18;
+
+  <bb 2> :
+  tokenlen_11 = strlen (token_10(D));
+  if (tokenlen_11 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _18 = buffer_12(D);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 4> :
+  p_13 = buffer_12(D);
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  _1 = *p_7;
+  _2 = *token_10(D);
+  if (_1 == _2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _3 = strncmp (p_7, token_10(D), tokenlen_11);
+  if (_3 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _15 = p_7;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+  p_16 = p_7 + 1;
+
+  <bb 9> :
+  # p_7 = PHI <p_13(4), p_16(8)>
+  _4 = *p_7;
+  if (_4 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _5 = p_7 + tokenlen_11;
+  _6 = buffer_12(D) + n_14(D);
+  if (_5 <= _6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _17 = 0B;
+
+  <bb 12> :
+  # _8 = PHI <_18(3), _15(7), _17(11)>
+<L10>:
+  return _8;
+
+}
+
+
+
+;; Function lwip_stricmp (lwip_stricmp, funcdef_no=4, decl_uid=6407, cgraph_uid=5, symbol_order=4)
+
+lwip_stricmp (const char * str1, const char * str2)
+{
+  char c2_upc;
+  char c1_upc;
+  char c2;
+  char c1;
+  int D.6573;
+  const char * str1.0_1;
+  const char * str2.1_2;
+  int _5;
+  int _15;
+  int _16;
+  int _17;
+
+  <bb 2> :
+  # str1_3 = PHI <str1_6(D)(0), str1_8(9)>
+  # str2_4 = PHI <str2_7(D)(0), str2_11(9)>
+  str1.0_1 = str1_3;
+  str1_8 = str1.0_1 + 1;
+  c1_10 = *str1.0_1;
+  str2.1_2 = str2_4;
+  str2_11 = str2.1_2 + 1;
+  c2_12 = *str2.1_2;
+  if (c1_10 != c2_12)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  c1_upc_13 = c1_10 | 32;
+  if (c1_upc_13 > 96)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  if (c1_upc_13 <= 122)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  c2_upc_14 = c2_12 | 32;
+  if (c1_upc_13 != c2_upc_14)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _15 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _16 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+  if (c1_10 != 0)
+    goto <bb 2>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _17 = 0;
+
+  <bb 11> :
+  # _5 = PHI <_15(6), _16(8), _17(10)>
+<L10>:
+  return _5;
+
+}
+
+
+
+;; Function lwip_strnicmp (lwip_strnicmp, funcdef_no=5, decl_uid=6404, cgraph_uid=6, symbol_order=5)
+
+lwip_strnicmp (const char * str1, const char * str2, size_t len)
+{
+  char c2_upc;
+  char c1_upc;
+  char c2;
+  char c1;
+  int D.6583;
+  const char * str1.2_1;
+  const char * str2.3_2;
+  int _6;
+  int _17;
+  int _18;
+  int _20;
+
+  <bb 2> :
+  # str1_3 = PHI <str1_7(D)(0), str1_10(10)>
+  # str2_4 = PHI <str2_8(D)(0), str2_13(10)>
+  # len_5 = PHI <len_9(D)(0), len_19(10)>
+  str1.2_1 = str1_3;
+  str1_10 = str1.2_1 + 1;
+  c1_12 = *str1.2_1;
+  str2.3_2 = str2_4;
+  str2_13 = str2.3_2 + 1;
+  c2_14 = *str2.3_2;
+  if (c1_12 != c2_14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  c1_upc_15 = c1_12 | 32;
+  if (c1_upc_15 > 96)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  if (c1_upc_15 <= 122)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  c2_upc_16 = c2_14 | 32;
+  if (c1_upc_15 != c2_upc_16)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _17 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _18 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  len_19 = len_5 + 4294967295;
+  if (len_19 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  if (c1_12 != 0)
+    goto <bb 2>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _20 = 0;
+
+  <bb 12> :
+  # _6 = PHI <_17(6), _18(8), _20(11)>
+<L11>:
+  return _6;
+
+}
+
+
+
+;; Function lwip_itoa (lwip_itoa, funcdef_no=6, decl_uid=6400, cgraph_uid=7, symbol_order=6)
+
+lwip_itoa (char * result, size_t bufsize, int number)
+{
+  char val;
+  int n;
+  char * tmp;
+  char * res;
+  sizetype _1;
+  char * res.4_2;
+  int _3;
+  char _4;
+  char _5;
+  char * res.5_6;
+  char * res.6_7;
+  char * _8;
+  int _9;
+  unsigned int _10;
+
+  <bb 2> :
+  res_19 = result_18(D);
+  _1 = bufsize_20(D) + 4294967295;
+  tmp_21 = result_18(D) + _1;
+  n_23 = ABS_EXPR <number_22(D)>;
+  if (bufsize_20(D) <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  if (bufsize_20(D) == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  *result_18(D) = 0;
+
+  <bb 5> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 6> :
+  if (number_22(D) < 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  res.4_2 = res_19;
+  res_25 = res.4_2 + 1;
+  *res.4_2 = 45;
+
+  <bb 8> :
+  # res_11 = PHI <res_19(6), res_25(7)>
+  *tmp_21 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _3 = n_13 % 10;
+  _4 = (char) _3;
+  val_28 = _4 + 48;
+  tmp_29 = tmp_12 + 4294967295;
+  *tmp_29 = val_28;
+  n_31 = n_13 / 10;
+
+  <bb 10> :
+  # tmp_12 = PHI <tmp_21(8), tmp_29(9)>
+  # n_13 = PHI <n_23(8), n_31(9)>
+  if (n_13 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  if (tmp_12 > res_11)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (n_13 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  *result_18(D) = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 14> :
+  _5 = *tmp_12;
+  if (_5 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  res.5_6 = res_11;
+  res_33 = res.5_6 + 1;
+  *res.5_6 = 48;
+  res.6_7 = res_33;
+  res_35 = res.6_7 + 1;
+  *res.6_7 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  _8 = result_18(D) + bufsize_20(D);
+  _9 = _8 - tmp_12;
+  _10 = (unsigned int) _9;
+  memmove (res_11, tmp_12, _10);
+
+  <bb 17> :
+<L14>:
+  return;
+
+}
+
+

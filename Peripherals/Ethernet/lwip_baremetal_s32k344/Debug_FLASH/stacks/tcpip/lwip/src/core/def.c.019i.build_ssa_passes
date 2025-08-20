@@ -1,0 +1,363 @@
+lwip_itoa (char * result, size_t bufsize, int number)
+{
+  char val;
+  int n;
+  char * tmp;
+  char * res;
+
+  <bb 2> :
+  res = result;
+  _1 = bufsize + 4294967295;
+  tmp = result + _1;
+  n = ABS_EXPR <number>;
+  if (bufsize <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  if (bufsize == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  *result = 0;
+
+  <bb 5> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 6> :
+  if (number < 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  res.4_2 = res;
+  res = res.4_2 + 1;
+  *res.4_2 = 45;
+
+  <bb 8> :
+  *tmp = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _3 = n % 10;
+  _4 = (char) _3;
+  val = _4 + 48;
+  tmp = tmp + 4294967295;
+  *tmp = val;
+  n = n / 10;
+
+  <bb 10> :
+  if (n != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  if (tmp > res)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (n != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  *result = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 14> :
+  _5 = *tmp;
+  if (_5 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  res.5_6 = res;
+  res = res.5_6 + 1;
+  *res.5_6 = 48;
+  res.6_7 = res;
+  res = res.6_7 + 1;
+  *res.6_7 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  _8 = result + bufsize;
+  _9 = _8 - tmp;
+  _10 = (unsigned int) _9;
+  memmove (res, tmp, _10);
+
+  <bb 17> :
+<L14>:
+  return;
+
+}
+
+
+lwip_strnicmp (const char * str1, const char * str2, size_t len)
+{
+  char c2_upc;
+  char c1_upc;
+  char c2;
+  char c1;
+  int D.6583;
+
+  <bb 2> :
+  str1.2_1 = str1;
+  str1 = str1.2_1 + 1;
+  c1 = *str1.2_1;
+  str2.3_2 = str2;
+  str2 = str2.3_2 + 1;
+  c2 = *str2.3_2;
+  if (c1 != c2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  c1_upc = c1 | 32;
+  if (c1_upc > 96)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  if (c1_upc <= 122)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  c2_upc = c2 | 32;
+  if (c1_upc != c2_upc)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.6583 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.6583 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  len = len + 4294967295;
+  if (len != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  if (c1 != 0)
+    goto <bb 2>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  D.6583 = 0;
+
+  <bb 12> :
+<L11>:
+  return D.6583;
+
+}
+
+
+lwip_stricmp (const char * str1, const char * str2)
+{
+  char c2_upc;
+  char c1_upc;
+  char c2;
+  char c1;
+  int D.6573;
+
+  <bb 2> :
+  str1.0_1 = str1;
+  str1 = str1.0_1 + 1;
+  c1 = *str1.0_1;
+  str2.1_2 = str2;
+  str2 = str2.1_2 + 1;
+  c2 = *str2.1_2;
+  if (c1 != c2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  c1_upc = c1 | 32;
+  if (c1_upc > 96)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  if (c1_upc <= 122)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  c2_upc = c2 | 32;
+  if (c1_upc != c2_upc)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.6573 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.6573 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+  if (c1 != 0)
+    goto <bb 2>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  D.6573 = 0;
+
+  <bb 11> :
+<L10>:
+  return D.6573;
+
+}
+
+
+lwip_strnstr (const char * buffer, const char * token, size_t n)
+{
+  size_t tokenlen;
+  const char * p;
+  char * D.6558;
+
+  <bb 2> :
+  tokenlen = strlen (token);
+  if (tokenlen == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.6558 = buffer;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 4> :
+  p = buffer;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  _1 = *p;
+  _2 = *token;
+  if (_1 == _2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _3 = strncmp (p, token, tokenlen);
+  if (_3 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.6558 = p;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+  p = p + 1;
+
+  <bb 9> :
+  _4 = *p;
+  if (_4 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _5 = p + tokenlen;
+  _6 = buffer + n;
+  if (_5 <= _6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  D.6558 = 0B;
+
+  <bb 12> :
+<L10>:
+  return D.6558;
+
+}
+
+
+lwip_htonl (u32_t n)
+{
+  u32_t D.6554;
+
+  <bb 2> :
+  _1 = n << 24;
+  _2 = n << 8;
+  _3 = _2 & 16711680;
+  _4 = _1 | _3;
+  _5 = n >> 8;
+  _6 = _5 & 65280;
+  _7 = _4 | _6;
+  _8 = n >> 24;
+  D.6554 = _7 | _8;
+
+  <bb 3> :
+<L0>:
+  return D.6554;
+
+}
+
+
+lwip_htons (u16_t n)
+{
+  u16_t D.6552;
+
+  <bb 2> :
+  _1 = (int) n;
+  _2 = _1 << 8;
+  _3 = (signed short) _2;
+  _4 = n >> 8;
+  _5 = (signed short) _4;
+  _6 = _3 | _5;
+  D.6552 = (u16_t) _6;
+
+  <bb 3> :
+<L0>:
+  return D.6552;
+
+}
+
+

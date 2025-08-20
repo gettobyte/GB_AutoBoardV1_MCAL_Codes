@@ -1,0 +1,1335 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_09/38 (SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_09) @067eec40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_GetLifetimeTimer/27 
+  Calls: 
+SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_09/37 (SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_09) @067eeb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_GetLifetimeTimer/27 
+  Calls: 
+SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_01/36 (SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_01) @067ee9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_SetChainMode/7 
+  Calls: 
+SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_01/35 (SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_01) @067ee8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_SetChainMode/7 
+  Calls: 
+SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_02/34 (SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_02) @067e1c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_SetEnableInterruptFlag/12 
+  Calls: 
+SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_02/33 (SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_02) @067e1b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_SetEnableInterruptFlag/12 
+  Calls: 
+SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_00/32 (SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_00) @067e19a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_EnableTimer/5 
+  Calls: 
+SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_00/31 (SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_00) @067e18c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_EnableTimer/5 
+  Calls: 
+SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_03/30 (SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_03) @067e10e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_ProcessCommonInterrupt/17 
+  Calls: 
+SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_03/29 (SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_03) @067e1000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pit_Ip_ProcessCommonInterrupt/17 
+  Calls: 
+PIT_0_ISR/28 (PIT_0_ISR) @06d470e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_ProcessCommonInterrupt/17 
+Pit_Ip_GetLifetimeTimer/27 (Pit_Ip_GetLifetimeTimer) @06d47d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_09/38 Pit_Ip_GetLowerLifetimerValue/15 Pit_Ip_GetUpperLifetimerValue/14 SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_09/37 
+Pit_Ip_SetLifetimeTimer/26 (Pit_Ip_SetLifetimeTimer) @06d47a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_EnableTimer/5 Pit_Ip_SetCounterValue/10 Pit_Ip_EnableTimer/5 Pit_Ip_SetChainMode/7 Pit_Ip_SetEnableInterruptFlag/12 Pit_Ip_SetCounterValue/10 
+Pit_Ip_DisableChannelInterrupt/25 (Pit_Ip_DisableChannelInterrupt) @06d477e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_ClearInterruptStatusFlag/13 Pit_Ip_SetEnableInterruptFlag/12 
+Pit_Ip_EnableChannelInterrupt/24 (Pit_Ip_EnableChannelInterrupt) @06d47540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_SetEnableInterruptFlag/12 Pit_Ip_ClearInterruptStatusFlag/13 
+Pit_Ip_GetCurrentTimer/23 (Pit_Ip_GetCurrentTimer) @06d472a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_GetCounterValue/11 
+Pit_Ip_StopChannel/22 (Pit_Ip_StopChannel) @06d47000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Pit_Ip_ProcessCommonInterrupt/17 
+  Calls: Pit_Ip_ClearInterruptStatusFlag/13 Pit_Ip_EnableTimer/5 
+Pit_Ip_StartChannel/21 (Pit_Ip_StartChannel) @06d3eb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_EnableTimer/5 Pit_Ip_SetCounterValue/10 Pit_Ip_IsChannelRunning/9 
+Pit_Ip_Deinit/20 (Pit_Ip_Deinit) @06d3e620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_Reset/8 
+Pit_Ip_InitChannel/19 (Pit_Ip_InitChannel) @06d3e0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Pit_Ip_u32ChState/2 (write) Pit_Ip_u32ChState/2 (write) Pit_Ip_u32ChState/2 (write) Pit_Ip_u32ChState/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_ClearInterruptStatusFlag/13 Pit_Ip_SetEnableInterruptFlag/12 Pit_Ip_EnableTimer/5 
+Pit_Ip_Init/18 (Pit_Ip_Init) @06d3ed20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pit_Ip_SetDebugMode/6 Pit_Ip_EnableModule/4 
+Pit_Ip_ProcessCommonInterrupt/17 (Pit_Ip_ProcessCommonInterrupt) @06d3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Pit_Ip_u32ChState/2 (read) Pit_Ip_u32ChState/2 (read) Pit_Ip_u32ChState/2 (read) Pit_Ip_u32ChState/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: PIT_0_ISR/28 
+  Calls: Pit_Ip_StopChannel/22 SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_03/30 Pit_Ip_ClearInterruptStatusFlag/13 Pit_Ip_GetInterruptStatusFlag/0 Pit_Ip_GetInterruptEnableFlag/16 SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_03/29 
+   Indirect call Num speculative call targets: 0
+Pit_Ip_GetInterruptEnableFlag/16 (Pit_Ip_GetInterruptEnableFlag) @06d3e7e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_ProcessCommonInterrupt/17 
+  Calls: 
+Pit_Ip_GetLowerLifetimerValue/15 (Pit_Ip_GetLowerLifetimerValue) @06d3e540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_GetLifetimeTimer/27 
+  Calls: 
+Pit_Ip_GetUpperLifetimerValue/14 (Pit_Ip_GetUpperLifetimerValue) @06d3e2a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_GetLifetimeTimer/27 
+  Calls: 
+Pit_Ip_ClearInterruptStatusFlag/13 (Pit_Ip_ClearInterruptStatusFlag) @06d3e000
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_DisableChannelInterrupt/25 Pit_Ip_EnableChannelInterrupt/24 Pit_Ip_ProcessCommonInterrupt/17 Pit_Ip_StopChannel/22 Pit_Ip_InitChannel/19 
+  Calls: 
+Pit_Ip_SetEnableInterruptFlag/12 (Pit_Ip_SetEnableInterruptFlag) @06d39a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_SetLifetimeTimer/26 Pit_Ip_DisableChannelInterrupt/25 Pit_Ip_EnableChannelInterrupt/24 Pit_Ip_InitChannel/19 
+  Calls: SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_02/34 SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_02/33 
+Pit_Ip_GetCounterValue/11 (Pit_Ip_GetCounterValue) @06d39ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_GetCurrentTimer/23 
+  Calls: 
+Pit_Ip_SetCounterValue/10 (Pit_Ip_SetCounterValue) @06d39c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_SetLifetimeTimer/26 Pit_Ip_SetLifetimeTimer/26 Pit_Ip_StartChannel/21 
+  Calls: 
+Pit_Ip_IsChannelRunning/9 (Pit_Ip_IsChannelRunning) @06d399a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_StartChannel/21 
+  Calls: 
+Pit_Ip_Reset/8 (Pit_Ip_Reset) @06d39700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_Deinit/20 
+  Calls: 
+Pit_Ip_SetChainMode/7 (Pit_Ip_SetChainMode) @06d33c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_SetLifetimeTimer/26 
+  Calls: SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_01/36 SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_01/35 
+Pit_Ip_SetDebugMode/6 (Pit_Ip_SetDebugMode) @06d339a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_Init/18 
+  Calls: 
+Pit_Ip_EnableTimer/5 (Pit_Ip_EnableTimer) @06d33700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_SetLifetimeTimer/26 Pit_Ip_SetLifetimeTimer/26 Pit_Ip_StopChannel/22 Pit_Ip_StartChannel/21 Pit_Ip_InitChannel/19 
+  Calls: SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_00/32 SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_00/31 
+Pit_Ip_EnableModule/4 (Pit_Ip_EnableModule) @06d33460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_Init/18 
+  Calls: 
+Pit_Ip_GetLoadValue/3 (Pit_Ip_GetLoadValue) @06d331c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: pitBase/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Pit_Ip_u32ChState/2 (Pit_Ip_u32ChState) @06c4d168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Pit_Ip_InitChannel/19 (write) Pit_Ip_InitChannel/19 (write) Pit_Ip_InitChannel/19 (write) Pit_Ip_InitChannel/19 (write) Pit_Ip_ProcessCommonInterrupt/17 (read) Pit_Ip_ProcessCommonInterrupt/17 (read) Pit_Ip_ProcessCommonInterrupt/17 (read) Pit_Ip_ProcessCommonInterrupt/17 (read) 
+  Availability: available
+  Varpool flags: initialized
+pitBase/1 (pitBase) @06c45c60
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Pit_Ip_SetEnableInterruptFlag/12 (read) Pit_Ip_GetUpperLifetimerValue/14 (read) Pit_Ip_GetCounterValue/11 (read) Pit_Ip_ClearInterruptStatusFlag/13 (read) Pit_Ip_SetDebugMode/6 (read) Pit_Ip_SetCounterValue/10 (read) Pit_Ip_SetEnableInterruptFlag/12 (read) Pit_Ip_SetChainMode/7 (read) Pit_Ip_EnableTimer/5 (read) Pit_Ip_EnableTimer/5 (read) Pit_Ip_GetInterruptStatusFlag/0 (read) Pit_Ip_GetInterruptStatusFlag/0 (read) Pit_Ip_SetDebugMode/6 (read) Pit_Ip_SetDebugMode/6 (read) Pit_Ip_Reset/8 (read) Pit_Ip_GetLowerLifetimerValue/15 (read) Pit_Ip_Reset/8 (read) Pit_Ip_Reset/8 (read) Pit_Ip_ClearInterruptStatusFlag/13 (read) Pit_Ip_GetInterruptEnableFlag/16 (read) Pit_Ip_IsChannelRunning/9 (read) Pit_Ip_EnableTimer/5 (read) Pit_Ip_EnableTimer/5 (read) Pit_Ip_SetEnableInterruptFlag/12 (read) Pit_Ip_SetEnableInterruptFlag/12 (read) Pit_Ip_EnableModule/4 (read) Pit_Ip_EnableModule/4 (read) Pit_Ip_SetDebugMode/6 (read) Pit_Ip_Reset/8 (read) Pit_Ip_Reset/8 (read) Pit_Ip_Reset/8 (read) Pit_Ip_Reset/8 (read) Pit_Ip_SetChainMode/7 (read) Pit_Ip_SetChainMode/7 (read) Pit_Ip_SetChainMode/7 (read) Pit_Ip_GetLoadValue/3 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Pit_Ip_GetInterruptStatusFlag/0 (Pit_Ip_GetInterruptStatusFlag) @06c220e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: pitBase/1 (read) pitBase/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Pit_Ip_ProcessCommonInterrupt/17 
+  Calls: 
+PIT_0_ISR ()
+{
+  uint8 instance;
+  uint8 channel;
+
+  <bb 2> :
+  instance_3 = 0;
+  channel_4 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Pit_Ip_ProcessCommonInterrupt (instance_3, channel_1);
+  channel_7 = channel_1 + 1;
+
+  <bb 4> :
+  # channel_1 = PHI <channel_4(2), channel_7(3)>
+  if (channel_1 <= 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Pit_Ip_GetLifetimeTimer (uint8 instance)
+{
+  uint32 valueL;
+  uint32 valueH;
+  uint64 lifeTimeValue;
+  uint64 D.6303;
+  long long unsigned int _1;
+  long long unsigned int _2;
+  long long unsigned int _3;
+  uint64 _16;
+
+  <bb 2> :
+  lifeTimeValue_4 = 0;
+  valueH_5 = 0;
+  valueL_6 = 0;
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_09 ();
+  valueH_11 = Pit_Ip_GetUpperLifetimerValue (instance_9(D));
+  valueL_13 = Pit_Ip_GetLowerLifetimerValue (instance_9(D));
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_09 ();
+  _1 = (long long unsigned int) valueH_11;
+  _2 = _1 << 32;
+  _3 = (long long unsigned int) valueL_13;
+  lifeTimeValue_15 = _2 + _3;
+  _16 = lifeTimeValue_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Pit_Ip_SetLifetimeTimer (uint8 instance)
+{
+  <bb 2> :
+  Pit_Ip_SetCounterValue (instance_2(D), 1, 4294967295);
+  Pit_Ip_SetEnableInterruptFlag (instance_2(D), 1, 0);
+  Pit_Ip_SetChainMode (instance_2(D), 1, 1);
+  Pit_Ip_EnableTimer (instance_2(D), 1, 1);
+  Pit_Ip_SetCounterValue (instance_2(D), 0, 4294967295);
+  Pit_Ip_EnableTimer (instance_2(D), 0, 1);
+  return;
+
+}
+
+
+Pit_Ip_DisableChannelInterrupt (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Pit_Ip_SetEnableInterruptFlag (instance_2(D), channel_3(D), 0);
+  Pit_Ip_ClearInterruptStatusFlag (instance_2(D), channel_3(D));
+  return;
+
+}
+
+
+Pit_Ip_EnableChannelInterrupt (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Pit_Ip_ClearInterruptStatusFlag (instance_2(D), channel_3(D));
+  Pit_Ip_SetEnableInterruptFlag (instance_2(D), channel_3(D), 1);
+  return;
+
+}
+
+
+Pit_Ip_GetCurrentTimer (uint8 instance, uint8 channel)
+{
+  uint64 counterValue;
+  uint64 D.6295;
+  long unsigned int _1;
+  uint64 _8;
+
+  <bb 2> :
+  counterValue_2 = 0;
+  _1 = Pit_Ip_GetCounterValue (instance_4(D), channel_5(D));
+  counterValue_7 = (uint64) _1;
+  _8 = counterValue_7;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+Pit_Ip_StopChannel (uint8 instance, uint8 channel)
+{
+  <bb 2> :
+  Pit_Ip_EnableTimer (instance_2(D), channel_3(D), 0);
+  Pit_Ip_ClearInterruptStatusFlag (instance_2(D), channel_3(D));
+  return;
+
+}
+
+
+Pit_Ip_StartChannel (uint8 instance, uint8 channel, uint32 countValue)
+{
+  Pit_Ip_StatusType status;
+  boolean isRunning;
+  Pit_Ip_StatusType D.6291;
+  _Bool _1;
+  long unsigned int _2;
+  Pit_Ip_StatusType _16;
+
+  <bb 2> :
+  isRunning_5 = 0;
+  status_6 = 1;
+  isRunning_11 = Pit_Ip_IsChannelRunning (instance_8(D), channel_9(D));
+  _1 = ~isRunning_11;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = countValue_12(D) + 4294967295;
+  Pit_Ip_SetCounterValue (instance_8(D), channel_9(D), _2);
+  Pit_Ip_EnableTimer (instance_8(D), channel_9(D), 1);
+  status_15 = 0;
+
+  <bb 4> :
+  # status_3 = PHI <status_6(2), status_15(3)>
+  _16 = status_3;
+
+  <bb 5> :
+<L2>:
+  return _16;
+
+}
+
+
+Pit_Ip_Deinit (uint8 instance)
+{
+  boolean mdisBitExists;
+  boolean rtiChannelExists;
+  uint8 channelNum;
+  int _1;
+
+  <bb 2> :
+  channelNum_5 = 0;
+  rtiChannelExists_6 = 0;
+  mdisBitExists_7 = 0;
+  _1 = (int) instance_8(D);
+  switch (_1) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  channelNum_13 = 5;
+  rtiChannelExists_14 = 1;
+  mdisBitExists_15 = 1;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  channelNum_11 = 4;
+  mdisBitExists_12 = 1;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  channelNum_9 = 4;
+  mdisBitExists_10 = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+  channelNum_16 = 0;
+
+  <bb 7> :
+  # channelNum_2 = PHI <channelNum_13(3), channelNum_11(4), channelNum_9(5), channelNum_16(6)>
+  # rtiChannelExists_3 = PHI <rtiChannelExists_14(3), rtiChannelExists_6(4), rtiChannelExists_6(5), rtiChannelExists_6(6)>
+  # mdisBitExists_4 = PHI <mdisBitExists_15(3), mdisBitExists_12(4), mdisBitExists_10(5), mdisBitExists_7(6)>
+  Pit_Ip_Reset (instance_8(D), channelNum_2, rtiChannelExists_3, mdisBitExists_4);
+  return;
+
+}
+
+
+Pit_Ip_InitChannel (uint8 instance, const struct Pit_Ip_ChannelConfigType * chnlConfig)
+{
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  int _4;
+  unsigned char _5;
+  int _6;
+  int _7;
+  unsigned char _8;
+  int _9;
+  void (*<T4df>) (uint8) _10;
+  int _11;
+  unsigned char _12;
+  int _13;
+  unsigned char _14;
+  int _15;
+  unsigned char _16;
+  int _17;
+  <unnamed type> _18;
+
+  <bb 2> :
+  _1 = chnlConfig_20(D)->hwChannel;
+  Pit_Ip_EnableTimer (instance_21(D), _1, 0);
+  _2 = chnlConfig_20(D)->hwChannel;
+  Pit_Ip_SetEnableInterruptFlag (instance_21(D), _2, 0);
+  _3 = chnlConfig_20(D)->hwChannel;
+  Pit_Ip_ClearInterruptStatusFlag (instance_21(D), _3);
+  _4 = (int) instance_21(D);
+  _5 = chnlConfig_20(D)->hwChannel;
+  _6 = (int) _5;
+  Pit_Ip_u32ChState[_4][_6].chInit = 1;
+  _7 = (int) instance_21(D);
+  _8 = chnlConfig_20(D)->hwChannel;
+  _9 = (int) _8;
+  _10 = chnlConfig_20(D)->callback;
+  Pit_Ip_u32ChState[_7][_9].callback = _10;
+  _11 = (int) instance_21(D);
+  _12 = chnlConfig_20(D)->hwChannel;
+  _13 = (int) _12;
+  _14 = chnlConfig_20(D)->callbackParam;
+  Pit_Ip_u32ChState[_11][_13].callbackParam = _14;
+  _15 = (int) instance_21(D);
+  _16 = chnlConfig_20(D)->hwChannel;
+  _17 = (int) _16;
+  _18 = chnlConfig_20(D)->channelMode;
+  Pit_Ip_u32ChState[_15][_17].channelMode = _18;
+  return;
+
+}
+
+
+Pit_Ip_Init (uint8 instance, const struct Pit_Ip_InstanceConfigType * config)
+{
+  _Bool _1;
+  _Bool _2;
+
+  <bb 2> :
+  _1 = config_5(D)->enableStandardTimers;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Pit_Ip_EnableModule (instance_6(D), 0);
+
+  <bb 4> :
+  _2 = config_5(D)->stopRunInDebug;
+  Pit_Ip_SetDebugMode (instance_6(D), _2);
+  return;
+
+}
+
+
+Pit_Ip_ProcessCommonInterrupt (uint8 instance, uint8 channel)
+{
+  Pit_Ip_ChannelModeType channelMode;
+  uint8 callbackParam;
+  void (*Pit_Ip_CallbackType) (uint8) callback;
+  boolean chInit;
+  boolean HasChEvOccurred;
+  boolean IsChEvEnabled;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _5;
+  int _6;
+  int _7;
+  int _8;
+
+  <bb 2> :
+  if (instance_12(D) <= 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 3> :
+  if (channel_14(D) <= 3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 4> :
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_03 ();
+  IsChEvEnabled_17 = Pit_Ip_GetInterruptEnableFlag (instance_12(D), channel_14(D));
+  HasChEvOccurred_19 = Pit_Ip_GetInterruptStatusFlag (instance_12(D), channel_14(D));
+  if (IsChEvEnabled_17 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  if (HasChEvOccurred_19 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Pit_Ip_ClearInterruptStatusFlag (instance_12(D), channel_14(D));
+
+  <bb 7> :
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_03 ();
+  if (IsChEvEnabled_17 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 8> :
+  if (HasChEvOccurred_19 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 9> :
+  _1 = (int) instance_12(D);
+  _2 = (int) channel_14(D);
+  chInit_22 = Pit_Ip_u32ChState[_1][_2].chInit;
+  _3 = (int) instance_12(D);
+  _4 = (int) channel_14(D);
+  callback_23 = Pit_Ip_u32ChState[_3][_4].callback;
+  _5 = (int) instance_12(D);
+  _6 = (int) channel_14(D);
+  channelMode_24 = Pit_Ip_u32ChState[_5][_6].channelMode;
+  _7 = (int) instance_12(D);
+  _8 = (int) channel_14(D);
+  callbackParam_25 = Pit_Ip_u32ChState[_7][_8].callbackParam;
+  if (channelMode_24 == 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  Pit_Ip_StopChannel (instance_12(D), channel_14(D));
+
+  <bb 11> :
+  if (chInit_22 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  if (callback_23 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  callback_23 (callbackParam_25);
+
+  <bb 14> :
+  return;
+
+}
+
+
+Pit_Ip_GetInterruptEnableFlag (uint8 instance, uint8 channel)
+{
+  boolean returnFlag;
+  boolean D.6260;
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  boolean _10;
+
+  <bb 2> :
+  _1 = (int) instance_6(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_8(D);
+  _4 ={v} _2->TIMER[_3].TCTRL;
+  _5 = _4 & 2;
+  returnFlag_9 = _5 != 0;
+  _10 = returnFlag_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Pit_Ip_GetLowerLifetimerValue (uint8 instance)
+{
+  uint32 lowerValue;
+  uint32 D.6307;
+  int _1;
+  struct PIT_Type * _2;
+  uint32 _7;
+
+  <bb 2> :
+  lowerValue_3 = 0;
+  _1 = (int) instance_4(D);
+  _2 = pitBase[_1];
+  lowerValue_6 ={v} _2->LTMR64L;
+  _7 = lowerValue_6;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Pit_Ip_GetUpperLifetimerValue (uint8 instance)
+{
+  uint32 upperValue;
+  uint32 D.6305;
+  int _1;
+  struct PIT_Type * _2;
+  uint32 _7;
+
+  <bb 2> :
+  upperValue_3 = 0;
+  _1 = (int) instance_4(D);
+  _2 = pitBase[_1];
+  upperValue_6 ={v} _2->LTMR64H;
+  _7 = upperValue_6;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+Pit_Ip_ClearInterruptStatusFlag (uint8 instance, uint8 channel)
+{
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  long unsigned int _4;
+  int _5;
+  struct PIT_Type * _6;
+  int _7;
+  long unsigned int _8;
+
+  <bb 2> :
+  _1 = (int) instance_9(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_11(D);
+  _4 ={v} _2->TIMER[_3].TFLG;
+  _5 = (int) instance_9(D);
+  _6 = pitBase[_5];
+  _7 = (int) channel_11(D);
+  _8 = _4 | 1;
+  _6->TIMER[_7].TFLG ={v} _8;
+  return;
+
+}
+
+
+Pit_Ip_SetEnableInterruptFlag (uint8 instance, uint8 channel, boolean enable)
+{
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  long unsigned int _4;
+  int _5;
+  struct PIT_Type * _6;
+  int _7;
+  long unsigned int _8;
+  int _9;
+  struct PIT_Type * _10;
+  int _11;
+  long unsigned int _12;
+  int _13;
+  struct PIT_Type * _14;
+  int _15;
+  long unsigned int _16;
+
+  <bb 2> :
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_02 ();
+  if (enable_20(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance_21(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_22(D);
+  _4 ={v} _2->TIMER[_3].TCTRL;
+  _5 = (int) instance_21(D);
+  _6 = pitBase[_5];
+  _7 = (int) channel_22(D);
+  _8 = _4 | 2;
+  _6->TIMER[_7].TCTRL ={v} _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = (int) instance_21(D);
+  _10 = pitBase[_9];
+  _11 = (int) channel_22(D);
+  _12 ={v} _10->TIMER[_11].TCTRL;
+  _13 = (int) instance_21(D);
+  _14 = pitBase[_13];
+  _15 = (int) channel_22(D);
+  _16 = _12 & 4294967293;
+  _14->TIMER[_15].TCTRL ={v} _16;
+
+  <bb 5> :
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_02 ();
+  return;
+
+}
+
+
+Pit_Ip_GetCounterValue (uint8 instance, uint8 channel)
+{
+  uint32 counterValue;
+  uint32 D.6297;
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  uint32 _9;
+
+  <bb 2> :
+  counterValue_4 = 0;
+  _1 = (int) instance_5(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_7(D);
+  counterValue_8 ={v} _2->TIMER[_3].CVAL;
+  _9 = counterValue_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Pit_Ip_SetCounterValue (uint8 instance, uint8 channel, uint32 value)
+{
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_6(D);
+  _2->TIMER[_3].LDVAL ={v} value_7(D);
+  return;
+
+}
+
+
+Pit_Ip_IsChannelRunning (uint8 instance, uint8 channel)
+{
+  boolean isRunning;
+  boolean D.6293;
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  boolean _11;
+
+  <bb 2> :
+  isRunning_6 = 0;
+  _1 = (int) instance_7(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_9(D);
+  _4 ={v} _2->TIMER[_3].TCTRL;
+  _5 = _4 & 1;
+  isRunning_10 = _5 == 1;
+  _11 = isRunning_10;
+
+  <bb 3> :
+<L0>:
+  return _11;
+
+}
+
+
+Pit_Ip_Reset (uint8 instance, uint8 channelNum, boolean available, boolean bitExists)
+{
+  uint8 i;
+  uint8 channelIndex;
+  uint32 mask;
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  struct PIT_Type * _4;
+  int _5;
+  struct PIT_Type * _6;
+  _Bool _7;
+  _Bool _8;
+  int _9;
+  struct PIT_Type * _10;
+  int _11;
+  int _12;
+  struct PIT_Type * _13;
+  int _14;
+  int _15;
+  struct PIT_Type * _16;
+  int _17;
+  unsigned char i.0_18;
+  int _19;
+  struct PIT_Type * _20;
+
+  <bb 2> :
+  mask_26 = 0;
+  channelIndex_28 = channelNum_27(D);
+  if (available_29(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  channelIndex_34 = channelIndex_28 + 255;
+  _1 = (int) instance_35(D);
+  _2 = pitBase[_1];
+  _2->RTI_TCTRL ={v} 0;
+  _3 = (int) instance_35(D);
+  _4 = pitBase[_3];
+  _4->RTI_LDVAL ={v} 0;
+  _5 = (int) instance_35(D);
+  _6 = pitBase[_5];
+  _6->RTI_TFLG ={v} 1;
+  _7 = ~bitExists_30(D);
+  if (_7 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  mask_40 = 4;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  mask_39 = 6;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  _8 = ~bitExists_30(D);
+  if (_8 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  mask_33 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  mask_31 = 2;
+
+  <bb 9> :
+  # mask_21 = PHI <mask_39(5), mask_33(7), mask_31(8), mask_40(4)>
+  # channelIndex_22 = PHI <channelIndex_34(5), channelIndex_28(7), channelIndex_28(8), channelIndex_34(4)>
+  i_41 = 0;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _9 = (int) instance_35(D);
+  _10 = pitBase[_9];
+  _11 = (int) i_23;
+  _10->TIMER[_11].TCTRL ={v} 0;
+  _12 = (int) instance_35(D);
+  _13 = pitBase[_12];
+  _14 = (int) i_23;
+  _13->TIMER[_14].LDVAL ={v} 0;
+  _15 = (int) instance_35(D);
+  _16 = pitBase[_15];
+  _17 = (int) i_23;
+  _16->TIMER[_17].TFLG ={v} 1;
+  i.0_18 = i_23;
+  i_46 = i.0_18 + 1;
+
+  <bb 11> :
+  # i_23 = PHI <i_41(9), i_46(10)>
+  if (i_23 < channelIndex_22)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _19 = (int) instance_35(D);
+  _20 = pitBase[_19];
+  _20->MCR ={v} mask_21;
+  return;
+
+}
+
+
+Pit_Ip_SetChainMode (uint8 instance, uint8 channel, boolean enable)
+{
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  long unsigned int _4;
+  int _5;
+  struct PIT_Type * _6;
+  int _7;
+  long unsigned int _8;
+  int _9;
+  struct PIT_Type * _10;
+  int _11;
+  long unsigned int _12;
+  int _13;
+  struct PIT_Type * _14;
+  int _15;
+  long unsigned int _16;
+
+  <bb 2> :
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_01 ();
+  if (enable_20(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  if (channel_21(D) != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 = (int) instance_22(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_21(D);
+  _4 ={v} _2->TIMER[_3].TCTRL;
+  _5 = (int) instance_22(D);
+  _6 = pitBase[_5];
+  _7 = (int) channel_21(D);
+  _8 = _4 | 4;
+  _6->TIMER[_7].TCTRL ={v} _8;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _9 = (int) instance_22(D);
+  _10 = pitBase[_9];
+  _11 = (int) channel_21(D);
+  _12 ={v} _10->TIMER[_11].TCTRL;
+  _13 = (int) instance_22(D);
+  _14 = pitBase[_13];
+  _15 = (int) channel_21(D);
+  _16 = _12 & 4294967291;
+  _14->TIMER[_15].TCTRL ={v} _16;
+
+  <bb 6> :
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_01 ();
+  return;
+
+}
+
+
+Pit_Ip_SetDebugMode (uint8 instance, boolean stopRun)
+{
+  int _1;
+  struct PIT_Type * _2;
+  long unsigned int _3;
+  int _4;
+  struct PIT_Type * _5;
+  long unsigned int _6;
+  int _7;
+  struct PIT_Type * _8;
+  long unsigned int _9;
+  int _10;
+  struct PIT_Type * _11;
+  long unsigned int _12;
+
+  <bb 2> :
+  if (stopRun_14(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance_15(D);
+  _2 = pitBase[_1];
+  _3 ={v} _2->MCR;
+  _4 = (int) instance_15(D);
+  _5 = pitBase[_4];
+  _6 = _3 | 1;
+  _5->MCR ={v} _6;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _7 = (int) instance_15(D);
+  _8 = pitBase[_7];
+  _9 ={v} _8->MCR;
+  _10 = (int) instance_15(D);
+  _11 = pitBase[_10];
+  _12 = _9 & 4294967294;
+  _11->MCR ={v} _12;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Pit_Ip_EnableTimer (uint8 instance, uint8 channel, boolean enable)
+{
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  long unsigned int _4;
+  int _5;
+  struct PIT_Type * _6;
+  int _7;
+  long unsigned int _8;
+  int _9;
+  struct PIT_Type * _10;
+  int _11;
+  long unsigned int _12;
+  int _13;
+  struct PIT_Type * _14;
+  int _15;
+  long unsigned int _16;
+
+  <bb 2> :
+  SchM_Enter_Gpt_GPT_EXCLUSIVE_AREA_00 ();
+  if (enable_20(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance_21(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_22(D);
+  _4 ={v} _2->TIMER[_3].TCTRL;
+  _5 = (int) instance_21(D);
+  _6 = pitBase[_5];
+  _7 = (int) channel_22(D);
+  _8 = _4 | 1;
+  _6->TIMER[_7].TCTRL ={v} _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = (int) instance_21(D);
+  _10 = pitBase[_9];
+  _11 = (int) channel_22(D);
+  _12 ={v} _10->TIMER[_11].TCTRL;
+  _13 = (int) instance_21(D);
+  _14 = pitBase[_13];
+  _15 = (int) channel_22(D);
+  _16 = _12 & 4294967294;
+  _14->TIMER[_15].TCTRL ={v} _16;
+
+  <bb 5> :
+  SchM_Exit_Gpt_GPT_EXCLUSIVE_AREA_00 ();
+  return;
+
+}
+
+
+Pit_Ip_EnableModule (uint8 instance, uint8 timerType)
+{
+  int _1;
+  struct PIT_Type * _2;
+  long unsigned int _3;
+  int _4;
+  struct PIT_Type * _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  if (timerType_8(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance_10(D);
+  _2 = pitBase[_1];
+  _3 ={v} _2->MCR;
+  _4 = (int) instance_10(D);
+  _5 = pitBase[_4];
+  _6 = _3 & 4294967293;
+  _5->MCR ={v} _6;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Pit_Ip_GetLoadValue (uint8 instance, uint8 channel)
+{
+  uint32 periodValue;
+  uint32 D.6240;
+  int _1;
+  struct PIT_Type * _2;
+  int _3;
+  uint32 _9;
+
+  <bb 2> :
+  periodValue_4 = 0;
+  _1 = (int) instance_5(D);
+  _2 = pitBase[_1];
+  _3 = (int) channel_7(D);
+  periodValue_8 ={v} _2->TIMER[_3].LDVAL;
+  _9 = periodValue_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Pit_Ip_GetInterruptStatusFlag (uint8 instance, uint8 channel)
+{
+  boolean returnFlag;
+  boolean D.6265;
+  int _1;
+  struct PIT_Type * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  int _5;
+  struct PIT_Type * _6;
+  int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  boolean _16;
+
+  <bb 2> :
+  if (channel_11(D) == 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) instance_12(D);
+  _2 = pitBase[_1];
+  _3 ={v} _2->RTI_TFLG;
+  _4 = _3 & 1;
+  returnFlag_15 = _4 != 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = (int) instance_12(D);
+  _6 = pitBase[_5];
+  _7 = (int) channel_11(D);
+  _8 ={v} _6->TIMER[_7].TFLG;
+  _9 = _8 & 1;
+  returnFlag_14 = _9 != 0;
+
+  <bb 5> :
+  # returnFlag_10 = PHI <returnFlag_15(3), returnFlag_14(4)>
+  _16 = returnFlag_10;
+
+  <bb 6> :
+<L3>:
+  return _16;
+
+}
+
+

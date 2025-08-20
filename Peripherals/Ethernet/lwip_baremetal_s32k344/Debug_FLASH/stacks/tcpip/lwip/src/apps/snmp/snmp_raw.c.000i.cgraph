@@ -1,0 +1,792 @@
+Trivially needed symbols: snmp_init/4 snmp_get_local_ip_for_dst/3 snmp_sendto/2 snmp_recv/1
+
+
+Initial Symbol table:
+
+ip_addr_any_type/15 (ip_addr_any_type) @06cbbd80
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+udp_bind/14 (udp_bind) @06cbad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+udp_recv/13 (udp_recv) @06cbac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+snmp_traps_handle/12 (snmp_traps_handle) @06cbbca8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (write) 
+  Availability: not-ready
+  Varpool flags:
+udp_new_ip_type/11 (udp_new_ip_type) @06cbab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+ip6_select_source_address/10 (ip6_select_source_address) @06cba9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip4_route/9 (ip4_route) @06cba8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip6_route/8 (ip6_route) @06cba7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+udp_sendto/7 (udp_sendto) @06cba540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_sendto/2 
+  Calls: 
+pbuf_free/6 (pbuf_free) @06cba380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_receive/5 (snmp_receive) @06cba2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_init/4 (snmp_init) @06c9fee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: snmp_traps_handle/12 (write) snmp_recv/1 (addr) ip_addr_any_type/15 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: udp_bind/14 udp_recv/13 udp_new_ip_type/11 
+snmp_get_local_ip_for_dst/3 (snmp_get_local_ip_for_dst) @06c9fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c9fee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ip6_select_source_address/10 ip4_route/9 ip6_route/8 
+snmp_sendto/2 (snmp_sendto) @06c9a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c9fb60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: udp_sendto/7 
+snmp_recv/1 (snmp_recv) @06c9ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c9a620
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/6 snmp_receive/5 
+DevAssert/0 (DevAssert) @06aca2a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+ip_addr_any_type/15 (ip_addr_any_type) @06cbbd80
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+udp_bind/14 (udp_bind) @06cbad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+udp_recv/13 (udp_recv) @06cbac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+snmp_traps_handle/12 (snmp_traps_handle) @06cbbca8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (write) 
+  Availability: not-ready
+  Varpool flags:
+udp_new_ip_type/11 (udp_new_ip_type) @06cbab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+ip6_select_source_address/10 (ip6_select_source_address) @06cba9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip4_route/9 (ip4_route) @06cba8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip6_route/8 (ip6_route) @06cba7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+udp_sendto/7 (udp_sendto) @06cba540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_sendto/2 
+  Calls: 
+pbuf_free/6 (pbuf_free) @06cba380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_receive/5 (snmp_receive) @06cba2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_init/4 (snmp_init) @06c9fee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: snmp_traps_handle/12 (write) snmp_recv/1 (addr) ip_addr_any_type/15 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: udp_bind/14 udp_recv/13 udp_new_ip_type/11 
+snmp_get_local_ip_for_dst/3 (snmp_get_local_ip_for_dst) @06c9fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ip6_select_source_address/10 ip4_route/9 ip6_route/8 
+snmp_sendto/2 (snmp_sendto) @06c9a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: udp_sendto/7 
+snmp_recv/1 (snmp_recv) @06c9ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/6 snmp_receive/5 
+
+
+Initial Symbol table:
+
+ip_addr_any_type/15 (ip_addr_any_type) @06cbbd80
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+udp_bind/14 (udp_bind) @06cbad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+udp_recv/13 (udp_recv) @06cbac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+snmp_traps_handle/12 (snmp_traps_handle) @06cbbca8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (write) 
+  Availability: not-ready
+  Varpool flags:
+udp_new_ip_type/11 (udp_new_ip_type) @06cbab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+ip6_select_source_address/10 (ip6_select_source_address) @06cba9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip4_route/9 (ip4_route) @06cba8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip6_route/8 (ip6_route) @06cba7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+udp_sendto/7 (udp_sendto) @06cba540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_sendto/2 
+  Calls: 
+pbuf_free/6 (pbuf_free) @06cba380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_receive/5 (snmp_receive) @06cba2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_init/4 (snmp_init) @06c9fee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: snmp_traps_handle/12 (write) snmp_recv/1 (addr) ip_addr_any_type/15 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: udp_bind/14 udp_recv/13 udp_new_ip_type/11 
+snmp_get_local_ip_for_dst/3 (snmp_get_local_ip_for_dst) @06c9fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ip6_select_source_address/10 ip4_route/9 ip6_route/8 
+snmp_sendto/2 (snmp_sendto) @06c9a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: udp_sendto/7 
+snmp_recv/1 (snmp_recv) @06c9ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/6 snmp_receive/5 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+ip_addr_any_type/15 (ip_addr_any_type) @06cbbd80
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+udp_bind/14 (udp_bind) @06cbad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+udp_recv/13 (udp_recv) @06cbac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+snmp_traps_handle/12 (snmp_traps_handle) @06cbbca8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (write) 
+  Availability: not-ready
+  Varpool flags:
+udp_new_ip_type/11 (udp_new_ip_type) @06cbab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+ip6_select_source_address/10 (ip6_select_source_address) @06cba9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip4_route/9 (ip4_route) @06cba8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip6_route/8 (ip6_route) @06cba7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+udp_sendto/7 (udp_sendto) @06cba540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_sendto/2 
+  Calls: 
+pbuf_free/6 (pbuf_free) @06cba380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_receive/5 (snmp_receive) @06cba2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_init/4 (snmp_init) @06c9fee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: snmp_traps_handle/12 (write) snmp_recv/1 (addr) ip_addr_any_type/15 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: udp_bind/14 udp_recv/13 udp_new_ip_type/11 
+snmp_get_local_ip_for_dst/3 (snmp_get_local_ip_for_dst) @06c9fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ip6_select_source_address/10 ip4_route/9 ip6_route/8 
+snmp_sendto/2 (snmp_sendto) @06c9a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: udp_sendto/7 
+snmp_recv/1 (snmp_recv) @06c9ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/6 snmp_receive/5 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+ip_addr_any_type/15 (ip_addr_any_type) @06cbbd80
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+udp_bind/14 (udp_bind) @06cbad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+udp_recv/13 (udp_recv) @06cbac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+snmp_traps_handle/12 (snmp_traps_handle) @06cbbca8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: snmp_init/4 (write) 
+  Availability: not_available
+  Varpool flags:
+udp_new_ip_type/11 (udp_new_ip_type) @06cbab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_init/4 
+  Calls: 
+ip6_select_source_address/10 (ip6_select_source_address) @06cba9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip4_route/9 (ip4_route) @06cba8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+ip6_route/8 (ip6_route) @06cba7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_get_local_ip_for_dst/3 
+  Calls: 
+udp_sendto/7 (udp_sendto) @06cba540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_sendto/2 
+  Calls: 
+pbuf_free/6 (pbuf_free) @06cba380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_receive/5 (snmp_receive) @06cba2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_recv/1 
+  Calls: 
+snmp_init/4 (snmp_init) @06c9fee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: snmp_traps_handle/12 (write) snmp_recv/1 (addr) ip_addr_any_type/15 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: udp_bind/14 udp_recv/13 udp_new_ip_type/11 
+snmp_get_local_ip_for_dst/3 (snmp_get_local_ip_for_dst) @06c9fb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ip6_select_source_address/10 ip4_route/9 ip6_route/8 
+snmp_sendto/2 (snmp_sendto) @06c9a620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: udp_sendto/7 
+snmp_recv/1 (snmp_recv) @06c9ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: snmp_init/4 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/6 snmp_receive/5 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables:
+Removing variables:
+
+Final Symbol table:
+
+ip_addr_any_type/15 (ip_addr_any_type) @06cbbd80
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+udp_bind/14 (udp_bind) @06cbad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+udp_recv/13 (udp_recv) @06cbac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_traps_handle/12 (snmp_traps_handle) @06cbbca8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+udp_new_ip_type/11 (udp_new_ip_type) @06cbab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_select_source_address/10 (ip6_select_source_address) @06cba9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip4_route/9 (ip4_route) @06cba8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_route/8 (ip6_route) @06cba7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+udp_sendto/7 (udp_sendto) @06cba540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_free/6 (pbuf_free) @06cba380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_receive/5 (snmp_receive) @06cba2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_init/4 (snmp_init) @06c9fee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_get_local_ip_for_dst/3 (snmp_get_local_ip_for_dst) @06c9fb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_sendto/2 (snmp_sendto) @06c9a620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_recv/1 (snmp_recv) @06c9ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 

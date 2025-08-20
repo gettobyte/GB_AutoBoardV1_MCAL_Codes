@@ -1,0 +1,2487 @@
+Trivially needed symbols: lwiperf_abort/22 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client_default/20 lwiperf_start_tcp_server_impl/19 lwiperf_start_tcp_server/18 lwiperf_start_tcp_server_default/17 lwiperf_tcp_accept/16 lwiperf_tcp_poll/15 lwiperf_tcp_err/14 lwiperf_tcp_recv/13 lwiperf_tx_start_passive/12 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_sent/9 lwiperf_tcp_client_send_more/8 lwiperf_tcp_close/7 lwip_tcp_conn_report/6 lwiperf_list_find/5 lwiperf_list_remove/4 lwiperf_list_add/3 lwiperf_txbuf_const/2 lwiperf_all_connections/1
+
+
+Initial Symbol table:
+
+tcp_accept/48 (tcp_accept) @06d2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_listen_with_backlog/47 (tcp_listen_with_backlog) @06d2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_bind/46 (tcp_bind) @06d2ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+ip_addr_any/45 (ip_addr_any) @06d35630
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: lwiperf_start_tcp_server_default/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_remove_header/44 (pbuf_remove_header) @06d2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+tcp_recved/43 (tcp_recved) @06d2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_memcmp/42 (pbuf_memcmp) @06d2a2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_copy_partial/41 (pbuf_copy_partial) @06d2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_free/40 (pbuf_free) @06d2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+tcp_connect/39 (tcp_connect) @06d15c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memcpy/38 (memcpy) @06d15b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memset/37 (memset) @06d15a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+tcp_new_ip_type/36 (tcp_new_ip_type) @06d159a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 
+  Calls: 
+mem_malloc/35 (mem_malloc) @06d158c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+tcp_output/34 (tcp_output) @06d15540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+tcp_write/33 (tcp_write) @06d15460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+lwip_htonl/32 (lwip_htonl) @06d15380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: 
+mem_free/31 (mem_free) @06d15000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_abort/30 (tcp_abort) @06cda000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+tcp_close/29 (tcp_close) @06cdaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_close/7 lwiperf_tcp_close/7 
+  Calls: 
+tcp_err/28 (tcp_err) @06cdae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_recv/27 (tcp_recv) @06cdad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_close/7 
+  Calls: 
+tcp_sent/26 (tcp_sent) @06cdac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_poll/25 (tcp_poll) @06cdab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_arg/24 (tcp_arg) @06cdaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+sys_now/23 (sys_now) @06cda8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwip_tcp_conn_report/6 
+  Calls: 
+lwiperf_abort/22 (lwiperf_abort) @06cda1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 
+  Calls: mem_free/31 
+lwiperf_start_tcp_client/21 (lwiperf_start_tcp_client) @06cc1ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cda1c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client_default/20 
+  Calls: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 memset/37 
+lwiperf_start_tcp_client_default/20 (lwiperf_start_tcp_client_default) @06cc19a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cc1ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_client/21 
+lwiperf_start_tcp_server_impl/19 (lwiperf_start_tcp_server_impl) @06cc1e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cc19a0
+  References: lwiperf_tcp_accept/16 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server/18 
+  Calls: lwiperf_list_add/3 tcp_accept/48 tcp_arg/24 mem_free/31 tcp_close/29 tcp_listen_with_backlog/47 tcp_bind/46 tcp_new_ip_type/36 memset/37 mem_malloc/35 
+lwiperf_start_tcp_server/18 (lwiperf_start_tcp_server) @06cc1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cc1e00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_default/17 
+  Calls: lwiperf_start_tcp_server_impl/19 
+lwiperf_start_tcp_server_default/17 (lwiperf_start_tcp_server_default) @06cc18c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cc1b60
+  References: ip_addr_any/45 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_server/18 
+lwiperf_tcp_accept/16 (lwiperf_tcp_accept) @06cc1620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06cc18c0
+  References: lwiperf_tcp_recv/13 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) 
+  Referring: lwiperf_start_tcp_server_impl/19 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 lwiperf_list_find/5 tcp_err/28 tcp_poll/25 tcp_recv/27 tcp_arg/24 sys_now/23 memset/37 mem_malloc/35 
+lwiperf_tcp_poll/15 (lwiperf_tcp_poll) @06cb4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06cc1620
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 lwiperf_tcp_close/7 
+lwiperf_tcp_err/14 (lwiperf_tcp_err) @06cb4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06cb4b60
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_close/7 
+lwiperf_tcp_recv/13 (lwiperf_tcp_recv) @06cb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06cb4d20
+  References: 
+  Referring: lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/40 tcp_recved/43 pbuf_remove_header/44 pbuf_free/40 tcp_recved/43 sys_now/23 pbuf_free/40 lwiperf_tcp_close/7 pbuf_memcmp/42 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 pbuf_free/40 lwiperf_tcp_close/7 pbuf_copy_partial/41 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 lwiperf_tcp_close/7 
+lwiperf_tx_start_passive/12 (lwiperf_tx_start_passive) @06cb4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cb4a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: lwiperf_tx_start_impl/11 lwip_htonl/32 
+lwiperf_tx_start_impl/11 (lwiperf_tx_start_impl) @06cb4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cb4700
+  References: lwiperf_tcp_client_sent/9 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) lwiperf_tcp_client_connected/10 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 tcp_connect/39 tcp_err/28 tcp_poll/25 tcp_sent/26 tcp_arg/24 memcpy/38 sys_now/23 memset/37 mem_free/31 tcp_new_ip_type/36 mem_malloc/35 
+lwiperf_tcp_client_connected/10 (lwiperf_tcp_client_connected) @06c8ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06cb4460
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 sys_now/23 lwiperf_tcp_close/7 
+lwiperf_tcp_client_sent/9 (lwiperf_tcp_client_sent) @06c8ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c8ed20
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 
+lwiperf_tcp_client_send_more/8 (lwiperf_tcp_client_send_more) @06c8e7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c8ea80
+  References: lwiperf_txbuf_const/2 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_poll/15 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_sent/9 
+  Calls: tcp_output/34 tcp_write/33 lwiperf_tcp_close/7 lwip_htonl/32 lwiperf_tcp_close/7 lwip_htonl/32 sys_now/23 
+lwiperf_tcp_close/7 (lwiperf_tcp_close) @06c8e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c8e7e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_poll/15 lwiperf_tcp_err/14 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: mem_free/31 tcp_close/29 tcp_abort/30 tcp_close/29 tcp_err/28 tcp_recv/27 tcp_sent/26 tcp_poll/25 tcp_arg/24 lwip_tcp_conn_report/6 lwiperf_list_remove/4 
+lwip_tcp_conn_report/6 (lwip_tcp_conn_report) @06c8e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c8e460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: sys_now/23 
+   Indirect call Num speculative call targets: 0
+lwiperf_list_find/5 (lwiperf_list_find) @06c8ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c8e0e0
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 
+  Calls: 
+lwiperf_list_remove/4 (lwiperf_list_remove) @06c8ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c8ae00
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+lwiperf_list_add/3 (lwiperf_list_add) @06c8a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c8ab60
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+lwiperf_txbuf_const/2 (lwiperf_txbuf_const) @06c67558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c8a7e0
+  References: 
+  Referring: lwiperf_tcp_client_send_more/8 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lwiperf_all_connections/1 (lwiperf_all_connections) @06c67480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c67558
+  References: 
+  Referring: lwiperf_list_add/3 (read) lwiperf_list_add/3 (write) lwiperf_list_remove/4 (read) lwiperf_list_remove/4 (write) lwiperf_list_find/5 (read) lwiperf_abort/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+DevAssert/0 (DevAssert) @06aa42a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+tcp_accept/48 (tcp_accept) @06d2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_listen_with_backlog/47 (tcp_listen_with_backlog) @06d2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_bind/46 (tcp_bind) @06d2ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+ip_addr_any/45 (ip_addr_any) @06d35630
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: lwiperf_start_tcp_server_default/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_remove_header/44 (pbuf_remove_header) @06d2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+tcp_recved/43 (tcp_recved) @06d2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_memcmp/42 (pbuf_memcmp) @06d2a2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_copy_partial/41 (pbuf_copy_partial) @06d2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_free/40 (pbuf_free) @06d2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+tcp_connect/39 (tcp_connect) @06d15c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memcpy/38 (memcpy) @06d15b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memset/37 (memset) @06d15a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+tcp_new_ip_type/36 (tcp_new_ip_type) @06d159a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 
+  Calls: 
+mem_malloc/35 (mem_malloc) @06d158c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+tcp_output/34 (tcp_output) @06d15540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+tcp_write/33 (tcp_write) @06d15460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+lwip_htonl/32 (lwip_htonl) @06d15380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: 
+mem_free/31 (mem_free) @06d15000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_abort/30 (tcp_abort) @06cda000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+tcp_close/29 (tcp_close) @06cdaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_close/7 lwiperf_tcp_close/7 
+  Calls: 
+tcp_err/28 (tcp_err) @06cdae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_recv/27 (tcp_recv) @06cdad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_close/7 
+  Calls: 
+tcp_sent/26 (tcp_sent) @06cdac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_poll/25 (tcp_poll) @06cdab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_arg/24 (tcp_arg) @06cdaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+sys_now/23 (sys_now) @06cda8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwip_tcp_conn_report/6 
+  Calls: 
+lwiperf_abort/22 (lwiperf_abort) @06cda1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 
+  Calls: mem_free/31 
+lwiperf_start_tcp_client/21 (lwiperf_start_tcp_client) @06cc1ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client_default/20 
+  Calls: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 memset/37 
+lwiperf_start_tcp_client_default/20 (lwiperf_start_tcp_client_default) @06cc19a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_client/21 
+lwiperf_start_tcp_server_impl/19 (lwiperf_start_tcp_server_impl) @06cc1e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_tcp_accept/16 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server/18 
+  Calls: lwiperf_list_add/3 tcp_accept/48 tcp_arg/24 mem_free/31 tcp_close/29 tcp_listen_with_backlog/47 tcp_bind/46 tcp_new_ip_type/36 memset/37 mem_malloc/35 
+lwiperf_start_tcp_server/18 (lwiperf_start_tcp_server) @06cc1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_default/17 
+  Calls: lwiperf_start_tcp_server_impl/19 
+lwiperf_start_tcp_server_default/17 (lwiperf_start_tcp_server_default) @06cc18c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/45 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_server/18 
+lwiperf_tcp_accept/16 (lwiperf_tcp_accept) @06cc1620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: lwiperf_tcp_recv/13 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) 
+  Referring: lwiperf_start_tcp_server_impl/19 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 lwiperf_list_find/5 tcp_err/28 tcp_poll/25 tcp_recv/27 tcp_arg/24 sys_now/23 memset/37 mem_malloc/35 
+lwiperf_tcp_poll/15 (lwiperf_tcp_poll) @06cb4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 lwiperf_tcp_close/7 
+lwiperf_tcp_err/14 (lwiperf_tcp_err) @06cb4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_close/7 
+lwiperf_tcp_recv/13 (lwiperf_tcp_recv) @06cb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/40 tcp_recved/43 pbuf_remove_header/44 pbuf_free/40 tcp_recved/43 sys_now/23 pbuf_free/40 lwiperf_tcp_close/7 pbuf_memcmp/42 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 pbuf_free/40 lwiperf_tcp_close/7 pbuf_copy_partial/41 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 lwiperf_tcp_close/7 
+lwiperf_tx_start_passive/12 (lwiperf_tx_start_passive) @06cb4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: lwiperf_tx_start_impl/11 lwip_htonl/32 
+lwiperf_tx_start_impl/11 (lwiperf_tx_start_impl) @06cb4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_tcp_client_sent/9 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) lwiperf_tcp_client_connected/10 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 tcp_connect/39 tcp_err/28 tcp_poll/25 tcp_sent/26 tcp_arg/24 memcpy/38 sys_now/23 memset/37 mem_free/31 tcp_new_ip_type/36 mem_malloc/35 
+lwiperf_tcp_client_connected/10 (lwiperf_tcp_client_connected) @06c8ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 sys_now/23 lwiperf_tcp_close/7 
+lwiperf_tcp_client_sent/9 (lwiperf_tcp_client_sent) @06c8ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 
+lwiperf_tcp_client_send_more/8 (lwiperf_tcp_client_send_more) @06c8e7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_txbuf_const/2 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_poll/15 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_sent/9 
+  Calls: tcp_output/34 tcp_write/33 lwiperf_tcp_close/7 lwip_htonl/32 lwiperf_tcp_close/7 lwip_htonl/32 sys_now/23 
+lwiperf_tcp_close/7 (lwiperf_tcp_close) @06c8e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_poll/15 lwiperf_tcp_err/14 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: mem_free/31 tcp_close/29 tcp_abort/30 tcp_close/29 tcp_err/28 tcp_recv/27 tcp_sent/26 tcp_poll/25 tcp_arg/24 lwip_tcp_conn_report/6 lwiperf_list_remove/4 
+lwip_tcp_conn_report/6 (lwip_tcp_conn_report) @06c8e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: sys_now/23 
+   Indirect call Num speculative call targets: 0
+lwiperf_list_find/5 (lwiperf_list_find) @06c8ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 
+  Calls: 
+lwiperf_list_remove/4 (lwiperf_list_remove) @06c8ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+lwiperf_list_add/3 (lwiperf_list_add) @06c8a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+lwiperf_txbuf_const/2 (lwiperf_txbuf_const) @06c67558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwiperf_tcp_client_send_more/8 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lwiperf_all_connections/1 (lwiperf_all_connections) @06c67480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwiperf_list_add/3 (read) lwiperf_list_add/3 (write) lwiperf_list_remove/4 (read) lwiperf_list_remove/4 (write) lwiperf_list_find/5 (read) lwiperf_abort/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+tcp_accept/48 (tcp_accept) @06d2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_listen_with_backlog/47 (tcp_listen_with_backlog) @06d2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_bind/46 (tcp_bind) @06d2ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+ip_addr_any/45 (ip_addr_any) @06d35630
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: lwiperf_start_tcp_server_default/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_remove_header/44 (pbuf_remove_header) @06d2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+tcp_recved/43 (tcp_recved) @06d2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_memcmp/42 (pbuf_memcmp) @06d2a2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_copy_partial/41 (pbuf_copy_partial) @06d2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_free/40 (pbuf_free) @06d2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+tcp_connect/39 (tcp_connect) @06d15c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memcpy/38 (memcpy) @06d15b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memset/37 (memset) @06d15a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+tcp_new_ip_type/36 (tcp_new_ip_type) @06d159a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 
+  Calls: 
+mem_malloc/35 (mem_malloc) @06d158c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+tcp_output/34 (tcp_output) @06d15540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+tcp_write/33 (tcp_write) @06d15460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+lwip_htonl/32 (lwip_htonl) @06d15380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: 
+mem_free/31 (mem_free) @06d15000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_abort/30 (tcp_abort) @06cda000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+tcp_close/29 (tcp_close) @06cdaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_close/7 lwiperf_tcp_close/7 
+  Calls: 
+tcp_err/28 (tcp_err) @06cdae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_recv/27 (tcp_recv) @06cdad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_close/7 
+  Calls: 
+tcp_sent/26 (tcp_sent) @06cdac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_poll/25 (tcp_poll) @06cdab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_arg/24 (tcp_arg) @06cdaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+sys_now/23 (sys_now) @06cda8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwip_tcp_conn_report/6 
+  Calls: 
+lwiperf_abort/22 (lwiperf_abort) @06cda1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 
+  Calls: mem_free/31 
+lwiperf_start_tcp_client/21 (lwiperf_start_tcp_client) @06cc1ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client_default/20 
+  Calls: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 memset/37 
+lwiperf_start_tcp_client_default/20 (lwiperf_start_tcp_client_default) @06cc19a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_client/21 
+lwiperf_start_tcp_server_impl/19 (lwiperf_start_tcp_server_impl) @06cc1e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_tcp_accept/16 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server/18 
+  Calls: lwiperf_list_add/3 tcp_accept/48 tcp_arg/24 mem_free/31 tcp_close/29 tcp_listen_with_backlog/47 tcp_bind/46 tcp_new_ip_type/36 memset/37 mem_malloc/35 
+lwiperf_start_tcp_server/18 (lwiperf_start_tcp_server) @06cc1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_default/17 
+  Calls: lwiperf_start_tcp_server_impl/19 
+lwiperf_start_tcp_server_default/17 (lwiperf_start_tcp_server_default) @06cc18c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/45 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_server/18 
+lwiperf_tcp_accept/16 (lwiperf_tcp_accept) @06cc1620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: lwiperf_tcp_recv/13 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) 
+  Referring: lwiperf_start_tcp_server_impl/19 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 lwiperf_list_find/5 tcp_err/28 tcp_poll/25 tcp_recv/27 tcp_arg/24 sys_now/23 memset/37 mem_malloc/35 
+lwiperf_tcp_poll/15 (lwiperf_tcp_poll) @06cb4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 lwiperf_tcp_close/7 
+lwiperf_tcp_err/14 (lwiperf_tcp_err) @06cb4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_close/7 
+lwiperf_tcp_recv/13 (lwiperf_tcp_recv) @06cb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/40 tcp_recved/43 pbuf_remove_header/44 pbuf_free/40 tcp_recved/43 sys_now/23 pbuf_free/40 lwiperf_tcp_close/7 pbuf_memcmp/42 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 pbuf_free/40 lwiperf_tcp_close/7 pbuf_copy_partial/41 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 lwiperf_tcp_close/7 
+lwiperf_tx_start_passive/12 (lwiperf_tx_start_passive) @06cb4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: lwiperf_tx_start_impl/11 lwip_htonl/32 
+lwiperf_tx_start_impl/11 (lwiperf_tx_start_impl) @06cb4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_tcp_client_sent/9 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) lwiperf_tcp_client_connected/10 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 tcp_connect/39 tcp_err/28 tcp_poll/25 tcp_sent/26 tcp_arg/24 memcpy/38 sys_now/23 memset/37 mem_free/31 tcp_new_ip_type/36 mem_malloc/35 
+lwiperf_tcp_client_connected/10 (lwiperf_tcp_client_connected) @06c8ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 sys_now/23 lwiperf_tcp_close/7 
+lwiperf_tcp_client_sent/9 (lwiperf_tcp_client_sent) @06c8ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 
+lwiperf_tcp_client_send_more/8 (lwiperf_tcp_client_send_more) @06c8e7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_txbuf_const/2 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_poll/15 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_sent/9 
+  Calls: tcp_output/34 tcp_write/33 lwiperf_tcp_close/7 lwip_htonl/32 lwiperf_tcp_close/7 lwip_htonl/32 sys_now/23 
+lwiperf_tcp_close/7 (lwiperf_tcp_close) @06c8e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_poll/15 lwiperf_tcp_err/14 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: mem_free/31 tcp_close/29 tcp_abort/30 tcp_close/29 tcp_err/28 tcp_recv/27 tcp_sent/26 tcp_poll/25 tcp_arg/24 lwip_tcp_conn_report/6 lwiperf_list_remove/4 
+lwip_tcp_conn_report/6 (lwip_tcp_conn_report) @06c8e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: sys_now/23 
+   Indirect call Num speculative call targets: 0
+lwiperf_list_find/5 (lwiperf_list_find) @06c8ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 
+  Calls: 
+lwiperf_list_remove/4 (lwiperf_list_remove) @06c8ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+lwiperf_list_add/3 (lwiperf_list_add) @06c8a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+lwiperf_txbuf_const/2 (lwiperf_txbuf_const) @06c67558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwiperf_tcp_client_send_more/8 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lwiperf_all_connections/1 (lwiperf_all_connections) @06c67480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwiperf_list_add/3 (read) lwiperf_list_add/3 (write) lwiperf_list_remove/4 (read) lwiperf_list_remove/4 (write) lwiperf_list_find/5 (read) lwiperf_abort/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+tcp_accept/48 (tcp_accept) @06d2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_listen_with_backlog/47 (tcp_listen_with_backlog) @06d2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_bind/46 (tcp_bind) @06d2ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+ip_addr_any/45 (ip_addr_any) @06d35630
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: lwiperf_start_tcp_server_default/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_remove_header/44 (pbuf_remove_header) @06d2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+tcp_recved/43 (tcp_recved) @06d2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_memcmp/42 (pbuf_memcmp) @06d2a2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_copy_partial/41 (pbuf_copy_partial) @06d2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_free/40 (pbuf_free) @06d2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+tcp_connect/39 (tcp_connect) @06d15c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memcpy/38 (memcpy) @06d15b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memset/37 (memset) @06d15a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+tcp_new_ip_type/36 (tcp_new_ip_type) @06d159a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 
+  Calls: 
+mem_malloc/35 (mem_malloc) @06d158c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+tcp_output/34 (tcp_output) @06d15540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+tcp_write/33 (tcp_write) @06d15460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+lwip_htonl/32 (lwip_htonl) @06d15380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: 
+mem_free/31 (mem_free) @06d15000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_abort/30 (tcp_abort) @06cda000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+tcp_close/29 (tcp_close) @06cdaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_close/7 lwiperf_tcp_close/7 
+  Calls: 
+tcp_err/28 (tcp_err) @06cdae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_recv/27 (tcp_recv) @06cdad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_close/7 
+  Calls: 
+tcp_sent/26 (tcp_sent) @06cdac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_poll/25 (tcp_poll) @06cdab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_arg/24 (tcp_arg) @06cdaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+sys_now/23 (sys_now) @06cda8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwip_tcp_conn_report/6 
+  Calls: 
+lwiperf_abort/22 (lwiperf_abort) @06cda1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 
+  Calls: mem_free/31 
+lwiperf_start_tcp_client/21 (lwiperf_start_tcp_client) @06cc1ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client_default/20 
+  Calls: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 memset/37 
+lwiperf_start_tcp_client_default/20 (lwiperf_start_tcp_client_default) @06cc19a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_client/21 
+lwiperf_start_tcp_server_impl/19 (lwiperf_start_tcp_server_impl) @06cc1e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_tcp_accept/16 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server/18 
+  Calls: lwiperf_list_add/3 tcp_accept/48 tcp_arg/24 mem_free/31 tcp_close/29 tcp_listen_with_backlog/47 tcp_bind/46 tcp_new_ip_type/36 memset/37 mem_malloc/35 
+lwiperf_start_tcp_server/18 (lwiperf_start_tcp_server) @06cc1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_default/17 
+  Calls: lwiperf_start_tcp_server_impl/19 
+lwiperf_start_tcp_server_default/17 (lwiperf_start_tcp_server_default) @06cc18c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/45 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_server/18 
+lwiperf_tcp_accept/16 (lwiperf_tcp_accept) @06cc1620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: lwiperf_tcp_recv/13 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) 
+  Referring: lwiperf_start_tcp_server_impl/19 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 lwiperf_list_find/5 tcp_err/28 tcp_poll/25 tcp_recv/27 tcp_arg/24 sys_now/23 memset/37 mem_malloc/35 
+lwiperf_tcp_poll/15 (lwiperf_tcp_poll) @06cb4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 lwiperf_tcp_close/7 
+lwiperf_tcp_err/14 (lwiperf_tcp_err) @06cb4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_close/7 
+lwiperf_tcp_recv/13 (lwiperf_tcp_recv) @06cb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tcp_accept/16 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/40 tcp_recved/43 pbuf_remove_header/44 pbuf_free/40 tcp_recved/43 sys_now/23 pbuf_free/40 lwiperf_tcp_close/7 pbuf_memcmp/42 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 pbuf_free/40 lwiperf_tcp_close/7 pbuf_copy_partial/41 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 lwiperf_tcp_close/7 
+lwiperf_tx_start_passive/12 (lwiperf_tx_start_passive) @06cb4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: lwiperf_tx_start_impl/11 lwip_htonl/32 
+lwiperf_tx_start_impl/11 (lwiperf_tx_start_impl) @06cb4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_tcp_client_sent/9 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) lwiperf_tcp_client_connected/10 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 tcp_connect/39 tcp_err/28 tcp_poll/25 tcp_sent/26 tcp_arg/24 memcpy/38 sys_now/23 memset/37 mem_free/31 tcp_new_ip_type/36 mem_malloc/35 
+lwiperf_tcp_client_connected/10 (lwiperf_tcp_client_connected) @06c8ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 sys_now/23 lwiperf_tcp_close/7 
+lwiperf_tcp_client_sent/9 (lwiperf_tcp_client_sent) @06c8ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 
+lwiperf_tcp_client_send_more/8 (lwiperf_tcp_client_send_more) @06c8e7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_txbuf_const/2 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_poll/15 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_sent/9 
+  Calls: tcp_output/34 tcp_write/33 lwiperf_tcp_close/7 lwip_htonl/32 lwiperf_tcp_close/7 lwip_htonl/32 sys_now/23 
+lwiperf_tcp_close/7 (lwiperf_tcp_close) @06c8e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_poll/15 lwiperf_tcp_err/14 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: mem_free/31 tcp_close/29 tcp_abort/30 tcp_close/29 tcp_err/28 tcp_recv/27 tcp_sent/26 tcp_poll/25 tcp_arg/24 lwip_tcp_conn_report/6 lwiperf_list_remove/4 
+lwip_tcp_conn_report/6 (lwip_tcp_conn_report) @06c8e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: sys_now/23 
+   Indirect call Num speculative call targets: 0
+lwiperf_list_find/5 (lwiperf_list_find) @06c8ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 
+  Calls: 
+lwiperf_list_remove/4 (lwiperf_list_remove) @06c8ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+lwiperf_list_add/3 (lwiperf_list_add) @06c8a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_accept/16 lwiperf_tx_start_impl/11 
+  Calls: 
+lwiperf_txbuf_const/2 (lwiperf_txbuf_const) @06c67558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwiperf_tcp_client_send_more/8 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lwiperf_all_connections/1 (lwiperf_all_connections) @06c67480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwiperf_list_add/3 (read) lwiperf_list_add/3 (write) lwiperf_list_remove/4 (read) lwiperf_list_remove/4 (write) lwiperf_list_find/5 (read) lwiperf_abort/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+tcp_accept/48 (tcp_accept) @06d2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_listen_with_backlog/47 (tcp_listen_with_backlog) @06d2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+tcp_bind/46 (tcp_bind) @06d2ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 
+  Calls: 
+ip_addr_any/45 (ip_addr_any) @06d35630
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: lwiperf_start_tcp_server_default/17 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+pbuf_remove_header/44 (pbuf_remove_header) @06d2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+tcp_recved/43 (tcp_recved) @06d2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_memcmp/42 (pbuf_memcmp) @06d2a2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_copy_partial/41 (pbuf_copy_partial) @06d2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 
+  Calls: 
+pbuf_free/40 (pbuf_free) @06d2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: 
+tcp_connect/39 (tcp_connect) @06d15c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memcpy/38 (memcpy) @06d15b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 
+  Calls: 
+memset/37 (memset) @06d15a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_accept/16 
+  Calls: 
+tcp_new_ip_type/36 (tcp_new_ip_type) @06d159a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 
+  Calls: 
+mem_malloc/35 (mem_malloc) @06d158c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_accept/16 
+  Calls: 
+tcp_output/34 (tcp_output) @06d15540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+tcp_write/33 (tcp_write) @06d15460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_client_send_more/8 
+  Calls: 
+lwip_htonl/32 (lwip_htonl) @06d15380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 
+  Calls: 
+mem_free/31 (mem_free) @06d15000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_abort/30 (tcp_abort) @06cda000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+tcp_close/29 (tcp_close) @06cdaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tcp_close/7 lwiperf_tcp_close/7 
+  Calls: 
+tcp_err/28 (tcp_err) @06cdae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 lwiperf_tcp_accept/16 lwiperf_tcp_close/7 
+  Calls: 
+tcp_recv/27 (tcp_recv) @06cdad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_accept/16 lwiperf_tcp_close/7 
+  Calls: 
+tcp_sent/26 (tcp_sent) @06cdac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 lwiperf_tcp_close/7 
+  Calls: 
+tcp_poll/25 (tcp_poll) @06cdab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tx_start_impl/11 lwiperf_tcp_accept/16 lwiperf_tcp_close/7 
+  Calls: 
+tcp_arg/24 (tcp_arg) @06cdaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_accept/16 lwiperf_tcp_close/7 
+  Calls: 
+sys_now/23 (sys_now) @06cda8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwiperf_tcp_accept/16 lwip_tcp_conn_report/6 
+  Calls: 
+lwiperf_abort/22 (lwiperf_abort) @06cda1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 
+  Calls: mem_free/31 
+lwiperf_start_tcp_client/21 (lwiperf_start_tcp_client) @06cc1ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_start_tcp_client_default/20 
+  Calls: lwiperf_abort/22 lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 lwip_htonl/32 memset/37 
+lwiperf_start_tcp_client_default/20 (lwiperf_start_tcp_client_default) @06cc19a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_client/21 
+lwiperf_start_tcp_server_impl/19 (lwiperf_start_tcp_server_impl) @06cc1e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwiperf_tcp_accept/16 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_start_tcp_server/18 
+  Calls: lwiperf_list_add/3 tcp_accept/48 tcp_arg/24 mem_free/31 tcp_close/29 tcp_listen_with_backlog/47 tcp_bind/46 tcp_new_ip_type/36 memset/37 mem_malloc/35 
+lwiperf_start_tcp_server/18 (lwiperf_start_tcp_server) @06cc1b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_default/17 
+  Calls: lwiperf_start_tcp_server_impl/19 
+lwiperf_start_tcp_server_default/17 (lwiperf_start_tcp_server_default) @06cc18c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/45 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_start_tcp_server/18 
+lwiperf_tcp_accept/16 (lwiperf_tcp_accept) @06cc1620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: lwiperf_tcp_recv/13 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) 
+  Referring: lwiperf_start_tcp_server_impl/19 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 lwiperf_list_find/5 tcp_err/28 tcp_poll/25 tcp_recv/27 tcp_arg/24 sys_now/23 memset/37 mem_malloc/35 
+lwiperf_tcp_poll/15 (lwiperf_tcp_poll) @06cb4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: lwiperf_tcp_accept/16 (addr) lwiperf_tx_start_impl/11 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 lwiperf_tcp_close/7 
+lwiperf_tcp_err/14 (lwiperf_tcp_err) @06cb4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: lwiperf_tcp_accept/16 (addr) lwiperf_tx_start_impl/11 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_close/7 
+lwiperf_tcp_recv/13 (lwiperf_tcp_recv) @06cb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: lwiperf_tcp_accept/16 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/40 tcp_recved/43 pbuf_remove_header/44 pbuf_free/40 tcp_recved/43 sys_now/23 pbuf_free/40 lwiperf_tcp_close/7 pbuf_memcmp/42 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 pbuf_free/40 lwiperf_tcp_close/7 pbuf_copy_partial/41 pbuf_free/40 lwiperf_tcp_close/7 lwiperf_tcp_close/7 lwiperf_tx_start_passive/12 lwiperf_tcp_close/7 
+lwiperf_tx_start_passive/12 (lwiperf_tx_start_passive) @06cb4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 
+  Calls: lwiperf_tx_start_impl/11 lwip_htonl/32 
+lwiperf_tx_start_impl/11 (lwiperf_tx_start_impl) @06cb4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwiperf_tcp_client_sent/9 (addr) lwiperf_tcp_poll/15 (addr) lwiperf_tcp_err/14 (addr) lwiperf_tcp_client_connected/10 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_start_tcp_client/21 lwiperf_tx_start_passive/12 
+  Calls: lwiperf_list_add/3 lwiperf_tcp_close/7 tcp_connect/39 tcp_err/28 tcp_poll/25 tcp_sent/26 tcp_arg/24 memcpy/38 sys_now/23 memset/37 mem_free/31 tcp_new_ip_type/36 mem_malloc/35 
+lwiperf_tcp_client_connected/10 (lwiperf_tcp_client_connected) @06c8ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 sys_now/23 lwiperf_tcp_close/7 
+lwiperf_tcp_client_sent/9 (lwiperf_tcp_client_sent) @06c8ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: lwiperf_tx_start_impl/11 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: lwiperf_tcp_client_send_more/8 
+lwiperf_tcp_client_send_more/8 (lwiperf_tcp_client_send_more) @06c8e7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwiperf_txbuf_const/2 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_tcp_poll/15 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_sent/9 
+  Calls: tcp_output/34 tcp_write/33 lwiperf_tcp_close/7 lwip_htonl/32 lwiperf_tcp_close/7 lwip_htonl/32 sys_now/23 
+lwiperf_tcp_close/7 (lwiperf_tcp_close) @06c8e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tcp_recv/13 lwiperf_tx_start_impl/11 lwiperf_tcp_poll/15 lwiperf_tcp_client_connected/10 lwiperf_tcp_client_send_more/8 lwiperf_tcp_client_send_more/8 lwiperf_tcp_accept/16 lwiperf_tcp_err/14 
+  Calls: mem_free/31 tcp_close/29 tcp_abort/30 tcp_close/29 tcp_err/28 tcp_recv/27 tcp_sent/26 tcp_poll/25 tcp_arg/24 lwip_tcp_conn_report/6 lwiperf_list_remove/4 
+lwip_tcp_conn_report/6 (lwip_tcp_conn_report) @06c8e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: sys_now/23 
+   Indirect call Num speculative call targets: 0
+lwiperf_list_find/5 (lwiperf_list_find) @06c8ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwiperf_all_connections/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_tcp_accept/16 
+  Calls: 
+lwiperf_list_remove/4 (lwiperf_list_remove) @06c8ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_tcp_close/7 
+  Calls: 
+lwiperf_list_add/3 (lwiperf_list_add) @06c8a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwiperf_all_connections/1 (read) lwiperf_all_connections/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: lwiperf_start_tcp_server_impl/19 lwiperf_tx_start_impl/11 lwiperf_tcp_accept/16 
+  Calls: 
+lwiperf_txbuf_const/2 (lwiperf_txbuf_const) @06c67558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: lwiperf_tcp_client_send_more/8 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+lwiperf_all_connections/1 (lwiperf_all_connections) @06c67480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: lwiperf_list_add/3 (write) lwiperf_list_remove/4 (write) lwiperf_list_add/3 (read) lwiperf_list_find/5 (read) lwiperf_list_remove/4 (read) lwiperf_abort/22 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: lwiperf_txbuf_const/2 lwiperf_all_connections/1
+Removing variables:
+
+Final Symbol table:
+
+tcp_accept/48 (tcp_accept) @06d2ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_listen_with_backlog/47 (tcp_listen_with_backlog) @06d2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_bind/46 (tcp_bind) @06d2ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_addr_any/45 (ip_addr_any) @06d35630
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+pbuf_remove_header/44 (pbuf_remove_header) @06d2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recved/43 (tcp_recved) @06d2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_memcmp/42 (pbuf_memcmp) @06d2a2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_copy_partial/41 (pbuf_copy_partial) @06d2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_free/40 (pbuf_free) @06d2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_connect/39 (tcp_connect) @06d15c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memcpy/38 (memcpy) @06d15b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memset/37 (memset) @06d15a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_new_ip_type/36 (tcp_new_ip_type) @06d159a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mem_malloc/35 (mem_malloc) @06d158c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_output/34 (tcp_output) @06d15540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_write/33 (tcp_write) @06d15460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_htonl/32 (lwip_htonl) @06d15380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mem_free/31 (mem_free) @06d15000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_abort/30 (tcp_abort) @06cda000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_close/29 (tcp_close) @06cdaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_err/28 (tcp_err) @06cdae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recv/27 (tcp_recv) @06cdad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_sent/26 (tcp_sent) @06cdac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_poll/25 (tcp_poll) @06cdab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_arg/24 (tcp_arg) @06cdaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_now/23 (sys_now) @06cda8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_abort/22 (lwiperf_abort) @06cda1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_start_tcp_client/21 (lwiperf_start_tcp_client) @06cc1ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_start_tcp_client_default/20 (lwiperf_start_tcp_client_default) @06cc19a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_start_tcp_server_impl/19 (lwiperf_start_tcp_server_impl) @06cc1e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_start_tcp_server/18 (lwiperf_start_tcp_server) @06cc1b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_start_tcp_server_default/17 (lwiperf_start_tcp_server_default) @06cc18c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tcp_accept/16 (lwiperf_tcp_accept) @06cc1620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tcp_poll/15 (lwiperf_tcp_poll) @06cb4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tcp_err/14 (lwiperf_tcp_err) @06cb4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tcp_recv/13 (lwiperf_tcp_recv) @06cb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tx_start_passive/12 (lwiperf_tx_start_passive) @06cb4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tx_start_impl/11 (lwiperf_tx_start_impl) @06cb4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tcp_client_connected/10 (lwiperf_tcp_client_connected) @06c8ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tcp_client_sent/9 (lwiperf_tcp_client_sent) @06c8ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tcp_client_send_more/8 (lwiperf_tcp_client_send_more) @06c8e7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_tcp_close/7 (lwiperf_tcp_close) @06c8e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_tcp_conn_report/6 (lwip_tcp_conn_report) @06c8e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_list_find/5 (lwiperf_list_find) @06c8ae00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_list_remove/4 (lwiperf_list_remove) @06c8ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_list_add/3 (lwiperf_list_add) @06c8a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwiperf_txbuf_const/2 (lwiperf_txbuf_const) @06c67558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+lwiperf_all_connections/1 (lwiperf_all_connections) @06c67480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06c67558
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

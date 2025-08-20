@@ -1,0 +1,4549 @@
+tcp_zero_window_probe (struct tcp_pcb * pcb)
+{
+  char * d;
+  u8_t optlen;
+  u32_t snd_nxt;
+  u8_t is_fin;
+  u16_t len;
+  struct tcp_seg * seg;
+  struct tcp_hdr * tcphdr;
+  struct pbuf * p;
+  err_t err;
+  int iftmp.24;
+  err_t D.8484;
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _4;
+  struct tcp_hdr * _5;
+  short unsigned int _6;
+  short unsigned int _7;
+  unsigned char _8;
+  unsigned int _9;
+  unsigned int _10;
+  short unsigned int _11;
+  _Bool _12;
+  short unsigned int _13;
+  struct tcp_hdr * _14;
+  long unsigned int _15;
+  short unsigned int _16;
+  signed short _17;
+  signed short _18;
+  short unsigned int _19;
+  signed short _20;
+  signed short _21;
+  short unsigned int _22;
+  void * _23;
+  struct pbuf * _24;
+  struct pbuf * _25;
+  short unsigned int _26;
+  short unsigned int _27;
+  short unsigned int _28;
+  struct tcp_hdr * _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  long unsigned int _33;
+  long int _34;
+  struct ip_addr_t * _35;
+  struct ip_addr_t * _36;
+  err_t _37;
+  int iftmp.24_38;
+  int iftmp.24_50;
+  int iftmp.24_51;
+  err_t _67;
+  err_t _68;
+  err_t _69;
+
+  <bb 2> :
+  optlen_44 = 0;
+  if (pcb_45(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_45(D)->remote_ip.type;
+
+  <bb 5> :
+  seg_47 = pcb_45(D)->unsent;
+  if (seg_47 == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _69 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 21>; [INV]
+
+  <bb 7> :
+  _2 = pcb_45(D)->persist_probe;
+  if (_2 != 255)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _3 = pcb_45(D)->persist_probe;
+  _4 = _3 + 1;
+  pcb_45(D)->persist_probe = _4;
+
+  <bb 9> :
+  _5 = seg_47->tcphdr;
+  _6 = _5->_hdrlen_rsvd_flags;
+  _7 = lwip_htons (_6);
+  _8 = (unsigned char) _7;
+  _9 = (unsigned int) _8;
+  _10 = _9 & 1;
+  if (_10 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  _11 = seg_47->len;
+  if (_11 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  iftmp.24_50 = 1;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.24_51 = 0;
+
+  <bb 13> :
+  # iftmp.24_38 = PHI <iftmp.24_50(11), iftmp.24_51(12)>
+  is_fin_52 = (u8_t) iftmp.24_38;
+  _12 = is_fin_52 == 0;
+  len_53 = (u16_t) _12;
+  _13 = (short unsigned int) optlen_44;
+  _14 = seg_47->tcphdr;
+  _15 = _14->seqno;
+  p_55 = tcp_output_alloc_header (pcb_45(D), _13, len_53, _15);
+  if (p_55 == 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _68 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 21>; [INV]
+
+  <bb 15> :
+  tcphdr_56 = p_55->payload;
+  if (is_fin_52 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _16 = tcphdr_56->_hdrlen_rsvd_flags;
+  _17 = (signed short) _16;
+  _18 = _17 & -16129;
+  _19 = lwip_htons (17);
+  _20 = (signed short) _19;
+  _21 = _18 | _20;
+  _22 = (short unsigned int) _21;
+  tcphdr_56->_hdrlen_rsvd_flags = _22;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  _23 = p_55->payload;
+  d_57 = _23 + 20;
+  _24 = seg_47->p;
+  _25 = seg_47->p;
+  _26 = _25->tot_len;
+  _27 = seg_47->len;
+  _28 = _26 - _27;
+  pbuf_copy_partial (_24, d_57, 1, _28);
+
+  <bb 18> :
+  _29 = seg_47->tcphdr;
+  _30 = _29->seqno;
+  _31 = lwip_htonl (_30);
+  snd_nxt_62 = _31 + 1;
+  _32 = pcb_45(D)->snd_nxt;
+  _33 = _32 - snd_nxt_62;
+  _34 = (long int) _33;
+  if (_34 < 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  pcb_45(D)->snd_nxt = snd_nxt_62;
+
+  <bb 20> :
+  tcp_output_fill_options (pcb_45(D), p_55, 0, 0);
+  _35 = &pcb_45(D)->local_ip;
+  _36 = &pcb_45(D)->remote_ip;
+  err_66 = tcp_output_control_segment (pcb_45(D), p_55, _35, _36);
+  _67 = err_66;
+
+  <bb 21> :
+  # _37 = PHI <_69(6), _68(14), _67(20)>
+<L21>:
+  return _37;
+
+}
+
+
+tcp_keepalive (struct tcp_pcb * pcb)
+{
+  u8_t optlen;
+  struct pbuf * p;
+  err_t err;
+  err_t D.8475;
+  unsigned char _1;
+  short unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  struct ip_addr_t * _6;
+  struct ip_addr_t * _7;
+  err_t _8;
+  err_t _20;
+  err_t _21;
+
+  <bb 2> :
+  optlen_11 = 0;
+  if (pcb_12(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_12(D)->remote_ip.type;
+
+  <bb 5> :
+  _2 = (short unsigned int) optlen_11;
+  _3 = pcb_12(D)->snd_nxt;
+  _4 = _3 + 4294967295;
+  _5 = lwip_htonl (_4);
+  p_16 = tcp_output_alloc_header (pcb_12(D), _2, 0, _5);
+  if (p_16 == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _21 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  tcp_output_fill_options (pcb_12(D), p_16, 0, 0);
+  _6 = &pcb_12(D)->local_ip;
+  _7 = &pcb_12(D)->remote_ip;
+  err_19 = tcp_output_control_segment (pcb_12(D), p_16, _6, _7);
+  _20 = err_19;
+
+  <bb 8> :
+  # _8 = PHI <_21(6), _20(7)>
+<L8>:
+  return _8;
+
+}
+
+
+tcp_send_empty_ack (struct tcp_pcb * pcb)
+{
+  u8_t num_sacks;
+  u8_t optflags;
+  u8_t optlen;
+  struct pbuf * p;
+  err_t err;
+  err_t D.8463;
+  int _1;
+  int _2;
+  unsigned char _3;
+  short unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  struct ip_addr_t * _9;
+  struct ip_addr_t * _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  short unsigned int _13;
+  short unsigned int _14;
+  err_t _15;
+  err_t _32;
+  err_t _34;
+
+  <bb 2> :
+  optflags_19 = 0;
+  num_sacks_20 = 0;
+  if (pcb_21(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = (int) optflags_19;
+  _2 = _1 << 2;
+  _3 = (unsigned char) _2;
+  optlen_23 = _3 & 4;
+  _4 = (short unsigned int) optlen_23;
+  _5 = pcb_21(D)->snd_nxt;
+  _6 = lwip_htonl (_5);
+  p_26 = tcp_output_alloc_header (pcb_21(D), _4, 0, _6);
+  if (p_26 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _7 = pcb_21(D)->flags;
+  _8 = _7 | 3;
+  pcb_21(D)->flags = _8;
+  _34 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 6> :
+  tcp_output_fill_options (pcb_21(D), p_26, optflags_19, num_sacks_20);
+  _9 = &pcb_21(D)->local_ip;
+  _10 = &pcb_21(D)->remote_ip;
+  err_29 = tcp_output_control_segment (pcb_21(D), p_26, _9, _10);
+  if (err_29 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _11 = pcb_21(D)->flags;
+  _12 = _11 | 3;
+  pcb_21(D)->flags = _12;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _13 = pcb_21(D)->flags;
+  _14 = _13 & 65532;
+  pcb_21(D)->flags = _14;
+
+  <bb 9> :
+  _32 = err_29;
+
+  <bb 10> :
+  # _15 = PHI <_34(5), _32(9)>
+<L8>:
+  return _15;
+
+}
+
+
+tcp_rst (const struct tcp_pcb * pcb, u32_t seqno, u32_t ackno, const struct ip_addr_t * local_ip, const struct ip_addr_t * remote_ip, u16_t local_port, u16_t remote_port)
+{
+  u8_t optlen;
+  u16_t wnd;
+  struct pbuf * p;
+  short unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  if (local_ip_8(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (remote_ip_10(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  optlen_11 = 0;
+  wnd_12 = 33820;
+  _1 = (short unsigned int) optlen_11;
+  _2 = lwip_htonl (seqno_13(D));
+  p_19 = tcp_output_alloc_header_common (ackno_15(D), _1, 0, _2, local_port_16(D), remote_port_17(D), 20, wnd_12);
+  if (p_19 == 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  tcp_output_fill_options (pcb_20(D), p_19, 0, 0);
+  _3 = lwip_stats.mib2.tcpoutrsts;
+  _4 = _3 + 1;
+  lwip_stats.mib2.tcpoutrsts = _4;
+  tcp_output_control_segment (pcb_20(D), p_19, local_ip_8(D), remote_ip_10(D));
+
+  <bb 9> :
+<L8>:
+  return;
+
+}
+
+
+tcp_output_control_segment (const struct tcp_pcb * pcb, struct pbuf * p, const struct ip_addr_t * src, const struct ip_addr_t * dst)
+{
+  struct tcp_hdr * tcphdr;
+  u8_t tos;
+  u8_t ttl;
+  struct netif * netif;
+  err_t err;
+  err_t D.8450;
+  err_t iftmp.23;
+  short unsigned int _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  short unsigned int _4;
+  unsigned char _5;
+  const struct ip6_addr_t * _6;
+  const struct ip6_addr_t * _7;
+  const struct ip4_addr_t * _8;
+  const struct ip4_addr_t * _9;
+  err_t iftmp.23_13;
+  err_t iftmp.23_33;
+  err_t iftmp.23_35;
+  err_t _39;
+
+  <bb 2> :
+  if (p_17(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  netif_23 = tcp_route (pcb_19(D), src_20(D), dst_21(D));
+  if (netif_23 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  err_37 = -4;
+  goto <bb 14>; [INV]
+
+  <bb 6> :
+  tcphdr_24 = p_17(D)->payload;
+  _1 = p_17(D)->tot_len;
+  _2 = ip_chksum_pseudo (p_17(D), 6, _1, src_20(D), dst_21(D));
+  tcphdr_24->chksum = _2;
+  if (pcb_19(D) != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  ttl_29 = pcb_19(D)->ttl;
+  tos_30 = pcb_19(D)->tos;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  ttl_27 = 255;
+  tos_28 = 0;
+
+  <bb 9> :
+  # ttl_11 = PHI <ttl_29(7), ttl_27(8)>
+  # tos_12 = PHI <tos_30(7), tos_28(8)>
+  _3 = lwip_stats.tcp.xmit;
+  _4 = _3 + 1;
+  lwip_stats.tcp.xmit = _4;
+  if (dst_21(D) != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  _5 = dst_21(D)->type;
+  if (_5 == 6)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _6 = &src_20(D)->u_addr.ip6;
+  _7 = &dst_21(D)->u_addr.ip6;
+  iftmp.23_33 = ip6_output_if (p_17(D), _6, _7, ttl_11, tos_12, 6, netif_23);
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _8 = &src_20(D)->u_addr.ip4;
+  _9 = &dst_21(D)->u_addr.ip4;
+  iftmp.23_35 = ip4_output_if (p_17(D), _8, _9, ttl_11, tos_12, 6, netif_23);
+
+  <bb 13> :
+  # iftmp.23_13 = PHI <iftmp.23_33(11), iftmp.23_35(12)>
+  err_36 = iftmp.23_13;
+
+  <bb 14> :
+  # err_10 = PHI <err_37(5), err_36(13)>
+  pbuf_free (p_17(D));
+  _39 = err_10;
+
+  <bb 15> :
+<L13>:
+  return _39;
+
+}
+
+
+tcp_output_fill_options (const struct tcp_pcb * pcb, struct pbuf * p, u8_t optflags, u8_t num_sacks)
+{
+  u16_t sacks_len;
+  u32_t * opts;
+  struct tcp_hdr * tcphdr;
+  struct tcp_hdr * _1;
+  int _2;
+  int _3;
+  sizetype _4;
+  sizetype _5;
+  sizetype _6;
+  sizetype _7;
+  sizetype _8;
+  u8_t * _9;
+
+  <bb 2> :
+  sacks_len_12 = 0;
+  if (p_13(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  tcphdr_15 = p_13(D)->payload;
+  opts_16 = tcphdr_15 + 20;
+  _1 = tcphdr_15 + 20;
+  _2 = (int) sacks_len_12;
+  _3 = _2 * 4;
+  _4 = (sizetype) _3;
+  _5 = (sizetype) optflags_17(D);
+  _6 = _5 << 2;
+  _7 = _6 & 4;
+  _8 = _4 + _7;
+  _9 = _1 + _8;
+  if (opts_16 != _9)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  return;
+
+}
+
+
+tcp_output_alloc_header (struct tcp_pcb * pcb, u16_t optlen, u16_t datalen, u32_t seqno_be)
+{
+  struct pbuf * p;
+  struct pbuf * D.8431;
+  long unsigned int _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  short unsigned int _4;
+  long unsigned int _5;
+  short unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  struct pbuf * _19;
+
+  <bb 2> :
+  if (pcb_11(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_11(D)->rcv_nxt;
+  _2 = pcb_11(D)->local_port;
+  _3 = pcb_11(D)->remote_port;
+  _4 = pcb_11(D)->rcv_ann_wnd;
+  p_17 = tcp_output_alloc_header_common (_1, optlen_13(D), datalen_14(D), seqno_be_15(D), _2, _3, 16, _4);
+  if (p_17 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _5 = pcb_11(D)->rcv_nxt;
+  _6 = pcb_11(D)->rcv_ann_wnd;
+  _7 = (long unsigned int) _6;
+  _8 = _5 + _7;
+  pcb_11(D)->rcv_ann_right_edge = _8;
+
+  <bb 6> :
+  _19 = p_17;
+
+  <bb 7> :
+<L5>:
+  return _19;
+
+}
+
+
+tcp_output_alloc_header_common (u32_t ackno, u16_t optlen, u16_t datalen, u32_t seqno_be, u16_t src_port, u16_t dst_port, u8_t flags, u16_t wnd)
+{
+  struct pbuf * p;
+  struct tcp_hdr * tcphdr;
+  struct pbuf * D.8425;
+  short unsigned int _1;
+  short unsigned int _2;
+  int _3;
+  int _4;
+  short unsigned int _5;
+  int _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  long unsigned int _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  short unsigned int _13;
+  short unsigned int _14;
+  short unsigned int _15;
+  short unsigned int _16;
+  struct pbuf * _45;
+
+  <bb 2> :
+  _1 = optlen_19(D) + datalen_20(D);
+  _2 = _1 + 20;
+  p_23 = pbuf_alloc (54, _2, 640);
+  if (p_23 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _3 = (int) optlen_19(D);
+  _4 = _3 + 19;
+  _5 = p_23->len;
+  _6 = (int) _5;
+  if (_4 >= _6)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  tcphdr_24 = p_23->payload;
+  _7 = lwip_htons (src_port_25(D));
+  tcphdr_24->src = _7;
+  _8 = lwip_htons (dst_port_28(D));
+  tcphdr_24->dest = _8;
+  tcphdr_24->seqno = seqno_be_31(D);
+  _9 = lwip_htonl (ackno_33(D));
+  tcphdr_24->ackno = _9;
+  _10 = optlen_19(D) / 4;
+  _11 = _10 + 5;
+  _12 = _11 << 12;
+  _13 = (short unsigned int) flags_36(D);
+  _14 = _12 | _13;
+  _15 = lwip_htons (_14);
+  tcphdr_24->_hdrlen_rsvd_flags = _15;
+  _16 = lwip_htons (wnd_39(D));
+  tcphdr_24->wnd = _16;
+  tcphdr_24->chksum = 0;
+  tcphdr_24->urgp = 0;
+
+  <bb 6> :
+  _45 = p_23;
+
+  <bb 7> :
+<L5>:
+  return _45;
+
+}
+
+
+tcp_rexmit_fast (struct tcp_pcb * pcb)
+{
+  struct tcp_seg * _1;
+  short unsigned int _2;
+  unsigned int _3;
+  unsigned int _4;
+  signed char _5;
+  short unsigned int _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  int _9;
+  int _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  unsigned int _13;
+  short unsigned int _14;
+  unsigned int _15;
+  unsigned int _16;
+  short unsigned int _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  short unsigned int _20;
+  short unsigned int _21;
+  short unsigned int _22;
+  short unsigned int _23;
+  short unsigned int _24;
+
+  <bb 2> :
+  if (pcb_28(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_28(D)->unacked;
+  if (_1 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 5> :
+  _2 = pcb_28(D)->flags;
+  _3 = (unsigned int) _2;
+  _4 = _3 & 4;
+  if (_4 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 6> :
+  _5 = tcp_rexmit (pcb_28(D));
+  if (_5 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 7> :
+  _6 = pcb_28(D)->snd_wnd;
+  _7 = pcb_28(D)->cwnd;
+  _8 = MIN_EXPR <_6, _7>;
+  _9 = (int) _8;
+  _10 = _9 / 2;
+  _11 = (short unsigned int) _10;
+  pcb_28(D)->ssthresh = _11;
+  _12 = pcb_28(D)->ssthresh;
+  _13 = (unsigned int) _12;
+  _14 = pcb_28(D)->mss;
+  _15 = (unsigned int) _14;
+  _16 = _15 * 2;
+  if (_13 < _16)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _17 = pcb_28(D)->mss;
+  _18 = _17 * 2;
+  pcb_28(D)->ssthresh = _18;
+
+  <bb 9> :
+  _19 = pcb_28(D)->ssthresh;
+  _20 = pcb_28(D)->mss;
+  _21 = _20 * 3;
+  _22 = _19 + _21;
+  pcb_28(D)->cwnd = _22;
+  _23 = pcb_28(D)->flags;
+  _24 = _23 | 4;
+  pcb_28(D)->flags = _24;
+  pcb_28(D)->rtime = 0;
+
+  <bb 10> :
+  return;
+
+}
+
+
+tcp_rexmit (struct tcp_pcb * pcb)
+{
+  struct tcp_seg * * cur_seg;
+  struct tcp_seg * seg;
+  err_t D.8402;
+  struct tcp_seg * _1;
+  int _2;
+  struct tcp_seg * _3;
+  struct tcp_seg * _4;
+  struct tcp_seg * _5;
+  struct tcp_seg * _6;
+  struct tcp_hdr * _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct tcp_hdr * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long int _14;
+  struct tcp_seg * _15;
+  struct tcp_seg * _16;
+  unsigned char _17;
+  unsigned char _18;
+  unsigned char _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  err_t _23;
+  err_t _45;
+  err_t _46;
+  err_t _47;
+
+  <bb 2> :
+  if (pcb_30(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_30(D)->unacked;
+  if (_1 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _47 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 6> :
+  seg_32 = pcb_30(D)->unacked;
+  _2 = tcp_output_segment_busy (seg_32);
+  if (_2 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _46 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 8> :
+  _3 = seg_32->next;
+  pcb_30(D)->unacked = _3;
+  cur_seg_35 = &pcb_30(D)->unsent;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _4 = *cur_seg_22;
+  cur_seg_38 = &_4->next;
+
+  <bb 10> :
+  # cur_seg_22 = PHI <cur_seg_35(8), cur_seg_38(9)>
+  _5 = *cur_seg_22;
+  if (_5 != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _6 = *cur_seg_22;
+  _7 = _6->tcphdr;
+  _8 = _7->seqno;
+  _9 = lwip_htonl (_8);
+  _10 = seg_32->tcphdr;
+  _11 = _10->seqno;
+  _12 = lwip_htonl (_11);
+  _13 = _9 - _12;
+  _14 = (long int) _13;
+  if (_14 < 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _15 = *cur_seg_22;
+  seg_32->next = _15;
+  *cur_seg_22 = seg_32;
+  _16 = seg_32->next;
+  if (_16 == 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  pcb_30(D)->unsent_oversize = 0;
+
+  <bb 14> :
+  _17 = pcb_30(D)->nrtx;
+  if (_17 != 255)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _18 = pcb_30(D)->nrtx;
+  _19 = _18 + 1;
+  pcb_30(D)->nrtx = _19;
+
+  <bb 16> :
+  pcb_30(D)->rttest = 0;
+  _20 = lwip_stats.mib2.tcpretranssegs;
+  _21 = _20 + 1;
+  lwip_stats.mib2.tcpretranssegs = _21;
+  _45 = 0;
+
+  <bb 17> :
+  # _23 = PHI <_47(5), _46(7), _45(16)>
+<L15>:
+  return _23;
+
+}
+
+
+tcp_rexmit_rto (struct tcp_pcb * pcb)
+{
+  signed char _1;
+
+  <bb 2> :
+  if (pcb_4(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = tcp_rexmit_rto_prepare (pcb_4(D));
+  if (_1 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  tcp_rexmit_rto_commit (pcb_4(D));
+
+  <bb 6> :
+  return;
+
+}
+
+
+tcp_rexmit_rto_commit (struct tcp_pcb * pcb)
+{
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+
+  <bb 2> :
+  if (pcb_6(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_6(D)->nrtx;
+  if (_1 != 255)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _2 = pcb_6(D)->nrtx;
+  _3 = _2 + 1;
+  pcb_6(D)->nrtx = _3;
+
+  <bb 6> :
+  tcp_output (pcb_6(D));
+  return;
+
+}
+
+
+tcp_rexmit_rto_prepare (struct tcp_pcb * pcb)
+{
+  struct tcp_seg * seg;
+  unsigned int iftmp.22;
+  err_t D.8380;
+  struct tcp_seg * _1;
+  int _2;
+  struct tcp_seg * _3;
+  int _4;
+  struct tcp_seg * _5;
+  struct tcp_seg * _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  struct tcp_hdr * _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  short unsigned int _12;
+  unsigned int _13;
+  struct tcp_hdr * _14;
+  short unsigned int _15;
+  short unsigned int _16;
+  unsigned char _17;
+  unsigned int _18;
+  unsigned int _19;
+  unsigned int _20;
+  long unsigned int _21;
+  err_t _23;
+  unsigned int iftmp.22_24;
+  unsigned int iftmp.22_38;
+  unsigned int iftmp.22_39;
+  err_t _42;
+  err_t _43;
+  err_t _46;
+  err_t _47;
+
+  <bb 2> :
+  if (pcb_28(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_28(D)->unacked;
+  if (_1 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _47 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 6> :
+  seg_30 = pcb_28(D)->unacked;
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  _2 = tcp_output_segment_busy (seg_22);
+  if (_2 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _46 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 9> :
+  seg_45 = seg_22->next;
+
+  <bb 10> :
+  # seg_22 = PHI <seg_30(6), seg_45(9)>
+  _3 = seg_22->next;
+  if (_3 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _4 = tcp_output_segment_busy (seg_22);
+  if (_4 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _43 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 13> :
+  _5 = pcb_28(D)->unsent;
+  seg_22->next = _5;
+  _6 = pcb_28(D)->unacked;
+  pcb_28(D)->unsent = _6;
+  pcb_28(D)->unacked = 0B;
+  _7 = pcb_28(D)->flags;
+  _8 = _7 | 2048;
+  pcb_28(D)->flags = _8;
+  _9 = seg_22->tcphdr;
+  _10 = _9->seqno;
+  _11 = lwip_htonl (_10);
+  _12 = seg_22->len;
+  _13 = (unsigned int) _12;
+  _14 = seg_22->tcphdr;
+  _15 = _14->_hdrlen_rsvd_flags;
+  _16 = lwip_htons (_15);
+  _17 = (unsigned char) _16;
+  _18 = (unsigned int) _17;
+  _19 = _18 & 3;
+  if (_19 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.22_39 = 1;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftmp.22_38 = 0;
+
+  <bb 16> :
+  # iftmp.22_24 = PHI <iftmp.22_39(14), iftmp.22_38(15)>
+  _20 = iftmp.22_24 + _13;
+  _21 = _11 + _20;
+  pcb_28(D)->rto_end = _21;
+  pcb_28(D)->rttest = 0;
+  _42 = 0;
+
+  <bb 17> :
+  # _23 = PHI <_47(5), _46(8), _43(12), _42(16)>
+<L15>:
+  return _23;
+
+}
+
+
+tcp_output_segment (struct tcp_seg * seg, struct tcp_pcb * pcb, struct netif * netif)
+{
+  u16_t mss;
+  u32_t * opts;
+  u16_t len;
+  err_t err;
+  err_t iftmp.21;
+  err_t D.8359;
+  int _1;
+  long unsigned int _2;
+  struct tcp_hdr * _3;
+  long unsigned int _4;
+  short unsigned int _5;
+  struct tcp_hdr * _6;
+  short unsigned int _7;
+  long unsigned int _8;
+  short unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  struct tcp_hdr * _12;
+  unsigned char _13;
+  int _14;
+  int _15;
+  struct ip_addr_t * _16;
+  int _17;
+  int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  short int _21;
+  long unsigned int _22;
+  long unsigned int tcp_ticks.20_23;
+  struct tcp_hdr * _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  struct tcp_hdr * _27;
+  struct pbuf * _28;
+  void * _29;
+  int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  struct pbuf * _33;
+  short unsigned int _34;
+  struct pbuf * _35;
+  short unsigned int _36;
+  struct pbuf * _37;
+  short unsigned int _38;
+  struct pbuf * _39;
+  short unsigned int _40;
+  struct pbuf * _41;
+  struct tcp_hdr * _42;
+  struct tcp_hdr * _43;
+  struct tcp_hdr * _44;
+  struct tcp_hdr * _45;
+  unsigned char _46;
+  sizetype _47;
+  sizetype _48;
+  sizetype _49;
+  u8_t * _50;
+  struct pbuf * _51;
+  struct pbuf * _52;
+  short unsigned int _53;
+  struct ip_addr_t * _54;
+  struct ip_addr_t * _55;
+  struct tcp_hdr * _56;
+  short unsigned int _57;
+  short unsigned int _58;
+  short unsigned int _59;
+  struct ip_addr_t * _60;
+  unsigned char _61;
+  struct pbuf * _62;
+  struct ip6_addr_t * _63;
+  struct ip6_addr_t * _64;
+  unsigned char _65;
+  unsigned char _66;
+  struct pbuf * _67;
+  struct ip4_addr_t * _68;
+  struct ip4_addr_t * _69;
+  unsigned char _70;
+  unsigned char _71;
+  err_t _73;
+  err_t iftmp.21_74;
+  err_t iftmp.21_115;
+  err_t iftmp.21_117;
+  err_t _119;
+  err_t _121;
+
+  <bb 2> :
+  if (seg_85(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (pcb_87(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  if (netif_88(D) == 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  _1 = tcp_output_segment_busy (seg_85(D));
+  if (_1 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _121 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 10> :
+  _2 = pcb_87(D)->rcv_nxt;
+  _3 = seg_85(D)->tcphdr;
+  _4 = lwip_htonl (_2);
+  _3->ackno = _4;
+  _5 = pcb_87(D)->rcv_ann_wnd;
+  _6 = seg_85(D)->tcphdr;
+  _7 = lwip_htons (_5);
+  _6->wnd = _7;
+  _8 = pcb_87(D)->rcv_nxt;
+  _9 = pcb_87(D)->rcv_ann_wnd;
+  _10 = (long unsigned int) _9;
+  _11 = _8 + _10;
+  pcb_87(D)->rcv_ann_right_edge = _11;
+  _12 = seg_85(D)->tcphdr;
+  opts_95 = _12 + 20;
+  _13 = seg_85(D)->flags;
+  _14 = (int) _13;
+  _15 = _14 & 1;
+  if (_15 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _16 = &pcb_87(D)->remote_ip;
+  mss_97 = tcp_eff_send_mss_netif (1460, netif_88(D), _16);
+  _17 = (int) mss_97;
+  _18 = _17 | 33816576;
+  _19 = (long unsigned int) _18;
+  _20 = lwip_htonl (_19);
+  *opts_95 = _20;
+  opts_100 = opts_95 + 4;
+
+  <bb 12> :
+  # opts_72 = PHI <opts_95(10), opts_100(11)>
+  _21 = pcb_87(D)->rtime;
+  if (_21 < 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  pcb_87(D)->rtime = 0;
+
+  <bb 14> :
+  _22 = pcb_87(D)->rttest;
+  if (_22 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  tcp_ticks.20_23 = tcp_ticks;
+  pcb_87(D)->rttest = tcp_ticks.20_23;
+  _24 = seg_85(D)->tcphdr;
+  _25 = _24->seqno;
+  _26 = lwip_htonl (_25);
+  pcb_87(D)->rtseq = _26;
+
+  <bb 16> :
+  _27 = seg_85(D)->tcphdr;
+  _28 = seg_85(D)->p;
+  _29 = _28->payload;
+  _30 = _27 - _29;
+  len_105 = (u16_t) _30;
+  if (len_105 == 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  _31 = lwip_stats.mib2.tcpoutsegs;
+  _32 = _31 + 1;
+  lwip_stats.mib2.tcpoutsegs = _32;
+
+  <bb 18> :
+  _33 = seg_85(D)->p;
+  _34 = _33->len;
+  _35 = seg_85(D)->p;
+  _36 = _34 - len_105;
+  _35->len = _36;
+  _37 = seg_85(D)->p;
+  _38 = _37->tot_len;
+  _39 = seg_85(D)->p;
+  _40 = _38 - len_105;
+  _39->tot_len = _40;
+  _41 = seg_85(D)->p;
+  _42 = seg_85(D)->tcphdr;
+  _41->payload = _42;
+  _43 = seg_85(D)->tcphdr;
+  _43->chksum = 0;
+  _44 = seg_85(D)->tcphdr;
+  _45 = _44 + 20;
+  _46 = seg_85(D)->flags;
+  _47 = (sizetype) _46;
+  _48 = _47 << 2;
+  _49 = _48 & 4;
+  _50 = _45 + _49;
+  if (opts_72 != _50)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 19>; [INV]
+
+  <bb 20> :
+  _51 = seg_85(D)->p;
+  _52 = seg_85(D)->p;
+  _53 = _52->tot_len;
+  _54 = &pcb_87(D)->local_ip;
+  _55 = &pcb_87(D)->remote_ip;
+  _56 = seg_85(D)->tcphdr;
+  _57 = ip_chksum_pseudo (_51, 6, _53, _54, _55);
+  _56->chksum = _57;
+  _58 = lwip_stats.tcp.xmit;
+  _59 = _58 + 1;
+  lwip_stats.tcp.xmit = _59;
+  _60 = &pcb_87(D)->remote_ip;
+  if (_60 != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 21> :
+  _61 = pcb_87(D)->remote_ip.type;
+  if (_61 == 6)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  _62 = seg_85(D)->p;
+  _63 = &pcb_87(D)->local_ip.u_addr.ip6;
+  _64 = &pcb_87(D)->remote_ip.u_addr.ip6;
+  _65 = pcb_87(D)->ttl;
+  _66 = pcb_87(D)->tos;
+  iftmp.21_115 = ip6_output_if (_62, _63, _64, _65, _66, 6, netif_88(D));
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  _67 = seg_85(D)->p;
+  _68 = &pcb_87(D)->local_ip.u_addr.ip4;
+  _69 = &pcb_87(D)->remote_ip.u_addr.ip4;
+  _70 = pcb_87(D)->ttl;
+  _71 = pcb_87(D)->tos;
+  iftmp.21_117 = ip4_output_if (_67, _68, _69, _70, _71, 6, netif_88(D));
+
+  <bb 24> :
+  # iftmp.21_74 = PHI <iftmp.21_115(22), iftmp.21_117(23)>
+  err_118 = iftmp.21_74;
+  _119 = err_118;
+
+  <bb 25> :
+  # _73 = PHI <_121(9), _119(24)>
+<L26>:
+  return _73;
+
+}
+
+
+tcp_output_segment_busy (const struct tcp_seg * seg)
+{
+  int D.8349;
+  struct pbuf * _1;
+  unsigned char _2;
+  int _3;
+  int _7;
+  int _8;
+
+  <bb 2> :
+  if (seg_5(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = seg_5(D)->p;
+  _2 = _1->ref;
+  if (_2 != 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _8 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _7 = 0;
+
+  <bb 7> :
+  # _3 = PHI <_8(5), _7(6)>
+<L5>:
+  return _3;
+
+}
+
+
+tcp_output (struct tcp_pcb * pcb)
+{
+  struct tcp_seg * * cur_seg;
+  const struct ip_addr_t * local_ip;
+  struct netif * netif;
+  err_t err;
+  u32_t snd_nxt;
+  u32_t wnd;
+  struct tcp_seg * useg;
+  struct tcp_seg * seg;
+  unsigned int iftmp.19;
+  unsigned int iftmp.18;
+  int iftmp.17;
+  const struct ip_addr_t * iftmp.16;
+  const struct ip_addr_t * iftmp.15;
+  const struct ip_addr_t * iftmp.14;
+  int iftmp.13;
+  int iftmp.12;
+  _Bool iftmp.11;
+  _Bool iftmp.10;
+  err_t D.8238;
+  tcp_state _1;
+  struct tcp_pcb * tcp_input_pcb.9_2;
+  short unsigned int _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  short unsigned int _6;
+  unsigned int _7;
+  unsigned int _8;
+  struct ip_addr_t * _9;
+  struct ip_addr_t * _10;
+  struct ip_addr_t * _11;
+  struct ip_addr_t * _12;
+  unsigned char _13;
+  struct ip6_addr_t * _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  struct ip4_addr_t * _19;
+  long unsigned int _20;
+  struct ip_addr_t * _21;
+  unsigned char _22;
+  struct ip6_addr_t * _23;
+  unsigned char _24;
+  unsigned char _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  unsigned char _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  long unsigned int _33;
+  struct tcp_hdr * _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  short unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  short unsigned int _42;
+  long unsigned int _43;
+  struct tcp_seg * _44;
+  unsigned char _45;
+  short unsigned int _46;
+  unsigned int _47;
+  unsigned int _48;
+  struct tcp_seg * _49;
+  struct tcp_hdr * _50;
+  short unsigned int _51;
+  short unsigned int _52;
+  unsigned char _53;
+  unsigned int _54;
+  unsigned int _55;
+  struct tcp_seg * _56;
+  short unsigned int _57;
+  unsigned int _58;
+  unsigned int _59;
+  struct tcp_seg * _60;
+  struct tcp_seg * _61;
+  struct tcp_seg * _62;
+  struct tcp_seg * _63;
+  short unsigned int _64;
+  short unsigned int _65;
+  short unsigned int _66;
+  short unsigned int _67;
+  short unsigned int _68;
+  unsigned int _69;
+  unsigned int _70;
+  tcp_state _71;
+  struct tcp_hdr * _72;
+  short unsigned int _73;
+  short unsigned int _74;
+  struct tcp_hdr * _75;
+  short unsigned int _76;
+  short unsigned int _77;
+  short unsigned int _78;
+  struct tcp_seg * _79;
+  tcp_state _80;
+  short unsigned int _81;
+  short unsigned int _82;
+  struct tcp_hdr * _83;
+  long unsigned int _84;
+  long unsigned int _85;
+  short unsigned int _86;
+  unsigned int _87;
+  struct tcp_hdr * _88;
+  short unsigned int _89;
+  short unsigned int _90;
+  unsigned char _91;
+  unsigned int _92;
+  unsigned int _93;
+  unsigned int _94;
+  long unsigned int _95;
+  long unsigned int _96;
+  long int _97;
+  short unsigned int _98;
+  unsigned int _99;
+  struct tcp_hdr * _100;
+  short unsigned int _101;
+  short unsigned int _102;
+  unsigned char _103;
+  unsigned int _104;
+  unsigned int _105;
+  unsigned int _106;
+  struct tcp_seg * _107;
+  struct tcp_hdr * _108;
+  long unsigned int _109;
+  long unsigned int _110;
+  struct tcp_hdr * _111;
+  long unsigned int _112;
+  long unsigned int _113;
+  long unsigned int _114;
+  long int _115;
+  struct tcp_seg * _116;
+  struct tcp_seg * _117;
+  struct tcp_seg * _118;
+  struct tcp_hdr * _119;
+  long unsigned int _120;
+  long unsigned int _121;
+  struct tcp_hdr * _122;
+  long unsigned int _123;
+  long unsigned int _124;
+  long unsigned int _125;
+  long int _126;
+  struct tcp_seg * _127;
+  struct tcp_hdr * _128;
+  long unsigned int _129;
+  long unsigned int _130;
+  long unsigned int _131;
+  long unsigned int _132;
+  short unsigned int _133;
+  long unsigned int _134;
+  long unsigned int _135;
+  struct tcp_seg * _136;
+  short unsigned int _137;
+  short unsigned int _138;
+  err_t _145;
+  _Bool iftmp.10_146;
+  _Bool iftmp.11_147;
+  int iftmp.12_148;
+  int iftmp.13_149;
+  const struct ip_addr_t * iftmp.14_150;
+  const struct ip_addr_t * iftmp.15_151;
+  const struct ip_addr_t * iftmp.16_152;
+  int iftmp.17_153;
+  unsigned int iftmp.18_154;
+  unsigned int iftmp.19_155;
+  _Bool iftmp.10_179;
+  int iftmp.12_180;
+  int iftmp.12_181;
+  _Bool iftmp.11_182;
+  int iftmp.13_183;
+  int iftmp.13_184;
+  _Bool iftmp.11_185;
+  _Bool iftmp.10_186;
+  const struct ip_addr_t * iftmp.15_187;
+  const struct ip_addr_t * iftmp.15_189;
+  const struct ip_addr_t * iftmp.14_190;
+  const struct ip_addr_t * iftmp.16_191;
+  const struct ip_addr_t * iftmp.16_192;
+  const struct ip_addr_t * iftmp.14_193;
+  err_t _206;
+  int iftmp.17_213;
+  int iftmp.17_214;
+  unsigned int iftmp.18_223;
+  unsigned int iftmp.18_224;
+  unsigned int iftmp.19_228;
+  unsigned int iftmp.19_229;
+  err_t _246;
+  err_t _253;
+  err_t _254;
+  err_t _256;
+  err_t _258;
+  err_t _259;
+
+  <bb 2> :
+  if (pcb_173(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_173(D)->state;
+  if (_1 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  tcp_input_pcb.9_2 = tcp_input_pcb;
+  if (pcb_173(D) == tcp_input_pcb.9_2)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _259 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 106>; [INV]
+
+  <bb 8> :
+  _3 = pcb_173(D)->cwnd;
+  _4 = pcb_173(D)->snd_wnd;
+  _5 = MIN_EXPR <_3, _4>;
+  wnd_175 = (u32_t) _5;
+  seg_176 = pcb_173(D)->unsent;
+  if (seg_176 == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  _6 = pcb_173(D)->flags;
+  _7 = (unsigned int) _6;
+  _8 = _7 & 2;
+  if (_8 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _256 = tcp_send_empty_ack (pcb_173(D));
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 106>; [INV]
+
+  <bb 11> :
+  // predicted unlikely by goto predictor.
+  goto <bb 105>; [INV]
+
+  <bb 12> :
+  _9 = &pcb_173(D)->local_ip;
+  _10 = &pcb_173(D)->remote_ip;
+  netif_178 = tcp_route (pcb_173(D), _9, _10);
+  if (netif_178 == 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _254 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 106>; [INV]
+
+  <bb 14> :
+  _11 = &pcb_173(D)->local_ip;
+  if (_11 != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 15> :
+  _12 = &pcb_173(D)->local_ip;
+  if (_12 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 16> :
+  _13 = pcb_173(D)->local_ip.type;
+  if (_13 == 6)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 17> :
+  _14 = &pcb_173(D)->local_ip.u_addr.ip6;
+  if (_14 == 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  _15 = pcb_173(D)->local_ip.u_addr.ip6.addr[0];
+  if (_15 == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 19> :
+  _16 = pcb_173(D)->local_ip.u_addr.ip6.addr[1];
+  if (_16 == 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 20> :
+  _17 = pcb_173(D)->local_ip.u_addr.ip6.addr[2];
+  if (_17 == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 21> :
+  _18 = pcb_173(D)->local_ip.u_addr.ip6.addr[3];
+  if (_18 == 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  iftmp.12_181 = 1;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  iftmp.12_180 = 0;
+
+  <bb 24> :
+  # iftmp.12_148 = PHI <iftmp.12_181(22), iftmp.12_180(23)>
+  iftmp.11_182 = (_Bool) iftmp.12_148;
+  goto <bb 30>; [INV]
+
+  <bb 25> :
+  _19 = &pcb_173(D)->local_ip.u_addr.ip4;
+  if (_19 == 0B)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 26> :
+  _20 = pcb_173(D)->local_ip.u_addr.ip4.addr;
+  if (_20 == 0)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 27> :
+  iftmp.13_184 = 1;
+  goto <bb 29>; [INV]
+
+  <bb 28> :
+  iftmp.13_183 = 0;
+
+  <bb 29> :
+  # iftmp.13_149 = PHI <iftmp.13_184(27), iftmp.13_183(28)>
+  iftmp.11_185 = (_Bool) iftmp.13_149;
+
+  <bb 30> :
+  # iftmp.11_147 = PHI <iftmp.11_182(24), iftmp.11_185(29)>
+  iftmp.10_186 = iftmp.11_147;
+  goto <bb 32>; [INV]
+
+  <bb 31> :
+  iftmp.10_179 = 1;
+
+  <bb 32> :
+  # iftmp.10_146 = PHI <iftmp.10_186(30), iftmp.10_179(31)>
+  if (iftmp.10_146 != 0)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 33> :
+  _21 = &pcb_173(D)->remote_ip;
+  if (_21 != 0B)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 34> :
+  _22 = pcb_173(D)->remote_ip.type;
+  if (_22 == 6)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 35> :
+  if (netif_178 != 0B)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  _23 = &pcb_173(D)->remote_ip.u_addr.ip6;
+  iftmp.15_189 = ip6_select_source_address (netif_178, _23);
+  goto <bb 38>; [INV]
+
+  <bb 37> :
+  iftmp.15_187 = 0B;
+
+  <bb 38> :
+  # iftmp.15_151 = PHI <iftmp.15_189(36), iftmp.15_187(37)>
+  iftmp.14_190 = iftmp.15_151;
+  goto <bb 43>; [INV]
+
+  <bb 39> :
+  if (netif_178 != 0B)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 40> :
+  iftmp.16_192 = &netif_178->ip_addr;
+  goto <bb 42>; [INV]
+
+  <bb 41> :
+  iftmp.16_191 = 0B;
+
+  <bb 42> :
+  # iftmp.16_152 = PHI <iftmp.16_192(40), iftmp.16_191(41)>
+  iftmp.14_193 = iftmp.16_152;
+
+  <bb 43> :
+  # iftmp.14_150 = PHI <iftmp.14_190(38), iftmp.14_193(42)>
+  local_ip_194 = iftmp.14_150;
+  if (local_ip_194 == 0B)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 44> :
+  _206 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 106>; [INV]
+
+  <bb 45> :
+  _24 = local_ip_194->type;
+  pcb_173(D)->local_ip.type = _24;
+  _25 = local_ip_194->type;
+  if (_25 == 6)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 46> :
+  _26 = local_ip_194->u_addr.ip6.addr[0];
+  pcb_173(D)->local_ip.u_addr.ip6.addr[0] = _26;
+  _27 = local_ip_194->u_addr.ip6.addr[1];
+  pcb_173(D)->local_ip.u_addr.ip6.addr[1] = _27;
+  _28 = local_ip_194->u_addr.ip6.addr[2];
+  pcb_173(D)->local_ip.u_addr.ip6.addr[2] = _28;
+  _29 = local_ip_194->u_addr.ip6.addr[3];
+  pcb_173(D)->local_ip.u_addr.ip6.addr[3] = _29;
+  _30 = local_ip_194->u_addr.ip6.zone;
+  pcb_173(D)->local_ip.u_addr.ip6.zone = _30;
+  goto <bb 48>; [INV]
+
+  <bb 47> :
+  _31 = local_ip_194->u_addr.ip4.addr;
+  pcb_173(D)->local_ip.u_addr.ip4.addr = _31;
+  pcb_173(D)->local_ip.u_addr.ip6.addr[3] = 0;
+  _32 = pcb_173(D)->local_ip.u_addr.ip6.addr[3];
+  pcb_173(D)->local_ip.u_addr.ip6.addr[2] = _32;
+  _33 = pcb_173(D)->local_ip.u_addr.ip6.addr[2];
+  pcb_173(D)->local_ip.u_addr.ip6.addr[1] = _33;
+  pcb_173(D)->local_ip.u_addr.ip6.zone = 0;
+
+  <bb 48> :
+  _34 = seg_176->tcphdr;
+  _35 = _34->seqno;
+  _36 = lwip_htonl (_35);
+  _37 = pcb_173(D)->lastack;
+  _38 = _36 - _37;
+  _39 = seg_176->len;
+  _40 = (long unsigned int) _39;
+  _41 = _38 + _40;
+  if (wnd_175 < _41)
+    goto <bb 49>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 49> :
+  _42 = pcb_173(D)->snd_wnd;
+  _43 = (long unsigned int) _42;
+  if (wnd_175 == _43)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 50> :
+  _44 = pcb_173(D)->unacked;
+  if (_44 == 0B)
+    goto <bb 51>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 51> :
+  _45 = pcb_173(D)->persist_backoff;
+  if (_45 == 0)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 52> :
+  pcb_173(D)->persist_cnt = 0;
+  pcb_173(D)->persist_backoff = 1;
+  pcb_173(D)->persist_probe = 0;
+
+  <bb 53> :
+  _46 = pcb_173(D)->flags;
+  _47 = (unsigned int) _46;
+  _48 = _47 & 2;
+  if (_48 != 0)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 55>; [INV]
+
+  <bb 54> :
+  _253 = tcp_send_empty_ack (pcb_173(D));
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 106>; [INV]
+
+  <bb 55> :
+  // predicted unlikely by goto predictor.
+  goto <bb 105>; [INV]
+
+  <bb 56> :
+  pcb_173(D)->persist_backoff = 0;
+  useg_209 = pcb_173(D)->unacked;
+  if (useg_209 != 0B)
+    goto <bb 57>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 57> :
+  goto <bb 59>; [INV]
+
+  <bb 58> :
+  useg_210 = useg_140->next;
+
+  <bb 59> :
+  # useg_140 = PHI <useg_209(57), useg_210(58)>
+  _49 = useg_140->next;
+  if (_49 != 0B)
+    goto <bb 58>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 60> :
+  # useg_141 = PHI <useg_209(56), useg_140(59)>
+  goto <bb 101>; [INV]
+
+  <bb 61> :
+  _50 = seg_139->tcphdr;
+  _51 = _50->_hdrlen_rsvd_flags;
+  _52 = lwip_htons (_51);
+  _53 = (unsigned char) _52;
+  _54 = (unsigned int) _53;
+  _55 = _54 & 4;
+  if (_55 != 0)
+    goto <bb 62>; [INV]
+  else
+    goto <bb 63>; [INV]
+
+  <bb 62> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 62>; [INV]
+
+  <bb 63> :
+  _56 = pcb_173(D)->unacked;
+  if (_56 == 0B)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 64>; [INV]
+
+  <bb 64> :
+  _57 = pcb_173(D)->flags;
+  _58 = (unsigned int) _57;
+  _59 = _58 & 68;
+  if (_59 != 0)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 65> :
+  _60 = pcb_173(D)->unsent;
+  if (_60 != 0B)
+    goto <bb 66>; [INV]
+  else
+    goto <bb 68>; [INV]
+
+  <bb 66> :
+  _61 = pcb_173(D)->unsent;
+  _62 = _61->next;
+  if (_62 != 0B)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 67> :
+  _63 = pcb_173(D)->unsent;
+  _64 = _63->len;
+  _65 = pcb_173(D)->mss;
+  if (_64 >= _65)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 68>; [INV]
+
+  <bb 68> :
+  _66 = pcb_173(D)->snd_buf;
+  if (_66 == 0)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 69> :
+  _67 = pcb_173(D)->snd_queuelen;
+  if (_67 > 19)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 71>; [INV]
+
+  <bb 70> :
+  iftmp.17_214 = 1;
+  goto <bb 72>; [INV]
+
+  <bb 71> :
+  iftmp.17_213 = 0;
+
+  <bb 72> :
+  # iftmp.17_153 = PHI <iftmp.17_214(70), iftmp.17_213(71)>
+  if (iftmp.17_153 == 0)
+    goto <bb 73>; [INV]
+  else
+    goto <bb 75>; [INV]
+
+  <bb 73> :
+  _68 = pcb_173(D)->flags;
+  _69 = (unsigned int) _68;
+  _70 = _69 & 160;
+  if (_70 == 0)
+    goto <bb 74>; [INV]
+  else
+    goto <bb 75>; [INV]
+
+  <bb 74> :
+  goto <bb 103>; [INV]
+
+  <bb 75> :
+  _71 = pcb_173(D)->state;
+  if (_71 != 2)
+    goto <bb 76>; [INV]
+  else
+    goto <bb 77>; [INV]
+
+  <bb 76> :
+  _72 = seg_139->tcphdr;
+  _73 = _72->_hdrlen_rsvd_flags;
+  _74 = lwip_htons (16);
+  _75 = seg_139->tcphdr;
+  _76 = _73 | _74;
+  _75->_hdrlen_rsvd_flags = _76;
+
+  <bb 77> :
+  err_218 = tcp_output_segment (seg_139, pcb_173(D), netif_178);
+  if (err_218 != 0)
+    goto <bb 78>; [INV]
+  else
+    goto <bb 79>; [INV]
+
+  <bb 78> :
+  _77 = pcb_173(D)->flags;
+  _78 = _77 | 128;
+  pcb_173(D)->flags = _78;
+  _246 = err_218;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 106>; [INV]
+
+  <bb 79> :
+  _79 = seg_139->next;
+  pcb_173(D)->unsent = _79;
+  _80 = pcb_173(D)->state;
+  if (_80 != 2)
+    goto <bb 80>; [INV]
+  else
+    goto <bb 81>; [INV]
+
+  <bb 80> :
+  _81 = pcb_173(D)->flags;
+  _82 = _81 & 65532;
+  pcb_173(D)->flags = _82;
+
+  <bb 81> :
+  _83 = seg_139->tcphdr;
+  _84 = _83->seqno;
+  _85 = lwip_htonl (_84);
+  _86 = seg_139->len;
+  _87 = (unsigned int) _86;
+  _88 = seg_139->tcphdr;
+  _89 = _88->_hdrlen_rsvd_flags;
+  _90 = lwip_htons (_89);
+  _91 = (unsigned char) _90;
+  _92 = (unsigned int) _91;
+  _93 = _92 & 3;
+  if (_93 != 0)
+    goto <bb 82>; [INV]
+  else
+    goto <bb 83>; [INV]
+
+  <bb 82> :
+  iftmp.18_224 = 1;
+  goto <bb 84>; [INV]
+
+  <bb 83> :
+  iftmp.18_223 = 0;
+
+  <bb 84> :
+  # iftmp.18_154 = PHI <iftmp.18_224(82), iftmp.18_223(83)>
+  _94 = iftmp.18_154 + _87;
+  snd_nxt_225 = _85 + _94;
+  _95 = pcb_173(D)->snd_nxt;
+  _96 = _95 - snd_nxt_225;
+  _97 = (long int) _96;
+  if (_97 < 0)
+    goto <bb 85>; [INV]
+  else
+    goto <bb 86>; [INV]
+
+  <bb 85> :
+  pcb_173(D)->snd_nxt = snd_nxt_225;
+
+  <bb 86> :
+  _98 = seg_139->len;
+  _99 = (unsigned int) _98;
+  _100 = seg_139->tcphdr;
+  _101 = _100->_hdrlen_rsvd_flags;
+  _102 = lwip_htons (_101);
+  _103 = (unsigned char) _102;
+  _104 = (unsigned int) _103;
+  _105 = _104 & 3;
+  if (_105 != 0)
+    goto <bb 87>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 87> :
+  iftmp.19_229 = 1;
+  goto <bb 89>; [INV]
+
+  <bb 88> :
+  iftmp.19_228 = 0;
+
+  <bb 89> :
+  # iftmp.19_155 = PHI <iftmp.19_229(87), iftmp.19_228(88)>
+  _106 = iftmp.19_155 + _99;
+  if (_106 != 0)
+    goto <bb 90>; [INV]
+  else
+    goto <bb 99>; [INV]
+
+  <bb 90> :
+  seg_139->next = 0B;
+  _107 = pcb_173(D)->unacked;
+  if (_107 == 0B)
+    goto <bb 91>; [INV]
+  else
+    goto <bb 92>; [INV]
+
+  <bb 91> :
+  pcb_173(D)->unacked = seg_139;
+  useg_243 = seg_139;
+  goto <bb 100>; [INV]
+
+  <bb 92> :
+  _108 = seg_139->tcphdr;
+  _109 = _108->seqno;
+  _110 = lwip_htonl (_109);
+  _111 = useg_143->tcphdr;
+  _112 = _111->seqno;
+  _113 = lwip_htonl (_112);
+  _114 = _110 - _113;
+  _115 = (long int) _114;
+  if (_115 < 0)
+    goto <bb 93>; [INV]
+  else
+    goto <bb 98>; [INV]
+
+  <bb 93> :
+  cur_seg_236 = &pcb_173(D)->unacked;
+  goto <bb 95>; [INV]
+
+  <bb 94> :
+  _116 = *cur_seg_144;
+  cur_seg_239 = &_116->next;
+
+  <bb 95> :
+  # cur_seg_144 = PHI <cur_seg_236(93), cur_seg_239(94)>
+  _117 = *cur_seg_144;
+  if (_117 != 0B)
+    goto <bb 96>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 96> :
+  _118 = *cur_seg_144;
+  _119 = _118->tcphdr;
+  _120 = _119->seqno;
+  _121 = lwip_htonl (_120);
+  _122 = seg_139->tcphdr;
+  _123 = _122->seqno;
+  _124 = lwip_htonl (_123);
+  _125 = _121 - _124;
+  _126 = (long int) _125;
+  if (_126 < 0)
+    goto <bb 94>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 97> :
+  _127 = *cur_seg_144;
+  seg_139->next = _127;
+  *cur_seg_144 = seg_139;
+  goto <bb 100>; [INV]
+
+  <bb 98> :
+  useg_143->next = seg_139;
+  useg_235 = useg_143->next;
+  goto <bb 100>; [INV]
+
+  <bb 99> :
+  tcp_seg_free (seg_139);
+
+  <bb 100> :
+  # useg_142 = PHI <useg_143(97), useg_143(99), useg_243(91), useg_235(98)>
+  seg_244 = pcb_173(D)->unsent;
+
+  <bb 101> :
+  # seg_139 = PHI <seg_176(60), seg_244(100)>
+  # useg_143 = PHI <useg_141(60), useg_142(100)>
+  if (seg_139 != 0B)
+    goto <bb 102>; [INV]
+  else
+    goto <bb 103>; [INV]
+
+  <bb 102> :
+  _128 = seg_139->tcphdr;
+  _129 = _128->seqno;
+  _130 = lwip_htonl (_129);
+  _131 = pcb_173(D)->lastack;
+  _132 = _130 - _131;
+  _133 = seg_139->len;
+  _134 = (long unsigned int) _133;
+  _135 = _132 + _134;
+  if (wnd_175 >= _135)
+    goto <bb 61>; [INV]
+  else
+    goto <bb 103>; [INV]
+
+  <bb 103> :
+  _136 = pcb_173(D)->unsent;
+  if (_136 == 0B)
+    goto <bb 104>; [INV]
+  else
+    goto <bb 105>; [INV]
+
+  <bb 104> :
+  pcb_173(D)->unsent_oversize = 0;
+
+  <bb 105> :
+output_done:
+  _137 = pcb_173(D)->flags;
+  _138 = _137 & 65407;
+  pcb_173(D)->flags = _138;
+  _258 = 0;
+
+  <bb 106> :
+  # _145 = PHI <_259(7), _256(10), _254(13), _206(44), _253(54), _246(78), _258(105)>
+<L114>:
+  return _145;
+
+}
+
+
+tcp_enqueue_flags (struct tcp_pcb * pcb, u8_t flags)
+{
+  struct tcp_seg * useg;
+  u8_t optlen;
+  u8_t optflags;
+  struct tcp_seg * seg;
+  struct pbuf * p;
+  short unsigned int D.8224;
+  err_t D.8207;
+  unsigned int _1;
+  unsigned int _2;
+  unsigned int _3;
+  unsigned int _4;
+  int _5;
+  int _6;
+  unsigned char _7;
+  short unsigned int _8;
+  short unsigned int _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  short unsigned int _13;
+  short unsigned int _14;
+  long unsigned int _15;
+  short unsigned int _16;
+  short unsigned int _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  struct tcp_hdr * _20;
+  unsigned int _21;
+  unsigned int _22;
+  short unsigned int _23;
+  struct tcp_seg * _24;
+  struct tcp_seg * _25;
+  unsigned int _26;
+  unsigned int _27;
+  unsigned int _28;
+  unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  unsigned int _32;
+  unsigned int _33;
+  short unsigned int _34;
+  short unsigned int _35;
+  struct pbuf * _36;
+  short unsigned int _37;
+  short unsigned int _38;
+  short unsigned int _39;
+  struct tcp_seg * _40;
+  struct tcp_seg * _41;
+  err_t _44;
+  short unsigned int _74;
+  err_t _77;
+  err_t _82;
+  err_t _86;
+
+  <bb 2> :
+  optflags_55 = 0;
+  optlen_56 = 0;
+  _1 = (unsigned int) flags_57(D);
+  _2 = _1 & 3;
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (pcb_59(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _3 = (unsigned int) flags_57(D);
+  _4 = _3 & 2;
+  if (_4 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  optflags_60 = 1;
+
+  <bb 8> :
+  # optflags_42 = PHI <optflags_55(6), optflags_60(7)>
+  _5 = (int) optflags_42;
+  _6 = _5 << 2;
+  _7 = (unsigned char) _6;
+  optlen_61 = _7 & 4;
+  _8 = (short unsigned int) optlen_61;
+  p_63 = pbuf_alloc (74, _8, 640);
+  if (p_63 == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _9 = pcb_59(D)->flags;
+  _10 = _9 | 128;
+  pcb_59(D)->flags = _10;
+  _11 = lwip_stats.tcp.memerr;
+  _12 = _11 + 1;
+  lwip_stats.tcp.memerr = _12;
+  _86 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 34>; [INV]
+
+  <bb 10> :
+  _13 = p_63->len;
+  _14 = (short unsigned int) optlen_61;
+  if (_13 < _14)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 11>; [INV]
+
+  <bb 12> :
+  _15 = pcb_59(D)->snd_lbb;
+  seg_65 = tcp_create_segment (pcb_59(D), p_63, flags_57(D), _15, optflags_42);
+  if (seg_65 == 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _16 = pcb_59(D)->flags;
+  _17 = _16 | 128;
+  pcb_59(D)->flags = _17;
+  _18 = lwip_stats.tcp.memerr;
+  _19 = _18 + 1;
+  lwip_stats.tcp.memerr = _19;
+  _82 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 34>; [INV]
+
+  <bb 14> :
+  _20 = seg_65->tcphdr;
+  _21 = (unsigned int) _20;
+  _22 = _21 & 3;
+  if (_22 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 15>; [INV]
+
+  <bb 16> :
+  _23 = seg_65->len;
+  if (_23 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 17>; [INV]
+
+  <bb 18> :
+  _24 = pcb_59(D)->unsent;
+  if (_24 == 0B)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  pcb_59(D)->unsent = seg_65;
+  goto <bb 24>; [INV]
+
+  <bb 20> :
+  useg_66 = pcb_59(D)->unsent;
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  useg_68 = useg_43->next;
+
+  <bb 22> :
+  # useg_43 = PHI <useg_66(20), useg_68(21)>
+  _25 = useg_43->next;
+  if (_25 != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  useg_43->next = seg_65;
+
+  <bb 24> :
+  pcb_59(D)->unsent_oversize = 0;
+  _26 = (unsigned int) flags_57(D);
+  _27 = _26 & 2;
+  if (_27 != 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 25> :
+  _28 = (unsigned int) flags_57(D);
+  _29 = _28 & 1;
+  if (_29 != 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  _30 = pcb_59(D)->snd_lbb;
+  _31 = _30 + 1;
+  pcb_59(D)->snd_lbb = _31;
+
+  <bb 27> :
+  _32 = (unsigned int) flags_57(D);
+  _33 = _32 & 1;
+  if (_33 != 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  _34 = pcb_59(D)->flags;
+  _35 = _34 | 32;
+  pcb_59(D)->flags = _35;
+
+  <bb 29> :
+  _36 = seg_65->p;
+  _74 = pbuf_clen (_36);
+  _37 = pcb_59(D)->snd_queuelen;
+  _38 = _74 + _37;
+  pcb_59(D)->snd_queuelen = _38;
+  _39 = pcb_59(D)->snd_queuelen;
+  if (_39 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 30> :
+  _40 = pcb_59(D)->unacked;
+  if (_40 == 0B)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 31> :
+  _41 = pcb_59(D)->unsent;
+  if (_41 == 0B)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 32>; [INV]
+
+  <bb 33> :
+  _77 = 0;
+
+  <bb 34> :
+  # _44 = PHI <_86(9), _82(13), _77(33)>
+<L39>:
+  return _44;
+
+}
+
+
+tcp_send_fin (struct tcp_pcb * pcb)
+{
+  struct tcp_seg * last_unsent;
+  err_t D.8197;
+  struct tcp_seg * _1;
+  struct tcp_seg * _2;
+  struct tcp_hdr * _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  unsigned char _6;
+  unsigned int _7;
+  unsigned int _8;
+  struct tcp_hdr * _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  struct tcp_hdr * _12;
+  short unsigned int _13;
+  short unsigned int _14;
+  short unsigned int _15;
+  err_t _17;
+  err_t _28;
+  err_t _31;
+
+  <bb 2> :
+  if (pcb_21(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_21(D)->unsent;
+  if (_1 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 5> :
+  last_unsent_23 = pcb_21(D)->unsent;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  last_unsent_29 = last_unsent_16->next;
+
+  <bb 7> :
+  # last_unsent_16 = PHI <last_unsent_23(5), last_unsent_29(6)>
+  _2 = last_unsent_16->next;
+  if (_2 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _3 = last_unsent_16->tcphdr;
+  _4 = _3->_hdrlen_rsvd_flags;
+  _5 = lwip_htons (_4);
+  _6 = (unsigned char) _5;
+  _7 = (unsigned int) _6;
+  _8 = _7 & 7;
+  if (_8 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _9 = last_unsent_16->tcphdr;
+  _10 = _9->_hdrlen_rsvd_flags;
+  _11 = lwip_htons (1);
+  _12 = last_unsent_16->tcphdr;
+  _13 = _10 | _11;
+  _12->_hdrlen_rsvd_flags = _13;
+  _14 = pcb_21(D)->flags;
+  _15 = _14 | 32;
+  pcb_21(D)->flags = _15;
+  _28 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _31 = tcp_enqueue_flags (pcb_21(D), 1);
+
+  <bb 11> :
+  # _17 = PHI <_28(9), _31(10)>
+<L10>:
+  return _17;
+
+}
+
+
+tcp_split_unsent_seg (struct tcp_pcb * pcb, u16_t split)
+{
+  u16_t offset;
+  u16_t remainder;
+  u8_t remainder_flags;
+  u8_t split_flags;
+  u8_t optflags;
+  u8_t optlen;
+  struct pbuf * p;
+  struct tcp_seg * useg;
+  struct tcp_seg * seg;
+  short unsigned int D.8183;
+  short unsigned int D.8182;
+  short unsigned int D.8181;
+  err_t D.8160;
+  short unsigned int _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  int _4;
+  int _5;
+  unsigned char _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  short unsigned int _9;
+  struct pbuf * _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  short unsigned int _13;
+  struct pbuf * _14;
+  void * _15;
+  sizetype _16;
+  void * _17;
+  short unsigned int _18;
+  struct tcp_hdr * _19;
+  short unsigned int _20;
+  short unsigned int _21;
+  unsigned char _22;
+  unsigned int _23;
+  unsigned int _24;
+  unsigned int _25;
+  unsigned int _26;
+  struct tcp_hdr * _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  struct pbuf * _32;
+  short unsigned int _33;
+  short unsigned int _34;
+  struct pbuf * _35;
+  struct pbuf * _36;
+  short unsigned int _37;
+  short unsigned int _38;
+  short unsigned int _39;
+  short unsigned int _40;
+  struct tcp_hdr * _41;
+  short unsigned int _42;
+  short unsigned int _43;
+  short unsigned int _44;
+  struct tcp_hdr * _45;
+  short unsigned int _46;
+  struct pbuf * _47;
+  short unsigned int _48;
+  short unsigned int _49;
+  struct pbuf * _50;
+  short unsigned int _51;
+  short unsigned int _52;
+  struct tcp_seg * _53;
+  struct tcp_seg * _54;
+  short unsigned int _55;
+  short unsigned int _56;
+  err_t _63;
+  short unsigned int _98;
+  short unsigned int _105;
+  short unsigned int _108;
+  err_t _113;
+  err_t _117;
+  err_t _121;
+  err_t _123;
+
+  <bb 2> :
+  seg_73 = 0B;
+  useg_74 = 0B;
+  p_75 = 0B;
+  if (pcb_76(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  useg_78 = pcb_76(D)->unsent;
+  if (useg_78 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _123 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 6> :
+  if (split_79(D) == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  _1 = useg_78->len;
+  if (split_79(D) >= _1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _121 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 10> :
+  _2 = pcb_76(D)->mss;
+  if (split_79(D) > _2)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 11>; [INV]
+
+  <bb 12> :
+  _3 = useg_78->len;
+  if (_3 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 13>; [INV]
+
+  <bb 14> :
+  optflags_80 = useg_78->flags;
+  _4 = (int) optflags_80;
+  _5 = _4 << 2;
+  _6 = (unsigned char) _5;
+  optlen_81 = _6 & 4;
+  _7 = useg_78->len;
+  remainder_82 = _7 - split_79(D);
+  _8 = (short unsigned int) optlen_81;
+  _9 = remainder_82 + _8;
+  p_84 = pbuf_alloc (74, _9, 640);
+  if (p_84 == 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  // predicted unlikely by goto predictor.
+  goto <bb 27>; [INV]
+
+  <bb 16> :
+  _10 = useg_78->p;
+  _11 = _10->tot_len;
+  _12 = useg_78->len;
+  _13 = _11 - _12;
+  offset_85 = split_79(D) + _13;
+  _14 = useg_78->p;
+  _15 = p_84->payload;
+  _16 = (sizetype) optlen_81;
+  _17 = _15 + _16;
+  _18 = pbuf_copy_partial (_14, _17, remainder_82, offset_85);
+  if (remainder_82 != _18)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  // predicted unlikely by goto predictor.
+  goto <bb 27>; [INV]
+
+  <bb 18> :
+  _19 = useg_78->tcphdr;
+  _20 = _19->_hdrlen_rsvd_flags;
+  _21 = lwip_htons (_20);
+  _22 = (unsigned char) _21;
+  split_flags_88 = _22 & 63;
+  remainder_flags_89 = 0;
+  _23 = (unsigned int) split_flags_88;
+  _24 = _23 & 8;
+  if (_24 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  split_flags_90 = split_flags_88 & 247;
+  remainder_flags_91 = remainder_flags_89 | 8;
+
+  <bb 20> :
+  # split_flags_59 = PHI <split_flags_88(18), split_flags_90(19)>
+  # remainder_flags_61 = PHI <remainder_flags_89(18), remainder_flags_91(19)>
+  _25 = (unsigned int) split_flags_59;
+  _26 = _25 & 1;
+  if (_26 != 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  split_flags_92 = split_flags_59 & 254;
+  remainder_flags_93 = remainder_flags_61 | 1;
+
+  <bb 22> :
+  # split_flags_60 = PHI <split_flags_59(20), split_flags_92(21)>
+  # remainder_flags_62 = PHI <remainder_flags_61(20), remainder_flags_93(21)>
+  _27 = useg_78->tcphdr;
+  _28 = _27->seqno;
+  _29 = lwip_htonl (_28);
+  _30 = (long unsigned int) split_79(D);
+  _31 = _29 + _30;
+  seg_96 = tcp_create_segment (pcb_76(D), p_84, remainder_flags_62, _31, optflags_80);
+  if (seg_96 == 0B)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  p_114 = 0B;
+  // predicted unlikely by goto predictor.
+  goto <bb 27>; [INV]
+
+  <bb 24> :
+  _32 = useg_78->p;
+  _98 = pbuf_clen (_32);
+  _33 = pcb_76(D)->snd_queuelen;
+  _34 = _33 - _98;
+  pcb_76(D)->snd_queuelen = _34;
+  _35 = useg_78->p;
+  _36 = useg_78->p;
+  _37 = _36->tot_len;
+  _38 = _37 - remainder_82;
+  pbuf_realloc (_35, _38);
+  _39 = useg_78->len;
+  _40 = _39 - remainder_82;
+  useg_78->len = _40;
+  _41 = useg_78->tcphdr;
+  _42 = _41->_hdrlen_rsvd_flags;
+  _43 = (short unsigned int) split_flags_60;
+  _44 = lwip_htons (_43);
+  _45 = useg_78->tcphdr;
+  _46 = _42 | _44;
+  _45->_hdrlen_rsvd_flags = _46;
+  _47 = useg_78->p;
+  _105 = pbuf_clen (_47);
+  _48 = pcb_76(D)->snd_queuelen;
+  _49 = _105 + _48;
+  pcb_76(D)->snd_queuelen = _49;
+  _50 = seg_96->p;
+  _108 = pbuf_clen (_50);
+  _51 = pcb_76(D)->snd_queuelen;
+  _52 = _108 + _51;
+  pcb_76(D)->snd_queuelen = _52;
+  _53 = useg_78->next;
+  seg_96->next = _53;
+  useg_78->next = seg_96;
+  _54 = seg_96->next;
+  if (_54 == 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  pcb_76(D)->unsent_oversize = 0;
+
+  <bb 26> :
+  _113 = 0;
+  goto <bb 32>; [INV]
+
+  <bb 27> :
+  # seg_57 = PHI <seg_73(15), seg_73(17), seg_96(23)>
+  # p_58 = PHI <p_84(15), p_84(17), p_114(23)>
+memerr:
+  _55 = lwip_stats.tcp.memerr;
+  _56 = _55 + 1;
+  lwip_stats.tcp.memerr = _56;
+  if (seg_57 != 0B)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 28>; [INV]
+
+  <bb 29> :
+  if (p_58 != 0B)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  pbuf_free (p_58);
+
+  <bb 31> :
+  _117 = -1;
+
+  <bb 32> :
+  # _63 = PHI <_123(5), _117(31), _121(9), _113(26)>
+<L36>:
+  return _63;
+
+}
+
+
+tcp_write (struct tcp_pcb * pcb, const void * arg, u16_t len, u8_t apiflags)
+{
+  struct pbuf * p;
+  struct pbuf * p;
+  struct pbuf * p2;
+  u16_t seglen;
+  u16_t max_len;
+  u16_t left;
+  struct pbuf * p;
+  struct pbuf * p;
+  u16_t seglen;
+  u16_t unsent_optlen;
+  u16_t space;
+  u16_t mss_local;
+  err_t err;
+  u16_t extendlen;
+  u16_t oversize_used;
+  u16_t oversize;
+  u8_t optflags;
+  u8_t optlen;
+  u16_t queuelen;
+  u16_t pos;
+  struct tcp_seg * queue;
+  struct tcp_seg * prev_seg;
+  struct tcp_seg * seg;
+  struct tcp_seg * last_unsent;
+  struct pbuf * concat_p;
+  short unsigned int D.8105;
+  short unsigned int D.8088;
+  short unsigned int D.8078;
+  u16_t iftmp.1;
+  err_t D.8047;
+  short unsigned int _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  struct tcp_seg * _4;
+  struct tcp_seg * _5;
+  unsigned char _6;
+  int _7;
+  int _8;
+  short unsigned int _9;
+  int _10;
+  short unsigned int _11;
+  int _12;
+  int _13;
+  int _14;
+  short unsigned int _15;
+  short unsigned int _16;
+  short unsigned int _17;
+  short unsigned int oversize.2_18;
+  short unsigned int oversize.3_19;
+  short unsigned int oversize.4_20;
+  short unsigned int _21;
+  short unsigned int oversize.5_22;
+  short unsigned int _23;
+  short unsigned int oversize.6_24;
+  short unsigned int _25;
+  int _26;
+  int _27;
+  int _28;
+  int _29;
+  int _30;
+  int _31;
+  int _32;
+  void * _33;
+  sizetype _34;
+  const void * _35;
+  unsigned int _36;
+  struct pbuf * _37;
+  unsigned char _38;
+  int _39;
+  int _40;
+  void * _41;
+  short unsigned int _42;
+  sizetype _43;
+  const u8_t * _44;
+  sizetype _45;
+  const void * _46;
+  short unsigned int _47;
+  short unsigned int _48;
+  int _49;
+  int _50;
+  short unsigned int _51;
+  short unsigned int _52;
+  _Bool _53;
+  unsigned char _54;
+  short unsigned int _55;
+  void * _56;
+  sizetype _57;
+  void * _58;
+  sizetype _59;
+  const void * _60;
+  unsigned int _61;
+  short unsigned int oversize.7_62;
+  sizetype _63;
+  const void * _64;
+  short unsigned int _65;
+  long unsigned int _66;
+  long unsigned int _67;
+  long unsigned int _68;
+  short unsigned int _69;
+  short unsigned int _70;
+  struct pbuf * _71;
+  void * _72;
+  short unsigned int _73;
+  sizetype _74;
+  void * _75;
+  unsigned int _76;
+  short unsigned int _77;
+  short unsigned int _78;
+  short unsigned int _79;
+  short unsigned int _80;
+  short unsigned int oversize.8_81;
+  struct pbuf * _82;
+  short unsigned int _83;
+  short unsigned int _84;
+  short unsigned int _85;
+  struct pbuf * _86;
+  short unsigned int _87;
+  short unsigned int _88;
+  struct pbuf * _89;
+  short unsigned int _90;
+  short unsigned int _91;
+  short unsigned int _92;
+  short unsigned int _93;
+  short unsigned int _94;
+  short unsigned int _95;
+  long unsigned int _96;
+  long unsigned int _97;
+  long unsigned int _98;
+  short unsigned int _99;
+  short unsigned int _100;
+  short unsigned int _101;
+  struct tcp_seg * _102;
+  struct tcp_seg * _103;
+  struct tcp_hdr * _104;
+  int _105;
+  int _106;
+  struct tcp_hdr * _107;
+  short unsigned int _108;
+  short unsigned int _109;
+  struct tcp_hdr * _110;
+  short unsigned int _111;
+  short unsigned int _112;
+  short unsigned int _113;
+  short unsigned int _114;
+  short unsigned int _115;
+  short unsigned int _116;
+  struct tcp_seg * _117;
+  struct tcp_seg * _118;
+  err_t _146;
+  u16_t iftmp.1_147;
+  u16_t iftmp.1_190;
+  u16_t iftmp.1_191;
+  short unsigned int _221;
+  short unsigned int _228;
+  err_t _258;
+  short unsigned int _275;
+  err_t _290;
+  err_t _291;
+  err_t _292;
+  err_t _293;
+
+  <bb 2> :
+  concat_p_177 = 0B;
+  last_unsent_178 = 0B;
+  seg_179 = 0B;
+  prev_seg_180 = 0B;
+  queue_181 = 0B;
+  pos_182 = 0;
+  optflags_183 = 0;
+  oversize = 0;
+  oversize_used_186 = 0;
+  extendlen_187 = 0;
+  if (pcb_188(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _293 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 110>; [INV]
+
+  <bb 4> :
+  _1 = pcb_188(D)->snd_wnd_max;
+  _2 = _1 / 2;
+  _3 = pcb_188(D)->mss;
+  mss_local_189 = MIN_EXPR <_2, _3>;
+  if (mss_local_189 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.1_191 = pcb_188(D)->mss;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.1_190 = mss_local_189;
+
+  <bb 7> :
+  # iftmp.1_147 = PHI <iftmp.1_191(5), iftmp.1_190(6)>
+  mss_local_192 = iftmp.1_147;
+  if (arg_193(D) == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _292 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 110>; [INV]
+
+  <bb 9> :
+  err_196 = tcp_write_checks (pcb_188(D), len_194(D));
+  if (err_196 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _291 = err_196;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 110>; [INV]
+
+  <bb 11> :
+  queuelen_197 = pcb_188(D)->snd_queuelen;
+  optlen_198 = 0;
+  _4 = pcb_188(D)->unsent;
+  if (_4 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 12> :
+  last_unsent_200 = pcb_188(D)->unsent;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  last_unsent_232 = last_unsent_122->next;
+
+  <bb 14> :
+  # last_unsent_122 = PHI <last_unsent_200(12), last_unsent_232(13)>
+  _5 = last_unsent_122->next;
+  if (_5 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  _6 = last_unsent_122->flags;
+  _7 = (int) _6;
+  _8 = _7 << 2;
+  _9 = (short unsigned int) _8;
+  unsent_optlen_201 = _9 & 4;
+  _10 = (int) mss_local_192;
+  _11 = last_unsent_122->len;
+  _12 = (int) _11;
+  _13 = (int) unsent_optlen_201;
+  _14 = _12 + _13;
+  if (_10 < _14)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 16>; [INV]
+
+  <bb 17> :
+  _15 = last_unsent_122->len;
+  _16 = unsent_optlen_201 + _15;
+  space_202 = mss_local_192 - _16;
+  _17 = pcb_188(D)->unsent_oversize;
+  oversize = _17;
+  oversize.2_18 = oversize;
+  if (oversize.2_18 != 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 18> :
+  oversize.3_19 = oversize;
+  if (space_202 < oversize.3_19)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 19>; [INV]
+
+  <bb 20> :
+  seg_204 = last_unsent_122;
+  oversize.4_20 = oversize;
+  _21 = MIN_EXPR <len_194(D), oversize.4_20>;
+  oversize_used_205 = MIN_EXPR <space_202, _21>;
+  pos_206 = pos_182 + oversize_used_205;
+  oversize.5_22 = oversize;
+  _23 = oversize.5_22 - oversize_used_205;
+  oversize = _23;
+  space_208 = space_202 - oversize_used_205;
+
+  <bb 21> :
+  # seg_124 = PHI <seg_179(17), seg_204(20)>
+  # pos_131 = PHI <pos_182(17), pos_206(20)>
+  # oversize_used_137 = PHI <oversize_used_186(17), oversize_used_205(20)>
+  # space_141 = PHI <space_202(17), space_208(20)>
+  oversize.6_24 = oversize;
+  if (oversize.6_24 != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 22> :
+  if (pos_131 != len_194(D))
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 23>; [INV]
+
+  <bb 24> :
+  if (pos_131 < len_194(D))
+    goto <bb 25>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 25> :
+  if (space_141 != 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 26> :
+  _25 = last_unsent_122->len;
+  if (_25 != 0)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 27> :
+  _26 = (int) len_194(D);
+  _27 = (int) pos_131;
+  _28 = _26 - _27;
+  _29 = (int) space_141;
+  _30 = MIN_EXPR <_28, _29>;
+  seglen_211 = (u16_t) _30;
+  seg_212 = last_unsent_122;
+  _31 = (int) apiflags_213(D);
+  _32 = _31 & 1;
+  if (_32 != 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 28> :
+  concat_p_225 = tcp_pbuf_prealloc (0, seglen_211, space_141, &oversize, pcb_188(D), apiflags_213(D), 1);
+  if (concat_p_225 == 0B)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  // predicted unlikely by goto predictor.
+  goto <bb 101>; [INV]
+
+  <bb 30> :
+  _33 = concat_p_225->payload;
+  _34 = (sizetype) pos_131;
+  _35 = arg_193(D) + _34;
+  _36 = (unsigned int) seglen_211;
+  memcpy (_33, _35, _36);
+  _228 = pbuf_clen (concat_p_225);
+  queuelen_229 = _228 + queuelen_197;
+  goto <bb 42>; [INV]
+
+  <bb 31> :
+  p_214 = last_unsent_122->p;
+  goto <bb 33>; [INV]
+
+  <bb 32> :
+  p_223 = p_142->next;
+
+  <bb 33> :
+  # p_142 = PHI <p_214(31), p_223(32)>
+  _37 = p_142->next;
+  if (_37 != 0B)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 34> :
+  _38 = p_142->type_internal;
+  _39 = (int) _38;
+  _40 = _39 & 192;
+  if (_40 == 0)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 35> :
+  _41 = p_142->payload;
+  _42 = p_142->len;
+  _43 = (sizetype) _42;
+  _44 = _41 + _43;
+  if (arg_193(D) == _44)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 36> :
+  if (pos_131 != 0)
+    goto <bb 37>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 37> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 37>; [INV]
+
+  <bb 38> :
+  extendlen_215 = seglen_211;
+  goto <bb 42>; [INV]
+
+  <bb 39> :
+  concat_p_218 = pbuf_alloc (0, seglen_211, 1);
+  if (concat_p_218 == 0B)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 40> :
+  // predicted unlikely by goto predictor.
+  goto <bb 101>; [INV]
+
+  <bb 41> :
+  _45 = (sizetype) pos_131;
+  _46 = arg_193(D) + _45;
+  MEM[(struct pbuf_rom *)concat_p_218].payload = _46;
+  _221 = pbuf_clen (concat_p_218);
+  queuelen_222 = _221 + queuelen_197;
+
+  <bb 42> :
+  # concat_p_119 = PHI <concat_p_225(30), concat_p_177(38), concat_p_218(41)>
+  # queuelen_134 = PHI <queuelen_229(30), queuelen_197(38), queuelen_222(41)>
+  # extendlen_139 = PHI <extendlen_187(30), extendlen_215(38), extendlen_187(41)>
+  pos_230 = pos_131 + seglen_211;
+  goto <bb 45>; [INV]
+
+  <bb 43> :
+  _47 = pcb_188(D)->unsent_oversize;
+  if (_47 != 0)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 44> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 44>; [INV]
+
+  <bb 45> :
+  # concat_p_120 = PHI <concat_p_177(25), concat_p_177(43), concat_p_177(24), concat_p_119(42), concat_p_177(26)>
+  # last_unsent_123 = PHI <last_unsent_122(25), last_unsent_178(43), last_unsent_122(24), last_unsent_122(42), last_unsent_122(26)>
+  # seg_125 = PHI <seg_124(25), seg_179(43), seg_124(24), seg_212(42), seg_124(26)>
+  # pos_132 = PHI <pos_131(25), pos_182(43), pos_131(24), pos_230(42), pos_131(26)>
+  # queuelen_135 = PHI <queuelen_197(25), queuelen_197(43), queuelen_197(24), queuelen_134(42), queuelen_197(26)>
+  # oversize_used_138 = PHI <oversize_used_137(25), oversize_used_186(43), oversize_used_137(24), oversize_used_137(42), oversize_used_137(26)>
+  # extendlen_140 = PHI <extendlen_187(25), extendlen_187(43), extendlen_187(24), extendlen_139(42), extendlen_187(26)>
+  goto <bb 69>; [INV]
+
+  <bb 46> :
+  left_259 = len_194(D) - pos_133;
+  _48 = (short unsigned int) optlen_198;
+  max_len_260 = mss_local_192 - _48;
+  seglen_261 = MIN_EXPR <max_len_260, left_259>;
+  _49 = (int) apiflags_213(D);
+  _50 = _49 & 1;
+  if (_50 != 0)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 47> :
+  _51 = (short unsigned int) optlen_198;
+  _52 = seglen_261 + _51;
+  _53 = queue_129 == 0B;
+  _54 = (unsigned char) _53;
+  p_271 = tcp_pbuf_prealloc (74, _52, mss_local_192, &oversize, pcb_188(D), apiflags_213(D), _54);
+  if (p_271 == 0B)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 48> :
+  // predicted unlikely by goto predictor.
+  goto <bb 101>; [INV]
+
+  <bb 49> :
+  _55 = p_271->len;
+  if (seglen_261 > _55)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 50>; [INV]
+
+  <bb 51> :
+  _56 = p_271->payload;
+  _57 = (sizetype) optlen_198;
+  _58 = _56 + _57;
+  _59 = (sizetype) pos_133;
+  _60 = arg_193(D) + _59;
+  _61 = (unsigned int) seglen_261;
+  memcpy (_58, _60, _61);
+  goto <bb 59>; [INV]
+
+  <bb 52> :
+  oversize.7_62 = oversize;
+  if (oversize.7_62 != 0)
+    goto <bb 53>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 53> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 53>; [INV]
+
+  <bb 54> :
+  p2_263 = pbuf_alloc (74, seglen_261, 1);
+  if (p2_263 == 0B)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 55> :
+  // predicted unlikely by goto predictor.
+  goto <bb 101>; [INV]
+
+  <bb 56> :
+  _63 = (sizetype) pos_133;
+  _64 = arg_193(D) + _63;
+  MEM[(struct pbuf_rom *)p2_263].payload = _64;
+  _65 = (short unsigned int) optlen_198;
+  p_266 = pbuf_alloc (74, _65, 640);
+  if (p_266 == 0B)
+    goto <bb 57>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 57> :
+  pbuf_free (p2_263);
+  // predicted unlikely by goto predictor.
+  goto <bb 101>; [INV]
+
+  <bb 58> :
+  pbuf_cat (p_266, p2_263);
+
+  <bb 59> :
+  # p_143 = PHI <p_271(51), p_266(58)>
+  _275 = pbuf_clen (p_143);
+  queuelen_276 = _275 + queuelen_136;
+  if (queuelen_276 > 20)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 61>; [INV]
+
+  <bb 60> :
+  pbuf_free (p_143);
+  // predicted unlikely by goto predictor.
+  goto <bb 101>; [INV]
+
+  <bb 61> :
+  _66 = pcb_188(D)->snd_lbb;
+  _67 = (long unsigned int) pos_133;
+  _68 = _66 + _67;
+  seg_278 = tcp_create_segment (pcb_188(D), p_143, 0, _68, optflags_183);
+  if (seg_278 == 0B)
+    goto <bb 62>; [INV]
+  else
+    goto <bb 63>; [INV]
+
+  <bb 62> :
+  // predicted unlikely by goto predictor.
+  goto <bb 101>; [INV]
+
+  <bb 63> :
+  if (queue_129 == 0B)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 64> :
+  queue_281 = seg_278;
+  goto <bb 68>; [INV]
+
+  <bb 65> :
+  if (prev_seg_127 == 0B)
+    goto <bb 66>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 66> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 66>; [INV]
+
+  <bb 67> :
+  prev_seg_127->next = seg_278;
+
+  <bb 68> :
+  # queue_128 = PHI <queue_281(64), queue_129(67)>
+  prev_seg_282 = seg_278;
+  pos_283 = pos_133 + seglen_261;
+
+  <bb 69> :
+  # seg_126 = PHI <seg_125(45), seg_278(68)>
+  # prev_seg_127 = PHI <prev_seg_180(45), prev_seg_282(68)>
+  # queue_129 = PHI <queue_181(45), queue_128(68)>
+  # pos_133 = PHI <pos_132(45), pos_283(68)>
+  # queuelen_136 = PHI <queuelen_135(45), queuelen_276(68)>
+  if (pos_133 < len_194(D))
+    goto <bb 46>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 70> :
+  if (oversize_used_138 != 0)
+    goto <bb 71>; [INV]
+  else
+    goto <bb 77>; [INV]
+
+  <bb 71> :
+  p_233 = last_unsent_123->p;
+  goto <bb 75>; [INV]
+
+  <bb 72> :
+  _69 = p_144->tot_len;
+  _70 = oversize_used_138 + _69;
+  p_144->tot_len = _70;
+  _71 = p_144->next;
+  if (_71 == 0B)
+    goto <bb 73>; [INV]
+  else
+    goto <bb 74>; [INV]
+
+  <bb 73> :
+  _72 = p_144->payload;
+  _73 = p_144->len;
+  _74 = (sizetype) _73;
+  _75 = _72 + _74;
+  _76 = (unsigned int) oversize_used_138;
+  memcpy (_75, arg_193(D), _76);
+  _77 = p_144->len;
+  _78 = oversize_used_138 + _77;
+  p_144->len = _78;
+
+  <bb 74> :
+  p_238 = p_144->next;
+
+  <bb 75> :
+  # p_144 = PHI <p_233(71), p_238(74)>
+  if (p_144 != 0B)
+    goto <bb 72>; [INV]
+  else
+    goto <bb 76>; [INV]
+
+  <bb 76> :
+  _79 = last_unsent_123->len;
+  _80 = oversize_used_138 + _79;
+  last_unsent_123->len = _80;
+
+  <bb 77> :
+  oversize.8_81 = oversize;
+  pcb_188(D)->unsent_oversize = oversize.8_81;
+  if (concat_p_120 != 0B)
+    goto <bb 78>; [INV]
+  else
+    goto <bb 81>; [INV]
+
+  <bb 78> :
+  if (last_unsent_123 == 0B)
+    goto <bb 79>; [INV]
+  else
+    goto <bb 80>; [INV]
+
+  <bb 79> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 79>; [INV]
+
+  <bb 80> :
+  _82 = last_unsent_123->p;
+  pbuf_cat (_82, concat_p_120);
+  _83 = last_unsent_123->len;
+  _84 = concat_p_120->tot_len;
+  _85 = _83 + _84;
+  last_unsent_123->len = _85;
+  goto <bb 89>; [INV]
+
+  <bb 81> :
+  if (extendlen_140 != 0)
+    goto <bb 82>; [INV]
+  else
+    goto <bb 89>; [INV]
+
+  <bb 82> :
+  if (last_unsent_123 == 0B)
+    goto <bb 84>; [INV]
+  else
+    goto <bb 83>; [INV]
+
+  <bb 83> :
+  _86 = last_unsent_123->p;
+  if (_86 == 0B)
+    goto <bb 84>; [INV]
+  else
+    goto <bb 85>; [INV]
+
+  <bb 84> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 84>; [INV]
+
+  <bb 85> :
+  p_240 = last_unsent_123->p;
+  goto <bb 87>; [INV]
+
+  <bb 86> :
+  _87 = p_145->tot_len;
+  _88 = extendlen_140 + _87;
+  p_145->tot_len = _88;
+  p_245 = p_145->next;
+
+  <bb 87> :
+  # p_145 = PHI <p_240(85), p_245(86)>
+  _89 = p_145->next;
+  if (_89 != 0B)
+    goto <bb 86>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 88> :
+  _90 = p_145->tot_len;
+  _91 = extendlen_140 + _90;
+  p_145->tot_len = _91;
+  _92 = p_145->len;
+  _93 = extendlen_140 + _92;
+  p_145->len = _93;
+  _94 = last_unsent_123->len;
+  _95 = extendlen_140 + _94;
+  last_unsent_123->len = _95;
+
+  <bb 89> :
+  if (last_unsent_123 == 0B)
+    goto <bb 90>; [INV]
+  else
+    goto <bb 91>; [INV]
+
+  <bb 90> :
+  pcb_188(D)->unsent = queue_129;
+  goto <bb 92>; [INV]
+
+  <bb 91> :
+  last_unsent_123->next = queue_129;
+
+  <bb 92> :
+  _96 = pcb_188(D)->snd_lbb;
+  _97 = (long unsigned int) len_194(D);
+  _98 = _96 + _97;
+  pcb_188(D)->snd_lbb = _98;
+  _99 = pcb_188(D)->snd_buf;
+  _100 = _99 - len_194(D);
+  pcb_188(D)->snd_buf = _100;
+  pcb_188(D)->snd_queuelen = queuelen_136;
+  _101 = pcb_188(D)->snd_queuelen;
+  if (_101 != 0)
+    goto <bb 93>; [INV]
+  else
+    goto <bb 96>; [INV]
+
+  <bb 93> :
+  _102 = pcb_188(D)->unacked;
+  if (_102 == 0B)
+    goto <bb 94>; [INV]
+  else
+    goto <bb 96>; [INV]
+
+  <bb 94> :
+  _103 = pcb_188(D)->unsent;
+  if (_103 == 0B)
+    goto <bb 95>; [INV]
+  else
+    goto <bb 96>; [INV]
+
+  <bb 95> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 95>; [INV]
+
+  <bb 96> :
+  if (seg_126 != 0B)
+    goto <bb 97>; [INV]
+  else
+    goto <bb 100>; [INV]
+
+  <bb 97> :
+  _104 = seg_126->tcphdr;
+  if (_104 != 0B)
+    goto <bb 98>; [INV]
+  else
+    goto <bb 100>; [INV]
+
+  <bb 98> :
+  _105 = (int) apiflags_213(D);
+  _106 = _105 & 2;
+  if (_106 == 0)
+    goto <bb 99>; [INV]
+  else
+    goto <bb 100>; [INV]
+
+  <bb 99> :
+  _107 = seg_126->tcphdr;
+  _108 = _107->_hdrlen_rsvd_flags;
+  _109 = lwip_htons (8);
+  _110 = seg_126->tcphdr;
+  _111 = _108 | _109;
+  _110->_hdrlen_rsvd_flags = _111;
+
+  <bb 100> :
+  _258 = 0;
+  goto <bb 110>; [INV]
+
+  <bb 101> :
+  # concat_p_121 = PHI <concat_p_225(29), concat_p_218(40), concat_p_120(48), concat_p_120(55), concat_p_120(57), concat_p_120(60), concat_p_120(62)>
+  # queue_130 = PHI <queue_181(29), queue_181(40), queue_129(48), queue_129(55), queue_129(57), queue_129(60), queue_129(62)>
+memerr:
+  _112 = pcb_188(D)->flags;
+  _113 = _112 | 128;
+  pcb_188(D)->flags = _113;
+  _114 = lwip_stats.tcp.memerr;
+  _115 = _114 + 1;
+  lwip_stats.tcp.memerr = _115;
+  if (concat_p_121 != 0B)
+    goto <bb 102>; [INV]
+  else
+    goto <bb 103>; [INV]
+
+  <bb 102> :
+  pbuf_free (concat_p_121);
+
+  <bb 103> :
+  if (queue_130 != 0B)
+    goto <bb 104>; [INV]
+  else
+    goto <bb 105>; [INV]
+
+  <bb 104> :
+  tcp_segs_free (queue_130);
+
+  <bb 105> :
+  _116 = pcb_188(D)->snd_queuelen;
+  if (_116 != 0)
+    goto <bb 106>; [INV]
+  else
+    goto <bb 109>; [INV]
+
+  <bb 106> :
+  _117 = pcb_188(D)->unacked;
+  if (_117 == 0B)
+    goto <bb 107>; [INV]
+  else
+    goto <bb 109>; [INV]
+
+  <bb 107> :
+  _118 = pcb_188(D)->unsent;
+  if (_118 == 0B)
+    goto <bb 108>; [INV]
+  else
+    goto <bb 109>; [INV]
+
+  <bb 108> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 108>; [INV]
+
+  <bb 109> :
+  _290 = -1;
+
+  <bb 110> :
+  # _146 = PHI <_293(3), _292(8), _291(10), _258(100), _290(109)>
+  oversize ={v} {CLOBBER};
+
+  <bb 111> :
+<L133>:
+  return _146;
+
+}
+
+
+tcp_write_checks (struct tcp_pcb * pcb, u16_t len)
+{
+  err_t D.8027;
+  tcp_state _1;
+  tcp_state _2;
+  tcp_state _3;
+  tcp_state _4;
+  short unsigned int _5;
+  short unsigned int _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  short unsigned int _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  short unsigned int _13;
+  struct tcp_seg * _14;
+  struct tcp_seg * _15;
+  struct tcp_seg * _16;
+  struct tcp_seg * _17;
+  err_t _18;
+  err_t _25;
+  err_t _29;
+  err_t _32;
+  err_t _34;
+  err_t _35;
+
+  <bb 2> :
+  if (pcb_23(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = pcb_23(D)->state;
+  if (_1 != 4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  _2 = pcb_23(D)->state;
+  if (_2 != 7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _3 = pcb_23(D)->state;
+  if (_3 != 2)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _4 = pcb_23(D)->state;
+  if (_4 != 3)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _25 = -11;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 9> :
+  if (len_26(D) == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _35 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 11> :
+  _5 = pcb_23(D)->snd_buf;
+  if (len_26(D) > _5)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _6 = pcb_23(D)->flags;
+  _7 = _6 | 128;
+  pcb_23(D)->flags = _7;
+  _34 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 13> :
+  _8 = pcb_23(D)->snd_queuelen;
+  if (_8 > 19)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _9 = lwip_stats.tcp.memerr;
+  _10 = _9 + 1;
+  lwip_stats.tcp.memerr = _10;
+  _11 = pcb_23(D)->flags;
+  _12 = _11 | 128;
+  pcb_23(D)->flags = _12;
+  _32 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 15> :
+  _13 = pcb_23(D)->snd_queuelen;
+  if (_13 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 16> :
+  _14 = pcb_23(D)->unacked;
+  if (_14 == 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 17> :
+  _15 = pcb_23(D)->unsent;
+  if (_15 == 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 18> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 18>; [INV]
+
+  <bb 19> :
+  _16 = pcb_23(D)->unacked;
+  if (_16 != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  _17 = pcb_23(D)->unsent;
+  if (_17 != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 21>; [INV]
+
+  <bb 22> :
+  _29 = 0;
+
+  <bb 23> :
+  # _18 = PHI <_25(8), _35(10), _34(12), _32(14), _29(22)>
+<L26>:
+  return _18;
+
+}
+
+
+tcp_pbuf_prealloc (pbuf_layer layer, u16_t length, u16_t max_length, u16_t * oversize, const struct tcp_pcb * pcb, u8_t apiflags, u8_t first_seg)
+{
+  u16_t alloc;
+  struct pbuf * p;
+  struct pbuf * D.8016;
+  int _1;
+  int _2;
+  short unsigned int _3;
+  unsigned int _4;
+  unsigned int _5;
+  struct tcp_seg * _6;
+  struct tcp_seg * _7;
+  unsigned int _8;
+  unsigned int _9;
+  unsigned int _10;
+  unsigned int _11;
+  unsigned int _12;
+  struct pbuf * _13;
+  short unsigned int _14;
+  short unsigned int _15;
+  short unsigned int _16;
+  struct pbuf * _18;
+  struct pbuf * _38;
+  struct pbuf * _40;
+
+  <bb 2> :
+  alloc_24 = length_23(D);
+  if (oversize_25(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (pcb_27(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  if (length_23(D) < max_length_28(D))
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 7> :
+  _1 = (int) apiflags_29(D);
+  _2 = _1 & 2;
+  if (_2 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _3 = pcb_27(D)->flags;
+  _4 = (unsigned int) _3;
+  _5 = _4 & 64;
+  if (_5 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 9> :
+  if (first_seg_30(D) == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _6 = pcb_27(D)->unsent;
+  if (_6 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _7 = pcb_27(D)->unacked;
+  if (_7 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _8 = (unsigned int) length_23(D);
+  _9 = _8 + 1467;
+  _10 = _9 & 4294967288;
+  _11 = (unsigned int) max_length_28(D);
+  _12 = MIN_EXPR <_10, _11>;
+  alloc_31 = (u16_t) _12;
+
+  <bb 13> :
+  # alloc_17 = PHI <alloc_24(6), alloc_24(8), alloc_24(11), alloc_31(12)>
+  p_34 = pbuf_alloc (layer_32(D), alloc_17, 640);
+  if (p_34 == 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _40 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 18>; [INV]
+
+  <bb 15> :
+  _13 = p_34->next;
+  if (_13 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 16>; [INV]
+
+  <bb 17> :
+  _14 = p_34->len;
+  _15 = _14 - length_23(D);
+  *oversize_25(D) = _15;
+  p_34->tot_len = length_23(D);
+  _16 = p_34->tot_len;
+  p_34->len = _16;
+  _38 = p_34;
+
+  <bb 18> :
+  # _18 = PHI <_40(14), _38(17)>
+<L19>:
+  return _18;
+
+}
+
+
+tcp_create_segment (const struct tcp_pcb * pcb, struct pbuf * p, u8_t hdrflags, u32_t seqno, u8_t optflags)
+{
+  u8_t optlen;
+  struct tcp_seg * seg;
+  struct tcp_seg * D.7996;
+  int _1;
+  int _2;
+  unsigned char _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  short unsigned int _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  unsigned char _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  struct pbuf * _12;
+  void * _13;
+  short unsigned int _14;
+  struct tcp_hdr * _15;
+  short unsigned int _16;
+  short unsigned int _17;
+  struct tcp_hdr * _18;
+  short unsigned int _19;
+  struct tcp_hdr * _20;
+  long unsigned int _21;
+  unsigned char _22;
+  short unsigned int _23;
+  short unsigned int _24;
+  short unsigned int _25;
+  short unsigned int _26;
+  short unsigned int _27;
+  struct tcp_hdr * _28;
+  short unsigned int _29;
+  struct tcp_hdr * _30;
+  struct tcp_seg * _31;
+  struct tcp_seg * _60;
+  struct tcp_seg * _63;
+  struct tcp_seg * _66;
+
+  <bb 2> :
+  if (pcb_36(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (p_38(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = (int) optflags_39(D);
+  _2 = _1 << 2;
+  _3 = (unsigned char) _2;
+  optlen_40 = _3 & 4;
+  seg_42 = memp_malloc (4);
+  if (seg_42 == 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  pbuf_free (p_38(D));
+  _66 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 13>; [INV]
+
+  <bb 8> :
+  seg_42->flags = optflags_39(D);
+  seg_42->next = 0B;
+  seg_42->p = p_38(D);
+  _4 = p_38(D)->tot_len;
+  _5 = (short unsigned int) optlen_40;
+  if (_4 < _5)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 9>; [INV]
+
+  <bb 10> :
+  _6 = p_38(D)->tot_len;
+  _7 = (short unsigned int) optlen_40;
+  _8 = _6 - _7;
+  seg_42->len = _8;
+  _9 = pbuf_add_header (p_38(D), 20);
+  if (_9 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _10 = lwip_stats.tcp.err;
+  _11 = _10 + 1;
+  lwip_stats.tcp.err = _11;
+  tcp_seg_free (seg_42);
+  _63 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _12 = seg_42->p;
+  _13 = _12->payload;
+  seg_42->tcphdr = _13;
+  _14 = pcb_36(D)->local_port;
+  _15 = seg_42->tcphdr;
+  _16 = lwip_htons (_14);
+  _15->src = _16;
+  _17 = pcb_36(D)->remote_port;
+  _18 = seg_42->tcphdr;
+  _19 = lwip_htons (_17);
+  _18->dest = _19;
+  _20 = seg_42->tcphdr;
+  _21 = lwip_htonl (seqno_53(D));
+  _20->seqno = _21;
+  _22 = optlen_40 / 4;
+  _23 = (short unsigned int) _22;
+  _24 = _23 + 5;
+  _25 = _24 << 12;
+  _26 = (short unsigned int) hdrflags_56(D);
+  _27 = _25 | _26;
+  _28 = seg_42->tcphdr;
+  _29 = lwip_htons (_27);
+  _28->_hdrlen_rsvd_flags = _29;
+  _30 = seg_42->tcphdr;
+  _30->urgp = 0;
+  _60 = seg_42;
+
+  <bb 13> :
+  # _31 = PHI <_66(7), _63(11), _60(12)>
+<L13>:
+  return _31;
+
+}
+
+
+tcp_route (const struct tcp_pcb * pcb, const struct ip_addr_t * src, const struct ip_addr_t * dst)
+{
+  struct netif * iftmp.0;
+  struct netif * D.7983;
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  const struct ip6_addr_t * _4;
+  const struct ip6_addr_t * _5;
+  const struct ip4_addr_t * _6;
+  struct netif * _7;
+  struct netif * iftmp.0_8;
+  struct netif * _14;
+  struct netif * iftmp.0_18;
+  struct netif * iftmp.0_20;
+  struct netif * _21;
+
+  <bb 2> :
+  if (pcb_11(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _1 = pcb_11(D)->netif_idx;
+  if (_1 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = pcb_11(D)->netif_idx;
+  _14 = netif_get_by_index (_2);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 5> :
+  if (dst_15(D) != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _3 = dst_15(D)->type;
+  if (_3 == 6)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _4 = &src_16(D)->u_addr.ip6;
+  _5 = &dst_15(D)->u_addr.ip6;
+  iftmp.0_18 = ip6_route (_4, _5);
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _6 = &dst_15(D)->u_addr.ip4;
+  iftmp.0_20 = ip4_route (_6);
+
+  <bb 9> :
+  # iftmp.0_8 = PHI <iftmp.0_18(7), iftmp.0_20(8)>
+  _21 = iftmp.0_8;
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 10> :
+  # _7 = PHI <_14(4), _21(9)>
+<L7>:
+  return _7;
+
+}
+
+

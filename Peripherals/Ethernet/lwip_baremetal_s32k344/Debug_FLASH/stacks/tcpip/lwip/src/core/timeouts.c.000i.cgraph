@@ -1,0 +1,1482 @@
+Trivially needed symbols: sys_timeouts_sleeptime/15 sys_restart_timeouts/14 sys_check_timeouts/13 sys_untimeout/12 sys_timeout/11 sys_timeouts_init/10 lwip_cyclic_timer/9 sys_timeout_abs/8 tcp_timer_needed/7 tcpip_tcp_timer/6 tcpip_tcp_timer_active/5 current_timeout_due_time/4 next_timeout/3 lwip_num_cyclic_timers/2 lwip_cyclic_timers/1
+
+
+Initial Symbol table:
+
+memp_free/28 (memp_free) @06d39b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_check_timeouts/13 sys_untimeout/12 
+  Calls: 
+sys_now/27 (sys_now) @06d397e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_timeouts_sleeptime/15 sys_restart_timeouts/14 sys_check_timeouts/13 sys_timeout/11 lwip_cyclic_timer/9 
+  Calls: 
+memp_malloc/26 (memp_malloc) @06d39540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_timeout_abs/8 
+  Calls: 
+tcp_tw_pcbs/25 (tcp_tw_pcbs) @06d3a288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs/24 (tcp_active_pcbs) @06d3a240
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not-ready
+  Varpool flags:
+mld6_tmr/23 (mld6_tmr) @06d318c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_reass_tmr/22 (ip6_reass_tmr) @06d31620
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+nd6_tmr/21 (nd6_tmr) @06d31380
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+dns_tmr/20 (dns_tmr) @06d31ee0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+igmp_tmr/19 (igmp_tmr) @06d31e00
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_tmr/18 (etharp_tmr) @06d31d20
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+ip_reass_tmr/17 (ip_reass_tmr) @06d31c40
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tmr/16 (tcp_tmr) @06d31b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: tcpip_tcp_timer/6 
+  Calls: 
+sys_timeouts_sleeptime/15 (sys_timeouts_sleeptime) @06d31a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_restart_timeouts/14 (sys_restart_timeouts) @06d317e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d31a80
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_check_timeouts/13 (sys_check_timeouts) @06d31540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d317e0
+  References: next_timeout/3 (read) next_timeout/3 (write) current_timeout_due_time/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_untimeout/12 (sys_untimeout) @06d312a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d31540
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 
+sys_timeout/11 (sys_timeout) @06d31000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d312a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: sys_timeouts_init/10 tcp_timer_needed/7 tcpip_tcp_timer/6 
+  Calls: sys_timeout_abs/8 sys_now/27 
+sys_timeouts_init/10 (sys_timeouts_init) @06d0a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d31000
+  References: lwip_cyclic_timers/1 (read) lwip_cyclic_timers/1 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+lwip_cyclic_timer/9 (lwip_cyclic_timer) @06d0ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06d0a380
+  References: current_timeout_due_time/4 (read) lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) sys_timeouts_init/10 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout_abs/8 sys_timeout_abs/8 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_timeout_abs/8 (sys_timeout_abs) @06d0a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06d0ab60
+  References: next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: sys_timeout/11 lwip_cyclic_timer/9 lwip_cyclic_timer/9 
+  Calls: memp_malloc/26 
+tcp_timer_needed/7 (tcp_timer_needed) @06d0a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d0a7e0
+  References: tcpip_tcp_timer_active/5 (read) tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer_active/5 (write) tcpip_tcp_timer/6 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+tcpip_tcp_timer/6 (tcpip_tcp_timer) @06d0a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06d0a540
+  References: tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer/6 (addr) tcpip_tcp_timer_active/5 (write) 
+  Referring: tcpip_tcp_timer/6 (addr) tcp_timer_needed/7 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 tcp_tmr/16 
+tcpip_tcp_timer_active/5 (tcpip_tcp_timer_active) @06d055e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06d0a2a0
+  References: 
+  Referring: tcpip_tcp_timer/6 (write) tcp_timer_needed/7 (read) tcp_timer_needed/7 (write) 
+  Availability: not-ready
+  Varpool flags:
+current_timeout_due_time/4 (current_timeout_due_time) @06d05558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06d055e8
+  References: 
+  Referring: lwip_cyclic_timer/9 (read) sys_check_timeouts/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+next_timeout/3 (next_timeout) @06d054c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06d05558
+  References: 
+  Referring: sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_untimeout/12 (read) sys_untimeout/12 (read) sys_untimeout/12 (write) sys_check_timeouts/13 (read) sys_check_timeouts/13 (write) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) 
+  Availability: not-ready
+  Varpool flags:
+lwip_num_cyclic_timers/2 (lwip_num_cyclic_timers) @06d05438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d054c8
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lwip_cyclic_timers/1 (lwip_cyclic_timers) @06d05360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d05438
+  References: tcp_tmr/16 (addr) ip_reass_tmr/17 (addr) etharp_tmr/18 (addr) igmp_tmr/19 (addr) dns_tmr/20 (addr) nd6_tmr/21 (addr) ip6_reass_tmr/22 (addr) mld6_tmr/23 (addr) 
+  Referring: sys_timeouts_init/10 (read) sys_timeouts_init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+DevAssert/0 (DevAssert) @06b0f2a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+memp_free/28 (memp_free) @06d39b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_check_timeouts/13 sys_untimeout/12 
+  Calls: 
+sys_now/27 (sys_now) @06d397e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_timeouts_sleeptime/15 sys_restart_timeouts/14 sys_check_timeouts/13 sys_timeout/11 lwip_cyclic_timer/9 
+  Calls: 
+memp_malloc/26 (memp_malloc) @06d39540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_timeout_abs/8 
+  Calls: 
+tcp_tw_pcbs/25 (tcp_tw_pcbs) @06d3a288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs/24 (tcp_active_pcbs) @06d3a240
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not-ready
+  Varpool flags:
+mld6_tmr/23 (mld6_tmr) @06d318c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_reass_tmr/22 (ip6_reass_tmr) @06d31620
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+nd6_tmr/21 (nd6_tmr) @06d31380
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+dns_tmr/20 (dns_tmr) @06d31ee0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+igmp_tmr/19 (igmp_tmr) @06d31e00
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_tmr/18 (etharp_tmr) @06d31d20
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+ip_reass_tmr/17 (ip_reass_tmr) @06d31c40
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tmr/16 (tcp_tmr) @06d31b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: tcpip_tcp_timer/6 
+  Calls: 
+sys_timeouts_sleeptime/15 (sys_timeouts_sleeptime) @06d31a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_restart_timeouts/14 (sys_restart_timeouts) @06d317e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_check_timeouts/13 (sys_check_timeouts) @06d31540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (write) current_timeout_due_time/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_untimeout/12 (sys_untimeout) @06d312a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 
+sys_timeout/11 (sys_timeout) @06d31000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: sys_timeouts_init/10 tcp_timer_needed/7 tcpip_tcp_timer/6 
+  Calls: sys_timeout_abs/8 sys_now/27 
+sys_timeouts_init/10 (sys_timeouts_init) @06d0a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_cyclic_timers/1 (read) lwip_cyclic_timers/1 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+lwip_cyclic_timer/9 (lwip_cyclic_timer) @06d0ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: current_timeout_due_time/4 (read) lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) sys_timeouts_init/10 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout_abs/8 sys_timeout_abs/8 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_timeout_abs/8 (sys_timeout_abs) @06d0a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: sys_timeout/11 lwip_cyclic_timer/9 lwip_cyclic_timer/9 
+  Calls: memp_malloc/26 
+tcp_timer_needed/7 (tcp_timer_needed) @06d0a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcpip_tcp_timer_active/5 (read) tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer_active/5 (write) tcpip_tcp_timer/6 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+tcpip_tcp_timer/6 (tcpip_tcp_timer) @06d0a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer/6 (addr) tcpip_tcp_timer_active/5 (write) 
+  Referring: tcpip_tcp_timer/6 (addr) tcp_timer_needed/7 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 tcp_tmr/16 
+tcpip_tcp_timer_active/5 (tcpip_tcp_timer_active) @06d055e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcpip_tcp_timer/6 (write) tcp_timer_needed/7 (read) tcp_timer_needed/7 (write) 
+  Availability: not-ready
+  Varpool flags:
+current_timeout_due_time/4 (current_timeout_due_time) @06d05558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwip_cyclic_timer/9 (read) sys_check_timeouts/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+next_timeout/3 (next_timeout) @06d054c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_untimeout/12 (read) sys_untimeout/12 (read) sys_untimeout/12 (write) sys_check_timeouts/13 (read) sys_check_timeouts/13 (write) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) 
+  Availability: not-ready
+  Varpool flags:
+lwip_num_cyclic_timers/2 (lwip_num_cyclic_timers) @06d05438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lwip_cyclic_timers/1 (lwip_cyclic_timers) @06d05360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_tmr/16 (addr) ip_reass_tmr/17 (addr) etharp_tmr/18 (addr) igmp_tmr/19 (addr) dns_tmr/20 (addr) nd6_tmr/21 (addr) ip6_reass_tmr/22 (addr) mld6_tmr/23 (addr) 
+  Referring: sys_timeouts_init/10 (read) sys_timeouts_init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+memp_free/28 (memp_free) @06d39b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_check_timeouts/13 sys_untimeout/12 
+  Calls: 
+sys_now/27 (sys_now) @06d397e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_timeouts_sleeptime/15 sys_restart_timeouts/14 sys_check_timeouts/13 sys_timeout/11 lwip_cyclic_timer/9 
+  Calls: 
+memp_malloc/26 (memp_malloc) @06d39540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_timeout_abs/8 
+  Calls: 
+tcp_tw_pcbs/25 (tcp_tw_pcbs) @06d3a288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs/24 (tcp_active_pcbs) @06d3a240
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not-ready
+  Varpool flags:
+mld6_tmr/23 (mld6_tmr) @06d318c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_reass_tmr/22 (ip6_reass_tmr) @06d31620
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+nd6_tmr/21 (nd6_tmr) @06d31380
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+dns_tmr/20 (dns_tmr) @06d31ee0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+igmp_tmr/19 (igmp_tmr) @06d31e00
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_tmr/18 (etharp_tmr) @06d31d20
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+ip_reass_tmr/17 (ip_reass_tmr) @06d31c40
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tmr/16 (tcp_tmr) @06d31b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: tcpip_tcp_timer/6 
+  Calls: 
+sys_timeouts_sleeptime/15 (sys_timeouts_sleeptime) @06d31a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_restart_timeouts/14 (sys_restart_timeouts) @06d317e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_check_timeouts/13 (sys_check_timeouts) @06d31540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (write) current_timeout_due_time/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_untimeout/12 (sys_untimeout) @06d312a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 
+sys_timeout/11 (sys_timeout) @06d31000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: sys_timeouts_init/10 tcp_timer_needed/7 tcpip_tcp_timer/6 
+  Calls: sys_timeout_abs/8 sys_now/27 
+sys_timeouts_init/10 (sys_timeouts_init) @06d0a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_cyclic_timers/1 (read) lwip_cyclic_timers/1 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+lwip_cyclic_timer/9 (lwip_cyclic_timer) @06d0ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: current_timeout_due_time/4 (read) lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) sys_timeouts_init/10 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout_abs/8 sys_timeout_abs/8 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_timeout_abs/8 (sys_timeout_abs) @06d0a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: sys_timeout/11 lwip_cyclic_timer/9 lwip_cyclic_timer/9 
+  Calls: memp_malloc/26 
+tcp_timer_needed/7 (tcp_timer_needed) @06d0a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcpip_tcp_timer_active/5 (read) tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer_active/5 (write) tcpip_tcp_timer/6 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+tcpip_tcp_timer/6 (tcpip_tcp_timer) @06d0a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer/6 (addr) tcpip_tcp_timer_active/5 (write) 
+  Referring: tcpip_tcp_timer/6 (addr) tcp_timer_needed/7 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 tcp_tmr/16 
+tcpip_tcp_timer_active/5 (tcpip_tcp_timer_active) @06d055e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcpip_tcp_timer/6 (write) tcp_timer_needed/7 (read) tcp_timer_needed/7 (write) 
+  Availability: not-ready
+  Varpool flags:
+current_timeout_due_time/4 (current_timeout_due_time) @06d05558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwip_cyclic_timer/9 (read) sys_check_timeouts/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+next_timeout/3 (next_timeout) @06d054c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_untimeout/12 (read) sys_untimeout/12 (read) sys_untimeout/12 (write) sys_check_timeouts/13 (read) sys_check_timeouts/13 (write) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) 
+  Availability: not-ready
+  Varpool flags:
+lwip_num_cyclic_timers/2 (lwip_num_cyclic_timers) @06d05438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lwip_cyclic_timers/1 (lwip_cyclic_timers) @06d05360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_tmr/16 (addr) ip_reass_tmr/17 (addr) etharp_tmr/18 (addr) igmp_tmr/19 (addr) dns_tmr/20 (addr) nd6_tmr/21 (addr) ip6_reass_tmr/22 (addr) mld6_tmr/23 (addr) 
+  Referring: sys_timeouts_init/10 (read) sys_timeouts_init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+memp_free/28 (memp_free) @06d39b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_check_timeouts/13 sys_untimeout/12 
+  Calls: 
+sys_now/27 (sys_now) @06d397e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_timeouts_sleeptime/15 sys_restart_timeouts/14 sys_check_timeouts/13 sys_timeout/11 lwip_cyclic_timer/9 
+  Calls: 
+memp_malloc/26 (memp_malloc) @06d39540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: sys_timeout_abs/8 
+  Calls: 
+tcp_tw_pcbs/25 (tcp_tw_pcbs) @06d3a288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs/24 (tcp_active_pcbs) @06d3a240
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not-ready
+  Varpool flags:
+mld6_tmr/23 (mld6_tmr) @06d318c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_reass_tmr/22 (ip6_reass_tmr) @06d31620
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+nd6_tmr/21 (nd6_tmr) @06d31380
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+dns_tmr/20 (dns_tmr) @06d31ee0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+igmp_tmr/19 (igmp_tmr) @06d31e00
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_tmr/18 (etharp_tmr) @06d31d20
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+ip_reass_tmr/17 (ip_reass_tmr) @06d31c40
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tmr/16 (tcp_tmr) @06d31b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Function flags:
+  Called by: tcpip_tcp_timer/6 
+  Calls: 
+sys_timeouts_sleeptime/15 (sys_timeouts_sleeptime) @06d31a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_restart_timeouts/14 (sys_restart_timeouts) @06d317e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_check_timeouts/13 (sys_check_timeouts) @06d31540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (write) current_timeout_due_time/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_untimeout/12 (sys_untimeout) @06d312a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 
+sys_timeout/11 (sys_timeout) @06d31000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: sys_timeouts_init/10 tcp_timer_needed/7 tcpip_tcp_timer/6 
+  Calls: sys_timeout_abs/8 sys_now/27 
+sys_timeouts_init/10 (sys_timeouts_init) @06d0a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_cyclic_timers/1 (read) lwip_cyclic_timers/1 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+lwip_cyclic_timer/9 (lwip_cyclic_timer) @06d0ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: current_timeout_due_time/4 (read) lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) sys_timeouts_init/10 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout_abs/8 sys_timeout_abs/8 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_timeout_abs/8 (sys_timeout_abs) @06d0a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: sys_timeout/11 lwip_cyclic_timer/9 lwip_cyclic_timer/9 
+  Calls: memp_malloc/26 
+tcp_timer_needed/7 (tcp_timer_needed) @06d0a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcpip_tcp_timer_active/5 (read) tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer_active/5 (write) tcpip_tcp_timer/6 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+tcpip_tcp_timer/6 (tcpip_tcp_timer) @06d0a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer/6 (addr) tcpip_tcp_timer_active/5 (write) 
+  Referring: tcpip_tcp_timer/6 (addr) tcp_timer_needed/7 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 tcp_tmr/16 
+tcpip_tcp_timer_active/5 (tcpip_tcp_timer_active) @06d055e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcpip_tcp_timer/6 (write) tcp_timer_needed/7 (read) tcp_timer_needed/7 (write) 
+  Availability: not-ready
+  Varpool flags:
+current_timeout_due_time/4 (current_timeout_due_time) @06d05558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: lwip_cyclic_timer/9 (read) sys_check_timeouts/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+next_timeout/3 (next_timeout) @06d054c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_untimeout/12 (read) sys_untimeout/12 (read) sys_untimeout/12 (write) sys_check_timeouts/13 (read) sys_check_timeouts/13 (write) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) 
+  Availability: not-ready
+  Varpool flags:
+lwip_num_cyclic_timers/2 (lwip_num_cyclic_timers) @06d05438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+lwip_cyclic_timers/1 (lwip_cyclic_timers) @06d05360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_tmr/16 (addr) ip_reass_tmr/17 (addr) etharp_tmr/18 (addr) igmp_tmr/19 (addr) dns_tmr/20 (addr) nd6_tmr/21 (addr) ip6_reass_tmr/22 (addr) mld6_tmr/23 (addr) 
+  Referring: sys_timeouts_init/10 (read) sys_timeouts_init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+memp_free/28 (memp_free) @06d39b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: sys_check_timeouts/13 sys_untimeout/12 
+  Calls: 
+sys_now/27 (sys_now) @06d397e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: sys_timeouts_sleeptime/15 sys_restart_timeouts/14 sys_check_timeouts/13 sys_timeout/11 lwip_cyclic_timer/9 
+  Calls: 
+memp_malloc/26 (memp_malloc) @06d39540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: sys_timeout_abs/8 
+  Calls: 
+tcp_tw_pcbs/25 (tcp_tw_pcbs) @06d3a288
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not_available
+  Varpool flags:
+tcp_active_pcbs/24 (tcp_active_pcbs) @06d3a240
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcpip_tcp_timer/6 (read) tcp_timer_needed/7 (read) 
+  Availability: not_available
+  Varpool flags:
+mld6_tmr/23 (mld6_tmr) @06d318c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_reass_tmr/22 (ip6_reass_tmr) @06d31620
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+nd6_tmr/21 (nd6_tmr) @06d31380
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_tmr/20 (dns_tmr) @06d31ee0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+igmp_tmr/19 (igmp_tmr) @06d31e00
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_tmr/18 (etharp_tmr) @06d31d20
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_reass_tmr/17 (ip_reass_tmr) @06d31c40
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tmr/16 (tcp_tmr) @06d31b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: tcpip_tcp_timer/6 
+  Calls: 
+sys_timeouts_sleeptime/15 (sys_timeouts_sleeptime) @06d31a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_restart_timeouts/14 (sys_restart_timeouts) @06d317e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_now/27 
+sys_check_timeouts/13 (sys_check_timeouts) @06d31540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (write) current_timeout_due_time/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_untimeout/12 (sys_untimeout) @06d312a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memp_free/28 
+sys_timeout/11 (sys_timeout) @06d31000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: sys_timeouts_init/10 tcp_timer_needed/7 tcpip_tcp_timer/6 
+  Calls: sys_timeout_abs/8 sys_now/27 
+sys_timeouts_init/10 (sys_timeouts_init) @06d0a380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_cyclic_timers/1 (read) lwip_cyclic_timers/1 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+lwip_cyclic_timer/9 (lwip_cyclic_timer) @06d0ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: current_timeout_due_time/4 (read) lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) 
+  Referring: lwip_cyclic_timer/9 (addr) lwip_cyclic_timer/9 (addr) sys_timeouts_init/10 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout_abs/8 sys_timeout_abs/8 sys_now/27 
+   Indirect call Num speculative call targets: 0
+sys_timeout_abs/8 (sys_timeout_abs) @06d0a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) next_timeout/3 (read) next_timeout/3 (write) next_timeout/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: sys_timeout/11 lwip_cyclic_timer/9 lwip_cyclic_timer/9 
+  Calls: memp_malloc/26 
+tcp_timer_needed/7 (tcp_timer_needed) @06d0a540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcpip_tcp_timer_active/5 (read) tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer_active/5 (write) tcpip_tcp_timer/6 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 
+tcpip_tcp_timer/6 (tcpip_tcp_timer) @06d0a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: tcp_active_pcbs/24 (read) tcp_tw_pcbs/25 (read) tcpip_tcp_timer/6 (addr) tcpip_tcp_timer_active/5 (write) 
+  Referring: tcpip_tcp_timer/6 (addr) tcp_timer_needed/7 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/11 tcp_tmr/16 
+tcpip_tcp_timer_active/5 (tcpip_tcp_timer_active) @06d055e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcpip_tcp_timer/6 (write) tcp_timer_needed/7 (read) tcp_timer_needed/7 (write) 
+  Availability: available
+  Varpool flags:
+current_timeout_due_time/4 (current_timeout_due_time) @06d05558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: lwip_cyclic_timer/9 (read) sys_check_timeouts/13 (write) 
+  Availability: available
+  Varpool flags:
+next_timeout/3 (next_timeout) @06d054c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: sys_timeout_abs/8 (read) sys_untimeout/12 (read) sys_untimeout/12 (write) sys_untimeout/12 (read) sys_check_timeouts/13 (read) sys_check_timeouts/13 (write) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_restart_timeouts/14 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_timeout_abs/8 (read) sys_timeout_abs/8 (write) sys_timeout_abs/8 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) sys_timeouts_sleeptime/15 (read) 
+  Availability: available
+  Varpool flags:
+lwip_num_cyclic_timers/2 (lwip_num_cyclic_timers) @06d05438
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+lwip_cyclic_timers/1 (lwip_cyclic_timers) @06d05360
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_tmr/16 (addr) ip_reass_tmr/17 (addr) etharp_tmr/18 (addr) igmp_tmr/19 (addr) dns_tmr/20 (addr) nd6_tmr/21 (addr) ip6_reass_tmr/22 (addr) mld6_tmr/23 (addr) 
+  Referring: sys_timeouts_init/10 (read) sys_timeouts_init/10 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: tcpip_tcp_timer_active/5 current_timeout_due_time/4 next_timeout/3 lwip_num_cyclic_timers/2 lwip_cyclic_timers/1
+Removing variables:
+
+Final Symbol table:
+
+memp_free/28 (memp_free) @06d39b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_now/27 (sys_now) @06d397e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memp_malloc/26 (memp_malloc) @06d39540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tw_pcbs/25 (tcp_tw_pcbs) @06d3a288
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+tcp_active_pcbs/24 (tcp_active_pcbs) @06d3a240
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+mld6_tmr/23 (mld6_tmr) @06d318c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_reass_tmr/22 (ip6_reass_tmr) @06d31620
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+nd6_tmr/21 (nd6_tmr) @06d31380
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+dns_tmr/20 (dns_tmr) @06d31ee0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+igmp_tmr/19 (igmp_tmr) @06d31e00
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_tmr/18 (etharp_tmr) @06d31d20
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_reass_tmr/17 (ip_reass_tmr) @06d31c40
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tmr/16 (tcp_tmr) @06d31b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: lwip_cyclic_timers/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_timeouts_sleeptime/15 (sys_timeouts_sleeptime) @06d31a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_restart_timeouts/14 (sys_restart_timeouts) @06d317e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_check_timeouts/13 (sys_check_timeouts) @06d31540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_untimeout/12 (sys_untimeout) @06d312a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_timeout/11 (sys_timeout) @06d31000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_timeouts_init/10 (sys_timeouts_init) @06d0a380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_cyclic_timer/9 (lwip_cyclic_timer) @06d0ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+sys_timeout_abs/8 (sys_timeout_abs) @06d0a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_timer_needed/7 (tcp_timer_needed) @06d0a540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpip_tcp_timer/6 (tcpip_tcp_timer) @06d0a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpip_tcp_timer_active/5 (tcpip_tcp_timer_active) @06d055e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+current_timeout_due_time/4 (current_timeout_due_time) @06d05558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06d055e8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+next_timeout/3 (next_timeout) @06d054c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06d05558
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+lwip_num_cyclic_timers/2 (lwip_num_cyclic_timers) @06d05438
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06d054c8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+lwip_cyclic_timers/1 (lwip_cyclic_timers) @06d05360
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06d05438
+  References: tcp_tmr/16 (addr) ip_reass_tmr/17 (addr) etharp_tmr/18 (addr) igmp_tmr/19 (addr) dns_tmr/20 (addr) nd6_tmr/21 (addr) ip6_reass_tmr/22 (addr) mld6_tmr/23 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

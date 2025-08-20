@@ -1,0 +1,1664 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: snmp_authfail_trap/12 snmp_coldstart_trap/11 snmp_send_trap_specific/10 snmp_send_trap_generic/9 snmp_send_trap/8 snmp_get_auth_traps_enabled/7 snmp_set_auth_traps_enabled/6 snmp_trap_dst_ip_set/5 snmp_trap_dst_enable/4
+
+
+Marking externally visible variables: snmp_traps_handle/1
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+snmp_asn1_enc_oid/37 (snmp_asn1_enc_oid) @06d8dd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_enc/16 
+  Calls: 
+snmp_asn1_enc_raw/36 (snmp_asn1_enc_raw) @06d8dc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 
+  Calls: 
+snmp_asn1_enc_s32t/35 (snmp_asn1_enc_s32t) @06d8db60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 
+  Calls: 
+snmp_append_outbound_varbind/34 (snmp_append_outbound_varbind) @06d8d7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_varbind_enc/15 
+  Calls: 
+snmp_ans1_enc_tlv/33 (snmp_ans1_enc_tlv) @06d8d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_varbind_enc/15 
+  Calls: 
+strlen/32 (strlen) @06d8d540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_sum/14 snmp_trap_header_sum/14 
+  Calls: 
+snmp_community_trap/31 (snmp_community_trap) @06d93318
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: snmp_trap_header_sum/14 (read) snmp_trap_header_sum/14 (read) snmp_trap_header_enc/16 (read) 
+  Availability: not_available
+  Varpool flags:
+snmp_asn1_enc_oid_cnt/30 (snmp_asn1_enc_oid_cnt) @06d8d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_enc/16 snmp_trap_header_sum/14 
+  Calls: 
+snmp_asn1_enc_s32t_cnt/29 (snmp_asn1_enc_s32t_cnt) @06d8d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_enc/16 snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_header_sum/14 
+  Calls: 
+snmp_asn1_enc_u32t_cnt/28 (snmp_asn1_enc_u32t_cnt) @06d8d2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_sum/14 
+  Calls: 
+snmp_asn1_enc_length_cnt/27 (snmp_asn1_enc_length_cnt) @06d8d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_header_sum/14 snmp_trap_varbind_sum/13 
+  Calls: 
+snmp_varbind_length/26 (snmp_varbind_length) @06d8d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_trap_varbind_sum/13 
+  Calls: 
+oid.0/25 (oid) @06d87d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: snmp_send_trap_generic/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+pbuf_free/24 (pbuf_free) @06d60b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_send_trap/8 
+  Calls: 
+snmp_sendto/23 (snmp_sendto) @06d60a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_send_trap/8 
+  Calls: 
+snmp_stats/22 (snmp_stats) @06d87b40
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: snmp_send_trap/8 (read) snmp_send_trap/8 (write) snmp_send_trap/8 (read) snmp_send_trap/8 (write) 
+  Availability: not_available
+  Varpool flags:
+snmp_pbuf_stream_init/21 (snmp_pbuf_stream_init) @06d608c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_send_trap/8 
+  Calls: 
+pbuf_alloc/20 (pbuf_alloc) @06d607e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_send_trap/8 
+  Calls: 
+sys_now/19 (sys_now) @06d60700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_send_trap/8 
+  Calls: 
+snmp_get_device_enterprise_oid/18 (snmp_get_device_enterprise_oid) @06d60620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_send_trap/8 
+  Calls: 
+snmp_get_local_ip_for_dst/17 (snmp_get_local_ip_for_dst) @06d60540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: snmp_send_trap/8 
+  Calls: 
+snmp_trap_header_enc/16 (snmp_trap_header_enc) @06d4da80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: snmp_community_trap/31 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: snmp_send_trap/8 
+  Calls: snmp_asn1_enc_s32t/35 snmp_ans1_enc_tlv/33 snmp_asn1_enc_s32t_cnt/29 snmp_asn1_enc_s32t/35 snmp_ans1_enc_tlv/33 snmp_asn1_enc_s32t_cnt/29 snmp_asn1_enc_s32t/35 snmp_ans1_enc_tlv/33 snmp_asn1_enc_s32t_cnt/29 snmp_asn1_enc_raw/36 snmp_ans1_enc_tlv/33 snmp_asn1_enc_raw/36 snmp_ans1_enc_tlv/33 snmp_asn1_enc_oid/37 snmp_ans1_enc_tlv/33 snmp_asn1_enc_oid_cnt/30 snmp_ans1_enc_tlv/33 snmp_asn1_enc_raw/36 snmp_ans1_enc_tlv/33 snmp_asn1_enc_s32t/35 snmp_ans1_enc_tlv/33 snmp_asn1_enc_s32t_cnt/29 snmp_ans1_enc_tlv/33 
+snmp_trap_varbind_enc/15 (snmp_trap_varbind_enc) @06d4d2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: snmp_send_trap/8 
+  Calls: snmp_append_outbound_varbind/34 snmp_ans1_enc_tlv/33 
+snmp_trap_header_sum/14 (snmp_trap_header_sum) @06d4d000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: snmp_community_trap/31 (read) snmp_community_trap/31 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: snmp_send_trap/8 
+  Calls: snmp_asn1_enc_length_cnt/27 snmp_asn1_enc_length_cnt/27 snmp_asn1_enc_s32t_cnt/29 snmp_asn1_enc_length_cnt/27 strlen/32 strlen/32 snmp_asn1_enc_length_cnt/27 snmp_asn1_enc_length_cnt/27 snmp_asn1_enc_oid_cnt/30 snmp_asn1_enc_length_cnt/27 snmp_asn1_enc_length_cnt/27 snmp_asn1_enc_s32t_cnt/29 snmp_asn1_enc_length_cnt/27 snmp_asn1_enc_s32t_cnt/29 snmp_asn1_enc_length_cnt/27 snmp_asn1_enc_u32t_cnt/28 
+snmp_trap_varbind_sum/13 (snmp_trap_varbind_sum) @06d1e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: snmp_send_trap/8 
+  Calls: snmp_asn1_enc_length_cnt/27 snmp_varbind_length/26 
+snmp_authfail_trap/12 (snmp_authfail_trap) @06d1ee00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: snmp_auth_traps_enabled/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_send_trap_generic/9 
+snmp_coldstart_trap/11 (snmp_coldstart_trap) @06d1eb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_send_trap_generic/9 
+snmp_send_trap_specific/10 (snmp_send_trap_specific) @06d1e8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: snmp_send_trap/8 
+snmp_send_trap_generic/9 (snmp_send_trap_generic) @06d1e620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: oid.0/25 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: snmp_authfail_trap/12 snmp_coldstart_trap/11 
+  Calls: snmp_send_trap/8 
+snmp_send_trap/8 (snmp_send_trap) @06d1e380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: trap_dst/2 (addr) snmp_traps_handle/1 (read) snmp_stats/22 (read) snmp_stats/22 (write) snmp_stats/22 (read) snmp_stats/22 (write) snmp_traps_handle/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: snmp_send_trap_specific/10 snmp_send_trap_generic/9 
+  Calls: pbuf_free/24 snmp_sendto/23 snmp_trap_varbind_enc/15 snmp_trap_header_enc/16 snmp_pbuf_stream_init/21 pbuf_alloc/20 snmp_trap_header_sum/14 snmp_trap_varbind_sum/13 sys_now/19 snmp_get_device_enterprise_oid/18 snmp_get_local_ip_for_dst/17 
+snmp_get_auth_traps_enabled/7 (snmp_get_auth_traps_enabled) @06d11ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: snmp_auth_traps_enabled/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+snmp_set_auth_traps_enabled/6 (snmp_set_auth_traps_enabled) @06d11c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: snmp_auth_traps_enabled/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+snmp_trap_dst_ip_set/5 (snmp_trap_dst_ip_set) @06d119a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: trap_dst/2 (write) trap_dst/2 (write) trap_dst/2 (write) trap_dst/2 (write) trap_dst/2 (write) trap_dst/2 (write) trap_dst/2 (write) trap_dst/2 (write) trap_dst/2 (read) trap_dst/2 (write) trap_dst/2 (read) trap_dst/2 (write) trap_dst/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+snmp_trap_dst_enable/4 (snmp_trap_dst_enable) @06d11000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: trap_dst/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+snmp_auth_traps_enabled/3 (snmp_auth_traps_enabled) @06d0e438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: snmp_set_auth_traps_enabled/6 (write) snmp_get_auth_traps_enabled/7 (read) snmp_authfail_trap/12 (read) 
+  Availability: available
+  Varpool flags: initialized
+trap_dst/2 (trap_dst) @06d0e3a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: snmp_trap_dst_enable/4 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (read) snmp_trap_dst_ip_set/5 (write) snmp_trap_dst_ip_set/5 (read) snmp_trap_dst_ip_set/5 (write) snmp_send_trap/8 (addr) 
+  Availability: available
+  Varpool flags:
+snmp_traps_handle/1 (snmp_traps_handle) @06d0e288
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: snmp_send_trap/8 (read) snmp_send_trap/8 (read) 
+  Availability: available
+  Varpool flags:
+snmp_trap_header_enc (struct snmp_msg_trap * trap, struct snmp_pbuf_stream * pbuf_stream)
+{
+  struct snmp_asn1_tlv tlv;
+  err_t D.7495;
+  short unsigned int _1;
+  signed char _2;
+  long unsigned int _3;
+  long int _4;
+  signed char _5;
+  short unsigned int _6;
+  long unsigned int _7;
+  long int _8;
+  signed char _9;
+  short unsigned int _10;
+  signed char _11;
+  const char * snmp_community_trap.41_12;
+  short unsigned int _13;
+  signed char _14;
+  short unsigned int _15;
+  signed char _16;
+  const struct snmp_obj_id * _17;
+  const u32_t[50] * _18;
+  const struct snmp_obj_id * _19;
+  unsigned char _20;
+  short unsigned int _21;
+  signed char _22;
+  const struct snmp_obj_id * _23;
+  const u32_t[50] * _24;
+  const struct snmp_obj_id * _25;
+  unsigned char _26;
+  short unsigned int _27;
+  signed char _28;
+  unsigned char _29;
+  signed char _30;
+  u32_t[4] * _31;
+  signed char _32;
+  signed char _33;
+  u32_t * _34;
+  signed char _35;
+  long unsigned int _36;
+  long int _37;
+  signed char _38;
+  short unsigned int _39;
+  long unsigned int _40;
+  long int _41;
+  signed char _42;
+  long unsigned int _43;
+  long int _44;
+  signed char _45;
+  short unsigned int _46;
+  long unsigned int _47;
+  long int _48;
+  signed char _49;
+  long unsigned int _50;
+  long int _51;
+  signed char _52;
+  short unsigned int _53;
+  long unsigned int _54;
+  long int _55;
+  signed char _56;
+  err_t _57;
+  err_t _99;
+  err_t _100;
+  err_t _107;
+  err_t _108;
+  err_t _130;
+  err_t _131;
+  err_t _132;
+  err_t _133;
+  err_t _134;
+  err_t _135;
+  err_t _136;
+  err_t _137;
+  err_t _138;
+  err_t _139;
+  err_t _140;
+  err_t _141;
+  err_t _142;
+  err_t _143;
+  err_t _144;
+
+  <bb 2> :
+  tlv.type = 48;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  _1 = trap_64(D)->seqlen;
+  tlv.value_len = _1;
+  _2 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _144 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 4> :
+  tlv.type = 2;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  tlv.value_len = 0;
+  _3 = trap_64(D)->snmp_version;
+  _4 = (long int) _3;
+  snmp_asn1_enc_s32t_cnt (_4, &tlv.value_len);
+  _5 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _143 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 6> :
+  _6 = tlv.value_len;
+  _7 = trap_64(D)->snmp_version;
+  _8 = (long int) _7;
+  _9 = snmp_asn1_enc_s32t (pbuf_stream_66(D), _6, _8);
+  if (_9 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _142 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 8> :
+  tlv.type = 4;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  _10 = trap_64(D)->comlen;
+  tlv.value_len = _10;
+  _11 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_11 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _141 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 10> :
+  snmp_community_trap.41_12 = snmp_community_trap;
+  _13 = trap_64(D)->comlen;
+  _14 = snmp_asn1_enc_raw (pbuf_stream_66(D), snmp_community_trap.41_12, _13);
+  if (_14 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _140 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 12> :
+  tlv.type = 164;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  _15 = trap_64(D)->pdulen;
+  tlv.value_len = _15;
+  _16 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_16 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _139 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 14> :
+  tlv.type = 6;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  tlv.value_len = 0;
+  _17 = trap_64(D)->enterprise;
+  _18 = &_17->id;
+  _19 = trap_64(D)->enterprise;
+  _20 = _19->len;
+  _21 = (short unsigned int) _20;
+  snmp_asn1_enc_oid_cnt (_18, _21, &tlv.value_len);
+  _22 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_22 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _138 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 16> :
+  _23 = trap_64(D)->enterprise;
+  _24 = &_23->id;
+  _25 = trap_64(D)->enterprise;
+  _26 = _25->len;
+  _27 = (short unsigned int) _26;
+  _28 = snmp_asn1_enc_oid (pbuf_stream_66(D), _24, _27);
+  if (_28 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  _137 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 18> :
+  _29 = trap_64(D)->sip.type;
+  if (_29 == 6)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 19> :
+  tlv.type = 64;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  tlv.value_len = 16;
+  _30 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_30 != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _108 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 21> :
+  _31 = &trap_64(D)->sip.u_addr.ip6.addr;
+  _32 = snmp_asn1_enc_raw (pbuf_stream_66(D), _31, 16);
+  if (_32 != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 22> :
+  _107 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 23> :
+  tlv.type = 64;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  tlv.value_len = 4;
+  _33 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_33 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _100 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 25> :
+  _34 = &trap_64(D)->sip.u_addr.ip4.addr;
+  _35 = snmp_asn1_enc_raw (pbuf_stream_66(D), _34, 4);
+  if (_35 != 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  _99 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 27> :
+  tlv.type = 2;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  tlv.value_len = 0;
+  _36 = trap_64(D)->gen_trap;
+  _37 = (long int) _36;
+  snmp_asn1_enc_s32t_cnt (_37, &tlv.value_len);
+  _38 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_38 != 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  _136 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 29> :
+  _39 = tlv.value_len;
+  _40 = trap_64(D)->gen_trap;
+  _41 = (long int) _40;
+  _42 = snmp_asn1_enc_s32t (pbuf_stream_66(D), _39, _41);
+  if (_42 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  _135 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 31> :
+  tlv.type = 2;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  tlv.value_len = 0;
+  _43 = trap_64(D)->spc_trap;
+  _44 = (long int) _43;
+  snmp_asn1_enc_s32t_cnt (_44, &tlv.value_len);
+  _45 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_45 != 0)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  _134 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 33> :
+  _46 = tlv.value_len;
+  _47 = trap_64(D)->spc_trap;
+  _48 = (long int) _47;
+  _49 = snmp_asn1_enc_s32t (pbuf_stream_66(D), _46, _48);
+  if (_49 != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  _133 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 35> :
+  tlv.type = 67;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  tlv.value_len = 0;
+  _50 = trap_64(D)->ts;
+  _51 = (long int) _50;
+  snmp_asn1_enc_s32t_cnt (_51, &tlv.value_len);
+  _52 = snmp_ans1_enc_tlv (pbuf_stream_66(D), &tlv);
+  if (_52 != 0)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  _132 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 37> :
+  _53 = tlv.value_len;
+  _54 = trap_64(D)->ts;
+  _55 = (long int) _54;
+  _56 = snmp_asn1_enc_s32t (pbuf_stream_66(D), _53, _55);
+  if (_56 != 0)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 38> :
+  _131 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 40>; [INV]
+
+  <bb 39> :
+  _130 = 0;
+
+  <bb 40> :
+  # _57 = PHI <_144(3), _143(5), _142(7), _141(9), _140(11), _139(13), _138(15), _137(17), _108(20), _107(22), _100(24), _99(26), _136(28), _135(30), _134(32), _133(34), _132(36), _131(38), _130(39)>
+  tlv ={v} {CLOBBER};
+
+  <bb 41> :
+<L40>:
+  return _57;
+
+}
+
+
+snmp_trap_varbind_enc (struct snmp_msg_trap * trap, struct snmp_pbuf_stream * pbuf_stream, struct snmp_varbind * varbinds)
+{
+  struct snmp_varbind * varbind;
+  struct snmp_asn1_tlv tlv;
+  err_t D.7488;
+  short unsigned int _1;
+  signed char _2;
+  signed char _3;
+  err_t _5;
+  err_t _18;
+  err_t _21;
+  err_t _22;
+
+  <bb 2> :
+  varbind_9 = varbinds_8(D);
+  tlv.type = 48;
+  tlv.type_len = 0;
+  tlv.length_len = 0;
+  _1 = trap_14(D)->vbseqlen;
+  tlv.value_len = _1;
+  _2 = snmp_ans1_enc_tlv (pbuf_stream_16(D), &tlv);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _22 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _3 = snmp_append_outbound_varbind (pbuf_stream_16(D), varbind_4);
+  if (_3 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _21 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  varbind_20 = varbind_4->next;
+
+  <bb 8> :
+  # varbind_4 = PHI <varbind_9(4), varbind_20(7)>
+  if (varbind_4 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _18 = 0;
+
+  <bb 10> :
+  # _5 = PHI <_22(3), _21(6), _18(9)>
+  tlv ={v} {CLOBBER};
+
+  <bb 11> :
+<L8>:
+  return _5;
+
+}
+
+
+snmp_trap_header_sum (struct snmp_msg_trap * trap, u16_t vb_len)
+{
+  u8_t lenlen;
+  u16_t len;
+  u16_t tot_len;
+  u16_t D.7483;
+  short unsigned int iftmp.33;
+  long unsigned int _1;
+  short unsigned int len.17_2;
+  unsigned char lenlen.18_3;
+  short unsigned int _4;
+  short unsigned int len.19_5;
+  short unsigned int _6;
+  short unsigned int _7;
+  long unsigned int _8;
+  long int _9;
+  short unsigned int len.20_10;
+  unsigned char lenlen.21_11;
+  short unsigned int _12;
+  short unsigned int len.22_13;
+  short unsigned int _14;
+  short unsigned int _15;
+  long unsigned int _16;
+  long int _17;
+  short unsigned int len.23_18;
+  unsigned char lenlen.24_19;
+  short unsigned int _20;
+  short unsigned int len.25_21;
+  short unsigned int _22;
+  short unsigned int _23;
+  unsigned char _24;
+  short unsigned int len.26_25;
+  unsigned char lenlen.27_26;
+  short unsigned int _27;
+  short unsigned int len.28_28;
+  short unsigned int _29;
+  short unsigned int _30;
+  const struct snmp_obj_id * _31;
+  const u32_t[50] * _32;
+  const struct snmp_obj_id * _33;
+  unsigned char _34;
+  short unsigned int _35;
+  short unsigned int len.29_36;
+  unsigned char lenlen.30_37;
+  short unsigned int _38;
+  short unsigned int len.31_39;
+  short unsigned int _40;
+  short unsigned int _41;
+  short unsigned int _42;
+  unsigned char lenlen.32_43;
+  short unsigned int _44;
+  short unsigned int _45;
+  const char * snmp_community_trap.34_46;
+  unsigned int _47;
+  const char * snmp_community_trap.35_48;
+  unsigned int _49;
+  short unsigned int _50;
+  unsigned char lenlen.36_51;
+  short unsigned int _52;
+  short unsigned int _53;
+  short unsigned int _54;
+  short unsigned int _55;
+  long unsigned int _56;
+  long int _57;
+  short unsigned int len.37_58;
+  unsigned char lenlen.38_59;
+  short unsigned int _60;
+  short unsigned int len.39_61;
+  short unsigned int _62;
+  short unsigned int _63;
+  short unsigned int _64;
+  unsigned char lenlen.40_65;
+  short unsigned int _66;
+  short unsigned int _67;
+  short unsigned int iftmp.33_68;
+  short unsigned int iftmp.33_93;
+  short unsigned int iftmp.33_94;
+  u16_t _104;
+
+  <bb 2> :
+  tot_len_71 = vb_len_70(D);
+  _1 = trap_73(D)->ts;
+  snmp_asn1_enc_u32t_cnt (_1, &len);
+  len.17_2 = len;
+  snmp_asn1_enc_length_cnt (len.17_2, &lenlen);
+  lenlen.18_3 = lenlen;
+  _4 = (short unsigned int) lenlen.18_3;
+  len.19_5 = len;
+  _6 = _4 + len.19_5;
+  _7 = tot_len_71 + _6;
+  tot_len_76 = _7 + 1;
+  _8 = trap_73(D)->spc_trap;
+  _9 = (long int) _8;
+  snmp_asn1_enc_s32t_cnt (_9, &len);
+  len.20_10 = len;
+  snmp_asn1_enc_length_cnt (len.20_10, &lenlen);
+  lenlen.21_11 = lenlen;
+  _12 = (short unsigned int) lenlen.21_11;
+  len.22_13 = len;
+  _14 = _12 + len.22_13;
+  _15 = tot_len_76 + _14;
+  tot_len_79 = _15 + 1;
+  _16 = trap_73(D)->gen_trap;
+  _17 = (long int) _16;
+  snmp_asn1_enc_s32t_cnt (_17, &len);
+  len.23_18 = len;
+  snmp_asn1_enc_length_cnt (len.23_18, &lenlen);
+  lenlen.24_19 = lenlen;
+  _20 = (short unsigned int) lenlen.24_19;
+  len.25_21 = len;
+  _22 = _20 + len.25_21;
+  _23 = tot_len_79 + _22;
+  tot_len_82 = _23 + 1;
+  _24 = trap_73(D)->sip.type;
+  if (_24 == 6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  len = 16;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  len = 4;
+
+  <bb 5> :
+  len.26_25 = len;
+  snmp_asn1_enc_length_cnt (len.26_25, &lenlen);
+  lenlen.27_26 = lenlen;
+  _27 = (short unsigned int) lenlen.27_26;
+  len.28_28 = len;
+  _29 = _27 + len.28_28;
+  _30 = tot_len_82 + _29;
+  tot_len_86 = _30 + 1;
+  _31 = trap_73(D)->enterprise;
+  _32 = &_31->id;
+  _33 = trap_73(D)->enterprise;
+  _34 = _33->len;
+  _35 = (short unsigned int) _34;
+  snmp_asn1_enc_oid_cnt (_32, _35, &len);
+  len.29_36 = len;
+  snmp_asn1_enc_length_cnt (len.29_36, &lenlen);
+  lenlen.30_37 = lenlen;
+  _38 = (short unsigned int) lenlen.30_37;
+  len.31_39 = len;
+  _40 = _38 + len.31_39;
+  _41 = tot_len_86 + _40;
+  tot_len_89 = _41 + 1;
+  trap_73(D)->pdulen = tot_len_89;
+  _42 = trap_73(D)->pdulen;
+  snmp_asn1_enc_length_cnt (_42, &lenlen);
+  lenlen.32_43 = lenlen;
+  _44 = (short unsigned int) lenlen.32_43;
+  _45 = tot_len_89 + _44;
+  tot_len_92 = _45 + 1;
+  snmp_community_trap.34_46 = snmp_community_trap;
+  _47 = strlen (snmp_community_trap.34_46);
+  if (_47 <= 65534)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  snmp_community_trap.35_48 = snmp_community_trap;
+  _49 = strlen (snmp_community_trap.35_48);
+  iftmp.33_94 = (short unsigned int) _49;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.33_93 = 65535;
+
+  <bb 8> :
+  # iftmp.33_68 = PHI <iftmp.33_94(6), iftmp.33_93(7)>
+  trap_73(D)->comlen = iftmp.33_68;
+  _50 = trap_73(D)->comlen;
+  snmp_asn1_enc_length_cnt (_50, &lenlen);
+  lenlen.36_51 = lenlen;
+  _52 = (short unsigned int) lenlen.36_51;
+  _53 = trap_73(D)->comlen;
+  _54 = _52 + _53;
+  _55 = tot_len_92 + _54;
+  tot_len_97 = _55 + 1;
+  _56 = trap_73(D)->snmp_version;
+  _57 = (long int) _56;
+  snmp_asn1_enc_s32t_cnt (_57, &len);
+  len.37_58 = len;
+  snmp_asn1_enc_length_cnt (len.37_58, &lenlen);
+  lenlen.38_59 = lenlen;
+  _60 = (short unsigned int) lenlen.38_59;
+  len.39_61 = len;
+  _62 = _60 + len.39_61;
+  _63 = tot_len_97 + _62;
+  tot_len_100 = _63 + 1;
+  trap_73(D)->seqlen = tot_len_100;
+  _64 = trap_73(D)->seqlen;
+  snmp_asn1_enc_length_cnt (_64, &lenlen);
+  lenlen.40_65 = lenlen;
+  _66 = (short unsigned int) lenlen.40_65;
+  _67 = tot_len_100 + _66;
+  tot_len_103 = _67 + 1;
+  _104 = tot_len_103;
+  len ={v} {CLOBBER};
+  lenlen ={v} {CLOBBER};
+
+  <bb 9> :
+<L7>:
+  return _104;
+
+}
+
+
+snmp_trap_varbind_sum (struct snmp_msg_trap * trap, struct snmp_varbind * varbinds)
+{
+  struct snmp_varbind_len len;
+  u8_t tot_len_len;
+  u16_t tot_len;
+  struct snmp_varbind * varbind;
+  u16_t D.7473;
+  signed char _1;
+  unsigned char _2;
+  short unsigned int _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  short unsigned int _6;
+  short unsigned int _7;
+  unsigned char tot_len_len.16_8;
+  short unsigned int _9;
+  short unsigned int _10;
+  u16_t _23;
+
+  <bb 2> :
+  tot_len_15 = 0;
+  varbind_17 = varbinds_16(D);
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = snmp_varbind_length (varbind_11, &len);
+  if (_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = len.vb_len_len;
+  _3 = (short unsigned int) _2;
+  _4 = len.vb_value_len;
+  _5 = _3 + _4;
+  _6 = tot_len_13 + _5;
+  tot_len_26 = _6 + 1;
+
+  <bb 5> :
+  # tot_len_12 = PHI <tot_len_13(3), tot_len_26(4)>
+  varbind_27 = varbind_11->next;
+  len ={v} {CLOBBER};
+
+  <bb 6> :
+  # varbind_11 = PHI <varbind_17(2), varbind_27(5)>
+  # tot_len_13 = PHI <tot_len_15(2), tot_len_12(5)>
+  if (varbind_11 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  trap_19(D)->vbseqlen = tot_len_13;
+  _7 = trap_19(D)->vbseqlen;
+  snmp_asn1_enc_length_cnt (_7, &tot_len_len);
+  tot_len_len.16_8 = tot_len_len;
+  _9 = (short unsigned int) tot_len_len.16_8;
+  _10 = tot_len_13 + _9;
+  tot_len_22 = _10 + 1;
+  _23 = tot_len_22;
+  tot_len_len ={v} {CLOBBER};
+
+  <bb 8> :
+<L6>:
+  return _23;
+
+}
+
+
+snmp_authfail_trap ()
+{
+  unsigned char snmp_auth_traps_enabled.15_1;
+
+  <bb 2> :
+  snmp_auth_traps_enabled.15_1 = snmp_auth_traps_enabled;
+  if (snmp_auth_traps_enabled.15_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  snmp_send_trap_generic (4);
+
+  <bb 4> :
+  return;
+
+}
+
+
+snmp_coldstart_trap ()
+{
+  <bb 2> :
+  snmp_send_trap_generic (0);
+  return;
+
+}
+
+
+snmp_send_trap_specific (s32_t specific_trap, struct snmp_varbind * varbinds)
+{
+  err_t D.7467;
+  err_t _5;
+
+  <bb 2> :
+  _5 = snmp_send_trap (0B, 6, specific_trap_2(D), varbinds_3(D));
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+snmp_send_trap_generic (s32_t generic_trap)
+{
+  static const struct snmp_obj_id oid = {.len=7, .id={1, 3, 6, 1, 2, 1, 11}};
+  err_t D.7465;
+  err_t _4;
+
+  <bb 2> :
+  _4 = snmp_send_trap (&oid, generic_trap_2(D), 0, 0B);
+
+  <bb 3> :
+<L0>:
+  return _4;
+
+}
+
+
+snmp_send_trap (const struct snmp_obj_id * eoid, s32_t generic_trap, s32_t specific_trap, struct snmp_varbind * varbinds)
+{
+  struct snmp_pbuf_stream pbuf_stream;
+  err_t err;
+  u16_t tot_len;
+  u16_t i;
+  struct pbuf * p;
+  struct snmp_trap_dst * td;
+  struct snmp_msg_trap trap_msg;
+  err_t D.7462;
+  int iftmp.9;
+  int iftmp.8;
+  _Bool iftmp.7;
+  _Bool iftmp.6;
+  unsigned char _1;
+  struct ip_addr_t * _2;
+  struct ip_addr_t * _3;
+  unsigned char _4;
+  struct ip6_addr_t * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct ip4_addr_t * _10;
+  long unsigned int _11;
+  void * snmp_traps_handle.10_12;
+  struct ip_addr_t * _13;
+  unsigned char _14;
+  const struct snmp_obj_id * _15;
+  long unsigned int generic_trap.11_16;
+  long unsigned int specific_trap.12_17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  void * snmp_traps_handle.13_24;
+  struct ip_addr_t * _25;
+  short unsigned int i.14_26;
+  _Bool iftmp.6_31;
+  _Bool iftmp.7_32;
+  int iftmp.8_33;
+  int iftmp.9_34;
+  err_t _44;
+  _Bool iftmp.6_46;
+  int iftmp.8_47;
+  int iftmp.8_48;
+  _Bool iftmp.7_49;
+  int iftmp.9_50;
+  int iftmp.9_51;
+  _Bool iftmp.7_52;
+  _Bool iftmp.6_53;
+
+  <bb 2> :
+  err_39 = 0;
+  trap_msg.snmp_version = 0;
+  i_42 = 0;
+  td_43 = &trap_dst[0];
+  goto <bb 35>; [INV]
+
+  <bb 3> :
+  _1 = td_27->enable;
+  if (_1 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 4> :
+  _2 = &td_27->dip;
+  if (_2 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 5> :
+  _3 = &td_27->dip;
+  if (_3 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 6> :
+  _4 = td_27->dip.type;
+  if (_4 == 6)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 7> :
+  _5 = &td_27->dip.u_addr.ip6;
+  if (_5 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  _6 = td_27->dip.u_addr.ip6.addr[0];
+  if (_6 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _7 = td_27->dip.u_addr.ip6.addr[1];
+  if (_7 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _8 = td_27->dip.u_addr.ip6.addr[2];
+  if (_8 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _9 = td_27->dip.u_addr.ip6.addr[3];
+  if (_9 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.8_47 = 1;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.8_48 = 0;
+
+  <bb 14> :
+  # iftmp.8_33 = PHI <iftmp.8_47(12), iftmp.8_48(13)>
+  iftmp.7_49 = (_Bool) iftmp.8_33;
+  goto <bb 20>; [INV]
+
+  <bb 15> :
+  _10 = &td_27->dip.u_addr.ip4;
+  if (_10 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 16> :
+  _11 = td_27->dip.u_addr.ip4.addr;
+  if (_11 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.9_50 = 1;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  iftmp.9_51 = 0;
+
+  <bb 19> :
+  # iftmp.9_34 = PHI <iftmp.9_50(17), iftmp.9_51(18)>
+  iftmp.7_52 = (_Bool) iftmp.9_34;
+
+  <bb 20> :
+  # iftmp.7_32 = PHI <iftmp.7_49(14), iftmp.7_52(19)>
+  iftmp.6_53 = iftmp.7_32;
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  iftmp.6_46 = 0;
+
+  <bb 22> :
+  # iftmp.6_31 = PHI <iftmp.6_53(20), iftmp.6_46(21)>
+  if (iftmp.6_31 != 0)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 23> :
+  snmp_traps_handle.10_12 = snmp_traps_handle;
+  _13 = &td_27->dip;
+  _14 = snmp_get_local_ip_for_dst (snmp_traps_handle.10_12, _13, &trap_msg.sip);
+  if (_14 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 24> :
+  if (eoid_56(D) == 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  _15 = snmp_get_device_enterprise_oid ();
+  trap_msg.enterprise = _15;
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  trap_msg.enterprise = eoid_56(D);
+
+  <bb 27> :
+  generic_trap.11_16 = (long unsigned int) generic_trap_60(D);
+  trap_msg.gen_trap = generic_trap.11_16;
+  if (generic_trap_60(D) == 6)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  specific_trap.12_17 = (long unsigned int) specific_trap_63(D);
+  trap_msg.spc_trap = specific_trap.12_17;
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  trap_msg.spc_trap = 0;
+
+  <bb 30> :
+  _18 = sys_now ();
+  _19 = _18 / 10;
+  trap_msg.ts = _19;
+  tot_len_69 = snmp_trap_varbind_sum (&trap_msg, varbinds_67(D));
+  tot_len_71 = snmp_trap_header_sum (&trap_msg, tot_len_69);
+  p_73 = pbuf_alloc (74, tot_len_71, 640);
+  if (p_73 != 0B)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 31> :
+  snmp_pbuf_stream_init (&pbuf_stream, p_73, 0, tot_len_71);
+  snmp_trap_header_enc (&trap_msg, &pbuf_stream);
+  snmp_trap_varbind_enc (&trap_msg, &pbuf_stream, varbinds_67(D));
+  _20 = snmp_stats.outtraps;
+  _21 = _20 + 1;
+  snmp_stats.outtraps = _21;
+  _22 = snmp_stats.outpkts;
+  _23 = _22 + 1;
+  snmp_stats.outpkts = _23;
+  snmp_traps_handle.13_24 = snmp_traps_handle;
+  _25 = &td_27->dip;
+  snmp_sendto (snmp_traps_handle.13_24, p_73, _25, 162);
+  pbuf_free (p_73);
+  pbuf_stream ={v} {CLOBBER};
+  goto <bb 34>; [INV]
+
+  <bb 32> :
+  err_74 = -1;
+  goto <bb 34>; [INV]
+
+  <bb 33> :
+  err_55 = -4;
+
+  <bb 34> :
+  # err_29 = PHI <err_30(3), err_30(22), err_74(32), err_55(33), err_30(31)>
+  i.14_26 = i_28;
+  i_83 = i.14_26 + 1;
+  td_84 = td_27 + 28;
+
+  <bb 35> :
+  # td_27 = PHI <td_43(2), td_84(34)>
+  # i_28 = PHI <i_42(2), i_83(34)>
+  # err_30 = PHI <err_39(2), err_29(34)>
+  if (i_28 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 36> :
+  _44 = err_30;
+  trap_msg ={v} {CLOBBER};
+
+  <bb 37> :
+<L38>:
+  return _44;
+
+}
+
+
+snmp_get_auth_traps_enabled ()
+{
+  u8_t D.7422;
+  u8_t _2;
+
+  <bb 2> :
+  _2 = snmp_auth_traps_enabled;
+
+  <bb 3> :
+<L0>:
+  return _2;
+
+}
+
+
+snmp_set_auth_traps_enabled (u8_t enable)
+{
+  <bb 2> :
+  snmp_auth_traps_enabled = enable_2(D);
+  return;
+
+}
+
+
+snmp_trap_dst_ip_set (u8_t dst_idx, const struct ip_addr_t * dst)
+{
+  const long unsigned int iftmp.5;
+  u8_t iftmp.4;
+  const long unsigned int iftmp.3;
+  const long unsigned int iftmp.2;
+  const long unsigned int iftmp.1;
+  const long unsigned int iftmp.0;
+  int _1;
+  unsigned char _2;
+  unsigned char _3;
+  const struct ip6_addr_t * _4;
+  int _5;
+  const struct ip6_addr_t * _6;
+  int _7;
+  const struct ip6_addr_t * _8;
+  int _9;
+  const struct ip6_addr_t * _10;
+  int _11;
+  const struct ip6_addr_t * _12;
+  int _13;
+  const struct ip4_addr_t * _14;
+  int _15;
+  int _16;
+  int _17;
+  long unsigned int _18;
+  int _19;
+  long unsigned int _20;
+  int _21;
+  const long unsigned int iftmp.0_22;
+  const long unsigned int iftmp.1_23;
+  const long unsigned int iftmp.2_24;
+  const long unsigned int iftmp.3_25;
+  u8_t iftmp.4_26;
+  const long unsigned int iftmp.5_27;
+  const long unsigned int iftmp.0_33;
+  const long unsigned int iftmp.0_34;
+  const long unsigned int iftmp.1_36;
+  const long unsigned int iftmp.1_37;
+  const long unsigned int iftmp.2_39;
+  const long unsigned int iftmp.2_40;
+  const long unsigned int iftmp.3_42;
+  const long unsigned int iftmp.3_43;
+  u8_t iftmp.4_45;
+  u8_t iftmp.4_46;
+  const long unsigned int iftmp.5_48;
+  const long unsigned int iftmp.5_49;
+
+  <bb 2> :
+  if (dst_idx_29(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 3> :
+  _1 = (int) dst_idx_29(D);
+  _2 = dst_31(D)->type;
+  trap_dst[_1].dip.type = _2;
+  if (dst_31(D) != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 4> :
+  _3 = dst_31(D)->type;
+  if (_3 == 6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 5> :
+  _4 = &dst_31(D)->u_addr.ip6;
+  if (_4 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.0_34 = dst_31(D)->u_addr.ip6.addr[0];
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.0_33 = 0;
+
+  <bb 8> :
+  # iftmp.0_22 = PHI <iftmp.0_34(6), iftmp.0_33(7)>
+  _5 = (int) dst_idx_29(D);
+  trap_dst[_5].dip.u_addr.ip6.addr[0] = iftmp.0_22;
+  _6 = &dst_31(D)->u_addr.ip6;
+  if (_6 != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.1_37 = dst_31(D)->u_addr.ip6.addr[1];
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.1_36 = 0;
+
+  <bb 11> :
+  # iftmp.1_23 = PHI <iftmp.1_37(9), iftmp.1_36(10)>
+  _7 = (int) dst_idx_29(D);
+  trap_dst[_7].dip.u_addr.ip6.addr[1] = iftmp.1_23;
+  _8 = &dst_31(D)->u_addr.ip6;
+  if (_8 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.2_40 = dst_31(D)->u_addr.ip6.addr[2];
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.2_39 = 0;
+
+  <bb 14> :
+  # iftmp.2_24 = PHI <iftmp.2_40(12), iftmp.2_39(13)>
+  _9 = (int) dst_idx_29(D);
+  trap_dst[_9].dip.u_addr.ip6.addr[2] = iftmp.2_24;
+  _10 = &dst_31(D)->u_addr.ip6;
+  if (_10 != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftmp.3_43 = dst_31(D)->u_addr.ip6.addr[3];
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.3_42 = 0;
+
+  <bb 17> :
+  # iftmp.3_25 = PHI <iftmp.3_43(15), iftmp.3_42(16)>
+  _11 = (int) dst_idx_29(D);
+  trap_dst[_11].dip.u_addr.ip6.addr[3] = iftmp.3_25;
+  _12 = &dst_31(D)->u_addr.ip6;
+  if (_12 != 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  iftmp.4_46 = dst_31(D)->u_addr.ip6.zone;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  iftmp.4_45 = 0;
+
+  <bb 20> :
+  # iftmp.4_26 = PHI <iftmp.4_46(18), iftmp.4_45(19)>
+  _13 = (int) dst_idx_29(D);
+  trap_dst[_13].dip.u_addr.ip6.zone = iftmp.4_26;
+  goto <bb 25>; [INV]
+
+  <bb 21> :
+  _14 = &dst_31(D)->u_addr.ip4;
+  if (_14 != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  iftmp.5_49 = dst_31(D)->u_addr.ip4.addr;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  iftmp.5_48 = 0;
+
+  <bb 24> :
+  # iftmp.5_27 = PHI <iftmp.5_49(22), iftmp.5_48(23)>
+  _15 = (int) dst_idx_29(D);
+  trap_dst[_15].dip.u_addr.ip4.addr = iftmp.5_27;
+  _16 = (int) dst_idx_29(D);
+  trap_dst[_16].dip.u_addr.ip6.addr[3] = 0;
+  _17 = (int) dst_idx_29(D);
+  _18 = trap_dst[_16].dip.u_addr.ip6.addr[3];
+  trap_dst[_17].dip.u_addr.ip6.addr[2] = _18;
+  _19 = (int) dst_idx_29(D);
+  _20 = trap_dst[_17].dip.u_addr.ip6.addr[2];
+  trap_dst[_19].dip.u_addr.ip6.addr[1] = _20;
+  _21 = (int) dst_idx_29(D);
+  trap_dst[_21].dip.u_addr.ip6.zone = 0;
+
+  <bb 25> :
+  return;
+
+}
+
+
+snmp_trap_dst_enable (u8_t dst_idx, u8_t enable)
+{
+  int _1;
+
+  <bb 2> :
+  if (dst_idx_3(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) dst_idx_3(D);
+  trap_dst[_1].enable = enable_5(D);
+
+  <bb 4> :
+  return;
+
+}
+
+

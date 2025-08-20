@@ -1,0 +1,906 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: memp_free/69 memp_free_pool/68 memp_malloc/66 memp_malloc_pool/65 memp_init/63 memp_init_pool/62
+
+
+Marking externally visible variables: memp_pools/61 memp_PBUF_POOL/60 memp_memory_PBUF_POOL_base/57 memp_PBUF/56 memp_memory_PBUF_base/53 memp_MLD6_GROUP/52 memp_memory_MLD6_GROUP_base/49 memp_IP6_REASSDATA/48 memp_memory_IP6_REASSDATA_base/45 memp_ND6_QUEUE/44 memp_memory_ND6_QUEUE_base/41 memp_SYS_TIMEOUT/40 memp_memory_SYS_TIMEOUT_base/37 memp_IGMP_GROUP/36 memp_memory_IGMP_GROUP_base/33 memp_ARP_QUEUE/32 memp_memory_ARP_QUEUE_base/29 memp_FRAG_PBUF/28 memp_memory_FRAG_PBUF_base/25 memp_REASSDATA/24 memp_memory_REASSDATA_base/21 memp_TCP_SEG/20 memp_memory_TCP_SEG_base/17 memp_TCP_PCB_LISTEN/16 memp_memory_TCP_PCB_LISTEN_base/13 memp_TCP_PCB/12 memp_memory_TCP_PCB_base/9 memp_UDP_PCB/8 memp_memory_UDP_PCB_base/5 memp_RAW_PCB/4 memp_memory_RAW_PCB_base/1
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+lwip_stats/70 (lwip_stats) @06db9240
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: memp_init/63 (write) 
+  Availability: not_available
+  Varpool flags:
+memp_free/69 (memp_free) @06db3d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_pools/61 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: do_memp_free_pool/67 
+memp_free_pool/68 (memp_free_pool) @06db39a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: do_memp_free_pool/67 
+do_memp_free_pool/67 (do_memp_free_pool) @06db3700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: memp_free/69 memp_free_pool/68 
+  Calls: 
+memp_malloc/66 (memp_malloc) @06db3460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_pools/61 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: do_memp_malloc_pool/64 
+memp_malloc_pool/65 (memp_malloc_pool) @06db31c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: do_memp_malloc_pool/64 
+do_memp_malloc_pool/64 (do_memp_malloc_pool) @06da7b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: memp_malloc/66 memp_malloc_pool/65 
+  Calls: 
+memp_init/63 (memp_init) @06da7e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_pools/61 (read) memp_pools/61 (read) lwip_stats/70 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memp_init_pool/62 
+memp_init_pool/62 (memp_init_pool) @06da7a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: memp_init/63 
+  Calls: 
+memp_pools/61 (memp_pools) @06da2630
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_RAW_PCB/4 (addr) memp_UDP_PCB/8 (addr) memp_TCP_PCB/12 (addr) memp_TCP_PCB_LISTEN/16 (addr) memp_TCP_SEG/20 (addr) memp_REASSDATA/24 (addr) memp_FRAG_PBUF/28 (addr) memp_ARP_QUEUE/32 (addr) memp_IGMP_GROUP/36 (addr) memp_SYS_TIMEOUT/40 (addr) memp_ND6_QUEUE/44 (addr) memp_IP6_REASSDATA/48 (addr) memp_MLD6_GROUP/52 (addr) memp_PBUF/56 (addr) memp_PBUF_POOL/60 (addr) 
+  Referring: memp_malloc/66 (read) memp_init/63 (read) memp_init/63 (read) memp_free/69 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_PBUF_POOL/60 (memp_PBUF_POOL) @06da25a0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_PBUF_POOL/58 (addr) memp_memory_PBUF_POOL_base/57 (addr) memp_tab_PBUF_POOL/59 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_PBUF_POOL/59 (memp_tab_PBUF_POOL) @06da24c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_PBUF_POOL/60 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_PBUF_POOL/58 (memp_stats_PBUF_POOL) @06da2438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_PBUF_POOL/60 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_PBUF_POOL_base/57 (memp_memory_PBUF_POOL_base) @06da23a8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_PBUF_POOL/60 (addr) 
+  Availability: available
+  Varpool flags:
+memp_PBUF/56 (memp_PBUF) @06da22d0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_PBUF/54 (addr) memp_memory_PBUF_base/53 (addr) memp_tab_PBUF/55 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_PBUF/55 (memp_tab_PBUF) @06da21f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_PBUF/56 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_PBUF/54 (memp_stats_PBUF) @06da2168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_PBUF/56 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_PBUF_base/53 (memp_memory_PBUF_base) @06da20d8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_PBUF/56 (addr) 
+  Availability: available
+  Varpool flags:
+memp_MLD6_GROUP/52 (memp_MLD6_GROUP) @06da2000
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_MLD6_GROUP/50 (addr) memp_memory_MLD6_GROUP_base/49 (addr) memp_tab_MLD6_GROUP/51 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_MLD6_GROUP/51 (memp_tab_MLD6_GROUP) @06d97ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_MLD6_GROUP/52 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_MLD6_GROUP/50 (memp_stats_MLD6_GROUP) @06d97e58
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_MLD6_GROUP/52 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_MLD6_GROUP_base/49 (memp_memory_MLD6_GROUP_base) @06d97dc8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_MLD6_GROUP/52 (addr) 
+  Availability: available
+  Varpool flags:
+memp_IP6_REASSDATA/48 (memp_IP6_REASSDATA) @06d97cf0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_IP6_REASSDATA/46 (addr) memp_memory_IP6_REASSDATA_base/45 (addr) memp_tab_IP6_REASSDATA/47 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_IP6_REASSDATA/47 (memp_tab_IP6_REASSDATA) @06d97c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_IP6_REASSDATA/48 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_IP6_REASSDATA/46 (memp_stats_IP6_REASSDATA) @06d97b88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_IP6_REASSDATA/48 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_IP6_REASSDATA_base/45 (memp_memory_IP6_REASSDATA_base) @06d97af8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_IP6_REASSDATA/48 (addr) 
+  Availability: available
+  Varpool flags:
+memp_ND6_QUEUE/44 (memp_ND6_QUEUE) @06d97a20
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_ND6_QUEUE/42 (addr) memp_memory_ND6_QUEUE_base/41 (addr) memp_tab_ND6_QUEUE/43 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_ND6_QUEUE/43 (memp_tab_ND6_QUEUE) @06d97948
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_ND6_QUEUE/44 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_ND6_QUEUE/42 (memp_stats_ND6_QUEUE) @06d978b8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_ND6_QUEUE/44 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_ND6_QUEUE_base/41 (memp_memory_ND6_QUEUE_base) @06d97828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_ND6_QUEUE/44 (addr) 
+  Availability: available
+  Varpool flags:
+memp_SYS_TIMEOUT/40 (memp_SYS_TIMEOUT) @06d97750
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_SYS_TIMEOUT/38 (addr) memp_memory_SYS_TIMEOUT_base/37 (addr) memp_tab_SYS_TIMEOUT/39 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_SYS_TIMEOUT/39 (memp_tab_SYS_TIMEOUT) @06d97678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_SYS_TIMEOUT/40 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_SYS_TIMEOUT/38 (memp_stats_SYS_TIMEOUT) @06d975e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_SYS_TIMEOUT/40 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_SYS_TIMEOUT_base/37 (memp_memory_SYS_TIMEOUT_base) @06d97558
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_SYS_TIMEOUT/40 (addr) 
+  Availability: available
+  Varpool flags:
+memp_IGMP_GROUP/36 (memp_IGMP_GROUP) @06d97480
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_IGMP_GROUP/34 (addr) memp_memory_IGMP_GROUP_base/33 (addr) memp_tab_IGMP_GROUP/35 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_IGMP_GROUP/35 (memp_tab_IGMP_GROUP) @06d973a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_IGMP_GROUP/36 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_IGMP_GROUP/34 (memp_stats_IGMP_GROUP) @06d97318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_IGMP_GROUP/36 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_IGMP_GROUP_base/33 (memp_memory_IGMP_GROUP_base) @06d97288
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_IGMP_GROUP/36 (addr) 
+  Availability: available
+  Varpool flags:
+memp_ARP_QUEUE/32 (memp_ARP_QUEUE) @06d971b0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_ARP_QUEUE/30 (addr) memp_memory_ARP_QUEUE_base/29 (addr) memp_tab_ARP_QUEUE/31 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_ARP_QUEUE/31 (memp_tab_ARP_QUEUE) @06d970d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_ARP_QUEUE/32 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_ARP_QUEUE/30 (memp_stats_ARP_QUEUE) @06d97048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_ARP_QUEUE/32 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_ARP_QUEUE_base/29 (memp_memory_ARP_QUEUE_base) @06d7cf78
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_ARP_QUEUE/32 (addr) 
+  Availability: available
+  Varpool flags:
+memp_FRAG_PBUF/28 (memp_FRAG_PBUF) @06d7cea0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_FRAG_PBUF/26 (addr) memp_memory_FRAG_PBUF_base/25 (addr) memp_tab_FRAG_PBUF/27 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_FRAG_PBUF/27 (memp_tab_FRAG_PBUF) @06d7cdc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_FRAG_PBUF/28 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_FRAG_PBUF/26 (memp_stats_FRAG_PBUF) @06d7cd38
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_FRAG_PBUF/28 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_FRAG_PBUF_base/25 (memp_memory_FRAG_PBUF_base) @06d7cca8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_FRAG_PBUF/28 (addr) 
+  Availability: available
+  Varpool flags:
+memp_REASSDATA/24 (memp_REASSDATA) @06d7cbd0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_REASSDATA/22 (addr) memp_memory_REASSDATA_base/21 (addr) memp_tab_REASSDATA/23 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_REASSDATA/23 (memp_tab_REASSDATA) @06d7caf8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_REASSDATA/24 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_REASSDATA/22 (memp_stats_REASSDATA) @06d7ca68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_REASSDATA/24 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_REASSDATA_base/21 (memp_memory_REASSDATA_base) @06d7c9d8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_REASSDATA/24 (addr) 
+  Availability: available
+  Varpool flags:
+memp_TCP_SEG/20 (memp_TCP_SEG) @06d7c900
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_TCP_SEG/18 (addr) memp_memory_TCP_SEG_base/17 (addr) memp_tab_TCP_SEG/19 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_TCP_SEG/19 (memp_tab_TCP_SEG) @06d7c828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_TCP_SEG/20 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_TCP_SEG/18 (memp_stats_TCP_SEG) @06d7c798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_TCP_SEG/20 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_TCP_SEG_base/17 (memp_memory_TCP_SEG_base) @06d7c708
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_TCP_SEG/20 (addr) 
+  Availability: available
+  Varpool flags:
+memp_TCP_PCB_LISTEN/16 (memp_TCP_PCB_LISTEN) @06d7c630
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_TCP_PCB_LISTEN/14 (addr) memp_memory_TCP_PCB_LISTEN_base/13 (addr) memp_tab_TCP_PCB_LISTEN/15 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_TCP_PCB_LISTEN/15 (memp_tab_TCP_PCB_LISTEN) @06d7c558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_TCP_PCB_LISTEN/16 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_TCP_PCB_LISTEN/14 (memp_stats_TCP_PCB_LISTEN) @06d7c4c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_TCP_PCB_LISTEN/16 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_TCP_PCB_LISTEN_base/13 (memp_memory_TCP_PCB_LISTEN_base) @06d7c438
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_TCP_PCB_LISTEN/16 (addr) 
+  Availability: available
+  Varpool flags:
+memp_TCP_PCB/12 (memp_TCP_PCB) @06d7c360
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_TCP_PCB/10 (addr) memp_memory_TCP_PCB_base/9 (addr) memp_tab_TCP_PCB/11 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_TCP_PCB/11 (memp_tab_TCP_PCB) @06d7c288
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_TCP_PCB/12 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_TCP_PCB/10 (memp_stats_TCP_PCB) @06d7c1f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_TCP_PCB/12 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_TCP_PCB_base/9 (memp_memory_TCP_PCB_base) @06d7c168
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_TCP_PCB/12 (addr) 
+  Availability: available
+  Varpool flags:
+memp_UDP_PCB/8 (memp_UDP_PCB) @06d7c090
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_UDP_PCB/6 (addr) memp_memory_UDP_PCB_base/5 (addr) memp_tab_UDP_PCB/7 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_UDP_PCB/7 (memp_tab_UDP_PCB) @06d6ef78
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_UDP_PCB/8 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_UDP_PCB/6 (memp_stats_UDP_PCB) @06d6eee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_UDP_PCB/8 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_UDP_PCB_base/5 (memp_memory_UDP_PCB_base) @06d6ee58
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_UDP_PCB/8 (addr) 
+  Availability: available
+  Varpool flags:
+memp_RAW_PCB/4 (memp_RAW_PCB) @06d6ed80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: memp_stats_RAW_PCB/2 (addr) memp_memory_RAW_PCB_base/1 (addr) memp_tab_RAW_PCB/3 (addr) 
+  Referring: memp_pools/61 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memp_tab_RAW_PCB/3 (memp_tab_RAW_PCB) @06d6eca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_RAW_PCB/4 (addr) 
+  Availability: available
+  Varpool flags:
+memp_stats_RAW_PCB/2 (memp_stats_RAW_PCB) @06d6ec18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: memp_RAW_PCB/4 (addr) 
+  Availability: available
+  Varpool flags:
+memp_memory_RAW_PCB_base/1 (memp_memory_RAW_PCB_base) @06d6eb88
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: memp_RAW_PCB/4 (addr) 
+  Availability: available
+  Varpool flags:
+memp_free (memp_t type, void * mem)
+{
+  const struct memp_desc * _1;
+
+  <bb 2> :
+  if (type_3(D) > 14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  if (mem_4(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _1 = memp_pools[type_3(D)];
+  do_memp_free_pool (_1, mem_4(D));
+
+  <bb 7> :
+<L4>:
+  return;
+
+}
+
+
+memp_free_pool (const struct memp_desc * desc, void * mem)
+{
+  <bb 2> :
+  if (desc_3(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (desc_3(D) == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (mem_5(D) == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  do_memp_free_pool (desc_3(D), mem_5(D));
+
+  <bb 8> :
+<L6>:
+  return;
+
+}
+
+
+do_memp_free_pool (const struct memp_desc * desc, void * mem)
+{
+  struct memp * memp;
+  unsigned int mem.2_1;
+  unsigned int _2;
+  struct stats_mem * _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  short unsigned int _6;
+  struct memp * * _7;
+  struct memp * _8;
+  struct memp * * _9;
+
+  <bb 2> :
+  mem.2_1 = (unsigned int) mem_11(D);
+  _2 = mem.2_1 & 7;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  memp_13 = mem_11(D);
+  _3 = desc_14(D)->stats;
+  _4 = _3->used;
+  _5 = _4;
+  _6 = _5 + 65535;
+  _3->used = _6;
+  _7 = desc_14(D)->tab;
+  _8 = *_7;
+  memp_13->next = _8;
+  _9 = desc_14(D)->tab;
+  *_9 = memp_13;
+  return;
+
+}
+
+
+memp_malloc (memp_t type)
+{
+  void * memp;
+  void * D.8175;
+  const struct memp_desc * _1;
+  void * _2;
+  void * _8;
+  void * _9;
+
+  <bb 2> :
+  if (type_4(D) > 14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _9 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 = memp_pools[type_4(D)];
+  memp_7 = do_memp_malloc_pool (_1);
+  _8 = memp_7;
+
+  <bb 5> :
+  # _2 = PHI <_9(3), _8(4)>
+<L2>:
+  return _2;
+
+}
+
+
+memp_malloc_pool (const struct memp_desc * desc)
+{
+  void * D.8171;
+  void * _1;
+  void * _7;
+  void * _8;
+
+  <bb 2> :
+  if (desc_4(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (desc_4(D) == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _8 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _7 = do_memp_malloc_pool (desc_4(D));
+
+  <bb 7> :
+  # _1 = PHI <_8(5), _7(6)>
+<L5>:
+  return _1;
+
+}
+
+
+do_memp_malloc_pool (const struct memp_desc * desc)
+{
+  struct memp * memp;
+  void * D.8165;
+  struct memp * * _1;
+  struct memp * * _2;
+  struct memp * _3;
+  unsigned int memp.1_4;
+  unsigned int _5;
+  struct stats_mem * _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  short unsigned int _9;
+  struct stats_mem * _10;
+  short unsigned int _11;
+  struct stats_mem * _12;
+  short unsigned int _13;
+  struct stats_mem * _14;
+  struct stats_mem * _15;
+  short unsigned int _16;
+  struct stats_mem * _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  short unsigned int _20;
+  void * _21;
+  void * _29;
+  void * _33;
+
+  <bb 2> :
+  _1 = desc_26(D)->tab;
+  memp_27 = *_1;
+  if (memp_27 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  _2 = desc_26(D)->tab;
+  _3 = memp_27->next;
+  *_2 = _3;
+  memp.1_4 = (unsigned int) memp_27;
+  _5 = memp.1_4 & 7;
+  if (_5 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  _6 = desc_26(D)->stats;
+  _7 = _6->used;
+  _8 = _7;
+  _9 = _8 + 1;
+  _6->used = _9;
+  _10 = desc_26(D)->stats;
+  _11 = _10->used;
+  _12 = desc_26(D)->stats;
+  _13 = _12->max;
+  if (_11 > _13)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _14 = desc_26(D)->stats;
+  _15 = desc_26(D)->stats;
+  _16 = _14->used;
+  _15->max = _16;
+
+  <bb 7> :
+  _33 = memp_27;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _17 = desc_26(D)->stats;
+  _18 = _17->err;
+  _19 = _18;
+  _20 = _19 + 1;
+  _17->err = _20;
+  _29 = 0B;
+
+  <bb 9> :
+  # _21 = PHI <_33(7), _29(8)>
+<L7>:
+  return _21;
+
+}
+
+
+memp_init ()
+{
+  u16_t i;
+  int _1;
+  const struct memp_desc * _2;
+  int _3;
+  const struct memp_desc * _4;
+  int _5;
+  struct stats_mem * _6;
+  short unsigned int i.0_7;
+
+  <bb 2> :
+  i_10 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) i_8;
+  _2 = memp_pools[_1];
+  memp_init_pool (_2);
+  _3 = (int) i_8;
+  _4 = memp_pools[_3];
+  _5 = (int) i_8;
+  _6 = _4->stats;
+  lwip_stats.memp[_5] = _6;
+  i.0_7 = i_8;
+  i_14 = i.0_7 + 1;
+
+  <bb 4> :
+  # i_8 = PHI <i_10(2), i_14(3)>
+  if (i_8 <= 14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+memp_init_pool (const struct memp_desc * desc)
+{
+  struct memp * memp;
+  int i;
+  struct memp * * _1;
+  u8_t * _2;
+  unsigned int _3;
+  unsigned int _4;
+  unsigned int _5;
+  struct memp * * _6;
+  struct memp * _7;
+  struct memp * * _8;
+  short unsigned int _9;
+  sizetype _10;
+  short unsigned int _11;
+  int _12;
+  struct stats_mem * _13;
+  short unsigned int _14;
+
+  <bb 2> :
+  _1 = desc_19(D)->tab;
+  *_1 = 0B;
+  _2 = desc_19(D)->base;
+  _3 = (unsigned int) _2;
+  _4 = _3 + 7;
+  _5 = _4 & 4294967288;
+  memp_21 = (struct memp *) _5;
+  i_22 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = desc_19(D)->tab;
+  _7 = *_6;
+  memp_16->next = _7;
+  _8 = desc_19(D)->tab;
+  *_8 = memp_16;
+  _9 = desc_19(D)->size;
+  _10 = (sizetype) _9;
+  memp_26 = memp_16 + _10;
+  i_27 = i_15 + 1;
+
+  <bb 4> :
+  # i_15 = PHI <i_22(2), i_27(3)>
+  # memp_16 = PHI <memp_21(2), memp_26(3)>
+  _11 = desc_19(D)->num;
+  _12 = (int) _11;
+  if (i_15 < _12)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _13 = desc_19(D)->stats;
+  _14 = desc_19(D)->num;
+  _13->avail = _14;
+  return;
+
+}
+
+

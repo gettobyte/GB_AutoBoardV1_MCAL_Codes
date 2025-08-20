@@ -1,0 +1,6586 @@
+nd6_restart_netif (struct netif * netif)
+{
+  <bb 2> :
+  netif->rs_count = 3;
+  return;
+
+}
+
+
+nd6_adjust_mld_membership (struct netif * netif, s8_t addr_idx, u8_t new_state)
+{
+  u8_t new_member;
+  u8_t old_member;
+  u8_t old_state;
+  u8_t iftmp.178;
+  int iftmp.177;
+  int iftmp.176;
+
+  <bb 2> :
+  _1 = (int) addr_idx;
+  old_state = netif->ip6_addr_state[_1];
+  if (old_state != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  if (old_state != 64)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  if (old_state != 8)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.176 = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.176 = 0;
+
+  <bb 7> :
+  old_member = (u8_t) iftmp.176;
+  if (new_state != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  if (new_state != 64)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  if (new_state != 8)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.177 = 1;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  iftmp.177 = 0;
+
+  <bb 12> :
+  new_member = (u8_t) iftmp.177;
+  if (old_member != new_member)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 13> :
+  multicast_address.addr[0] = 767;
+  multicast_address.addr[1] = 0;
+  multicast_address.addr[2] = 16777216;
+  _2 = (int) addr_idx;
+  _3 = &netif->ip6_addr[_2].u_addr.ip6;
+  _4 = MEM[(const struct ip6_addr_t *)_3].addr[3];
+  _5 = _4 | 255;
+  multicast_address.addr[3] = _5;
+  multicast_address.zone = 0;
+  _6 = multicast_address.addr[0];
+  _7 = _6 & 49407;
+  if (_7 == 33022)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  _8 = multicast_address.addr[0];
+  _9 = _8 & 36863;
+  if (_9 == 511)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  _10 = multicast_address.addr[0];
+  _11 = _10 & 36863;
+  if (_11 == 767)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _12 = netif->num;
+  iftmp.178 = _12 + 1;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.178 = 0;
+
+  <bb 18> :
+  multicast_address.zone = iftmp.178;
+  if (new_member != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  mld6_joingroup_netif (netif, &multicast_address);
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  mld6_leavegroup_netif (netif, &multicast_address);
+
+  <bb 21> :
+  return;
+
+}
+
+
+nd6_cleanup_netif (struct netif * netif)
+{
+  s8_t router_index;
+  u8_t i;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = prefix_list[_1].netif;
+  if (netif == _2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = (int) i;
+  prefix_list[_3].netif = 0B;
+
+  <bb 5> :
+  i.171_4 = i;
+  i = i.171_4 + 1;
+
+  <bb 6> :
+  if (i <= 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  i = 0;
+  goto <bb 16>; [INV]
+
+  <bb 8> :
+  _5 = (int) i;
+  _6 = neighbor_cache[_5].netif;
+  if (netif == _6)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 9> :
+  router_index = 0;
+  goto <bb 13>; [INV]
+
+  <bb 10> :
+  _7 = (int) router_index;
+  _8 = default_router_list[_7].neighbor_entry;
+  _9 = (int) i;
+  _10 = &neighbor_cache[_9];
+  if (_8 == _10)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _11 = (int) router_index;
+  default_router_list[_11].neighbor_entry = 0B;
+  _12 = (int) router_index;
+  default_router_list[_12].flags = 0;
+
+  <bb 12> :
+  router_index.172_13 = router_index;
+  router_index.173_14 = (unsigned char) router_index.172_13;
+  _15 = router_index.173_14 + 1;
+  router_index = (s8_t) _15;
+
+  <bb 13> :
+  if (router_index <= 2)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  _16 = (int) i;
+  neighbor_cache[_16].isrouter = 0;
+  i.174_17 = (signed char) i;
+  nd6_free_neighbor_cache_entry (i.174_17);
+
+  <bb 15> :
+  i.175_18 = i;
+  i = i.175_18 + 1;
+
+  <bb 16> :
+  if (i <= 9)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  nd6_clear_destination_cache ();
+  return;
+
+}
+
+
+nd6_reachability_hint (const struct ip6_addr_t * ip6addr)
+{
+  s16_t dst_idx;
+  s8_t i;
+
+  <bb 2> :
+  _1 = ip6addr->addr[0];
+  nd6_cached_destination_index.158_2 = nd6_cached_destination_index;
+  _3 = (int) nd6_cached_destination_index.158_2;
+  _4 = destination_cache[_3].destination_addr.addr[0];
+  if (_1 == _4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  _5 = ip6addr->addr[1];
+  nd6_cached_destination_index.159_6 = nd6_cached_destination_index;
+  _7 = (int) nd6_cached_destination_index.159_6;
+  _8 = destination_cache[_7].destination_addr.addr[1];
+  if (_5 == _8)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  _9 = ip6addr->addr[2];
+  nd6_cached_destination_index.160_10 = nd6_cached_destination_index;
+  _11 = (int) nd6_cached_destination_index.160_10;
+  _12 = destination_cache[_11].destination_addr.addr[2];
+  if (_9 == _12)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _13 = ip6addr->addr[3];
+  nd6_cached_destination_index.161_14 = nd6_cached_destination_index;
+  _15 = (int) nd6_cached_destination_index.161_14;
+  _16 = destination_cache[_15].destination_addr.addr[3];
+  if (_13 == _16)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _17 = ip6addr->zone;
+  nd6_cached_destination_index.162_18 = nd6_cached_destination_index;
+  _19 = (int) nd6_cached_destination_index.162_18;
+  _20 = destination_cache[_19].destination_addr.zone;
+  if (_17 == _20)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  nd6_cached_destination_index.163_21 = nd6_cached_destination_index;
+  dst_idx = (s16_t) nd6_cached_destination_index.163_21;
+  _22 = lwip_stats.nd6.cachehit;
+  _23 = _22 + 1;
+  lwip_stats.nd6.cachehit = _23;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  dst_idx = nd6_find_destination_cache_entry (ip6addr);
+
+  <bb 9> :
+  if (dst_idx < 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 11> :
+  _24 = (int) dst_idx;
+  _25 = destination_cache[_24].next_hop_addr.addr[0];
+  nd6_cached_neighbor_index.164_26 = nd6_cached_neighbor_index;
+  _27 = (int) nd6_cached_neighbor_index.164_26;
+  _28 = neighbor_cache[_27].next_hop_address.addr[0];
+  if (_25 == _28)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 12> :
+  _29 = (int) dst_idx;
+  _30 = destination_cache[_29].next_hop_addr.addr[1];
+  nd6_cached_neighbor_index.165_31 = nd6_cached_neighbor_index;
+  _32 = (int) nd6_cached_neighbor_index.165_31;
+  _33 = neighbor_cache[_32].next_hop_address.addr[1];
+  if (_30 == _33)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 13> :
+  _34 = (int) dst_idx;
+  _35 = destination_cache[_34].next_hop_addr.addr[2];
+  nd6_cached_neighbor_index.166_36 = nd6_cached_neighbor_index;
+  _37 = (int) nd6_cached_neighbor_index.166_36;
+  _38 = neighbor_cache[_37].next_hop_address.addr[2];
+  if (_35 == _38)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  _39 = (int) dst_idx;
+  _40 = destination_cache[_39].next_hop_addr.addr[3];
+  nd6_cached_neighbor_index.167_41 = nd6_cached_neighbor_index;
+  _42 = (int) nd6_cached_neighbor_index.167_41;
+  _43 = neighbor_cache[_42].next_hop_address.addr[3];
+  if (_40 == _43)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 15> :
+  _44 = (int) dst_idx;
+  _45 = destination_cache[_44].next_hop_addr.zone;
+  nd6_cached_neighbor_index.168_46 = nd6_cached_neighbor_index;
+  _47 = (int) nd6_cached_neighbor_index.168_46;
+  _48 = neighbor_cache[_47].next_hop_address.zone;
+  if (_45 == _48)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  nd6_cached_neighbor_index.169_49 = nd6_cached_neighbor_index;
+  i = (s8_t) nd6_cached_neighbor_index.169_49;
+  _50 = lwip_stats.nd6.cachehit;
+  _51 = _50 + 1;
+  lwip_stats.nd6.cachehit = _51;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  _52 = (int) dst_idx;
+  _53 = &destination_cache[_52].next_hop_addr;
+  i = nd6_find_neighbor_cache_entry (_53);
+
+  <bb 18> :
+  if (i < 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 20> :
+  _54 = (int) i;
+  _55 = neighbor_cache[_54].state;
+  if (_55 == 1)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 21> :
+  _56 = (int) i;
+  _57 = neighbor_cache[_56].state;
+  if (_57 == 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  _58 = (int) i;
+  neighbor_cache[_58].state = 2;
+  _59 = (int) i;
+  reachable_time.170_60 = reachable_time;
+  neighbor_cache[_59].counter.reachable_time = reachable_time.170_60;
+
+  <bb 24> :
+<L21>:
+  return;
+
+}
+
+
+nd6_get_destination_mtu (const struct ip6_addr_t * ip6addr, struct netif * netif)
+{
+  s16_t i;
+  u16_t D.8854;
+
+  <bb 2> :
+  i = nd6_find_destination_cache_entry (ip6addr);
+  if (i >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = destination_cache[_1].pmtu;
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = (int) i;
+  D.8854 = destination_cache[_3].pmtu;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  if (netif != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.8854 = netif->mtu6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8854 = 1280;
+
+  <bb 8> :
+<L6>:
+  return D.8854;
+
+}
+
+
+nd6_get_next_hop_addr_or_queue (struct netif * netif, struct pbuf * q, const struct ip6_addr_t * ip6addr, const u8_t * * hwaddrp)
+{
+  s8_t i;
+  err_t D.8842;
+
+  <bb 2> :
+  i = nd6_get_next_hop_entry (ip6addr, netif);
+  if (i < 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8842 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 4> :
+  _1 = (int) i;
+  _2 = neighbor_cache[_1].state;
+  if (_2 == 3)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = (int) i;
+  neighbor_cache[_3].state = 4;
+  _4 = (int) i;
+  neighbor_cache[_4].counter.delay_time = 5;
+
+  <bb 6> :
+  _5 = (int) i;
+  _6 = neighbor_cache[_5].state;
+  if (_6 == 2)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _7 = (int) i;
+  _8 = neighbor_cache[_7].state;
+  if (_8 == 4)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _9 = (int) i;
+  _10 = neighbor_cache[_9].state;
+  if (_10 == 5)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _11 = (int) i;
+  _12 = &neighbor_cache[_11].lladdr;
+  *hwaddrp = _12;
+  D.8842 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  *hwaddrp = 0B;
+  D.8842 = nd6_queue_packet (i, q);
+
+  <bb 11> :
+<L8>:
+  return D.8842;
+
+}
+
+
+nd6_send_q (s8_t i)
+{
+  struct nd6_q_entry * q;
+  struct ip6_addr_t dest;
+  struct ip6_hdr * ip6hdr;
+  u8_t iftmp.157;
+
+  <bb 2> :
+  if (i < 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (i > 9)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  // predicted unlikely by early return (on trees) predictor.
+  dest = {CLOBBER};
+  goto <bb 14>; [INV]
+
+  <bb 5> :
+  goto <bb 12>; [INV]
+
+  <bb 6> :
+  _1 = (int) i;
+  q = neighbor_cache[_1].q;
+  _2 = (int) i;
+  _3 = q->next;
+  neighbor_cache[_2].q = _3;
+  _4 = q->p;
+  ip6hdr = _4->payload;
+  _5 = ip6hdr->dest.addr[0];
+  dest.addr[0] = _5;
+  _6 = ip6hdr->dest.addr[1];
+  dest.addr[1] = _6;
+  _7 = ip6hdr->dest.addr[2];
+  dest.addr[2] = _7;
+  _8 = ip6hdr->dest.addr[3];
+  dest.addr[3] = _8;
+  dest.zone = 0;
+  _9 = dest.addr[0];
+  _10 = _9 & 49407;
+  if (_10 == 33022)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _11 = dest.addr[0];
+  _12 = _11 & 36863;
+  if (_12 == 511)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _13 = dest.addr[0];
+  _14 = _13 & 36863;
+  if (_14 == 767)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _15 = (int) i;
+  _16 = neighbor_cache[_15].netif;
+  _17 = _16->num;
+  iftmp.157 = _17 + 1;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.157 = 0;
+
+  <bb 11> :
+  dest.zone = iftmp.157;
+  _18 = (int) i;
+  _19 = neighbor_cache[_18].netif;
+  _20 = _19->output_ip6;
+  _21 = (int) i;
+  _22 = neighbor_cache[_21].netif;
+  _23 = q->p;
+  _20 (_22, _23, &dest);
+  _24 = q->p;
+  pbuf_free (_24);
+  memp_free (10, q);
+
+  <bb 12> :
+  _25 = (int) i;
+  _26 = neighbor_cache[_25].q;
+  if (_26 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  dest = {CLOBBER};
+
+  <bb 14> :
+<L13>:
+  return;
+
+}
+
+
+nd6_free_q (struct nd6_q_entry * q)
+{
+  struct nd6_q_entry * r;
+
+  <bb 2> :
+  if (q == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = q->p;
+  if (_1 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  r = q;
+  q = q->next;
+  _2 = r->p;
+  if (_2 == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  _3 = r->p;
+  pbuf_free (_3);
+  memp_free (10, r);
+
+  <bb 10> :
+  if (q != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  return;
+
+}
+
+
+nd6_queue_packet (s8_t neighbor_index, struct pbuf * q)
+{
+  struct nd6_q_entry * r;
+  struct nd6_q_entry * new_entry;
+  int copy_needed;
+  struct pbuf * p;
+  err_t result;
+  err_t D.8801;
+
+  <bb 2> :
+  result = -1;
+  copy_needed = 0;
+  if (neighbor_index < 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (neighbor_index > 9)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.8801 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 5> :
+  p = q;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  _1 = p->type_internal;
+  _2 = (int) _1;
+  _3 = _2 & 64;
+  if (_3 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  copy_needed = 1;
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+  p = p->next;
+
+  <bb 9> :
+  if (p != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  if (copy_needed != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 11> :
+  p = pbuf_clone (14, 640, q);
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _4 = (int) neighbor_index;
+  r = neighbor_cache[_4].q;
+  _5 = (int) neighbor_index;
+  _6 = r->next;
+  neighbor_cache[_5].q = _6;
+  r->next = 0B;
+  nd6_free_q (r);
+  p = pbuf_clone (14, 640, q);
+
+  <bb 13> :
+  if (p == 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  _7 = (int) neighbor_index;
+  _8 = neighbor_cache[_7].q;
+  if (_8 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  p = q;
+  pbuf_ref (p);
+
+  <bb 16> :
+  if (p != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 17> :
+  new_entry = memp_malloc (10);
+  if (new_entry == 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 18> :
+  _9 = (int) neighbor_index;
+  _10 = neighbor_cache[_9].q;
+  if (_10 != 0B)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  _11 = (int) neighbor_index;
+  r = neighbor_cache[_11].q;
+  _12 = (int) neighbor_index;
+  _13 = r->next;
+  neighbor_cache[_12].q = _13;
+  r->next = 0B;
+  nd6_free_q (r);
+  new_entry = memp_malloc (10);
+
+  <bb 20> :
+  if (new_entry != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 21> :
+  new_entry->next = 0B;
+  new_entry->p = p;
+  _14 = (int) neighbor_index;
+  _15 = neighbor_cache[_14].q;
+  if (_15 != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 22> :
+  _16 = (int) neighbor_index;
+  r = neighbor_cache[_16].q;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  r = r->next;
+
+  <bb 24> :
+  _17 = r->next;
+  if (_17 != 0B)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 25> :
+  r->next = new_entry;
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  _18 = (int) neighbor_index;
+  neighbor_cache[_18].q = new_entry;
+
+  <bb 27> :
+  result = 0;
+  goto <bb 29>; [INV]
+
+  <bb 28> :
+  pbuf_free (p);
+
+  <bb 29> :
+  D.8801 = result;
+
+  <bb 30> :
+<L31>:
+  return D.8801;
+
+}
+
+
+nd6_get_next_hop_entry (const struct ip6_addr_t * ip6addr, struct netif * netif)
+{
+  s16_t dst_idx;
+  s8_t i;
+  u8_t iftmp.113;
+  const long unsigned int iftmp.111;
+  const long unsigned int iftmp.109;
+  const long unsigned int iftmp.107;
+  const long unsigned int iftmp.105;
+  s8_t D.8757;
+
+  <bb 2> :
+  _1 = ip6addr->addr[0];
+  nd6_cached_destination_index.98_2 = nd6_cached_destination_index;
+  _3 = (int) nd6_cached_destination_index.98_2;
+  _4 = destination_cache[_3].destination_addr.addr[0];
+  if (_1 == _4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  _5 = ip6addr->addr[1];
+  nd6_cached_destination_index.99_6 = nd6_cached_destination_index;
+  _7 = (int) nd6_cached_destination_index.99_6;
+  _8 = destination_cache[_7].destination_addr.addr[1];
+  if (_5 == _8)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  _9 = ip6addr->addr[2];
+  nd6_cached_destination_index.100_10 = nd6_cached_destination_index;
+  _11 = (int) nd6_cached_destination_index.100_10;
+  _12 = destination_cache[_11].destination_addr.addr[2];
+  if (_9 == _12)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _13 = ip6addr->addr[3];
+  nd6_cached_destination_index.101_14 = nd6_cached_destination_index;
+  _15 = (int) nd6_cached_destination_index.101_14;
+  _16 = destination_cache[_15].destination_addr.addr[3];
+  if (_13 == _16)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _17 = ip6addr->zone;
+  nd6_cached_destination_index.102_18 = nd6_cached_destination_index;
+  _19 = (int) nd6_cached_destination_index.102_18;
+  _20 = destination_cache[_19].destination_addr.zone;
+  if (_17 == _20)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _21 = lwip_stats.nd6.cachehit;
+  _22 = _21 + 1;
+  lwip_stats.nd6.cachehit = _22;
+  goto <bb 38>; [INV]
+
+  <bb 8> :
+  dst_idx = nd6_find_destination_cache_entry (ip6addr);
+  if (dst_idx >= 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  dst_idx.103_23 = (short unsigned int) dst_idx;
+  if (dst_idx.103_23 > 126)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 10>; [INV]
+
+  <bb 11> :
+  _24 = (unsigned char) dst_idx;
+  nd6_cached_destination_index = _24;
+  goto <bb 38>; [INV]
+
+  <bb 12> :
+  dst_idx = nd6_new_destination_cache_entry ();
+  if (dst_idx >= 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 13> :
+  dst_idx.104_25 = (short unsigned int) dst_idx;
+  if (dst_idx.104_25 > 126)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 14>; [INV]
+
+  <bb 15> :
+  _26 = (unsigned char) dst_idx;
+  nd6_cached_destination_index = _26;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  D.8757 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 51>; [INV]
+
+  <bb 17> :
+  if (ip6addr != 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  iftmp.105 = ip6addr->addr[0];
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  iftmp.105 = 0;
+
+  <bb 20> :
+  nd6_cached_destination_index.106_27 = nd6_cached_destination_index;
+  _28 = (int) nd6_cached_destination_index.106_27;
+  destination_cache[_28].destination_addr.addr[0] = iftmp.105;
+  if (ip6addr != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  iftmp.107 = ip6addr->addr[1];
+  goto <bb 23>; [INV]
+
+  <bb 22> :
+  iftmp.107 = 0;
+
+  <bb 23> :
+  nd6_cached_destination_index.108_29 = nd6_cached_destination_index;
+  _30 = (int) nd6_cached_destination_index.108_29;
+  destination_cache[_30].destination_addr.addr[1] = iftmp.107;
+  if (ip6addr != 0B)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  iftmp.109 = ip6addr->addr[2];
+  goto <bb 26>; [INV]
+
+  <bb 25> :
+  iftmp.109 = 0;
+
+  <bb 26> :
+  nd6_cached_destination_index.110_31 = nd6_cached_destination_index;
+  _32 = (int) nd6_cached_destination_index.110_31;
+  destination_cache[_32].destination_addr.addr[2] = iftmp.109;
+  if (ip6addr != 0B)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 27> :
+  iftmp.111 = ip6addr->addr[3];
+  goto <bb 29>; [INV]
+
+  <bb 28> :
+  iftmp.111 = 0;
+
+  <bb 29> :
+  nd6_cached_destination_index.112_33 = nd6_cached_destination_index;
+  _34 = (int) nd6_cached_destination_index.112_33;
+  destination_cache[_34].destination_addr.addr[3] = iftmp.111;
+  if (ip6addr != 0B)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  iftmp.113 = ip6addr->zone;
+  goto <bb 32>; [INV]
+
+  <bb 31> :
+  iftmp.113 = 0;
+
+  <bb 32> :
+  nd6_cached_destination_index.114_35 = nd6_cached_destination_index;
+  _36 = (int) nd6_cached_destination_index.114_35;
+  destination_cache[_36].destination_addr.zone = iftmp.113;
+  _37 = ip6addr->addr[0];
+  _38 = _37 & 49407;
+  if (_38 == 33022)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 33> :
+  _39 = nd6_is_prefix_in_netif (ip6addr, netif);
+  if (_39 != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  nd6_cached_destination_index.115_40 = nd6_cached_destination_index;
+  _41 = (int) nd6_cached_destination_index.115_40;
+  _42 = netif->mtu6;
+  destination_cache[_41].pmtu = _42;
+  nd6_cached_destination_index.116_43 = nd6_cached_destination_index;
+  _44 = (int) nd6_cached_destination_index.116_43;
+  nd6_cached_destination_index.117_45 = nd6_cached_destination_index;
+  _46 = (int) nd6_cached_destination_index.117_45;
+  _47 = destination_cache[_44].destination_addr.addr[0];
+  destination_cache[_46].next_hop_addr.addr[0] = _47;
+  nd6_cached_destination_index.118_48 = nd6_cached_destination_index;
+  _49 = (int) nd6_cached_destination_index.118_48;
+  nd6_cached_destination_index.119_50 = nd6_cached_destination_index;
+  _51 = (int) nd6_cached_destination_index.119_50;
+  _52 = destination_cache[_49].destination_addr.addr[1];
+  destination_cache[_51].next_hop_addr.addr[1] = _52;
+  nd6_cached_destination_index.120_53 = nd6_cached_destination_index;
+  _54 = (int) nd6_cached_destination_index.120_53;
+  nd6_cached_destination_index.121_55 = nd6_cached_destination_index;
+  _56 = (int) nd6_cached_destination_index.121_55;
+  _57 = destination_cache[_54].destination_addr.addr[2];
+  destination_cache[_56].next_hop_addr.addr[2] = _57;
+  nd6_cached_destination_index.122_58 = nd6_cached_destination_index;
+  _59 = (int) nd6_cached_destination_index.122_58;
+  nd6_cached_destination_index.123_60 = nd6_cached_destination_index;
+  _61 = (int) nd6_cached_destination_index.123_60;
+  _62 = destination_cache[_59].destination_addr.addr[3];
+  destination_cache[_61].next_hop_addr.addr[3] = _62;
+  nd6_cached_destination_index.124_63 = nd6_cached_destination_index;
+  _64 = (int) nd6_cached_destination_index.124_63;
+  nd6_cached_destination_index.125_65 = nd6_cached_destination_index;
+  _66 = (int) nd6_cached_destination_index.125_65;
+  _67 = destination_cache[_64].destination_addr.zone;
+  destination_cache[_66].next_hop_addr.zone = _67;
+  goto <bb 38>; [INV]
+
+  <bb 35> :
+  i = nd6_select_router (ip6addr, netif);
+  if (i < 0)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  nd6_cached_destination_index.126_68 = nd6_cached_destination_index;
+  _69 = (int) nd6_cached_destination_index.126_68;
+  destination_cache[_69].destination_addr.addr[0] = 0;
+  nd6_cached_destination_index.127_70 = nd6_cached_destination_index;
+  _71 = (int) nd6_cached_destination_index.127_70;
+  destination_cache[_71].destination_addr.addr[1] = 0;
+  nd6_cached_destination_index.128_72 = nd6_cached_destination_index;
+  _73 = (int) nd6_cached_destination_index.128_72;
+  destination_cache[_73].destination_addr.addr[2] = 0;
+  nd6_cached_destination_index.129_74 = nd6_cached_destination_index;
+  _75 = (int) nd6_cached_destination_index.129_74;
+  destination_cache[_75].destination_addr.addr[3] = 0;
+  nd6_cached_destination_index.130_76 = nd6_cached_destination_index;
+  _77 = (int) nd6_cached_destination_index.130_76;
+  destination_cache[_77].destination_addr.zone = 0;
+  D.8757 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 51>; [INV]
+
+  <bb 37> :
+  nd6_cached_destination_index.131_78 = nd6_cached_destination_index;
+  _79 = (int) nd6_cached_destination_index.131_78;
+  _80 = netif->mtu6;
+  destination_cache[_79].pmtu = _80;
+  _81 = (int) i;
+  _82 = default_router_list[_81].neighbor_entry;
+  nd6_cached_destination_index.132_83 = nd6_cached_destination_index;
+  _84 = (int) nd6_cached_destination_index.132_83;
+  _85 = _82->next_hop_address.addr[0];
+  destination_cache[_84].next_hop_addr.addr[0] = _85;
+  _86 = (int) i;
+  _87 = default_router_list[_86].neighbor_entry;
+  nd6_cached_destination_index.133_88 = nd6_cached_destination_index;
+  _89 = (int) nd6_cached_destination_index.133_88;
+  _90 = _87->next_hop_address.addr[1];
+  destination_cache[_89].next_hop_addr.addr[1] = _90;
+  _91 = (int) i;
+  _92 = default_router_list[_91].neighbor_entry;
+  nd6_cached_destination_index.134_93 = nd6_cached_destination_index;
+  _94 = (int) nd6_cached_destination_index.134_93;
+  _95 = _92->next_hop_address.addr[2];
+  destination_cache[_94].next_hop_addr.addr[2] = _95;
+  _96 = (int) i;
+  _97 = default_router_list[_96].neighbor_entry;
+  nd6_cached_destination_index.135_98 = nd6_cached_destination_index;
+  _99 = (int) nd6_cached_destination_index.135_98;
+  _100 = _97->next_hop_address.addr[3];
+  destination_cache[_99].next_hop_addr.addr[3] = _100;
+  _101 = (int) i;
+  _102 = default_router_list[_101].neighbor_entry;
+  nd6_cached_destination_index.136_103 = nd6_cached_destination_index;
+  _104 = (int) nd6_cached_destination_index.136_103;
+  _105 = _102->next_hop_address.zone;
+  destination_cache[_104].next_hop_addr.zone = _105;
+
+  <bb 38> :
+  nd6_cached_destination_index.137_106 = nd6_cached_destination_index;
+  _107 = (int) nd6_cached_destination_index.137_106;
+  _108 = destination_cache[_107].next_hop_addr.addr[0];
+  nd6_cached_neighbor_index.138_109 = nd6_cached_neighbor_index;
+  _110 = (int) nd6_cached_neighbor_index.138_109;
+  _111 = neighbor_cache[_110].next_hop_address.addr[0];
+  if (_108 == _111)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 39> :
+  nd6_cached_destination_index.139_112 = nd6_cached_destination_index;
+  _113 = (int) nd6_cached_destination_index.139_112;
+  _114 = destination_cache[_113].next_hop_addr.addr[1];
+  nd6_cached_neighbor_index.140_115 = nd6_cached_neighbor_index;
+  _116 = (int) nd6_cached_neighbor_index.140_115;
+  _117 = neighbor_cache[_116].next_hop_address.addr[1];
+  if (_114 == _117)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 40> :
+  nd6_cached_destination_index.141_118 = nd6_cached_destination_index;
+  _119 = (int) nd6_cached_destination_index.141_118;
+  _120 = destination_cache[_119].next_hop_addr.addr[2];
+  nd6_cached_neighbor_index.142_121 = nd6_cached_neighbor_index;
+  _122 = (int) nd6_cached_neighbor_index.142_121;
+  _123 = neighbor_cache[_122].next_hop_address.addr[2];
+  if (_120 == _123)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 41> :
+  nd6_cached_destination_index.143_124 = nd6_cached_destination_index;
+  _125 = (int) nd6_cached_destination_index.143_124;
+  _126 = destination_cache[_125].next_hop_addr.addr[3];
+  nd6_cached_neighbor_index.144_127 = nd6_cached_neighbor_index;
+  _128 = (int) nd6_cached_neighbor_index.144_127;
+  _129 = neighbor_cache[_128].next_hop_address.addr[3];
+  if (_126 == _129)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 42> :
+  nd6_cached_destination_index.145_130 = nd6_cached_destination_index;
+  _131 = (int) nd6_cached_destination_index.145_130;
+  _132 = destination_cache[_131].next_hop_addr.zone;
+  nd6_cached_neighbor_index.146_133 = nd6_cached_neighbor_index;
+  _134 = (int) nd6_cached_neighbor_index.146_133;
+  _135 = neighbor_cache[_134].next_hop_address.zone;
+  if (_132 == _135)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 43> :
+  _136 = lwip_stats.nd6.cachehit;
+  _137 = _136 + 1;
+  lwip_stats.nd6.cachehit = _137;
+  goto <bb 50>; [INV]
+
+  <bb 44> :
+  nd6_cached_destination_index.147_138 = nd6_cached_destination_index;
+  _139 = (int) nd6_cached_destination_index.147_138;
+  _140 = &destination_cache[_139].next_hop_addr;
+  i = nd6_find_neighbor_cache_entry (_140);
+  if (i >= 0)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 45> :
+  i.148_141 = (unsigned char) i;
+  nd6_cached_neighbor_index = i.148_141;
+  goto <bb 50>; [INV]
+
+  <bb 46> :
+  i = nd6_new_neighbor_cache_entry ();
+  if (i >= 0)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 47> :
+  i.149_142 = (unsigned char) i;
+  nd6_cached_neighbor_index = i.149_142;
+  goto <bb 49>; [INV]
+
+  <bb 48> :
+  D.8757 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 51>; [INV]
+
+  <bb 49> :
+  nd6_cached_destination_index.150_143 = nd6_cached_destination_index;
+  _144 = (int) nd6_cached_destination_index.150_143;
+  _145 = (int) i;
+  _146 = destination_cache[_144].next_hop_addr.addr[0];
+  neighbor_cache[_145].next_hop_address.addr[0] = _146;
+  nd6_cached_destination_index.151_147 = nd6_cached_destination_index;
+  _148 = (int) nd6_cached_destination_index.151_147;
+  _149 = (int) i;
+  _150 = destination_cache[_148].next_hop_addr.addr[1];
+  neighbor_cache[_149].next_hop_address.addr[1] = _150;
+  nd6_cached_destination_index.152_151 = nd6_cached_destination_index;
+  _152 = (int) nd6_cached_destination_index.152_151;
+  _153 = (int) i;
+  _154 = destination_cache[_152].next_hop_addr.addr[2];
+  neighbor_cache[_153].next_hop_address.addr[2] = _154;
+  nd6_cached_destination_index.153_155 = nd6_cached_destination_index;
+  _156 = (int) nd6_cached_destination_index.153_155;
+  _157 = (int) i;
+  _158 = destination_cache[_156].next_hop_addr.addr[3];
+  neighbor_cache[_157].next_hop_address.addr[3] = _158;
+  nd6_cached_destination_index.154_159 = nd6_cached_destination_index;
+  _160 = (int) nd6_cached_destination_index.154_159;
+  _161 = (int) i;
+  _162 = destination_cache[_160].next_hop_addr.zone;
+  neighbor_cache[_161].next_hop_address.zone = _162;
+  _163 = (int) i;
+  neighbor_cache[_163].isrouter = 0;
+  _164 = (int) i;
+  neighbor_cache[_164].netif = netif;
+  _165 = (int) i;
+  neighbor_cache[_165].state = 1;
+  _166 = (int) i;
+  neighbor_cache[_166].counter.probes_sent = 1;
+  _167 = (int) i;
+  _168 = &neighbor_cache[_167];
+  nd6_send_neighbor_cache_probe (_168, 1);
+
+  <bb 50> :
+  nd6_cached_destination_index.155_169 = nd6_cached_destination_index;
+  _170 = (int) nd6_cached_destination_index.155_169;
+  destination_cache[_170].age = 0;
+  nd6_cached_neighbor_index.156_171 = nd6_cached_neighbor_index;
+  D.8757 = (s8_t) nd6_cached_neighbor_index.156_171;
+
+  <bb 51> :
+<L53>:
+  return D.8757;
+
+}
+
+
+nd6_new_onlink_prefix (const struct ip6_addr_t * prefix, struct netif * netif)
+{
+  s8_t i;
+  s8_t D.8738;
+  u8_t iftmp.96;
+  const long unsigned int iftmp.95;
+  const long unsigned int iftmp.94;
+  const long unsigned int iftmp.93;
+  const long unsigned int iftmp.92;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 22>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = prefix_list[_1].netif;
+  if (_2 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _3 = (int) i;
+  _4 = prefix_list[_3].invalidation_timer;
+  if (_4 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 5> :
+  _5 = (int) i;
+  prefix_list[_5].netif = netif;
+  if (prefix != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.92 = prefix->addr[0];
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.92 = 0;
+
+  <bb 8> :
+  _6 = (int) i;
+  prefix_list[_6].prefix.addr[0] = iftmp.92;
+  if (prefix != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.93 = prefix->addr[1];
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.93 = 0;
+
+  <bb 11> :
+  _7 = (int) i;
+  prefix_list[_7].prefix.addr[1] = iftmp.93;
+  if (prefix != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.94 = prefix->addr[2];
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.94 = 0;
+
+  <bb 14> :
+  _8 = (int) i;
+  prefix_list[_8].prefix.addr[2] = iftmp.94;
+  if (prefix != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftmp.95 = prefix->addr[3];
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.95 = 0;
+
+  <bb 17> :
+  _9 = (int) i;
+  prefix_list[_9].prefix.addr[3] = iftmp.95;
+  if (prefix != 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  iftmp.96 = prefix->zone;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  iftmp.96 = 0;
+
+  <bb 20> :
+  _10 = (int) i;
+  prefix_list[_10].prefix.zone = iftmp.96;
+  D.8738 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 21> :
+  i.97_11 = (unsigned char) i;
+  _12 = i.97_11 + 1;
+  i = (s8_t) _12;
+
+  <bb 22> :
+  if (i <= 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  D.8738 = -1;
+
+  <bb 24> :
+<L21>:
+  return D.8738;
+
+}
+
+
+nd6_get_onlink_prefix (const struct ip6_addr_t * prefix, struct netif * netif)
+{
+  s8_t i;
+  s8_t D.8713;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 9>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = prefix_list[_1].prefix.addr[0];
+  _3 = prefix->addr[0];
+  if (_2 == _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  _4 = (int) i;
+  _5 = prefix_list[_4].prefix.addr[1];
+  _6 = prefix->addr[1];
+  if (_5 == _6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _7 = (int) i;
+  _8 = prefix_list[_7].prefix.zone;
+  _9 = prefix->zone;
+  if (_8 == _9)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _10 = (int) i;
+  _11 = prefix_list[_10].netif;
+  if (netif == _11)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8713 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  i.91_12 = (unsigned char) i;
+  _13 = i.91_12 + 1;
+  i = (s8_t) _13;
+
+  <bb 9> :
+  if (i <= 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  D.8713 = -1;
+
+  <bb 11> :
+<L11>:
+  return D.8713;
+
+}
+
+
+nd6_new_router (const struct ip6_addr_t * router_addr, struct netif * netif)
+{
+  s8_t neighbor_index;
+  s8_t free_router_index;
+  s8_t router_index;
+  u8_t iftmp.88;
+  const long unsigned int iftmp.87;
+  const long unsigned int iftmp.86;
+  const long unsigned int iftmp.85;
+  const long unsigned int iftmp.84;
+  s8_t D.8677;
+
+  <bb 2> :
+  neighbor_index = nd6_find_neighbor_cache_entry (router_addr);
+  if (neighbor_index < 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 3> :
+  neighbor_index = nd6_new_neighbor_cache_entry ();
+  if (neighbor_index < 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.8677 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 31>; [INV]
+
+  <bb 5> :
+  if (router_addr != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.84 = router_addr->addr[0];
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.84 = 0;
+
+  <bb 8> :
+  _1 = (int) neighbor_index;
+  neighbor_cache[_1].next_hop_address.addr[0] = iftmp.84;
+  if (router_addr != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.85 = router_addr->addr[1];
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.85 = 0;
+
+  <bb 11> :
+  _2 = (int) neighbor_index;
+  neighbor_cache[_2].next_hop_address.addr[1] = iftmp.85;
+  if (router_addr != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.86 = router_addr->addr[2];
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.86 = 0;
+
+  <bb 14> :
+  _3 = (int) neighbor_index;
+  neighbor_cache[_3].next_hop_address.addr[2] = iftmp.86;
+  if (router_addr != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  iftmp.87 = router_addr->addr[3];
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.87 = 0;
+
+  <bb 17> :
+  _4 = (int) neighbor_index;
+  neighbor_cache[_4].next_hop_address.addr[3] = iftmp.87;
+  if (router_addr != 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  iftmp.88 = router_addr->zone;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  iftmp.88 = 0;
+
+  <bb 20> :
+  _5 = (int) neighbor_index;
+  neighbor_cache[_5].next_hop_address.zone = iftmp.88;
+  _6 = (int) neighbor_index;
+  neighbor_cache[_6].netif = netif;
+  _7 = (int) neighbor_index;
+  neighbor_cache[_7].q = 0B;
+  _8 = (int) neighbor_index;
+  neighbor_cache[_8].state = 1;
+  _9 = (int) neighbor_index;
+  neighbor_cache[_9].counter.probes_sent = 1;
+  _10 = (int) neighbor_index;
+  _11 = &neighbor_cache[_10];
+  nd6_send_neighbor_cache_probe (_11, 1);
+
+  <bb 21> :
+  _12 = (int) neighbor_index;
+  neighbor_cache[_12].isrouter = 1;
+  free_router_index = 3;
+  router_index = 2;
+  goto <bb 27>; [INV]
+
+  <bb 22> :
+  _13 = (int) router_index;
+  _14 = default_router_list[_13].neighbor_entry;
+  _15 = (int) neighbor_index;
+  _16 = &neighbor_cache[_15];
+  if (_14 == _16)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  D.8677 = router_index;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 31>; [INV]
+
+  <bb 24> :
+  _17 = (int) router_index;
+  _18 = default_router_list[_17].neighbor_entry;
+  if (_18 == 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  free_router_index = router_index;
+
+  <bb 26> :
+  router_index.89_19 = router_index;
+  router_index.90_20 = (unsigned char) router_index.89_19;
+  _21 = router_index.90_20 + 255;
+  router_index = (s8_t) _21;
+
+  <bb 27> :
+  if (router_index >= 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 28> :
+  if (free_router_index <= 2)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  _22 = (int) neighbor_index;
+  _23 = (int) free_router_index;
+  _24 = &neighbor_cache[_22];
+  default_router_list[_23].neighbor_entry = _24;
+  D.8677 = free_router_index;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 31>; [INV]
+
+  <bb 30> :
+  _25 = (int) neighbor_index;
+  neighbor_cache[_25].isrouter = 0;
+  D.8677 = -1;
+
+  <bb 31> :
+<L28>:
+  return D.8677;
+
+}
+
+
+nd6_get_router (const struct ip6_addr_t * router_addr, struct netif * netif)
+{
+  s8_t i;
+  s8_t D.8671;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 13>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = default_router_list[_1].neighbor_entry;
+  if (_2 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 4> :
+  if (netif == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _3 = (int) i;
+  _4 = default_router_list[_3].neighbor_entry;
+  _5 = _4->netif;
+  if (netif == _5)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 6> :
+  _6 = router_addr->addr[0];
+  _7 = (int) i;
+  _8 = default_router_list[_7].neighbor_entry;
+  _9 = _8->next_hop_address.addr[0];
+  if (_6 == _9)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 7> :
+  _10 = router_addr->addr[1];
+  _11 = (int) i;
+  _12 = default_router_list[_11].neighbor_entry;
+  _13 = _12->next_hop_address.addr[1];
+  if (_10 == _13)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 8> :
+  _14 = router_addr->addr[2];
+  _15 = (int) i;
+  _16 = default_router_list[_15].neighbor_entry;
+  _17 = _16->next_hop_address.addr[2];
+  if (_14 == _17)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  _18 = router_addr->addr[3];
+  _19 = (int) i;
+  _20 = default_router_list[_19].neighbor_entry;
+  _21 = _20->next_hop_address.addr[3];
+  if (_18 == _21)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  _22 = router_addr->zone;
+  _23 = (int) i;
+  _24 = default_router_list[_23].neighbor_entry;
+  _25 = _24->next_hop_address.zone;
+  if (_22 == _25)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  D.8671 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 12> :
+  i.82_26 = i;
+  i.83_27 = (unsigned char) i.82_26;
+  _28 = i.83_27 + 1;
+  i = (s8_t) _28;
+
+  <bb 13> :
+  if (i <= 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  D.8671 = -1;
+
+  <bb 15> :
+<L18>:
+  return D.8671;
+
+}
+
+
+nd6_find_route (const struct ip6_addr_t * ip6addr)
+{
+  s8_t i;
+  struct netif * netif;
+  struct netif * D.8650;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 11>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  netif = prefix_list[_1].netif;
+  if (netif != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  _2 = (int) i;
+  _3 = prefix_list[_2].prefix.addr[0];
+  _4 = ip6addr->addr[0];
+  if (_3 == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 5> :
+  _5 = (int) i;
+  _6 = prefix_list[_5].prefix.addr[1];
+  _7 = ip6addr->addr[1];
+  if (_6 == _7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 6> :
+  _8 = (int) i;
+  _9 = prefix_list[_8].prefix.zone;
+  _10 = ip6addr->zone;
+  if (_9 == _10)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 7> :
+  _11 = netif->flags;
+  _12 = (_Bool) _11;
+  if (_12 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _13 = netif->flags;
+  _14 = (unsigned int) _13;
+  _15 = _14 >> 2;
+  _16 = (_Bool) _15;
+  if (_16 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  D.8650 = netif;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 10> :
+  i.81_17 = (unsigned char) i;
+  _18 = i.81_17 + 1;
+  i = (s8_t) _18;
+
+  <bb 11> :
+  if (i <= 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  i = nd6_select_router (ip6addr, 0B);
+  if (i >= 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 13> :
+  _19 = (int) i;
+  _20 = default_router_list[_19].neighbor_entry;
+  if (_20 == 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 14>; [INV]
+
+  <bb 15> :
+  _21 = (int) i;
+  _22 = default_router_list[_21].neighbor_entry;
+  D.8650 = _22->netif;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  D.8650 = 0B;
+
+  <bb 17> :
+<L20>:
+  return D.8650;
+
+}
+
+
+nd6_select_router (const struct ip6_addr_t * ip6addr, struct netif * netif)
+{
+  static s8_t last_router;
+  s8_t valid_router;
+  s8_t j;
+  s8_t i;
+  struct netif * router_netif;
+  int iftmp.77;
+  _Bool iftmp.76;
+  s8_t D.8611;
+  int iftmp.70;
+  _Bool iftmp.69;
+
+  <bb 2> :
+  valid_router = -1;
+  i = 0;
+  goto <bb 19>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = default_router_list[_1].neighbor_entry;
+  if (_2 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 4> :
+  _3 = (int) i;
+  _4 = default_router_list[_3].neighbor_entry;
+  router_netif = _4->netif;
+  if (router_netif != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 5> :
+  if (netif != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.69 = netif == router_netif;
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+  _5 = router_netif->flags;
+  _6 = (_Bool) _5;
+  if (_6 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _7 = router_netif->flags;
+  _8 = (unsigned int) _7;
+  _9 = _8 >> 2;
+  _10 = (_Bool) _9;
+  if (_10 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.70 = 1;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.70 = 0;
+
+  <bb 11> :
+  iftmp.69 = (_Bool) iftmp.70;
+
+  <bb 12> :
+  if (iftmp.69 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 13> :
+  _11 = (int) i;
+  _12 = default_router_list[_11].neighbor_entry;
+  _13 = _12->state;
+  if (_13 != 1)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 14> :
+  _14 = (int) i;
+  _15 = default_router_list[_14].neighbor_entry;
+  _16 = _15->state;
+  if (_16 == 2)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  D.8611 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 42>; [INV]
+
+  <bb 16> :
+  if (valid_router < 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  valid_router = i;
+
+  <bb 18> :
+  i.71_17 = i;
+  i.72_18 = (unsigned char) i.71_17;
+  _19 = i.72_18 + 1;
+  i = (s8_t) _19;
+
+  <bb 19> :
+  if (i <= 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  if (valid_router >= 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  D.8611 = valid_router;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 42>; [INV]
+
+  <bb 22> :
+  if (netif == 0B)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 23> :
+  last_router.73_20 = last_router;
+  last_router.74_21 = (unsigned char) last_router.73_20;
+  _22 = last_router.74_21 + 1;
+  _23 = (signed char) _22;
+  last_router = _23;
+  last_router.75_24 = last_router;
+  if (last_router.75_24 > 2)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  last_router = 0;
+
+  <bb 25> :
+  i = last_router;
+  j = 0;
+  goto <bb 40>; [INV]
+
+  <bb 26> :
+  _25 = (int) i;
+  _26 = default_router_list[_25].neighbor_entry;
+  if (_26 != 0B)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 27> :
+  _27 = (int) i;
+  _28 = default_router_list[_27].neighbor_entry;
+  router_netif = _28->netif;
+  if (router_netif != 0B)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 28> :
+  if (netif != 0B)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  iftmp.76 = netif == router_netif;
+  goto <bb 35>; [INV]
+
+  <bb 30> :
+  _29 = router_netif->flags;
+  _30 = (_Bool) _29;
+  if (_30 != 0)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 31> :
+  _31 = router_netif->flags;
+  _32 = (unsigned int) _31;
+  _33 = _32 >> 2;
+  _34 = (_Bool) _33;
+  if (_34 != 0)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  iftmp.77 = 1;
+  goto <bb 34>; [INV]
+
+  <bb 33> :
+  iftmp.77 = 0;
+
+  <bb 34> :
+  iftmp.76 = (_Bool) iftmp.77;
+
+  <bb 35> :
+  if (iftmp.76 != 0)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  D.8611 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 42>; [INV]
+
+  <bb 37> :
+  i.78_35 = (unsigned char) i;
+  _36 = i.78_35 + 1;
+  i = (s8_t) _36;
+  if (i > 2)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 38> :
+  i = 0;
+
+  <bb 39> :
+  j.79_37 = j;
+  j.80_38 = (unsigned char) j.79_37;
+  _39 = j.80_38 + 1;
+  j = (s8_t) _39;
+
+  <bb 40> :
+  if (j <= 2)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 41> :
+  D.8611 = -1;
+
+  <bb 42> :
+<L46>:
+  return D.8611;
+
+}
+
+
+nd6_is_prefix_in_netif (const struct ip6_addr_t * ip6addr, struct netif * netif)
+{
+  s8_t i;
+  int D.8579;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = prefix_list[_1].netif;
+  if (netif == _2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _3 = (int) i;
+  _4 = prefix_list[_3].invalidation_timer;
+  if (_4 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  _5 = ip6addr->addr[0];
+  _6 = (int) i;
+  _7 = prefix_list[_6].prefix.addr[0];
+  if (_5 == _7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _8 = ip6addr->addr[1];
+  _9 = (int) i;
+  _10 = prefix_list[_9].prefix.addr[1];
+  if (_8 == _10)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _11 = ip6addr->zone;
+  _12 = (int) i;
+  _13 = prefix_list[_12].prefix.zone;
+  if (_11 == _13)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.8579 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 22>; [INV]
+
+  <bb 9> :
+  i.65_14 = i;
+  i.66_15 = (unsigned char) i.65_14;
+  _16 = i.66_15 + 1;
+  i = (s8_t) _16;
+
+  <bb 10> :
+  if (i <= 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  i = 0;
+  goto <bb 20>; [INV]
+
+  <bb 12> :
+  _17 = (int) i;
+  _18 = netif->ip6_addr_state[_17];
+  _19 = (int) _18;
+  _20 = _19 & 16;
+  if (_20 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 13> :
+  if (netif == 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  _21 = (int) i;
+  _22 = netif->ip6_addr_valid_life[_21];
+  if (_22 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 15> :
+  _23 = ip6addr->addr[0];
+  _24 = (int) i;
+  _25 = &netif->ip6_addr[_24].u_addr.ip6;
+  _26 = MEM[(const struct ip6_addr_t *)_25].addr[0];
+  if (_23 == _26)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 16> :
+  _27 = ip6addr->addr[1];
+  _28 = (int) i;
+  _29 = &netif->ip6_addr[_28].u_addr.ip6;
+  _30 = MEM[(const struct ip6_addr_t *)_29].addr[1];
+  if (_27 == _30)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 17> :
+  _31 = ip6addr->zone;
+  _32 = (int) i;
+  _33 = &netif->ip6_addr[_32].u_addr.ip6;
+  _34 = MEM[(const struct ip6_addr_t *)_33].zone;
+  if (_31 == _34)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  D.8579 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 22>; [INV]
+
+  <bb 19> :
+  i.67_35 = i;
+  i.68_36 = (unsigned char) i.67_35;
+  _37 = i.68_36 + 1;
+  i = (s8_t) _37;
+
+  <bb 20> :
+  if (i <= 2)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 21> :
+  D.8579 = 0;
+
+  <bb 22> :
+<L27>:
+  return D.8579;
+
+}
+
+
+nd6_clear_destination_cache ()
+{
+  int i;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  destination_cache[i].destination_addr.addr[0] = 0;
+  destination_cache[i].destination_addr.addr[1] = 0;
+  destination_cache[i].destination_addr.addr[2] = 0;
+  destination_cache[i].destination_addr.addr[3] = 0;
+  destination_cache[i].destination_addr.zone = 0;
+  i = i + 1;
+
+  <bb 4> :
+  if (i <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+nd6_new_destination_cache_entry ()
+{
+  u32_t age;
+  s16_t j;
+  s16_t i;
+  s16_t D.8565;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 9>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = destination_cache[_1].destination_addr.addr[0];
+  if (_2 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  _3 = (int) i;
+  _4 = destination_cache[_3].destination_addr.addr[1];
+  if (_4 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _5 = (int) i;
+  _6 = destination_cache[_5].destination_addr.addr[2];
+  if (_6 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _7 = (int) i;
+  _8 = destination_cache[_7].destination_addr.addr[3];
+  if (_8 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8565 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 16>; [INV]
+
+  <bb 8> :
+  i.61_9 = i;
+  i.62_10 = (unsigned short) i.61_9;
+  _11 = i.62_10 + 1;
+  i = (s16_t) _11;
+
+  <bb 9> :
+  if (i <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  age = 0;
+  j = 9;
+  i = 0;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  _12 = (int) i;
+  _13 = destination_cache[_12].age;
+  if (age < _13)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  j = i;
+
+  <bb 13> :
+  i.63_14 = i;
+  i.64_15 = (unsigned short) i.63_14;
+  _16 = i.64_15 + 1;
+  i = (s16_t) _16;
+
+  <bb 14> :
+  if (i <= 9)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  D.8565 = j;
+
+  <bb 16> :
+<L16>:
+  return D.8565;
+
+}
+
+
+nd6_find_destination_cache_entry (const struct ip6_addr_t * ip6addr)
+{
+  s16_t i;
+  s16_t D.8555;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = ip6addr->addr[0];
+  _2 = (int) i;
+  _3 = destination_cache[_2].destination_addr.addr[0];
+  if (_1 == _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _4 = ip6addr->addr[1];
+  _5 = (int) i;
+  _6 = destination_cache[_5].destination_addr.addr[1];
+  if (_4 == _6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  _7 = ip6addr->addr[2];
+  _8 = (int) i;
+  _9 = destination_cache[_8].destination_addr.addr[2];
+  if (_7 == _9)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _10 = ip6addr->addr[3];
+  _11 = (int) i;
+  _12 = destination_cache[_11].destination_addr.addr[3];
+  if (_10 == _12)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _13 = ip6addr->zone;
+  _14 = (int) i;
+  _15 = destination_cache[_14].destination_addr.zone;
+  if (_13 == _15)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.8555 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  i.59_16 = i;
+  i.60_17 = (unsigned short) i.59_16;
+  _18 = i.60_17 + 1;
+  i = (s16_t) _18;
+
+  <bb 10> :
+  if (i <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  D.8555 = -1;
+
+  <bb 12> :
+<L13>:
+  return D.8555;
+
+}
+
+
+nd6_free_neighbor_cache_entry (s8_t i)
+{
+  <bb 2> :
+  if (i < 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (i > 9)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 5> :
+  _1 = (int) i;
+  _2 = neighbor_cache[_1].isrouter;
+  if (_2 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  _3 = (int) i;
+  _4 = neighbor_cache[_3].q;
+  if (_4 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _5 = (int) i;
+  _6 = neighbor_cache[_5].q;
+  nd6_free_q (_6);
+  _7 = (int) i;
+  neighbor_cache[_7].q = 0B;
+
+  <bb 9> :
+  _8 = (int) i;
+  neighbor_cache[_8].state = 0;
+  _9 = (int) i;
+  neighbor_cache[_9].isrouter = 0;
+  _10 = (int) i;
+  neighbor_cache[_10].netif = 0B;
+  _11 = (int) i;
+  neighbor_cache[_11].counter.reachable_time = 0;
+  _12 = (int) i;
+  neighbor_cache[_12].next_hop_address.addr[0] = 0;
+  _13 = (int) i;
+  neighbor_cache[_13].next_hop_address.addr[1] = 0;
+  _14 = (int) i;
+  neighbor_cache[_14].next_hop_address.addr[2] = 0;
+  _15 = (int) i;
+  neighbor_cache[_15].next_hop_address.addr[3] = 0;
+  _16 = (int) i;
+  neighbor_cache[_16].next_hop_address.zone = 0;
+
+  <bb 10> :
+<L7>:
+  return;
+
+}
+
+
+nd6_new_neighbor_cache_entry ()
+{
+  u32_t time;
+  s8_t j;
+  s8_t i;
+  s8_t D.8497;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = neighbor_cache[_1].state;
+  if (_2 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.8497 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 54>; [INV]
+
+  <bb 5> :
+  i.45_3 = i;
+  i.46_4 = (unsigned char) i.45_3;
+  _5 = i.46_4 + 1;
+  i = (s8_t) _5;
+
+  <bb 6> :
+  if (i <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  i = 0;
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+  _6 = (int) i;
+  _7 = neighbor_cache[_6].state;
+  if (_7 == 3)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  _8 = (int) i;
+  _9 = neighbor_cache[_8].isrouter;
+  if (_9 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  nd6_free_neighbor_cache_entry (i);
+  D.8497 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 54>; [INV]
+
+  <bb 11> :
+  i.47_10 = i;
+  i.48_11 = (unsigned char) i.47_10;
+  _12 = i.48_11 + 1;
+  i = (s8_t) _12;
+
+  <bb 12> :
+  if (i <= 9)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  i = 0;
+  goto <bb 18>; [INV]
+
+  <bb 14> :
+  _13 = (int) i;
+  _14 = neighbor_cache[_13].state;
+  if (_14 == 5)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 15> :
+  _15 = (int) i;
+  _16 = neighbor_cache[_15].isrouter;
+  if (_16 == 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  nd6_free_neighbor_cache_entry (i);
+  D.8497 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 54>; [INV]
+
+  <bb 17> :
+  i.49_17 = i;
+  i.50_18 = (unsigned char) i.49_17;
+  _19 = i.50_18 + 1;
+  i = (s8_t) _19;
+
+  <bb 18> :
+  if (i <= 9)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  i = 0;
+  goto <bb 24>; [INV]
+
+  <bb 20> :
+  _20 = (int) i;
+  _21 = neighbor_cache[_20].state;
+  if (_21 == 4)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 21> :
+  _22 = (int) i;
+  _23 = neighbor_cache[_22].isrouter;
+  if (_23 == 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  nd6_free_neighbor_cache_entry (i);
+  D.8497 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 54>; [INV]
+
+  <bb 23> :
+  i.51_24 = i;
+  i.52_25 = (unsigned char) i.51_24;
+  _26 = i.52_25 + 1;
+  i = (s8_t) _26;
+
+  <bb 24> :
+  if (i <= 9)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 25> :
+  time = 4294967295;
+  j = -1;
+  i = 0;
+  goto <bb 31>; [INV]
+
+  <bb 26> :
+  _27 = (int) i;
+  _28 = neighbor_cache[_27].state;
+  if (_28 == 2)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 27> :
+  _29 = (int) i;
+  _30 = neighbor_cache[_29].isrouter;
+  if (_30 == 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 28> :
+  _31 = (int) i;
+  _32 = neighbor_cache[_31].counter.reachable_time;
+  if (time > _32)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  j = i;
+  _33 = (int) i;
+  time = neighbor_cache[_33].counter.reachable_time;
+
+  <bb 30> :
+  i.53_34 = i;
+  i.54_35 = (unsigned char) i.53_34;
+  _36 = i.54_35 + 1;
+  i = (s8_t) _36;
+
+  <bb 31> :
+  if (i <= 9)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 32> :
+  if (j >= 0)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  nd6_free_neighbor_cache_entry (j);
+  D.8497 = j;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 54>; [INV]
+
+  <bb 34> :
+  time = 0;
+  j = -1;
+  i = 0;
+  goto <bb 41>; [INV]
+
+  <bb 35> :
+  _37 = (int) i;
+  _38 = neighbor_cache[_37].q;
+  if (_38 == 0B)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 36> :
+  _39 = (int) i;
+  _40 = neighbor_cache[_39].state;
+  if (_40 == 1)
+    goto <bb 37>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 37> :
+  _41 = (int) i;
+  _42 = neighbor_cache[_41].isrouter;
+  if (_42 == 0)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 38> :
+  _43 = (int) i;
+  _44 = neighbor_cache[_43].counter.probes_sent;
+  if (time <= _44)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 39> :
+  j = i;
+  _45 = (int) i;
+  time = neighbor_cache[_45].counter.probes_sent;
+
+  <bb 40> :
+  i.55_46 = i;
+  i.56_47 = (unsigned char) i.55_46;
+  _48 = i.56_47 + 1;
+  i = (s8_t) _48;
+
+  <bb 41> :
+  if (i <= 9)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 42> :
+  if (j >= 0)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 43> :
+  nd6_free_neighbor_cache_entry (j);
+  D.8497 = j;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 54>; [INV]
+
+  <bb 44> :
+  time = 0;
+  j = -1;
+  i = 0;
+  goto <bb 50>; [INV]
+
+  <bb 45> :
+  _49 = (int) i;
+  _50 = neighbor_cache[_49].state;
+  if (_50 == 1)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 46> :
+  _51 = (int) i;
+  _52 = neighbor_cache[_51].isrouter;
+  if (_52 == 0)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 47> :
+  _53 = (int) i;
+  _54 = neighbor_cache[_53].counter.probes_sent;
+  if (time <= _54)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 48> :
+  j = i;
+  _55 = (int) i;
+  time = neighbor_cache[_55].counter.probes_sent;
+
+  <bb 49> :
+  i.57_56 = i;
+  i.58_57 = (unsigned char) i.57_56;
+  _58 = i.58_57 + 1;
+  i = (s8_t) _58;
+
+  <bb 50> :
+  if (i <= 9)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 51> :
+  if (j >= 0)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 52> :
+  nd6_free_neighbor_cache_entry (j);
+  D.8497 = j;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 54>; [INV]
+
+  <bb 53> :
+  D.8497 = -1;
+
+  <bb 54> :
+<L61>:
+  return D.8497;
+
+}
+
+
+nd6_find_neighbor_cache_entry (const struct ip6_addr_t * ip6addr)
+{
+  s8_t i;
+  s8_t D.8493;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = ip6addr->addr[0];
+  _2 = (int) i;
+  _3 = neighbor_cache[_2].next_hop_address.addr[0];
+  if (_1 == _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _4 = ip6addr->addr[1];
+  _5 = (int) i;
+  _6 = neighbor_cache[_5].next_hop_address.addr[1];
+  if (_4 == _6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  _7 = ip6addr->addr[2];
+  _8 = (int) i;
+  _9 = neighbor_cache[_8].next_hop_address.addr[2];
+  if (_7 == _9)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _10 = ip6addr->addr[3];
+  _11 = (int) i;
+  _12 = neighbor_cache[_11].next_hop_address.addr[3];
+  if (_10 == _12)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _13 = ip6addr->zone;
+  _14 = (int) i;
+  _15 = neighbor_cache[_14].next_hop_address.zone;
+  if (_13 == _15)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.8493 = i;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  i.43_16 = i;
+  i.44_17 = (unsigned char) i.43_16;
+  _18 = i.44_17 + 1;
+  i = (s8_t) _18;
+
+  <bb 10> :
+  if (i <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  D.8493 = -1;
+
+  <bb 12> :
+<L13>:
+  return D.8493;
+
+}
+
+
+nd6_send_rs (struct netif * netif)
+{
+  u16_t lladdr_opt_len;
+  err_t err;
+  const struct ip6_addr_t * src_addr;
+  struct pbuf * p;
+  struct lladdr_option * lladdr_opt;
+  struct rs_header * rs_hdr;
+  const struct ip6_addr_t * iftmp.42;
+  err_t D.8475;
+  u8_t iftmp.41;
+
+  <bb 2> :
+  lladdr_opt_len = 0;
+  _1 = netif->ip6_addr_state[0];
+  _2 = (int) _1;
+  _3 = _2 & 16;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  src_addr = &netif->ip6_addr[0].u_addr.ip6;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  src_addr = &ip6_addr_any.u_addr.ip6;
+
+  <bb 5> :
+  multicast_address.addr[0] = 767;
+  multicast_address.addr[1] = 0;
+  multicast_address.addr[2] = 0;
+  multicast_address.addr[3] = 33554432;
+  multicast_address.zone = 0;
+  _4 = multicast_address.addr[0];
+  _5 = _4 & 49407;
+  if (_5 == 33022)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _6 = multicast_address.addr[0];
+  _7 = _6 & 36863;
+  if (_7 == 511)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _8 = multicast_address.addr[0];
+  _9 = _8 & 36863;
+  if (_9 == 767)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _10 = netif->num;
+  iftmp.41 = _10 + 1;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.41 = 0;
+
+  <bb 10> :
+  multicast_address.zone = iftmp.41;
+  if (src_addr != &ip6_addr_any.u_addr.ip6)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _11 = netif->hwaddr_len;
+  _12 = (int) _11;
+  _13 = _12 + 2;
+  _14 = _13 >> 3;
+  _15 = (short unsigned int) _14;
+  _16 = netif->hwaddr_len;
+  _17 = (int) _16;
+  _18 = _17 + 2;
+  _19 = _18 & 7;
+  _20 = _19 != 0;
+  _21 = (short unsigned int) _20;
+  lladdr_opt_len = _15 + _21;
+
+  <bb 12> :
+  _22 = lladdr_opt_len << 3;
+  _23 = _22 + 8;
+  p = pbuf_alloc (54, _23, 640);
+  if (p == 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _24 = lwip_stats.nd6.memerr;
+  _25 = _24 + 1;
+  lwip_stats.nd6.memerr = _25;
+  D.8475 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 20>; [INV]
+
+  <bb 14> :
+  rs_hdr = p->payload;
+  rs_hdr->type = 133;
+  rs_hdr->code = 0;
+  rs_hdr->chksum = 0;
+  rs_hdr->reserved = 0;
+  if (src_addr != &ip6_addr_any.u_addr.ip6)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _26 = p->payload;
+  lladdr_opt = _26 + 8;
+  lladdr_opt->type = 1;
+  _27 = (unsigned char) lladdr_opt_len;
+  lladdr_opt->length = _27;
+  _28 = &lladdr_opt->addr;
+  _29 = &netif->hwaddr;
+  _30 = netif->hwaddr_len;
+  _31 = (unsigned int) _30;
+  memcpy (_28, _29, _31);
+
+  <bb 16> :
+  _32 = p->len;
+  _33 = ip6_chksum_pseudo (p, 58, _32, src_addr, &multicast_address);
+  rs_hdr->chksum = _33;
+  _34 = lwip_stats.nd6.xmit;
+  _35 = _34 + 1;
+  lwip_stats.nd6.xmit = _35;
+  if (src_addr != &ip6_addr_any.u_addr.ip6)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.42 = src_addr;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  iftmp.42 = 0B;
+
+  <bb 19> :
+  err = ip6_output_if (p, iftmp.42, &multicast_address, 255, 0, 58, netif);
+  pbuf_free (p);
+  D.8475 = err;
+
+  <bb 20> :
+<L17>:
+  return D.8475;
+
+}
+
+
+nd6_send_na (struct netif * netif, const struct ip6_addr_t * target_addr, u8_t flags)
+{
+  u16_t lladdr_opt_len;
+  const struct ip6_addr_t * dest_addr;
+  const struct ip6_addr_t * src_addr;
+  struct pbuf * p;
+  struct lladdr_option * lladdr_opt;
+  struct na_header * na_hdr;
+  u8_t iftmp.40;
+  u8_t iftmp.39;
+
+  <bb 2> :
+  if (target_addr == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  src_addr = target_addr;
+  _1 = netif->hwaddr_len;
+  _2 = (int) _1;
+  _3 = _2 + 2;
+  _4 = _3 >> 3;
+  _5 = (short unsigned int) _4;
+  _6 = netif->hwaddr_len;
+  _7 = (int) _6;
+  _8 = _7 + 2;
+  _9 = _8 & 7;
+  _10 = _9 != 0;
+  _11 = (short unsigned int) _10;
+  lladdr_opt_len = _5 + _11;
+  _12 = lladdr_opt_len << 3;
+  _13 = _12 + 24;
+  p = pbuf_alloc (54, _13, 640);
+  if (p == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _14 = lwip_stats.nd6.memerr;
+  _15 = _14 + 1;
+  lwip_stats.nd6.memerr = _15;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 22>; [INV]
+
+  <bb 6> :
+  na_hdr = p->payload;
+  _16 = p->payload;
+  lladdr_opt = _16 + 24;
+  na_hdr->type = 136;
+  na_hdr->code = 0;
+  na_hdr->chksum = 0;
+  _17 = flags & 240;
+  na_hdr->flags = _17;
+  na_hdr->reserved[0] = 0;
+  na_hdr->reserved[1] = 0;
+  na_hdr->reserved[2] = 0;
+  _18 = target_addr->addr[0];
+  na_hdr->target_address.addr[0] = _18;
+  _19 = target_addr->addr[1];
+  na_hdr->target_address.addr[1] = _19;
+  _20 = target_addr->addr[2];
+  na_hdr->target_address.addr[2] = _20;
+  _21 = target_addr->addr[3];
+  na_hdr->target_address.addr[3] = _21;
+  lladdr_opt->type = 2;
+  _22 = (unsigned char) lladdr_opt_len;
+  lladdr_opt->length = _22;
+  _23 = &lladdr_opt->addr;
+  _24 = &netif->hwaddr;
+  _25 = netif->hwaddr_len;
+  _26 = (unsigned int) _25;
+  memcpy (_23, _24, _26);
+  _27 = (int) flags;
+  _28 = _27 & 1;
+  if (_28 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 7> :
+  multicast_address.addr[0] = 767;
+  multicast_address.addr[1] = 0;
+  multicast_address.addr[2] = 16777216;
+  _29 = target_addr->addr[3];
+  _30 = _29 | 255;
+  multicast_address.addr[3] = _30;
+  multicast_address.zone = 0;
+  _31 = multicast_address.addr[0];
+  _32 = _31 & 49407;
+  if (_32 == 33022)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _33 = multicast_address.addr[0];
+  _34 = _33 & 36863;
+  if (_34 == 511)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _35 = multicast_address.addr[0];
+  _36 = _35 & 36863;
+  if (_36 == 767)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _37 = netif->num;
+  iftmp.39 = _37 + 1;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  iftmp.39 = 0;
+
+  <bb 12> :
+  multicast_address.zone = iftmp.39;
+  dest_addr = &multicast_address;
+  goto <bb 21>; [INV]
+
+  <bb 13> :
+  _38 = (int) flags;
+  _39 = _38 & 2;
+  if (_39 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 14> :
+  multicast_address.addr[0] = 767;
+  multicast_address.addr[1] = 0;
+  multicast_address.addr[2] = 0;
+  multicast_address.addr[3] = 16777216;
+  multicast_address.zone = 0;
+  _40 = multicast_address.addr[0];
+  _41 = _40 & 49407;
+  if (_41 == 33022)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  _42 = multicast_address.addr[0];
+  _43 = _42 & 36863;
+  if (_43 == 511)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  _44 = multicast_address.addr[0];
+  _45 = _44 & 36863;
+  if (_45 == 767)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  _46 = netif->num;
+  iftmp.40 = _46 + 1;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  iftmp.40 = 0;
+
+  <bb 19> :
+  multicast_address.zone = iftmp.40;
+  dest_addr = &multicast_address;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  dest_addr = &ip_data.current_iphdr_src.u_addr.ip6;
+
+  <bb 21> :
+  _47 = p->len;
+  _48 = ip6_chksum_pseudo (p, 58, _47, src_addr, dest_addr);
+  na_hdr->chksum = _48;
+  _49 = lwip_stats.nd6.xmit;
+  _50 = _49 + 1;
+  lwip_stats.nd6.xmit = _50;
+  ip6_output_if (p, src_addr, dest_addr, 255, 0, 58, netif);
+  pbuf_free (p);
+
+  <bb 22> :
+<L21>:
+  return;
+
+}
+
+
+nd6_send_ns (struct netif * netif, const struct ip6_addr_t * target_addr, u8_t flags)
+{
+  struct lladdr_option * lladdr_opt;
+  int i;
+  u16_t lladdr_opt_len;
+  const struct ip6_addr_t * src_addr;
+  struct pbuf * p;
+  struct ns_header * ns_hdr;
+  const struct ip6_addr_t * iftmp.38;
+  u8_t iftmp.37;
+
+  <bb 2> :
+  src_addr = 0B;
+  if (target_addr == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = (int) flags;
+  _2 = _1 & 4;
+  if (_2 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 5> :
+  i = 0;
+  goto <bb 12>; [INV]
+
+  <bb 6> :
+  _3 = netif->ip6_addr_state[i];
+  _4 = (int) _3;
+  _5 = _4 & 16;
+  if (_5 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 7> :
+  _6 = target_addr->addr[0];
+  _7 = &netif->ip6_addr[i].u_addr.ip6;
+  _8 = MEM[(const struct ip6_addr_t *)_7].addr[0];
+  if (_6 == _8)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  _9 = target_addr->addr[1];
+  _10 = &netif->ip6_addr[i].u_addr.ip6;
+  _11 = MEM[(const struct ip6_addr_t *)_10].addr[1];
+  if (_9 == _11)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  _12 = target_addr->zone;
+  _13 = &netif->ip6_addr[i].u_addr.ip6;
+  _14 = MEM[(const struct ip6_addr_t *)_13].zone;
+  if (_12 == _14)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  src_addr = &netif->ip6_addr[i].u_addr.ip6;
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+  i = i + 1;
+
+  <bb 12> :
+  if (i <= 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  if (i == 3)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _15 = lwip_stats.nd6.err;
+  _16 = _15 + 1;
+  lwip_stats.nd6.err = _16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 15> :
+  _17 = netif->hwaddr_len;
+  _18 = (int) _17;
+  _19 = _18 + 9;
+  _20 = _19 >> 3;
+  lladdr_opt_len = (u16_t) _20;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  src_addr = &ip6_addr_any.u_addr.ip6;
+  lladdr_opt_len = 0;
+
+  <bb 17> :
+  _21 = lladdr_opt_len << 3;
+  _22 = _21 + 24;
+  p = pbuf_alloc (54, _22, 640);
+  if (p == 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _23 = lwip_stats.nd6.memerr;
+  _24 = _23 + 1;
+  lwip_stats.nd6.memerr = _24;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 19> :
+  ns_hdr = p->payload;
+  ns_hdr->type = 135;
+  ns_hdr->code = 0;
+  ns_hdr->chksum = 0;
+  ns_hdr->reserved = 0;
+  _25 = target_addr->addr[0];
+  ns_hdr->target_address.addr[0] = _25;
+  _26 = target_addr->addr[1];
+  ns_hdr->target_address.addr[1] = _26;
+  _27 = target_addr->addr[2];
+  ns_hdr->target_address.addr[2] = _27;
+  _28 = target_addr->addr[3];
+  ns_hdr->target_address.addr[3] = _28;
+  if (lladdr_opt_len != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _29 = p->payload;
+  lladdr_opt = _29 + 24;
+  lladdr_opt->type = 1;
+  _30 = (unsigned char) lladdr_opt_len;
+  lladdr_opt->length = _30;
+  _31 = &lladdr_opt->addr;
+  _32 = &netif->hwaddr;
+  _33 = netif->hwaddr_len;
+  _34 = (unsigned int) _33;
+  memcpy (_31, _32, _34);
+
+  <bb 21> :
+  _35 = (int) flags;
+  _36 = _35 & 1;
+  if (_36 != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 22> :
+  multicast_address.addr[0] = 767;
+  multicast_address.addr[1] = 0;
+  multicast_address.addr[2] = 16777216;
+  _37 = target_addr->addr[3];
+  _38 = _37 | 255;
+  multicast_address.addr[3] = _38;
+  multicast_address.zone = 0;
+  _39 = multicast_address.addr[0];
+  _40 = _39 & 49407;
+  if (_40 == 33022)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  _41 = multicast_address.addr[0];
+  _42 = _41 & 36863;
+  if (_42 == 511)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  _43 = multicast_address.addr[0];
+  _44 = _43 & 36863;
+  if (_44 == 767)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  _45 = netif->num;
+  iftmp.37 = _45 + 1;
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  iftmp.37 = 0;
+
+  <bb 27> :
+  multicast_address.zone = iftmp.37;
+  target_addr = &multicast_address;
+
+  <bb 28> :
+  _46 = p->len;
+  _47 = ip6_chksum_pseudo (p, 58, _46, src_addr, target_addr);
+  ns_hdr->chksum = _47;
+  _48 = lwip_stats.nd6.xmit;
+  _49 = _48 + 1;
+  lwip_stats.nd6.xmit = _49;
+  if (src_addr != &ip6_addr_any.u_addr.ip6)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  iftmp.38 = src_addr;
+  goto <bb 31>; [INV]
+
+  <bb 30> :
+  iftmp.38 = 0B;
+
+  <bb 31> :
+  ip6_output_if (p, iftmp.38, target_addr, 255, 0, 58, netif);
+  pbuf_free (p);
+
+  <bb 32> :
+<L33>:
+  return;
+
+}
+
+
+nd6_send_neighbor_cache_probe (struct nd6_neighbor_cache_entry * entry, u8_t flags)
+{
+  <bb 2> :
+  _1 = entry->netif;
+  _2 = &entry->next_hop_address;
+  nd6_send_ns (_1, _2, flags);
+  return;
+
+}
+
+
+nd6_tmr ()
+{
+  u32_t life;
+  u8_t addr_state;
+  s8_t j;
+  struct netif * netif;
+  s8_t i;
+  long unsigned int iftmp.32;
+  long unsigned int iftmp.31;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 27>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = neighbor_cache[_1].state;
+  _3 = (int) _2;
+  switch (_3) <default: <L22> [INV], case 1: <L1> [INV], case 2: <L6> [INV], case 3: <L12> [INV], case 4: <L13> [INV], case 5: <L17> [INV]>
+
+  <bb 4> :
+<L1>:
+  _4 = (int) i;
+  _5 = neighbor_cache[_4].counter.probes_sent;
+  if (_5 > 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _6 = (int) i;
+  _7 = neighbor_cache[_6].isrouter;
+  if (_7 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  nd6_free_neighbor_cache_entry (i);
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _8 = (int) i;
+  _9 = neighbor_cache[_8].counter.probes_sent;
+  _10 = _9 + 1;
+  neighbor_cache[_8].counter.probes_sent = _10;
+  _11 = (int) i;
+  _12 = &neighbor_cache[_11];
+  nd6_send_neighbor_cache_probe (_12, 1);
+
+  <bb 8> :
+  goto <bb 26>; [INV]
+
+  <bb 9> :
+<L6>:
+  _13 = (int) i;
+  _14 = neighbor_cache[_13].q;
+  if (_14 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  nd6_send_q (i);
+
+  <bb 11> :
+  _15 = (int) i;
+  _16 = neighbor_cache[_15].counter.reachable_time;
+  if (_16 <= 1000)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _17 = (int) i;
+  neighbor_cache[_17].state = 3;
+  _18 = (int) i;
+  neighbor_cache[_18].counter.stale_time = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _19 = (int) i;
+  _20 = neighbor_cache[_19].counter.reachable_time;
+  _21 = (int) i;
+  _22 = _20 + 4294966296;
+  neighbor_cache[_21].counter.reachable_time = _22;
+
+  <bb 14> :
+  goto <bb 26>; [INV]
+
+  <bb 15> :
+<L12>:
+  _23 = (int) i;
+  _24 = neighbor_cache[_23].counter.stale_time;
+  _25 = _24 + 1;
+  neighbor_cache[_23].counter.stale_time = _25;
+  goto <bb 26>; [INV]
+
+  <bb 16> :
+<L13>:
+  _26 = (int) i;
+  _27 = neighbor_cache[_26].counter.delay_time;
+  if (_27 <= 1)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  _28 = (int) i;
+  neighbor_cache[_28].state = 5;
+  _29 = (int) i;
+  neighbor_cache[_29].counter.probes_sent = 0;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  _30 = (int) i;
+  _31 = neighbor_cache[_30].counter.delay_time;
+  _32 = _31 + 4294967295;
+  neighbor_cache[_30].counter.delay_time = _32;
+
+  <bb 19> :
+  goto <bb 26>; [INV]
+
+  <bb 20> :
+<L17>:
+  _33 = (int) i;
+  _34 = neighbor_cache[_33].counter.probes_sent;
+  if (_34 > 2)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 21> :
+  _35 = (int) i;
+  _36 = neighbor_cache[_35].isrouter;
+  if (_36 == 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  nd6_free_neighbor_cache_entry (i);
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  _37 = (int) i;
+  _38 = neighbor_cache[_37].counter.probes_sent;
+  _39 = _38 + 1;
+  neighbor_cache[_37].counter.probes_sent = _39;
+  _40 = (int) i;
+  _41 = &neighbor_cache[_40];
+  nd6_send_neighbor_cache_probe (_41, 0);
+
+  <bb 24> :
+  goto <bb 26>; [INV]
+
+  <bb 25> :
+<L22>:
+
+  <bb 26> :
+  i.21_42 = i;
+  i.22_43 = (unsigned char) i.21_42;
+  _44 = i.22_43 + 1;
+  i = (s8_t) _44;
+
+  <bb 27> :
+  if (i <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 28> :
+  i = 0;
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  _45 = (int) i;
+  _46 = destination_cache[_45].age;
+  _47 = _46 + 1;
+  destination_cache[_45].age = _47;
+  i.23_48 = i;
+  i.24_49 = (unsigned char) i.23_48;
+  _50 = i.24_49 + 1;
+  i = (s8_t) _50;
+
+  <bb 30> :
+  if (i <= 9)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 31> :
+  i = 0;
+  goto <bb 46>; [INV]
+
+  <bb 32> :
+  _51 = (int) i;
+  _52 = default_router_list[_51].neighbor_entry;
+  if (_52 != 0B)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 33> :
+  _53 = (int) i;
+  _54 = default_router_list[_53].invalidation_timer;
+  if (_54 <= 1)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 34> :
+  j = 0;
+  goto <bb 42>; [INV]
+
+  <bb 35> :
+  _55 = (int) j;
+  _56 = destination_cache[_55].next_hop_addr.addr[0];
+  _57 = (int) i;
+  _58 = default_router_list[_57].neighbor_entry;
+  _59 = _58->next_hop_address.addr[0];
+  if (_56 == _59)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 36> :
+  _60 = (int) j;
+  _61 = destination_cache[_60].next_hop_addr.addr[1];
+  _62 = (int) i;
+  _63 = default_router_list[_62].neighbor_entry;
+  _64 = _63->next_hop_address.addr[1];
+  if (_61 == _64)
+    goto <bb 37>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 37> :
+  _65 = (int) j;
+  _66 = destination_cache[_65].next_hop_addr.addr[2];
+  _67 = (int) i;
+  _68 = default_router_list[_67].neighbor_entry;
+  _69 = _68->next_hop_address.addr[2];
+  if (_66 == _69)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 38> :
+  _70 = (int) j;
+  _71 = destination_cache[_70].next_hop_addr.addr[3];
+  _72 = (int) i;
+  _73 = default_router_list[_72].neighbor_entry;
+  _74 = _73->next_hop_address.addr[3];
+  if (_71 == _74)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 39> :
+  _75 = (int) j;
+  _76 = destination_cache[_75].next_hop_addr.zone;
+  _77 = (int) i;
+  _78 = default_router_list[_77].neighbor_entry;
+  _79 = _78->next_hop_address.zone;
+  if (_76 == _79)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 40> :
+  _80 = (int) j;
+  destination_cache[_80].destination_addr.addr[0] = 0;
+  _81 = (int) j;
+  destination_cache[_81].destination_addr.addr[1] = 0;
+  _82 = (int) j;
+  destination_cache[_82].destination_addr.addr[2] = 0;
+  _83 = (int) j;
+  destination_cache[_83].destination_addr.addr[3] = 0;
+  _84 = (int) j;
+  destination_cache[_84].destination_addr.zone = 0;
+
+  <bb 41> :
+  j.25_85 = j;
+  j.26_86 = (unsigned char) j.25_85;
+  _87 = j.26_86 + 1;
+  j = (s8_t) _87;
+
+  <bb 42> :
+  if (j <= 9)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 43> :
+  _88 = (int) i;
+  _89 = default_router_list[_88].neighbor_entry;
+  _89->isrouter = 0;
+  _90 = (int) i;
+  default_router_list[_90].neighbor_entry = 0B;
+  _91 = (int) i;
+  default_router_list[_91].invalidation_timer = 0;
+  _92 = (int) i;
+  default_router_list[_92].flags = 0;
+  goto <bb 45>; [INV]
+
+  <bb 44> :
+  _93 = (int) i;
+  _94 = default_router_list[_93].invalidation_timer;
+  _95 = (int) i;
+  _96 = _94 + 4294967295;
+  default_router_list[_95].invalidation_timer = _96;
+
+  <bb 45> :
+  i.27_97 = i;
+  i.28_98 = (unsigned char) i.27_97;
+  _99 = i.28_98 + 1;
+  i = (s8_t) _99;
+
+  <bb 46> :
+  if (i <= 2)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 47> :
+  i = 0;
+  goto <bb 53>; [INV]
+
+  <bb 48> :
+  _100 = (int) i;
+  _101 = prefix_list[_100].netif;
+  if (_101 != 0B)
+    goto <bb 49>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 49> :
+  _102 = (int) i;
+  _103 = prefix_list[_102].invalidation_timer;
+  if (_103 <= 1)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  _104 = (int) i;
+  prefix_list[_104].invalidation_timer = 0;
+  _105 = (int) i;
+  prefix_list[_105].netif = 0B;
+  goto <bb 52>; [INV]
+
+  <bb 51> :
+  _106 = (int) i;
+  _107 = prefix_list[_106].invalidation_timer;
+  _108 = (int) i;
+  _109 = _107 + 4294967295;
+  prefix_list[_108].invalidation_timer = _109;
+
+  <bb 52> :
+  i.29_110 = i;
+  i.30_111 = (unsigned char) i.29_110;
+  _112 = i.30_111 + 1;
+  i = (s8_t) _112;
+
+  <bb 53> :
+  if (i <= 4)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 54> :
+  netif = netif_list;
+  goto <bb 98>; [INV]
+
+  <bb 55> :
+  i = 0;
+  goto <bb 96>; [INV]
+
+  <bb 56> :
+  _113 = (int) i;
+  addr_state = netif->ip6_addr_state[_113];
+  if (addr_state != 0)
+    goto <bb 57>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 57> :
+  if (netif != 0B)
+    goto <bb 58>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 58> :
+  _114 = (int) i;
+  _115 = netif->ip6_addr_valid_life[_114];
+  if (_115 != 0)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 59> :
+  if (netif != 0B)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 61>; [INV]
+
+  <bb 60> :
+  _116 = (int) i;
+  iftmp.31 = netif->ip6_addr_valid_life[_116];
+  goto <bb 62>; [INV]
+
+  <bb 61> :
+  iftmp.31 = 0;
+
+  <bb 62> :
+  life = iftmp.31;
+  if (life <= 1)
+    goto <bb 63>; [INV]
+  else
+    goto <bb 68>; [INV]
+
+  <bb 63> :
+  if (netif != 0B)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 64> :
+  _117 = (int) i;
+  netif->ip6_addr_valid_life[_117] = 0;
+
+  <bb 65> :
+  if (netif != 0B)
+    goto <bb 66>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 66> :
+  _118 = (int) i;
+  netif->ip6_addr_pref_life[_118] = 0;
+
+  <bb 67> :
+  netif_ip6_addr_set_state (netif, i, 0);
+  goto <bb 84>; [INV]
+
+  <bb 68> :
+  if (life != 4294967295)
+    goto <bb 69>; [INV]
+  else
+    goto <bb 73>; [INV]
+
+  <bb 69> :
+  life = life + 4294967295;
+  if (life == 0)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 71>; [INV]
+
+  <bb 70> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 70>; [INV]
+
+  <bb 71> :
+  if (netif != 0B)
+    goto <bb 72>; [INV]
+  else
+    goto <bb 73>; [INV]
+
+  <bb 72> :
+  _119 = (int) i;
+  netif->ip6_addr_valid_life[_119] = life;
+
+  <bb 73> :
+  if (netif != 0B)
+    goto <bb 74>; [INV]
+  else
+    goto <bb 75>; [INV]
+
+  <bb 74> :
+  _120 = (int) i;
+  iftmp.32 = netif->ip6_addr_pref_life[_120];
+  goto <bb 76>; [INV]
+
+  <bb 75> :
+  iftmp.32 = 0;
+
+  <bb 76> :
+  life = iftmp.32;
+  if (life <= 1)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 81>; [INV]
+
+  <bb 77> :
+  if (netif != 0B)
+    goto <bb 78>; [INV]
+  else
+    goto <bb 79>; [INV]
+
+  <bb 78> :
+  _121 = (int) i;
+  netif->ip6_addr_pref_life[_121] = 0;
+
+  <bb 79> :
+  if (addr_state == 48)
+    goto <bb 80>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 80> :
+  netif_ip6_addr_set_state (netif, i, 16);
+  goto <bb 84>; [INV]
+
+  <bb 81> :
+  if (life != 4294967295)
+    goto <bb 82>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 82> :
+  life = life + 4294967295;
+  if (netif != 0B)
+    goto <bb 83>; [INV]
+  else
+    goto <bb 84>; [INV]
+
+  <bb 83> :
+  _122 = (int) i;
+  netif->ip6_addr_pref_life[_122] = life;
+
+  <bb 84> :
+  _123 = (int) i;
+  addr_state = netif->ip6_addr_state[_123];
+  _124 = (int) addr_state;
+  _125 = _124 & 8;
+  if (_125 != 0)
+    goto <bb 85>; [INV]
+  else
+    goto <bb 95>; [INV]
+
+  <bb 85> :
+  _126 = (int) addr_state;
+  _127 = _126 & 7;
+  if (_127 > 0)
+    goto <bb 86>; [INV]
+  else
+    goto <bb 92>; [INV]
+
+  <bb 86> :
+  addr_state = 48;
+  if (netif != 0B)
+    goto <bb 87>; [INV]
+  else
+    goto <bb 91>; [INV]
+
+  <bb 87> :
+  _128 = (int) i;
+  _129 = netif->ip6_addr_valid_life[_128];
+  if (_129 != 0)
+    goto <bb 88>; [INV]
+  else
+    goto <bb 91>; [INV]
+
+  <bb 88> :
+  if (netif == 0B)
+    goto <bb 90>; [INV]
+  else
+    goto <bb 89>; [INV]
+
+  <bb 89> :
+  _130 = (int) i;
+  _131 = netif->ip6_addr_pref_life[_130];
+  if (_131 == 0)
+    goto <bb 90>; [INV]
+  else
+    goto <bb 91>; [INV]
+
+  <bb 90> :
+  addr_state = 16;
+
+  <bb 91> :
+  netif_ip6_addr_set_state (netif, i, addr_state);
+  goto <bb 95>; [INV]
+
+  <bb 92> :
+  _132 = netif->flags;
+  _133 = (_Bool) _132;
+  if (_133 != 0)
+    goto <bb 93>; [INV]
+  else
+    goto <bb 95>; [INV]
+
+  <bb 93> :
+  _134 = netif->flags;
+  _135 = (unsigned int) _134;
+  _136 = _135 >> 2;
+  _137 = (_Bool) _136;
+  if (_137 != 0)
+    goto <bb 94>; [INV]
+  else
+    goto <bb 95>; [INV]
+
+  <bb 94> :
+  _138 = addr_state + 1;
+  netif_ip6_addr_set_state (netif, i, _138);
+  _139 = (int) i;
+  _140 = &netif->ip6_addr[_139].u_addr.ip6;
+  nd6_send_ns (netif, _140, 5);
+
+  <bb 95> :
+  i.33_141 = (unsigned char) i;
+  _142 = i.33_141 + 1;
+  i = (s8_t) _142;
+
+  <bb 96> :
+  if (i <= 2)
+    goto <bb 56>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 97> :
+  netif = netif->next;
+
+  <bb 98> :
+  if (netif != 0B)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 99>; [INV]
+
+  <bb 99> :
+  nd6_tmr_rs_reduction.34_143 = nd6_tmr_rs_reduction;
+  if (nd6_tmr_rs_reduction.34_143 == 0)
+    goto <bb 100>; [INV]
+  else
+    goto <bb 110>; [INV]
+
+  <bb 100> :
+  nd6_tmr_rs_reduction = 3;
+  netif = netif_list;
+  goto <bb 109>; [INV]
+
+  <bb 101> :
+  _144 = netif->rs_count;
+  if (_144 != 0)
+    goto <bb 102>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 102> :
+  _145 = netif->flags;
+  _146 = (_Bool) _145;
+  if (_146 != 0)
+    goto <bb 103>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 103> :
+  _147 = netif->flags;
+  _148 = (unsigned int) _147;
+  _149 = _148 >> 2;
+  _150 = (_Bool) _149;
+  if (_150 != 0)
+    goto <bb 104>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 104> :
+  _151 = netif->ip6_addr_state[0];
+  if (_151 != 0)
+    goto <bb 105>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 105> :
+  _152 = netif->ip6_addr_state[0];
+  if (_152 != 64)
+    goto <bb 106>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 106> :
+  _153 = nd6_send_rs (netif);
+  if (_153 == 0)
+    goto <bb 107>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 107> :
+  _154 = netif->rs_count;
+  _155 = _154;
+  _156 = _155 + 255;
+  netif->rs_count = _156;
+
+  <bb 108> :
+  netif = netif->next;
+
+  <bb 109> :
+  if (netif != 0B)
+    goto <bb 101>; [INV]
+  else
+    goto <bb 111>; [INV]
+
+  <bb 110> :
+  nd6_tmr_rs_reduction.35_157 = nd6_tmr_rs_reduction;
+  nd6_tmr_rs_reduction.36_158 = nd6_tmr_rs_reduction.35_157;
+  _159 = nd6_tmr_rs_reduction.36_158 + 255;
+  nd6_tmr_rs_reduction = _159;
+
+  <bb 111> :
+  return;
+
+}
+
+
+nd6_input (struct pbuf * p, struct netif * inp)
+{
+  struct ip6_addr_t destination_address;
+  u32_t pmtu;
+  struct ip6_hdr * ip6hdr;
+  struct icmp6_hdr * icmp6hdr;
+  struct ip6_addr_t target_address;
+  struct ip6_addr_t destination_address;
+  struct lladdr_option * lladdr_opt;
+  struct redirect_header * redir_hdr;
+  s8_t prefix;
+  u32_t valid_life;
+  struct ip6_addr_t prefix_addr;
+  struct prefix_option * prefix_opt;
+  u32_t mtu32;
+  struct mtu_option * mtu_opt;
+  struct lladdr_option * lladdr_opt;
+  int option_len8;
+  u16_t option_len;
+  u8_t option_type;
+  u16_t offset;
+  u8_t * buffer;
+  struct ra_header * ra_hdr;
+  u8_t accepted;
+  struct ip6_addr_t target_address;
+  struct lladdr_option * lladdr_opt;
+  struct ns_header * ns_hdr;
+  struct ip6_addr_t target_address;
+  struct lladdr_option * lladdr_opt;
+  struct na_header * na_hdr;
+  s16_t dest_idx;
+  s8_t i;
+  u8_t msg_type;
+  short unsigned int iftmp.20;
+  u8_t iftmp.19;
+  u8_t iftmp.18;
+  u8_t iftmp.17;
+  u8_t iftmp.16;
+  u8_t iftmp.12;
+  u8_t iftmp.8;
+
+  <bb 2> :
+  _1 = lwip_stats.nd6.recv;
+  _2 = _1 + 1;
+  lwip_stats.nd6.recv = _2;
+  _3 = p->payload;
+  msg_type = MEM[(u8_t *)_3];
+  _4 = (int) msg_type;
+  switch (_4) <default: <L247> [INV], case 2: <L232> [INV], case 134: <L122> [INV], case 135: <L51> [INV], case 136: <L0> [INV], case 137: <L197> [INV]>
+
+  <bb 3> :
+<L0>:
+  _5 = p->len;
+  if (_5 <= 23)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  pbuf_free (p);
+  _6 = lwip_stats.nd6.lenerr;
+  _7 = _6 + 1;
+  lwip_stats.nd6.lenerr = _7;
+  _8 = lwip_stats.nd6.drop;
+  _9 = _8 + 1;
+  lwip_stats.nd6.drop = _9;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 43>; [INV]
+
+  <bb 5> :
+  na_hdr = p->payload;
+  _10 = na_hdr->target_address.addr[0];
+  target_address.addr[0] = _10;
+  _11 = na_hdr->target_address.addr[1];
+  target_address.addr[1] = _11;
+  _12 = na_hdr->target_address.addr[2];
+  target_address.addr[2] = _12;
+  _13 = na_hdr->target_address.addr[3];
+  target_address.addr[3] = _13;
+  target_address.zone = 0;
+  _14 = target_address.addr[0];
+  _15 = _14 & 49407;
+  if (_15 == 33022)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _16 = inp->num;
+  iftmp.8 = _16 + 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.8 = 0;
+
+  <bb 8> :
+  target_address.zone = iftmp.8;
+  _17 = ip_data.current_ip6_header;
+  _18 = MEM[(const struct ip6_hdr *)_17]._hoplim;
+  if (_18 != 255)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _19 = na_hdr->code;
+  if (_19 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _20 = target_address.addr[0];
+  _21 = _20 & 255;
+  if (_21 == 255)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  pbuf_free (p);
+  _22 = lwip_stats.nd6.proterr;
+  _23 = _22 + 1;
+  lwip_stats.nd6.proterr = _23;
+  _24 = lwip_stats.nd6.drop;
+  _25 = _24 + 1;
+  lwip_stats.nd6.drop = _25;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 43>; [INV]
+
+  <bb 12> :
+  _26 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _27 = _26 & 255;
+  if (_27 == 255)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 13> :
+  i = 0;
+  goto <bb 23>; [INV]
+
+  <bb 14> :
+  _28 = (int) i;
+  _29 = inp->ip6_addr_state[_28];
+  if (_29 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 15> :
+  _30 = (int) i;
+  _31 = inp->ip6_addr_state[_30];
+  if (_31 != 64)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 16> :
+  _32 = target_address.addr[0];
+  _33 = (int) i;
+  _34 = &inp->ip6_addr[_33].u_addr.ip6;
+  _35 = MEM[(const struct ip6_addr_t *)_34].addr[0];
+  if (_32 == _35)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 17> :
+  _36 = target_address.addr[1];
+  _37 = (int) i;
+  _38 = &inp->ip6_addr[_37].u_addr.ip6;
+  _39 = MEM[(const struct ip6_addr_t *)_38].addr[1];
+  if (_36 == _39)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 18> :
+  _40 = target_address.addr[2];
+  _41 = (int) i;
+  _42 = &inp->ip6_addr[_41].u_addr.ip6;
+  _43 = MEM[(const struct ip6_addr_t *)_42].addr[2];
+  if (_40 == _43)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 19> :
+  _44 = target_address.addr[3];
+  _45 = (int) i;
+  _46 = &inp->ip6_addr[_45].u_addr.ip6;
+  _47 = MEM[(const struct ip6_addr_t *)_46].addr[3];
+  if (_44 == _47)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 20> :
+  _48 = target_address.zone;
+  _49 = (int) i;
+  _50 = &inp->ip6_addr[_49].u_addr.ip6;
+  _51 = MEM[(const struct ip6_addr_t *)_50].zone;
+  if (_48 == _51)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  nd6_duplicate_addr_detected (inp, i);
+  pbuf_free (p);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 43>; [INV]
+
+  <bb 22> :
+  i.9_52 = i;
+  i.10_53 = (unsigned char) i.9_52;
+  _54 = i.10_53 + 1;
+  i = (s8_t) _54;
+
+  <bb 23> :
+  if (i <= 2)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  _55 = p->len;
+  if (_55 <= 25)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  pbuf_free (p);
+  _56 = lwip_stats.nd6.lenerr;
+  _57 = _56 + 1;
+  lwip_stats.nd6.lenerr = _57;
+  _58 = lwip_stats.nd6.drop;
+  _59 = _58 + 1;
+  lwip_stats.nd6.drop = _59;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 43>; [INV]
+
+  <bb 26> :
+  _60 = p->payload;
+  lladdr_opt = _60 + 24;
+  _61 = p->len;
+  _62 = (unsigned int) _61;
+  _63 = lladdr_opt->length;
+  _64 = (int) _63;
+  _65 = _64 << 3;
+  _66 = (unsigned int) _65;
+  _67 = _66 + 24;
+  if (_62 < _67)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 27> :
+  pbuf_free (p);
+  _68 = lwip_stats.nd6.lenerr;
+  _69 = _68 + 1;
+  lwip_stats.nd6.lenerr = _69;
+  _70 = lwip_stats.nd6.drop;
+  _71 = _70 + 1;
+  lwip_stats.nd6.drop = _71;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 43>; [INV]
+
+  <bb 28> :
+  i = nd6_find_neighbor_cache_entry (&target_address);
+  if (i >= 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 29> :
+  _72 = na_hdr->flags;
+  _73 = (int) _72;
+  _74 = _73 & 32;
+  if (_74 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 30> :
+  _75 = (int) i;
+  _76 = &neighbor_cache[_75].lladdr;
+  _77 = &lladdr_opt->addr;
+  _78 = inp->hwaddr_len;
+  _79 = (unsigned int) _78;
+  memcpy (_76, _77, _79);
+  goto <bb 42>; [INV]
+
+  <bb 31> :
+  i = nd6_find_neighbor_cache_entry (&target_address);
+  if (i < 0)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  pbuf_free (p);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 43>; [INV]
+
+  <bb 33> :
+  _80 = na_hdr->flags;
+  _81 = (int) _80;
+  _82 = _81 & 32;
+  if (_82 != 0)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 34> :
+  _83 = (int) i;
+  _84 = neighbor_cache[_83].state;
+  if (_84 == 1)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 35> :
+  _85 = p->len;
+  if (_85 <= 25)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  pbuf_free (p);
+  _86 = lwip_stats.nd6.lenerr;
+  _87 = _86 + 1;
+  lwip_stats.nd6.lenerr = _87;
+  _88 = lwip_stats.nd6.drop;
+  _89 = _88 + 1;
+  lwip_stats.nd6.drop = _89;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 43>; [INV]
+
+  <bb 37> :
+  _90 = p->payload;
+  lladdr_opt = _90 + 24;
+  _91 = p->len;
+  _92 = (unsigned int) _91;
+  _93 = lladdr_opt->length;
+  _94 = (int) _93;
+  _95 = _94 << 3;
+  _96 = (unsigned int) _95;
+  _97 = _96 + 24;
+  if (_92 < _97)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 38> :
+  pbuf_free (p);
+  _98 = lwip_stats.nd6.lenerr;
+  _99 = _98 + 1;
+  lwip_stats.nd6.lenerr = _99;
+  _100 = lwip_stats.nd6.drop;
+  _101 = _100 + 1;
+  lwip_stats.nd6.drop = _101;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 43>; [INV]
+
+  <bb 39> :
+  _102 = (int) i;
+  _103 = &neighbor_cache[_102].lladdr;
+  _104 = &lladdr_opt->addr;
+  _105 = inp->hwaddr_len;
+  _106 = (unsigned int) _105;
+  memcpy (_103, _104, _106);
+
+  <bb 40> :
+  _107 = (int) i;
+  neighbor_cache[_107].netif = inp;
+  _108 = (int) i;
+  neighbor_cache[_108].state = 2;
+  _109 = (int) i;
+  reachable_time.11_110 = reachable_time;
+  neighbor_cache[_109].counter.reachable_time = reachable_time.11_110;
+  _111 = (int) i;
+  _112 = neighbor_cache[_111].q;
+  if (_112 != 0B)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 41> :
+  nd6_send_q (i);
+
+  <bb 42> :
+  target_address = {CLOBBER};
+  goto <bb 211>; [INV]
+
+  <bb 43> :
+  target_address = {CLOBBER};
+  goto <bb 213>; [INV]
+
+  <bb 44> :
+<L51>:
+  _113 = p->len;
+  if (_113 <= 23)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 45> :
+  pbuf_free (p);
+  _114 = lwip_stats.nd6.lenerr;
+  _115 = _114 + 1;
+  lwip_stats.nd6.lenerr = _115;
+  _116 = lwip_stats.nd6.drop;
+  _117 = _116 + 1;
+  lwip_stats.nd6.drop = _117;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 100>; [INV]
+
+  <bb 46> :
+  ns_hdr = p->payload;
+  _118 = ns_hdr->target_address.addr[0];
+  target_address.addr[0] = _118;
+  _119 = ns_hdr->target_address.addr[1];
+  target_address.addr[1] = _119;
+  _120 = ns_hdr->target_address.addr[2];
+  target_address.addr[2] = _120;
+  _121 = ns_hdr->target_address.addr[3];
+  target_address.addr[3] = _121;
+  target_address.zone = 0;
+  _122 = target_address.addr[0];
+  _123 = _122 & 49407;
+  if (_123 == 33022)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 47> :
+  _124 = inp->num;
+  iftmp.12 = _124 + 1;
+  goto <bb 49>; [INV]
+
+  <bb 48> :
+  iftmp.12 = 0;
+
+  <bb 49> :
+  target_address.zone = iftmp.12;
+  _125 = ip_data.current_ip6_header;
+  _126 = MEM[(const struct ip6_hdr *)_125]._hoplim;
+  if (_126 != 255)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 50>; [INV]
+
+  <bb 50> :
+  _127 = ns_hdr->code;
+  if (_127 != 0)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 51> :
+  _128 = target_address.addr[0];
+  _129 = _128 & 255;
+  if (_129 == 255)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 52> :
+  pbuf_free (p);
+  _130 = lwip_stats.nd6.proterr;
+  _131 = _130 + 1;
+  lwip_stats.nd6.proterr = _131;
+  _132 = lwip_stats.nd6.drop;
+  _133 = _132 + 1;
+  lwip_stats.nd6.drop = _133;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 100>; [INV]
+
+  <bb 53> :
+  _134 = p->len;
+  if (_134 > 25)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 54> :
+  _135 = p->payload;
+  lladdr_opt = _135 + 24;
+  _136 = p->len;
+  _137 = (unsigned int) _136;
+  _138 = lladdr_opt->length;
+  _139 = (int) _138;
+  _140 = _139 << 3;
+  _141 = (unsigned int) _140;
+  _142 = _141 + 24;
+  if (_137 < _142)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 57>; [INV]
+
+  <bb 55> :
+  lladdr_opt = 0B;
+  goto <bb 57>; [INV]
+
+  <bb 56> :
+  lladdr_opt = 0B;
+
+  <bb 57> :
+  accepted = 0;
+  i = 0;
+  goto <bb 71>; [INV]
+
+  <bb 58> :
+  _143 = (int) i;
+  _144 = inp->ip6_addr_state[_143];
+  _145 = (int) _144;
+  _146 = _145 & 16;
+  if (_146 != 0)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 59>; [INV]
+
+  <bb 59> :
+  _147 = (int) i;
+  _148 = inp->ip6_addr_state[_147];
+  _149 = (int) _148;
+  _150 = _149 & 8;
+  if (_150 != 0)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 60> :
+  _151 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  if (_151 == 0)
+    goto <bb 61>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 61> :
+  _152 = ip_data.current_iphdr_src.u_addr.ip6.addr[1];
+  if (_152 == 0)
+    goto <bb 62>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 62> :
+  _153 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  if (_153 == 0)
+    goto <bb 63>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 63> :
+  _154 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  if (_154 == 0)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 64> :
+  _155 = target_address.addr[0];
+  _156 = (int) i;
+  _157 = &inp->ip6_addr[_156].u_addr.ip6;
+  _158 = MEM[(const struct ip6_addr_t *)_157].addr[0];
+  if (_155 == _158)
+    goto <bb 65>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 65> :
+  _159 = target_address.addr[1];
+  _160 = (int) i;
+  _161 = &inp->ip6_addr[_160].u_addr.ip6;
+  _162 = MEM[(const struct ip6_addr_t *)_161].addr[1];
+  if (_159 == _162)
+    goto <bb 66>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 66> :
+  _163 = target_address.addr[2];
+  _164 = (int) i;
+  _165 = &inp->ip6_addr[_164].u_addr.ip6;
+  _166 = MEM[(const struct ip6_addr_t *)_165].addr[2];
+  if (_163 == _166)
+    goto <bb 67>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 67> :
+  _167 = target_address.addr[3];
+  _168 = (int) i;
+  _169 = &inp->ip6_addr[_168].u_addr.ip6;
+  _170 = MEM[(const struct ip6_addr_t *)_169].addr[3];
+  if (_167 == _170)
+    goto <bb 68>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 68> :
+  _171 = target_address.zone;
+  _172 = (int) i;
+  _173 = &inp->ip6_addr[_172].u_addr.ip6;
+  _174 = MEM[(const struct ip6_addr_t *)_173].zone;
+  if (_171 == _174)
+    goto <bb 69>; [INV]
+  else
+    goto <bb 70>; [INV]
+
+  <bb 69> :
+  accepted = 1;
+  goto <bb 72>; [INV]
+
+  <bb 70> :
+  i.13_175 = (unsigned char) i;
+  _176 = i.13_175 + 1;
+  i = (s8_t) _176;
+
+  <bb 71> :
+  if (i <= 2)
+    goto <bb 58>; [INV]
+  else
+    goto <bb 72>; [INV]
+
+  <bb 72> :
+  if (accepted == 0)
+    goto <bb 73>; [INV]
+  else
+    goto <bb 74>; [INV]
+
+  <bb 73> :
+  pbuf_free (p);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 100>; [INV]
+
+  <bb 74> :
+  _177 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  if (_177 == 0)
+    goto <bb 75>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 75> :
+  _178 = ip_data.current_iphdr_src.u_addr.ip6.addr[1];
+  if (_178 == 0)
+    goto <bb 76>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 76> :
+  _179 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  if (_179 == 0)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 77> :
+  _180 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  if (_180 == 0)
+    goto <bb 78>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 78> :
+  i = 0;
+  goto <bb 88>; [INV]
+
+  <bb 79> :
+  _181 = (int) i;
+  _182 = inp->ip6_addr_state[_181];
+  if (_182 != 0)
+    goto <bb 80>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 80> :
+  _183 = target_address.addr[0];
+  _184 = (int) i;
+  _185 = &inp->ip6_addr[_184].u_addr.ip6;
+  _186 = MEM[(const struct ip6_addr_t *)_185].addr[0];
+  if (_183 == _186)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 81> :
+  _187 = target_address.addr[1];
+  _188 = (int) i;
+  _189 = &inp->ip6_addr[_188].u_addr.ip6;
+  _190 = MEM[(const struct ip6_addr_t *)_189].addr[1];
+  if (_187 == _190)
+    goto <bb 82>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 82> :
+  _191 = target_address.addr[2];
+  _192 = (int) i;
+  _193 = &inp->ip6_addr[_192].u_addr.ip6;
+  _194 = MEM[(const struct ip6_addr_t *)_193].addr[2];
+  if (_191 == _194)
+    goto <bb 83>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 83> :
+  _195 = target_address.addr[3];
+  _196 = (int) i;
+  _197 = &inp->ip6_addr[_196].u_addr.ip6;
+  _198 = MEM[(const struct ip6_addr_t *)_197].addr[3];
+  if (_195 == _198)
+    goto <bb 84>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 84> :
+  _199 = target_address.zone;
+  _200 = (int) i;
+  _201 = &inp->ip6_addr[_200].u_addr.ip6;
+  _202 = MEM[(const struct ip6_addr_t *)_201].zone;
+  if (_199 == _202)
+    goto <bb 85>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 85> :
+  _203 = (int) i;
+  _204 = &inp->ip6_addr[_203].u_addr.ip6;
+  nd6_send_na (inp, _204, 34);
+  _205 = (int) i;
+  _206 = inp->ip6_addr_state[_205];
+  _207 = (int) _206;
+  _208 = _207 & 8;
+  if (_208 != 0)
+    goto <bb 86>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 86> :
+  nd6_duplicate_addr_detected (inp, i);
+
+  <bb 87> :
+  i.14_209 = (unsigned char) i;
+  _210 = i.14_209 + 1;
+  i = (s8_t) _210;
+
+  <bb 88> :
+  if (i <= 2)
+    goto <bb 79>; [INV]
+  else
+    goto <bb 89>; [INV]
+
+  <bb 89> :
+  goto <bb 99>; [INV]
+
+  <bb 90> :
+  if (lladdr_opt == 0B)
+    goto <bb 91>; [INV]
+  else
+    goto <bb 92>; [INV]
+
+  <bb 91> :
+  pbuf_free (p);
+  _211 = lwip_stats.nd6.proterr;
+  _212 = _211 + 1;
+  lwip_stats.nd6.proterr = _212;
+  _213 = lwip_stats.nd6.drop;
+  _214 = _213 + 1;
+  lwip_stats.nd6.drop = _214;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 100>; [INV]
+
+  <bb 92> :
+  i = nd6_find_neighbor_cache_entry (&ip_data.current_iphdr_src.u_addr.ip6);
+  if (i >= 0)
+    goto <bb 93>; [INV]
+  else
+    goto <bb 95>; [INV]
+
+  <bb 93> :
+  _215 = (int) i;
+  _216 = neighbor_cache[_215].state;
+  if (_216 == 1)
+    goto <bb 94>; [INV]
+  else
+    goto <bb 98>; [INV]
+
+  <bb 94> :
+  _217 = (int) i;
+  neighbor_cache[_217].netif = inp;
+  _218 = (int) i;
+  _219 = &neighbor_cache[_218].lladdr;
+  _220 = &lladdr_opt->addr;
+  _221 = inp->hwaddr_len;
+  _222 = (unsigned int) _221;
+  memcpy (_219, _220, _222);
+  _223 = (int) i;
+  neighbor_cache[_223].state = 4;
+  _224 = (int) i;
+  neighbor_cache[_224].counter.delay_time = 5;
+  goto <bb 98>; [INV]
+
+  <bb 95> :
+  i = nd6_new_neighbor_cache_entry ();
+  if (i < 0)
+    goto <bb 96>; [INV]
+  else
+    goto <bb 97>; [INV]
+
+  <bb 96> :
+  pbuf_free (p);
+  _225 = lwip_stats.nd6.memerr;
+  _226 = _225 + 1;
+  lwip_stats.nd6.memerr = _226;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 100>; [INV]
+
+  <bb 97> :
+  _227 = (int) i;
+  neighbor_cache[_227].netif = inp;
+  _228 = (int) i;
+  _229 = &neighbor_cache[_228].lladdr;
+  _230 = &lladdr_opt->addr;
+  _231 = inp->hwaddr_len;
+  _232 = (unsigned int) _231;
+  memcpy (_229, _230, _232);
+  _233 = (int) i;
+  _234 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  neighbor_cache[_233].next_hop_address.addr[0] = _234;
+  _235 = (int) i;
+  _236 = ip_data.current_iphdr_src.u_addr.ip6.addr[1];
+  neighbor_cache[_235].next_hop_address.addr[1] = _236;
+  _237 = (int) i;
+  _238 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  neighbor_cache[_237].next_hop_address.addr[2] = _238;
+  _239 = (int) i;
+  _240 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  neighbor_cache[_239].next_hop_address.addr[3] = _240;
+  _241 = (int) i;
+  _242 = ip_data.current_iphdr_src.u_addr.ip6.zone;
+  neighbor_cache[_241].next_hop_address.zone = _242;
+  _243 = (int) i;
+  neighbor_cache[_243].state = 4;
+  _244 = (int) i;
+  neighbor_cache[_244].counter.delay_time = 5;
+
+  <bb 98> :
+  nd6_send_na (inp, &target_address, 96);
+
+  <bb 99> :
+  target_address = {CLOBBER};
+  goto <bb 211>; [INV]
+
+  <bb 100> :
+  target_address = {CLOBBER};
+  goto <bb 213>; [INV]
+
+  <bb 101> :
+<L122>:
+  _245 = p->len;
+  if (_245 <= 15)
+    goto <bb 102>; [INV]
+  else
+    goto <bb 103>; [INV]
+
+  <bb 102> :
+  pbuf_free (p);
+  _246 = lwip_stats.nd6.lenerr;
+  _247 = _246 + 1;
+  lwip_stats.nd6.lenerr = _247;
+  _248 = lwip_stats.nd6.drop;
+  _249 = _248 + 1;
+  lwip_stats.nd6.drop = _249;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 213>; [INV]
+
+  <bb 103> :
+  ra_hdr = p->payload;
+  _250 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  _251 = _250 & 49407;
+  if (_251 != 33022)
+    goto <bb 106>; [INV]
+  else
+    goto <bb 104>; [INV]
+
+  <bb 104> :
+  _252 = ip_data.current_ip6_header;
+  _253 = MEM[(const struct ip6_hdr *)_252]._hoplim;
+  if (_253 != 255)
+    goto <bb 106>; [INV]
+  else
+    goto <bb 105>; [INV]
+
+  <bb 105> :
+  _254 = ra_hdr->code;
+  if (_254 != 0)
+    goto <bb 106>; [INV]
+  else
+    goto <bb 107>; [INV]
+
+  <bb 106> :
+  pbuf_free (p);
+  _255 = lwip_stats.nd6.proterr;
+  _256 = _255 + 1;
+  lwip_stats.nd6.proterr = _256;
+  _257 = lwip_stats.nd6.drop;
+  _258 = _257 + 1;
+  lwip_stats.nd6.drop = _258;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 213>; [INV]
+
+  <bb 107> :
+  _259 = inp->rs_count;
+  if (_259 <= 2)
+    goto <bb 109>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 108> :
+  _260 = nd6_send_rs (inp);
+  if (_260 == 0)
+    goto <bb 109>; [INV]
+  else
+    goto <bb 110>; [INV]
+
+  <bb 109> :
+  inp->rs_count = 0;
+  goto <bb 111>; [INV]
+
+  <bb 110> :
+  inp->rs_count = 1;
+
+  <bb 111> :
+  i = nd6_get_router (&ip_data.current_iphdr_src.u_addr.ip6, inp);
+  if (i < 0)
+    goto <bb 112>; [INV]
+  else
+    goto <bb 113>; [INV]
+
+  <bb 112> :
+  i = nd6_new_router (&ip_data.current_iphdr_src.u_addr.ip6, inp);
+
+  <bb 113> :
+  if (i < 0)
+    goto <bb 114>; [INV]
+  else
+    goto <bb 115>; [INV]
+
+  <bb 114> :
+  pbuf_free (p);
+  _261 = lwip_stats.nd6.memerr;
+  _262 = _261 + 1;
+  lwip_stats.nd6.memerr = _262;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 213>; [INV]
+
+  <bb 115> :
+  _263 = ra_hdr->router_lifetime;
+  _264 = lwip_htons (_263);
+  _265 = (int) i;
+  _266 = (long unsigned int) _264;
+  default_router_list[_265].invalidation_timer = _266;
+  _267 = ra_hdr->retrans_timer;
+  if (_267 != 0)
+    goto <bb 116>; [INV]
+  else
+    goto <bb 117>; [INV]
+
+  <bb 116> :
+  _268 = ra_hdr->retrans_timer;
+  _269 = lwip_htonl (_268);
+  retrans_timer = _269;
+
+  <bb 117> :
+  _270 = ra_hdr->reachable_time;
+  if (_270 != 0)
+    goto <bb 118>; [INV]
+  else
+    goto <bb 119>; [INV]
+
+  <bb 118> :
+  _271 = ra_hdr->reachable_time;
+  _272 = lwip_htonl (_271);
+  reachable_time = _272;
+
+  <bb 119> :
+  _273 = (int) i;
+  _274 = ra_hdr->flags;
+  default_router_list[_273].flags = _274;
+  offset = 16;
+  goto <bb 165>; [INV]
+
+  <bb 120> :
+  _275 = offset + 1;
+  option_len8 = pbuf_try_get_at (p, _275);
+  if (option_len8 <= 0)
+    goto <bb 121>; [INV]
+  else
+    goto <bb 122>; [INV]
+
+  <bb 121> :
+  // predicted unlikely by goto predictor.
+  goto <bb 212>; [INV]
+
+  <bb 122> :
+  _276 = (unsigned char) option_len8;
+  _277 = (short unsigned int) _276;
+  option_len = _277 << 3;
+  _278 = (int) option_len;
+  _279 = p->tot_len;
+  _280 = (int) _279;
+  _281 = (int) offset;
+  _282 = _280 - _281;
+  if (_278 > _282)
+    goto <bb 123>; [INV]
+  else
+    goto <bb 124>; [INV]
+
+  <bb 123> :
+  // predicted unlikely by goto predictor.
+  goto <bb 212>; [INV]
+
+  <bb 124> :
+  _283 = p->len;
+  _284 = p->tot_len;
+  if (_283 == _284)
+    goto <bb 125>; [INV]
+  else
+    goto <bb 126>; [INV]
+
+  <bb 125> :
+  _285 = p->payload;
+  _286 = (sizetype) offset;
+  buffer = _285 + _286;
+  goto <bb 131>; [INV]
+
+  <bb 126> :
+  if (option_len > 32)
+    goto <bb 127>; [INV]
+  else
+    goto <bb 130>; [INV]
+
+  <bb 127> :
+  option_type = pbuf_get_at (p, offset);
+  if (option_type != 25)
+    goto <bb 128>; [INV]
+  else
+    goto <bb 129>; [INV]
+
+  <bb 128> :
+  // predicted unlikely by goto predictor.
+  goto <bb 212>; [INV]
+
+  <bb 129> :
+  option_len = 32;
+
+  <bb 130> :
+  buffer = &nd6_ra_buffer;
+  option_len = pbuf_copy_partial (p, &nd6_ra_buffer, option_len, offset);
+
+  <bb 131> :
+  option_type = *buffer;
+  _287 = (int) option_type;
+  switch (_287) <default: <L193> [INV], case 1: <L153> [INV], case 3: <L170> [INV], case 5: <L160> [INV], case 24: <L192> [INV]>
+
+  <bb 132> :
+<L153>:
+  if (option_len <= 7)
+    goto <bb 133>; [INV]
+  else
+    goto <bb 134>; [INV]
+
+  <bb 133> :
+  // predicted unlikely by goto predictor.
+  goto <bb 212>; [INV]
+
+  <bb 134> :
+  lladdr_opt = buffer;
+  _288 = (int) i;
+  _289 = default_router_list[_288].neighbor_entry;
+  if (_289 != 0B)
+    goto <bb 135>; [INV]
+  else
+    goto <bb 137>; [INV]
+
+  <bb 135> :
+  _290 = (int) i;
+  _291 = default_router_list[_290].neighbor_entry;
+  _292 = _291->state;
+  if (_292 == 1)
+    goto <bb 136>; [INV]
+  else
+    goto <bb 137>; [INV]
+
+  <bb 136> :
+  _293 = (int) i;
+  _294 = default_router_list[_293].neighbor_entry;
+  _295 = &_294->lladdr;
+  _296 = &lladdr_opt->addr;
+  _297 = inp->hwaddr_len;
+  _298 = (unsigned int) _297;
+  memcpy (_295, _296, _298);
+  _299 = (int) i;
+  _300 = default_router_list[_299].neighbor_entry;
+  _300->state = 2;
+  _301 = (int) i;
+  _302 = default_router_list[_301].neighbor_entry;
+  reachable_time.15_303 = reachable_time;
+  _302->counter.reachable_time = reachable_time.15_303;
+
+  <bb 137> :
+  goto <bb 164>; [INV]
+
+  <bb 138> :
+<L160>:
+  if (option_len <= 7)
+    goto <bb 139>; [INV]
+  else
+    goto <bb 140>; [INV]
+
+  <bb 139> :
+  // predicted unlikely by goto predictor.
+  goto <bb 212>; [INV]
+
+  <bb 140> :
+  mtu_opt = buffer;
+  _304 = mtu_opt->mtu;
+  mtu32 = lwip_htonl (_304);
+  if (mtu32 > 1279)
+    goto <bb 141>; [INV]
+  else
+    goto <bb 145>; [INV]
+
+  <bb 141> :
+  if (mtu32 <= 65535)
+    goto <bb 142>; [INV]
+  else
+    goto <bb 145>; [INV]
+
+  <bb 142> :
+  _305 = inp->mtu;
+  if (_305 != 0)
+    goto <bb 143>; [INV]
+  else
+    goto <bb 144>; [INV]
+
+  <bb 143> :
+  _306 = (short unsigned int) mtu32;
+  _307 = inp->mtu6;
+  _308 = inp->mtu;
+  _309 = MIN_EXPR <_307, _308>;
+  _310 = MIN_EXPR <_306, _309>;
+  inp->mtu6 = _310;
+  goto <bb 145>; [INV]
+
+  <bb 144> :
+  _311 = (short unsigned int) mtu32;
+  inp->mtu6 = _311;
+
+  <bb 145> :
+  goto <bb 164>; [INV]
+
+  <bb 146> :
+<L170>:
+  if (option_len <= 31)
+    goto <bb 147>; [INV]
+  else
+    goto <bb 148>; [INV]
+
+  <bb 147> :
+  // predicted unlikely by goto predictor.
+  prefix_addr = {CLOBBER};
+  goto <bb 212>; [INV]
+
+  <bb 148> :
+  prefix_opt = buffer;
+  _312 = prefix_opt->prefix.addr[0];
+  prefix_addr.addr[0] = _312;
+  _313 = prefix_opt->prefix.addr[1];
+  prefix_addr.addr[1] = _313;
+  _314 = prefix_opt->prefix.addr[2];
+  prefix_addr.addr[2] = _314;
+  _315 = prefix_opt->prefix.addr[3];
+  prefix_addr.addr[3] = _315;
+  prefix_addr.zone = 0;
+  _316 = prefix_addr.addr[0];
+  _317 = _316 & 49407;
+  if (_317 == 33022)
+    goto <bb 149>; [INV]
+  else
+    goto <bb 150>; [INV]
+
+  <bb 149> :
+  _318 = inp->num;
+  iftmp.16 = _318 + 1;
+  goto <bb 151>; [INV]
+
+  <bb 150> :
+  iftmp.16 = 0;
+
+  <bb 151> :
+  prefix_addr.zone = iftmp.16;
+  _319 = prefix_addr.addr[0];
+  _320 = _319 & 49407;
+  if (_320 != 33022)
+    goto <bb 152>; [INV]
+  else
+    goto <bb 161>; [INV]
+
+  <bb 152> :
+  _321 = prefix_opt->flags;
+  _322 = (signed char) _321;
+  if (_322 < 0)
+    goto <bb 153>; [INV]
+  else
+    goto <bb 159>; [INV]
+
+  <bb 153> :
+  _323 = prefix_opt->prefix_length;
+  if (_323 == 64)
+    goto <bb 154>; [INV]
+  else
+    goto <bb 159>; [INV]
+
+  <bb 154> :
+  _324 = prefix_opt->valid_lifetime;
+  valid_life = lwip_htonl (_324);
+  prefix = nd6_get_onlink_prefix (&prefix_addr, inp);
+  if (prefix < 0)
+    goto <bb 155>; [INV]
+  else
+    goto <bb 157>; [INV]
+
+  <bb 155> :
+  if (valid_life != 0)
+    goto <bb 156>; [INV]
+  else
+    goto <bb 157>; [INV]
+
+  <bb 156> :
+  prefix = nd6_new_onlink_prefix (&prefix_addr, inp);
+
+  <bb 157> :
+  if (prefix >= 0)
+    goto <bb 158>; [INV]
+  else
+    goto <bb 159>; [INV]
+
+  <bb 158> :
+  _325 = (int) prefix;
+  prefix_list[_325].invalidation_timer = valid_life;
+
+  <bb 159> :
+  _326 = prefix_opt->flags;
+  _327 = (int) _326;
+  _328 = _327 & 64;
+  if (_328 != 0)
+    goto <bb 160>; [INV]
+  else
+    goto <bb 161>; [INV]
+
+  <bb 160> :
+  nd6_process_autoconfig_prefix (inp, prefix_opt, &prefix_addr);
+
+  <bb 161> :
+  prefix_addr = {CLOBBER};
+  goto <bb 164>; [INV]
+
+  <bb 162> :
+<L192>:
+  goto <bb 164>; [INV]
+
+  <bb 163> :
+<L193>:
+  _329 = lwip_stats.nd6.proterr;
+  _330 = _329 + 1;
+  lwip_stats.nd6.proterr = _330;
+
+  <bb 164> :
+  _331 = (unsigned char) option_len8;
+  _332 = (short unsigned int) _331;
+  _333 = _332 * 8;
+  offset = offset + _333;
+
+  <bb 165> :
+  _334 = p->tot_len;
+  _335 = (int) _334;
+  _336 = (int) offset;
+  _337 = _335 - _336;
+  if (_337 > 1)
+    goto <bb 120>; [INV]
+  else
+    goto <bb 166>; [INV]
+
+  <bb 166> :
+  goto <bb 211>; [INV]
+
+  <bb 167> :
+<L197>:
+  _338 = p->len;
+  if (_338 <= 39)
+    goto <bb 168>; [INV]
+  else
+    goto <bb 169>; [INV]
+
+  <bb 168> :
+  pbuf_free (p);
+  _339 = lwip_stats.nd6.lenerr;
+  _340 = _339 + 1;
+  lwip_stats.nd6.lenerr = _340;
+  _341 = lwip_stats.nd6.drop;
+  _342 = _341 + 1;
+  lwip_stats.nd6.drop = _342;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 195>; [INV]
+
+  <bb 169> :
+  redir_hdr = p->payload;
+  _343 = redir_hdr->destination_address.addr[0];
+  destination_address.addr[0] = _343;
+  _344 = redir_hdr->destination_address.addr[1];
+  destination_address.addr[1] = _344;
+  _345 = redir_hdr->destination_address.addr[2];
+  destination_address.addr[2] = _345;
+  _346 = redir_hdr->destination_address.addr[3];
+  destination_address.addr[3] = _346;
+  destination_address.zone = 0;
+  _347 = destination_address.addr[0];
+  _348 = _347 & 49407;
+  if (_348 == 33022)
+    goto <bb 170>; [INV]
+  else
+    goto <bb 171>; [INV]
+
+  <bb 170> :
+  _349 = inp->num;
+  iftmp.17 = _349 + 1;
+  goto <bb 172>; [INV]
+
+  <bb 171> :
+  iftmp.17 = 0;
+
+  <bb 172> :
+  destination_address.zone = iftmp.17;
+  _350 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  _351 = _350 & 49407;
+  if (_351 != 33022)
+    goto <bb 176>; [INV]
+  else
+    goto <bb 173>; [INV]
+
+  <bb 173> :
+  _352 = ip_data.current_ip6_header;
+  _353 = MEM[(const struct ip6_hdr *)_352]._hoplim;
+  if (_353 != 255)
+    goto <bb 176>; [INV]
+  else
+    goto <bb 174>; [INV]
+
+  <bb 174> :
+  _354 = redir_hdr->code;
+  if (_354 != 0)
+    goto <bb 176>; [INV]
+  else
+    goto <bb 175>; [INV]
+
+  <bb 175> :
+  _355 = destination_address.addr[0];
+  _356 = _355 & 255;
+  if (_356 == 255)
+    goto <bb 176>; [INV]
+  else
+    goto <bb 177>; [INV]
+
+  <bb 176> :
+  pbuf_free (p);
+  _357 = lwip_stats.nd6.proterr;
+  _358 = _357 + 1;
+  lwip_stats.nd6.proterr = _358;
+  _359 = lwip_stats.nd6.drop;
+  _360 = _359 + 1;
+  lwip_stats.nd6.drop = _360;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 195>; [INV]
+
+  <bb 177> :
+  _361 = p->len;
+  if (_361 > 41)
+    goto <bb 178>; [INV]
+  else
+    goto <bb 180>; [INV]
+
+  <bb 178> :
+  _362 = p->payload;
+  lladdr_opt = _362 + 40;
+  _363 = p->len;
+  _364 = (unsigned int) _363;
+  _365 = lladdr_opt->length;
+  _366 = (int) _365;
+  _367 = _366 << 3;
+  _368 = (unsigned int) _367;
+  _369 = _368 + 40;
+  if (_364 < _369)
+    goto <bb 179>; [INV]
+  else
+    goto <bb 181>; [INV]
+
+  <bb 179> :
+  lladdr_opt = 0B;
+  goto <bb 181>; [INV]
+
+  <bb 180> :
+  lladdr_opt = 0B;
+
+  <bb 181> :
+  dest_idx = nd6_find_destination_cache_entry (&destination_address);
+  if (dest_idx < 0)
+    goto <bb 182>; [INV]
+  else
+    goto <bb 183>; [INV]
+
+  <bb 182> :
+  pbuf_free (p);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 195>; [INV]
+
+  <bb 183> :
+  _370 = redir_hdr->target_address.addr[0];
+  target_address.addr[0] = _370;
+  _371 = redir_hdr->target_address.addr[1];
+  target_address.addr[1] = _371;
+  _372 = redir_hdr->target_address.addr[2];
+  target_address.addr[2] = _372;
+  _373 = redir_hdr->target_address.addr[3];
+  target_address.addr[3] = _373;
+  target_address.zone = 0;
+  _374 = target_address.addr[0];
+  _375 = _374 & 49407;
+  if (_375 == 33022)
+    goto <bb 184>; [INV]
+  else
+    goto <bb 185>; [INV]
+
+  <bb 184> :
+  _376 = inp->num;
+  iftmp.18 = _376 + 1;
+  goto <bb 186>; [INV]
+
+  <bb 185> :
+  iftmp.18 = 0;
+
+  <bb 186> :
+  target_address.zone = iftmp.18;
+  _377 = (int) dest_idx;
+  _378 = target_address.addr[0];
+  destination_cache[_377].next_hop_addr.addr[0] = _378;
+  _379 = (int) dest_idx;
+  _380 = target_address.addr[1];
+  destination_cache[_379].next_hop_addr.addr[1] = _380;
+  _381 = (int) dest_idx;
+  _382 = target_address.addr[2];
+  destination_cache[_381].next_hop_addr.addr[2] = _382;
+  _383 = (int) dest_idx;
+  _384 = target_address.addr[3];
+  destination_cache[_383].next_hop_addr.addr[3] = _384;
+  _385 = (int) dest_idx;
+  _386 = target_address.zone;
+  destination_cache[_385].next_hop_addr.zone = _386;
+  if (lladdr_opt != 0B)
+    goto <bb 187>; [INV]
+  else
+    goto <bb 194>; [INV]
+
+  <bb 187> :
+  _387 = lladdr_opt->type;
+  if (_387 == 2)
+    goto <bb 188>; [INV]
+  else
+    goto <bb 194>; [INV]
+
+  <bb 188> :
+  i = nd6_find_neighbor_cache_entry (&target_address);
+  if (i < 0)
+    goto <bb 189>; [INV]
+  else
+    goto <bb 191>; [INV]
+
+  <bb 189> :
+  i = nd6_new_neighbor_cache_entry ();
+  if (i >= 0)
+    goto <bb 190>; [INV]
+  else
+    goto <bb 191>; [INV]
+
+  <bb 190> :
+  _388 = (int) i;
+  neighbor_cache[_388].netif = inp;
+  _389 = (int) i;
+  _390 = &neighbor_cache[_389].lladdr;
+  _391 = &lladdr_opt->addr;
+  _392 = inp->hwaddr_len;
+  _393 = (unsigned int) _392;
+  memcpy (_390, _391, _393);
+  _394 = (int) i;
+  _395 = target_address.addr[0];
+  neighbor_cache[_394].next_hop_address.addr[0] = _395;
+  _396 = (int) i;
+  _397 = target_address.addr[1];
+  neighbor_cache[_396].next_hop_address.addr[1] = _397;
+  _398 = (int) i;
+  _399 = target_address.addr[2];
+  neighbor_cache[_398].next_hop_address.addr[2] = _399;
+  _400 = (int) i;
+  _401 = target_address.addr[3];
+  neighbor_cache[_400].next_hop_address.addr[3] = _401;
+  _402 = (int) i;
+  _403 = target_address.zone;
+  neighbor_cache[_402].next_hop_address.zone = _403;
+  _404 = (int) i;
+  neighbor_cache[_404].state = 4;
+  _405 = (int) i;
+  neighbor_cache[_405].counter.delay_time = 5;
+
+  <bb 191> :
+  if (i >= 0)
+    goto <bb 192>; [INV]
+  else
+    goto <bb 194>; [INV]
+
+  <bb 192> :
+  _406 = (int) i;
+  _407 = neighbor_cache[_406].state;
+  if (_407 == 1)
+    goto <bb 193>; [INV]
+  else
+    goto <bb 194>; [INV]
+
+  <bb 193> :
+  _408 = (int) i;
+  _409 = &neighbor_cache[_408].lladdr;
+  _410 = &lladdr_opt->addr;
+  _411 = inp->hwaddr_len;
+  _412 = (unsigned int) _411;
+  memcpy (_409, _410, _412);
+  _413 = (int) i;
+  neighbor_cache[_413].state = 4;
+  _414 = (int) i;
+  neighbor_cache[_414].counter.delay_time = 5;
+
+  <bb 194> :
+  destination_address = {CLOBBER};
+  target_address = {CLOBBER};
+  goto <bb 211>; [INV]
+
+  <bb 195> :
+  destination_address = {CLOBBER};
+  target_address = {CLOBBER};
+  goto <bb 213>; [INV]
+
+  <bb 196> :
+<L232>:
+  _415 = p->len;
+  if (_415 <= 47)
+    goto <bb 197>; [INV]
+  else
+    goto <bb 198>; [INV]
+
+  <bb 197> :
+  pbuf_free (p);
+  _416 = lwip_stats.nd6.lenerr;
+  _417 = _416 + 1;
+  lwip_stats.nd6.lenerr = _417;
+  _418 = lwip_stats.nd6.drop;
+  _419 = _418 + 1;
+  lwip_stats.nd6.drop = _419;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 209>; [INV]
+
+  <bb 198> :
+  icmp6hdr = p->payload;
+  _420 = p->payload;
+  ip6hdr = _420 + 8;
+  _421 = ip6hdr->dest.addr[0];
+  destination_address.addr[0] = _421;
+  _422 = ip6hdr->dest.addr[1];
+  destination_address.addr[1] = _422;
+  _423 = ip6hdr->dest.addr[2];
+  destination_address.addr[2] = _423;
+  _424 = ip6hdr->dest.addr[3];
+  destination_address.addr[3] = _424;
+  destination_address.zone = 0;
+  _425 = destination_address.addr[0];
+  _426 = _425 & 49407;
+  if (_426 == 33022)
+    goto <bb 201>; [INV]
+  else
+    goto <bb 199>; [INV]
+
+  <bb 199> :
+  _427 = destination_address.addr[0];
+  _428 = _427 & 36863;
+  if (_428 == 511)
+    goto <bb 201>; [INV]
+  else
+    goto <bb 200>; [INV]
+
+  <bb 200> :
+  _429 = destination_address.addr[0];
+  _430 = _429 & 36863;
+  if (_430 == 767)
+    goto <bb 201>; [INV]
+  else
+    goto <bb 202>; [INV]
+
+  <bb 201> :
+  _431 = inp->num;
+  iftmp.19 = _431 + 1;
+  goto <bb 203>; [INV]
+
+  <bb 202> :
+  iftmp.19 = 0;
+
+  <bb 203> :
+  destination_address.zone = iftmp.19;
+  dest_idx = nd6_find_destination_cache_entry (&destination_address);
+  if (dest_idx < 0)
+    goto <bb 204>; [INV]
+  else
+    goto <bb 205>; [INV]
+
+  <bb 204> :
+  pbuf_free (p);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 209>; [INV]
+
+  <bb 205> :
+  _432 = icmp6hdr->data;
+  pmtu = lwip_htonl (_432);
+  if (pmtu <= 65534)
+    goto <bb 206>; [INV]
+  else
+    goto <bb 207>; [INV]
+
+  <bb 206> :
+  iftmp.20 = (short unsigned int) pmtu;
+  goto <bb 208>; [INV]
+
+  <bb 207> :
+  iftmp.20 = 65535;
+
+  <bb 208> :
+  _433 = (int) dest_idx;
+  destination_cache[_433].pmtu = iftmp.20;
+  destination_address = {CLOBBER};
+  goto <bb 211>; [INV]
+
+  <bb 209> :
+  destination_address = {CLOBBER};
+  goto <bb 213>; [INV]
+
+  <bb 210> :
+<L247>:
+  _434 = lwip_stats.nd6.proterr;
+  _435 = _434 + 1;
+  lwip_stats.nd6.proterr = _435;
+  _436 = lwip_stats.nd6.drop;
+  _437 = _436 + 1;
+  lwip_stats.nd6.drop = _437;
+
+  <bb 211> :
+  pbuf_free (p);
+  goto <bb 213>; [INV]
+
+  <bb 212> :
+lenerr_drop_free_return:
+  _438 = lwip_stats.nd6.lenerr;
+  _439 = _438 + 1;
+  lwip_stats.nd6.lenerr = _439;
+  _440 = lwip_stats.nd6.drop;
+  _441 = _440 + 1;
+  lwip_stats.nd6.drop = _441;
+  pbuf_free (p);
+
+  <bb 213> :
+<L250>:
+  return;
+
+}
+
+
+nd6_process_autoconfig_prefix (struct netif * netif, struct prefix_option * prefix_opt, const struct ip6_addr_t * prefix_addr)
+{
+  u32_t remaining_life;
+  s8_t free_idx;
+  s8_t i;
+  u8_t addr_state;
+  u32_t pref_life;
+  u32_t valid_life;
+  struct ip6_addr_t ip6addr;
+  u8_t iftmp.5;
+  long unsigned int iftmp.2;
+
+  <bb 2> :
+  _1 = prefix_opt->valid_lifetime;
+  valid_life = lwip_htonl (_1);
+  _2 = prefix_opt->preferred_lifetime;
+  pref_life = lwip_htonl (_2);
+  if (pref_life > valid_life)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _3 = prefix_opt->prefix_length;
+  if (_3 != 64)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 5> :
+  i = 1;
+  goto <bb 33>; [INV]
+
+  <bb 6> :
+  _4 = (int) i;
+  addr_state = netif->ip6_addr_state[_4];
+  if (addr_state != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 7> :
+  if (netif != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 8> :
+  _5 = (int) i;
+  _6 = netif->ip6_addr_valid_life[_5];
+  if (_6 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 9> :
+  _7 = prefix_addr->addr[0];
+  _8 = (int) i;
+  _9 = &netif->ip6_addr[_8].u_addr.ip6;
+  _10 = MEM[(const struct ip6_addr_t *)_9].addr[0];
+  if (_7 == _10)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 10> :
+  _11 = prefix_addr->addr[1];
+  _12 = (int) i;
+  _13 = &netif->ip6_addr[_12].u_addr.ip6;
+  _14 = MEM[(const struct ip6_addr_t *)_13].addr[1];
+  if (_11 == _14)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 11> :
+  _15 = prefix_addr->zone;
+  _16 = (int) i;
+  _17 = &netif->ip6_addr[_16].u_addr.ip6;
+  _18 = MEM[(const struct ip6_addr_t *)_17].zone;
+  if (_15 == _18)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 12> :
+  if (netif != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _19 = (int) i;
+  iftmp.2 = netif->ip6_addr_valid_life[_19];
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.2 = 0;
+
+  <bb 15> :
+  remaining_life = iftmp.2;
+  if (valid_life > 7200)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  if (valid_life > remaining_life)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 17> :
+  if (netif != 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _20 = (int) i;
+  netif->ip6_addr_valid_life[_20] = valid_life;
+
+  <bb 19> :
+  goto <bb 23>; [INV]
+
+  <bb 20> :
+  if (remaining_life > 7200)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 21> :
+  if (netif != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  _21 = (int) i;
+  netif->ip6_addr_valid_life[_21] = 7200;
+
+  <bb 23> :
+  if (netif == 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  _22 = (int) i;
+  _23 = netif->ip6_addr_valid_life[_22];
+  if (_23 == 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 25>; [INV]
+
+  <bb 26> :
+  if (pref_life != 0)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 27> :
+  if (addr_state == 16)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  netif_ip6_addr_set_state (netif, i, 48);
+
+  <bb 29> :
+  if (netif != 0B)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  _24 = (int) i;
+  netif->ip6_addr_pref_life[_24] = pref_life;
+
+  <bb 31> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 32> :
+  i.3_25 = i;
+  i.4_26 = (unsigned char) i.3_25;
+  _27 = i.4_26 + 1;
+  i = (s8_t) _27;
+
+  <bb 33> :
+  if (i <= 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 34> :
+  addr_state = netif->ip6_addr_state[0];
+  _28 = netif->ip6_autoconfig_enabled;
+  if (_28 == 0)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 35> :
+  if (valid_life == 0)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 36> :
+  if (addr_state == 0)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 37> :
+  if (addr_state == 64)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 38> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 39> :
+  _29 = prefix_addr->addr[0];
+  ip6addr.addr[0] = _29;
+  _30 = prefix_addr->addr[1];
+  ip6addr.addr[1] = _30;
+  _31 = &netif->ip6_addr[0].u_addr.ip6;
+  _32 = MEM[(const struct ip6_addr_t *)_31].addr[2];
+  ip6addr.addr[2] = _32;
+  _33 = &netif->ip6_addr[0].u_addr.ip6;
+  _34 = MEM[(const struct ip6_addr_t *)_33].addr[3];
+  ip6addr.addr[3] = _34;
+  ip6addr.zone = 0;
+  _35 = ip6addr.addr[0];
+  _36 = _35 & 49407;
+  if (_36 == 33022)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 40> :
+  _37 = netif->num;
+  iftmp.5 = _37 + 1;
+  goto <bb 42>; [INV]
+
+  <bb 41> :
+  iftmp.5 = 0;
+
+  <bb 42> :
+  ip6addr.zone = iftmp.5;
+  free_idx = 0;
+  i = 1;
+  goto <bb 53>; [INV]
+
+  <bb 43> :
+  _38 = (int) i;
+  _39 = netif->ip6_addr_state[_38];
+  if (_39 != 0)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 50>; [INV]
+
+  <bb 44> :
+  _40 = ip6addr.addr[0];
+  _41 = (int) i;
+  _42 = &netif->ip6_addr[_41].u_addr.ip6;
+  _43 = MEM[(const struct ip6_addr_t *)_42].addr[0];
+  if (_40 == _43)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 45> :
+  _44 = ip6addr.addr[1];
+  _45 = (int) i;
+  _46 = &netif->ip6_addr[_45].u_addr.ip6;
+  _47 = MEM[(const struct ip6_addr_t *)_46].addr[1];
+  if (_44 == _47)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 46> :
+  _48 = ip6addr.addr[2];
+  _49 = (int) i;
+  _50 = &netif->ip6_addr[_49].u_addr.ip6;
+  _51 = MEM[(const struct ip6_addr_t *)_50].addr[2];
+  if (_48 == _51)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 47> :
+  _52 = ip6addr.addr[3];
+  _53 = (int) i;
+  _54 = &netif->ip6_addr[_53].u_addr.ip6;
+  _55 = MEM[(const struct ip6_addr_t *)_54].addr[3];
+  if (_52 == _55)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 48> :
+  _56 = ip6addr.zone;
+  _57 = (int) i;
+  _58 = &netif->ip6_addr[_57].u_addr.ip6;
+  _59 = MEM[(const struct ip6_addr_t *)_58].zone;
+  if (_56 == _59)
+    goto <bb 49>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 49> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 50> :
+  if (free_idx == 0)
+    goto <bb 51>; [INV]
+  else
+    goto <bb 52>; [INV]
+
+  <bb 51> :
+  free_idx = i;
+
+  <bb 52> :
+  i.6_60 = i;
+  i.7_61 = (unsigned char) i.6_60;
+  _62 = i.7_61 + 1;
+  i = (s8_t) _62;
+
+  <bb 53> :
+  if (i <= 2)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 54> :
+  if (free_idx == 0)
+    goto <bb 55>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 55> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 56> :
+  _63 = (int) free_idx;
+  _64 = ip6addr.addr[0];
+  netif->ip6_addr[_63].u_addr.ip6.addr[0] = _64;
+  _65 = (int) free_idx;
+  _66 = ip6addr.addr[1];
+  netif->ip6_addr[_65].u_addr.ip6.addr[1] = _66;
+  _67 = (int) free_idx;
+  _68 = ip6addr.addr[2];
+  netif->ip6_addr[_67].u_addr.ip6.addr[2] = _68;
+  _69 = (int) free_idx;
+  _70 = ip6addr.addr[3];
+  netif->ip6_addr[_69].u_addr.ip6.addr[3] = _70;
+  _71 = (int) free_idx;
+  _72 = ip6addr.zone;
+  netif->ip6_addr[_71].u_addr.ip6.zone = _72;
+  _73 = (int) free_idx;
+  netif->ip6_addr[_73].type = 6;
+  if (netif != 0B)
+    goto <bb 57>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 57> :
+  _74 = (int) free_idx;
+  netif->ip6_addr_valid_life[_74] = valid_life;
+
+  <bb 58> :
+  if (netif != 0B)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 59> :
+  _75 = (int) free_idx;
+  netif->ip6_addr_pref_life[_75] = pref_life;
+
+  <bb 60> :
+  netif_ip6_addr_set_state (netif, free_idx, 8);
+  ip6addr = {CLOBBER};
+  goto <bb 62>; [INV]
+
+  <bb 61> :
+  ip6addr = {CLOBBER};
+
+  <bb 62> :
+<L75>:
+  return;
+
+}
+
+
+nd6_duplicate_addr_detected (struct netif * netif, s8_t addr_idx)
+{
+  s8_t i;
+
+  <bb 2> :
+  netif_ip6_addr_set_state (netif, addr_idx, 64);
+  if (addr_idx == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  i = 1;
+  goto <bb 9>; [INV]
+
+  <bb 4> :
+  _1 = (int) i;
+  _2 = netif->ip6_addr_state[_1];
+  if (_2 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  if (netif != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _3 = (int) i;
+  _4 = netif->ip6_addr_valid_life[_3];
+  if (_4 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  netif_ip6_addr_set_state (netif, i, 64);
+
+  <bb 8> :
+  i.0_5 = i;
+  i.1_6 = (unsigned char) i.0_5;
+  _7 = i.1_6 + 1;
+  i = (s8_t) _7;
+
+  <bb 9> :
+  if (i <= 2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  return;
+
+}
+
+

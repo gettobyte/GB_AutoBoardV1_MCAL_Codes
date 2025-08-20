@@ -1,0 +1,547 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: netbiosns_stop/7 netbiosns_set_name/6 netbiosns_init/5
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+udp_remove/20 (udp_remove) @06ca7460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_stop/7 
+  Calls: 
+strlen/19 (strlen) @06ca72a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_set_name/6 
+  Calls: 
+udp_recv/18 (udp_recv) @06ca70e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_init/5 
+  Calls: 
+ip_addr_any_type/17 (ip_addr_any_type) @06ca5948
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: netbiosns_init/5 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+udp_bind/16 (udp_bind) @06ca7000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_init/5 
+  Calls: 
+udp_new_ip_type/15 (udp_new_ip_type) @06c8bee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_init/5 
+  Calls: 
+udp_sendto/14 (udp_sendto) @06c8bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_recv/4 
+  Calls: 
+memcpy/13 (memcpy) @06c8bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_recv/4 
+  Calls: 
+pbuf_alloc/12 (pbuf_alloc) @06c8bb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_recv/4 
+  Calls: 
+lwip_strnicmp/11 (lwip_strnicmp) @06c8ba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_recv/4 
+  Calls: 
+netif_default/10 (netif_default) @06ca5360
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: netbiosns_recv/4 (read) netbiosns_recv/4 (read) 
+  Availability: not_available
+  Varpool flags:
+pbuf_free/9 (pbuf_free) @06c8b9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netbiosns_recv/4 netbiosns_recv/4 netbiosns_recv/4 
+  Calls: 
+_ctype_/8 (_ctype_) @06c7bdc8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: netbiosns_name_decode/3 (addr) netbiosns_name_decode/3 (addr) netbiosns_set_name/6 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+netbiosns_stop/7 (netbiosns_stop) @06c8b380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netbiosns_pcb/2 (read) netbiosns_pcb/2 (read) netbiosns_pcb/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: udp_remove/20 
+netbiosns_set_name/6 (netbiosns_set_name) @06c8b0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _ctype_/8 (addr) netbiosns_local_name/1 (write) netbiosns_local_name/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: strlen/19 
+netbiosns_init/5 (netbiosns_init) @06c7ae00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netbiosns_pcb/2 (write) netbiosns_pcb/2 (read) netbiosns_pcb/2 (read) netbiosns_pcb/2 (read) netbiosns_pcb/2 (read) ip_addr_any_type/17 (addr) netbiosns_pcb/2 (read) netbiosns_pcb/2 (read) netbiosns_recv/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: udp_recv/18 udp_bind/16 udp_new_ip_type/15 
+netbiosns_recv/4 (netbiosns_recv) @06c7ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: netif_default/10 (read) netbiosns_local_name/1 (addr) netif_default/10 (read) 
+  Referring: netbiosns_init/5 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/9 pbuf_free/9 udp_sendto/14 memcpy/13 pbuf_alloc/12 lwip_strnicmp/11 netbiosns_name_decode/3 pbuf_free/9 
+netbiosns_name_decode/3 (netbiosns_name_decode) @06c7a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: _ctype_/8 (addr) _ctype_/8 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: netbiosns_recv/4 
+  Calls: 
+netbiosns_pcb/2 (netbiosns_pcb) @06c73ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: netbiosns_init/5 (write) netbiosns_init/5 (read) netbiosns_init/5 (read) netbiosns_init/5 (read) netbiosns_init/5 (read) netbiosns_init/5 (read) netbiosns_init/5 (read) netbiosns_stop/7 (read) netbiosns_stop/7 (read) netbiosns_stop/7 (write) 
+  Availability: available
+  Varpool flags:
+netbiosns_local_name/1 (netbiosns_local_name) @06c73e58
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: netbiosns_recv/4 (addr) netbiosns_set_name/6 (write) netbiosns_set_name/6 (write) 
+  Availability: available
+  Varpool flags:
+netbiosns_stop ()
+{
+  <bb 2> :
+  netbiosns_pcb.12_1 = netbiosns_pcb;
+  if (netbiosns_pcb.12_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  netbiosns_pcb.13_2 = netbiosns_pcb;
+  udp_remove (netbiosns_pcb.13_2);
+  netbiosns_pcb = 0B;
+
+  <bb 4> :
+  return;
+
+}
+
+
+netbiosns_set_name (const char * hostname)
+{
+  unsigned char __x;
+  size_t copy_len;
+  size_t i;
+  int iftmp.11;
+  int D.7417;
+
+  <bb 2> :
+  copy_len = strlen (hostname);
+  if (copy_len > 15)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (copy_len > 15)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  copy_len = 15;
+
+  <bb 6> :
+  i = 0;
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+  _1 = hostname + i;
+  __x = *_1;
+  _2 = (sizetype) __x;
+  _3 = _2 + 1;
+  _4 = &_ctype_ + _3;
+  _5 = *_4;
+  _6 = (int) _5;
+  _7 = _6 & 3;
+  if (_7 == 2)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _8 = (int) __x;
+  iftmp.11 = _8 + -32;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.11 = (int) __x;
+
+  <bb 10> :
+  D.7417 = iftmp.11;
+  _9 = (char) D.7417;
+  netbiosns_local_name[i] = _9;
+  i = i + 1;
+
+  <bb 11> :
+  if (i < copy_len)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  netbiosns_local_name[copy_len] = 0;
+  return;
+
+}
+
+
+netbiosns_init ()
+{
+  <bb 2> :
+  _1 = udp_new_ip_type (46);
+  netbiosns_pcb = _1;
+  netbiosns_pcb.5_2 = netbiosns_pcb;
+  if (netbiosns_pcb.5_2 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  netbiosns_pcb.6_3 = netbiosns_pcb;
+  _4 = netbiosns_pcb.6_3->so_options;
+  netbiosns_pcb.7_5 = netbiosns_pcb;
+  _6 = _4 | 32;
+  netbiosns_pcb.7_5->so_options = _6;
+  netbiosns_pcb.8_7 = netbiosns_pcb;
+  udp_bind (netbiosns_pcb.8_7, &ip_addr_any_type, 137);
+  netbiosns_pcb.9_8 = netbiosns_pcb;
+  netbiosns_pcb.10_9 = netbiosns_pcb;
+  udp_recv (netbiosns_pcb.9_8, netbiosns_recv, netbiosns_pcb.10_9);
+
+  <bb 4> :
+  return;
+
+}
+
+
+netbiosns_recv (void * arg, struct udp_pcb * upcb, struct pbuf * p, const struct ip_addr_t * addr, u16_t port)
+{
+  struct netbios_resp * resp;
+  struct pbuf * q;
+  struct netbios_question_hdr * netbios_question_hdr;
+  struct netbios_hdr * netbios_hdr;
+  char netbios_name[17];
+
+  <bb 2> :
+  if (p != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 3> :
+  netbios_hdr = p->payload;
+  netbios_question_hdr = netbios_hdr + 12;
+  _1 = p->len;
+  if (_1 <= 49)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  pbuf_free (p);
+  // predicted unlikely by early return (on trees) predictor.
+  netbios_name = {CLOBBER};
+  goto <bb 14>; [INV]
+
+  <bb 5> :
+  netif_default.3_2 = netif_default;
+  if (netif_default.3_2 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 6> :
+  _3 = netbios_hdr->flags;
+  _4 = (int) _3;
+  _5 = _4 & 120;
+  if (_5 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 7> :
+  _6 = netbios_hdr->flags;
+  _7 = (int) _6;
+  _8 = _7 & 128;
+  if (_8 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  _9 = netbios_hdr->questions;
+  if (_9 == 256)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 9> :
+  _10 = &netbios_question_hdr->encname;
+  netbiosns_name_decode (_10, &netbios_name, 17);
+  _11 = netbios_question_hdr->type;
+  if (_11 == 8192)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  _12 = lwip_strnicmp (&netbios_name, &netbiosns_local_name, 16);
+  if (_12 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  q = pbuf_alloc (74, 62, 640);
+  if (q != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  resp = q->payload;
+  _13 = netbios_hdr->trans_id;
+  resp->resp_hdr.trans_id = _13;
+  resp->resp_hdr.flags = 133;
+  resp->resp_hdr.questions = 0;
+  resp->resp_hdr.answerRRs = 256;
+  resp->resp_hdr.authorityRRs = 0;
+  resp->resp_hdr.additionalRRs = 0;
+  _14 = &resp->resp_name.encname;
+  _15 = &netbios_question_hdr->encname;
+  memcpy (_14, _15, 33);
+  _16 = netbios_question_hdr->nametype;
+  resp->resp_name.nametype = _16;
+  _17 = netbios_question_hdr->type;
+  resp->resp_name.type = _17;
+  _18 = netbios_question_hdr->cls;
+  resp->resp_name.cls = _18;
+  resp->resp_name.ttl = 3767731200;
+  resp->resp_name.datalen = 1536;
+  resp->resp_name.flags = 0;
+  netif_default.4_19 = netif_default;
+  _20 = &netif_default.4_19->ip_addr.u_addr.ip4;
+  _21 = MEM[(const struct ip4_addr_t *)_20].addr;
+  resp->resp_name.addr.addr = _21;
+  udp_sendto (upcb, q, addr, port);
+  pbuf_free (q);
+
+  <bb 13> :
+  pbuf_free (p);
+  netbios_name = {CLOBBER};
+
+  <bb 14> :
+<L20>:
+  return;
+
+}
+
+
+netbiosns_name_decode (const char * name_enc, char * name_dec, int name_dec_len)
+{
+  int idx;
+  char cnbname;
+  char cname;
+  const char * pname;
+  char iftmp.0;
+  int D.7434;
+
+  <bb 2> :
+  idx = 0;
+  pname = name_enc;
+
+  <bb 3> :
+  cname = *pname;
+  if (cname == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  goto <bb 17>; [INV]
+
+  <bb 5> :
+  if (cname == 46)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  goto <bb 17>; [INV]
+
+  <bb 7> :
+  _1 = (sizetype) cname;
+  _2 = _1 + 1;
+  _3 = &_ctype_ + _2;
+  _4 = *_3;
+  _5 = (int) _4;
+  _6 = _5 & 3;
+  if (_6 != 1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.7434 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 18>; [INV]
+
+  <bb 9> :
+  cname = cname + 191;
+  cnbname = cname << 4;
+  pname = pname + 1;
+  cname = *pname;
+  _7 = (sizetype) cname;
+  _8 = _7 + 1;
+  _9 = &_ctype_ + _8;
+  _10 = *_9;
+  _11 = (int) _10;
+  _12 = _11 & 3;
+  if (_12 != 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  D.7434 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 18>; [INV]
+
+  <bb 11> :
+  cname = cname + 191;
+  cnbname = cnbname | cname;
+  pname = pname + 1;
+  if (idx <= 15)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 12> :
+  if (cnbname != 32)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.0 = cnbname;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.0 = 0;
+
+  <bb 15> :
+  idx.1_13 = idx;
+  idx = idx.1_13 + 1;
+  idx.2_14 = (sizetype) idx.1_13;
+  _15 = name_dec + idx.2_14;
+  *_15 = iftmp.0;
+
+  <bb 16> :
+  goto <bb 3>; [INV]
+
+  <bb 17> :
+  D.7434 = 0;
+
+  <bb 18> :
+<L15>:
+  return D.7434;
+
+}
+
+

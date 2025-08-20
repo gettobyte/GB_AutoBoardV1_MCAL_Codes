@@ -1,0 +1,114 @@
+stacks/tcpip/lwip/src/core/tcp_in.o: \
+ ../stacks/tcpip/lwip/src/core/tcp_in.c \
+ ../stacks/tcpip/lwip/src/include/lwip/opt.h \
+ C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/lwipopts.h \
+ ../stacks/tcpip/lwip/src/include/lwip/debug.h \
+ ../stacks/tcpip/lwip/src/include/lwip/arch.h \
+ ../stacks/tcpip/code/ports/platform/generic/gcc/setting/arch/cc.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Devassert.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/PlatformTypes.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Mcal.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Compiler.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Compiler_Cfg.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/CompilerDefinition.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/StandardTypes.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h \
+ C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/Soc_Ips.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/IpVersionMacros.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Reg_eSys.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/OsIf_Internal.h \
+ C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/OsIf_Cfg.h \
+ C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/OsIf_ArchCfg.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/StandardTypes.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_SYSTICK.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_COMMON.h \
+ C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/BasicTypes.h \
+ C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/lwipcfg.h \
+ ../stacks/tcpip/lwip/src/include/lwip/priv/tcp_priv.h \
+ ../stacks/tcpip/lwip/src/include/lwip/tcp.h \
+ ../stacks/tcpip/lwip/src/include/lwip/tcpbase.h \
+ ../stacks/tcpip/lwip/src/include/lwip/mem.h \
+ ../stacks/tcpip/lwip/src/include/lwip/pbuf.h \
+ ../stacks/tcpip/lwip/src/include/lwip/err.h \
+ ../stacks/tcpip/lwip/src/include/lwip/ip.h \
+ ../stacks/tcpip/lwip/src/include/lwip/def.h \
+ ../stacks/tcpip/lwip/src/include/lwip/ip_addr.h \
+ ../stacks/tcpip/lwip/src/include/lwip/ip4_addr.h \
+ ../stacks/tcpip/lwip/src/include/lwip/ip6_addr.h \
+ ../stacks/tcpip/lwip/src/include/lwip/def.h \
+ ../stacks/tcpip/lwip/src/include/lwip/ip6_zone.h \
+ ../stacks/tcpip/lwip/src/include/lwip/netif.h \
+ ../stacks/tcpip/lwip/src/include/lwip/stats.h \
+ ../stacks/tcpip/lwip/src/include/lwip/memp.h \
+ ../stacks/tcpip/lwip/src/include/lwip/priv/memp_std.h \
+ ../stacks/tcpip/lwip/src/include/lwip/priv/memp_priv.h \
+ ../stacks/tcpip/lwip/src/include/lwip/priv/mem_priv.h \
+ ../stacks/tcpip/lwip/src/include/lwip/ip4.h \
+ ../stacks/tcpip/lwip/src/include/lwip/prot/ip4.h \
+ ../stacks/tcpip/lwip/src/include/lwip/ip6.h \
+ ../stacks/tcpip/lwip/src/include/lwip/prot/ip6.h \
+ ../stacks/tcpip/lwip/src/include/lwip/prot/ip.h \
+ ../stacks/tcpip/lwip/src/include/lwip/icmp.h \
+ ../stacks/tcpip/lwip/src/include/lwip/prot/icmp.h \
+ ../stacks/tcpip/lwip/src/include/lwip/icmp6.h \
+ ../stacks/tcpip/lwip/src/include/lwip/prot/icmp6.h \
+ ../stacks/tcpip/lwip/src/include/lwip/prot/tcp.h \
+ ../stacks/tcpip/lwip/src/include/lwip/inet_chksum.h \
+ ../stacks/tcpip/lwip/src/include/lwip/nd6.h
+../stacks/tcpip/lwip/src/include/lwip/opt.h:
+C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/lwipopts.h:
+../stacks/tcpip/lwip/src/include/lwip/debug.h:
+../stacks/tcpip/lwip/src/include/lwip/arch.h:
+../stacks/tcpip/code/ports/platform/generic/gcc/setting/arch/cc.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Devassert.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/PlatformTypes.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Mcal.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Compiler.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Compiler_Cfg.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/CompilerDefinition.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/StandardTypes.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h:
+C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/Soc_Ips.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/IpVersionMacros.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Reg_eSys.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/OsIf_Internal.h:
+C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/OsIf_Cfg.h:
+C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/OsIf_ArchCfg.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/StandardTypes.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_SYSTICK.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_COMMON.h:
+C\:/NXP/S32DS.3.5_2/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/BasicTypes.h:
+C\:/Users/gettobyte_kunal/S32K344_Ethernet_Demos/lwip_baremetal_s32k344/generate/include/lwipcfg.h:
+../stacks/tcpip/lwip/src/include/lwip/priv/tcp_priv.h:
+../stacks/tcpip/lwip/src/include/lwip/tcp.h:
+../stacks/tcpip/lwip/src/include/lwip/tcpbase.h:
+../stacks/tcpip/lwip/src/include/lwip/mem.h:
+../stacks/tcpip/lwip/src/include/lwip/pbuf.h:
+../stacks/tcpip/lwip/src/include/lwip/err.h:
+../stacks/tcpip/lwip/src/include/lwip/ip.h:
+../stacks/tcpip/lwip/src/include/lwip/def.h:
+../stacks/tcpip/lwip/src/include/lwip/ip_addr.h:
+../stacks/tcpip/lwip/src/include/lwip/ip4_addr.h:
+../stacks/tcpip/lwip/src/include/lwip/ip6_addr.h:
+../stacks/tcpip/lwip/src/include/lwip/def.h:
+../stacks/tcpip/lwip/src/include/lwip/ip6_zone.h:
+../stacks/tcpip/lwip/src/include/lwip/netif.h:
+../stacks/tcpip/lwip/src/include/lwip/stats.h:
+../stacks/tcpip/lwip/src/include/lwip/memp.h:
+../stacks/tcpip/lwip/src/include/lwip/priv/memp_std.h:
+../stacks/tcpip/lwip/src/include/lwip/priv/memp_priv.h:
+../stacks/tcpip/lwip/src/include/lwip/priv/mem_priv.h:
+../stacks/tcpip/lwip/src/include/lwip/ip4.h:
+../stacks/tcpip/lwip/src/include/lwip/prot/ip4.h:
+../stacks/tcpip/lwip/src/include/lwip/ip6.h:
+../stacks/tcpip/lwip/src/include/lwip/prot/ip6.h:
+../stacks/tcpip/lwip/src/include/lwip/prot/ip.h:
+../stacks/tcpip/lwip/src/include/lwip/icmp.h:
+../stacks/tcpip/lwip/src/include/lwip/prot/icmp.h:
+../stacks/tcpip/lwip/src/include/lwip/icmp6.h:
+../stacks/tcpip/lwip/src/include/lwip/prot/icmp6.h:
+../stacks/tcpip/lwip/src/include/lwip/prot/tcp.h:
+../stacks/tcpip/lwip/src/include/lwip/inet_chksum.h:
+../stacks/tcpip/lwip/src/include/lwip/nd6.h:

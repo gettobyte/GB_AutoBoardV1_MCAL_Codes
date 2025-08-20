@@ -1,0 +1,622 @@
+inet_chksum_pbuf (struct pbuf * p)
+{
+  int swapped;
+  struct pbuf * q;
+  u32_t acc;
+  u16_t D.6945;
+  short unsigned int D.6940;
+
+  <bb 2> :
+  swapped = 0;
+  acc = 0;
+  q = p;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = q->payload;
+  _2 = q->len;
+  _3 = (int) _2;
+  D.6940 = lwip_standard_chksum (_1, _3);
+  _4 = (long unsigned int) D.6940;
+  acc = acc + _4;
+  _5 = acc >> 16;
+  _6 = acc & 65535;
+  acc = _5 + _6;
+  _7 = q->len;
+  _8 = _7 & 1;
+  if (_8 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = swapped == 0;
+  swapped = (int) _9;
+  _10 = acc << 8;
+  _11 = _10 & 65535;
+  _12 = acc >> 8;
+  _13 = _12 & 255;
+  acc = _11 | _13;
+
+  <bb 5> :
+  q = q->next;
+
+  <bb 6> :
+  if (q != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (swapped != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _14 = acc << 8;
+  _15 = _14 & 65535;
+  _16 = acc >> 8;
+  _17 = _16 & 255;
+  acc = _15 | _17;
+
+  <bb 9> :
+  _18 = (short unsigned int) acc;
+  D.6945 = ~_18;
+
+  <bb 10> :
+<L7>:
+  return D.6945;
+
+}
+
+
+inet_chksum (const void * dataptr, u16_t len)
+{
+  u16_t D.6938;
+
+  <bb 2> :
+  _1 = (int) len;
+  _2 = lwip_standard_chksum (dataptr, _1);
+  D.6938 = ~_2;
+
+  <bb 3> :
+<L0>:
+  return D.6938;
+
+}
+
+
+ip_chksum_pseudo_partial (struct pbuf * p, u8_t proto, u16_t proto_len, u16_t chksum_len, const struct ip_addr_t * src, const struct ip_addr_t * dest)
+{
+  u16_t D.6936;
+
+  <bb 2> :
+  if (dest != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _1 = dest->type;
+  if (_1 == 6)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = &src->u_addr.ip6;
+  _3 = &dest->u_addr.ip6;
+  D.6936 = ip6_chksum_pseudo_partial (p, proto, proto_len, chksum_len, _2, _3);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = &src->u_addr.ip4;
+  _5 = &dest->u_addr.ip4;
+  D.6936 = inet_chksum_pseudo_partial (p, proto, proto_len, chksum_len, _4, _5);
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 6> :
+<L3>:
+  return D.6936;
+
+}
+
+
+ip6_chksum_pseudo_partial (struct pbuf * p, u8_t proto, u16_t proto_len, u16_t chksum_len, const struct ip6_addr_t * src, const struct ip6_addr_t * dest)
+{
+  u8_t addr_part;
+  u32_t addr;
+  u32_t acc;
+  u16_t D.6931;
+
+  <bb 2> :
+  acc = 0;
+  addr_part = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) addr_part;
+  addr = src->addr[_1];
+  _2 = addr & 65535;
+  acc = acc + _2;
+  _3 = addr >> 16;
+  acc = acc + _3;
+  _4 = (int) addr_part;
+  addr = dest->addr[_4];
+  _5 = addr & 65535;
+  acc = acc + _5;
+  _6 = addr >> 16;
+  acc = acc + _6;
+  addr_part.6_7 = addr_part;
+  addr_part = addr_part.6_7 + 1;
+
+  <bb 4> :
+  if (addr_part <= 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _8 = acc >> 16;
+  _9 = acc & 65535;
+  acc = _8 + _9;
+  _10 = acc >> 16;
+  _11 = acc & 65535;
+  acc = _10 + _11;
+  D.6931 = inet_cksum_pseudo_partial_base (p, proto, proto_len, chksum_len, acc);
+
+  <bb 6> :
+<L3>:
+  return D.6931;
+
+}
+
+
+inet_chksum_pseudo_partial (struct pbuf * p, u8_t proto, u16_t proto_len, u16_t chksum_len, const struct ip4_addr_t * src, const struct ip4_addr_t * dest)
+{
+  u32_t addr;
+  u32_t acc;
+  u16_t D.6929;
+
+  <bb 2> :
+  addr = src->addr;
+  acc = addr & 65535;
+  _1 = addr >> 16;
+  acc = acc + _1;
+  addr = dest->addr;
+  _2 = addr & 65535;
+  acc = acc + _2;
+  _3 = addr >> 16;
+  acc = acc + _3;
+  _4 = acc >> 16;
+  _5 = acc & 65535;
+  acc = _4 + _5;
+  _6 = acc >> 16;
+  _7 = acc & 65535;
+  acc = _6 + _7;
+  D.6929 = inet_cksum_pseudo_partial_base (p, proto, proto_len, chksum_len, acc);
+
+  <bb 3> :
+<L0>:
+  return D.6929;
+
+}
+
+
+inet_cksum_pseudo_partial_base (struct pbuf * p, u8_t proto, u16_t proto_len, u16_t chksum_len, u32_t acc)
+{
+  u16_t chklen;
+  int swapped;
+  struct pbuf * q;
+  u16_t D.6927;
+  long unsigned int D.6926;
+  long unsigned int D.6925;
+  short unsigned int D.6917;
+
+  <bb 2> :
+  swapped = 0;
+  q = p;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  chklen = q->len;
+  if (chklen > chksum_len)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  chklen = chksum_len;
+
+  <bb 5> :
+  _1 = q->payload;
+  _2 = (int) chklen;
+  D.6917 = lwip_standard_chksum (_1, _2);
+  _3 = (long unsigned int) D.6917;
+  acc = acc + _3;
+  chksum_len = chksum_len - chklen;
+  if (chksum_len > 32766)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  _4 = acc >> 16;
+  _5 = acc & 65535;
+  acc = _4 + _5;
+  _6 = q->len;
+  _7 = _6 & 1;
+  if (_7 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _8 = swapped == 0;
+  swapped = (int) _8;
+  _9 = acc << 8;
+  _10 = _9 & 65535;
+  _11 = acc >> 8;
+  _12 = _11 & 255;
+  acc = _10 | _12;
+
+  <bb 9> :
+  q = q->next;
+
+  <bb 10> :
+  if (q != 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  if (chksum_len != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (swapped != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _13 = acc << 8;
+  _14 = _13 & 65535;
+  _15 = acc >> 8;
+  _16 = _15 & 255;
+  acc = _14 | _16;
+
+  <bb 14> :
+  _17 = (short unsigned int) proto;
+  _18 = lwip_htons (_17);
+  D.6925 = (long unsigned int) _18;
+  acc = D.6925 + acc;
+  _19 = lwip_htons (proto_len);
+  D.6926 = (long unsigned int) _19;
+  acc = D.6926 + acc;
+  _20 = acc >> 16;
+  _21 = acc & 65535;
+  acc = _20 + _21;
+  _22 = acc >> 16;
+  _23 = acc & 65535;
+  acc = _22 + _23;
+  _24 = (short unsigned int) acc;
+  D.6927 = ~_24;
+
+  <bb 15> :
+<L13>:
+  return D.6927;
+
+}
+
+
+ip_chksum_pseudo (struct pbuf * p, u8_t proto, u16_t proto_len, const struct ip_addr_t * src, const struct ip_addr_t * dest)
+{
+  u16_t D.6913;
+
+  <bb 2> :
+  if (dest != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _1 = dest->type;
+  if (_1 == 6)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _2 = &src->u_addr.ip6;
+  _3 = &dest->u_addr.ip6;
+  D.6913 = ip6_chksum_pseudo (p, proto, proto_len, _2, _3);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = &src->u_addr.ip4;
+  _5 = &dest->u_addr.ip4;
+  D.6913 = inet_chksum_pseudo (p, proto, proto_len, _4, _5);
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 6> :
+<L3>:
+  return D.6913;
+
+}
+
+
+ip6_chksum_pseudo (struct pbuf * p, u8_t proto, u16_t proto_len, const struct ip6_addr_t * src, const struct ip6_addr_t * dest)
+{
+  u8_t addr_part;
+  u32_t addr;
+  u32_t acc;
+  u16_t D.6908;
+
+  <bb 2> :
+  acc = 0;
+  addr_part = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) addr_part;
+  addr = src->addr[_1];
+  _2 = addr & 65535;
+  acc = acc + _2;
+  _3 = addr >> 16;
+  acc = acc + _3;
+  _4 = (int) addr_part;
+  addr = dest->addr[_4];
+  _5 = addr & 65535;
+  acc = acc + _5;
+  _6 = addr >> 16;
+  acc = acc + _6;
+  addr_part.5_7 = addr_part;
+  addr_part = addr_part.5_7 + 1;
+
+  <bb 4> :
+  if (addr_part <= 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _8 = acc >> 16;
+  _9 = acc & 65535;
+  acc = _8 + _9;
+  _10 = acc >> 16;
+  _11 = acc & 65535;
+  acc = _10 + _11;
+  D.6908 = inet_cksum_pseudo_base (p, proto, proto_len, acc);
+
+  <bb 6> :
+<L3>:
+  return D.6908;
+
+}
+
+
+inet_chksum_pseudo (struct pbuf * p, u8_t proto, u16_t proto_len, const struct ip4_addr_t * src, const struct ip4_addr_t * dest)
+{
+  u32_t addr;
+  u32_t acc;
+  u16_t D.6906;
+
+  <bb 2> :
+  addr = src->addr;
+  acc = addr & 65535;
+  _1 = addr >> 16;
+  acc = acc + _1;
+  addr = dest->addr;
+  _2 = addr & 65535;
+  acc = acc + _2;
+  _3 = addr >> 16;
+  acc = acc + _3;
+  _4 = acc >> 16;
+  _5 = acc & 65535;
+  acc = _4 + _5;
+  _6 = acc >> 16;
+  _7 = acc & 65535;
+  acc = _6 + _7;
+  D.6906 = inet_cksum_pseudo_base (p, proto, proto_len, acc);
+
+  <bb 3> :
+<L0>:
+  return D.6906;
+
+}
+
+
+inet_cksum_pseudo_base (struct pbuf * p, u8_t proto, u16_t proto_len, u32_t acc)
+{
+  int swapped;
+  struct pbuf * q;
+  u16_t D.6904;
+  long unsigned int D.6903;
+  long unsigned int D.6902;
+  short unsigned int D.6897;
+
+  <bb 2> :
+  swapped = 0;
+  q = p;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = q->payload;
+  _2 = q->len;
+  _3 = (int) _2;
+  D.6897 = lwip_standard_chksum (_1, _3);
+  _4 = (long unsigned int) D.6897;
+  acc = acc + _4;
+  _5 = acc >> 16;
+  _6 = acc & 65535;
+  acc = _5 + _6;
+  _7 = q->len;
+  _8 = _7 & 1;
+  if (_8 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = swapped == 0;
+  swapped = (int) _9;
+  _10 = acc << 8;
+  _11 = _10 & 65535;
+  _12 = acc >> 8;
+  _13 = _12 & 255;
+  acc = _11 | _13;
+
+  <bb 5> :
+  q = q->next;
+
+  <bb 6> :
+  if (q != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (swapped != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _14 = acc << 8;
+  _15 = _14 & 65535;
+  _16 = acc >> 8;
+  _17 = _16 & 255;
+  acc = _15 | _17;
+
+  <bb 9> :
+  _18 = (short unsigned int) proto;
+  _19 = lwip_htons (_18);
+  D.6902 = (long unsigned int) _19;
+  acc = D.6902 + acc;
+  _20 = lwip_htons (proto_len);
+  D.6903 = (long unsigned int) _20;
+  acc = D.6903 + acc;
+  _21 = acc >> 16;
+  _22 = acc & 65535;
+  acc = _21 + _22;
+  _23 = acc >> 16;
+  _24 = acc & 65535;
+  acc = _23 + _24;
+  _25 = (short unsigned int) acc;
+  D.6904 = ~_25;
+
+  <bb 10> :
+<L7>:
+  return D.6904;
+
+}
+
+
+lwip_standard_chksum (const void * dataptr, int len)
+{
+  int odd;
+  u32_t sum;
+  u16_t t;
+  const u16_t * ps;
+  const u8_t * pb;
+  u16_t D.6894;
+  short unsigned int D.6889;
+
+  <bb 2> :
+  pb = dataptr;
+  t = 0;
+  sum = 0;
+  pb.0_1 = (int) pb;
+  odd = pb.0_1 & 1;
+  if (odd != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  if (len > 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  pb.1_2 = pb;
+  pb = pb.1_2 + 1;
+  _3 = &t + 1;
+  _4 = *pb.1_2;
+  *_3 = _4;
+  len = len + -1;
+
+  <bb 5> :
+  ps = pb;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  ps.2_5 = ps;
+  ps = ps.2_5 + 2;
+  D.6889 = *ps.2_5;
+  _6 = (long unsigned int) D.6889;
+  sum = sum + _6;
+  len = len + -2;
+
+  <bb 7> :
+  if (len > 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (len > 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  t.3_7 = &t;
+  _8 = MEM[(const u8_t *)ps];
+  MEM[(u8_t *)t.3_7] = _8;
+
+  <bb 10> :
+  t.4_9 = t;
+  _10 = (long unsigned int) t.4_9;
+  sum = sum + _10;
+  _11 = sum >> 16;
+  _12 = sum & 65535;
+  sum = _11 + _12;
+  _13 = sum >> 16;
+  _14 = sum & 65535;
+  sum = _13 + _14;
+  if (odd != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _15 = sum << 8;
+  _16 = _15 & 65535;
+  _17 = sum >> 8;
+  _18 = _17 & 255;
+  sum = _16 | _18;
+
+  <bb 12> :
+  D.6894 = (u16_t) sum;
+  t = {CLOBBER};
+
+  <bb 13> :
+<L12>:
+  return D.6894;
+
+}
+
+

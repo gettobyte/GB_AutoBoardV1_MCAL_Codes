@@ -1,0 +1,314 @@
+
+Marking local functions:
+
+
+Marking externally visible functions:
+
+
+Marking externally visible variables: snmp_mib2_icmp_root/3
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+snmp_scalar_array_get_next_instance/6 (snmp_scalar_array_get_next_instance) @06c209a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: snmp_mib2_icmp_root/3 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+snmp_scalar_array_get_instance/5 (snmp_scalar_array_get_instance) @06c208c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: snmp_mib2_icmp_root/3 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_stats/4 (lwip_stats) @06c591f8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) icmp_get_value/1 (read) 
+  Availability: not_available
+  Varpool flags:
+snmp_mib2_icmp_root/3 (snmp_mib2_icmp_root) @06c16678
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: snmp_scalar_array_get_instance/5 (addr) snmp_scalar_array_get_next_instance/6 (addr) icmp_nodes/2 (addr) icmp_get_value/1 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+icmp_nodes/2 (icmp_nodes) @06c165a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: snmp_mib2_icmp_root/3 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+icmp_get_value/1 (icmp_get_value) @06c17540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) lwip_stats/4 (read) 
+  Referring: snmp_mib2_icmp_root/3 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+icmp_get_value (const struct snmp_scalar_array_node_def * node, void * value)
+{
+  u32_t * uint_ptr;
+  s16_t D.7592;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  s16_t _21;
+  s16_t _28;
+  s16_t _30;
+  s16_t _32;
+  s16_t _34;
+  s16_t _36;
+  s16_t _38;
+  s16_t _40;
+  s16_t _42;
+  s16_t _44;
+  s16_t _46;
+  s16_t _48;
+  s16_t _50;
+  s16_t _52;
+  s16_t _54;
+  s16_t _56;
+  s16_t _58;
+  s16_t _60;
+  s16_t _62;
+  s16_t _64;
+  s16_t _66;
+  s16_t _68;
+  s16_t _70;
+  s16_t _72;
+  s16_t _74;
+  s16_t _76;
+  s16_t _78;
+  s16_t _79;
+
+  <bb 2> :
+  uint_ptr_24 = value_23(D);
+  _1 = node_26(D)->oid;
+  switch (_1) <default: <L26> [INV], case 1: <L0> [INV], case 2: <L1> [INV], case 3: <L2> [INV], case 4: <L3> [INV], case 5: <L4> [INV], case 6: <L5> [INV], case 7: <L6> [INV], case 8: <L7> [INV], case 9: <L8> [INV], case 10: <L9> [INV], case 11: <L10> [INV], case 12: <L11> [INV], case 13: <L12> [INV], case 14: <L13> [INV], case 15: <L14> [INV], case 16: <L15> [INV], case 17: <L16> [INV], case 18: <L17> [INV], case 19: <L18> [INV], case 20: <L19> [INV], case 21: <L20> [INV], case 22: <L21> [INV], case 23: <L22> [INV], case 24: <L23> [INV], case 25: <L24> [INV], case 26: <L25> [INV]>
+
+  <bb 3> :
+<L0>:
+  _2 = lwip_stats.mib2.icmpinmsgs;
+  *uint_ptr_24 = _2;
+  _78 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 4> :
+<L1>:
+  _3 = lwip_stats.mib2.icmpinerrors;
+  *uint_ptr_24 = _3;
+  _76 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 5> :
+<L2>:
+  _4 = lwip_stats.mib2.icmpindestunreachs;
+  *uint_ptr_24 = _4;
+  _74 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 6> :
+<L3>:
+  _5 = lwip_stats.mib2.icmpintimeexcds;
+  *uint_ptr_24 = _5;
+  _72 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 7> :
+<L4>:
+  _6 = lwip_stats.mib2.icmpinparmprobs;
+  *uint_ptr_24 = _6;
+  _70 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 8> :
+<L5>:
+  _7 = lwip_stats.mib2.icmpinsrcquenchs;
+  *uint_ptr_24 = _7;
+  _68 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 9> :
+<L6>:
+  _8 = lwip_stats.mib2.icmpinredirects;
+  *uint_ptr_24 = _8;
+  _66 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 10> :
+<L7>:
+  _9 = lwip_stats.mib2.icmpinechos;
+  *uint_ptr_24 = _9;
+  _64 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 11> :
+<L8>:
+  _10 = lwip_stats.mib2.icmpinechoreps;
+  *uint_ptr_24 = _10;
+  _62 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 12> :
+<L9>:
+  _11 = lwip_stats.mib2.icmpintimestamps;
+  *uint_ptr_24 = _11;
+  _60 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 13> :
+<L10>:
+  _12 = lwip_stats.mib2.icmpintimestampreps;
+  *uint_ptr_24 = _12;
+  _58 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 14> :
+<L11>:
+  _13 = lwip_stats.mib2.icmpinaddrmasks;
+  *uint_ptr_24 = _13;
+  _56 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 15> :
+<L12>:
+  _14 = lwip_stats.mib2.icmpinaddrmaskreps;
+  *uint_ptr_24 = _14;
+  _54 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 16> :
+<L13>:
+  _15 = lwip_stats.mib2.icmpoutmsgs;
+  *uint_ptr_24 = _15;
+  _52 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 17> :
+<L14>:
+  _16 = lwip_stats.mib2.icmpouterrors;
+  *uint_ptr_24 = _16;
+  _50 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 18> :
+<L15>:
+  _17 = lwip_stats.mib2.icmpoutdestunreachs;
+  *uint_ptr_24 = _17;
+  _48 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 19> :
+<L16>:
+  _18 = lwip_stats.mib2.icmpouttimeexcds;
+  *uint_ptr_24 = _18;
+  _46 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 20> :
+<L17>:
+  *uint_ptr_24 = 0;
+  _44 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 21> :
+<L18>:
+  *uint_ptr_24 = 0;
+  _42 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 22> :
+<L19>:
+  *uint_ptr_24 = 0;
+  _40 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 23> :
+<L20>:
+  _19 = lwip_stats.mib2.icmpoutechos;
+  *uint_ptr_24 = _19;
+  _38 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 24> :
+<L21>:
+  _20 = lwip_stats.mib2.icmpoutechoreps;
+  *uint_ptr_24 = _20;
+  _36 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 25> :
+<L22>:
+  *uint_ptr_24 = 0;
+  _34 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 26> :
+<L23>:
+  *uint_ptr_24 = 0;
+  _32 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 27> :
+<L24>:
+  *uint_ptr_24 = 0;
+  _30 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 28> :
+<L25>:
+  *uint_ptr_24 = 0;
+  _28 = 4;
+  goto <bb 31>; [INV]
+
+  <bb 29> :
+<L26>:
+
+  <bb 30> :
+  _79 = 0;
+
+  <bb 31> :
+  # _21 = PHI <_78(3), _76(4), _74(5), _72(6), _70(7), _68(8), _66(9), _64(10), _62(11), _60(12), _58(13), _56(14), _54(15), _52(16), _50(17), _48(18), _46(19), _44(20), _42(21), _40(22), _38(23), _36(24), _34(25), _32(26), _30(27), _28(28), _79(30)>
+<L28>:
+  return _21;
+
+}
+
+

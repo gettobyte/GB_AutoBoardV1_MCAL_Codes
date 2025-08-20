@@ -1,0 +1,4650 @@
+Clock_Ip_SetExternalSignalFrequency (Clock_Ip_NameType SignalName, uint32 Frequency)
+{
+  uint32 Index;
+  <unnamed type> _1;
+
+  <bb 2> :
+  Index_4 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = Clock_Ip_axExtSignalFreqEntries[Index_2].Name;
+  if (SignalName_6(D) == _1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Clock_Ip_axExtSignalFreqEntries[Index_2].Frequency = Frequency_8(D);
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  Index_7 = Index_2 + 1;
+
+  <bb 6> :
+  # Index_2 = PHI <Index_4(2), Index_7(5)>
+  if (Index_2 <= 5)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+Clock_Ip_GetFreq (Clock_Ip_NameType ClockName)
+{
+  uint32 D.7936;
+  uint32 (*<T77d>) (void) _1;
+  uint32 _5;
+
+  <bb 2> :
+  _1 = Clock_Ip_apfFreqTable[ClockName_3(D)];
+  _5 = _1 ();
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+Clock_Ip_SetExternalOscillatorFrequency (Clock_Ip_NameType ExtOscName, uint32 Frequency)
+{
+  <bb 2> :
+  switch (ExtOscName_2(D)) <default: <L2> [INV], case 5: <L0> [INV], case 6: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  Clock_Ip_u32fxosc = Frequency_4(D);
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  Clock_Ip_u32sxosc = Frequency_4(D);
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+Clock_Ip_PLL_VCO (const struct PLL_Type * Base)
+{
+  boolean Overflow;
+  uint32 Var5;
+  uint32 Var4;
+  uint32 Var3;
+  uint32 Var2;
+  uint32 Var1;
+  uint32 Fout;
+  uint32 Mfn;
+  uint32 Mfi;
+  uint32 Rdiv;
+  uint32 Fin;
+  uint32 D.7934;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  uint32 _54;
+
+  <bb 2> :
+  Fout_31 = 0;
+  Overflow_32 = 0;
+  Fin_35 = Clock_Ip_Get_FXOSC_CLK_Frequency ();
+  _1 ={v} Base_36(D)->PLLDV;
+  _2 = _1 >> 12;
+  Rdiv_37 = _2 & 7;
+  _3 ={v} Base_36(D)->PLLDV;
+  Mfi_38 = _3 & 255;
+  _4 ={v} Base_36(D)->PLLFD;
+  Mfn_39 = _4 & 32767;
+  Var1_40 = Mfi_38 / Rdiv_37;
+  _5 = Var1_40 * Rdiv_37;
+  Var2_41 = Mfi_38 - _5;
+  _6 = Rdiv_37 << 14;
+  _7 = Rdiv_37 << 11;
+  Var3_42 = _6 + _7;
+  Var4_43 = Fin_35 / Var3_42;
+  _8 = Var4_43 * Var3_42;
+  Var5_44 = Fin_35 - _8;
+  if (Fin_35 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 3> :
+  _9 = Var1_40 * Fin_35;
+  _10 = _9 / Fin_35;
+  if (Var1_40 == _10)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Fout_46 = Var1_40 * Fin_35;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  Overflow_45 = 1;
+
+  <bb 6> :
+  # Fout_22 = PHI <Fout_46(4), Fout_31(5)>
+  # Overflow_27 = PHI <Overflow_32(4), Overflow_45(5)>
+  _11 = Fin_35 * Var2_41;
+  _12 = _11 / Fin_35;
+  if (Var2_41 == _12)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (Fout_22 <= 1280000000)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _13 = Fin_35 / Rdiv_37;
+  _14 = Var2_41 * _13;
+  Fout_47 = Fout_22 + _14;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  Overflow_48 = 1;
+
+  <bb 10> :
+  # Fout_23 = PHI <Fout_47(8), Fout_22(9)>
+  # Overflow_28 = PHI <Overflow_27(8), Overflow_48(9)>
+  if (Var4_43 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 11> :
+  _15 = Var4_43 * Mfn_39;
+  _16 = _15 / Var4_43;
+  if (Mfn_39 == _16)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  if (Fout_23 <= 1280000000)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _17 = Var4_43 * Mfn_39;
+  Fout_49 = Fout_23 + _17;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  Overflow_50 = 1;
+
+  <bb 15> :
+  # Fout_24 = PHI <Fout_23(10), Fout_49(13), Fout_23(14)>
+  # Overflow_29 = PHI <Overflow_28(10), Overflow_28(13), Overflow_50(14)>
+  if (Mfn_39 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 16> :
+  _18 = Var5_44 * Mfn_39;
+  _19 = _18 / Mfn_39;
+  if (Var5_44 == _19)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 17> :
+  if (Fout_24 <= 1280000000)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _20 = Var5_44 * Mfn_39;
+  _21 = _20 / Var3_42;
+  Fout_51 = Fout_24 + _21;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  Overflow_52 = 1;
+
+  <bb 20> :
+  # Fout_25 = PHI <Fout_31(2), Fout_24(15), Fout_51(18), Fout_24(19)>
+  # Overflow_30 = PHI <Overflow_32(2), Overflow_29(15), Overflow_29(18), Overflow_52(19)>
+  if (Overflow_30 != 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  Fout_53 = 0;
+
+  <bb 22> :
+  # Fout_26 = PHI <Fout_25(20), Fout_53(21)>
+  _54 = Fout_26;
+
+  <bb 23> :
+<L23>:
+  return _54;
+
+}
+
+
+Clock_Ip_Get_WKPU0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7909;
+  long unsigned int D.7908;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_TSENSE0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7906;
+  long unsigned int D.7905;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 17;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_TRGMUX0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7903;
+  long unsigned int D.7902;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _7;
+  uint32 _9;
+
+  <bb 2> :
+  Frequency_6 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 & 1;
+  _7 = Clock_Ip_u32EnableGate[_3];
+  Frequency_8 = _7 & Frequency_6;
+  _9 = Frequency_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Clock_Ip_Get_TRACE_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7900;
+  long unsigned int D.7899;
+  long unsigned int D.7898;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_11_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 15;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_11_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_11_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 7;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_TEMPSENSE_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7896;
+  long unsigned int D.7895;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_SWT0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7893;
+  long unsigned int D.7892;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_SIRC_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 28;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_STM1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7890;
+  long unsigned int D.7889;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_STMB_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 29;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_STMB_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7887;
+  long unsigned int D.7886;
+  long unsigned int D.7885;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_2_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_2_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_2_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 1;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_STM0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7883;
+  long unsigned int D.7882;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_STMA_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 29;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_STMA_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7880;
+  long unsigned int D.7879;
+  long unsigned int D.7878;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_1_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_1_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_1_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 1;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_STCU0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7876;
+  long unsigned int D.7875;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB3_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_SIUL2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7873;
+  long unsigned int D.7872;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_SEMA42_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7870;
+  long unsigned int D.7869;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 24;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_SAI1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7867;
+  long unsigned int D.7866;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 23;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_SAI0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7864;
+  long unsigned int D.7863;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 27;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_RTC0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7861;
+  long unsigned int D.7860;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_RTC_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 2;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall ()
+{
+  uint32 Frequency;
+  uint32 D.7858;
+  struct RTC_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  uint32 _9;
+
+  <bb 2> :
+  _1 = 1076396032B;
+  _2 ={v} _1->RTCC;
+  _3 = _2 >> 12;
+  _4 = _3 & 3;
+  _5 = Clock_Ip_apfFreqTableRTC_CLK[_4];
+  Frequency_8 = _5 ();
+  _9 = Frequency_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Clock_Ip_Get_RTC_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7856;
+  uint32 _5;
+
+  <bb 2> :
+  Frequency_1 = 0;
+  Frequency_4 = Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall ();
+  _5 = Frequency_4;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+Clock_Ip_Get_QSPI_SFCK_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7854;
+  long unsigned int D.7853;
+  long unsigned int D.7852;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_10_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 15;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_10_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_10_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 7;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_QSPI0_TX_MEM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7850;
+  long unsigned int D.7849;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_QSPI_MEM_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 19;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_QSPI0_RAM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7847;
+  long unsigned int D.7846;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_QSPI_MEM_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 19;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_QSPI0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7844;
+  long unsigned int D.7843;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_QSPI_SFCK_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 19;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_PIT2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7841;
+  long unsigned int D.7840;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_PIT1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7838;
+  long unsigned int D.7837;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_PIT0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7835;
+  long unsigned int D.7834;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 12;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_MSCM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7832;
+  long unsigned int D.7831;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 24;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART15_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7829;
+  long unsigned int D.7828;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART14_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7826;
+  long unsigned int D.7825;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART13_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7823;
+  long unsigned int D.7822;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART12_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7820;
+  long unsigned int D.7819;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 7;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART11_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7817;
+  long unsigned int D.7816;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART10_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7814;
+  long unsigned int D.7813;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 5;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART9_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7811;
+  long unsigned int D.7810;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART8_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7808;
+  long unsigned int D.7807;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 3;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART7_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7805;
+  long unsigned int D.7804;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 17;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART6_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7802;
+  long unsigned int D.7801;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 16;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART5_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7799;
+  long unsigned int D.7798;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 15;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART4_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7796;
+  long unsigned int D.7795;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 14;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART3_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7793;
+  long unsigned int D.7792;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7790;
+  long unsigned int D.7789;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 12;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7787;
+  long unsigned int D.7786;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 11;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPUART0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7784;
+  long unsigned int D.7783;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPSPI5_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7781;
+  long unsigned int D.7780;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 16;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPSPI4_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7778;
+  long unsigned int D.7777;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 15;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPSPI3_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7775;
+  long unsigned int D.7774;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 25;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPSPI2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7772;
+  long unsigned int D.7771;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 24;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPSPI1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7769;
+  long unsigned int D.7768;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 23;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPSPI0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7766;
+  long unsigned int D.7765;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 22;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPI2C1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7763;
+  long unsigned int D.7762;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 21;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LPI2C0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7760;
+  long unsigned int D.7759;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 20;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LCU1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7757;
+  long unsigned int D.7756;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 7;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_LCU0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7754;
+  long unsigned int D.7753;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_INTM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7751;
+  long unsigned int D.7750;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_FLEXIO0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7748;
+  long unsigned int D.7747;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN5_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7745;
+  long unsigned int D.7744;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_FLEXCANB_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN4_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7742;
+  long unsigned int D.7741;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_FLEXCANB_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 5;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN3_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7739;
+  long unsigned int D.7738;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_FLEXCANB_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_FLEXCANB_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7736;
+  long unsigned int D.7735;
+  long unsigned int D.7734;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_4_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_4_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_4_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 3;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7732;
+  long unsigned int D.7731;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_FLEXCANA_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 3;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7729;
+  long unsigned int D.7728;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_FLEXCANA_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 2;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7726;
+  long unsigned int D.7725;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_FLEXCANA_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 1;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_FLEXCANA_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7723;
+  long unsigned int D.7722;
+  long unsigned int D.7721;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_3_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_3_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_3_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 3;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_ERM0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7719;
+  long unsigned int D.7718;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 23;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EMIOS2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7716;
+  long unsigned int D.7715;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EMIOS1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7713;
+  long unsigned int D.7712;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 3;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EMIOS0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7710;
+  long unsigned int D.7709;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 2;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EMAC0_TX_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7707;
+  long unsigned int D.7706;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _7;
+  uint32 _9;
+
+  <bb 2> :
+  Frequency_6 = Clock_Ip_Get_EMAC_TX_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 & 1;
+  _7 = Clock_Ip_u32EnableGate[_3];
+  Frequency_8 = _7 & Frequency_6;
+  _9 = Frequency_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Clock_Ip_Get_EMAC_TX_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7704;
+  long unsigned int D.7703;
+  long unsigned int D.7702;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_8_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_8_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_8_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 63;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_EMAC0_TS_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7700;
+  long unsigned int D.7699;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _7;
+  uint32 _9;
+
+  <bb 2> :
+  Frequency_6 = Clock_Ip_Get_EMAC_TS_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 & 1;
+  _7 = Clock_Ip_u32EnableGate[_3];
+  Frequency_8 = _7 & Frequency_6;
+  _9 = Frequency_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Clock_Ip_Get_EMAC_TS_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7697;
+  long unsigned int D.7696;
+  long unsigned int D.7695;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_9_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_9_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_9_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 63;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_EMAC0_RX_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7693;
+  long unsigned int D.7692;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _7;
+  uint32 _9;
+
+  <bb 2> :
+  Frequency_6 = Clock_Ip_Get_EMAC_RX_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 & 1;
+  _7 = Clock_Ip_u32EnableGate[_3];
+  Frequency_8 = _7 & Frequency_6;
+  _9 = Frequency_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Clock_Ip_Get_EMAC_RX_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7690;
+  long unsigned int D.7689;
+  long unsigned int D.7688;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_7_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_7_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_7_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 63;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_EIM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7686;
+  long unsigned int D.7685;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 22;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD31_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7683;
+  long unsigned int D.7682;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 23;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD30_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7680;
+  long unsigned int D.7679;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 22;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD29_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7677;
+  long unsigned int D.7676;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 21;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD28_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7674;
+  long unsigned int D.7673;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 20;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD27_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7671;
+  long unsigned int D.7670;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 19;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD26_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7668;
+  long unsigned int D.7667;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 18;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD25_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7665;
+  long unsigned int D.7664;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 17;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD24_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7662;
+  long unsigned int D.7661;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 16;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD23_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7659;
+  long unsigned int D.7658;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 15;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD22_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7656;
+  long unsigned int D.7655;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 14;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD21_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7653;
+  long unsigned int D.7652;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD20_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7650;
+  long unsigned int D.7649;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 12;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD19_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7647;
+  long unsigned int D.7646;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 11;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD18_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7644;
+  long unsigned int D.7643;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD17_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7641;
+  long unsigned int D.7640;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD16_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7638;
+  long unsigned int D.7637;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD15_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7635;
+  long unsigned int D.7634;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 7;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD14_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7632;
+  long unsigned int D.7631;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD13_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7629;
+  long unsigned int D.7628;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 5;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD12_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7626;
+  long unsigned int D.7625;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD11_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7623;
+  long unsigned int D.7622;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 15;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD10_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7620;
+  long unsigned int D.7619;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 14;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD9_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7617;
+  long unsigned int D.7616;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD8_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7614;
+  long unsigned int D.7613;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 12;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD7_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7611;
+  long unsigned int D.7610;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 11;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD6_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7608;
+  long unsigned int D.7607;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD5_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7605;
+  long unsigned int D.7604;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD4_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7602;
+  long unsigned int D.7601;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD3_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7599;
+  long unsigned int D.7598;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 7;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7596;
+  long unsigned int D.7595;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7593;
+  long unsigned int D.7592;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 5;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7590;
+  long unsigned int D.7589;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_EDMA0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7587;
+  long unsigned int D.7586;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 3;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_DMAMUX1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7584;
+  long unsigned int D.7583;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 1;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_DMAMUX0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7581;
+  long unsigned int D.7580;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _7;
+  uint32 _9;
+
+  <bb 2> :
+  Frequency_6 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB1_STAT;
+  _3 = _2 & 1;
+  _7 = Clock_Ip_u32EnableGate[_3];
+  Frequency_8 = _7 & Frequency_6;
+  _9 = Frequency_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Clock_Ip_Get_CRC0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7578;
+  long unsigned int D.7577;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _7;
+  uint32 _9;
+
+  <bb 2> :
+  Frequency_6 = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB3_STAT;
+  _3 = _2 & 1;
+  _7 = Clock_Ip_u32EnableGate[_3];
+  Frequency_8 = _7 & Frequency_6;
+  _9 = Frequency_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Clock_Ip_Get_CMP2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7575;
+  long unsigned int D.7574;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 26;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_CMP1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7572;
+  long unsigned int D.7571;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 29;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_CMP0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7569;
+  long unsigned int D.7568;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 28;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_CLKOUT_STANDBY_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7566;
+  long unsigned int D.7565;
+  long unsigned int D.7564;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_5_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 63;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_5_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_5_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 7;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_BCTU0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7562;
+  long unsigned int D.7561;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 1;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_ADC2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7559;
+  long unsigned int D.7558;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_ADC1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7556;
+  long unsigned int D.7555;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_ADC0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7553;
+  long unsigned int D.7552;
+  struct MC_ME_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 ={v} _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_CLKOUT_RUN_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7550;
+  long unsigned int D.7549;
+  long unsigned int D.7548;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 (*<T77d>) (void) _5;
+  struct MC_CGM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  struct MC_CGM_Type * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _17;
+  long unsigned int _19;
+  uint32 _21;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_6_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 63;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency_16 = _5 ();
+  _6 = 1076723712B;
+  _7 ={v} _6->MUX_6_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  _17 = Clock_Ip_au32EnableDivider[_9];
+  Frequency_18 = _17 & Frequency_16;
+  _10 = 1076723712B;
+  _11 ={v} _10->MUX_6_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 63;
+  _19 = _13 + 1;
+  Frequency_20 = Frequency_18 / _19;
+  _21 = Frequency_20;
+
+  <bb 3> :
+<L0>:
+  return _21;
+
+}
+
+
+Clock_Ip_Get_QSPI_MEM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7546;
+  long unsigned int D.7545;
+  long unsigned int D.7544;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct MC_CGM_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_0_DC_6;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076723712B;
+  _6 ={v} _5->MUX_0_DC_6;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_LBIST_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7542;
+  long unsigned int D.7541;
+  long unsigned int D.7540;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct MC_CGM_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_0_DC_5;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076723712B;
+  _6 ={v} _5->MUX_0_DC_5;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_DCM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7538;
+  long unsigned int D.7537;
+  long unsigned int D.7536;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct MC_CGM_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_0_DC_4;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076723712B;
+  _6 ={v} _5->MUX_0_DC_4;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_HSE_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7534;
+  long unsigned int D.7533;
+  long unsigned int D.7532;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct MC_CGM_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_0_DC_3;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076723712B;
+  _6 ={v} _5->MUX_0_DC_3;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7530;
+  long unsigned int D.7529;
+  long unsigned int D.7528;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct MC_CGM_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_0_DC_2;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076723712B;
+  _6 ={v} _5->MUX_0_DC_2;
+  _7 = _6 >> 16;
+  _8 = _7 & 15;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7526;
+  long unsigned int D.7525;
+  long unsigned int D.7524;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct MC_CGM_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_0_DC_1;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076723712B;
+  _6 ={v} _5->MUX_0_DC_1;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_CORE_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7522;
+  long unsigned int D.7521;
+  long unsigned int D.7520;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct MC_CGM_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_0_DC_0;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076723712B;
+  _6 ={v} _5->MUX_0_DC_0;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_SCS_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7518;
+  struct MC_CGM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 _12;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 ={v} _1->MUX_0_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 15;
+  if (_4 != 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Frequency_11 = Clock_Ip_Get_FIRC_CLK_Frequency ();
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Frequency_9 = Clock_Ip_Get_PLL_PHI0_Frequency ();
+
+  <bb 5> :
+  # Frequency_5 = PHI <Frequency_11(3), Frequency_9(4)>
+  _12 = Frequency_5;
+
+  <bb 6> :
+<L3>:
+  return _12;
+
+}
+
+
+Clock_Ip_Get_emac_mii_rmii_tx_Frequency ()
+{
+  uint32 D.7513;
+  uint32 _2;
+
+  <bb 2> :
+  _2 = Clock_Ip_axExtSignalFreqEntries[1].Frequency;
+
+  <bb 3> :
+<L0>:
+  return _2;
+
+}
+
+
+Clock_Ip_Get_emac_mii_rx_Frequency ()
+{
+  uint32 D.7511;
+  uint32 _2;
+
+  <bb 2> :
+  _2 = Clock_Ip_axExtSignalFreqEntries[0].Frequency;
+
+  <bb 3> :
+<L0>:
+  return _2;
+
+}
+
+
+Clock_Ip_Get_PLL_PHI1_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7509;
+  long unsigned int D.7508;
+  long unsigned int D.7507;
+  struct PLL_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct PLL_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency ();
+  _1 = 1076756480B;
+  _2 ={v} _1->PLLODIV[1];
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076756480B;
+  _6 ={v} _5->PLLODIV[1];
+  _7 = _6 >> 16;
+  _8 = _7 & 15;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_PLL_PHI0_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7505;
+  long unsigned int D.7504;
+  long unsigned int D.7503;
+  struct PLL_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct PLL_Type * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _12;
+  long unsigned int _14;
+  uint32 _16;
+
+  <bb 2> :
+  Frequency_11 = Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency ();
+  _1 = 1076756480B;
+  _2 ={v} _1->PLLODIV[0];
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  _12 = Clock_Ip_au32EnableDivider[_4];
+  Frequency_13 = _12 & Frequency_11;
+  _5 = 1076756480B;
+  _6 ={v} _5->PLLODIV[0];
+  _7 = _6 >> 16;
+  _8 = _7 & 15;
+  _14 = _8 + 1;
+  Frequency_15 = Frequency_13 / _14;
+  _16 = Frequency_15;
+
+  <bb 3> :
+<L0>:
+  return _16;
+
+}
+
+
+Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency ()
+{
+  uint32 DividerValue;
+  uint32 Frequency;
+  uint32 D.7501;
+  struct PLL_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  uint32 _11;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_PLL_CLK_Frequency ();
+  _1 = 1076756480B;
+  _2 ={v} _1->PLLDV;
+  _3 = _2 >> 25;
+  DividerValue_8 = _3 & 63;
+  if (DividerValue_8 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Frequency_10 = Frequency_7 / DividerValue_8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Frequency_9 = 0;
+
+  <bb 5> :
+  # Frequency_4 = PHI <Frequency_10(3), Frequency_9(4)>
+  _11 = Frequency_4;
+
+  <bb 6> :
+<L3>:
+  return _11;
+
+}
+
+
+Clock_Ip_Get_PLL_CLK_Frequency ()
+{
+  uint32 PLLCLKMUXBuffer;
+  uint32 PLLFDBuffer;
+  uint32 PLLDVBuffer;
+  uint32 iftmp.1;
+  uint32 D.7492;
+  struct PLL_Type * _1;
+  struct PLL_Type * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int Clock_Ip_u32PLL_CLKChecksum.0_5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  struct PLL_Type * _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  uint32 iftmp.1_12;
+  uint32 iftmp.1_21;
+  uint32 iftmp.1_22;
+  uint32 _23;
+
+  <bb 2> :
+  _1 = 1076756480B;
+  PLLDVBuffer_15 ={v} _1->PLLDV;
+  _2 = 1076756480B;
+  PLLFDBuffer_16 ={v} _2->PLLFD;
+  PLLCLKMUXBuffer_17 = 1;
+  _3 = PLLDVBuffer_15 ^ PLLFDBuffer_16;
+  _4 = PLLCLKMUXBuffer_17 ^ _3;
+  Clock_Ip_u32PLL_CLKChecksum.0_5 = Clock_Ip_u32PLL_CLKChecksum;
+  if (_4 != Clock_Ip_u32PLL_CLKChecksum.0_5)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = PLLDVBuffer_15 ^ PLLFDBuffer_16;
+  _7 = PLLCLKMUXBuffer_17 ^ _6;
+  Clock_Ip_u32PLL_CLKChecksum = _7;
+  _8 = Clock_Ip_PLL_VCO (1076756480B);
+  Clock_Ip_u32PLL_CLKFreq = _8;
+
+  <bb 4> :
+  _9 = 1076756480B;
+  _10 ={v} _9->PLLSR;
+  _11 = _10 & 4;
+  if (_11 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.1_22 = Clock_Ip_u32PLL_CLKFreq;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.1_21 = 0;
+
+  <bb 7> :
+  # iftmp.1_12 = PHI <iftmp.1_22(5), iftmp.1_21(6)>
+  _23 = iftmp.1_12;
+
+  <bb 8> :
+<L5>:
+  return _23;
+
+}
+
+
+Clock_Ip_Get_SXOSC_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7488;
+  long unsigned int D.7487;
+  struct SXOSC_Type * _1;
+  long unsigned int _2;
+  signed int _3;
+  struct MC_ME_Type * _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _12;
+  uint32 _14;
+
+  <bb 2> :
+  Frequency_10 = Clock_Ip_u32sxosc;
+  _1 = 1076674560B;
+  _2 ={v} _1->SXOSC_STAT;
+  _3 = (signed int) _2;
+  if (_3 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Frequency_11 = 0;
+
+  <bb 4> :
+  # Frequency_8 = PHI <Frequency_10(2), Frequency_11(3)>
+  _4 = 1076740096B;
+  _5 ={v} _4->PRTN1_COFB1_STAT;
+  _6 = _5 >> 19;
+  _7 = _6 & 1;
+  _12 = Clock_Ip_u32EnableGate[_7];
+  Frequency_13 = _12 & Frequency_8;
+  _14 = Frequency_13;
+
+  <bb 5> :
+<L2>:
+  return _14;
+
+}
+
+
+Clock_Ip_Get_FXOSC_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7483;
+  long unsigned int D.7482;
+  struct FXOSC_Type * _1;
+  long unsigned int _2;
+  signed int _3;
+  struct MC_ME_Type * _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _12;
+  uint32 _14;
+
+  <bb 2> :
+  Frequency_10 = Clock_Ip_u32fxosc;
+  _1 = 1076707328B;
+  _2 ={v} _1->STAT;
+  _3 = (signed int) _2;
+  if (_3 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Frequency_11 = 0;
+
+  <bb 4> :
+  # Frequency_8 = PHI <Frequency_10(2), Frequency_11(3)>
+  _4 = 1076740096B;
+  _5 ={v} _4->PRTN1_COFB1_STAT;
+  _6 = _5 >> 21;
+  _7 = _6 & 1;
+  _12 = Clock_Ip_u32EnableGate[_7];
+  Frequency_13 = _12 & Frequency_8;
+  _14 = Frequency_13;
+
+  <bb 5> :
+<L2>:
+  return _14;
+
+}
+
+
+Clock_Ip_Get_SIRC_STANDBY_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7478;
+  long unsigned int D.7477;
+  struct SIRC_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _8;
+  uint32 _10;
+
+  <bb 2> :
+  Frequency_7 = Clock_Ip_Get_SIRC_CLK_Frequency ();
+  _1 = 1076658176B;
+  _2 ={v} _1->MISCELLANEOUS_IN;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  _8 = Clock_Ip_u32EnableGate[_4];
+  Frequency_9 = _8 & Frequency_7;
+  _10 = Frequency_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Clock_Ip_Get_SIRC_CLK_Frequency ()
+{
+  uint32 D.7475;
+  uint32 _1;
+
+  <bb 2> :
+  _1 = 32000;
+
+  <bb 3> :
+<L0>:
+  return _1;
+
+}
+
+
+Clock_Ip_Get_FIRC_STANDBY_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7473;
+  long unsigned int D.7472;
+  struct FIRC_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _7;
+  uint32 _9;
+
+  <bb 2> :
+  Frequency_6 = Clock_Ip_Get_FIRC_CLK_Frequency ();
+  _1 = 1076690944B;
+  _2 ={v} _1->STDBY_ENABLE;
+  _3 = _2 & 1;
+  _7 = Clock_Ip_u32EnableGate[_3];
+  Frequency_8 = _7 & Frequency_6;
+  _9 = Frequency_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Clock_Ip_Get_FIRC_CLK_Frequency ()
+{
+  uint32 DividerValue;
+  uint32 Frequency;
+  uint32 D.7470;
+  struct CONFIGURATION_GPR_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  uint32 _8;
+
+  <bb 2> :
+  Frequency_4 = 48000000;
+  _1 = 1077526528B;
+  _2 ={v} _1->CONFIG_REG_GPR;
+  _3 = _2 & 3;
+  DividerValue_6 = Clock_Ip_apfTableDividerValue[_3];
+  Frequency_7 = Frequency_4 / DividerValue_6;
+  _8 = Frequency_7;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+Clock_Ip_Get_Zero_Frequency ()
+{
+  uint32 D.7468;
+  uint32 _1;
+
+  <bb 2> :
+  _1 = 0;
+
+  <bb 3> :
+<L0>:
+  return _1;
+
+}
+
+

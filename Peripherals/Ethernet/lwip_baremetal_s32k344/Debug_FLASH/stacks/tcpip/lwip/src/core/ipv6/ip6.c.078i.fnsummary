@@ -1,0 +1,3640 @@
+Symbol table:
+
+ip6_frag/30 (ip6_frag) @06e39700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_output_if_src/7 
+  Calls: 
+nd6_get_destination_mtu/29 (nd6_get_destination_mtu) @06e39620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_output_if_src/7 
+  Calls: 
+ip6_addr_any/28 (ip6_addr_any) @06e446c0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip6_output_if_src/7 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+pbuf_add_header/27 (pbuf_add_header) @06e39460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_options_add_hbh_ra/9 ip6_output_if_src/7 
+  Calls: 
+icmp6_input/26 (icmp6_input) @06e39000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 
+  Calls: 
+tcp_input/25 (tcp_input) @06d6bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 
+  Calls: 
+udp_input/24 (udp_input) @06d81ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 
+  Calls: 
+raw_input/23 (raw_input) @06d81d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 
+  Calls: 
+pbuf_add_header_force/22 (pbuf_add_header_force) @06d81c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 ip6_input/5 
+  Calls: 
+ip6_reass/21 (ip6_reass) @06d81b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 
+  Calls: 
+icmp6_param_problem/20 (icmp6_param_problem) @06d817e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 
+  Calls: 
+pbuf_remove_header/19 (pbuf_remove_header) @06d81700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 
+  Calls: 
+mld6_lookfor_group/18 (mld6_lookfor_group) @06d81460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 
+  Calls: 
+pbuf_realloc/17 (pbuf_realloc) @06d81380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 
+  Calls: 
+lwip_htons/16 (lwip_htons) @06d812a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_output_if_src/7 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 
+  Calls: 
+pbuf_free/15 (pbuf_free) @06d81e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 ip6_input/5 
+  Calls: 
+lwip_stats/14 (lwip_stats) @06e2f630
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip6_output/8 (read) ip6_output/8 (write) ip6_output_if_src/7 (read) ip6_output_if_src/7 (write) ip6_output_if/6 (read) ip6_output_if/6 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_output_if_src/7 (read) ip6_output_if_src/7 (write) ip6_options_add_hbh_ra/9 (read) ip6_options_add_hbh_ra/9 (write) 
+  Availability: not_available
+  Varpool flags:
+lwip_htonl/13 (lwip_htonl) @06d818c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_output_if_src/7 ip6_input/5 ip6_select_source_address/2 
+  Calls: 
+netif_default/12 (netif_default) @06dae3f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) 
+  Availability: not_available
+  Varpool flags:
+nd6_find_route/11 (nd6_find_route) @06d81540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: ip6_route/1 
+  Calls: 
+netif_list/10 (netif_list) @06dae360
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_route/1 (read) ip6_input/5 (read) 
+  Availability: not_available
+  Varpool flags:
+ip6_options_add_hbh_ra/9 (ip6_options_add_hbh_ra) @06d6b540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/14 (read) lwip_stats/14 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_add_header/27 
+ip6_output/8 (ip6_output) @06d6bee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/14 (read) lwip_stats/14 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ip6_output_if/6 ip6_route/1 ip6_route/1 
+ip6_output_if_src/7 (ip6_output_if_src) @06d6bc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/14 (read) lwip_stats/14 (write) ip6_addr_any/28 (addr) lwip_stats/14 (read) lwip_stats/14 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_output_if/6 
+  Calls: ip6_frag/30 nd6_get_destination_mtu/29 lwip_htons/16 lwip_htonl/13 pbuf_add_header/27 
+   Indirect call Num speculative call targets: 0
+ip6_output_if/6 (ip6_output_if) @06d6b460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/14 (read) lwip_stats/14 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_output/8 
+  Calls: ip6_output_if_src/7 ip6_select_source_address/2 
+ip6_input/5 (ip6_input) @06d17ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (write) ip_data/4 (read) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (addr) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) netif_list/10 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) lwip_stats/14 (read) lwip_stats/14 (write) ip_data/4 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) ip_data/4 (read) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) ip_data/4 (read) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) ip_data/4 (write) lwip_stats/14 (read) lwip_stats/14 (write) ip_data/4 (write) ip_data/4 (read) lwip_stats/14 (read) lwip_stats/14 (write) lwip_stats/14 (read) lwip_stats/14 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) ip_data/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/15 icmp6_param_problem/20 pbuf_add_header_force/22 icmp6_input/26 tcp_input/25 udp_input/24 pbuf_free/15 pbuf_remove_header/19 raw_input/23 pbuf_add_header_force/22 pbuf_free/15 icmp6_param_problem/20 pbuf_remove_header/19 ip6_reass/21 pbuf_remove_header/19 pbuf_free/15 icmp6_param_problem/20 lwip_htons/16 lwip_htons/16 pbuf_free/15 pbuf_remove_header/19 pbuf_free/15 icmp6_param_problem/20 pbuf_free/15 icmp6_param_problem/20 pbuf_free/15 pbuf_remove_header/19 pbuf_free/15 icmp6_param_problem/20 pbuf_free/15 icmp6_param_problem/20 pbuf_free/15 pbuf_free/15 pbuf_remove_header/19 pbuf_free/15 icmp6_param_problem/20 pbuf_free/15 icmp6_param_problem/20 pbuf_free/15 pbuf_free/15 pbuf_remove_header/19 pbuf_free/15 pbuf_free/15 ip6_input_accept/3 ip6_input_accept/3 mld6_lookfor_group/18 pbuf_free/15 pbuf_realloc/17 lwip_htons/16 pbuf_free/15 lwip_htons/16 lwip_htons/16 pbuf_free/15 lwip_htonl/13 
+ip_data/4 (ip_data) @06ca4f30
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: ip6_input_accept/3 (read) ip6_input_accept/3 (read) ip6_input_accept/3 (read) ip6_input_accept/3 (read) ip6_input_accept/3 (read) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (addr) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (read) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) ip6_input/5 (write) 
+  Availability: not_available
+  Varpool flags:
+ip6_input_accept/3 (ip6_input_accept) @06cec460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) ip_data/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_input/5 ip6_input/5 
+  Calls: 
+ip6_select_source_address/2 (ip6_select_source_address) @06cc8d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_output_if/6 
+  Calls: lwip_htonl/13 
+ip6_route/1 (ip6_route) @06cbad20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_list/10 (read) netif_default/12 (read) netif_default/12 (read) netif_default/12 (read) netif_default/12 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: ip6_output/8 ip6_output/8 
+  Calls: nd6_find_route/11 
+ip6_options_add_hbh_ra (struct pbuf * p, u8_t nexth, u8_t value)
+{
+  const u8_t hlen;
+  struct ip6_opt_hdr * opt_hdr;
+  struct ip6_hbh_hdr * hbh_hdr;
+  u32_t offset;
+  u8_t * opt_data;
+  err_t D.8304;
+  unsigned int _1;
+  unsigned int _2;
+  unsigned char _3;
+  short unsigned int _4;
+  short unsigned int _5;
+  u8_t * _6;
+  unsigned char _7;
+  long unsigned int _8;
+  err_t _9;
+  err_t _33;
+  err_t _35;
+
+  <bb 2> :
+  offset_11 = 0;
+  hlen_12 = 6;
+  _1 = (unsigned int) hlen_12;
+  _2 = _1 + 2;
+  _3 = pbuf_add_header (p_14(D), _2);
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = lwip_stats.ip6.err;
+  _5 = _4 + 1;
+  lwip_stats.ip6.err = _5;
+  _35 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  hbh_hdr_16 = p_14(D)->payload;
+  hbh_hdr_16->_nexth = nexth_17(D);
+  hbh_hdr_16->_hlen = 0;
+  offset_20 = 2;
+  opt_hdr_21 = hbh_hdr_16 + offset_20;
+  opt_hdr_21->_opt_type = 5;
+  opt_hdr_21->_opt_dlen = 2;
+  offset_24 = offset_20 + 2;
+  opt_data_25 = hbh_hdr_16 + offset_24;
+  *opt_data_25 = value_26(D);
+  _6 = opt_data_25 + 1;
+  *_6 = 0;
+  _7 = opt_hdr_21->_opt_dlen;
+  _8 = (long unsigned int) _7;
+  offset_29 = offset_24 + _8;
+  opt_hdr_30 = hbh_hdr_16 + offset_29;
+  opt_hdr_30->_opt_type = 1;
+  opt_hdr_30->_opt_dlen = 0;
+  _33 = 0;
+
+  <bb 5> :
+  # _9 = PHI <_35(3), _33(4)>
+<L2>:
+  return _9;
+
+}
+
+
+ip6_output (struct pbuf * p, const struct ip6_addr_t * src, const struct ip6_addr_t * dest, u8_t hl, u8_t tc, u8_t nexth)
+{
+  struct ip6_addr_t dest_addr;
+  struct ip6_addr_t src_addr;
+  struct ip6_hdr * ip6hdr;
+  struct netif * netif;
+  err_t D.8299;
+  unsigned char _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  err_t _14;
+  err_t _42;
+  err_t _44;
+
+  <bb 2> :
+  _1 = p_19(D)->ref;
+  if (_1 != 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (dest_20(D) != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  netif_37 = ip6_route (src_35(D), dest_20(D));
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  ip6hdr_21 = p_19(D)->payload;
+  _2 = ip6hdr_21->src.addr[0];
+  src_addr.addr[0] = _2;
+  _3 = ip6hdr_21->src.addr[1];
+  src_addr.addr[1] = _3;
+  _4 = ip6hdr_21->src.addr[2];
+  src_addr.addr[2] = _4;
+  _5 = ip6hdr_21->src.addr[3];
+  src_addr.addr[3] = _5;
+  src_addr.zone = 0;
+  _6 = ip6hdr_21->dest.addr[0];
+  dest_addr.addr[0] = _6;
+  _7 = ip6hdr_21->dest.addr[1];
+  dest_addr.addr[1] = _7;
+  _8 = ip6hdr_21->dest.addr[2];
+  dest_addr.addr[2] = _8;
+  _9 = ip6hdr_21->dest.addr[3];
+  dest_addr.addr[3] = _9;
+  dest_addr.zone = 0;
+  netif_33 = ip6_route (&src_addr, &dest_addr);
+  dest_34 = &dest_addr;
+
+  <bb 7> :
+  # dest_12 = PHI <dest_20(D)(5), dest_34(6)>
+  # netif_13 = PHI <netif_37(5), netif_33(6)>
+  if (netif_13 == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _10 = lwip_stats.ip6.rterr;
+  _11 = _10 + 1;
+  lwip_stats.ip6.rterr = _11;
+  _44 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _42 = ip6_output_if (p_19(D), src_35(D), dest_12, hl_38(D), tc_39(D), nexth_40(D), netif_13);
+
+  <bb 10> :
+  # _14 = PHI <_44(8), _42(9)>
+  src_addr ={v} {CLOBBER};
+  dest_addr ={v} {CLOBBER};
+
+  <bb 11> :
+<L9>:
+  return _14;
+
+}
+
+
+ip6_output_if_src (struct pbuf * p, const struct ip6_addr_t * src, const struct ip6_addr_t * dest, u8_t hl, u8_t tc, u8_t nexth, struct netif * netif)
+{
+  struct ip6_addr_t dest_addr;
+  struct ip6_hdr * ip6hdr;
+  u8_t iftmp.22;
+  err_t D.8274;
+  u8_t iftmp.21;
+  unsigned char _1;
+  unsigned char _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  unsigned char _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  unsigned char _20;
+  unsigned char _21;
+  short unsigned int _22;
+  short unsigned int _23;
+  short unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  short unsigned int _33;
+  short unsigned int _34;
+  short unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  long unsigned int _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  long unsigned int _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  long unsigned int _49;
+  unsigned char _50;
+  short unsigned int _51;
+  short unsigned int _52;
+  short unsigned int _53;
+  short unsigned int _54;
+  short unsigned int _55;
+  err_t (*<T6dd>) (struct netif *, struct pbuf *, const struct ip6_addr_t *) _56;
+  u8_t iftmp.21_60;
+  err_t _61;
+  u8_t iftmp.22_62;
+  u8_t iftmp.22_78;
+  u8_t iftmp.22_80;
+  u8_t iftmp.21_88;
+  u8_t iftmp.21_89;
+  err_t _115;
+  err_t _119;
+  err_t _121;
+
+  <bb 2> :
+  _1 = p_70(D)->ref;
+  if (_1 != 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (dest_71(D) != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 5> :
+  _2 = dest_71(D)->zone;
+  if (_2 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 6> :
+  _3 = dest_71(D)->addr[0];
+  _4 = _3 & 49407;
+  if (_4 == 33022)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _5 = dest_71(D)->addr[0];
+  _6 = _5 & 36863;
+  if (_6 == 511)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _7 = dest_71(D)->addr[0];
+  _8 = _7 & 36863;
+  if (_8 == 767)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 9> :
+  _9 = dest_71(D)->addr[0];
+  dest_addr.addr[0] = _9;
+  _10 = dest_71(D)->addr[1];
+  dest_addr.addr[1] = _10;
+  _11 = dest_71(D)->addr[2];
+  dest_addr.addr[2] = _11;
+  _12 = dest_71(D)->addr[3];
+  dest_addr.addr[3] = _12;
+  _13 = dest_71(D)->zone;
+  dest_addr.zone = _13;
+  _14 = dest_addr.addr[0];
+  _15 = _14 & 49407;
+  if (_15 == 33022)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _16 = dest_addr.addr[0];
+  _17 = _16 & 36863;
+  if (_17 == 511)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _18 = dest_addr.addr[0];
+  _19 = _18 & 36863;
+  if (_19 == 767)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _20 = netif_79(D)->num;
+  iftmp.21_89 = _20 + 1;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.21_88 = 0;
+
+  <bb 14> :
+  # iftmp.21_60 = PHI <iftmp.21_89(12), iftmp.21_88(13)>
+  dest_addr.zone = iftmp.21_60;
+  dest_91 = &dest_addr;
+
+  <bb 15> :
+  # dest_58 = PHI <dest_71(D)(5), dest_71(D)(8), dest_91(14)>
+  _21 = pbuf_add_header (p_70(D), 40);
+  if (_21 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _22 = lwip_stats.ip6.err;
+  _23 = _22 + 1;
+  lwip_stats.ip6.err = _23;
+  _115 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 17> :
+  ip6hdr_93 = p_70(D)->payload;
+  _24 = p_70(D)->len;
+  if (_24 <= 39)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 18>; [INV]
+
+  <bb 19> :
+  ip6hdr_93->_hoplim = hl_94(D);
+  ip6hdr_93->_nexth = nexth_96(D);
+  _25 = dest_58->addr[0];
+  ip6hdr_93->dest.addr[0] = _25;
+  _26 = dest_58->addr[1];
+  ip6hdr_93->dest.addr[1] = _26;
+  _27 = dest_58->addr[2];
+  ip6hdr_93->dest.addr[2] = _27;
+  _28 = dest_58->addr[3];
+  ip6hdr_93->dest.addr[3] = _28;
+  _29 = (long unsigned int) tc_102(D);
+  _30 = _29 << 20;
+  _31 = _30 | 1610612736;
+  _32 = lwip_htonl (_31);
+  ip6hdr_93->_v_tc_fl = _32;
+  _33 = p_70(D)->tot_len;
+  _34 = _33 + 65496;
+  _35 = lwip_htons (_34);
+  ip6hdr_93->_plen = _35;
+  if (src_107(D) == 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  src_108 = &ip6_addr_any.u_addr.ip6;
+
+  <bb 21> :
+  # src_57 = PHI <src_107(D)(19), src_108(20)>
+  _36 = src_57->addr[0];
+  ip6hdr_93->src.addr[0] = _36;
+  _37 = src_57->addr[1];
+  ip6hdr_93->src.addr[1] = _37;
+  _38 = src_57->addr[2];
+  ip6hdr_93->src.addr[2] = _38;
+  _39 = src_57->addr[3];
+  ip6hdr_93->src.addr[3] = _39;
+  goto <bb 28>; [INV]
+
+  <bb 22> :
+  ip6hdr_72 = p_70(D)->payload;
+  _40 = ip6hdr_72->dest.addr[0];
+  dest_addr.addr[0] = _40;
+  _41 = ip6hdr_72->dest.addr[1];
+  dest_addr.addr[1] = _41;
+  _42 = ip6hdr_72->dest.addr[2];
+  dest_addr.addr[2] = _42;
+  _43 = ip6hdr_72->dest.addr[3];
+  dest_addr.addr[3] = _43;
+  dest_addr.zone = 0;
+  _44 = dest_addr.addr[0];
+  _45 = _44 & 49407;
+  if (_45 == 33022)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  _46 = dest_addr.addr[0];
+  _47 = _46 & 36863;
+  if (_47 == 511)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  _48 = dest_addr.addr[0];
+  _49 = _48 & 36863;
+  if (_49 == 767)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  _50 = netif_79(D)->num;
+  iftmp.22_80 = _50 + 1;
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  iftmp.22_78 = 0;
+
+  <bb 27> :
+  # iftmp.22_62 = PHI <iftmp.22_80(25), iftmp.22_78(26)>
+  dest_addr.zone = iftmp.22_62;
+  dest_82 = &dest_addr;
+
+  <bb 28> :
+  # dest_59 = PHI <dest_58(21), dest_82(27)>
+  _51 = lwip_stats.ip6.xmit;
+  _52 = _51 + 1;
+  lwip_stats.ip6.xmit = _52;
+  _53 = netif_79(D)->mtu6;
+  if (_53 != 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 29> :
+  _54 = p_70(D)->tot_len;
+  _55 = nd6_get_destination_mtu (dest_59, netif_79(D));
+  if (_54 > _55)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  _119 = ip6_frag (p_70(D), netif_79(D), dest_59);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 32>; [INV]
+
+  <bb 31> :
+  _56 = netif_79(D)->output_ip6;
+  _121 = _56 (netif_79(D), p_70(D), dest_59);
+
+  <bb 32> :
+  # _61 = PHI <_115(16), _119(30), _121(31)>
+  dest_addr ={v} {CLOBBER};
+
+  <bb 33> :
+<L34>:
+  return _61;
+
+}
+
+
+ip6_output_if (struct pbuf * p, const struct ip6_addr_t * src, const struct ip6_addr_t * dest, u8_t hl, u8_t tc, u8_t nexth, struct netif * netif)
+{
+  const struct ip6_addr_t * src_used;
+  err_t D.8254;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  const struct ip_addr_t * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  err_t _13;
+  err_t _24;
+  err_t _30;
+
+  <bb 2> :
+  src_used_17 = src_16(D);
+  if (dest_18(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 3> :
+  if (src_16(D) != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 4> :
+  if (src_16(D) == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _1 = src_16(D)->addr[0];
+  if (_1 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 6> :
+  _2 = src_16(D)->addr[1];
+  if (_2 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 7> :
+  _3 = src_16(D)->addr[2];
+  if (_3 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 8> :
+  _4 = src_16(D)->addr[3];
+  if (_4 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 9> :
+  _5 = ip6_select_source_address (netif_20(D), dest_18(D));
+  src_used_22 = &_5->u_addr.ip6;
+  if (src_used_22 == 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  if (src_used_22 == 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _6 = src_used_22->addr[0];
+  if (_6 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 12> :
+  _7 = src_used_22->addr[1];
+  if (_7 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 13> :
+  _8 = src_used_22->addr[2];
+  if (_8 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  _9 = src_used_22->addr[3];
+  if (_9 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _10 = lwip_stats.ip6.rterr;
+  _11 = _10 + 1;
+  lwip_stats.ip6.rterr = _11;
+  _24 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  # src_used_12 = PHI <src_used_17(2), src_used_17(3), src_used_17(5), src_used_17(6), src_used_17(7), src_used_17(8), src_used_22(11), src_used_22(12), src_used_22(13), src_used_22(14)>
+  _30 = ip6_output_if_src (p_25(D), src_used_12, dest_18(D), hl_26(D), tc_27(D), nexth_28(D), netif_20(D));
+
+  <bb 17> :
+  # _13 = PHI <_24(15), _30(16)>
+<L17>:
+  return _13;
+
+}
+
+
+ip6_input (struct pbuf * p, struct netif * inp)
+{
+  struct ip6_frag_hdr * frag_hdr;
+  struct ip6_rout_hdr * rout_hdr;
+  s32_t opt_dlen;
+  struct ip6_opt_hdr * opt_hdr;
+  struct ip6_dest_hdr * dest_hdr;
+  s32_t opt_offset;
+  s32_t opt_dlen;
+  struct ip6_opt_hdr * opt_hdr;
+  struct ip6_hbh_hdr * hbh_hdr;
+  s32_t opt_offset;
+  raw_input_state_t raw_status;
+  u16_t hlen_tot;
+  u16_t hlen;
+  const u8_t * nexth;
+  struct netif * netif;
+  struct ip6_hdr * ip6hdr;
+  u8_t iftmp.18;
+  u8_t iftmp.17;
+  err_t D.8122;
+  short unsigned int _1;
+  short unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  short unsigned int _7;
+  short unsigned int _8;
+  short unsigned int _9;
+  short unsigned int _10;
+  short unsigned int _11;
+  short unsigned int _12;
+  int _13;
+  int _14;
+  short unsigned int _15;
+  short unsigned int _16;
+  int _17;
+  short unsigned int _18;
+  short unsigned int _19;
+  short unsigned int _20;
+  int _21;
+  int _22;
+  short unsigned int _23;
+  int _24;
+  short unsigned int _25;
+  short unsigned int _26;
+  short unsigned int _27;
+  short unsigned int _28;
+  short unsigned int _29;
+  short unsigned int _30;
+  short unsigned int _31;
+  long unsigned int _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  long unsigned int _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  long unsigned int _46;
+  long unsigned int _47;
+  short unsigned int _48;
+  short unsigned int _49;
+  short unsigned int _50;
+  short unsigned int _51;
+  long unsigned int _52;
+  long unsigned int _53;
+  long unsigned int _54;
+  long unsigned int _55;
+  long unsigned int _56;
+  long unsigned int _57;
+  unsigned char _58;
+  long unsigned int _59;
+  long unsigned int _60;
+  unsigned char _61;
+  long unsigned int _62;
+  long unsigned int _63;
+  long unsigned int _64;
+  long unsigned int _65;
+  long unsigned int _66;
+  long unsigned int _67;
+  long unsigned int _68;
+  long unsigned int _69;
+  long unsigned int _70;
+  long unsigned int _71;
+  struct mld_group * _72;
+  int _73;
+  long unsigned int _74;
+  long unsigned int _75;
+  long unsigned int _76;
+  long unsigned int _77;
+  long unsigned int _78;
+  long unsigned int _79;
+  long unsigned int _80;
+  long unsigned int _81;
+  long unsigned int _82;
+  long unsigned int _83;
+  long unsigned int _84;
+  long unsigned int _85;
+  int _86;
+  long unsigned int _87;
+  long unsigned int _88;
+  long unsigned int _89;
+  long unsigned int _90;
+  long unsigned int _91;
+  long unsigned int _92;
+  long unsigned int _93;
+  long unsigned int _94;
+  short unsigned int _95;
+  short unsigned int _96;
+  unsigned char _97;
+  int _98;
+  unsigned char _99;
+  int _100;
+  int _101;
+  short unsigned int _102;
+  short unsigned int _103;
+  short unsigned int _104;
+  short unsigned int _105;
+  short unsigned int _106;
+  short unsigned int _107;
+  short unsigned int _108;
+  sizetype opt_offset.19_109;
+  unsigned char _110;
+  int _111;
+  unsigned char _112;
+  unsigned char _113;
+  unsigned char _114;
+  unsigned char _115;
+  unsigned char _116;
+  int _117;
+  int _118;
+  short unsigned int _119;
+  short unsigned int _120;
+  short unsigned int _121;
+  short unsigned int _122;
+  long unsigned int _123;
+  long unsigned int _124;
+  short unsigned int _125;
+  short unsigned int _126;
+  unsigned char _127;
+  long int _128;
+  long int _129;
+  unsigned int _130;
+  unsigned char _131;
+  int _132;
+  int _133;
+  short unsigned int _134;
+  short unsigned int _135;
+  short unsigned int _136;
+  short unsigned int _137;
+  short unsigned int _138;
+  short unsigned int _139;
+  short unsigned int _140;
+  sizetype opt_offset.20_141;
+  unsigned char _142;
+  int _143;
+  unsigned char _144;
+  unsigned char _145;
+  unsigned char _146;
+  unsigned char _147;
+  unsigned char _148;
+  unsigned char _149;
+  int _150;
+  int _151;
+  short unsigned int _152;
+  short unsigned int _153;
+  short unsigned int _154;
+  short unsigned int _155;
+  long unsigned int _156;
+  long unsigned int _157;
+  short unsigned int _158;
+  short unsigned int _159;
+  unsigned char _160;
+  long int _161;
+  long int _162;
+  unsigned int _163;
+  unsigned char _164;
+  int _165;
+  int _166;
+  short unsigned int _167;
+  short unsigned int _168;
+  short unsigned int _169;
+  short unsigned int _170;
+  short unsigned int _171;
+  short unsigned int _172;
+  short unsigned int _173;
+  unsigned char _174;
+  unsigned char _175;
+  int _176;
+  int _177;
+  u8_t * _178;
+  short unsigned int _179;
+  short unsigned int _180;
+  unsigned char _181;
+  int _182;
+  u8_t * _183;
+  short unsigned int _184;
+  short unsigned int _185;
+  unsigned int _186;
+  short unsigned int _187;
+  short unsigned int _188;
+  short unsigned int _189;
+  short unsigned int _190;
+  short unsigned int _191;
+  short unsigned int _192;
+  short unsigned int _193;
+  int _194;
+  int _195;
+  short unsigned int _196;
+  short unsigned int _197;
+  int _198;
+  int _199;
+  u16_t * _200;
+  short unsigned int _201;
+  short unsigned int _202;
+  short unsigned int _203;
+  int _204;
+  int _205;
+  unsigned int _206;
+  unsigned char _207;
+  short unsigned int _208;
+  short unsigned int _209;
+  unsigned char _210;
+  unsigned int _211;
+  unsigned int _212;
+  unsigned char _213;
+  int _214;
+  unsigned int _215;
+  long unsigned int _216;
+  long unsigned int _217;
+  unsigned char _218;
+  short unsigned int _219;
+  short unsigned int _220;
+  short unsigned int _221;
+  short unsigned int _222;
+  err_t _243;
+  u8_t iftmp.17_244;
+  u8_t iftmp.18_245;
+  u8_t iftmp.17_282;
+  u8_t iftmp.17_284;
+  u8_t iftmp.18_286;
+  u8_t iftmp.18_287;
+  err_t _427;
+  err_t _431;
+  err_t _436;
+  err_t _440;
+
+  <bb 2> :
+  _1 = lwip_stats.ip6.recv;
+  _2 = _1 + 1;
+  lwip_stats.ip6.recv = _2;
+  ip6hdr_265 = p_264(D)->payload;
+  _3 = ip6hdr_265->_v_tc_fl;
+  _4 = lwip_htonl (_3);
+  _5 = _4 >> 28;
+  _6 = _5 & 15;
+  if (_6 != 6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  pbuf_free (p_264(D));
+  _7 = lwip_stats.ip6.err;
+  _8 = _7 + 1;
+  lwip_stats.ip6.err = _8;
+  _9 = lwip_stats.ip6.drop;
+  _10 = _9 + 1;
+  lwip_stats.ip6.drop = _10;
+  _440 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 153>; [INV]
+
+  <bb 4> :
+  _11 = p_264(D)->len;
+  if (_11 <= 39)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _12 = p_264(D)->tot_len;
+  _13 = (int) _12;
+  _14 = _13 + -39;
+  _15 = ip6hdr_265->_plen;
+  _16 = lwip_htons (_15);
+  _17 = (int) _16;
+  if (_14 <= _17)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _18 = p_264(D)->len;
+
+  <bb 7> :
+  _19 = ip6hdr_265->_plen;
+  _20 = lwip_htons (_19);
+  _21 = (int) _20;
+  _22 = _21 + 39;
+  _23 = p_264(D)->tot_len;
+  _24 = (int) _23;
+
+  <bb 8> :
+  pbuf_free (p_264(D));
+  _25 = lwip_stats.ip6.lenerr;
+  _26 = _25 + 1;
+  lwip_stats.ip6.lenerr = _26;
+  _27 = lwip_stats.ip6.drop;
+  _28 = _27 + 1;
+  lwip_stats.ip6.drop = _28;
+  _436 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 153>; [INV]
+
+  <bb 9> :
+  _29 = ip6hdr_265->_plen;
+  _30 = lwip_htons (_29);
+  _31 = _30 + 40;
+  pbuf_realloc (p_264(D), _31);
+  _32 = ip6hdr_265->dest.addr[0];
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[0] = _32;
+  _33 = ip6hdr_265->dest.addr[1];
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[1] = _33;
+  _34 = ip6hdr_265->dest.addr[2];
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[2] = _34;
+  _35 = ip6hdr_265->dest.addr[3];
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[3] = _35;
+  ip_data.current_iphdr_dest.u_addr.ip6.zone = 0;
+  ip_data.current_iphdr_dest.type = 6;
+  _36 = ip6hdr_265->src.addr[0];
+  ip_data.current_iphdr_src.u_addr.ip6.addr[0] = _36;
+  _37 = ip6hdr_265->src.addr[1];
+  ip_data.current_iphdr_src.u_addr.ip6.addr[1] = _37;
+  _38 = ip6hdr_265->src.addr[2];
+  ip_data.current_iphdr_src.u_addr.ip6.addr[2] = _38;
+  _39 = ip6hdr_265->src.addr[3];
+  ip_data.current_iphdr_src.u_addr.ip6.addr[3] = _39;
+  ip_data.current_iphdr_src.u_addr.ip6.zone = 0;
+  ip_data.current_iphdr_src.type = 6;
+  _40 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  if (_40 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  _41 = ip_data.current_iphdr_dest.u_addr.ip6.addr[1];
+  if (_41 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _42 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  if (_42 == 4294901760)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _43 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  if (_43 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 13> :
+  _44 = ip_data.current_iphdr_src.u_addr.ip6.addr[1];
+  if (_44 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _45 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  if (_45 == 4294901760)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  _46 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  _47 = _46 & 255;
+  if (_47 == 255)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  pbuf_free (p_264(D));
+  _48 = lwip_stats.ip6.err;
+  _49 = _48 + 1;
+  lwip_stats.ip6.err = _49;
+  _50 = lwip_stats.ip6.drop;
+  _51 = _50 + 1;
+  lwip_stats.ip6.drop = _51;
+  _431 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 153>; [INV]
+
+  <bb 17> :
+  _52 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _53 = _52 & 49407;
+  if (_53 == 33022)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  _54 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _55 = _54 & 36863;
+  if (_55 == 511)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  _56 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _57 = _56 & 36863;
+  if (_57 == 767)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _58 = inp_283(D)->num;
+  iftmp.17_284 = _58 + 1;
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  iftmp.17_282 = 0;
+
+  <bb 22> :
+  # iftmp.17_244 = PHI <iftmp.17_284(20), iftmp.17_282(21)>
+  ip_data.current_iphdr_dest.u_addr.ip6.zone = iftmp.17_244;
+  _59 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  _60 = _59 & 49407;
+  if (_60 == 33022)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  _61 = inp_283(D)->num;
+  iftmp.18_287 = _61 + 1;
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+  iftmp.18_286 = 0;
+
+  <bb 25> :
+  # iftmp.18_245 = PHI <iftmp.18_287(23), iftmp.18_286(24)>
+  ip_data.current_iphdr_src.u_addr.ip6.zone = iftmp.18_245;
+  ip_data.current_ip6_header = ip6hdr_265;
+  ip_data.current_netif = inp_283(D);
+  ip_data.current_input_netif = inp_283(D);
+  _62 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _63 = _62 & 255;
+  if (_63 == 255)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 26> :
+  _64 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  if (_64 == 511)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 27> :
+  _65 = ip_data.current_iphdr_dest.u_addr.ip6.addr[1];
+  if (_65 == 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 28> :
+  _66 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  if (_66 == 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  _67 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  if (_67 == 16777216)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 30> :
+  _68 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  if (_68 == 767)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 31> :
+  _69 = ip_data.current_iphdr_dest.u_addr.ip6.addr[1];
+  if (_69 == 0)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 32> :
+  _70 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  if (_70 == 0)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 33> :
+  _71 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  if (_71 == 16777216)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  netif_301 = inp_283(D);
+  goto <bb 38>; [INV]
+
+  <bb 35> :
+  _72 = mld6_lookfor_group (inp_283(D), &ip_data.current_iphdr_dest.u_addr.ip6);
+  if (_72 != 0B)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  netif_300 = inp_283(D);
+  goto <bb 38>; [INV]
+
+  <bb 37> :
+  netif_299 = 0B;
+
+  <bb 38> :
+  # netif_229 = PHI <netif_301(34), netif_300(36), netif_299(37)>
+  goto <bb 61>; [INV]
+
+  <bb 39> :
+  _73 = ip6_input_accept (inp_283(D));
+  if (_73 != 0)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 40> :
+  netif_297 = inp_283(D);
+  goto <bb 60>; [INV]
+
+  <bb 41> :
+  netif_293 = 0B;
+  _74 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _75 = _74 & 49407;
+  if (_75 == 33022)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 42> :
+  _76 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  _77 = _76 & 49407;
+  if (_77 == 33022)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 43> :
+  // predicted unlikely by goto predictor.
+  goto <bb 60>; [INV]
+
+  <bb 44> :
+  _78 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  if (_78 == 0)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 45> :
+  _79 = ip_data.current_iphdr_dest.u_addr.ip6.addr[1];
+  if (_79 == 0)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 46> :
+  _80 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  if (_80 == 0)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 47> :
+  _81 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  if (_81 == 16777216)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 48> :
+  _82 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  if (_82 == 0)
+    goto <bb 49>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 49> :
+  _83 = ip_data.current_iphdr_src.u_addr.ip6.addr[1];
+  if (_83 == 0)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 50> :
+  _84 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  if (_84 == 0)
+    goto <bb 51>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 51> :
+  _85 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  if (_85 == 16777216)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 52> :
+  // predicted unlikely by goto predictor.
+  goto <bb 60>; [INV]
+
+  <bb 53> :
+  netif_294 = netif_list;
+  goto <bb 59>; [INV]
+
+  <bb 54> :
+  if (netif_230 == inp_283(D))
+    goto <bb 55>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 55> :
+  // predicted unlikely by continue predictor.
+  goto <bb 58>; [INV]
+
+  <bb 56> :
+  _86 = ip6_input_accept (netif_230);
+  if (_86 != 0)
+    goto <bb 57>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 57> :
+  goto <bb 60>; [INV]
+
+  <bb 58> :
+  netif_296 = netif_230->next;
+
+  <bb 59> :
+  # netif_230 = PHI <netif_294(53), netif_296(58)>
+  if (netif_230 != 0B)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 60>; [INV]
+
+  <bb 60> :
+  # netif_231 = PHI <netif_297(40), netif_293(43), netif_293(52), netif_230(57), netif_230(59)>
+netif_found:
+
+  <bb 61> :
+  # netif_232 = PHI <netif_229(38), netif_231(60)>
+  _87 = ip_data.current_iphdr_src.u_addr.ip6.addr[0];
+  if (_87 == 0)
+    goto <bb 62>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 62> :
+  _88 = ip_data.current_iphdr_src.u_addr.ip6.addr[1];
+  if (_88 == 0)
+    goto <bb 63>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 63> :
+  _89 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  if (_89 == 0)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 64> :
+  _90 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  if (_90 == 0)
+    goto <bb 65>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 65> :
+  _91 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  if (_91 != 767)
+    goto <bb 68>; [INV]
+  else
+    goto <bb 66>; [INV]
+
+  <bb 66> :
+  _92 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  if (_92 != 16777216)
+    goto <bb 68>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 67> :
+  _93 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  _94 = _93 & 255;
+  if (_94 != 255)
+    goto <bb 68>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 68> :
+  pbuf_free (p_264(D));
+  _95 = lwip_stats.ip6.drop;
+  _96 = _95 + 1;
+  lwip_stats.ip6.drop = _96;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 69> :
+  if (netif_232 == 0B)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 71>; [INV]
+
+  <bb 70> :
+  pbuf_free (p_264(D));
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 71> :
+  ip_data.current_netif = netif_232;
+  nexth_305 = &ip6hdr_265->_nexth;
+  hlen_tot_306 = 40;
+  hlen_307 = hlen_tot_306;
+  pbuf_remove_header (p_264(D), 40);
+  goto <bb 139>; [INV]
+
+  <bb 72> :
+  _97 = *nexth_235;
+  _98 = (int) _97;
+  switch (_98) <default: <L145> [INV], case 0: <L80> [INV], case 43: <L121> [INV], case 44: <L133> [INV], case 60: <L100> [INV]>
+
+  <bb 73> :
+<L80>:
+  hbh_hdr_370 = p_225->payload;
+  nexth_371 = &hbh_hdr_370->_nexth;
+  _99 = hbh_hdr_370->_hlen;
+  _100 = (int) _99;
+  _101 = _100 + 1;
+  _102 = (short unsigned int) _101;
+  hlen_372 = _102 * 8;
+  _103 = p_225->len;
+  if (_103 <= 7)
+    goto <bb 75>; [INV]
+  else
+    goto <bb 74>; [INV]
+
+  <bb 74> :
+  _104 = p_225->len;
+  if (hlen_372 > _104)
+    goto <bb 75>; [INV]
+  else
+    goto <bb 76>; [INV]
+
+  <bb 75> :
+  pbuf_free (p_225);
+  _105 = lwip_stats.ip6.lenerr;
+  _106 = _105 + 1;
+  lwip_stats.ip6.lenerr = _106;
+  _107 = lwip_stats.ip6.drop;
+  _108 = _107 + 1;
+  lwip_stats.ip6.drop = _108;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 76> :
+  hlen_tot_373 = hlen_tot_238 + hlen_372;
+  opt_offset_374 = 2;
+  goto <bb 91>; [INV]
+
+  <bb 77> :
+  opt_dlen_376 = 0;
+  opt_offset.19_109 = (sizetype) opt_offset_239;
+  opt_hdr_377 = hbh_hdr_370 + opt_offset.19_109;
+  _110 = opt_hdr_377->_opt_type;
+  _111 = (int) _110;
+  switch (_111) <default: <L89> [INV], case 0: <L85> [INV], case 1: <L86> [INV], case 5: <L87> [INV], case 194: <L88> [INV]>
+
+  <bb 78> :
+<L85>:
+  opt_dlen_381 = -1;
+  goto <bb 90>; [INV]
+
+  <bb 79> :
+<L86>:
+  _112 = opt_hdr_377->_opt_dlen;
+  opt_dlen_380 = (s32_t) _112;
+  goto <bb 90>; [INV]
+
+  <bb 80> :
+<L87>:
+  _113 = opt_hdr_377->_opt_dlen;
+  opt_dlen_379 = (s32_t) _113;
+  goto <bb 90>; [INV]
+
+  <bb 81> :
+<L88>:
+  _114 = opt_hdr_377->_opt_dlen;
+  opt_dlen_378 = (s32_t) _114;
+  goto <bb 90>; [INV]
+
+  <bb 82> :
+<L89>:
+  _115 = opt_hdr_377->_opt_type;
+  _116 = _115 >> 6;
+  _117 = (int) _116;
+  _118 = _117 & 3;
+  switch (_118) <default: <L95> [INV], case 1: <L90> [INV], case 2: <L91> [INV], case 3: <L92> [INV]>
+
+  <bb 83> :
+<L90>:
+  pbuf_free (p_225);
+  _119 = lwip_stats.ip6.drop;
+  _120 = _119 + 1;
+  lwip_stats.ip6.drop = _120;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 84> :
+<L91>:
+  icmp6_param_problem (p_225, 2, opt_hdr_377);
+  pbuf_free (p_225);
+  _121 = lwip_stats.ip6.drop;
+  _122 = _121 + 1;
+  lwip_stats.ip6.drop = _122;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 85> :
+<L92>:
+  _123 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _124 = _123 & 255;
+  if (_124 != 255)
+    goto <bb 86>; [INV]
+  else
+    goto <bb 87>; [INV]
+
+  <bb 86> :
+  icmp6_param_problem (p_225, 2, opt_hdr_377);
+
+  <bb 87> :
+  pbuf_free (p_225);
+  _125 = lwip_stats.ip6.drop;
+  _126 = _125 + 1;
+  lwip_stats.ip6.drop = _126;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 88> :
+<L95>:
+  _127 = opt_hdr_377->_opt_dlen;
+  opt_dlen_390 = (s32_t) _127;
+
+  <bb 89> :
+
+  <bb 90> :
+  # opt_dlen_240 = PHI <opt_dlen_381(78), opt_dlen_380(79), opt_dlen_379(80), opt_dlen_378(81), opt_dlen_390(89)>
+  _128 = opt_offset_239 + 2;
+  opt_offset_391 = opt_dlen_240 + _128;
+
+  <bb 91> :
+  # opt_offset_239 = PHI <opt_offset_374(76), opt_offset_391(90)>
+  _129 = (long int) hlen_372;
+  if (opt_offset_239 < _129)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 92>; [INV]
+
+  <bb 92> :
+  _130 = (unsigned int) hlen_372;
+  pbuf_remove_header (p_225, _130);
+  goto <bb 137>; [INV]
+
+  <bb 93> :
+<L100>:
+  dest_hdr_309 = p_225->payload;
+  nexth_310 = &dest_hdr_309->_nexth;
+  _131 = dest_hdr_309->_hlen;
+  _132 = (int) _131;
+  _133 = _132 + 1;
+  _134 = (short unsigned int) _133;
+  hlen_311 = _134 * 8;
+  _135 = p_225->len;
+  if (_135 <= 7)
+    goto <bb 95>; [INV]
+  else
+    goto <bb 94>; [INV]
+
+  <bb 94> :
+  _136 = p_225->len;
+  if (hlen_311 > _136)
+    goto <bb 95>; [INV]
+  else
+    goto <bb 96>; [INV]
+
+  <bb 95> :
+  pbuf_free (p_225);
+  _137 = lwip_stats.ip6.lenerr;
+  _138 = _137 + 1;
+  lwip_stats.ip6.lenerr = _138;
+  _139 = lwip_stats.ip6.drop;
+  _140 = _139 + 1;
+  lwip_stats.ip6.drop = _140;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 96> :
+  hlen_tot_312 = hlen_tot_238 + hlen_311;
+  opt_offset_313 = 2;
+  goto <bb 112>; [INV]
+
+  <bb 97> :
+  opt_dlen_315 = 0;
+  opt_offset.20_141 = (sizetype) opt_offset_241;
+  opt_hdr_316 = dest_hdr_309 + opt_offset.20_141;
+  _142 = opt_hdr_316->_opt_type;
+  _143 = (int) _142;
+  switch (_143) <default: <L110> [INV], case 0: <L105> [INV], case 1: <L106> [INV], case 5: <L107> [INV], case 194: <L108> [INV], case 201: <L109> [INV]>
+
+  <bb 98> :
+<L105>:
+  opt_dlen_321 = -1;
+  goto <bb 111>; [INV]
+
+  <bb 99> :
+<L106>:
+  _144 = opt_hdr_316->_opt_dlen;
+  opt_dlen_320 = (s32_t) _144;
+  goto <bb 111>; [INV]
+
+  <bb 100> :
+<L107>:
+  _145 = opt_hdr_316->_opt_dlen;
+  opt_dlen_319 = (s32_t) _145;
+  goto <bb 111>; [INV]
+
+  <bb 101> :
+<L108>:
+  _146 = opt_hdr_316->_opt_dlen;
+  opt_dlen_318 = (s32_t) _146;
+  goto <bb 111>; [INV]
+
+  <bb 102> :
+<L109>:
+  _147 = opt_hdr_316->_opt_dlen;
+  opt_dlen_317 = (s32_t) _147;
+  goto <bb 111>; [INV]
+
+  <bb 103> :
+<L110>:
+  _148 = opt_hdr_316->_opt_type;
+  _149 = _148 >> 6;
+  _150 = (int) _149;
+  _151 = _150 & 3;
+  switch (_151) <default: <L116> [INV], case 1: <L111> [INV], case 2: <L112> [INV], case 3: <L113> [INV]>
+
+  <bb 104> :
+<L111>:
+  pbuf_free (p_225);
+  _152 = lwip_stats.ip6.drop;
+  _153 = _152 + 1;
+  lwip_stats.ip6.drop = _153;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 105> :
+<L112>:
+  icmp6_param_problem (p_225, 2, opt_hdr_316);
+  pbuf_free (p_225);
+  _154 = lwip_stats.ip6.drop;
+  _155 = _154 + 1;
+  lwip_stats.ip6.drop = _155;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 106> :
+<L113>:
+  _156 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _157 = _156 & 255;
+  if (_157 != 255)
+    goto <bb 107>; [INV]
+  else
+    goto <bb 108>; [INV]
+
+  <bb 107> :
+  icmp6_param_problem (p_225, 2, opt_hdr_316);
+
+  <bb 108> :
+  pbuf_free (p_225);
+  _158 = lwip_stats.ip6.drop;
+  _159 = _158 + 1;
+  lwip_stats.ip6.drop = _159;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 109> :
+<L116>:
+  _160 = opt_hdr_316->_opt_dlen;
+  opt_dlen_330 = (s32_t) _160;
+
+  <bb 110> :
+
+  <bb 111> :
+  # opt_dlen_242 = PHI <opt_dlen_321(98), opt_dlen_320(99), opt_dlen_319(100), opt_dlen_318(101), opt_dlen_317(102), opt_dlen_330(110)>
+  _161 = opt_offset_241 + 2;
+  opt_offset_331 = opt_dlen_242 + _161;
+
+  <bb 112> :
+  # opt_offset_241 = PHI <opt_offset_313(96), opt_offset_331(111)>
+  _162 = (long int) hlen_311;
+  if (opt_offset_241 < _162)
+    goto <bb 97>; [INV]
+  else
+    goto <bb 113>; [INV]
+
+  <bb 113> :
+  _163 = (unsigned int) hlen_311;
+  pbuf_remove_header (p_225, _163);
+  goto <bb 137>; [INV]
+
+  <bb 114> :
+<L121>:
+  rout_hdr_356 = p_225->payload;
+  nexth_357 = &rout_hdr_356->_nexth;
+  _164 = rout_hdr_356->_hlen;
+  _165 = (int) _164;
+  _166 = _165 + 1;
+  _167 = (short unsigned int) _166;
+  hlen_358 = _167 * 8;
+  _168 = p_225->len;
+  if (_168 <= 7)
+    goto <bb 116>; [INV]
+  else
+    goto <bb 115>; [INV]
+
+  <bb 115> :
+  _169 = p_225->len;
+  if (hlen_358 > _169)
+    goto <bb 116>; [INV]
+  else
+    goto <bb 117>; [INV]
+
+  <bb 116> :
+  pbuf_free (p_225);
+  _170 = lwip_stats.ip6.lenerr;
+  _171 = _170 + 1;
+  lwip_stats.ip6.lenerr = _171;
+  _172 = lwip_stats.ip6.drop;
+  _173 = _172 + 1;
+  lwip_stats.ip6.drop = _173;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 117> :
+  hlen_tot_359 = hlen_tot_238 + hlen_358;
+  _174 = rout_hdr_356->_segments_left;
+  if (_174 != 0)
+    goto <bb 118>; [INV]
+  else
+    goto <bb 124>; [INV]
+
+  <bb 118> :
+  _175 = rout_hdr_356->_hlen;
+  _176 = (int) _175;
+  _177 = _176 & 1;
+  if (_177 != 0)
+    goto <bb 119>; [INV]
+  else
+    goto <bb 120>; [INV]
+
+  <bb 119> :
+  _178 = &rout_hdr_356->_hlen;
+  icmp6_param_problem (p_225, 0, _178);
+  pbuf_free (p_225);
+  _179 = lwip_stats.ip6.drop;
+  _180 = _179 + 1;
+  lwip_stats.ip6.drop = _180;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 120> :
+  _181 = rout_hdr_356->_routing_type;
+  _182 = (int) _181;
+  switch (_182) <default: <L130> [INV], case 2: <L128> [INV], case 3: <L129> [INV]>
+
+  <bb 121> :
+<L128>:
+  goto <bb 124>; [INV]
+
+  <bb 122> :
+<L129>:
+  goto <bb 124>; [INV]
+
+  <bb 123> :
+<L130>:
+  _183 = &rout_hdr_356->_routing_type;
+  icmp6_param_problem (p_225, 0, _183);
+  pbuf_free (p_225);
+  _184 = lwip_stats.ip6.drop;
+  _185 = _184 + 1;
+  lwip_stats.ip6.drop = _185;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 124> :
+  _186 = (unsigned int) hlen_358;
+  pbuf_remove_header (p_225, _186);
+  goto <bb 137>; [INV]
+
+  <bb 125> :
+<L133>:
+  frag_hdr_335 = p_225->payload;
+  nexth_336 = &frag_hdr_335->_nexth;
+  hlen_337 = 8;
+  _187 = p_225->len;
+  if (hlen_337 > _187)
+    goto <bb 126>; [INV]
+  else
+    goto <bb 127>; [INV]
+
+  <bb 126> :
+  pbuf_free (p_225);
+  _188 = lwip_stats.ip6_frag.lenerr;
+  _189 = _188 + 1;
+  lwip_stats.ip6_frag.lenerr = _189;
+  _190 = lwip_stats.ip6_frag.drop;
+  _191 = _190 + 1;
+  lwip_stats.ip6_frag.drop = _191;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 127> :
+  hlen_tot_338 = hlen_tot_238 + hlen_337;
+  _192 = frag_hdr_335->_fragment_offset;
+  _193 = lwip_htons (_192);
+  _194 = (int) _193;
+  _195 = _194 & 1;
+  if (_195 != 0)
+    goto <bb 128>; [INV]
+  else
+    goto <bb 130>; [INV]
+
+  <bb 128> :
+  _196 = ip6hdr_228->_plen;
+  _197 = lwip_htons (_196);
+  _198 = (int) _197;
+  _199 = _198 & 7;
+  if (_199 != 0)
+    goto <bb 129>; [INV]
+  else
+    goto <bb 130>; [INV]
+
+  <bb 129> :
+  _200 = &ip6hdr_228->_plen;
+  icmp6_param_problem (p_225, 0, _200);
+  pbuf_free (p_225);
+  _201 = lwip_stats.ip6.drop;
+  _202 = _201 + 1;
+  lwip_stats.ip6.drop = _202;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 130> :
+  _203 = frag_hdr_335->_fragment_offset;
+  _204 = (int) _203;
+  _205 = _204 & 63999;
+  if (_205 == 0)
+    goto <bb 131>; [INV]
+  else
+    goto <bb 132>; [INV]
+
+  <bb 131> :
+  _206 = (unsigned int) hlen_337;
+  pbuf_remove_header (p_225, _206);
+  goto <bb 135>; [INV]
+
+  <bb 132> :
+  ip_data.current_ip_header_tot_len = hlen_tot_338;
+  p_346 = ip6_reass (p_225);
+  if (p_346 == 0B)
+    goto <bb 133>; [INV]
+  else
+    goto <bb 134>; [INV]
+
+  <bb 133> :
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 134> :
+  ip6hdr_347 = p_346->payload;
+  nexth_348 = &ip6hdr_347->_nexth;
+  hlen_tot_349 = 40;
+  hlen_350 = hlen_tot_349;
+  pbuf_remove_header (p_346, 40);
+
+  <bb 135> :
+  # p_223 = PHI <p_225(131), p_346(134)>
+  # ip6hdr_226 = PHI <ip6hdr_228(131), ip6hdr_347(134)>
+  # nexth_233 = PHI <nexth_336(131), nexth_348(134)>
+  # hlen_tot_236 = PHI <hlen_tot_338(131), hlen_tot_349(134)>
+  goto <bb 137>; [INV]
+
+  <bb 136> :
+<L145>:
+  // predicted unlikely by goto predictor.
+  goto <bb 140>; [INV]
+
+  <bb 137> :
+  # p_224 = PHI <p_225(92), p_225(113), p_225(124), p_223(135)>
+  # ip6hdr_227 = PHI <ip6hdr_228(92), ip6hdr_228(113), ip6hdr_228(124), ip6hdr_226(135)>
+  # nexth_234 = PHI <nexth_371(92), nexth_310(113), nexth_357(124), nexth_233(135)>
+  # hlen_tot_237 = PHI <hlen_tot_373(92), hlen_tot_312(113), hlen_tot_359(124), hlen_tot_236(135)>
+  _207 = *nexth_234;
+  if (_207 == 0)
+    goto <bb 138>; [INV]
+  else
+    goto <bb 139>; [INV]
+
+  <bb 138> :
+  icmp6_param_problem (p_224, 1, nexth_234);
+  pbuf_free (p_224);
+  _208 = lwip_stats.ip6.drop;
+  _209 = _208 + 1;
+  lwip_stats.ip6.drop = _209;
+  // predicted unlikely by goto predictor.
+  goto <bb 152>; [INV]
+
+  <bb 139> :
+  # p_225 = PHI <p_264(D)(71), p_224(137)>
+  # ip6hdr_228 = PHI <ip6hdr_265(71), ip6hdr_227(137)>
+  # nexth_235 = PHI <nexth_305(71), nexth_234(137)>
+  # hlen_tot_238 = PHI <hlen_tot_306(71), hlen_tot_237(137)>
+  _210 = *nexth_235;
+  if (_210 != 59)
+    goto <bb 72>; [INV]
+  else
+    goto <bb 140>; [INV]
+
+  <bb 140> :
+options_done:
+  ip_data.current_ip_header_tot_len = hlen_tot_238;
+  _211 = (unsigned int) hlen_tot_238;
+  pbuf_add_header_force (p_225, _211);
+  raw_status_401 = raw_input (p_225, inp_283(D));
+  if (raw_status_401 != 1)
+    goto <bb 141>; [INV]
+  else
+    goto <bb 152>; [INV]
+
+  <bb 141> :
+  _212 = (unsigned int) hlen_tot_238;
+  pbuf_remove_header (p_225, _212);
+  _213 = *nexth_235;
+  _214 = (int) _213;
+  switch (_214) <default: <L158> [INV], case 6: <L156> [INV], case 17: <L154> [INV], case 58: <L157> [INV], case 59: <L153> [INV], case 136: <L154> [INV]>
+
+  <bb 142> :
+<L153>:
+  pbuf_free (p_225);
+  goto <bb 152>; [INV]
+
+  <bb 143> :
+<L154>:
+  udp_input (p_225, inp_283(D));
+  goto <bb 152>; [INV]
+
+  <bb 144> :
+<L156>:
+  tcp_input (p_225, inp_283(D));
+  goto <bb 152>; [INV]
+
+  <bb 145> :
+<L157>:
+  icmp6_input (p_225, inp_283(D));
+  goto <bb 152>; [INV]
+
+  <bb 146> :
+<L158>:
+  if (raw_status_401 == 2)
+    goto <bb 151>; [INV]
+  else
+    goto <bb 147>; [INV]
+
+  <bb 147> :
+  _215 = (unsigned int) hlen_tot_238;
+  pbuf_add_header_force (p_225, _215);
+  _216 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _217 = _216 & 255;
+  if (_217 != 255)
+    goto <bb 148>; [INV]
+  else
+    goto <bb 150>; [INV]
+
+  <bb 148> :
+  _218 = ip6hdr_228->_nexth;
+  if (_218 != 58)
+    goto <bb 149>; [INV]
+  else
+    goto <bb 150>; [INV]
+
+  <bb 149> :
+  icmp6_param_problem (p_225, 1, nexth_235);
+
+  <bb 150> :
+  _219 = lwip_stats.ip6.proterr;
+  _220 = _219 + 1;
+  lwip_stats.ip6.proterr = _220;
+  _221 = lwip_stats.ip6.drop;
+  _222 = _221 + 1;
+  lwip_stats.ip6.drop = _222;
+
+  <bb 151> :
+  pbuf_free (p_225);
+
+  <bb 152> :
+ip6_input_cleanup:
+  ip_data.current_netif = 0B;
+  ip_data.current_input_netif = 0B;
+  ip_data.current_ip6_header = 0B;
+  ip_data.current_ip_header_tot_len = 0;
+  ip_data.current_iphdr_src.u_addr.ip6.addr[0] = 0;
+  ip_data.current_iphdr_src.u_addr.ip6.addr[1] = 0;
+  ip_data.current_iphdr_src.u_addr.ip6.addr[2] = 0;
+  ip_data.current_iphdr_src.u_addr.ip6.addr[3] = 0;
+  ip_data.current_iphdr_src.u_addr.ip6.zone = 0;
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[0] = 0;
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[1] = 0;
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[2] = 0;
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[3] = 0;
+  ip_data.current_iphdr_dest.u_addr.ip6.zone = 0;
+  _427 = 0;
+
+  <bb 153> :
+  # _243 = PHI <_440(3), _436(8), _431(16), _427(152)>
+<L169>:
+  return _243;
+
+}
+
+
+ip6_input_accept (struct netif * netif)
+{
+  u8_t i;
+  int D.8118;
+  unsigned char _1;
+  _Bool _2;
+  int _3;
+  unsigned char _4;
+  int _5;
+  int _6;
+  long unsigned int _7;
+  int _8;
+  struct ip6_addr_t * _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  int _12;
+  struct ip6_addr_t * _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  int _16;
+  struct ip6_addr_t * _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  int _20;
+  struct ip6_addr_t * _21;
+  long unsigned int _22;
+  unsigned char _23;
+  int _24;
+  struct ip6_addr_t * _25;
+  unsigned char _26;
+  unsigned char i.16_27;
+  int _29;
+  int _33;
+  int _35;
+
+  <bb 2> :
+  _1 = netif_31(D)->flags;
+  _2 = (_Bool) _1;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 3> :
+  i_32 = 0;
+  goto <bb 12>; [INV]
+
+  <bb 4> :
+  _3 = (int) i_28;
+  _4 = netif_31(D)->ip6_addr_state[_3];
+  _5 = (int) _4;
+  _6 = _5 & 16;
+  if (_6 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 5> :
+  _7 = ip_data.current_iphdr_dest.u_addr.ip6.addr[0];
+  _8 = (int) i_28;
+  _9 = &netif_31(D)->ip6_addr[_8].u_addr.ip6;
+  _10 = MEM[(const struct ip6_addr_t *)_9].addr[0];
+  if (_7 == _10)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 6> :
+  _11 = ip_data.current_iphdr_dest.u_addr.ip6.addr[1];
+  _12 = (int) i_28;
+  _13 = &netif_31(D)->ip6_addr[_12].u_addr.ip6;
+  _14 = MEM[(const struct ip6_addr_t *)_13].addr[1];
+  if (_11 == _14)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 7> :
+  _15 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  _16 = (int) i_28;
+  _17 = &netif_31(D)->ip6_addr[_16].u_addr.ip6;
+  _18 = MEM[(const struct ip6_addr_t *)_17].addr[2];
+  if (_15 == _18)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  _19 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  _20 = (int) i_28;
+  _21 = &netif_31(D)->ip6_addr[_20].u_addr.ip6;
+  _22 = MEM[(const struct ip6_addr_t *)_21].addr[3];
+  if (_19 == _22)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  _23 = ip_data.current_iphdr_dest.u_addr.ip6.zone;
+  _24 = (int) i_28;
+  _25 = &netif_31(D)->ip6_addr[_24].u_addr.ip6;
+  _26 = MEM[(const struct ip6_addr_t *)_25].zone;
+  if (_23 == _26)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _33 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  i.16_27 = i_28;
+  i_34 = i.16_27 + 1;
+
+  <bb 12> :
+  # i_28 = PHI <i_32(3), i_34(11)>
+  if (i_28 <= 2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  _35 = 0;
+
+  <bb 14> :
+  # _29 = PHI <_33(10), _35(13)>
+<L17>:
+  return _29;
+
+}
+
+
+ip6_select_source_address (struct netif * netif, const struct ip6_addr_t * dest)
+{
+  u8_t best_bits;
+  u8_t best_pref;
+  u8_t cand_bits;
+  u8_t cand_pref;
+  u8_t i;
+  s8_t best_scope;
+  s8_t cand_scope;
+  s8_t dest_scope;
+  const struct ip6_addr_t * cand_addr;
+  const struct ip_addr_t * best_addr;
+  const struct ip_addr_t * D.8092;
+  int iftmp.14;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  signed char _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  int _19;
+  unsigned char _20;
+  int _21;
+  int _22;
+  int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  int _32;
+  unsigned char _33;
+  _Bool _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  int _43;
+  int _44;
+  unsigned char i.15_45;
+  int iftmp.14_57;
+  const struct ip_addr_t * _58;
+  const struct ip_addr_t * _74;
+  int iftmp.14_83;
+  int iftmp.14_84;
+  const struct ip_addr_t * _86;
+
+  <bb 2> :
+  best_scope_60 = 0;
+  best_pref_61 = 0;
+  best_bits_62 = 0;
+  _1 = dest_64(D)->addr[0];
+  _2 = _1 & 224;
+  if (_2 == 32)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  dest_scope_71 = 14;
+  goto <bb 17>; [INV]
+
+  <bb 4> :
+  _3 = dest_64(D)->addr[0];
+  _4 = _3 & 49407;
+  if (_4 == 33022)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _5 = dest_64(D)->addr[0];
+  if (_5 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 6> :
+  _6 = dest_64(D)->addr[1];
+  if (_6 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 7> :
+  _7 = dest_64(D)->addr[2];
+  if (_7 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _8 = dest_64(D)->addr[3];
+  if (_8 == 16777216)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  dest_scope_70 = 2;
+  goto <bb 17>; [INV]
+
+  <bb 10> :
+  _9 = dest_64(D)->addr[0];
+  _10 = _9 & 254;
+  if (_10 == 252)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  dest_scope_69 = 8;
+  goto <bb 17>; [INV]
+
+  <bb 12> :
+  _11 = dest_64(D)->addr[0];
+  _12 = _11 & 255;
+  if (_12 == 255)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _13 = dest_64(D)->addr[0];
+  _14 = lwip_htonl (_13);
+  _15 = _14 >> 16;
+  _16 = (signed char) _15;
+  dest_scope_68 = _16 & 15;
+  goto <bb 17>; [INV]
+
+  <bb 14> :
+  _17 = dest_64(D)->addr[0];
+  _18 = _17 & 49407;
+  if (_18 == 49406)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  dest_scope_66 = 5;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  dest_scope_65 = 14;
+
+  <bb 17> :
+  # dest_scope_48 = PHI <dest_scope_71(3), dest_scope_70(9), dest_scope_69(11), dest_scope_68(13), dest_scope_66(15), dest_scope_65(16)>
+  best_addr_72 = 0B;
+  i_73 = 0;
+  goto <bb 48>; [INV]
+
+  <bb 18> :
+  _19 = (int) i_52;
+  _20 = netif_75(D)->ip6_addr_state[_19];
+  _21 = (int) _20;
+  _22 = _21 & 16;
+  if (_22 == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  // predicted unlikely by continue predictor.
+  goto <bb 47>; [INV]
+
+  <bb 20> :
+  _23 = (int) i_52;
+  cand_addr_76 = &netif_75(D)->ip6_addr[_23].u_addr.ip6;
+  _24 = cand_addr_76->addr[0];
+  _25 = _24 & 224;
+  if (_25 == 32)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  cand_scope_81 = 14;
+  goto <bb 29>; [INV]
+
+  <bb 22> :
+  _26 = cand_addr_76->addr[0];
+  _27 = _26 & 49407;
+  if (_27 == 33022)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  cand_scope_80 = 2;
+  goto <bb 29>; [INV]
+
+  <bb 24> :
+  _28 = cand_addr_76->addr[0];
+  _29 = _28 & 254;
+  if (_29 == 252)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  cand_scope_79 = 8;
+  goto <bb 29>; [INV]
+
+  <bb 26> :
+  _30 = cand_addr_76->addr[0];
+  _31 = _30 & 49407;
+  if (_31 == 49406)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 27> :
+  cand_scope_78 = 5;
+  goto <bb 29>; [INV]
+
+  <bb 28> :
+  cand_scope_77 = 15;
+
+  <bb 29> :
+  # cand_scope_49 = PHI <cand_scope_81(21), cand_scope_80(23), cand_scope_79(25), cand_scope_78(27), cand_scope_77(28)>
+  _32 = (int) i_52;
+  _33 = netif_75(D)->ip6_addr_state[_32];
+  _34 = _33 == 48;
+  cand_pref_82 = (u8_t) _34;
+  _35 = cand_addr_76->addr[0];
+  _36 = dest_64(D)->addr[0];
+  if (_35 == _36)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 30> :
+  _37 = cand_addr_76->addr[1];
+  _38 = dest_64(D)->addr[1];
+  if (_37 == _38)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 31> :
+  iftmp.14_83 = 1;
+  goto <bb 33>; [INV]
+
+  <bb 32> :
+  iftmp.14_84 = 0;
+
+  <bb 33> :
+  # iftmp.14_57 = PHI <iftmp.14_83(31), iftmp.14_84(32)>
+  cand_bits_85 = (u8_t) iftmp.14_57;
+  if (cand_bits_85 != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 34> :
+  _39 = cand_addr_76->addr[2];
+  _40 = dest_64(D)->addr[2];
+  if (_39 == _40)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 35> :
+  _41 = cand_addr_76->addr[3];
+  _42 = dest_64(D)->addr[3];
+  if (_41 == _42)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  _43 = (int) i_52;
+  _86 = &netif_75(D)->ip6_addr[_43];
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 50>; [INV]
+
+  <bb 37> :
+  if (best_addr_47 == 0B)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 38> :
+  if (cand_scope_49 < best_scope_51)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 39> :
+  if (cand_scope_49 >= dest_scope_48)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 40> :
+  if (cand_scope_49 > best_scope_51)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 41> :
+  if (best_scope_51 < dest_scope_48)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 42> :
+  if (cand_scope_49 == best_scope_51)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 43> :
+  if (cand_pref_82 > best_pref_54)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 44> :
+  if (cand_pref_82 == best_pref_54)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 45> :
+  if (cand_bits_85 > best_bits_56)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 46> :
+  _44 = (int) i_52;
+  best_addr_87 = &netif_75(D)->ip6_addr[_44];
+  best_scope_88 = cand_scope_49;
+  best_pref_89 = cand_pref_82;
+  best_bits_90 = cand_bits_85;
+
+  <bb 47> :
+  # best_addr_46 = PHI <best_addr_47(19), best_addr_47(42), best_addr_47(44), best_addr_47(45), best_addr_87(46)>
+  # best_scope_50 = PHI <best_scope_51(19), best_scope_51(42), best_scope_51(44), best_scope_51(45), best_scope_88(46)>
+  # best_pref_53 = PHI <best_pref_54(19), best_pref_54(42), best_pref_54(44), best_pref_54(45), best_pref_89(46)>
+  # best_bits_55 = PHI <best_bits_56(19), best_bits_56(42), best_bits_56(44), best_bits_56(45), best_bits_90(46)>
+  i.15_45 = i_52;
+  i_91 = i.15_45 + 1;
+
+  <bb 48> :
+  # best_addr_47 = PHI <best_addr_72(17), best_addr_46(47)>
+  # best_scope_51 = PHI <best_scope_60(17), best_scope_50(47)>
+  # i_52 = PHI <i_73(17), i_91(47)>
+  # best_pref_54 = PHI <best_pref_61(17), best_pref_53(47)>
+  # best_bits_56 = PHI <best_bits_62(17), best_bits_55(47)>
+  if (i_52 <= 2)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 49> :
+  _74 = best_addr_47;
+
+  <bb 50> :
+  # _58 = PHI <_86(36), _74(49)>
+<L57>:
+  return _58;
+
+}
+
+
+ip6_route (const struct ip6_addr_t * src, const struct ip6_addr_t * dest)
+{
+  s8_t i;
+  struct netif * netif;
+  struct netif * D.7964;
+  struct netif * netif_list.0_1;
+  struct netif * netif_list.1_2;
+  struct netif * _3;
+  struct netif * netif_list.2_4;
+  unsigned char _5;
+  unsigned int _6;
+  unsigned int _7;
+  struct netif * netif_list.3_8;
+  unsigned char _9;
+  unsigned int _10;
+  unsigned int _11;
+  unsigned char _12;
+  unsigned char _13;
+  struct netif * netif_list.4_14;
+  unsigned char _15;
+  unsigned char _16;
+  unsigned char _17;
+  unsigned char _18;
+  unsigned char _19;
+  unsigned char _20;
+  unsigned char _21;
+  _Bool _22;
+  unsigned char _23;
+  unsigned int _24;
+  unsigned int _25;
+  _Bool _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  unsigned char _39;
+  unsigned char _40;
+  _Bool _41;
+  unsigned char _42;
+  unsigned int _43;
+  unsigned int _44;
+  _Bool _45;
+  unsigned char _46;
+  unsigned char _47;
+  unsigned char _48;
+  unsigned char _49;
+  unsigned int _50;
+  unsigned int _51;
+  unsigned char _52;
+  unsigned int _53;
+  unsigned int _54;
+  int _55;
+  unsigned char _56;
+  int _57;
+  int _58;
+  long unsigned int _59;
+  int _60;
+  struct ip6_addr_t * _61;
+  long unsigned int _62;
+  long unsigned int _63;
+  int _64;
+  struct ip6_addr_t * _65;
+  long unsigned int _66;
+  long unsigned int _67;
+  int _68;
+  struct ip6_addr_t * _69;
+  long unsigned int _70;
+  long unsigned int _71;
+  int _72;
+  struct ip6_addr_t * _73;
+  long unsigned int _74;
+  signed char i.5_75;
+  unsigned char i.6_76;
+  unsigned char _77;
+  unsigned char _78;
+  unsigned int _79;
+  unsigned int _80;
+  unsigned char _81;
+  unsigned int _82;
+  unsigned int _83;
+  int _84;
+  unsigned char _85;
+  int _86;
+  int _87;
+  long unsigned int _88;
+  int _89;
+  struct ip6_addr_t * _90;
+  long unsigned int _91;
+  long unsigned int _92;
+  int _93;
+  struct ip6_addr_t * _94;
+  long unsigned int _95;
+  unsigned char _96;
+  int _97;
+  struct ip6_addr_t * _98;
+  unsigned char _99;
+  int _100;
+  long unsigned int _101;
+  long unsigned int _102;
+  int _103;
+  struct ip6_addr_t * _104;
+  long unsigned int _105;
+  long unsigned int _106;
+  int _107;
+  struct ip6_addr_t * _108;
+  long unsigned int _109;
+  signed char i.7_110;
+  unsigned char i.8_111;
+  unsigned char _112;
+  long unsigned int _113;
+  long unsigned int _114;
+  long unsigned int _115;
+  long unsigned int _116;
+  unsigned char _117;
+  unsigned int _118;
+  unsigned int _119;
+  unsigned char _120;
+  unsigned int _121;
+  unsigned int _122;
+  int _123;
+  unsigned char _124;
+  int _125;
+  int _126;
+  long unsigned int _127;
+  int _128;
+  struct ip6_addr_t * _129;
+  long unsigned int _130;
+  long unsigned int _131;
+  int _132;
+  struct ip6_addr_t * _133;
+  long unsigned int _134;
+  long unsigned int _135;
+  int _136;
+  struct ip6_addr_t * _137;
+  long unsigned int _138;
+  long unsigned int _139;
+  int _140;
+  struct ip6_addr_t * _141;
+  long unsigned int _142;
+  unsigned char _143;
+  int _144;
+  struct ip6_addr_t * _145;
+  unsigned char _146;
+  signed char i.9_147;
+  unsigned char i.10_148;
+  unsigned char _149;
+  struct netif * netif_default.11_150;
+  struct netif * netif_default.12_151;
+  unsigned char _152;
+  unsigned int _153;
+  unsigned int _154;
+  struct netif * netif_default.13_155;
+  unsigned char _156;
+  unsigned int _157;
+  unsigned int _158;
+  struct netif * _167;
+  struct netif * _171;
+  struct netif * _172;
+  struct netif * _179;
+  struct netif * _182;
+  struct netif * _183;
+  struct netif * _184;
+  struct netif * _186;
+  struct netif * _191;
+  struct netif * _195;
+  struct netif * _197;
+  struct netif * _199;
+  struct netif * _200;
+
+  <bb 2> :
+  netif_list.0_1 = netif_list;
+  if (netif_list.0_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  netif_list.1_2 = netif_list;
+  _3 = netif_list.1_2->next;
+  if (_3 == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  netif_list.2_4 = netif_list;
+  _5 = netif_list.2_4->flags;
+  _6 = (unsigned int) _5;
+  _7 = _6 & 1;
+  if (_7 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  netif_list.3_8 = netif_list;
+  _9 = netif_list.3_8->flags;
+  _10 = (unsigned int) _9;
+  _11 = _10 & 4;
+  if (_11 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _12 = dest_170(D)->zone;
+  if (_12 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _13 = dest_170(D)->zone;
+  netif_list.4_14 = netif_list;
+  _15 = netif_list.4_14->num;
+  _16 = _15 + 1;
+  if (_13 != _16)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _172 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 9> :
+  _171 = netif_list;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 10> :
+  _17 = dest_170(D)->zone;
+  if (_17 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 11> :
+  netif_198 = netif_list;
+  goto <bb 17>; [INV]
+
+  <bb 12> :
+  _18 = dest_170(D)->zone;
+  _19 = netif_159->num;
+  _20 = _19 + 1;
+  if (_18 == _20)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 13> :
+  _21 = netif_159->flags;
+  _22 = (_Bool) _21;
+  if (_22 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  _23 = netif_159->flags;
+  _24 = (unsigned int) _23;
+  _25 = _24 >> 2;
+  _26 = (_Bool) _25;
+  if (_26 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _200 = netif_159;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 16> :
+  netif_201 = netif_159->next;
+
+  <bb 17> :
+  # netif_159 = PHI <netif_198(11), netif_201(16)>
+  if (netif_159 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  _199 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 19> :
+  _27 = dest_170(D)->addr[0];
+  _28 = _27 & 49407;
+  if (_28 == 33022)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  _29 = dest_170(D)->addr[0];
+  _30 = _29 & 36863;
+  if (_30 == 511)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 21> :
+  _31 = dest_170(D)->addr[0];
+  _32 = _31 & 36863;
+  if (_32 == 767)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  _33 = src_173(D)->addr[0];
+  _34 = _33 & 49407;
+  if (_34 == 33022)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  _35 = src_173(D)->addr[0];
+  if (_35 == 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 24> :
+  _36 = src_173(D)->addr[1];
+  if (_36 == 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 25> :
+  _37 = src_173(D)->addr[2];
+  if (_37 == 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 26> :
+  _38 = src_173(D)->addr[3];
+  if (_38 == 16777216)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 27> :
+  _39 = src_173(D)->zone;
+  if (_39 != 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 28> :
+  netif_194 = netif_list;
+  goto <bb 34>; [INV]
+
+  <bb 29> :
+  _40 = netif_160->flags;
+  _41 = (_Bool) _40;
+  if (_41 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 30> :
+  _42 = netif_160->flags;
+  _43 = (unsigned int) _42;
+  _44 = _43 >> 2;
+  _45 = (_Bool) _44;
+  if (_45 != 0)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 31> :
+  _46 = src_173(D)->zone;
+  _47 = netif_160->num;
+  _48 = _47 + 1;
+  if (_46 == _48)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  _195 = netif_160;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 33> :
+  netif_196 = netif_160->next;
+
+  <bb 34> :
+  # netif_160 = PHI <netif_194(28), netif_196(33)>
+  if (netif_160 != 0B)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 50>; [INV]
+
+  <bb 35> :
+  netif_189 = netif_list;
+  goto <bb 49>; [INV]
+
+  <bb 36> :
+  _49 = netif_161->flags;
+  _50 = (unsigned int) _49;
+  _51 = _50 & 1;
+  if (_51 == 0)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 37> :
+  _52 = netif_161->flags;
+  _53 = (unsigned int) _52;
+  _54 = _53 & 4;
+  if (_54 == 0)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 38> :
+  // predicted unlikely by continue predictor.
+  goto <bb 48>; [INV]
+
+  <bb 39> :
+  i_190 = 0;
+  goto <bb 47>; [INV]
+
+  <bb 40> :
+  _55 = (int) i_164;
+  _56 = netif_161->ip6_addr_state[_55];
+  _57 = (int) _56;
+  _58 = _57 & 16;
+  if (_58 != 0)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 41> :
+  _59 = src_173(D)->addr[0];
+  _60 = (int) i_164;
+  _61 = &netif_161->ip6_addr[_60].u_addr.ip6;
+  _62 = MEM[(const struct ip6_addr_t *)_61].addr[0];
+  if (_59 == _62)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 42> :
+  _63 = src_173(D)->addr[1];
+  _64 = (int) i_164;
+  _65 = &netif_161->ip6_addr[_64].u_addr.ip6;
+  _66 = MEM[(const struct ip6_addr_t *)_65].addr[1];
+  if (_63 == _66)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 43> :
+  _67 = src_173(D)->addr[2];
+  _68 = (int) i_164;
+  _69 = &netif_161->ip6_addr[_68].u_addr.ip6;
+  _70 = MEM[(const struct ip6_addr_t *)_69].addr[2];
+  if (_67 == _70)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 44> :
+  _71 = src_173(D)->addr[3];
+  _72 = (int) i_164;
+  _73 = &netif_161->ip6_addr[_72].u_addr.ip6;
+  _74 = MEM[(const struct ip6_addr_t *)_73].addr[3];
+  if (_71 == _74)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 45> :
+  _191 = netif_161;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 46> :
+  i.5_75 = i_164;
+  i.6_76 = (unsigned char) i.5_75;
+  _77 = i.6_76 + 1;
+  i_192 = (s8_t) _77;
+
+  <bb 47> :
+  # i_164 = PHI <i_190(39), i_192(46)>
+  if (i_164 <= 2)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 48> :
+  netif_193 = netif_161->next;
+
+  <bb 49> :
+  # netif_161 = PHI <netif_189(35), netif_193(48)>
+  if (netif_161 != 0B)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 50>; [INV]
+
+  <bb 50> :
+  _197 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 51> :
+  netif_174 = netif_list;
+  goto <bb 68>; [INV]
+
+  <bb 52> :
+  _78 = netif_162->flags;
+  _79 = (unsigned int) _78;
+  _80 = _79 & 1;
+  if (_80 == 0)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 53> :
+  _81 = netif_162->flags;
+  _82 = (unsigned int) _81;
+  _83 = _82 & 4;
+  if (_83 == 0)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 55>; [INV]
+
+  <bb 54> :
+  // predicted unlikely by continue predictor.
+  goto <bb 67>; [INV]
+
+  <bb 55> :
+  i_185 = 0;
+  goto <bb 66>; [INV]
+
+  <bb 56> :
+  _84 = (int) i_165;
+  _85 = netif_162->ip6_addr_state[_84];
+  _86 = (int) _85;
+  _87 = _86 & 16;
+  if (_87 != 0)
+    goto <bb 57>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 57> :
+  _88 = dest_170(D)->addr[0];
+  _89 = (int) i_165;
+  _90 = &netif_162->ip6_addr[_89].u_addr.ip6;
+  _91 = MEM[(const struct ip6_addr_t *)_90].addr[0];
+  if (_88 == _91)
+    goto <bb 58>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 58> :
+  _92 = dest_170(D)->addr[1];
+  _93 = (int) i_165;
+  _94 = &netif_162->ip6_addr[_93].u_addr.ip6;
+  _95 = MEM[(const struct ip6_addr_t *)_94].addr[1];
+  if (_92 == _95)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 59> :
+  _96 = dest_170(D)->zone;
+  _97 = (int) i_165;
+  _98 = &netif_162->ip6_addr[_97].u_addr.ip6;
+  _99 = MEM[(const struct ip6_addr_t *)_98].zone;
+  if (_96 == _99)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 60> :
+  if (netif_162 == 0B)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 61>; [INV]
+
+  <bb 61> :
+  _100 = (int) i_165;
+  _101 = netif_162->ip6_addr_valid_life[_100];
+  if (_101 == 0)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 62>; [INV]
+
+  <bb 62> :
+  _102 = dest_170(D)->addr[2];
+  _103 = (int) i_165;
+  _104 = &netif_162->ip6_addr[_103].u_addr.ip6;
+  _105 = MEM[(const struct ip6_addr_t *)_104].addr[2];
+  if (_102 == _105)
+    goto <bb 63>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 63> :
+  _106 = dest_170(D)->addr[3];
+  _107 = (int) i_165;
+  _108 = &netif_162->ip6_addr[_107].u_addr.ip6;
+  _109 = MEM[(const struct ip6_addr_t *)_108].addr[3];
+  if (_106 == _109)
+    goto <bb 64>; [INV]
+  else
+    goto <bb 65>; [INV]
+
+  <bb 64> :
+  _186 = netif_162;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 65> :
+  i.7_110 = i_165;
+  i.8_111 = (unsigned char) i.7_110;
+  _112 = i.8_111 + 1;
+  i_187 = (s8_t) _112;
+
+  <bb 66> :
+  # i_165 = PHI <i_185(55), i_187(65)>
+  if (i_165 <= 2)
+    goto <bb 56>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 67> :
+  netif_188 = netif_162->next;
+
+  <bb 68> :
+  # netif_162 = PHI <netif_174(51), netif_188(67)>
+  if (netif_162 != 0B)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 69> :
+  netif_176 = nd6_find_route (dest_170(D));
+  if (netif_176 != 0B)
+    goto <bb 70>; [INV]
+  else
+    goto <bb 71>; [INV]
+
+  <bb 70> :
+  _184 = netif_176;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 71> :
+  if (src_173(D) != 0B)
+    goto <bb 72>; [INV]
+  else
+    goto <bb 92>; [INV]
+
+  <bb 72> :
+  _113 = src_173(D)->addr[0];
+  if (_113 != 0)
+    goto <bb 76>; [INV]
+  else
+    goto <bb 73>; [INV]
+
+  <bb 73> :
+  _114 = src_173(D)->addr[1];
+  if (_114 != 0)
+    goto <bb 76>; [INV]
+  else
+    goto <bb 74>; [INV]
+
+  <bb 74> :
+  _115 = src_173(D)->addr[2];
+  if (_115 != 0)
+    goto <bb 76>; [INV]
+  else
+    goto <bb 75>; [INV]
+
+  <bb 75> :
+  _116 = src_173(D)->addr[3];
+  if (_116 != 0)
+    goto <bb 76>; [INV]
+  else
+    goto <bb 92>; [INV]
+
+  <bb 76> :
+  netif_177 = netif_list;
+  goto <bb 91>; [INV]
+
+  <bb 77> :
+  _117 = netif_163->flags;
+  _118 = (unsigned int) _117;
+  _119 = _118 & 1;
+  if (_119 == 0)
+    goto <bb 79>; [INV]
+  else
+    goto <bb 78>; [INV]
+
+  <bb 78> :
+  _120 = netif_163->flags;
+  _121 = (unsigned int) _120;
+  _122 = _121 & 4;
+  if (_122 == 0)
+    goto <bb 79>; [INV]
+  else
+    goto <bb 80>; [INV]
+
+  <bb 79> :
+  // predicted unlikely by continue predictor.
+  goto <bb 90>; [INV]
+
+  <bb 80> :
+  i_178 = 0;
+  goto <bb 89>; [INV]
+
+  <bb 81> :
+  _123 = (int) i_166;
+  _124 = netif_163->ip6_addr_state[_123];
+  _125 = (int) _124;
+  _126 = _125 & 16;
+  if (_126 != 0)
+    goto <bb 82>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 82> :
+  _127 = src_173(D)->addr[0];
+  _128 = (int) i_166;
+  _129 = &netif_163->ip6_addr[_128].u_addr.ip6;
+  _130 = MEM[(const struct ip6_addr_t *)_129].addr[0];
+  if (_127 == _130)
+    goto <bb 83>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 83> :
+  _131 = src_173(D)->addr[1];
+  _132 = (int) i_166;
+  _133 = &netif_163->ip6_addr[_132].u_addr.ip6;
+  _134 = MEM[(const struct ip6_addr_t *)_133].addr[1];
+  if (_131 == _134)
+    goto <bb 84>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 84> :
+  _135 = src_173(D)->addr[2];
+  _136 = (int) i_166;
+  _137 = &netif_163->ip6_addr[_136].u_addr.ip6;
+  _138 = MEM[(const struct ip6_addr_t *)_137].addr[2];
+  if (_135 == _138)
+    goto <bb 85>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 85> :
+  _139 = src_173(D)->addr[3];
+  _140 = (int) i_166;
+  _141 = &netif_163->ip6_addr[_140].u_addr.ip6;
+  _142 = MEM[(const struct ip6_addr_t *)_141].addr[3];
+  if (_139 == _142)
+    goto <bb 86>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 86> :
+  _143 = src_173(D)->zone;
+  _144 = (int) i_166;
+  _145 = &netif_163->ip6_addr[_144].u_addr.ip6;
+  _146 = MEM[(const struct ip6_addr_t *)_145].zone;
+  if (_143 == _146)
+    goto <bb 87>; [INV]
+  else
+    goto <bb 88>; [INV]
+
+  <bb 87> :
+  _179 = netif_163;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 88> :
+  i.9_147 = i_166;
+  i.10_148 = (unsigned char) i.9_147;
+  _149 = i.10_148 + 1;
+  i_180 = (s8_t) _149;
+
+  <bb 89> :
+  # i_166 = PHI <i_178(80), i_180(88)>
+  if (i_166 <= 2)
+    goto <bb 81>; [INV]
+  else
+    goto <bb 90>; [INV]
+
+  <bb 90> :
+  netif_181 = netif_163->next;
+
+  <bb 91> :
+  # netif_163 = PHI <netif_177(76), netif_181(90)>
+  if (netif_163 != 0B)
+    goto <bb 77>; [INV]
+  else
+    goto <bb 92>; [INV]
+
+  <bb 92> :
+  netif_default.11_150 = netif_default;
+  if (netif_default.11_150 == 0B)
+    goto <bb 95>; [INV]
+  else
+    goto <bb 93>; [INV]
+
+  <bb 93> :
+  netif_default.12_151 = netif_default;
+  _152 = netif_default.12_151->flags;
+  _153 = (unsigned int) _152;
+  _154 = _153 & 1;
+  if (_154 == 0)
+    goto <bb 95>; [INV]
+  else
+    goto <bb 94>; [INV]
+
+  <bb 94> :
+  netif_default.13_155 = netif_default;
+  _156 = netif_default.13_155->flags;
+  _157 = (unsigned int) _156;
+  _158 = _157 & 4;
+  if (_158 == 0)
+    goto <bb 95>; [INV]
+  else
+    goto <bb 96>; [INV]
+
+  <bb 95> :
+  _183 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 97>; [INV]
+
+  <bb 96> :
+  _182 = netif_default;
+
+  <bb 97> :
+  # _167 = PHI <_172(8), _171(9), _200(15), _199(18), _195(32), _191(45), _197(50), _186(64), _184(70), _179(87), _183(95), _182(96)>
+<L118>:
+  return _167;
+
+}
+
+

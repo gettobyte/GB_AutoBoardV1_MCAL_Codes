@@ -1,0 +1,95 @@
+Symbol table:
+
+GMAC_0_StateStructure/11 (GMAC_0_StateStructure) @06fc69d8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Gmac_0_ConfigPB/6 (addr) 
+  Availability: not_available
+  Varpool flags:
+GmacIf_TxNotification/10 (GmacIf_TxNotification) @06fcb7e0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: GMAC_0_aTxRingConfigPB/3 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+GMAC_0_TxRing_0_DescBuffer/9 (GMAC_0_TxRing_0_DescBuffer) @06fc6990
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: GMAC_0_aTxRingConfigPB/3 (addr) 
+  Availability: not_available
+  Varpool flags:
+GmacIf_RxNotification/8 (GmacIf_RxNotification) @06fcb700
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: GMAC_0_aRxRingConfigPB/2 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+GMAC_0_RxRing_0_DescBuffer/7 (GMAC_0_RxRing_0_DescBuffer) @06fc6948
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: GMAC_0_aRxRingConfigPB/2 (addr) 
+  Availability: not_available
+  Varpool flags:
+Gmac_0_ConfigPB/6 (Gmac_0_ConfigPB) @06fc6828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: GMAC_0_StateStructure/11 (addr) GMAC_0_InitConfigPB/4 (addr) GMAC_0_aRxRingConfigPB/2 (addr) GMAC_0_aTxRingConfigPB/3 (addr) GMAC_0_au8MacAddrPB/1 (addr) GMAC_0_pTxTimeShaperPB/5 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+GMAC_0_pTxTimeShaperPB/5 (GMAC_0_pTxTimeShaperPB) @06fc6798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: GMAC_0_GateControlListPB/0 (addr) 
+  Referring: Gmac_0_ConfigPB/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+GMAC_0_InitConfigPB/4 (GMAC_0_InitConfigPB) @06fc66c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gmac_0_ConfigPB/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+GMAC_0_aTxRingConfigPB/3 (GMAC_0_aTxRingConfigPB) @06fc65e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: GMAC_0_TxRing_0_DescBuffer/9 (addr) GmacIf_TxNotification/10 (addr) 
+  Referring: Gmac_0_ConfigPB/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+GMAC_0_aRxRingConfigPB/2 (GMAC_0_aRxRingConfigPB) @06fc6510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: GMAC_0_RxRing_0_DescBuffer/7 (addr) GmacIf_RxNotification/8 (addr) 
+  Referring: Gmac_0_ConfigPB/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+GMAC_0_au8MacAddrPB/1 (GMAC_0_au8MacAddrPB) @06fc6438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gmac_0_ConfigPB/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+GMAC_0_GateControlListPB/0 (GMAC_0_GateControlListPB) @06fc6360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: GMAC_0_pTxTimeShaperPB/5 (addr) 
+  Availability: available
+  Varpool flags: initialized

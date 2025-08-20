@@ -1,0 +1,1571 @@
+Trivially needed symbols: tcpecho_raw_init/10 tcpecho_raw_accept/9 tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 tcpecho_raw_error/5 tcpecho_raw_send/4 tcpecho_raw_close/3 tcpecho_raw_free/2 tcpecho_raw_pcb/1
+
+
+Initial Symbol table:
+
+tcp_accept/30 (tcp_accept) @06ca6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_listen_with_backlog/29 (tcp_listen_with_backlog) @06ca6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+ip_addr_any_type/28 (ip_addr_any_type) @06ca5630
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/27 (tcp_bind) @06ca6380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_new_ip_type/26 (tcp_new_ip_type) @06ca62a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+mem_malloc/25 (mem_malloc) @06ca60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+tcp_setprio/24 (tcp_setprio) @06ca6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+pbuf_cat/23 (pbuf_cat) @06c58e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 
+  Calls: 
+tcp_abort/22 (tcp_abort) @06c58a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_poll/6 
+  Calls: 
+tcp_recved/21 (tcp_recved) @06c587e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_send/4 
+  Calls: 
+pbuf_ref/20 (pbuf_ref) @06c58700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_write/19 (tcp_write) @06c58620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_close/18 (tcp_close) @06c58460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_close/3 
+  Calls: 
+tcp_poll/17 (tcp_poll) @06c58380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_err/16 (tcp_err) @06c582a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_recv/15 (tcp_recv) @06c581c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_sent/14 (tcp_sent) @06c580e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_sent/7 tcpecho_raw_close/3 
+  Calls: 
+tcp_arg/13 (tcp_arg) @06c58000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+mem_free/12 (mem_free) @06c4dee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_free/2 
+  Calls: 
+pbuf_free/11 (pbuf_free) @06c4de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_send/4 tcpecho_raw_free/2 
+  Calls: 
+tcpecho_raw_init/10 (tcpecho_raw_init) @06c4d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (read) ip_addr_any_type/28 (addr) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_accept/9 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_accept/30 tcp_listen_with_backlog/29 tcp_bind/27 tcp_new_ip_type/26 
+tcpecho_raw_accept/9 (tcpecho_raw_accept) @06c4d700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c4d9a0
+  References: tcpecho_raw_recv/8 (addr) tcpecho_raw_error/5 (addr) tcpecho_raw_poll/6 (addr) tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/14 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_arg/13 mem_malloc/25 tcp_setprio/24 
+tcpecho_raw_recv/8 (tcpecho_raw_recv) @06c4d460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c4d700
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/11 tcp_recved/21 pbuf_cat/23 tcpecho_raw_send/4 tcpecho_raw_send/4 pbuf_free/11 tcpecho_raw_send/4 tcpecho_raw_close/3 
+tcpecho_raw_sent/7 (tcpecho_raw_sent) @06c4d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c4d460
+  References: tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_sent/7 (addr) tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_close/3 tcpecho_raw_send/4 tcp_sent/14 
+tcpecho_raw_poll/6 (tcpecho_raw_poll) @06c45ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c4d1c0
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/22 tcpecho_raw_close/3 tcpecho_raw_send/4 
+tcpecho_raw_error/5 (tcpecho_raw_error) @06c45c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06c45ee0
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_free/2 
+tcpecho_raw_send/4 (tcpecho_raw_send) @06c459a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c45c40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_recved/21 pbuf_free/11 pbuf_ref/20 tcp_write/19 
+tcpecho_raw_close/3 (tcpecho_raw_close) @06c45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c459a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_close/18 tcpecho_raw_free/2 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_sent/14 tcp_arg/13 
+tcpecho_raw_free/2 (tcpecho_raw_free) @06c45460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c45700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_error/5 tcpecho_raw_close/3 
+  Calls: mem_free/12 pbuf_free/11 
+tcpecho_raw_pcb/1 (tcpecho_raw_pcb) @06c3f6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c45460
+  References: 
+  Referring: tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) 
+  Availability: not-ready
+  Varpool flags:
+DevAssert/0 (DevAssert) @06a982a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+tcp_accept/30 (tcp_accept) @06ca6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_listen_with_backlog/29 (tcp_listen_with_backlog) @06ca6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+ip_addr_any_type/28 (ip_addr_any_type) @06ca5630
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/27 (tcp_bind) @06ca6380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_new_ip_type/26 (tcp_new_ip_type) @06ca62a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+mem_malloc/25 (mem_malloc) @06ca60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+tcp_setprio/24 (tcp_setprio) @06ca6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+pbuf_cat/23 (pbuf_cat) @06c58e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 
+  Calls: 
+tcp_abort/22 (tcp_abort) @06c58a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_poll/6 
+  Calls: 
+tcp_recved/21 (tcp_recved) @06c587e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_send/4 
+  Calls: 
+pbuf_ref/20 (pbuf_ref) @06c58700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_write/19 (tcp_write) @06c58620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_close/18 (tcp_close) @06c58460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_close/3 
+  Calls: 
+tcp_poll/17 (tcp_poll) @06c58380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_err/16 (tcp_err) @06c582a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_recv/15 (tcp_recv) @06c581c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_sent/14 (tcp_sent) @06c580e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_sent/7 tcpecho_raw_close/3 
+  Calls: 
+tcp_arg/13 (tcp_arg) @06c58000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+mem_free/12 (mem_free) @06c4dee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_free/2 
+  Calls: 
+pbuf_free/11 (pbuf_free) @06c4de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_send/4 tcpecho_raw_free/2 
+  Calls: 
+tcpecho_raw_init/10 (tcpecho_raw_init) @06c4d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (read) ip_addr_any_type/28 (addr) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_accept/9 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_accept/30 tcp_listen_with_backlog/29 tcp_bind/27 tcp_new_ip_type/26 
+tcpecho_raw_accept/9 (tcpecho_raw_accept) @06c4d700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcpecho_raw_recv/8 (addr) tcpecho_raw_error/5 (addr) tcpecho_raw_poll/6 (addr) tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/14 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_arg/13 mem_malloc/25 tcp_setprio/24 
+tcpecho_raw_recv/8 (tcpecho_raw_recv) @06c4d460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/11 tcp_recved/21 pbuf_cat/23 tcpecho_raw_send/4 tcpecho_raw_send/4 pbuf_free/11 tcpecho_raw_send/4 tcpecho_raw_close/3 
+tcpecho_raw_sent/7 (tcpecho_raw_sent) @06c4d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_sent/7 (addr) tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_close/3 tcpecho_raw_send/4 tcp_sent/14 
+tcpecho_raw_poll/6 (tcpecho_raw_poll) @06c45ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/22 tcpecho_raw_close/3 tcpecho_raw_send/4 
+tcpecho_raw_error/5 (tcpecho_raw_error) @06c45c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_free/2 
+tcpecho_raw_send/4 (tcpecho_raw_send) @06c459a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_recved/21 pbuf_free/11 pbuf_ref/20 tcp_write/19 
+tcpecho_raw_close/3 (tcpecho_raw_close) @06c45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_close/18 tcpecho_raw_free/2 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_sent/14 tcp_arg/13 
+tcpecho_raw_free/2 (tcpecho_raw_free) @06c45460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_error/5 tcpecho_raw_close/3 
+  Calls: mem_free/12 pbuf_free/11 
+tcpecho_raw_pcb/1 (tcpecho_raw_pcb) @06c3f6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+tcp_accept/30 (tcp_accept) @06ca6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_listen_with_backlog/29 (tcp_listen_with_backlog) @06ca6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+ip_addr_any_type/28 (ip_addr_any_type) @06ca5630
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/27 (tcp_bind) @06ca6380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_new_ip_type/26 (tcp_new_ip_type) @06ca62a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+mem_malloc/25 (mem_malloc) @06ca60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+tcp_setprio/24 (tcp_setprio) @06ca6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+pbuf_cat/23 (pbuf_cat) @06c58e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 
+  Calls: 
+tcp_abort/22 (tcp_abort) @06c58a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_poll/6 
+  Calls: 
+tcp_recved/21 (tcp_recved) @06c587e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_send/4 
+  Calls: 
+pbuf_ref/20 (pbuf_ref) @06c58700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_write/19 (tcp_write) @06c58620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_close/18 (tcp_close) @06c58460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_close/3 
+  Calls: 
+tcp_poll/17 (tcp_poll) @06c58380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_err/16 (tcp_err) @06c582a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_recv/15 (tcp_recv) @06c581c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_sent/14 (tcp_sent) @06c580e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_sent/7 tcpecho_raw_close/3 
+  Calls: 
+tcp_arg/13 (tcp_arg) @06c58000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+mem_free/12 (mem_free) @06c4dee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_free/2 
+  Calls: 
+pbuf_free/11 (pbuf_free) @06c4de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_send/4 tcpecho_raw_free/2 
+  Calls: 
+tcpecho_raw_init/10 (tcpecho_raw_init) @06c4d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (read) ip_addr_any_type/28 (addr) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_accept/9 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_accept/30 tcp_listen_with_backlog/29 tcp_bind/27 tcp_new_ip_type/26 
+tcpecho_raw_accept/9 (tcpecho_raw_accept) @06c4d700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcpecho_raw_recv/8 (addr) tcpecho_raw_error/5 (addr) tcpecho_raw_poll/6 (addr) tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/14 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_arg/13 mem_malloc/25 tcp_setprio/24 
+tcpecho_raw_recv/8 (tcpecho_raw_recv) @06c4d460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/11 tcp_recved/21 pbuf_cat/23 tcpecho_raw_send/4 tcpecho_raw_send/4 pbuf_free/11 tcpecho_raw_send/4 tcpecho_raw_close/3 
+tcpecho_raw_sent/7 (tcpecho_raw_sent) @06c4d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_sent/7 (addr) tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_close/3 tcpecho_raw_send/4 tcp_sent/14 
+tcpecho_raw_poll/6 (tcpecho_raw_poll) @06c45ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/22 tcpecho_raw_close/3 tcpecho_raw_send/4 
+tcpecho_raw_error/5 (tcpecho_raw_error) @06c45c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_free/2 
+tcpecho_raw_send/4 (tcpecho_raw_send) @06c459a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_recved/21 pbuf_free/11 pbuf_ref/20 tcp_write/19 
+tcpecho_raw_close/3 (tcpecho_raw_close) @06c45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_close/18 tcpecho_raw_free/2 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_sent/14 tcp_arg/13 
+tcpecho_raw_free/2 (tcpecho_raw_free) @06c45460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_error/5 tcpecho_raw_close/3 
+  Calls: mem_free/12 pbuf_free/11 
+tcpecho_raw_pcb/1 (tcpecho_raw_pcb) @06c3f6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+tcp_accept/30 (tcp_accept) @06ca6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_listen_with_backlog/29 (tcp_listen_with_backlog) @06ca6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+ip_addr_any_type/28 (ip_addr_any_type) @06ca5630
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/27 (tcp_bind) @06ca6380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_new_ip_type/26 (tcp_new_ip_type) @06ca62a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+mem_malloc/25 (mem_malloc) @06ca60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+tcp_setprio/24 (tcp_setprio) @06ca6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+pbuf_cat/23 (pbuf_cat) @06c58e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 
+  Calls: 
+tcp_abort/22 (tcp_abort) @06c58a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_poll/6 
+  Calls: 
+tcp_recved/21 (tcp_recved) @06c587e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_send/4 
+  Calls: 
+pbuf_ref/20 (pbuf_ref) @06c58700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_write/19 (tcp_write) @06c58620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_close/18 (tcp_close) @06c58460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_close/3 
+  Calls: 
+tcp_poll/17 (tcp_poll) @06c58380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_err/16 (tcp_err) @06c582a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_recv/15 (tcp_recv) @06c581c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+tcp_sent/14 (tcp_sent) @06c580e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_sent/7 tcpecho_raw_close/3 
+  Calls: 
+tcp_arg/13 (tcp_arg) @06c58000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_accept/9 tcpecho_raw_close/3 
+  Calls: 
+mem_free/12 (mem_free) @06c4dee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_free/2 
+  Calls: 
+pbuf_free/11 (pbuf_free) @06c4de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_send/4 tcpecho_raw_free/2 
+  Calls: 
+tcpecho_raw_init/10 (tcpecho_raw_init) @06c4d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (read) ip_addr_any_type/28 (addr) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_accept/9 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_accept/30 tcp_listen_with_backlog/29 tcp_bind/27 tcp_new_ip_type/26 
+tcpecho_raw_accept/9 (tcpecho_raw_accept) @06c4d700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcpecho_raw_recv/8 (addr) tcpecho_raw_error/5 (addr) tcpecho_raw_poll/6 (addr) tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/14 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_arg/13 mem_malloc/25 tcp_setprio/24 
+tcpecho_raw_recv/8 (tcpecho_raw_recv) @06c4d460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/11 tcp_recved/21 pbuf_cat/23 tcpecho_raw_send/4 tcpecho_raw_send/4 pbuf_free/11 tcpecho_raw_send/4 tcpecho_raw_close/3 
+tcpecho_raw_sent/7 (tcpecho_raw_sent) @06c4d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_sent/7 (addr) tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_close/3 tcpecho_raw_send/4 tcp_sent/14 
+tcpecho_raw_poll/6 (tcpecho_raw_poll) @06c45ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/22 tcpecho_raw_close/3 tcpecho_raw_send/4 
+tcpecho_raw_error/5 (tcpecho_raw_error) @06c45c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_free/2 
+tcpecho_raw_send/4 (tcpecho_raw_send) @06c459a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_recved/21 pbuf_free/11 pbuf_ref/20 tcp_write/19 
+tcpecho_raw_close/3 (tcpecho_raw_close) @06c45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_close/18 tcpecho_raw_free/2 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_sent/14 tcp_arg/13 
+tcpecho_raw_free/2 (tcpecho_raw_free) @06c45460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcpecho_raw_error/5 tcpecho_raw_close/3 
+  Calls: mem_free/12 pbuf_free/11 
+tcpecho_raw_pcb/1 (tcpecho_raw_pcb) @06c3f6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+tcp_accept/30 (tcp_accept) @06ca6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_listen_with_backlog/29 (tcp_listen_with_backlog) @06ca6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+ip_addr_any_type/28 (ip_addr_any_type) @06ca5630
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/27 (tcp_bind) @06ca6380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+tcp_new_ip_type/26 (tcp_new_ip_type) @06ca62a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_init/10 
+  Calls: 
+mem_malloc/25 (mem_malloc) @06ca60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+tcp_setprio/24 (tcp_setprio) @06ca6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_accept/9 
+  Calls: 
+pbuf_cat/23 (pbuf_cat) @06c58e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_recv/8 
+  Calls: 
+tcp_abort/22 (tcp_abort) @06c58a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_poll/6 
+  Calls: 
+tcp_recved/21 (tcp_recved) @06c587e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_send/4 
+  Calls: 
+pbuf_ref/20 (pbuf_ref) @06c58700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_write/19 (tcp_write) @06c58620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_send/4 
+  Calls: 
+tcp_close/18 (tcp_close) @06c58460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 
+  Calls: 
+tcp_poll/17 (tcp_poll) @06c58380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+tcp_err/16 (tcp_err) @06c582a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+tcp_recv/15 (tcp_recv) @06c581c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+tcp_sent/14 (tcp_sent) @06c580e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_sent/7 tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+tcp_arg/13 (tcp_arg) @06c58000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_close/3 tcpecho_raw_accept/9 
+  Calls: 
+mem_free/12 (mem_free) @06c4dee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_free/2 
+  Calls: 
+pbuf_free/11 (pbuf_free) @06c4de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_send/4 tcpecho_raw_free/2 
+  Calls: 
+tcpecho_raw_init/10 (tcpecho_raw_init) @06c4d9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (read) ip_addr_any_type/28 (addr) tcpecho_raw_pcb/1 (read) tcpecho_raw_pcb/1 (write) tcpecho_raw_pcb/1 (read) tcpecho_raw_accept/9 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_accept/30 tcp_listen_with_backlog/29 tcp_bind/27 tcp_new_ip_type/26 
+tcpecho_raw_accept/9 (tcpecho_raw_accept) @06c4d700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: tcpecho_raw_recv/8 (addr) tcpecho_raw_error/5 (addr) tcpecho_raw_poll/6 (addr) tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_init/10 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/14 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_arg/13 mem_malloc/25 tcp_setprio/24 
+tcpecho_raw_recv/8 (tcpecho_raw_recv) @06c4d460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/11 tcp_recved/21 pbuf_cat/23 tcpecho_raw_send/4 tcpecho_raw_send/4 pbuf_free/11 tcpecho_raw_send/4 tcpecho_raw_close/3 
+tcpecho_raw_sent/7 (tcpecho_raw_sent) @06c4d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: tcpecho_raw_sent/7 (addr) 
+  Referring: tcpecho_raw_accept/9 (addr) tcpecho_raw_sent/7 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_close/3 tcpecho_raw_send/4 tcp_sent/14 
+tcpecho_raw_poll/6 (tcpecho_raw_poll) @06c45ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/22 tcpecho_raw_close/3 tcpecho_raw_send/4 
+tcpecho_raw_error/5 (tcpecho_raw_error) @06c45c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: tcpecho_raw_accept/9 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcpecho_raw_free/2 
+tcpecho_raw_send/4 (tcpecho_raw_send) @06c459a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_recved/21 pbuf_free/11 pbuf_ref/20 tcp_write/19 
+tcpecho_raw_close/3 (tcpecho_raw_close) @06c45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcpecho_raw_recv/8 tcpecho_raw_sent/7 tcpecho_raw_poll/6 
+  Calls: tcp_close/18 tcpecho_raw_free/2 tcp_poll/17 tcp_err/16 tcp_recv/15 tcp_sent/14 tcp_arg/13 
+tcpecho_raw_free/2 (tcpecho_raw_free) @06c45460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcpecho_raw_close/3 tcpecho_raw_error/5 
+  Calls: mem_free/12 pbuf_free/11 
+tcpecho_raw_pcb/1 (tcpecho_raw_pcb) @06c3f6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (read) tcpecho_raw_init/10 (write) tcpecho_raw_init/10 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: tcpecho_raw_pcb/1
+Removing variables:
+
+Final Symbol table:
+
+tcp_accept/30 (tcp_accept) @06ca6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_listen_with_backlog/29 (tcp_listen_with_backlog) @06ca6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_addr_any_type/28 (ip_addr_any_type) @06ca5630
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/27 (tcp_bind) @06ca6380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_new_ip_type/26 (tcp_new_ip_type) @06ca62a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mem_malloc/25 (mem_malloc) @06ca60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_setprio/24 (tcp_setprio) @06ca6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_cat/23 (pbuf_cat) @06c58e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_abort/22 (tcp_abort) @06c58a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recved/21 (tcp_recved) @06c587e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_ref/20 (pbuf_ref) @06c58700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_write/19 (tcp_write) @06c58620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_close/18 (tcp_close) @06c58460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_poll/17 (tcp_poll) @06c58380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_err/16 (tcp_err) @06c582a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recv/15 (tcp_recv) @06c581c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_sent/14 (tcp_sent) @06c580e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_arg/13 (tcp_arg) @06c58000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mem_free/12 (mem_free) @06c4dee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_free/11 (pbuf_free) @06c4de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_init/10 (tcpecho_raw_init) @06c4d9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_accept/9 (tcpecho_raw_accept) @06c4d700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_recv/8 (tcpecho_raw_recv) @06c4d460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_sent/7 (tcpecho_raw_sent) @06c4d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_poll/6 (tcpecho_raw_poll) @06c45ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_error/5 (tcpecho_raw_error) @06c45c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_send/4 (tcpecho_raw_send) @06c459a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_close/3 (tcpecho_raw_close) @06c45700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_free/2 (tcpecho_raw_free) @06c45460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcpecho_raw_pcb/1 (tcpecho_raw_pcb) @06c3f6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

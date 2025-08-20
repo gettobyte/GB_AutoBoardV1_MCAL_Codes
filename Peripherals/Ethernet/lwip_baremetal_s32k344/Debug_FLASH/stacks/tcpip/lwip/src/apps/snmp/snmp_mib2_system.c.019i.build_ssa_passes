@@ -1,0 +1,408 @@
+system_set_value (const struct snmp_scalar_array_node_def * node, u16_t len, void * value)
+{
+  u16_t * var_wr_len;
+  u8_t * var_wr;
+  snmp_err_t D.7194;
+
+  <bb 2> :
+  var_wr = 0B;
+  _1 = node->oid;
+  switch (_1) <default: <L3> [INV], case 4: <L0> [INV], case 5: <L1> [INV], case 6: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  var_wr = syscontact_wr;
+  var_wr_len = syscontact_wr_len;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  var_wr = sysname_wr;
+  var_wr_len = sysname_wr_len;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  var_wr = syslocation_wr;
+  var_wr_len = syslocation_wr_len;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+  D.7194 = 5;
+  goto <bb 13>; [INV]
+
+  <bb 7> :
+  if (var_wr == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  _2 = (unsigned int) len;
+  memcpy (var_wr, value, _2);
+  if (var_wr_len == 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _3 = (sizetype) len;
+  _4 = var_wr + _3;
+  *_4 = 0;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  *var_wr_len = len;
+
+  <bb 12> :
+  D.7194 = 0;
+
+  <bb 13> :
+<L11>:
+  return D.7194;
+
+}
+
+
+system_set_test (const struct snmp_scalar_array_node_def * node, u16_t len, void * value)
+{
+  const u16_t * var_wr_len;
+  const u16_t * var_bufsize;
+  snmp_err_t ret;
+  snmp_err_t D.7182;
+
+  <bb 2> :
+  ret = 10;
+  var_bufsize = 0B;
+  _1 = node->oid;
+  switch (_1) <default: <L3> [INV], case 4: <L0> [INV], case 5: <L1> [INV], case 6: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  var_bufsize = &syscontact_bufsize;
+  var_wr_len = syscontact_wr_len;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  var_bufsize = &sysname_bufsize;
+  var_wr_len = sysname_wr_len;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  var_bufsize = &syslocation_bufsize;
+  var_wr_len = syslocation_wr_len;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+  D.7182 = ret;
+  goto <bb 15>; [INV]
+
+  <bb 7> :
+  _2 = *var_bufsize;
+  if (_2 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  if (var_wr_len == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  _3 = *var_bufsize;
+  if (len < _3)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 10> :
+  ret = 0;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  _4 = *var_bufsize;
+  if (len <= _4)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  ret = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  ret = 17;
+
+  <bb 14> :
+  D.7182 = ret;
+
+  <bb 15> :
+<L15>:
+  return D.7182;
+
+}
+
+
+system_get_value (const struct snmp_scalar_array_node_def * node, void * value)
+{
+  const struct snmp_obj_id * dev_enterprise_oid;
+  u16_t result;
+  const s16_t * var_len;
+  const u8_t * var;
+  s16_t D.7175;
+
+  <bb 2> :
+  var = 0B;
+  _1 = node->oid;
+  switch (_1) <default: <L7> [INV], case 1: <L0> [INV], case 2: <L1> [INV], case 3: <L2> [INV], case 4: <L3> [INV], case 5: <L4> [INV], case 6: <L5> [INV], case 7: <L6> [INV]>
+
+  <bb 3> :
+<L0>:
+  var = sysdescr;
+  var_len = sysdescr_len;
+  goto <bb 11>; [INV]
+
+  <bb 4> :
+<L1>:
+  dev_enterprise_oid = snmp_get_device_enterprise_oid ();
+  _2 = &dev_enterprise_oid->id;
+  _3 = dev_enterprise_oid->len;
+  _4 = (unsigned int) _3;
+  _5 = _4 * 4;
+  memcpy (value, _2, _5);
+  _6 = dev_enterprise_oid->len;
+  _7 = (unsigned short) _6;
+  _8 = _7 * 4;
+  D.7175 = (s16_t) _8;
+  goto <bb 17>; [INV]
+
+  <bb 5> :
+<L2>:
+  _9 = sys_now ();
+  _10 = _9 / 10;
+  MEM[(u32_t *)value] = _10;
+  D.7175 = 4;
+  goto <bb 17>; [INV]
+
+  <bb 6> :
+<L3>:
+  var = syscontact;
+  var_len = syscontact_len;
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+<L4>:
+  var = sysname;
+  var_len = sysname_len;
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+<L5>:
+  var = syslocation;
+  var_len = syslocation_len;
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+<L6>:
+  MEM[(s32_t *)value] = 72;
+  D.7175 = 4;
+  goto <bb 17>; [INV]
+
+  <bb 10> :
+<L7>:
+  D.7175 = 0;
+  goto <bb 17>; [INV]
+
+  <bb 11> :
+  if (value == 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 12>; [INV]
+
+  <bb 13> :
+  if (var_len == 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _11 = strlen (var);
+  result = (u16_t) _11;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  _12 = *var_len;
+  result = (u16_t) _12;
+
+  <bb 16> :
+  _13 = (unsigned int) result;
+  memcpy (value, var, _13);
+  D.7175 = (s16_t) result;
+
+  <bb 17> :
+<L15>:
+  return D.7175;
+
+}
+
+
+snmp_mib2_set_syslocation_readonly (const u8_t * ocstr, const u16_t * ocstrlen)
+{
+  <bb 2> :
+  if (ocstr != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  syslocation = ocstr;
+  syslocation_len = ocstrlen;
+  syslocation_wr = 0B;
+  syslocation_wr_len = 0B;
+  syslocation_bufsize = 0;
+
+  <bb 4> :
+  return;
+
+}
+
+
+snmp_mib2_set_syslocation (u8_t * ocstr, u16_t * ocstrlen, u16_t bufsize)
+{
+  <bb 2> :
+  if (ocstr != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  syslocation = ocstr;
+  syslocation_wr = ocstr;
+  syslocation_len = ocstrlen;
+  syslocation_wr_len = ocstrlen;
+  syslocation_bufsize = bufsize;
+
+  <bb 4> :
+  return;
+
+}
+
+
+snmp_mib2_set_sysname_readonly (const u8_t * ocstr, const u16_t * ocstrlen)
+{
+  <bb 2> :
+  if (ocstr != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  sysname = ocstr;
+  sysname_len = ocstrlen;
+  sysname_wr = 0B;
+  sysname_wr_len = 0B;
+  sysname_bufsize = 0;
+
+  <bb 4> :
+  return;
+
+}
+
+
+snmp_mib2_set_sysname (u8_t * ocstr, u16_t * ocstrlen, u16_t bufsize)
+{
+  <bb 2> :
+  if (ocstr != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  sysname = ocstr;
+  sysname_wr = ocstr;
+  sysname_len = ocstrlen;
+  sysname_wr_len = ocstrlen;
+  sysname_bufsize = bufsize;
+
+  <bb 4> :
+  return;
+
+}
+
+
+snmp_mib2_set_syscontact_readonly (const u8_t * ocstr, const u16_t * ocstrlen)
+{
+  <bb 2> :
+  if (ocstr != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  syscontact = ocstr;
+  syscontact_len = ocstrlen;
+  syscontact_wr = 0B;
+  syscontact_wr_len = 0B;
+  syscontact_bufsize = 0;
+
+  <bb 4> :
+  return;
+
+}
+
+
+snmp_mib2_set_syscontact (u8_t * ocstr, u16_t * ocstrlen, u16_t bufsize)
+{
+  <bb 2> :
+  if (ocstr != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  syscontact = ocstr;
+  syscontact_wr = ocstr;
+  syscontact_len = ocstrlen;
+  syscontact_wr_len = ocstrlen;
+  syscontact_bufsize = bufsize;
+
+  <bb 4> :
+  return;
+
+}
+
+
+snmp_mib2_set_sysdescr (const u8_t * str, const u16_t * len)
+{
+  <bb 2> :
+  if (str != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  sysdescr = str;
+  sysdescr_len = len;
+
+  <bb 4> :
+  return;
+
+}
+
+

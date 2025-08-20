@@ -1,0 +1,5173 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: Clock_Ip_SetExternalSignalFrequency/153 Clock_Ip_GetFreq/152 Clock_Ip_SetExternalOscillatorFrequency/151 Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall/133
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Clock_Ip_SetExternalSignalFrequency/153 (Clock_Ip_SetExternalSignalFrequency) @06fb7b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Clock_Ip_axExtSignalFreqEntries/6 (read) Clock_Ip_axExtSignalFreqEntries/6 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_GetFreq/152 (Clock_Ip_GetFreq) @06fb7620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Clock_Ip_apfFreqTable/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_SetExternalOscillatorFrequency/151 (Clock_Ip_SetExternalOscillatorFrequency) @06fb70e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Clock_Ip_u32fxosc/7 (write) Clock_Ip_u32sxosc/8 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_PLL_VCO/150 (Clock_Ip_PLL_VCO) @06fb7d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_PLL_CLK_Frequency/18 
+  Calls: Clock_Ip_Get_FXOSC_CLK_Frequency/16 
+Clock_Ip_Get_WKPU0_CLK_Frequency/149 (Clock_Ip_Get_WKPU0_CLK_Frequency) @06fb7a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_TSENSE0_CLK_Frequency/148 (Clock_Ip_Get_TSENSE0_CLK_Frequency) @06fb77e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_TRGMUX0_CLK_Frequency/147 (Clock_Ip_Get_TRGMUX0_CLK_Frequency) @06fb7540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_TRACE_CLK_Frequency/146 (Clock_Ip_Get_TRACE_CLK_Frequency) @06fb72a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_TEMPSENSE_CLK_Frequency/145 (Clock_Ip_Get_TEMPSENSE_CLK_Frequency) @06fb7000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_SWT0_CLK_Frequency/144 (Clock_Ip_Get_SWT0_CLK_Frequency) @06f30b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_SIRC_CLK_Frequency/14 
+Clock_Ip_Get_STM1_CLK_Frequency/143 (Clock_Ip_Get_STM1_CLK_Frequency) @06f30620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_STMB_CLK_Frequency/142 
+Clock_Ip_Get_STMB_CLK_Frequency/142 (Clock_Ip_Get_STMB_CLK_Frequency) @06f300e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_STM1_CLK_Frequency/143 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_STM0_CLK_Frequency/141 (Clock_Ip_Get_STM0_CLK_Frequency) @06f30d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_STMA_CLK_Frequency/140 
+Clock_Ip_Get_STMA_CLK_Frequency/140 (Clock_Ip_Get_STMA_CLK_Frequency) @06f30a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_STM0_CLK_Frequency/141 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_STCU0_CLK_Frequency/139 (Clock_Ip_Get_STCU0_CLK_Frequency) @06f307e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_SIUL2_CLK_Frequency/138 (Clock_Ip_Get_SIUL2_CLK_Frequency) @06f30540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_SEMA42_CLK_Frequency/137 (Clock_Ip_Get_SEMA42_CLK_Frequency) @06f302a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_SAI1_CLK_Frequency/136 (Clock_Ip_Get_SAI1_CLK_Frequency) @06f30000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_SAI0_CLK_Frequency/135 (Clock_Ip_Get_SAI0_CLK_Frequency) @06f2cb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_RTC0_CLK_Frequency/134 (Clock_Ip_Get_RTC0_CLK_Frequency) @06f2c620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_RTC_CLK_Frequency/132 
+Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall/133 (Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall) @06f2c0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Clock_Ip_apfFreqTableRTC_CLK/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_RTC_CLK_Frequency/132 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_RTC_CLK_Frequency/132 (Clock_Ip_Get_RTC_CLK_Frequency) @06f2cd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_RTC0_CLK_Frequency/134 
+  Calls: Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall/133 
+Clock_Ip_Get_QSPI_SFCK_CLK_Frequency/131 (Clock_Ip_Get_QSPI_SFCK_CLK_Frequency) @06f2ca80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_QSPI0_CLK_Frequency/128 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_QSPI0_TX_MEM_CLK_Frequency/130 (Clock_Ip_Get_QSPI0_TX_MEM_CLK_Frequency) @06f2c7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_QSPI_MEM_CLK_Frequency/31 
+Clock_Ip_Get_QSPI0_RAM_CLK_Frequency/129 (Clock_Ip_Get_QSPI0_RAM_CLK_Frequency) @06f2c540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_QSPI_MEM_CLK_Frequency/31 
+Clock_Ip_Get_QSPI0_CLK_Frequency/128 (Clock_Ip_Get_QSPI0_CLK_Frequency) @06f2c2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_QSPI_SFCK_CLK_Frequency/131 
+Clock_Ip_Get_PIT2_CLK_Frequency/127 (Clock_Ip_Get_PIT2_CLK_Frequency) @06f2c000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_PIT1_CLK_Frequency/126 (Clock_Ip_Get_PIT1_CLK_Frequency) @06f24b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_PIT0_CLK_Frequency/125 (Clock_Ip_Get_PIT0_CLK_Frequency) @06f24620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_MSCM_CLK_Frequency/124 (Clock_Ip_Get_MSCM_CLK_Frequency) @06f240e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_LPUART15_CLK_Frequency/123 (Clock_Ip_Get_LPUART15_CLK_Frequency) @06f24d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART14_CLK_Frequency/122 (Clock_Ip_Get_LPUART14_CLK_Frequency) @06f24a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART13_CLK_Frequency/121 (Clock_Ip_Get_LPUART13_CLK_Frequency) @06f247e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART12_CLK_Frequency/120 (Clock_Ip_Get_LPUART12_CLK_Frequency) @06f24540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART11_CLK_Frequency/119 (Clock_Ip_Get_LPUART11_CLK_Frequency) @06f242a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART10_CLK_Frequency/118 (Clock_Ip_Get_LPUART10_CLK_Frequency) @06f24000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART9_CLK_Frequency/117 (Clock_Ip_Get_LPUART9_CLK_Frequency) @06f1fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART8_CLK_Frequency/116 (Clock_Ip_Get_LPUART8_CLK_Frequency) @06f1f620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_LPUART7_CLK_Frequency/115 (Clock_Ip_Get_LPUART7_CLK_Frequency) @06f1f0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART6_CLK_Frequency/114 (Clock_Ip_Get_LPUART6_CLK_Frequency) @06f1fd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART5_CLK_Frequency/113 (Clock_Ip_Get_LPUART5_CLK_Frequency) @06f1fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART4_CLK_Frequency/112 (Clock_Ip_Get_LPUART4_CLK_Frequency) @06f1f7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART3_CLK_Frequency/111 (Clock_Ip_Get_LPUART3_CLK_Frequency) @06f1f540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART2_CLK_Frequency/110 (Clock_Ip_Get_LPUART2_CLK_Frequency) @06f1f2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART1_CLK_Frequency/109 (Clock_Ip_Get_LPUART1_CLK_Frequency) @06f1f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPUART0_CLK_Frequency/108 (Clock_Ip_Get_LPUART0_CLK_Frequency) @06f17b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_LPSPI5_CLK_Frequency/107 (Clock_Ip_Get_LPSPI5_CLK_Frequency) @06f17620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPSPI4_CLK_Frequency/106 (Clock_Ip_Get_LPSPI4_CLK_Frequency) @06f170e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPSPI3_CLK_Frequency/105 (Clock_Ip_Get_LPSPI3_CLK_Frequency) @06f17d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPSPI2_CLK_Frequency/104 (Clock_Ip_Get_LPSPI2_CLK_Frequency) @06f17a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPSPI1_CLK_Frequency/103 (Clock_Ip_Get_LPSPI1_CLK_Frequency) @06f177e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPSPI0_CLK_Frequency/102 (Clock_Ip_Get_LPSPI0_CLK_Frequency) @06f17540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_LPI2C1_CLK_Frequency/101 (Clock_Ip_Get_LPI2C1_CLK_Frequency) @06f172a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LPI2C0_CLK_Frequency/100 (Clock_Ip_Get_LPI2C0_CLK_Frequency) @06f17000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_LCU1_CLK_Frequency/99 (Clock_Ip_Get_LCU1_CLK_Frequency) @06f10b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_LCU0_CLK_Frequency/98 (Clock_Ip_Get_LCU0_CLK_Frequency) @06f10620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_INTM_CLK_Frequency/97 (Clock_Ip_Get_INTM_CLK_Frequency) @06f100e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_FLEXIO0_CLK_Frequency/96 (Clock_Ip_Get_FLEXIO0_CLK_Frequency) @06f10d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_FLEXCAN5_CLK_Frequency/95 (Clock_Ip_Get_FLEXCAN5_CLK_Frequency) @06f10a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_FLEXCANB_CLK_Frequency/92 
+Clock_Ip_Get_FLEXCAN4_CLK_Frequency/94 (Clock_Ip_Get_FLEXCAN4_CLK_Frequency) @06f107e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_FLEXCANB_CLK_Frequency/92 
+Clock_Ip_Get_FLEXCAN3_CLK_Frequency/93 (Clock_Ip_Get_FLEXCAN3_CLK_Frequency) @06f10540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_FLEXCANB_CLK_Frequency/92 
+Clock_Ip_Get_FLEXCANB_CLK_Frequency/92 (Clock_Ip_Get_FLEXCANB_CLK_Frequency) @06f102a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_FLEXCAN5_CLK_Frequency/95 Clock_Ip_Get_FLEXCAN4_CLK_Frequency/94 Clock_Ip_Get_FLEXCAN3_CLK_Frequency/93 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_FLEXCAN2_CLK_Frequency/91 (Clock_Ip_Get_FLEXCAN2_CLK_Frequency) @06f10000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_FLEXCANA_CLK_Frequency/88 
+Clock_Ip_Get_FLEXCAN1_CLK_Frequency/90 (Clock_Ip_Get_FLEXCAN1_CLK_Frequency) @06f0ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_FLEXCANA_CLK_Frequency/88 
+Clock_Ip_Get_FLEXCAN0_CLK_Frequency/89 (Clock_Ip_Get_FLEXCAN0_CLK_Frequency) @06f0a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_FLEXCANA_CLK_Frequency/88 
+Clock_Ip_Get_FLEXCANA_CLK_Frequency/88 (Clock_Ip_Get_FLEXCANA_CLK_Frequency) @06f0a0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_FLEXCAN2_CLK_Frequency/91 Clock_Ip_Get_FLEXCAN1_CLK_Frequency/90 Clock_Ip_Get_FLEXCAN0_CLK_Frequency/89 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_ERM0_CLK_Frequency/87 (Clock_Ip_Get_ERM0_CLK_Frequency) @06f0ad20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_EMIOS2_CLK_Frequency/86 (Clock_Ip_Get_EMIOS2_CLK_Frequency) @06f0aa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EMIOS1_CLK_Frequency/85 (Clock_Ip_Get_EMIOS1_CLK_Frequency) @06f0a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EMIOS0_CLK_Frequency/84 (Clock_Ip_Get_EMIOS0_CLK_Frequency) @06f0a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EMAC0_TX_CLK_Frequency/83 (Clock_Ip_Get_EMAC0_TX_CLK_Frequency) @06f0a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_EMAC_TX_CLK_Frequency/82 
+Clock_Ip_Get_EMAC_TX_CLK_Frequency/82 (Clock_Ip_Get_EMAC_TX_CLK_Frequency) @06f0a000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_EMAC0_TX_CLK_Frequency/83 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_EMAC0_TS_CLK_Frequency/81 (Clock_Ip_Get_EMAC0_TS_CLK_Frequency) @06efeb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_EMAC_TS_CLK_Frequency/80 
+Clock_Ip_Get_EMAC_TS_CLK_Frequency/80 (Clock_Ip_Get_EMAC_TS_CLK_Frequency) @06efe620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_EMAC0_TS_CLK_Frequency/81 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_EMAC0_RX_CLK_Frequency/79 (Clock_Ip_Get_EMAC0_RX_CLK_Frequency) @06efe0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_EMAC_RX_CLK_Frequency/78 
+Clock_Ip_Get_EMAC_RX_CLK_Frequency/78 (Clock_Ip_Get_EMAC_RX_CLK_Frequency) @06efed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_EMAC0_RX_CLK_Frequency/79 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_EIM_CLK_Frequency/77 (Clock_Ip_Get_EIM_CLK_Frequency) @06efea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_EDMA0_TCD31_CLK_Frequency/76 (Clock_Ip_Get_EDMA0_TCD31_CLK_Frequency) @06efe7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD30_CLK_Frequency/75 (Clock_Ip_Get_EDMA0_TCD30_CLK_Frequency) @06efe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD29_CLK_Frequency/74 (Clock_Ip_Get_EDMA0_TCD29_CLK_Frequency) @06efe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD28_CLK_Frequency/73 (Clock_Ip_Get_EDMA0_TCD28_CLK_Frequency) @06efe000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD27_CLK_Frequency/72 (Clock_Ip_Get_EDMA0_TCD27_CLK_Frequency) @06ef9b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD26_CLK_Frequency/71 (Clock_Ip_Get_EDMA0_TCD26_CLK_Frequency) @06ef9620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD25_CLK_Frequency/70 (Clock_Ip_Get_EDMA0_TCD25_CLK_Frequency) @06ef90e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD24_CLK_Frequency/69 (Clock_Ip_Get_EDMA0_TCD24_CLK_Frequency) @06ef9d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD23_CLK_Frequency/68 (Clock_Ip_Get_EDMA0_TCD23_CLK_Frequency) @06ef9a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD22_CLK_Frequency/67 (Clock_Ip_Get_EDMA0_TCD22_CLK_Frequency) @06ef97e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD21_CLK_Frequency/66 (Clock_Ip_Get_EDMA0_TCD21_CLK_Frequency) @06ef9540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD20_CLK_Frequency/65 (Clock_Ip_Get_EDMA0_TCD20_CLK_Frequency) @06ef92a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD19_CLK_Frequency/64 (Clock_Ip_Get_EDMA0_TCD19_CLK_Frequency) @06ef9000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD18_CLK_Frequency/63 (Clock_Ip_Get_EDMA0_TCD18_CLK_Frequency) @06ef3b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD17_CLK_Frequency/62 (Clock_Ip_Get_EDMA0_TCD17_CLK_Frequency) @06ef3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD16_CLK_Frequency/61 (Clock_Ip_Get_EDMA0_TCD16_CLK_Frequency) @06ef30e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD15_CLK_Frequency/60 (Clock_Ip_Get_EDMA0_TCD15_CLK_Frequency) @06ef3d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD14_CLK_Frequency/59 (Clock_Ip_Get_EDMA0_TCD14_CLK_Frequency) @06ef3a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD13_CLK_Frequency/58 (Clock_Ip_Get_EDMA0_TCD13_CLK_Frequency) @06ef37e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD12_CLK_Frequency/57 (Clock_Ip_Get_EDMA0_TCD12_CLK_Frequency) @06ef3540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD11_CLK_Frequency/56 (Clock_Ip_Get_EDMA0_TCD11_CLK_Frequency) @06ef32a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD10_CLK_Frequency/55 (Clock_Ip_Get_EDMA0_TCD10_CLK_Frequency) @06ef3000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD9_CLK_Frequency/54 (Clock_Ip_Get_EDMA0_TCD9_CLK_Frequency) @06fabb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD8_CLK_Frequency/53 (Clock_Ip_Get_EDMA0_TCD8_CLK_Frequency) @06fab620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD7_CLK_Frequency/52 (Clock_Ip_Get_EDMA0_TCD7_CLK_Frequency) @06fab0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD6_CLK_Frequency/51 (Clock_Ip_Get_EDMA0_TCD6_CLK_Frequency) @06fabd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD5_CLK_Frequency/50 (Clock_Ip_Get_EDMA0_TCD5_CLK_Frequency) @06faba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD4_CLK_Frequency/49 (Clock_Ip_Get_EDMA0_TCD4_CLK_Frequency) @06fab7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD3_CLK_Frequency/48 (Clock_Ip_Get_EDMA0_TCD3_CLK_Frequency) @06fab540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD2_CLK_Frequency/47 (Clock_Ip_Get_EDMA0_TCD2_CLK_Frequency) @06fab2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD1_CLK_Frequency/46 (Clock_Ip_Get_EDMA0_TCD1_CLK_Frequency) @06fab000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_TCD0_CLK_Frequency/45 (Clock_Ip_Get_EDMA0_TCD0_CLK_Frequency) @06fa4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_EDMA0_CLK_Frequency/44 (Clock_Ip_Get_EDMA0_CLK_Frequency) @06fa4620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_DMAMUX1_CLK_Frequency/43 (Clock_Ip_Get_DMAMUX1_CLK_Frequency) @06fa40e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_DMAMUX0_CLK_Frequency/42 (Clock_Ip_Get_DMAMUX0_CLK_Frequency) @06fa4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_CRC0_CLK_Frequency/41 (Clock_Ip_Get_CRC0_CLK_Frequency) @06fa4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 
+Clock_Ip_Get_CMP2_CLK_Frequency/40 (Clock_Ip_Get_CMP2_CLK_Frequency) @06fa47e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_CMP1_CLK_Frequency/39 (Clock_Ip_Get_CMP1_CLK_Frequency) @06fa4540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_CMP0_CLK_Frequency/38 (Clock_Ip_Get_CMP0_CLK_Frequency) @06fa42a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 
+Clock_Ip_Get_CLKOUT_STANDBY_CLK_Frequency/37 (Clock_Ip_Get_CLKOUT_STANDBY_CLK_Frequency) @06fa4000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_BCTU0_CLK_Frequency/36 (Clock_Ip_Get_BCTU0_CLK_Frequency) @06f9bb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_ADC2_CLK_Frequency/35 (Clock_Ip_Get_ADC2_CLK_Frequency) @06f9b620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_ADC1_CLK_Frequency/34 (Clock_Ip_Get_ADC1_CLK_Frequency) @06f9b0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_ADC0_CLK_Frequency/33 (Clock_Ip_Get_ADC0_CLK_Frequency) @06f9bd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_CORE_CLK_Frequency/25 
+Clock_Ip_Get_CLKOUT_RUN_CLK_Frequency/32 (Clock_Ip_Get_CLKOUT_RUN_CLK_Frequency) @06f9ba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfFreqTableClkSrc/0 (read) Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Clock_Ip_Get_QSPI_MEM_CLK_Frequency/31 (Clock_Ip_Get_QSPI_MEM_CLK_Frequency) @06f9b7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_QSPI0_TX_MEM_CLK_Frequency/130 Clock_Ip_Get_QSPI0_RAM_CLK_Frequency/129 
+  Calls: Clock_Ip_Get_SCS_CLK_Frequency/24 
+Clock_Ip_Get_LBIST_CLK_Frequency/30 (Clock_Ip_Get_LBIST_CLK_Frequency) @06f9b540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_SCS_CLK_Frequency/24 
+Clock_Ip_Get_DCM_CLK_Frequency/29 (Clock_Ip_Get_DCM_CLK_Frequency) @06f9b2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_SCS_CLK_Frequency/24 
+Clock_Ip_Get_HSE_CLK_Frequency/28 (Clock_Ip_Get_HSE_CLK_Frequency) @06f9b000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_SCS_CLK_Frequency/24 
+Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 (Clock_Ip_Get_AIPS_SLOW_CLK_Frequency) @06f94b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_WKPU0_CLK_Frequency/149 Clock_Ip_Get_TSENSE0_CLK_Frequency/148 Clock_Ip_Get_TRGMUX0_CLK_Frequency/147 Clock_Ip_Get_STCU0_CLK_Frequency/139 Clock_Ip_Get_SIUL2_CLK_Frequency/138 Clock_Ip_Get_SAI1_CLK_Frequency/136 Clock_Ip_Get_SAI0_CLK_Frequency/135 Clock_Ip_Get_PIT2_CLK_Frequency/127 Clock_Ip_Get_PIT1_CLK_Frequency/126 Clock_Ip_Get_PIT0_CLK_Frequency/125 Clock_Ip_Get_LPUART15_CLK_Frequency/123 Clock_Ip_Get_LPUART14_CLK_Frequency/122 Clock_Ip_Get_LPUART13_CLK_Frequency/121 Clock_Ip_Get_LPUART12_CLK_Frequency/120 Clock_Ip_Get_LPUART11_CLK_Frequency/119 Clock_Ip_Get_LPUART10_CLK_Frequency/118 Clock_Ip_Get_LPUART9_CLK_Frequency/117 Clock_Ip_Get_LPUART7_CLK_Frequency/115 Clock_Ip_Get_LPUART6_CLK_Frequency/114 Clock_Ip_Get_LPUART5_CLK_Frequency/113 Clock_Ip_Get_LPUART4_CLK_Frequency/112 Clock_Ip_Get_LPUART3_CLK_Frequency/111 Clock_Ip_Get_LPUART2_CLK_Frequency/110 Clock_Ip_Get_LPUART1_CLK_Frequency/109 Clock_Ip_Get_LPSPI5_CLK_Frequency/107 Clock_Ip_Get_LPSPI4_CLK_Frequency/106 Clock_Ip_Get_LPSPI3_CLK_Frequency/105 Clock_Ip_Get_LPSPI2_CLK_Frequency/104 Clock_Ip_Get_LPSPI1_CLK_Frequency/103 Clock_Ip_Get_LPI2C1_CLK_Frequency/101 Clock_Ip_Get_LPI2C0_CLK_Frequency/100 Clock_Ip_Get_ERM0_CLK_Frequency/87 Clock_Ip_Get_CMP2_CLK_Frequency/40 Clock_Ip_Get_CMP1_CLK_Frequency/39 Clock_Ip_Get_CMP0_CLK_Frequency/38 
+  Calls: Clock_Ip_Get_SCS_CLK_Frequency/24 
+Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 (Clock_Ip_Get_AIPS_PLAT_CLK_Frequency) @06f94620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_SEMA42_CLK_Frequency/137 Clock_Ip_Get_MSCM_CLK_Frequency/124 Clock_Ip_Get_LPUART8_CLK_Frequency/116 Clock_Ip_Get_LPUART0_CLK_Frequency/108 Clock_Ip_Get_LPSPI0_CLK_Frequency/102 Clock_Ip_Get_INTM_CLK_Frequency/97 Clock_Ip_Get_FLEXIO0_CLK_Frequency/96 Clock_Ip_Get_EIM_CLK_Frequency/77 Clock_Ip_Get_CRC0_CLK_Frequency/41 
+  Calls: Clock_Ip_Get_SCS_CLK_Frequency/24 
+Clock_Ip_Get_CORE_CLK_Frequency/25 (Clock_Ip_Get_CORE_CLK_Frequency) @06f940e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_TEMPSENSE_CLK_Frequency/145 Clock_Ip_Get_LCU1_CLK_Frequency/99 Clock_Ip_Get_LCU0_CLK_Frequency/98 Clock_Ip_Get_EMIOS2_CLK_Frequency/86 Clock_Ip_Get_EMIOS1_CLK_Frequency/85 Clock_Ip_Get_EMIOS0_CLK_Frequency/84 Clock_Ip_Get_EDMA0_TCD31_CLK_Frequency/76 Clock_Ip_Get_EDMA0_TCD30_CLK_Frequency/75 Clock_Ip_Get_EDMA0_TCD29_CLK_Frequency/74 Clock_Ip_Get_EDMA0_TCD28_CLK_Frequency/73 Clock_Ip_Get_EDMA0_TCD27_CLK_Frequency/72 Clock_Ip_Get_EDMA0_TCD26_CLK_Frequency/71 Clock_Ip_Get_EDMA0_TCD25_CLK_Frequency/70 Clock_Ip_Get_EDMA0_TCD24_CLK_Frequency/69 Clock_Ip_Get_EDMA0_TCD23_CLK_Frequency/68 Clock_Ip_Get_EDMA0_TCD22_CLK_Frequency/67 Clock_Ip_Get_EDMA0_TCD21_CLK_Frequency/66 Clock_Ip_Get_EDMA0_TCD20_CLK_Frequency/65 Clock_Ip_Get_EDMA0_TCD19_CLK_Frequency/64 Clock_Ip_Get_EDMA0_TCD18_CLK_Frequency/63 Clock_Ip_Get_EDMA0_TCD17_CLK_Frequency/62 Clock_Ip_Get_EDMA0_TCD16_CLK_Frequency/61 Clock_Ip_Get_EDMA0_TCD15_CLK_Frequency/60 Clock_Ip_Get_EDMA0_TCD14_CLK_Frequency/59 Clock_Ip_Get_EDMA0_TCD13_CLK_Frequency/58 Clock_Ip_Get_EDMA0_TCD12_CLK_Frequency/57 Clock_Ip_Get_EDMA0_TCD11_CLK_Frequency/56 Clock_Ip_Get_EDMA0_TCD10_CLK_Frequency/55 Clock_Ip_Get_EDMA0_TCD9_CLK_Frequency/54 Clock_Ip_Get_EDMA0_TCD8_CLK_Frequency/53 Clock_Ip_Get_EDMA0_TCD7_CLK_Frequency/52 Clock_Ip_Get_EDMA0_TCD6_CLK_Frequency/51 Clock_Ip_Get_EDMA0_TCD5_CLK_Frequency/50 Clock_Ip_Get_EDMA0_TCD4_CLK_Frequency/49 Clock_Ip_Get_EDMA0_TCD3_CLK_Frequency/48 Clock_Ip_Get_EDMA0_TCD2_CLK_Frequency/47 Clock_Ip_Get_EDMA0_TCD1_CLK_Frequency/46 Clock_Ip_Get_EDMA0_TCD0_CLK_Frequency/45 Clock_Ip_Get_EDMA0_CLK_Frequency/44 Clock_Ip_Get_DMAMUX1_CLK_Frequency/43 Clock_Ip_Get_DMAMUX0_CLK_Frequency/42 Clock_Ip_Get_BCTU0_CLK_Frequency/36 Clock_Ip_Get_ADC2_CLK_Frequency/35 Clock_Ip_Get_ADC1_CLK_Frequency/34 Clock_Ip_Get_ADC0_CLK_Frequency/33 
+  Calls: Clock_Ip_Get_SCS_CLK_Frequency/24 
+Clock_Ip_Get_SCS_CLK_Frequency/24 (Clock_Ip_Get_SCS_CLK_Frequency) @06f94d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_QSPI_MEM_CLK_Frequency/31 Clock_Ip_Get_LBIST_CLK_Frequency/30 Clock_Ip_Get_DCM_CLK_Frequency/29 Clock_Ip_Get_HSE_CLK_Frequency/28 Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 Clock_Ip_Get_CORE_CLK_Frequency/25 
+  Calls: Clock_Ip_Get_PLL_PHI0_Frequency/20 Clock_Ip_Get_FIRC_CLK_Frequency/12 
+Clock_Ip_Get_emac_mii_rmii_tx_Frequency/23 (Clock_Ip_Get_emac_mii_rmii_tx_Frequency) @06f94a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_axExtSignalFreqEntries/6 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_Get_emac_mii_rx_Frequency/22 (Clock_Ip_Get_emac_mii_rx_Frequency) @06f947e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_axExtSignalFreqEntries/6 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_Get_PLL_PHI1_Frequency/21 (Clock_Ip_Get_PLL_PHI1_Frequency) @06f94540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency/19 
+Clock_Ip_Get_PLL_PHI0_Frequency/20 (Clock_Ip_Get_PLL_PHI0_Frequency) @06f942a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_au32EnableDivider/3 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_SCS_CLK_Frequency/24 
+  Calls: Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency/19 
+Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency/19 (Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency) @06f94000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_PLL_PHI1_Frequency/21 Clock_Ip_Get_PLL_PHI0_Frequency/20 
+  Calls: Clock_Ip_Get_PLL_CLK_Frequency/18 
+Clock_Ip_Get_PLL_CLK_Frequency/18 (Clock_Ip_Get_PLL_CLK_Frequency) @06eeeb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32PLL_CLKChecksum/10 (read) Clock_Ip_u32PLL_CLKChecksum/10 (write) Clock_Ip_u32PLL_CLKFreq/9 (write) Clock_Ip_u32PLL_CLKFreq/9 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency/19 
+  Calls: Clock_Ip_PLL_VCO/150 
+Clock_Ip_Get_SXOSC_CLK_Frequency/17 (Clock_Ip_Get_SXOSC_CLK_Frequency) @06eee620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32sxosc/8 (read) Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableRTC_CLK/1 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_Get_FXOSC_CLK_Frequency/16 (Clock_Ip_Get_FXOSC_CLK_Frequency) @06eee0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32fxosc/7 (read) Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableRTC_CLK/1 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_PLL_VCO/150 
+  Calls: 
+Clock_Ip_Get_SIRC_STANDBY_CLK_Frequency/15 (Clock_Ip_Get_SIRC_STANDBY_CLK_Frequency) @06eeed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_SIRC_CLK_Frequency/14 
+Clock_Ip_Get_SIRC_CLK_Frequency/14 (Clock_Ip_Get_SIRC_CLK_Frequency) @06eeea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableRTC_CLK/1 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_SWT0_CLK_Frequency/144 Clock_Ip_Get_SIRC_STANDBY_CLK_Frequency/15 
+  Calls: 
+Clock_Ip_Get_FIRC_STANDBY_CLK_Frequency/13 (Clock_Ip_Get_FIRC_STANDBY_CLK_Frequency) @06eee7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_u32EnableGate/4 (read) 
+  Referring: Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_Get_FIRC_CLK_Frequency/12 
+Clock_Ip_Get_FIRC_CLK_Frequency/12 (Clock_Ip_Get_FIRC_CLK_Frequency) @06eee540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: Clock_Ip_apfTableDividerValue/5 (read) 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableRTC_CLK/1 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_Get_SCS_CLK_Frequency/24 Clock_Ip_Get_FIRC_STANDBY_CLK_Frequency/13 
+  Calls: 
+Clock_Ip_Get_Zero_Frequency/11 (Clock_Ip_Get_Zero_Frequency) @06eee2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTableClkSrc/0 (addr) Clock_Ip_apfFreqTable/2 (addr) Clock_Ip_apfFreqTable/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_u32PLL_CLKChecksum/10 (Clock_Ip_u32PLL_CLKChecksum) @06eed090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Clock_Ip_Get_PLL_CLK_Frequency/18 (read) Clock_Ip_Get_PLL_CLK_Frequency/18 (write) 
+  Availability: available
+  Varpool flags: initialized
+Clock_Ip_u32PLL_CLKFreq/9 (Clock_Ip_u32PLL_CLKFreq) @06eed000
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Clock_Ip_Get_PLL_CLK_Frequency/18 (write) Clock_Ip_Get_PLL_CLK_Frequency/18 (read) 
+  Availability: available
+  Varpool flags: initialized
+Clock_Ip_u32sxosc/8 (Clock_Ip_u32sxosc) @06ceda20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Clock_Ip_Get_SXOSC_CLK_Frequency/17 (read) Clock_Ip_SetExternalOscillatorFrequency/151 (write) 
+  Availability: available
+  Varpool flags: initialized
+Clock_Ip_u32fxosc/7 (Clock_Ip_u32fxosc) @06cedf30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Clock_Ip_Get_FXOSC_CLK_Frequency/16 (read) Clock_Ip_SetExternalOscillatorFrequency/151 (write) 
+  Availability: available
+  Varpool flags: initialized
+Clock_Ip_axExtSignalFreqEntries/6 (Clock_Ip_axExtSignalFreqEntries) @06cedea0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Clock_Ip_Get_emac_mii_rx_Frequency/22 (read) Clock_Ip_Get_emac_mii_rmii_tx_Frequency/23 (read) Clock_Ip_SetExternalSignalFrequency/153 (read) Clock_Ip_SetExternalSignalFrequency/153 (write) 
+  Availability: available
+  Varpool flags: initialized
+Clock_Ip_apfTableDividerValue/5 (Clock_Ip_apfTableDividerValue) @06ceddc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Clock_Ip_Get_FIRC_CLK_Frequency/12 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_u32EnableGate/4 (Clock_Ip_u32EnableGate) @06cedd38
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Clock_Ip_Get_FIRC_STANDBY_CLK_Frequency/13 (read) Clock_Ip_Get_SIRC_STANDBY_CLK_Frequency/15 (read) Clock_Ip_Get_FXOSC_CLK_Frequency/16 (read) Clock_Ip_Get_SXOSC_CLK_Frequency/17 (read) Clock_Ip_Get_ADC0_CLK_Frequency/33 (read) Clock_Ip_Get_ADC1_CLK_Frequency/34 (read) Clock_Ip_Get_ADC2_CLK_Frequency/35 (read) Clock_Ip_Get_BCTU0_CLK_Frequency/36 (read) Clock_Ip_Get_CMP0_CLK_Frequency/38 (read) Clock_Ip_Get_CMP1_CLK_Frequency/39 (read) Clock_Ip_Get_CMP2_CLK_Frequency/40 (read) Clock_Ip_Get_CRC0_CLK_Frequency/41 (read) Clock_Ip_Get_DMAMUX0_CLK_Frequency/42 (read) Clock_Ip_Get_DMAMUX1_CLK_Frequency/43 (read) Clock_Ip_Get_EDMA0_CLK_Frequency/44 (read) Clock_Ip_Get_EDMA0_TCD0_CLK_Frequency/45 (read) Clock_Ip_Get_EDMA0_TCD1_CLK_Frequency/46 (read) Clock_Ip_Get_EDMA0_TCD2_CLK_Frequency/47 (read) Clock_Ip_Get_EDMA0_TCD3_CLK_Frequency/48 (read) Clock_Ip_Get_EDMA0_TCD4_CLK_Frequency/49 (read) Clock_Ip_Get_EDMA0_TCD5_CLK_Frequency/50 (read) Clock_Ip_Get_EDMA0_TCD6_CLK_Frequency/51 (read) Clock_Ip_Get_EDMA0_TCD7_CLK_Frequency/52 (read) Clock_Ip_Get_EDMA0_TCD8_CLK_Frequency/53 (read) Clock_Ip_Get_EDMA0_TCD9_CLK_Frequency/54 (read) Clock_Ip_Get_EDMA0_TCD10_CLK_Frequency/55 (read) Clock_Ip_Get_EDMA0_TCD11_CLK_Frequency/56 (read) Clock_Ip_Get_EDMA0_TCD12_CLK_Frequency/57 (read) Clock_Ip_Get_EDMA0_TCD13_CLK_Frequency/58 (read) Clock_Ip_Get_EDMA0_TCD14_CLK_Frequency/59 (read) Clock_Ip_Get_EDMA0_TCD15_CLK_Frequency/60 (read) Clock_Ip_Get_EDMA0_TCD16_CLK_Frequency/61 (read) Clock_Ip_Get_EDMA0_TCD17_CLK_Frequency/62 (read) Clock_Ip_Get_EDMA0_TCD18_CLK_Frequency/63 (read) Clock_Ip_Get_EDMA0_TCD19_CLK_Frequency/64 (read) Clock_Ip_Get_EDMA0_TCD20_CLK_Frequency/65 (read) Clock_Ip_Get_EDMA0_TCD21_CLK_Frequency/66 (read) Clock_Ip_Get_EDMA0_TCD22_CLK_Frequency/67 (read) Clock_Ip_Get_EDMA0_TCD23_CLK_Frequency/68 (read) Clock_Ip_Get_EDMA0_TCD24_CLK_Frequency/69 (read) Clock_Ip_Get_EDMA0_TCD25_CLK_Frequency/70 (read) Clock_Ip_Get_EDMA0_TCD26_CLK_Frequency/71 (read) Clock_Ip_Get_EDMA0_TCD27_CLK_Frequency/72 (read) Clock_Ip_Get_EDMA0_TCD28_CLK_Frequency/73 (read) Clock_Ip_Get_EDMA0_TCD29_CLK_Frequency/74 (read) Clock_Ip_Get_EDMA0_TCD30_CLK_Frequency/75 (read) Clock_Ip_Get_EDMA0_TCD31_CLK_Frequency/76 (read) Clock_Ip_Get_EIM_CLK_Frequency/77 (read) Clock_Ip_Get_EMAC0_RX_CLK_Frequency/79 (read) Clock_Ip_Get_EMAC0_TS_CLK_Frequency/81 (read) Clock_Ip_Get_EMAC0_TX_CLK_Frequency/83 (read) Clock_Ip_Get_EMIOS0_CLK_Frequency/84 (read) Clock_Ip_Get_EMIOS1_CLK_Frequency/85 (read) Clock_Ip_Get_EMIOS2_CLK_Frequency/86 (read) Clock_Ip_Get_ERM0_CLK_Frequency/87 (read) Clock_Ip_Get_FLEXCAN0_CLK_Frequency/89 (read) Clock_Ip_Get_FLEXCAN1_CLK_Frequency/90 (read) Clock_Ip_Get_FLEXCAN2_CLK_Frequency/91 (read) Clock_Ip_Get_FLEXCAN3_CLK_Frequency/93 (read) Clock_Ip_Get_FLEXCAN4_CLK_Frequency/94 (read) Clock_Ip_Get_FLEXCAN5_CLK_Frequency/95 (read) Clock_Ip_Get_FLEXIO0_CLK_Frequency/96 (read) Clock_Ip_Get_INTM_CLK_Frequency/97 (read) Clock_Ip_Get_LCU0_CLK_Frequency/98 (read) Clock_Ip_Get_LCU1_CLK_Frequency/99 (read) Clock_Ip_Get_LPI2C0_CLK_Frequency/100 (read) Clock_Ip_Get_LPI2C1_CLK_Frequency/101 (read) Clock_Ip_Get_LPSPI0_CLK_Frequency/102 (read) Clock_Ip_Get_LPSPI1_CLK_Frequency/103 (read) Clock_Ip_Get_LPSPI2_CLK_Frequency/104 (read) Clock_Ip_Get_LPSPI3_CLK_Frequency/105 (read) Clock_Ip_Get_LPSPI4_CLK_Frequency/106 (read) Clock_Ip_Get_LPSPI5_CLK_Frequency/107 (read) Clock_Ip_Get_LPUART0_CLK_Frequency/108 (read) Clock_Ip_Get_LPUART1_CLK_Frequency/109 (read) Clock_Ip_Get_LPUART2_CLK_Frequency/110 (read) Clock_Ip_Get_LPUART3_CLK_Frequency/111 (read) Clock_Ip_Get_LPUART4_CLK_Frequency/112 (read) Clock_Ip_Get_LPUART5_CLK_Frequency/113 (read) Clock_Ip_Get_LPUART6_CLK_Frequency/114 (read) Clock_Ip_Get_LPUART7_CLK_Frequency/115 (read) Clock_Ip_Get_LPUART8_CLK_Frequency/116 (read) Clock_Ip_Get_LPUART9_CLK_Frequency/117 (read) Clock_Ip_Get_LPUART10_CLK_Frequency/118 (read) Clock_Ip_Get_LPUART11_CLK_Frequency/119 (read) Clock_Ip_Get_LPUART12_CLK_Frequency/120 (read) Clock_Ip_Get_LPUART13_CLK_Frequency/121 (read) Clock_Ip_Get_LPUART14_CLK_Frequency/122 (read) Clock_Ip_Get_LPUART15_CLK_Frequency/123 (read) Clock_Ip_Get_MSCM_CLK_Frequency/124 (read) Clock_Ip_Get_PIT0_CLK_Frequency/125 (read) Clock_Ip_Get_PIT1_CLK_Frequency/126 (read) Clock_Ip_Get_PIT2_CLK_Frequency/127 (read) Clock_Ip_Get_QSPI0_CLK_Frequency/128 (read) Clock_Ip_Get_QSPI0_RAM_CLK_Frequency/129 (read) Clock_Ip_Get_QSPI0_TX_MEM_CLK_Frequency/130 (read) Clock_Ip_Get_RTC0_CLK_Frequency/134 (read) Clock_Ip_Get_SAI0_CLK_Frequency/135 (read) Clock_Ip_Get_SAI1_CLK_Frequency/136 (read) Clock_Ip_Get_SEMA42_CLK_Frequency/137 (read) Clock_Ip_Get_SIUL2_CLK_Frequency/138 (read) Clock_Ip_Get_STCU0_CLK_Frequency/139 (read) Clock_Ip_Get_STM0_CLK_Frequency/141 (read) Clock_Ip_Get_STM1_CLK_Frequency/143 (read) Clock_Ip_Get_SWT0_CLK_Frequency/144 (read) Clock_Ip_Get_TEMPSENSE_CLK_Frequency/145 (read) Clock_Ip_Get_TRGMUX0_CLK_Frequency/147 (read) Clock_Ip_Get_TSENSE0_CLK_Frequency/148 (read) Clock_Ip_Get_WKPU0_CLK_Frequency/149 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_au32EnableDivider/3 (Clock_Ip_au32EnableDivider) @06cedca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Clock_Ip_Get_PLL_PHI0_Frequency/20 (read) Clock_Ip_Get_PLL_PHI1_Frequency/21 (read) Clock_Ip_Get_CORE_CLK_Frequency/25 (read) Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 (read) Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 (read) Clock_Ip_Get_HSE_CLK_Frequency/28 (read) Clock_Ip_Get_DCM_CLK_Frequency/29 (read) Clock_Ip_Get_LBIST_CLK_Frequency/30 (read) Clock_Ip_Get_QSPI_MEM_CLK_Frequency/31 (read) Clock_Ip_Get_CLKOUT_RUN_CLK_Frequency/32 (read) Clock_Ip_Get_CLKOUT_STANDBY_CLK_Frequency/37 (read) Clock_Ip_Get_EMAC_RX_CLK_Frequency/78 (read) Clock_Ip_Get_EMAC_TS_CLK_Frequency/80 (read) Clock_Ip_Get_EMAC_TX_CLK_Frequency/82 (read) Clock_Ip_Get_FLEXCANA_CLK_Frequency/88 (read) Clock_Ip_Get_FLEXCANB_CLK_Frequency/92 (read) Clock_Ip_Get_QSPI_SFCK_CLK_Frequency/131 (read) Clock_Ip_Get_STMA_CLK_Frequency/140 (read) Clock_Ip_Get_STMB_CLK_Frequency/142 (read) Clock_Ip_Get_TRACE_CLK_Frequency/146 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_apfFreqTable/2 (Clock_Ip_apfFreqTable) @06cedc18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_FIRC_CLK_Frequency/12 (addr) Clock_Ip_Get_FIRC_STANDBY_CLK_Frequency/13 (addr) Clock_Ip_Get_SIRC_CLK_Frequency/14 (addr) Clock_Ip_Get_SIRC_STANDBY_CLK_Frequency/15 (addr) Clock_Ip_Get_FXOSC_CLK_Frequency/16 (addr) Clock_Ip_Get_SXOSC_CLK_Frequency/17 (addr) Clock_Ip_Get_PLL_CLK_Frequency/18 (addr) Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency/19 (addr) Clock_Ip_Get_PLL_PHI0_Frequency/20 (addr) Clock_Ip_Get_PLL_PHI1_Frequency/21 (addr) Clock_Ip_Get_emac_mii_rx_Frequency/22 (addr) Clock_Ip_Get_emac_mii_rmii_tx_Frequency/23 (addr) Clock_Ip_Get_SCS_CLK_Frequency/24 (addr) Clock_Ip_Get_CORE_CLK_Frequency/25 (addr) Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 (addr) Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 (addr) Clock_Ip_Get_HSE_CLK_Frequency/28 (addr) Clock_Ip_Get_DCM_CLK_Frequency/29 (addr) Clock_Ip_Get_LBIST_CLK_Frequency/30 (addr) Clock_Ip_Get_QSPI_MEM_CLK_Frequency/31 (addr) Clock_Ip_Get_CLKOUT_RUN_CLK_Frequency/32 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_ADC0_CLK_Frequency/33 (addr) Clock_Ip_Get_ADC1_CLK_Frequency/34 (addr) Clock_Ip_Get_ADC2_CLK_Frequency/35 (addr) Clock_Ip_Get_BCTU0_CLK_Frequency/36 (addr) Clock_Ip_Get_CLKOUT_STANDBY_CLK_Frequency/37 (addr) Clock_Ip_Get_CMP0_CLK_Frequency/38 (addr) Clock_Ip_Get_CMP1_CLK_Frequency/39 (addr) Clock_Ip_Get_CMP2_CLK_Frequency/40 (addr) Clock_Ip_Get_CRC0_CLK_Frequency/41 (addr) Clock_Ip_Get_DCM_CLK_Frequency/29 (addr) Clock_Ip_Get_DMAMUX0_CLK_Frequency/42 (addr) Clock_Ip_Get_DMAMUX1_CLK_Frequency/43 (addr) Clock_Ip_Get_EDMA0_CLK_Frequency/44 (addr) Clock_Ip_Get_EDMA0_TCD0_CLK_Frequency/45 (addr) Clock_Ip_Get_EDMA0_TCD1_CLK_Frequency/46 (addr) Clock_Ip_Get_EDMA0_TCD2_CLK_Frequency/47 (addr) Clock_Ip_Get_EDMA0_TCD3_CLK_Frequency/48 (addr) Clock_Ip_Get_EDMA0_TCD4_CLK_Frequency/49 (addr) Clock_Ip_Get_EDMA0_TCD5_CLK_Frequency/50 (addr) Clock_Ip_Get_EDMA0_TCD6_CLK_Frequency/51 (addr) Clock_Ip_Get_EDMA0_TCD7_CLK_Frequency/52 (addr) Clock_Ip_Get_EDMA0_TCD8_CLK_Frequency/53 (addr) Clock_Ip_Get_EDMA0_TCD9_CLK_Frequency/54 (addr) Clock_Ip_Get_EDMA0_TCD10_CLK_Frequency/55 (addr) Clock_Ip_Get_EDMA0_TCD11_CLK_Frequency/56 (addr) Clock_Ip_Get_EDMA0_TCD12_CLK_Frequency/57 (addr) Clock_Ip_Get_EDMA0_TCD13_CLK_Frequency/58 (addr) Clock_Ip_Get_EDMA0_TCD14_CLK_Frequency/59 (addr) Clock_Ip_Get_EDMA0_TCD15_CLK_Frequency/60 (addr) Clock_Ip_Get_EDMA0_TCD16_CLK_Frequency/61 (addr) Clock_Ip_Get_EDMA0_TCD17_CLK_Frequency/62 (addr) Clock_Ip_Get_EDMA0_TCD18_CLK_Frequency/63 (addr) Clock_Ip_Get_EDMA0_TCD19_CLK_Frequency/64 (addr) Clock_Ip_Get_EDMA0_TCD20_CLK_Frequency/65 (addr) Clock_Ip_Get_EDMA0_TCD21_CLK_Frequency/66 (addr) Clock_Ip_Get_EDMA0_TCD22_CLK_Frequency/67 (addr) Clock_Ip_Get_EDMA0_TCD23_CLK_Frequency/68 (addr) Clock_Ip_Get_EDMA0_TCD24_CLK_Frequency/69 (addr) Clock_Ip_Get_EDMA0_TCD25_CLK_Frequency/70 (addr) Clock_Ip_Get_EDMA0_TCD26_CLK_Frequency/71 (addr) Clock_Ip_Get_EDMA0_TCD27_CLK_Frequency/72 (addr) Clock_Ip_Get_EDMA0_TCD28_CLK_Frequency/73 (addr) Clock_Ip_Get_EDMA0_TCD29_CLK_Frequency/74 (addr) Clock_Ip_Get_EDMA0_TCD30_CLK_Frequency/75 (addr) Clock_Ip_Get_EDMA0_TCD31_CLK_Frequency/76 (addr) Clock_Ip_Get_EIM_CLK_Frequency/77 (addr) Clock_Ip_Get_EMAC_RX_CLK_Frequency/78 (addr) Clock_Ip_Get_EMAC0_RX_CLK_Frequency/79 (addr) Clock_Ip_Get_EMAC_TS_CLK_Frequency/80 (addr) Clock_Ip_Get_EMAC0_TS_CLK_Frequency/81 (addr) Clock_Ip_Get_EMAC_TX_CLK_Frequency/82 (addr) Clock_Ip_Get_EMAC0_TX_CLK_Frequency/83 (addr) Clock_Ip_Get_EMIOS0_CLK_Frequency/84 (addr) Clock_Ip_Get_EMIOS1_CLK_Frequency/85 (addr) Clock_Ip_Get_EMIOS2_CLK_Frequency/86 (addr) Clock_Ip_Get_ERM0_CLK_Frequency/87 (addr) Clock_Ip_Get_FLEXCANA_CLK_Frequency/88 (addr) Clock_Ip_Get_FLEXCAN0_CLK_Frequency/89 (addr) Clock_Ip_Get_FLEXCAN1_CLK_Frequency/90 (addr) Clock_Ip_Get_FLEXCAN2_CLK_Frequency/91 (addr) Clock_Ip_Get_FLEXCANB_CLK_Frequency/92 (addr) Clock_Ip_Get_FLEXCAN3_CLK_Frequency/93 (addr) Clock_Ip_Get_FLEXCAN4_CLK_Frequency/94 (addr) Clock_Ip_Get_FLEXCAN5_CLK_Frequency/95 (addr) Clock_Ip_Get_FLEXIO0_CLK_Frequency/96 (addr) Clock_Ip_Get_INTM_CLK_Frequency/97 (addr) Clock_Ip_Get_LCU0_CLK_Frequency/98 (addr) Clock_Ip_Get_LCU1_CLK_Frequency/99 (addr) Clock_Ip_Get_LPI2C0_CLK_Frequency/100 (addr) Clock_Ip_Get_LPI2C1_CLK_Frequency/101 (addr) Clock_Ip_Get_LPSPI0_CLK_Frequency/102 (addr) Clock_Ip_Get_LPSPI1_CLK_Frequency/103 (addr) Clock_Ip_Get_LPSPI2_CLK_Frequency/104 (addr) Clock_Ip_Get_LPSPI3_CLK_Frequency/105 (addr) Clock_Ip_Get_LPSPI4_CLK_Frequency/106 (addr) Clock_Ip_Get_LPSPI5_CLK_Frequency/107 (addr) Clock_Ip_Get_LPUART0_CLK_Frequency/108 (addr) Clock_Ip_Get_LPUART1_CLK_Frequency/109 (addr) Clock_Ip_Get_LPUART2_CLK_Frequency/110 (addr) Clock_Ip_Get_LPUART3_CLK_Frequency/111 (addr) Clock_Ip_Get_LPUART4_CLK_Frequency/112 (addr) Clock_Ip_Get_LPUART5_CLK_Frequency/113 (addr) Clock_Ip_Get_LPUART6_CLK_Frequency/114 (addr) Clock_Ip_Get_LPUART7_CLK_Frequency/115 (addr) Clock_Ip_Get_LPUART8_CLK_Frequency/116 (addr) Clock_Ip_Get_LPUART9_CLK_Frequency/117 (addr) Clock_Ip_Get_LPUART10_CLK_Frequency/118 (addr) Clock_Ip_Get_LPUART11_CLK_Frequency/119 (addr) Clock_Ip_Get_LPUART12_CLK_Frequency/120 (addr) Clock_Ip_Get_LPUART13_CLK_Frequency/121 (addr) Clock_Ip_Get_LPUART14_CLK_Frequency/122 (addr) Clock_Ip_Get_LPUART15_CLK_Frequency/123 (addr) Clock_Ip_Get_MSCM_CLK_Frequency/124 (addr) Clock_Ip_Get_PIT0_CLK_Frequency/125 (addr) Clock_Ip_Get_PIT1_CLK_Frequency/126 (addr) Clock_Ip_Get_PIT2_CLK_Frequency/127 (addr) Clock_Ip_Get_QSPI0_CLK_Frequency/128 (addr) Clock_Ip_Get_QSPI0_RAM_CLK_Frequency/129 (addr) Clock_Ip_Get_QSPI0_TX_MEM_CLK_Frequency/130 (addr) Clock_Ip_Get_QSPI_SFCK_CLK_Frequency/131 (addr) Clock_Ip_Get_RTC_CLK_Frequency/132 (addr) Clock_Ip_Get_RTC0_CLK_Frequency/134 (addr) Clock_Ip_Get_SAI0_CLK_Frequency/135 (addr) Clock_Ip_Get_SAI1_CLK_Frequency/136 (addr) Clock_Ip_Get_SEMA42_CLK_Frequency/137 (addr) Clock_Ip_Get_SIUL2_CLK_Frequency/138 (addr) Clock_Ip_Get_STCU0_CLK_Frequency/139 (addr) Clock_Ip_Get_STMA_CLK_Frequency/140 (addr) Clock_Ip_Get_STM0_CLK_Frequency/141 (addr) Clock_Ip_Get_STMB_CLK_Frequency/142 (addr) Clock_Ip_Get_STM1_CLK_Frequency/143 (addr) Clock_Ip_Get_SWT0_CLK_Frequency/144 (addr) Clock_Ip_Get_TEMPSENSE_CLK_Frequency/145 (addr) Clock_Ip_Get_TRACE_CLK_Frequency/146 (addr) Clock_Ip_Get_TRGMUX0_CLK_Frequency/147 (addr) Clock_Ip_Get_TSENSE0_CLK_Frequency/148 (addr) Clock_Ip_Get_WKPU0_CLK_Frequency/149 (addr) 
+  Referring: Clock_Ip_GetFreq/152 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_apfFreqTableRTC_CLK/1 (Clock_Ip_apfFreqTableRTC_CLK) @06cedaf8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Clock_Ip_Get_SXOSC_CLK_Frequency/17 (addr) Clock_Ip_Get_SIRC_CLK_Frequency/14 (addr) Clock_Ip_Get_FIRC_CLK_Frequency/12 (addr) Clock_Ip_Get_FXOSC_CLK_Frequency/16 (addr) 
+  Referring: Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall/133 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_apfFreqTableClkSrc/0 (Clock_Ip_apfFreqTableClkSrc) @06ceda68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Clock_Ip_Get_FIRC_CLK_Frequency/12 (addr) Clock_Ip_Get_SIRC_CLK_Frequency/14 (addr) Clock_Ip_Get_FXOSC_CLK_Frequency/16 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_SXOSC_CLK_Frequency/17 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_PLL_PHI0_Frequency/20 (addr) Clock_Ip_Get_PLL_PHI1_Frequency/21 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_CORE_CLK_Frequency/25 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_HSE_CLK_Frequency/28 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_AIPS_PLAT_CLK_Frequency/26 (addr) Clock_Ip_Get_AIPS_SLOW_CLK_Frequency/27 (addr) Clock_Ip_Get_emac_mii_rmii_tx_Frequency/23 (addr) Clock_Ip_Get_emac_mii_rx_Frequency/22 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) Clock_Ip_Get_Zero_Frequency/11 (addr) 
+  Referring: Clock_Ip_Get_CLKOUT_RUN_CLK_Frequency/32 (read) Clock_Ip_Get_CLKOUT_STANDBY_CLK_Frequency/37 (read) Clock_Ip_Get_EMAC_RX_CLK_Frequency/78 (read) Clock_Ip_Get_EMAC_TS_CLK_Frequency/80 (read) Clock_Ip_Get_EMAC_TX_CLK_Frequency/82 (read) Clock_Ip_Get_FLEXCANA_CLK_Frequency/88 (read) Clock_Ip_Get_FLEXCANB_CLK_Frequency/92 (read) Clock_Ip_Get_QSPI_SFCK_CLK_Frequency/131 (read) Clock_Ip_Get_STMA_CLK_Frequency/140 (read) Clock_Ip_Get_STMB_CLK_Frequency/142 (read) Clock_Ip_Get_TRACE_CLK_Frequency/146 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_SetExternalSignalFrequency (Clock_Ip_NameType SignalName, uint32 Frequency)
+{
+  uint32 Index;
+
+  <bb 2> :
+  Index = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = Clock_Ip_axExtSignalFreqEntries[Index].Name;
+  if (SignalName == _1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Clock_Ip_axExtSignalFreqEntries[Index].Frequency = Frequency;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  Index = Index + 1;
+
+  <bb 6> :
+  if (Index <= 5)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+Clock_Ip_GetFreq (Clock_Ip_NameType ClockName)
+{
+  uint32 D.7936;
+
+  <bb 2> :
+  _1 = Clock_Ip_apfFreqTable[ClockName];
+  D.7936 = _1 ();
+
+  <bb 3> :
+<L0>:
+  return D.7936;
+
+}
+
+
+Clock_Ip_SetExternalOscillatorFrequency (Clock_Ip_NameType ExtOscName, uint32 Frequency)
+{
+  <bb 2> :
+  switch (ExtOscName) <default: <L2> [INV], case 5: <L0> [INV], case 6: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  Clock_Ip_u32fxosc = Frequency;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  Clock_Ip_u32sxosc = Frequency;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+Clock_Ip_PLL_VCO (const struct PLL_Type * Base)
+{
+  boolean Overflow;
+  uint32 Var5;
+  uint32 Var4;
+  uint32 Var3;
+  uint32 Var2;
+  uint32 Var1;
+  uint32 Fout;
+  uint32 Mfn;
+  uint32 Mfi;
+  uint32 Rdiv;
+  uint32 Fin;
+  uint32 D.7934;
+
+  <bb 2> :
+  Fout = 0;
+  Overflow = 0;
+  Fin = Clock_Ip_Get_FXOSC_CLK_Frequency ();
+  _1 = Base->PLLDV;
+  _2 = _1 >> 12;
+  Rdiv = _2 & 7;
+  _3 = Base->PLLDV;
+  Mfi = _3 & 255;
+  _4 = Base->PLLFD;
+  Mfn = _4 & 32767;
+  Var1 = Mfi / Rdiv;
+  _5 = Var1 * Rdiv;
+  Var2 = Mfi - _5;
+  _6 = Rdiv << 14;
+  _7 = Rdiv << 11;
+  Var3 = _6 + _7;
+  Var4 = Fin / Var3;
+  _8 = Var4 * Var3;
+  Var5 = Fin - _8;
+  if (Fin != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 3> :
+  _9 = Var1 * Fin;
+  _10 = _9 / Fin;
+  if (Var1 == _10)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Fout = Var1 * Fin;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  Overflow = 1;
+
+  <bb 6> :
+  _11 = Fin * Var2;
+  _12 = _11 / Fin;
+  if (Var2 == _12)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (Fout <= 1280000000)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _13 = Fin / Rdiv;
+  _14 = Var2 * _13;
+  Fout = Fout + _14;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  Overflow = 1;
+
+  <bb 10> :
+  if (Var4 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 11> :
+  _15 = Var4 * Mfn;
+  _16 = _15 / Var4;
+  if (Mfn == _16)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  if (Fout <= 1280000000)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _17 = Var4 * Mfn;
+  Fout = Fout + _17;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  Overflow = 1;
+
+  <bb 15> :
+  if (Mfn != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 16> :
+  _18 = Var5 * Mfn;
+  _19 = _18 / Mfn;
+  if (Var5 == _19)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 17> :
+  if (Fout <= 1280000000)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _20 = Var5 * Mfn;
+  _21 = _20 / Var3;
+  Fout = Fout + _21;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  Overflow = 1;
+
+  <bb 20> :
+  if (Overflow != 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  Fout = 0;
+
+  <bb 22> :
+  D.7934 = Fout;
+
+  <bb 23> :
+<L23>:
+  return D.7934;
+
+}
+
+
+Clock_Ip_Get_WKPU0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7909;
+  long unsigned int D.7908;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  D.7908 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7908 & Frequency;
+  D.7909 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7909;
+
+}
+
+
+Clock_Ip_Get_TSENSE0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7906;
+  long unsigned int D.7905;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 17;
+  _4 = _3 & 1;
+  D.7905 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7905 & Frequency;
+  D.7906 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7906;
+
+}
+
+
+Clock_Ip_Get_TRGMUX0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7903;
+  long unsigned int D.7902;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 & 1;
+  D.7902 = Clock_Ip_u32EnableGate[_3];
+  Frequency = D.7902 & Frequency;
+  D.7903 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7903;
+
+}
+
+
+Clock_Ip_Get_TRACE_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7900;
+  long unsigned int D.7899;
+  long unsigned int D.7898;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_11_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 15;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_11_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7898 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7898 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_11_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 7;
+  D.7899 = _13 + 1;
+  Frequency = Frequency / D.7899;
+  D.7900 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7900;
+
+}
+
+
+Clock_Ip_Get_TEMPSENSE_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7896;
+  long unsigned int D.7895;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7895 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7895 & Frequency;
+  D.7896 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7896;
+
+}
+
+
+Clock_Ip_Get_SWT0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7893;
+  long unsigned int D.7892;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SIRC_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 28;
+  _4 = _3 & 1;
+  D.7892 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7892 & Frequency;
+  D.7893 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7893;
+
+}
+
+
+Clock_Ip_Get_STM1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7890;
+  long unsigned int D.7889;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_STMB_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 29;
+  _4 = _3 & 1;
+  D.7889 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7889 & Frequency;
+  D.7890 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7890;
+
+}
+
+
+Clock_Ip_Get_STMB_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7887;
+  long unsigned int D.7886;
+  long unsigned int D.7885;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_2_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_2_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7885 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7885 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_2_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 1;
+  D.7886 = _13 + 1;
+  Frequency = Frequency / D.7886;
+  D.7887 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7887;
+
+}
+
+
+Clock_Ip_Get_STM0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7883;
+  long unsigned int D.7882;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_STMA_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 29;
+  _4 = _3 & 1;
+  D.7882 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7882 & Frequency;
+  D.7883 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7883;
+
+}
+
+
+Clock_Ip_Get_STMA_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7880;
+  long unsigned int D.7879;
+  long unsigned int D.7878;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_1_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_1_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7878 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7878 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_1_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 1;
+  D.7879 = _13 + 1;
+  Frequency = Frequency / D.7879;
+  D.7880 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7880;
+
+}
+
+
+Clock_Ip_Get_STCU0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7876;
+  long unsigned int D.7875;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB3_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  D.7875 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7875 & Frequency;
+  D.7876 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7876;
+
+}
+
+
+Clock_Ip_Get_SIUL2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7873;
+  long unsigned int D.7872;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  D.7872 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7872 & Frequency;
+  D.7873 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7873;
+
+}
+
+
+Clock_Ip_Get_SEMA42_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7870;
+  long unsigned int D.7869;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 24;
+  _4 = _3 & 1;
+  D.7869 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7869 & Frequency;
+  D.7870 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7870;
+
+}
+
+
+Clock_Ip_Get_SAI1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7867;
+  long unsigned int D.7866;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 23;
+  _4 = _3 & 1;
+  D.7866 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7866 & Frequency;
+  D.7867 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7867;
+
+}
+
+
+Clock_Ip_Get_SAI0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7864;
+  long unsigned int D.7863;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 27;
+  _4 = _3 & 1;
+  D.7863 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7863 & Frequency;
+  D.7864 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7864;
+
+}
+
+
+Clock_Ip_Get_RTC0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7861;
+  long unsigned int D.7860;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_RTC_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 2;
+  _4 = _3 & 1;
+  D.7860 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7860 & Frequency;
+  D.7861 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7861;
+
+}
+
+
+Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall ()
+{
+  uint32 Frequency;
+  uint32 D.7858;
+
+  <bb 2> :
+  _1 = 1076396032B;
+  _2 = _1->RTCC;
+  _3 = _2 >> 12;
+  _4 = _3 & 3;
+  _5 = Clock_Ip_apfFreqTableRTC_CLK[_4];
+  Frequency = _5 ();
+  D.7858 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7858;
+
+}
+
+
+Clock_Ip_Get_RTC_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7856;
+
+  <bb 2> :
+  Frequency = 0;
+  Frequency = Clock_Ip_Get_RTC_CLK_Frequency_TrustedCall ();
+  D.7856 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7856;
+
+}
+
+
+Clock_Ip_Get_QSPI_SFCK_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7854;
+  long unsigned int D.7853;
+  long unsigned int D.7852;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_10_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 15;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_10_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7852 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7852 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_10_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 7;
+  D.7853 = _13 + 1;
+  Frequency = Frequency / D.7853;
+  D.7854 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7854;
+
+}
+
+
+Clock_Ip_Get_QSPI0_TX_MEM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7850;
+  long unsigned int D.7849;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_QSPI_MEM_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 19;
+  _4 = _3 & 1;
+  D.7849 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7849 & Frequency;
+  D.7850 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7850;
+
+}
+
+
+Clock_Ip_Get_QSPI0_RAM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7847;
+  long unsigned int D.7846;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_QSPI_MEM_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 19;
+  _4 = _3 & 1;
+  D.7846 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7846 & Frequency;
+  D.7847 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7847;
+
+}
+
+
+Clock_Ip_Get_QSPI0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7844;
+  long unsigned int D.7843;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_QSPI_SFCK_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 19;
+  _4 = _3 & 1;
+  D.7843 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7843 & Frequency;
+  D.7844 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7844;
+
+}
+
+
+Clock_Ip_Get_PIT2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7841;
+  long unsigned int D.7840;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7840 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7840 & Frequency;
+  D.7841 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7841;
+
+}
+
+
+Clock_Ip_Get_PIT1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7838;
+  long unsigned int D.7837;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  D.7837 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7837 & Frequency;
+  D.7838 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7838;
+
+}
+
+
+Clock_Ip_Get_PIT0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7835;
+  long unsigned int D.7834;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 12;
+  _4 = _3 & 1;
+  D.7834 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7834 & Frequency;
+  D.7835 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7835;
+
+}
+
+
+Clock_Ip_Get_MSCM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7832;
+  long unsigned int D.7831;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 24;
+  _4 = _3 & 1;
+  D.7831 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7831 & Frequency;
+  D.7832 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7832;
+
+}
+
+
+Clock_Ip_Get_LPUART15_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7829;
+  long unsigned int D.7828;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  D.7828 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7828 & Frequency;
+  D.7829 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7829;
+
+}
+
+
+Clock_Ip_Get_LPUART14_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7826;
+  long unsigned int D.7825;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  D.7825 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7825 & Frequency;
+  D.7826 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7826;
+
+}
+
+
+Clock_Ip_Get_LPUART13_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7823;
+  long unsigned int D.7822;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  D.7822 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7822 & Frequency;
+  D.7823 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7823;
+
+}
+
+
+Clock_Ip_Get_LPUART12_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7820;
+  long unsigned int D.7819;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 7;
+  _4 = _3 & 1;
+  D.7819 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7819 & Frequency;
+  D.7820 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7820;
+
+}
+
+
+Clock_Ip_Get_LPUART11_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7817;
+  long unsigned int D.7816;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  D.7816 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7816 & Frequency;
+  D.7817 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7817;
+
+}
+
+
+Clock_Ip_Get_LPUART10_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7814;
+  long unsigned int D.7813;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 5;
+  _4 = _3 & 1;
+  D.7813 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7813 & Frequency;
+  D.7814 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7814;
+
+}
+
+
+Clock_Ip_Get_LPUART9_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7811;
+  long unsigned int D.7810;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  D.7810 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7810 & Frequency;
+  D.7811 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7811;
+
+}
+
+
+Clock_Ip_Get_LPUART8_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7808;
+  long unsigned int D.7807;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 3;
+  _4 = _3 & 1;
+  D.7807 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7807 & Frequency;
+  D.7808 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7808;
+
+}
+
+
+Clock_Ip_Get_LPUART7_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7805;
+  long unsigned int D.7804;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 17;
+  _4 = _3 & 1;
+  D.7804 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7804 & Frequency;
+  D.7805 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7805;
+
+}
+
+
+Clock_Ip_Get_LPUART6_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7802;
+  long unsigned int D.7801;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 16;
+  _4 = _3 & 1;
+  D.7801 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7801 & Frequency;
+  D.7802 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7802;
+
+}
+
+
+Clock_Ip_Get_LPUART5_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7799;
+  long unsigned int D.7798;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 15;
+  _4 = _3 & 1;
+  D.7798 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7798 & Frequency;
+  D.7799 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7799;
+
+}
+
+
+Clock_Ip_Get_LPUART4_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7796;
+  long unsigned int D.7795;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 14;
+  _4 = _3 & 1;
+  D.7795 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7795 & Frequency;
+  D.7796 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7796;
+
+}
+
+
+Clock_Ip_Get_LPUART3_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7793;
+  long unsigned int D.7792;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  D.7792 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7792 & Frequency;
+  D.7793 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7793;
+
+}
+
+
+Clock_Ip_Get_LPUART2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7790;
+  long unsigned int D.7789;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 12;
+  _4 = _3 & 1;
+  D.7789 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7789 & Frequency;
+  D.7790 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7790;
+
+}
+
+
+Clock_Ip_Get_LPUART1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7787;
+  long unsigned int D.7786;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 11;
+  _4 = _3 & 1;
+  D.7786 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7786 & Frequency;
+  D.7787 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7787;
+
+}
+
+
+Clock_Ip_Get_LPUART0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7784;
+  long unsigned int D.7783;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  D.7783 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7783 & Frequency;
+  D.7784 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7784;
+
+}
+
+
+Clock_Ip_Get_LPSPI5_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7781;
+  long unsigned int D.7780;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 16;
+  _4 = _3 & 1;
+  D.7780 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7780 & Frequency;
+  D.7781 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7781;
+
+}
+
+
+Clock_Ip_Get_LPSPI4_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7778;
+  long unsigned int D.7777;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 15;
+  _4 = _3 & 1;
+  D.7777 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7777 & Frequency;
+  D.7778 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7778;
+
+}
+
+
+Clock_Ip_Get_LPSPI3_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7775;
+  long unsigned int D.7774;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 25;
+  _4 = _3 & 1;
+  D.7774 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7774 & Frequency;
+  D.7775 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7775;
+
+}
+
+
+Clock_Ip_Get_LPSPI2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7772;
+  long unsigned int D.7771;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 24;
+  _4 = _3 & 1;
+  D.7771 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7771 & Frequency;
+  D.7772 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7772;
+
+}
+
+
+Clock_Ip_Get_LPSPI1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7769;
+  long unsigned int D.7768;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 23;
+  _4 = _3 & 1;
+  D.7768 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7768 & Frequency;
+  D.7769 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7769;
+
+}
+
+
+Clock_Ip_Get_LPSPI0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7766;
+  long unsigned int D.7765;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 22;
+  _4 = _3 & 1;
+  D.7765 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7765 & Frequency;
+  D.7766 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7766;
+
+}
+
+
+Clock_Ip_Get_LPI2C1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7763;
+  long unsigned int D.7762;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 21;
+  _4 = _3 & 1;
+  D.7762 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7762 & Frequency;
+  D.7763 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7763;
+
+}
+
+
+Clock_Ip_Get_LPI2C0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7760;
+  long unsigned int D.7759;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 20;
+  _4 = _3 & 1;
+  D.7759 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7759 & Frequency;
+  D.7760 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7760;
+
+}
+
+
+Clock_Ip_Get_LCU1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7757;
+  long unsigned int D.7756;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 7;
+  _4 = _3 & 1;
+  D.7756 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7756 & Frequency;
+  D.7757 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7757;
+
+}
+
+
+Clock_Ip_Get_LCU0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7754;
+  long unsigned int D.7753;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  D.7753 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7753 & Frequency;
+  D.7754 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7754;
+
+}
+
+
+Clock_Ip_Get_INTM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7751;
+  long unsigned int D.7750;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7750 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7750 & Frequency;
+  D.7751 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7751;
+
+}
+
+
+Clock_Ip_Get_FLEXIO0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7748;
+  long unsigned int D.7747;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  D.7747 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7747 & Frequency;
+  D.7748 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7748;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN5_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7745;
+  long unsigned int D.7744;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_FLEXCANB_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  D.7744 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7744 & Frequency;
+  D.7745 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7745;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN4_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7742;
+  long unsigned int D.7741;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_FLEXCANB_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 5;
+  _4 = _3 & 1;
+  D.7741 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7741 & Frequency;
+  D.7742 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7742;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN3_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7739;
+  long unsigned int D.7738;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_FLEXCANB_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  D.7738 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7738 & Frequency;
+  D.7739 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7739;
+
+}
+
+
+Clock_Ip_Get_FLEXCANB_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7736;
+  long unsigned int D.7735;
+  long unsigned int D.7734;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_4_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_4_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7734 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7734 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_4_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 3;
+  D.7735 = _13 + 1;
+  Frequency = Frequency / D.7735;
+  D.7736 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7736;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7732;
+  long unsigned int D.7731;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_FLEXCANA_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 3;
+  _4 = _3 & 1;
+  D.7731 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7731 & Frequency;
+  D.7732 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7732;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7729;
+  long unsigned int D.7728;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_FLEXCANA_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 2;
+  _4 = _3 & 1;
+  D.7728 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7728 & Frequency;
+  D.7729 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7729;
+
+}
+
+
+Clock_Ip_Get_FLEXCAN0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7726;
+  long unsigned int D.7725;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_FLEXCANA_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 1;
+  _4 = _3 & 1;
+  D.7725 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7725 & Frequency;
+  D.7726 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7726;
+
+}
+
+
+Clock_Ip_Get_FLEXCANA_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7723;
+  long unsigned int D.7722;
+  long unsigned int D.7721;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_3_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_3_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7721 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7721 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_3_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 3;
+  D.7722 = _13 + 1;
+  Frequency = Frequency / D.7722;
+  D.7723 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7723;
+
+}
+
+
+Clock_Ip_Get_ERM0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7719;
+  long unsigned int D.7718;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 23;
+  _4 = _3 & 1;
+  D.7718 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7718 & Frequency;
+  D.7719 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7719;
+
+}
+
+
+Clock_Ip_Get_EMIOS2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7716;
+  long unsigned int D.7715;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  D.7715 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7715 & Frequency;
+  D.7716 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7716;
+
+}
+
+
+Clock_Ip_Get_EMIOS1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7713;
+  long unsigned int D.7712;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 3;
+  _4 = _3 & 1;
+  D.7712 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7712 & Frequency;
+  D.7713 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7713;
+
+}
+
+
+Clock_Ip_Get_EMIOS0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7710;
+  long unsigned int D.7709;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 2;
+  _4 = _3 & 1;
+  D.7709 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7709 & Frequency;
+  D.7710 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7710;
+
+}
+
+
+Clock_Ip_Get_EMAC0_TX_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7707;
+  long unsigned int D.7706;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_EMAC_TX_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 & 1;
+  D.7706 = Clock_Ip_u32EnableGate[_3];
+  Frequency = D.7706 & Frequency;
+  D.7707 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7707;
+
+}
+
+
+Clock_Ip_Get_EMAC_TX_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7704;
+  long unsigned int D.7703;
+  long unsigned int D.7702;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_8_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_8_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7702 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7702 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_8_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 63;
+  D.7703 = _13 + 1;
+  Frequency = Frequency / D.7703;
+  D.7704 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7704;
+
+}
+
+
+Clock_Ip_Get_EMAC0_TS_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7700;
+  long unsigned int D.7699;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_EMAC_TS_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 & 1;
+  D.7699 = Clock_Ip_u32EnableGate[_3];
+  Frequency = D.7699 & Frequency;
+  D.7700 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7700;
+
+}
+
+
+Clock_Ip_Get_EMAC_TS_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7697;
+  long unsigned int D.7696;
+  long unsigned int D.7695;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_9_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_9_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7695 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7695 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_9_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 63;
+  D.7696 = _13 + 1;
+  Frequency = Frequency / D.7696;
+  D.7697 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7697;
+
+}
+
+
+Clock_Ip_Get_EMAC0_RX_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7693;
+  long unsigned int D.7692;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_EMAC_RX_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 & 1;
+  D.7692 = Clock_Ip_u32EnableGate[_3];
+  Frequency = D.7692 & Frequency;
+  D.7693 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7693;
+
+}
+
+
+Clock_Ip_Get_EMAC_RX_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7690;
+  long unsigned int D.7689;
+  long unsigned int D.7688;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_7_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 31;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_7_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7688 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7688 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_7_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 63;
+  D.7689 = _13 + 1;
+  Frequency = Frequency / D.7689;
+  D.7690 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7690;
+
+}
+
+
+Clock_Ip_Get_EIM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7686;
+  long unsigned int D.7685;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 22;
+  _4 = _3 & 1;
+  D.7685 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7685 & Frequency;
+  D.7686 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7686;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD31_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7683;
+  long unsigned int D.7682;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 23;
+  _4 = _3 & 1;
+  D.7682 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7682 & Frequency;
+  D.7683 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7683;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD30_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7680;
+  long unsigned int D.7679;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 22;
+  _4 = _3 & 1;
+  D.7679 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7679 & Frequency;
+  D.7680 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7680;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD29_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7677;
+  long unsigned int D.7676;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 21;
+  _4 = _3 & 1;
+  D.7676 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7676 & Frequency;
+  D.7677 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7677;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD28_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7674;
+  long unsigned int D.7673;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 20;
+  _4 = _3 & 1;
+  D.7673 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7673 & Frequency;
+  D.7674 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7674;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD27_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7671;
+  long unsigned int D.7670;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 19;
+  _4 = _3 & 1;
+  D.7670 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7670 & Frequency;
+  D.7671 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7671;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD26_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7668;
+  long unsigned int D.7667;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 18;
+  _4 = _3 & 1;
+  D.7667 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7667 & Frequency;
+  D.7668 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7668;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD25_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7665;
+  long unsigned int D.7664;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 17;
+  _4 = _3 & 1;
+  D.7664 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7664 & Frequency;
+  D.7665 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7665;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD24_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7662;
+  long unsigned int D.7661;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 16;
+  _4 = _3 & 1;
+  D.7661 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7661 & Frequency;
+  D.7662 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7662;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD23_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7659;
+  long unsigned int D.7658;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 15;
+  _4 = _3 & 1;
+  D.7658 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7658 & Frequency;
+  D.7659 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7659;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD22_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7656;
+  long unsigned int D.7655;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 14;
+  _4 = _3 & 1;
+  D.7655 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7655 & Frequency;
+  D.7656 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7656;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD21_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7653;
+  long unsigned int D.7652;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  D.7652 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7652 & Frequency;
+  D.7653 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7653;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD20_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7650;
+  long unsigned int D.7649;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 12;
+  _4 = _3 & 1;
+  D.7649 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7649 & Frequency;
+  D.7650 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7650;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD19_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7647;
+  long unsigned int D.7646;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 11;
+  _4 = _3 & 1;
+  D.7646 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7646 & Frequency;
+  D.7647 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7647;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD18_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7644;
+  long unsigned int D.7643;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  D.7643 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7643 & Frequency;
+  D.7644 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7644;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD17_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7641;
+  long unsigned int D.7640;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  D.7640 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7640 & Frequency;
+  D.7641 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7641;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD16_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7638;
+  long unsigned int D.7637;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  D.7637 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7637 & Frequency;
+  D.7638 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7638;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD15_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7635;
+  long unsigned int D.7634;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 7;
+  _4 = _3 & 1;
+  D.7634 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7634 & Frequency;
+  D.7635 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7635;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD14_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7632;
+  long unsigned int D.7631;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  D.7631 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7631 & Frequency;
+  D.7632 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7632;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD13_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7629;
+  long unsigned int D.7628;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 5;
+  _4 = _3 & 1;
+  D.7628 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7628 & Frequency;
+  D.7629 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7629;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD12_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7626;
+  long unsigned int D.7625;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB0_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  D.7625 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7625 & Frequency;
+  D.7626 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7626;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD11_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7623;
+  long unsigned int D.7622;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 15;
+  _4 = _3 & 1;
+  D.7622 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7622 & Frequency;
+  D.7623 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7623;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD10_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7620;
+  long unsigned int D.7619;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 14;
+  _4 = _3 & 1;
+  D.7619 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7619 & Frequency;
+  D.7620 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7620;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD9_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7617;
+  long unsigned int D.7616;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 13;
+  _4 = _3 & 1;
+  D.7616 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7616 & Frequency;
+  D.7617 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7617;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD8_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7614;
+  long unsigned int D.7613;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 12;
+  _4 = _3 & 1;
+  D.7613 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7613 & Frequency;
+  D.7614 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7614;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD7_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7611;
+  long unsigned int D.7610;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 11;
+  _4 = _3 & 1;
+  D.7610 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7610 & Frequency;
+  D.7611 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7611;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD6_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7608;
+  long unsigned int D.7607;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  D.7607 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7607 & Frequency;
+  D.7608 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7608;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD5_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7605;
+  long unsigned int D.7604;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  D.7604 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7604 & Frequency;
+  D.7605 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7605;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD4_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7602;
+  long unsigned int D.7601;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  D.7601 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7601 & Frequency;
+  D.7602 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7602;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD3_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7599;
+  long unsigned int D.7598;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 7;
+  _4 = _3 & 1;
+  D.7598 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7598 & Frequency;
+  D.7599 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7599;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7596;
+  long unsigned int D.7595;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 6;
+  _4 = _3 & 1;
+  D.7595 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7595 & Frequency;
+  D.7596 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7596;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7593;
+  long unsigned int D.7592;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 5;
+  _4 = _3 & 1;
+  D.7592 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7592 & Frequency;
+  D.7593 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7593;
+
+}
+
+
+Clock_Ip_Get_EDMA0_TCD0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7590;
+  long unsigned int D.7589;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 4;
+  _4 = _3 & 1;
+  D.7589 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7589 & Frequency;
+  D.7590 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7590;
+
+}
+
+
+Clock_Ip_Get_EDMA0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7587;
+  long unsigned int D.7586;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB0_STAT;
+  _3 = _2 >> 3;
+  _4 = _3 & 1;
+  D.7586 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7586 & Frequency;
+  D.7587 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7587;
+
+}
+
+
+Clock_Ip_Get_DMAMUX1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7584;
+  long unsigned int D.7583;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB1_STAT;
+  _3 = _2 >> 1;
+  _4 = _3 & 1;
+  D.7583 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7583 & Frequency;
+  D.7584 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7584;
+
+}
+
+
+Clock_Ip_Get_DMAMUX0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7581;
+  long unsigned int D.7580;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB1_STAT;
+  _3 = _2 & 1;
+  D.7580 = Clock_Ip_u32EnableGate[_3];
+  Frequency = D.7580 & Frequency;
+  D.7581 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7581;
+
+}
+
+
+Clock_Ip_Get_CRC0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7578;
+  long unsigned int D.7577;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB3_STAT;
+  _3 = _2 & 1;
+  D.7577 = Clock_Ip_u32EnableGate[_3];
+  Frequency = D.7577 & Frequency;
+  D.7578 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7578;
+
+}
+
+
+Clock_Ip_Get_CMP2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7575;
+  long unsigned int D.7574;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN2_COFB1_STAT;
+  _3 = _2 >> 26;
+  _4 = _3 & 1;
+  D.7574 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7574 & Frequency;
+  D.7575 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7575;
+
+}
+
+
+Clock_Ip_Get_CMP1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7572;
+  long unsigned int D.7571;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 29;
+  _4 = _3 & 1;
+  D.7571 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7571 & Frequency;
+  D.7572 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7572;
+
+}
+
+
+Clock_Ip_Get_CMP0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7569;
+  long unsigned int D.7568;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN1_COFB2_STAT;
+  _3 = _2 >> 28;
+  _4 = _3 & 1;
+  D.7568 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7568 & Frequency;
+  D.7569 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7569;
+
+}
+
+
+Clock_Ip_Get_CLKOUT_STANDBY_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7566;
+  long unsigned int D.7565;
+  long unsigned int D.7564;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_5_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 63;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_5_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7564 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7564 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_5_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 7;
+  D.7565 = _13 + 1;
+  Frequency = Frequency / D.7565;
+  D.7566 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7566;
+
+}
+
+
+Clock_Ip_Get_BCTU0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7562;
+  long unsigned int D.7561;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 1;
+  _4 = _3 & 1;
+  D.7561 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7561 & Frequency;
+  D.7562 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7562;
+
+}
+
+
+Clock_Ip_Get_ADC2_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7559;
+  long unsigned int D.7558;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 10;
+  _4 = _3 & 1;
+  D.7558 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7558 & Frequency;
+  D.7559 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7559;
+
+}
+
+
+Clock_Ip_Get_ADC1_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7556;
+  long unsigned int D.7555;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 9;
+  _4 = _3 & 1;
+  D.7555 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7555 & Frequency;
+  D.7556 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7556;
+
+}
+
+
+Clock_Ip_Get_ADC0_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7553;
+  long unsigned int D.7552;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_CORE_CLK_Frequency ();
+  _1 = 1076740096B;
+  _2 = _1->PRTN0_COFB1_STAT;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  D.7552 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7552 & Frequency;
+  D.7553 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7553;
+
+}
+
+
+Clock_Ip_Get_CLKOUT_RUN_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7550;
+  long unsigned int D.7549;
+  long unsigned int D.7548;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_6_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 63;
+  _5 = Clock_Ip_apfFreqTableClkSrc[_4];
+  Frequency = _5 ();
+  _6 = 1076723712B;
+  _7 = _6->MUX_6_DC_0;
+  _8 = _7 >> 31;
+  _9 = _8 & 1;
+  D.7548 = Clock_Ip_au32EnableDivider[_9];
+  Frequency = D.7548 & Frequency;
+  _10 = 1076723712B;
+  _11 = _10->MUX_6_DC_0;
+  _12 = _11 >> 16;
+  _13 = _12 & 63;
+  D.7549 = _13 + 1;
+  Frequency = Frequency / D.7549;
+  D.7550 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7550;
+
+}
+
+
+Clock_Ip_Get_QSPI_MEM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7546;
+  long unsigned int D.7545;
+  long unsigned int D.7544;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 = _1->MUX_0_DC_6;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7544 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7544 & Frequency;
+  _5 = 1076723712B;
+  _6 = _5->MUX_0_DC_6;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  D.7545 = _8 + 1;
+  Frequency = Frequency / D.7545;
+  D.7546 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7546;
+
+}
+
+
+Clock_Ip_Get_LBIST_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7542;
+  long unsigned int D.7541;
+  long unsigned int D.7540;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 = _1->MUX_0_DC_5;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7540 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7540 & Frequency;
+  _5 = 1076723712B;
+  _6 = _5->MUX_0_DC_5;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  D.7541 = _8 + 1;
+  Frequency = Frequency / D.7541;
+  D.7542 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7542;
+
+}
+
+
+Clock_Ip_Get_DCM_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7538;
+  long unsigned int D.7537;
+  long unsigned int D.7536;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 = _1->MUX_0_DC_4;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7536 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7536 & Frequency;
+  _5 = 1076723712B;
+  _6 = _5->MUX_0_DC_4;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  D.7537 = _8 + 1;
+  Frequency = Frequency / D.7537;
+  D.7538 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7538;
+
+}
+
+
+Clock_Ip_Get_HSE_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7534;
+  long unsigned int D.7533;
+  long unsigned int D.7532;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 = _1->MUX_0_DC_3;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7532 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7532 & Frequency;
+  _5 = 1076723712B;
+  _6 = _5->MUX_0_DC_3;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  D.7533 = _8 + 1;
+  Frequency = Frequency / D.7533;
+  D.7534 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7534;
+
+}
+
+
+Clock_Ip_Get_AIPS_SLOW_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7530;
+  long unsigned int D.7529;
+  long unsigned int D.7528;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 = _1->MUX_0_DC_2;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7528 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7528 & Frequency;
+  _5 = 1076723712B;
+  _6 = _5->MUX_0_DC_2;
+  _7 = _6 >> 16;
+  _8 = _7 & 15;
+  D.7529 = _8 + 1;
+  Frequency = Frequency / D.7529;
+  D.7530 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7530;
+
+}
+
+
+Clock_Ip_Get_AIPS_PLAT_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7526;
+  long unsigned int D.7525;
+  long unsigned int D.7524;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 = _1->MUX_0_DC_1;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7524 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7524 & Frequency;
+  _5 = 1076723712B;
+  _6 = _5->MUX_0_DC_1;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  D.7525 = _8 + 1;
+  Frequency = Frequency / D.7525;
+  D.7526 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7526;
+
+}
+
+
+Clock_Ip_Get_CORE_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7522;
+  long unsigned int D.7521;
+  long unsigned int D.7520;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SCS_CLK_Frequency ();
+  _1 = 1076723712B;
+  _2 = _1->MUX_0_DC_0;
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7520 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7520 & Frequency;
+  _5 = 1076723712B;
+  _6 = _5->MUX_0_DC_0;
+  _7 = _6 >> 16;
+  _8 = _7 & 7;
+  D.7521 = _8 + 1;
+  Frequency = Frequency / D.7521;
+  D.7522 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7522;
+
+}
+
+
+Clock_Ip_Get_SCS_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7518;
+
+  <bb 2> :
+  _1 = 1076723712B;
+  _2 = _1->MUX_0_CSS;
+  _3 = _2 >> 24;
+  _4 = _3 & 15;
+  if (_4 != 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Frequency = Clock_Ip_Get_FIRC_CLK_Frequency ();
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Frequency = Clock_Ip_Get_PLL_PHI0_Frequency ();
+
+  <bb 5> :
+  D.7518 = Frequency;
+
+  <bb 6> :
+<L3>:
+  return D.7518;
+
+}
+
+
+Clock_Ip_Get_emac_mii_rmii_tx_Frequency ()
+{
+  uint32 D.7513;
+
+  <bb 2> :
+  D.7513 = Clock_Ip_axExtSignalFreqEntries[1].Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7513;
+
+}
+
+
+Clock_Ip_Get_emac_mii_rx_Frequency ()
+{
+  uint32 D.7511;
+
+  <bb 2> :
+  D.7511 = Clock_Ip_axExtSignalFreqEntries[0].Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7511;
+
+}
+
+
+Clock_Ip_Get_PLL_PHI1_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7509;
+  long unsigned int D.7508;
+  long unsigned int D.7507;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency ();
+  _1 = 1076756480B;
+  _2 = _1->PLLODIV[1];
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7507 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7507 & Frequency;
+  _5 = 1076756480B;
+  _6 = _5->PLLODIV[1];
+  _7 = _6 >> 16;
+  _8 = _7 & 15;
+  D.7508 = _8 + 1;
+  Frequency = Frequency / D.7508;
+  D.7509 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7509;
+
+}
+
+
+Clock_Ip_Get_PLL_PHI0_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7505;
+  long unsigned int D.7504;
+  long unsigned int D.7503;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency ();
+  _1 = 1076756480B;
+  _2 = _1->PLLODIV[0];
+  _3 = _2 >> 31;
+  _4 = _3 & 1;
+  D.7503 = Clock_Ip_au32EnableDivider[_4];
+  Frequency = D.7503 & Frequency;
+  _5 = 1076756480B;
+  _6 = _5->PLLODIV[0];
+  _7 = _6 >> 16;
+  _8 = _7 & 15;
+  D.7504 = _8 + 1;
+  Frequency = Frequency / D.7504;
+  D.7505 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7505;
+
+}
+
+
+Clock_Ip_Get_PLL_POSTDIV_CLK_Frequency ()
+{
+  uint32 DividerValue;
+  uint32 Frequency;
+  uint32 D.7501;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_PLL_CLK_Frequency ();
+  _1 = 1076756480B;
+  _2 = _1->PLLDV;
+  _3 = _2 >> 25;
+  DividerValue = _3 & 63;
+  if (DividerValue != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Frequency = Frequency / DividerValue;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Frequency = 0;
+
+  <bb 5> :
+  D.7501 = Frequency;
+
+  <bb 6> :
+<L3>:
+  return D.7501;
+
+}
+
+
+Clock_Ip_Get_PLL_CLK_Frequency ()
+{
+  uint32 PLLCLKMUXBuffer;
+  uint32 PLLFDBuffer;
+  uint32 PLLDVBuffer;
+  uint32 iftmp.1;
+  uint32 D.7492;
+
+  <bb 2> :
+  _1 = 1076756480B;
+  PLLDVBuffer = _1->PLLDV;
+  _2 = 1076756480B;
+  PLLFDBuffer = _2->PLLFD;
+  PLLCLKMUXBuffer = 1;
+  _3 = PLLDVBuffer ^ PLLFDBuffer;
+  _4 = PLLCLKMUXBuffer ^ _3;
+  Clock_Ip_u32PLL_CLKChecksum.0_5 = Clock_Ip_u32PLL_CLKChecksum;
+  if (_4 != Clock_Ip_u32PLL_CLKChecksum.0_5)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = PLLDVBuffer ^ PLLFDBuffer;
+  _7 = PLLCLKMUXBuffer ^ _6;
+  Clock_Ip_u32PLL_CLKChecksum = _7;
+  _8 = Clock_Ip_PLL_VCO (1076756480B);
+  Clock_Ip_u32PLL_CLKFreq = _8;
+
+  <bb 4> :
+  _9 = 1076756480B;
+  _10 = _9->PLLSR;
+  _11 = _10 & 4;
+  if (_11 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.1 = Clock_Ip_u32PLL_CLKFreq;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.1 = 0;
+
+  <bb 7> :
+  D.7492 = iftmp.1;
+
+  <bb 8> :
+<L5>:
+  return D.7492;
+
+}
+
+
+Clock_Ip_Get_SXOSC_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7488;
+  long unsigned int D.7487;
+
+  <bb 2> :
+  Frequency = Clock_Ip_u32sxosc;
+  _1 = 1076674560B;
+  _2 = _1->SXOSC_STAT;
+  _3 = (signed int) _2;
+  if (_3 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Frequency = 0;
+
+  <bb 4> :
+  _4 = 1076740096B;
+  _5 = _4->PRTN1_COFB1_STAT;
+  _6 = _5 >> 19;
+  _7 = _6 & 1;
+  D.7487 = Clock_Ip_u32EnableGate[_7];
+  Frequency = D.7487 & Frequency;
+  D.7488 = Frequency;
+
+  <bb 5> :
+<L2>:
+  return D.7488;
+
+}
+
+
+Clock_Ip_Get_FXOSC_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7483;
+  long unsigned int D.7482;
+
+  <bb 2> :
+  Frequency = Clock_Ip_u32fxosc;
+  _1 = 1076707328B;
+  _2 = _1->STAT;
+  _3 = (signed int) _2;
+  if (_3 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Frequency = 0;
+
+  <bb 4> :
+  _4 = 1076740096B;
+  _5 = _4->PRTN1_COFB1_STAT;
+  _6 = _5 >> 21;
+  _7 = _6 & 1;
+  D.7482 = Clock_Ip_u32EnableGate[_7];
+  Frequency = D.7482 & Frequency;
+  D.7483 = Frequency;
+
+  <bb 5> :
+<L2>:
+  return D.7483;
+
+}
+
+
+Clock_Ip_Get_SIRC_STANDBY_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7478;
+  long unsigned int D.7477;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_SIRC_CLK_Frequency ();
+  _1 = 1076658176B;
+  _2 = _1->MISCELLANEOUS_IN;
+  _3 = _2 >> 8;
+  _4 = _3 & 1;
+  D.7477 = Clock_Ip_u32EnableGate[_4];
+  Frequency = D.7477 & Frequency;
+  D.7478 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7478;
+
+}
+
+
+Clock_Ip_Get_SIRC_CLK_Frequency ()
+{
+  uint32 D.7475;
+
+  <bb 2> :
+  D.7475 = 32000;
+
+  <bb 3> :
+<L0>:
+  return D.7475;
+
+}
+
+
+Clock_Ip_Get_FIRC_STANDBY_CLK_Frequency ()
+{
+  uint32 Frequency;
+  uint32 D.7473;
+  long unsigned int D.7472;
+
+  <bb 2> :
+  Frequency = Clock_Ip_Get_FIRC_CLK_Frequency ();
+  _1 = 1076690944B;
+  _2 = _1->STDBY_ENABLE;
+  _3 = _2 & 1;
+  D.7472 = Clock_Ip_u32EnableGate[_3];
+  Frequency = D.7472 & Frequency;
+  D.7473 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7473;
+
+}
+
+
+Clock_Ip_Get_FIRC_CLK_Frequency ()
+{
+  uint32 DividerValue;
+  uint32 Frequency;
+  uint32 D.7470;
+
+  <bb 2> :
+  Frequency = 48000000;
+  _1 = 1077526528B;
+  _2 = _1->CONFIG_REG_GPR;
+  _3 = _2 & 3;
+  DividerValue = Clock_Ip_apfTableDividerValue[_3];
+  Frequency = Frequency / DividerValue;
+  D.7470 = Frequency;
+
+  <bb 3> :
+<L0>:
+  return D.7470;
+
+}
+
+
+Clock_Ip_Get_Zero_Frequency ()
+{
+  uint32 D.7468;
+
+  <bb 2> :
+  D.7468 = 0;
+
+  <bb 3> :
+<L0>:
+  return D.7468;
+
+}
+
+

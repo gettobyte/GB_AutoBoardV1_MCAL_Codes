@@ -1,0 +1,2946 @@
+Trivially needed symbols: httpd_init/28 httpd_init_pcb/27 http_accept/26 http_recv/25 http_poll/24 http_sent/23 http_err/22 http_init_file/21 http_find_file/20 http_parse_request/19 http_get_404_file/18 http_send/17 http_send_data_nonssi/16 http_check_eof/15 http_eof/14 http_close_conn/13 http_close_or_abort_conn/12 http_write/11 http_state_free/10 http_state_eof/9 http_state_alloc/8 http_state_init/7 http_uri_buf/6 httpd_req_buf/5 httpd_default_filenames/4
+
+
+Initial Symbol table:
+
+tcp_new_ip_type/60 (tcp_new_ip_type) @06e44700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init/28 
+  Calls: 
+tcp_accept/59 (tcp_accept) @06e44540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_listen_with_backlog/58 (tcp_listen_with_backlog) @06e44460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+ip_addr_any_type/57 (ip_addr_any_type) @06e41cf0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: httpd_init_pcb/27 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/56 (tcp_bind) @06e44380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_setprio/55 (tcp_setprio) @06e441c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 http_accept/26 
+  Calls: 
+tcp_recved/54 (tcp_recved) @06e44000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_recv/25 http_recv/25 
+  Calls: 
+tcp_output/53 (tcp_output) @06e31d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_poll/24 
+  Calls: 
+strchr/52 (strchr) @06e318c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 
+  Calls: 
+memcpy/51 (memcpy) @06e31700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+strlen/50 (strlen) @06e31620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+pbuf_clen/49 (pbuf_clen) @06e312a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+strncmp/48 (strncmp) @06e311c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+lwip_strnstr/47 (lwip_strnstr) @06e310e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_init_file/21 http_parse_request/19 http_parse_request/19 http_parse_request/19 http_parse_request/19 
+  Calls: 
+pbuf_copy_partial/46 (pbuf_copy_partial) @06e31000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_ref/45 (pbuf_ref) @06e10ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_cat/44 (pbuf_cat) @06e10e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+fs_open/43 (fs_open) @06e10a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 http_get_404_file/18 http_get_404_file/18 http_get_404_file/18 
+  Calls: 
+fs_bytes_left/42 (fs_bytes_left) @06e10700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_send/17 http_check_eof/15 
+  Calls: 
+tcp_close/41 (tcp_close) @06e10380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_abort/40 (tcp_abort) @06e102a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_sent/39 (tcp_sent) @06e101c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_poll/38 (tcp_poll) @06e100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 http_close_or_abort_conn/12 
+  Calls: 
+tcp_err/37 (tcp_err) @06e10000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_recv/36 (tcp_recv) @06e0aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_arg/35 (tcp_arg) @06e0ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_write/34 (tcp_write) @06e0ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_write/11 
+  Calls: 
+mem_free/33 (mem_free) @06e0a9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_free/10 
+  Calls: 
+pbuf_free/32 (pbuf_free) @06e0a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_recv/25 http_recv/25 http_recv/25 http_recv/25 http_state_eof/9 
+  Calls: 
+fs_close/31 (fs_close) @06e0a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_eof/9 
+  Calls: 
+mem_malloc/30 (mem_malloc) @06e0a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_alloc/8 
+  Calls: 
+memset/29 (memset) @06e0a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_init/7 
+  Calls: 
+httpd_init/28 (httpd_init) @06dfeee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: httpd_init_pcb/27 tcp_new_ip_type/60 
+httpd_init_pcb/27 (httpd_init_pcb) @06dfee00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06dfeee0
+  References: ip_addr_any_type/57 (addr) http_accept/26 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: httpd_init/28 
+  Calls: tcp_accept/59 tcp_listen_with_backlog/58 tcp_bind/56 tcp_setprio/55 
+http_accept/26 (http_accept) @06dfea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06dfee00
+  References: http_recv/25 (addr) http_err/22 (addr) http_poll/24 (addr) http_sent/23 (addr) 
+  Referring: httpd_init_pcb/27 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 http_state_alloc/8 tcp_setprio/55 
+http_recv/25 (http_recv) @06dfe7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06dfea80
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/32 http_close_conn/13 http_send/17 pbuf_free/32 pbuf_free/32 http_parse_request/19 tcp_recved/54 http_close_conn/13 pbuf_free/32 tcp_recved/54 
+http_poll/24 (http_poll) @06dfe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06dfe7e0
+  References: 
+  Referring: http_close_or_abort_conn/12 (addr) http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/53 http_send/17 http_close_conn/13 http_close_conn/13 
+http_sent/23 (http_sent) @06dfe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06dfe540
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: http_send/17 
+http_err/22 (http_err) @06dfe000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06dfe2a0
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: http_state_free/10 
+http_init_file/21 (http_init_file) @06debee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06dfe000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_find_file/20 
+  Calls: lwip_strnstr/47 
+http_find_file/20 (http_find_file) @06debc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06debee0
+  References: http_uri_buf/6 (addr) http_uri_buf/6 (addr) http_uri_buf/6 (write) httpd_default_filenames/4 (read) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) http_uri_buf/6 (write) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: http_parse_request/19 
+  Calls: http_init_file/21 http_get_404_file/18 http_get_404_file/18 fs_open/43 strchr/52 fs_open/43 memcpy/51 strlen/50 memcpy/51 strlen/50 
+http_parse_request/19 (http_parse_request) @06deb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06debc40
+  References: httpd_req_buf/5 (addr) httpd_req_buf/5 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 
+  Calls: pbuf_clen/49 http_find_file/20 lwip_strnstr/47 lwip_strnstr/47 lwip_strnstr/47 strncmp/48 lwip_strnstr/47 pbuf_copy_partial/46 pbuf_ref/45 pbuf_cat/44 
+http_get_404_file/18 (http_get_404_file) @06deb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06deb700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: fs_open/43 fs_open/43 fs_open/43 
+http_send/17 (http_send) @06deb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06deb460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 http_poll/24 http_sent/23 
+  Calls: http_eof/14 fs_bytes_left/42 http_send_data_nonssi/16 http_check_eof/15 
+http_send_data_nonssi/16 (http_send_data_nonssi) @06ddfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06deb1c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_write/11 
+http_check_eof/15 (http_check_eof) @06ddfee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ddfc40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_eof/14 fs_bytes_left/42 http_eof/14 
+http_eof/14 (http_eof) @06ddfb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ddfee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 http_check_eof/15 http_check_eof/15 
+  Calls: http_close_conn/13 
+http_close_conn/13 (http_close_conn) @06ddf8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ddfb60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 http_recv/25 http_poll/24 http_poll/24 http_eof/14 
+  Calls: http_close_or_abort_conn/12 
+http_close_or_abort_conn/12 (http_close_or_abort_conn) @06ddf620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ddf8c0
+  References: http_poll/24 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: http_close_conn/13 
+  Calls: tcp_poll/38 tcp_close/41 tcp_abort/40 http_state_free/10 tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 
+http_write/11 (http_write) @06ddf380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ddf620
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send_data_nonssi/16 
+  Calls: tcp_write/34 
+http_state_free/10 (http_state_free) @06ddf0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ddf380
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_err/22 http_close_or_abort_conn/12 
+  Calls: mem_free/33 http_state_eof/9 
+http_state_eof/9 (http_state_eof) @06dd7e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ddf0e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_state_free/10 
+  Calls: pbuf_free/32 fs_close/31 
+http_state_alloc/8 (http_state_alloc) @06dd7b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06dd7e00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_accept/26 
+  Calls: http_state_init/7 mem_malloc/30 
+http_state_init/7 (http_state_init) @06dd78c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06dd7b60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_state_alloc/8 
+  Calls: memset/29 
+http_uri_buf/6 (http_uri_buf) @06dacc60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06dd78c0
+  References: 
+  Referring: http_find_file/20 (addr) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) 
+  Availability: not-ready
+  Varpool flags:
+httpd_req_buf/5 (httpd_req_buf) @06dacb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06dacc60
+  References: 
+  Referring: http_parse_request/19 (addr) http_parse_request/19 (addr) 
+  Availability: not-ready
+  Varpool flags:
+httpd_default_filenames/4 (httpd_default_filenames) @06dacab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06dacb88
+  References: 
+  Referring: http_find_file/20 (read) http_find_file/20 (read) http_find_file/20 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+_putchar_unlocked/3 (_putchar_unlocked) @06daba80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+_getchar_unlocked/2 (_getchar_unlocked) @06dab7e0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+__sputc_r/1 (__sputc_r) @06dab380
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+DevAssert/0 (DevAssert) @06ba52a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: _putchar_unlocked/3 _getchar_unlocked/2 __sputc_r/1 DevAssert/0
+
+Reclaimed Symbol table:
+
+tcp_new_ip_type/60 (tcp_new_ip_type) @06e44700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init/28 
+  Calls: 
+tcp_accept/59 (tcp_accept) @06e44540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_listen_with_backlog/58 (tcp_listen_with_backlog) @06e44460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+ip_addr_any_type/57 (ip_addr_any_type) @06e41cf0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: httpd_init_pcb/27 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/56 (tcp_bind) @06e44380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_setprio/55 (tcp_setprio) @06e441c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 http_accept/26 
+  Calls: 
+tcp_recved/54 (tcp_recved) @06e44000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_recv/25 http_recv/25 
+  Calls: 
+tcp_output/53 (tcp_output) @06e31d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_poll/24 
+  Calls: 
+strchr/52 (strchr) @06e318c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 
+  Calls: 
+memcpy/51 (memcpy) @06e31700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+strlen/50 (strlen) @06e31620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+pbuf_clen/49 (pbuf_clen) @06e312a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+strncmp/48 (strncmp) @06e311c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+lwip_strnstr/47 (lwip_strnstr) @06e310e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_init_file/21 http_parse_request/19 http_parse_request/19 http_parse_request/19 http_parse_request/19 
+  Calls: 
+pbuf_copy_partial/46 (pbuf_copy_partial) @06e31000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_ref/45 (pbuf_ref) @06e10ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_cat/44 (pbuf_cat) @06e10e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+fs_open/43 (fs_open) @06e10a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 http_get_404_file/18 http_get_404_file/18 http_get_404_file/18 
+  Calls: 
+fs_bytes_left/42 (fs_bytes_left) @06e10700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_send/17 http_check_eof/15 
+  Calls: 
+tcp_close/41 (tcp_close) @06e10380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_abort/40 (tcp_abort) @06e102a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_sent/39 (tcp_sent) @06e101c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_poll/38 (tcp_poll) @06e100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 http_close_or_abort_conn/12 
+  Calls: 
+tcp_err/37 (tcp_err) @06e10000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_recv/36 (tcp_recv) @06e0aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_arg/35 (tcp_arg) @06e0ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_write/34 (tcp_write) @06e0ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_write/11 
+  Calls: 
+mem_free/33 (mem_free) @06e0a9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_free/10 
+  Calls: 
+pbuf_free/32 (pbuf_free) @06e0a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_recv/25 http_recv/25 http_recv/25 http_recv/25 http_state_eof/9 
+  Calls: 
+fs_close/31 (fs_close) @06e0a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_eof/9 
+  Calls: 
+mem_malloc/30 (mem_malloc) @06e0a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_alloc/8 
+  Calls: 
+memset/29 (memset) @06e0a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_init/7 
+  Calls: 
+httpd_init/28 (httpd_init) @06dfeee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: httpd_init_pcb/27 tcp_new_ip_type/60 
+httpd_init_pcb/27 (httpd_init_pcb) @06dfee00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ip_addr_any_type/57 (addr) http_accept/26 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: httpd_init/28 
+  Calls: tcp_accept/59 tcp_listen_with_backlog/58 tcp_bind/56 tcp_setprio/55 
+http_accept/26 (http_accept) @06dfea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: http_recv/25 (addr) http_err/22 (addr) http_poll/24 (addr) http_sent/23 (addr) 
+  Referring: httpd_init_pcb/27 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 http_state_alloc/8 tcp_setprio/55 
+http_recv/25 (http_recv) @06dfe7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/32 http_close_conn/13 http_send/17 pbuf_free/32 pbuf_free/32 http_parse_request/19 tcp_recved/54 http_close_conn/13 pbuf_free/32 tcp_recved/54 
+http_poll/24 (http_poll) @06dfe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_close_or_abort_conn/12 (addr) http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/53 http_send/17 http_close_conn/13 http_close_conn/13 
+http_sent/23 (http_sent) @06dfe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: http_send/17 
+http_err/22 (http_err) @06dfe000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: http_state_free/10 
+http_init_file/21 (http_init_file) @06debee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_find_file/20 
+  Calls: lwip_strnstr/47 
+http_find_file/20 (http_find_file) @06debc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: http_uri_buf/6 (addr) http_uri_buf/6 (addr) http_uri_buf/6 (write) httpd_default_filenames/4 (read) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) http_uri_buf/6 (write) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: http_parse_request/19 
+  Calls: http_init_file/21 http_get_404_file/18 http_get_404_file/18 fs_open/43 strchr/52 fs_open/43 memcpy/51 strlen/50 memcpy/51 strlen/50 
+http_parse_request/19 (http_parse_request) @06deb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: httpd_req_buf/5 (addr) httpd_req_buf/5 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 
+  Calls: pbuf_clen/49 http_find_file/20 lwip_strnstr/47 lwip_strnstr/47 lwip_strnstr/47 strncmp/48 lwip_strnstr/47 pbuf_copy_partial/46 pbuf_ref/45 pbuf_cat/44 
+http_get_404_file/18 (http_get_404_file) @06deb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: fs_open/43 fs_open/43 fs_open/43 
+http_send/17 (http_send) @06deb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 http_poll/24 http_sent/23 
+  Calls: http_eof/14 fs_bytes_left/42 http_send_data_nonssi/16 http_check_eof/15 
+http_send_data_nonssi/16 (http_send_data_nonssi) @06ddfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_write/11 
+http_check_eof/15 (http_check_eof) @06ddfee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_eof/14 fs_bytes_left/42 http_eof/14 
+http_eof/14 (http_eof) @06ddfb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 http_check_eof/15 http_check_eof/15 
+  Calls: http_close_conn/13 
+http_close_conn/13 (http_close_conn) @06ddf8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 http_recv/25 http_poll/24 http_poll/24 http_eof/14 
+  Calls: http_close_or_abort_conn/12 
+http_close_or_abort_conn/12 (http_close_or_abort_conn) @06ddf620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: http_poll/24 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: http_close_conn/13 
+  Calls: tcp_poll/38 tcp_close/41 tcp_abort/40 http_state_free/10 tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 
+http_write/11 (http_write) @06ddf380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send_data_nonssi/16 
+  Calls: tcp_write/34 
+http_state_free/10 (http_state_free) @06ddf0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_err/22 http_close_or_abort_conn/12 
+  Calls: mem_free/33 http_state_eof/9 
+http_state_eof/9 (http_state_eof) @06dd7e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_state_free/10 
+  Calls: pbuf_free/32 fs_close/31 
+http_state_alloc/8 (http_state_alloc) @06dd7b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_accept/26 
+  Calls: http_state_init/7 mem_malloc/30 
+http_state_init/7 (http_state_init) @06dd78c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_state_alloc/8 
+  Calls: memset/29 
+http_uri_buf/6 (http_uri_buf) @06dacc60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_find_file/20 (addr) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) 
+  Availability: not-ready
+  Varpool flags:
+httpd_req_buf/5 (httpd_req_buf) @06dacb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_parse_request/19 (addr) http_parse_request/19 (addr) 
+  Availability: not-ready
+  Varpool flags:
+httpd_default_filenames/4 (httpd_default_filenames) @06dacab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_find_file/20 (read) http_find_file/20 (read) http_find_file/20 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+tcp_new_ip_type/60 (tcp_new_ip_type) @06e44700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init/28 
+  Calls: 
+tcp_accept/59 (tcp_accept) @06e44540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_listen_with_backlog/58 (tcp_listen_with_backlog) @06e44460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+ip_addr_any_type/57 (ip_addr_any_type) @06e41cf0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: httpd_init_pcb/27 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/56 (tcp_bind) @06e44380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_setprio/55 (tcp_setprio) @06e441c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 http_accept/26 
+  Calls: 
+tcp_recved/54 (tcp_recved) @06e44000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_recv/25 http_recv/25 
+  Calls: 
+tcp_output/53 (tcp_output) @06e31d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_poll/24 
+  Calls: 
+strchr/52 (strchr) @06e318c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 
+  Calls: 
+memcpy/51 (memcpy) @06e31700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+strlen/50 (strlen) @06e31620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+pbuf_clen/49 (pbuf_clen) @06e312a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+strncmp/48 (strncmp) @06e311c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+lwip_strnstr/47 (lwip_strnstr) @06e310e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_init_file/21 http_parse_request/19 http_parse_request/19 http_parse_request/19 http_parse_request/19 
+  Calls: 
+pbuf_copy_partial/46 (pbuf_copy_partial) @06e31000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_ref/45 (pbuf_ref) @06e10ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_cat/44 (pbuf_cat) @06e10e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+fs_open/43 (fs_open) @06e10a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 http_get_404_file/18 http_get_404_file/18 http_get_404_file/18 
+  Calls: 
+fs_bytes_left/42 (fs_bytes_left) @06e10700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_send/17 http_check_eof/15 
+  Calls: 
+tcp_close/41 (tcp_close) @06e10380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_abort/40 (tcp_abort) @06e102a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_sent/39 (tcp_sent) @06e101c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_poll/38 (tcp_poll) @06e100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 http_close_or_abort_conn/12 
+  Calls: 
+tcp_err/37 (tcp_err) @06e10000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_recv/36 (tcp_recv) @06e0aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_arg/35 (tcp_arg) @06e0ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_write/34 (tcp_write) @06e0ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_write/11 
+  Calls: 
+mem_free/33 (mem_free) @06e0a9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_free/10 
+  Calls: 
+pbuf_free/32 (pbuf_free) @06e0a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_recv/25 http_recv/25 http_recv/25 http_recv/25 http_state_eof/9 
+  Calls: 
+fs_close/31 (fs_close) @06e0a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_eof/9 
+  Calls: 
+mem_malloc/30 (mem_malloc) @06e0a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_alloc/8 
+  Calls: 
+memset/29 (memset) @06e0a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_init/7 
+  Calls: 
+httpd_init/28 (httpd_init) @06dfeee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: httpd_init_pcb/27 tcp_new_ip_type/60 
+httpd_init_pcb/27 (httpd_init_pcb) @06dfee00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ip_addr_any_type/57 (addr) http_accept/26 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: httpd_init/28 
+  Calls: tcp_accept/59 tcp_listen_with_backlog/58 tcp_bind/56 tcp_setprio/55 
+http_accept/26 (http_accept) @06dfea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: http_recv/25 (addr) http_err/22 (addr) http_poll/24 (addr) http_sent/23 (addr) 
+  Referring: httpd_init_pcb/27 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 http_state_alloc/8 tcp_setprio/55 
+http_recv/25 (http_recv) @06dfe7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/32 http_close_conn/13 http_send/17 pbuf_free/32 pbuf_free/32 http_parse_request/19 tcp_recved/54 http_close_conn/13 pbuf_free/32 tcp_recved/54 
+http_poll/24 (http_poll) @06dfe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_close_or_abort_conn/12 (addr) http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/53 http_send/17 http_close_conn/13 http_close_conn/13 
+http_sent/23 (http_sent) @06dfe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: http_send/17 
+http_err/22 (http_err) @06dfe000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: http_state_free/10 
+http_init_file/21 (http_init_file) @06debee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_find_file/20 
+  Calls: lwip_strnstr/47 
+http_find_file/20 (http_find_file) @06debc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: http_uri_buf/6 (addr) http_uri_buf/6 (addr) http_uri_buf/6 (write) httpd_default_filenames/4 (read) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) http_uri_buf/6 (write) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: http_parse_request/19 
+  Calls: http_init_file/21 http_get_404_file/18 http_get_404_file/18 fs_open/43 strchr/52 fs_open/43 memcpy/51 strlen/50 memcpy/51 strlen/50 
+http_parse_request/19 (http_parse_request) @06deb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: httpd_req_buf/5 (addr) httpd_req_buf/5 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 
+  Calls: pbuf_clen/49 http_find_file/20 lwip_strnstr/47 lwip_strnstr/47 lwip_strnstr/47 strncmp/48 lwip_strnstr/47 pbuf_copy_partial/46 pbuf_ref/45 pbuf_cat/44 
+http_get_404_file/18 (http_get_404_file) @06deb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: fs_open/43 fs_open/43 fs_open/43 
+http_send/17 (http_send) @06deb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 http_poll/24 http_sent/23 
+  Calls: http_eof/14 fs_bytes_left/42 http_send_data_nonssi/16 http_check_eof/15 
+http_send_data_nonssi/16 (http_send_data_nonssi) @06ddfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_write/11 
+http_check_eof/15 (http_check_eof) @06ddfee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_eof/14 fs_bytes_left/42 http_eof/14 
+http_eof/14 (http_eof) @06ddfb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 http_check_eof/15 http_check_eof/15 
+  Calls: http_close_conn/13 
+http_close_conn/13 (http_close_conn) @06ddf8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 http_recv/25 http_poll/24 http_poll/24 http_eof/14 
+  Calls: http_close_or_abort_conn/12 
+http_close_or_abort_conn/12 (http_close_or_abort_conn) @06ddf620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: http_poll/24 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: http_close_conn/13 
+  Calls: tcp_poll/38 tcp_close/41 tcp_abort/40 http_state_free/10 tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 
+http_write/11 (http_write) @06ddf380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send_data_nonssi/16 
+  Calls: tcp_write/34 
+http_state_free/10 (http_state_free) @06ddf0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_err/22 http_close_or_abort_conn/12 
+  Calls: mem_free/33 http_state_eof/9 
+http_state_eof/9 (http_state_eof) @06dd7e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_state_free/10 
+  Calls: pbuf_free/32 fs_close/31 
+http_state_alloc/8 (http_state_alloc) @06dd7b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_accept/26 
+  Calls: http_state_init/7 mem_malloc/30 
+http_state_init/7 (http_state_init) @06dd78c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_state_alloc/8 
+  Calls: memset/29 
+http_uri_buf/6 (http_uri_buf) @06dacc60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_find_file/20 (addr) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) 
+  Availability: not-ready
+  Varpool flags:
+httpd_req_buf/5 (httpd_req_buf) @06dacb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_parse_request/19 (addr) http_parse_request/19 (addr) 
+  Availability: not-ready
+  Varpool flags:
+httpd_default_filenames/4 (httpd_default_filenames) @06dacab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_find_file/20 (read) http_find_file/20 (read) http_find_file/20 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+tcp_new_ip_type/60 (tcp_new_ip_type) @06e44700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init/28 
+  Calls: 
+tcp_accept/59 (tcp_accept) @06e44540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_listen_with_backlog/58 (tcp_listen_with_backlog) @06e44460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+ip_addr_any_type/57 (ip_addr_any_type) @06e41cf0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: httpd_init_pcb/27 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+tcp_bind/56 (tcp_bind) @06e44380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_setprio/55 (tcp_setprio) @06e441c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: httpd_init_pcb/27 http_accept/26 
+  Calls: 
+tcp_recved/54 (tcp_recved) @06e44000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_recv/25 http_recv/25 
+  Calls: 
+tcp_output/53 (tcp_output) @06e31d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_poll/24 
+  Calls: 
+strchr/52 (strchr) @06e318c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 
+  Calls: 
+memcpy/51 (memcpy) @06e31700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+strlen/50 (strlen) @06e31620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+pbuf_clen/49 (pbuf_clen) @06e312a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+strncmp/48 (strncmp) @06e311c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+lwip_strnstr/47 (lwip_strnstr) @06e310e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_init_file/21 http_parse_request/19 http_parse_request/19 http_parse_request/19 http_parse_request/19 
+  Calls: 
+pbuf_copy_partial/46 (pbuf_copy_partial) @06e31000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_ref/45 (pbuf_ref) @06e10ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_cat/44 (pbuf_cat) @06e10e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+fs_open/43 (fs_open) @06e10a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 http_get_404_file/18 http_get_404_file/18 http_get_404_file/18 
+  Calls: 
+fs_bytes_left/42 (fs_bytes_left) @06e10700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_send/17 http_check_eof/15 
+  Calls: 
+tcp_close/41 (tcp_close) @06e10380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_abort/40 (tcp_abort) @06e102a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_sent/39 (tcp_sent) @06e101c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_poll/38 (tcp_poll) @06e100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 http_close_or_abort_conn/12 
+  Calls: 
+tcp_err/37 (tcp_err) @06e10000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_recv/36 (tcp_recv) @06e0aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_arg/35 (tcp_arg) @06e0ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_accept/26 http_close_or_abort_conn/12 
+  Calls: 
+tcp_write/34 (tcp_write) @06e0ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_write/11 
+  Calls: 
+mem_free/33 (mem_free) @06e0a9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_free/10 
+  Calls: 
+pbuf_free/32 (pbuf_free) @06e0a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_recv/25 http_recv/25 http_recv/25 http_recv/25 http_state_eof/9 
+  Calls: 
+fs_close/31 (fs_close) @06e0a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_eof/9 
+  Calls: 
+mem_malloc/30 (mem_malloc) @06e0a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_alloc/8 
+  Calls: 
+memset/29 (memset) @06e0a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: http_state_init/7 
+  Calls: 
+httpd_init/28 (httpd_init) @06dfeee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: httpd_init_pcb/27 tcp_new_ip_type/60 
+httpd_init_pcb/27 (httpd_init_pcb) @06dfee00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ip_addr_any_type/57 (addr) http_accept/26 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: httpd_init/28 
+  Calls: tcp_accept/59 tcp_listen_with_backlog/58 tcp_bind/56 tcp_setprio/55 
+http_accept/26 (http_accept) @06dfea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: http_recv/25 (addr) http_err/22 (addr) http_poll/24 (addr) http_sent/23 (addr) 
+  Referring: httpd_init_pcb/27 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 http_state_alloc/8 tcp_setprio/55 
+http_recv/25 (http_recv) @06dfe7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/32 http_close_conn/13 http_send/17 pbuf_free/32 pbuf_free/32 http_parse_request/19 tcp_recved/54 http_close_conn/13 pbuf_free/32 tcp_recved/54 
+http_poll/24 (http_poll) @06dfe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_close_or_abort_conn/12 (addr) http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/53 http_send/17 http_close_conn/13 http_close_conn/13 
+http_sent/23 (http_sent) @06dfe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: http_send/17 
+http_err/22 (http_err) @06dfe000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: http_state_free/10 
+http_init_file/21 (http_init_file) @06debee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_find_file/20 
+  Calls: lwip_strnstr/47 
+http_find_file/20 (http_find_file) @06debc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: http_uri_buf/6 (addr) http_uri_buf/6 (addr) http_uri_buf/6 (write) httpd_default_filenames/4 (read) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) http_uri_buf/6 (write) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: http_parse_request/19 
+  Calls: http_init_file/21 http_get_404_file/18 http_get_404_file/18 fs_open/43 strchr/52 fs_open/43 memcpy/51 strlen/50 memcpy/51 strlen/50 
+http_parse_request/19 (http_parse_request) @06deb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: httpd_req_buf/5 (addr) httpd_req_buf/5 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 
+  Calls: pbuf_clen/49 http_find_file/20 lwip_strnstr/47 lwip_strnstr/47 lwip_strnstr/47 strncmp/48 lwip_strnstr/47 pbuf_copy_partial/46 pbuf_ref/45 pbuf_cat/44 
+http_get_404_file/18 (http_get_404_file) @06deb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: fs_open/43 fs_open/43 fs_open/43 
+http_send/17 (http_send) @06deb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 http_poll/24 http_sent/23 
+  Calls: http_eof/14 fs_bytes_left/42 http_send_data_nonssi/16 http_check_eof/15 
+http_send_data_nonssi/16 (http_send_data_nonssi) @06ddfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_write/11 
+http_check_eof/15 (http_check_eof) @06ddfee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_eof/14 fs_bytes_left/42 http_eof/14 
+http_eof/14 (http_eof) @06ddfb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send/17 http_check_eof/15 http_check_eof/15 
+  Calls: http_close_conn/13 
+http_close_conn/13 (http_close_conn) @06ddf8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_recv/25 http_recv/25 http_poll/24 http_poll/24 http_eof/14 
+  Calls: http_close_or_abort_conn/12 
+http_close_or_abort_conn/12 (http_close_or_abort_conn) @06ddf620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: http_poll/24 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: http_close_conn/13 
+  Calls: tcp_poll/38 tcp_close/41 tcp_abort/40 http_state_free/10 tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 
+http_write/11 (http_write) @06ddf380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_send_data_nonssi/16 
+  Calls: tcp_write/34 
+http_state_free/10 (http_state_free) @06ddf0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_err/22 http_close_or_abort_conn/12 
+  Calls: mem_free/33 http_state_eof/9 
+http_state_eof/9 (http_state_eof) @06dd7e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_state_free/10 
+  Calls: pbuf_free/32 fs_close/31 
+http_state_alloc/8 (http_state_alloc) @06dd7b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_accept/26 
+  Calls: http_state_init/7 mem_malloc/30 
+http_state_init/7 (http_state_init) @06dd78c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: http_state_alloc/8 
+  Calls: memset/29 
+http_uri_buf/6 (http_uri_buf) @06dacc60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_find_file/20 (addr) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) 
+  Availability: not-ready
+  Varpool flags:
+httpd_req_buf/5 (httpd_req_buf) @06dacb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_parse_request/19 (addr) http_parse_request/19 (addr) 
+  Availability: not-ready
+  Varpool flags:
+httpd_default_filenames/4 (httpd_default_filenames) @06dacab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: http_find_file/20 (read) http_find_file/20 (read) http_find_file/20 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+tcp_new_ip_type/60 (tcp_new_ip_type) @06e44700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init/28 
+  Calls: 
+tcp_accept/59 (tcp_accept) @06e44540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_listen_with_backlog/58 (tcp_listen_with_backlog) @06e44460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+ip_addr_any_type/57 (ip_addr_any_type) @06e41cf0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: httpd_init_pcb/27 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/56 (tcp_bind) @06e44380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init_pcb/27 
+  Calls: 
+tcp_setprio/55 (tcp_setprio) @06e441c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: httpd_init_pcb/27 http_accept/26 
+  Calls: 
+tcp_recved/54 (tcp_recved) @06e44000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_recv/25 http_recv/25 
+  Calls: 
+tcp_output/53 (tcp_output) @06e31d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_poll/24 
+  Calls: 
+strchr/52 (strchr) @06e318c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_find_file/20 
+  Calls: 
+memcpy/51 (memcpy) @06e31700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+strlen/50 (strlen) @06e31620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: 
+pbuf_clen/49 (pbuf_clen) @06e312a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+strncmp/48 (strncmp) @06e311c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+lwip_strnstr/47 (lwip_strnstr) @06e310e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 http_parse_request/19 http_parse_request/19 http_parse_request/19 http_init_file/21 
+  Calls: 
+pbuf_copy_partial/46 (pbuf_copy_partial) @06e31000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_ref/45 (pbuf_ref) @06e10ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+pbuf_cat/44 (pbuf_cat) @06e10e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_parse_request/19 
+  Calls: 
+fs_open/43 (fs_open) @06e10a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_find_file/20 http_find_file/20 http_get_404_file/18 http_get_404_file/18 http_get_404_file/18 
+  Calls: 
+fs_bytes_left/42 (fs_bytes_left) @06e10700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_send/17 http_check_eof/15 
+  Calls: 
+tcp_close/41 (tcp_close) @06e10380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_abort/40 (tcp_abort) @06e102a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 
+  Calls: 
+tcp_sent/39 (tcp_sent) @06e101c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_poll/38 (tcp_poll) @06e100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_err/37 (tcp_err) @06e10000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_recv/36 (tcp_recv) @06e0aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_arg/35 (tcp_arg) @06e0ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_close_or_abort_conn/12 http_accept/26 
+  Calls: 
+tcp_write/34 (tcp_write) @06e0ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_write/11 
+  Calls: 
+mem_free/33 (mem_free) @06e0a9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_state_free/10 
+  Calls: 
+pbuf_free/32 (pbuf_free) @06e0a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_recv/25 http_recv/25 http_recv/25 http_recv/25 http_state_eof/9 
+  Calls: 
+fs_close/31 (fs_close) @06e0a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_state_eof/9 
+  Calls: 
+mem_malloc/30 (mem_malloc) @06e0a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_state_alloc/8 
+  Calls: 
+memset/29 (memset) @06e0a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: http_state_init/7 
+  Calls: 
+httpd_init/28 (httpd_init) @06dfeee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: httpd_init_pcb/27 tcp_new_ip_type/60 
+httpd_init_pcb/27 (httpd_init_pcb) @06dfee00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: ip_addr_any_type/57 (addr) http_accept/26 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: httpd_init/28 
+  Calls: tcp_accept/59 tcp_listen_with_backlog/58 tcp_bind/56 tcp_setprio/55 
+http_accept/26 (http_accept) @06dfea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: http_recv/25 (addr) http_err/22 (addr) http_poll/24 (addr) http_sent/23 (addr) 
+  Referring: httpd_init_pcb/27 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 http_state_alloc/8 tcp_setprio/55 
+http_recv/25 (http_recv) @06dfe7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/32 http_close_conn/13 http_send/17 pbuf_free/32 pbuf_free/32 http_parse_request/19 tcp_recved/54 http_close_conn/13 pbuf_free/32 tcp_recved/54 
+http_poll/24 (http_poll) @06dfe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) http_close_or_abort_conn/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/53 http_send/17 http_close_conn/13 http_close_conn/13 
+http_sent/23 (http_sent) @06dfe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: http_send/17 
+http_err/22 (http_err) @06dfe000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: http_accept/26 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: http_state_free/10 
+http_init_file/21 (http_init_file) @06debee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_find_file/20 
+  Calls: lwip_strnstr/47 
+http_find_file/20 (http_find_file) @06debc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: http_uri_buf/6 (addr) http_uri_buf/6 (addr) http_uri_buf/6 (write) httpd_default_filenames/4 (read) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) http_uri_buf/6 (write) http_uri_buf/6 (addr) httpd_default_filenames/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_parse_request/19 
+  Calls: http_init_file/21 http_get_404_file/18 http_get_404_file/18 fs_open/43 strchr/52 fs_open/43 memcpy/51 strlen/50 memcpy/51 strlen/50 
+http_parse_request/19 (http_parse_request) @06deb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: httpd_req_buf/5 (addr) httpd_req_buf/5 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_recv/25 
+  Calls: pbuf_clen/49 http_find_file/20 lwip_strnstr/47 lwip_strnstr/47 lwip_strnstr/47 strncmp/48 lwip_strnstr/47 pbuf_copy_partial/46 pbuf_ref/45 pbuf_cat/44 
+http_get_404_file/18 (http_get_404_file) @06deb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_find_file/20 http_find_file/20 
+  Calls: fs_open/43 fs_open/43 fs_open/43 
+http_send/17 (http_send) @06deb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_recv/25 http_poll/24 http_sent/23 
+  Calls: http_eof/14 fs_bytes_left/42 http_send_data_nonssi/16 http_check_eof/15 
+http_send_data_nonssi/16 (http_send_data_nonssi) @06ddfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_write/11 
+http_check_eof/15 (http_check_eof) @06ddfee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_send/17 
+  Calls: http_eof/14 fs_bytes_left/42 http_eof/14 
+http_eof/14 (http_eof) @06ddfb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_send/17 http_check_eof/15 http_check_eof/15 
+  Calls: http_close_conn/13 
+http_close_conn/13 (http_close_conn) @06ddf8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_recv/25 http_recv/25 http_poll/24 http_poll/24 http_eof/14 
+  Calls: http_close_or_abort_conn/12 
+http_close_or_abort_conn/12 (http_close_or_abort_conn) @06ddf620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: http_poll/24 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_close_conn/13 
+  Calls: tcp_poll/38 tcp_close/41 tcp_abort/40 http_state_free/10 tcp_sent/39 tcp_poll/38 tcp_err/37 tcp_recv/36 tcp_arg/35 
+http_write/11 (http_write) @06ddf380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_send_data_nonssi/16 
+  Calls: tcp_write/34 
+http_state_free/10 (http_state_free) @06ddf0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_close_or_abort_conn/12 http_err/22 
+  Calls: mem_free/33 http_state_eof/9 
+http_state_eof/9 (http_state_eof) @06dd7e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_state_free/10 
+  Calls: pbuf_free/32 fs_close/31 
+http_state_alloc/8 (http_state_alloc) @06dd7b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_accept/26 
+  Calls: http_state_init/7 mem_malloc/30 
+http_state_init/7 (http_state_init) @06dd78c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: http_state_alloc/8 
+  Calls: memset/29 
+http_uri_buf/6 (http_uri_buf) @06dacc60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: http_find_file/20 (addr) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) http_find_file/20 (write) http_find_file/20 (addr) 
+  Availability: available
+  Varpool flags:
+httpd_req_buf/5 (httpd_req_buf) @06dacb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: http_parse_request/19 (addr) http_parse_request/19 (addr) 
+  Availability: available
+  Varpool flags:
+httpd_default_filenames/4 (httpd_default_filenames) @06dacab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: http_find_file/20 (read) http_find_file/20 (read) http_find_file/20 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: http_uri_buf/6 httpd_req_buf/5 httpd_default_filenames/4
+Removing variables:
+
+Final Symbol table:
+
+tcp_new_ip_type/60 (tcp_new_ip_type) @06e44700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_accept/59 (tcp_accept) @06e44540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_listen_with_backlog/58 (tcp_listen_with_backlog) @06e44460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_addr_any_type/57 (ip_addr_any_type) @06e41cf0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/56 (tcp_bind) @06e44380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_setprio/55 (tcp_setprio) @06e441c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recved/54 (tcp_recved) @06e44000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_output/53 (tcp_output) @06e31d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+strchr/52 (strchr) @06e318c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memcpy/51 (memcpy) @06e31700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+strlen/50 (strlen) @06e31620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_clen/49 (pbuf_clen) @06e312a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+strncmp/48 (strncmp) @06e311c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_strnstr/47 (lwip_strnstr) @06e310e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_copy_partial/46 (pbuf_copy_partial) @06e31000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_ref/45 (pbuf_ref) @06e10ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_cat/44 (pbuf_cat) @06e10e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+fs_open/43 (fs_open) @06e10a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+fs_bytes_left/42 (fs_bytes_left) @06e10700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_close/41 (tcp_close) @06e10380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_abort/40 (tcp_abort) @06e102a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_sent/39 (tcp_sent) @06e101c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_poll/38 (tcp_poll) @06e100e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_err/37 (tcp_err) @06e10000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recv/36 (tcp_recv) @06e0aee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_arg/35 (tcp_arg) @06e0ae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_write/34 (tcp_write) @06e0ac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mem_free/33 (mem_free) @06e0a9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_free/32 (pbuf_free) @06e0a7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+fs_close/31 (fs_close) @06e0a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+mem_malloc/30 (mem_malloc) @06e0a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memset/29 (memset) @06e0a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+httpd_init/28 (httpd_init) @06dfeee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+httpd_init_pcb/27 (httpd_init_pcb) @06dfee00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_accept/26 (http_accept) @06dfea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_recv/25 (http_recv) @06dfe7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_poll/24 (http_poll) @06dfe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_sent/23 (http_sent) @06dfe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_err/22 (http_err) @06dfe000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_init_file/21 (http_init_file) @06debee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_find_file/20 (http_find_file) @06debc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_parse_request/19 (http_parse_request) @06deb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_get_404_file/18 (http_get_404_file) @06deb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_send/17 (http_send) @06deb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_send_data_nonssi/16 (http_send_data_nonssi) @06ddfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_check_eof/15 (http_check_eof) @06ddfee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_eof/14 (http_eof) @06ddfb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_close_conn/13 (http_close_conn) @06ddf8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_close_or_abort_conn/12 (http_close_or_abort_conn) @06ddf620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_write/11 (http_write) @06ddf380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_state_free/10 (http_state_free) @06ddf0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_state_eof/9 (http_state_eof) @06dd7e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_state_alloc/8 (http_state_alloc) @06dd7b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_state_init/7 (http_state_init) @06dd78c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+http_uri_buf/6 (http_uri_buf) @06dacc60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+httpd_req_buf/5 (httpd_req_buf) @06dacb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06dacc60
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+httpd_default_filenames/4 (httpd_default_filenames) @06dacab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06dacb88
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

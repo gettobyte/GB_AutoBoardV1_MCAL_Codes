@@ -1,0 +1,1529 @@
+Trivially needed symbols: etharp_request/17 etharp_request_dst/16 etharp_raw/15 etharp_query/14 etharp_output/13 etharp_output_to_arp_index/12 etharp_input/11 etharp_get_entry/10 etharp_find_addr/9 etharp_cleanup_netif/8 etharp_update_arp_entry/7 etharp_find_entry/6 etharp_tmr/5 etharp_free_entry/4 free_etharp_q/3 etharp_cached_entry/2 arp_table/1
+
+
+Initial Symbol table:
+
+ethzero/30 (ethzero) @06cfdee8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_request_dst/16 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+lwip_htons/29 (lwip_htons) @06ceaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+pbuf_alloc/28 (pbuf_alloc) @06ceae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+memp_malloc/27 (memp_malloc) @06ceac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_ref/26 (pbuf_ref) @06ceab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_clone/25 (pbuf_clone) @06ceaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+ethbroadcast/24 (ethbroadcast) @06cf32d0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_output/13 (addr) etharp_request/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+lwip_stats/23 (lwip_stats) @06ce91b0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_output/13 (read) etharp_output/13 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_raw/15 (read) etharp_raw/15 (write) etharp_raw/15 (read) etharp_raw/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+ethernet_output/22 (ethernet_output) @06c8ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_query/14 etharp_output/13 etharp_output_to_arp_index/12 etharp_update_arp_entry/7 
+  Calls: 
+memcpy/21 (memcpy) @06c8cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_raw/15 etharp_update_arp_entry/7 
+  Calls: 
+ip4_addr_isbroadcast_u32/20 (ip4_addr_isbroadcast_u32) @06c8cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 etharp_output/13 etharp_update_arp_entry/7 
+  Calls: 
+memp_free/19 (memp_free) @06c8c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+pbuf_free/18 (pbuf_free) @06c8c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_query/14 etharp_query/14 etharp_input/11 etharp_input/11 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+etharp_request/17 (etharp_request) @06c7da80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: ethbroadcast/24 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_query/14 etharp_output_to_arp_index/12 etharp_tmr/5 
+  Calls: etharp_request_dst/16 
+etharp_request_dst/16 (etharp_request_dst) @06c7de00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c7da80
+  References: ethzero/30 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_request/17 etharp_output_to_arp_index/12 
+  Calls: etharp_raw/15 
+etharp_raw/15 (etharp_raw) @06c7d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c7de00
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_request_dst/16 etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memcpy/21 memcpy/21 lwip_htons/29 pbuf_alloc/28 
+etharp_query/14 (etharp_query) @06c7d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c7d9a0
+  References: lwip_stats/23 (read) lwip_stats/23 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) etharp_cached_entry/2 (write) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_output/13 
+  Calls: pbuf_free/18 memp_free/19 pbuf_free/18 memp_malloc/27 pbuf_ref/26 pbuf_clone/25 ethernet_output/22 etharp_request/17 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_output/13 (etharp_output) @06c74ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c7d1c0
+  References: ethbroadcast/24 (addr) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) lwip_stats/23 (read) lwip_stats/23 (write) etharp_cached_entry/2 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) etharp_cached_entry/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ethernet_output/22 etharp_query/14 etharp_output_to_arp_index/12 etharp_output_to_arp_index/12 ip4_addr_isbroadcast_u32/20 
+etharp_output_to_arp_index/12 (etharp_output_to_arp_index) @06c480e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c74ee0
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_output/13 etharp_output/13 
+  Calls: ethernet_output/22 etharp_request_dst/16 etharp_request/17 
+etharp_input/11 (etharp_input) @06c48d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c480e0
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/18 etharp_raw/15 etharp_update_arp_entry/7 pbuf_free/18 
+etharp_get_entry/10 (etharp_get_entry) @06c48000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c48d20
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+etharp_find_addr/9 (etharp_find_addr) @06c32c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c48000
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_find_entry/6 
+etharp_cleanup_netif/8 (etharp_cleanup_netif) @06c32e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c32c40
+  References: arp_table/1 (read) arp_table/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_free_entry/4 
+etharp_update_arp_entry/7 (etharp_update_arp_entry) @06c32b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c32e00
+  References: arp_table/1 (write) arp_table/1 (write) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memp_free/19 memcpy/21 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_find_entry/6 (etharp_find_entry) @06c32620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c32b60
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_query/14 etharp_find_addr/9 etharp_update_arp_entry/7 
+  Calls: etharp_free_entry/4 
+etharp_tmr/5 (etharp_tmr) @06c321c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06c32620
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_request/17 etharp_free_entry/4 
+etharp_free_entry/4 (etharp_free_entry) @06c2bee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c321c0
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_cleanup_netif/8 etharp_find_entry/6 etharp_tmr/5 
+  Calls: free_etharp_q/3 
+free_etharp_q/3 (free_etharp_q) @06c2bc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c2bee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: etharp_free_entry/4 
+  Calls: memp_free/19 pbuf_free/18 
+etharp_cached_entry/2 (etharp_cached_entry) @06c292d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c2bc40
+  References: 
+  Referring: etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (write) etharp_query/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+arp_table/1 (arp_table) @06c29240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06c292d0
+  References: 
+  Referring: etharp_free_entry/4 (read) etharp_free_entry/4 (read) etharp_free_entry/4 (write) etharp_free_entry/4 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (addr) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (addr) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_cleanup_netif/8 (read) etharp_cleanup_netif/8 (read) etharp_find_addr/9 (read) etharp_find_addr/9 (addr) etharp_find_addr/9 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (addr) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (addr) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+DevAssert/0 (DevAssert) @06ab12a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+ethzero/30 (ethzero) @06cfdee8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_request_dst/16 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+lwip_htons/29 (lwip_htons) @06ceaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+pbuf_alloc/28 (pbuf_alloc) @06ceae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+memp_malloc/27 (memp_malloc) @06ceac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_ref/26 (pbuf_ref) @06ceab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_clone/25 (pbuf_clone) @06ceaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+ethbroadcast/24 (ethbroadcast) @06cf32d0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_output/13 (addr) etharp_request/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+lwip_stats/23 (lwip_stats) @06ce91b0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_output/13 (read) etharp_output/13 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_raw/15 (read) etharp_raw/15 (write) etharp_raw/15 (read) etharp_raw/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+ethernet_output/22 (ethernet_output) @06c8ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_query/14 etharp_output/13 etharp_output_to_arp_index/12 etharp_update_arp_entry/7 
+  Calls: 
+memcpy/21 (memcpy) @06c8cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_raw/15 etharp_update_arp_entry/7 
+  Calls: 
+ip4_addr_isbroadcast_u32/20 (ip4_addr_isbroadcast_u32) @06c8cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 etharp_output/13 etharp_update_arp_entry/7 
+  Calls: 
+memp_free/19 (memp_free) @06c8c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+pbuf_free/18 (pbuf_free) @06c8c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_query/14 etharp_query/14 etharp_input/11 etharp_input/11 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+etharp_request/17 (etharp_request) @06c7da80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ethbroadcast/24 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_query/14 etharp_output_to_arp_index/12 etharp_tmr/5 
+  Calls: etharp_request_dst/16 
+etharp_request_dst/16 (etharp_request_dst) @06c7de00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ethzero/30 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_request/17 etharp_output_to_arp_index/12 
+  Calls: etharp_raw/15 
+etharp_raw/15 (etharp_raw) @06c7d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_request_dst/16 etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memcpy/21 memcpy/21 lwip_htons/29 pbuf_alloc/28 
+etharp_query/14 (etharp_query) @06c7d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/23 (read) lwip_stats/23 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) etharp_cached_entry/2 (write) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_output/13 
+  Calls: pbuf_free/18 memp_free/19 pbuf_free/18 memp_malloc/27 pbuf_ref/26 pbuf_clone/25 ethernet_output/22 etharp_request/17 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_output/13 (etharp_output) @06c74ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ethbroadcast/24 (addr) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) lwip_stats/23 (read) lwip_stats/23 (write) etharp_cached_entry/2 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) etharp_cached_entry/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ethernet_output/22 etharp_query/14 etharp_output_to_arp_index/12 etharp_output_to_arp_index/12 ip4_addr_isbroadcast_u32/20 
+etharp_output_to_arp_index/12 (etharp_output_to_arp_index) @06c480e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_output/13 etharp_output/13 
+  Calls: ethernet_output/22 etharp_request_dst/16 etharp_request/17 
+etharp_input/11 (etharp_input) @06c48d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/18 etharp_raw/15 etharp_update_arp_entry/7 pbuf_free/18 
+etharp_get_entry/10 (etharp_get_entry) @06c48000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+etharp_find_addr/9 (etharp_find_addr) @06c32c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_find_entry/6 
+etharp_cleanup_netif/8 (etharp_cleanup_netif) @06c32e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_free_entry/4 
+etharp_update_arp_entry/7 (etharp_update_arp_entry) @06c32b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (write) arp_table/1 (write) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memp_free/19 memcpy/21 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_find_entry/6 (etharp_find_entry) @06c32620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_query/14 etharp_find_addr/9 etharp_update_arp_entry/7 
+  Calls: etharp_free_entry/4 
+etharp_tmr/5 (etharp_tmr) @06c321c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_request/17 etharp_free_entry/4 
+etharp_free_entry/4 (etharp_free_entry) @06c2bee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_cleanup_netif/8 etharp_find_entry/6 etharp_tmr/5 
+  Calls: free_etharp_q/3 
+free_etharp_q/3 (free_etharp_q) @06c2bc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: etharp_free_entry/4 
+  Calls: memp_free/19 pbuf_free/18 
+etharp_cached_entry/2 (etharp_cached_entry) @06c292d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (write) etharp_query/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+arp_table/1 (arp_table) @06c29240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: etharp_free_entry/4 (read) etharp_free_entry/4 (read) etharp_free_entry/4 (write) etharp_free_entry/4 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (addr) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (addr) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_cleanup_netif/8 (read) etharp_cleanup_netif/8 (read) etharp_find_addr/9 (read) etharp_find_addr/9 (addr) etharp_find_addr/9 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (addr) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (addr) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+ethzero/30 (ethzero) @06cfdee8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_request_dst/16 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+lwip_htons/29 (lwip_htons) @06ceaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+pbuf_alloc/28 (pbuf_alloc) @06ceae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+memp_malloc/27 (memp_malloc) @06ceac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_ref/26 (pbuf_ref) @06ceab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_clone/25 (pbuf_clone) @06ceaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+ethbroadcast/24 (ethbroadcast) @06cf32d0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_output/13 (addr) etharp_request/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+lwip_stats/23 (lwip_stats) @06ce91b0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_output/13 (read) etharp_output/13 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_raw/15 (read) etharp_raw/15 (write) etharp_raw/15 (read) etharp_raw/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+ethernet_output/22 (ethernet_output) @06c8ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_query/14 etharp_output/13 etharp_output_to_arp_index/12 etharp_update_arp_entry/7 
+  Calls: 
+memcpy/21 (memcpy) @06c8cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_raw/15 etharp_update_arp_entry/7 
+  Calls: 
+ip4_addr_isbroadcast_u32/20 (ip4_addr_isbroadcast_u32) @06c8cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 etharp_output/13 etharp_update_arp_entry/7 
+  Calls: 
+memp_free/19 (memp_free) @06c8c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+pbuf_free/18 (pbuf_free) @06c8c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_query/14 etharp_query/14 etharp_input/11 etharp_input/11 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+etharp_request/17 (etharp_request) @06c7da80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ethbroadcast/24 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_query/14 etharp_output_to_arp_index/12 etharp_tmr/5 
+  Calls: etharp_request_dst/16 
+etharp_request_dst/16 (etharp_request_dst) @06c7de00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ethzero/30 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_request/17 etharp_output_to_arp_index/12 
+  Calls: etharp_raw/15 
+etharp_raw/15 (etharp_raw) @06c7d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_request_dst/16 etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memcpy/21 memcpy/21 lwip_htons/29 pbuf_alloc/28 
+etharp_query/14 (etharp_query) @06c7d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/23 (read) lwip_stats/23 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) etharp_cached_entry/2 (write) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_output/13 
+  Calls: pbuf_free/18 memp_free/19 pbuf_free/18 memp_malloc/27 pbuf_ref/26 pbuf_clone/25 ethernet_output/22 etharp_request/17 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_output/13 (etharp_output) @06c74ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ethbroadcast/24 (addr) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) lwip_stats/23 (read) lwip_stats/23 (write) etharp_cached_entry/2 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) etharp_cached_entry/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ethernet_output/22 etharp_query/14 etharp_output_to_arp_index/12 etharp_output_to_arp_index/12 ip4_addr_isbroadcast_u32/20 
+etharp_output_to_arp_index/12 (etharp_output_to_arp_index) @06c480e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_output/13 etharp_output/13 
+  Calls: ethernet_output/22 etharp_request_dst/16 etharp_request/17 
+etharp_input/11 (etharp_input) @06c48d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/18 etharp_raw/15 etharp_update_arp_entry/7 pbuf_free/18 
+etharp_get_entry/10 (etharp_get_entry) @06c48000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+etharp_find_addr/9 (etharp_find_addr) @06c32c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_find_entry/6 
+etharp_cleanup_netif/8 (etharp_cleanup_netif) @06c32e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_free_entry/4 
+etharp_update_arp_entry/7 (etharp_update_arp_entry) @06c32b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (write) arp_table/1 (write) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memp_free/19 memcpy/21 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_find_entry/6 (etharp_find_entry) @06c32620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_query/14 etharp_find_addr/9 etharp_update_arp_entry/7 
+  Calls: etharp_free_entry/4 
+etharp_tmr/5 (etharp_tmr) @06c321c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_request/17 etharp_free_entry/4 
+etharp_free_entry/4 (etharp_free_entry) @06c2bee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_cleanup_netif/8 etharp_find_entry/6 etharp_tmr/5 
+  Calls: free_etharp_q/3 
+free_etharp_q/3 (free_etharp_q) @06c2bc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: etharp_free_entry/4 
+  Calls: memp_free/19 pbuf_free/18 
+etharp_cached_entry/2 (etharp_cached_entry) @06c292d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (write) etharp_query/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+arp_table/1 (arp_table) @06c29240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: etharp_free_entry/4 (read) etharp_free_entry/4 (read) etharp_free_entry/4 (write) etharp_free_entry/4 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (addr) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (addr) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_cleanup_netif/8 (read) etharp_cleanup_netif/8 (read) etharp_find_addr/9 (read) etharp_find_addr/9 (addr) etharp_find_addr/9 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (addr) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (addr) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+ethzero/30 (ethzero) @06cfdee8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_request_dst/16 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+lwip_htons/29 (lwip_htons) @06ceaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+pbuf_alloc/28 (pbuf_alloc) @06ceae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+memp_malloc/27 (memp_malloc) @06ceac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_ref/26 (pbuf_ref) @06ceab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_clone/25 (pbuf_clone) @06ceaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+ethbroadcast/24 (ethbroadcast) @06cf32d0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_output/13 (addr) etharp_request/17 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+lwip_stats/23 (lwip_stats) @06ce91b0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_output/13 (read) etharp_output/13 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_raw/15 (read) etharp_raw/15 (write) etharp_raw/15 (read) etharp_raw/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+ethernet_output/22 (ethernet_output) @06c8ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_query/14 etharp_output/13 etharp_output_to_arp_index/12 etharp_update_arp_entry/7 
+  Calls: 
+memcpy/21 (memcpy) @06c8cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_raw/15 etharp_update_arp_entry/7 
+  Calls: 
+ip4_addr_isbroadcast_u32/20 (ip4_addr_isbroadcast_u32) @06c8cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 etharp_output/13 etharp_update_arp_entry/7 
+  Calls: 
+memp_free/19 (memp_free) @06c8c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_query/14 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+pbuf_free/18 (pbuf_free) @06c8c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: etharp_raw/15 etharp_query/14 etharp_query/14 etharp_input/11 etharp_input/11 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+etharp_request/17 (etharp_request) @06c7da80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ethbroadcast/24 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_query/14 etharp_output_to_arp_index/12 etharp_tmr/5 
+  Calls: etharp_request_dst/16 
+etharp_request_dst/16 (etharp_request_dst) @06c7de00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ethzero/30 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_request/17 etharp_output_to_arp_index/12 
+  Calls: etharp_raw/15 
+etharp_raw/15 (etharp_raw) @06c7d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_request_dst/16 etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memcpy/21 memcpy/21 lwip_htons/29 pbuf_alloc/28 
+etharp_query/14 (etharp_query) @06c7d1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/23 (read) lwip_stats/23 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) etharp_cached_entry/2 (write) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_output/13 
+  Calls: pbuf_free/18 memp_free/19 pbuf_free/18 memp_malloc/27 pbuf_ref/26 pbuf_clone/25 ethernet_output/22 etharp_request/17 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_output/13 (etharp_output) @06c74ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ethbroadcast/24 (addr) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) lwip_stats/23 (read) lwip_stats/23 (write) etharp_cached_entry/2 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) etharp_cached_entry/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: ethernet_output/22 etharp_query/14 etharp_output_to_arp_index/12 etharp_output_to_arp_index/12 ip4_addr_isbroadcast_u32/20 
+etharp_output_to_arp_index/12 (etharp_output_to_arp_index) @06c480e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_output/13 etharp_output/13 
+  Calls: ethernet_output/22 etharp_request_dst/16 etharp_request/17 
+etharp_input/11 (etharp_input) @06c48d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/18 etharp_raw/15 etharp_update_arp_entry/7 pbuf_free/18 
+etharp_get_entry/10 (etharp_get_entry) @06c48000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+etharp_find_addr/9 (etharp_find_addr) @06c32c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_find_entry/6 
+etharp_cleanup_netif/8 (etharp_cleanup_netif) @06c32e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_free_entry/4 
+etharp_update_arp_entry/7 (etharp_update_arp_entry) @06c32b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (write) arp_table/1 (write) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memp_free/19 memcpy/21 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_find_entry/6 (etharp_find_entry) @06c32620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_query/14 etharp_find_addr/9 etharp_update_arp_entry/7 
+  Calls: etharp_free_entry/4 
+etharp_tmr/5 (etharp_tmr) @06c321c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: etharp_request/17 etharp_free_entry/4 
+etharp_free_entry/4 (etharp_free_entry) @06c2bee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: etharp_cleanup_netif/8 etharp_find_entry/6 etharp_tmr/5 
+  Calls: free_etharp_q/3 
+free_etharp_q/3 (free_etharp_q) @06c2bc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: etharp_free_entry/4 
+  Calls: memp_free/19 pbuf_free/18 
+etharp_cached_entry/2 (etharp_cached_entry) @06c292d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (write) etharp_query/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+arp_table/1 (arp_table) @06c29240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: etharp_free_entry/4 (read) etharp_free_entry/4 (read) etharp_free_entry/4 (write) etharp_free_entry/4 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (addr) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (addr) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_cleanup_netif/8 (read) etharp_cleanup_netif/8 (read) etharp_find_addr/9 (read) etharp_find_addr/9 (addr) etharp_find_addr/9 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (addr) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (addr) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+ethzero/30 (ethzero) @06cfdee8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: etharp_request_dst/16 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+lwip_htons/29 (lwip_htons) @06ceaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+pbuf_alloc/28 (pbuf_alloc) @06ceae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_raw/15 
+  Calls: 
+memp_malloc/27 (memp_malloc) @06ceac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_ref/26 (pbuf_ref) @06ceab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+pbuf_clone/25 (pbuf_clone) @06ceaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_query/14 
+  Calls: 
+ethbroadcast/24 (ethbroadcast) @06cf32d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: etharp_request/17 (addr) etharp_output/13 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+lwip_stats/23 (lwip_stats) @06ce91b0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: etharp_raw/15 (read) etharp_raw/15 (write) etharp_raw/15 (read) etharp_raw/15 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_input/11 (read) etharp_input/11 (write) etharp_query/14 (read) etharp_query/14 (write) etharp_output/13 (read) etharp_output/13 (write) 
+  Availability: not_available
+  Varpool flags:
+ethernet_output/22 (ethernet_output) @06c8ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_output/13 etharp_query/14 etharp_output_to_arp_index/12 etharp_raw/15 etharp_update_arp_entry/7 
+  Calls: 
+memcpy/21 (memcpy) @06c8cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_raw/15 etharp_raw/15 etharp_update_arp_entry/7 
+  Calls: 
+ip4_addr_isbroadcast_u32/20 (ip4_addr_isbroadcast_u32) @06c8cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_output/13 etharp_query/14 etharp_update_arp_entry/7 
+  Calls: 
+memp_free/19 (memp_free) @06c8c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_query/14 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+pbuf_free/18 (pbuf_free) @06c8c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: etharp_query/14 etharp_query/14 etharp_input/11 etharp_input/11 etharp_raw/15 etharp_update_arp_entry/7 free_etharp_q/3 
+  Calls: 
+etharp_request/17 (etharp_request) @06c7da80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ethbroadcast/24 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_query/14 etharp_output_to_arp_index/12 etharp_tmr/5 
+  Calls: etharp_request_dst/16 
+etharp_request_dst/16 (etharp_request_dst) @06c7de00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: ethzero/30 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_output_to_arp_index/12 etharp_request/17 
+  Calls: etharp_raw/15 
+etharp_raw/15 (etharp_raw) @06c7d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_request_dst/16 etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memcpy/21 memcpy/21 lwip_htons/29 pbuf_alloc/28 
+etharp_query/14 (etharp_query) @06c7d1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/23 (read) lwip_stats/23 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) etharp_cached_entry/2 (write) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_output/13 
+  Calls: pbuf_free/18 memp_free/19 pbuf_free/18 memp_malloc/27 pbuf_ref/26 pbuf_clone/25 ethernet_output/22 etharp_request/17 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_output/13 (etharp_output) @06c74ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ethbroadcast/24 (addr) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) etharp_cached_entry/2 (read) arp_table/1 (read) lwip_stats/23 (read) lwip_stats/23 (write) etharp_cached_entry/2 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) etharp_cached_entry/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: ethernet_output/22 etharp_query/14 etharp_output_to_arp_index/12 etharp_output_to_arp_index/12 ip4_addr_isbroadcast_u32/20 
+etharp_output_to_arp_index/12 (etharp_output_to_arp_index) @06c480e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_output/13 etharp_output/13 
+  Calls: ethernet_output/22 etharp_request_dst/16 etharp_request/17 
+etharp_input/11 (etharp_input) @06c48d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) lwip_stats/23 (read) lwip_stats/23 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: pbuf_free/18 etharp_raw/15 etharp_update_arp_entry/7 pbuf_free/18 
+etharp_get_entry/10 (etharp_get_entry) @06c48000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+etharp_find_addr/9 (etharp_find_addr) @06c32c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: arp_table/1 (read) arp_table/1 (addr) arp_table/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: etharp_find_entry/6 
+etharp_cleanup_netif/8 (etharp_cleanup_netif) @06c32e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: arp_table/1 (read) arp_table/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: etharp_free_entry/4 
+etharp_update_arp_entry/7 (etharp_update_arp_entry) @06c32b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: arp_table/1 (write) arp_table/1 (write) arp_table/1 (addr) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_input/11 
+  Calls: pbuf_free/18 ethernet_output/22 memp_free/19 memcpy/21 etharp_find_entry/6 ip4_addr_isbroadcast_u32/20 
+etharp_find_entry/6 (etharp_find_entry) @06c32620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_query/14 etharp_find_addr/9 etharp_update_arp_entry/7 
+  Calls: etharp_free_entry/4 
+etharp_tmr/5 (etharp_tmr) @06c321c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (write) arp_table/1 (read) arp_table/1 (read) arp_table/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: etharp_request/17 etharp_free_entry/4 
+etharp_free_entry/4 (etharp_free_entry) @06c2bee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: arp_table/1 (read) arp_table/1 (read) arp_table/1 (write) arp_table/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_tmr/5 etharp_cleanup_netif/8 etharp_find_entry/6 
+  Calls: free_etharp_q/3 
+free_etharp_q/3 (free_etharp_q) @06c2bc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: etharp_free_entry/4 
+  Calls: memp_free/19 pbuf_free/18 
+etharp_cached_entry/2 (etharp_cached_entry) @06c292d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: etharp_query/14 (write) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (write) 
+  Availability: available
+  Varpool flags:
+arp_table/1 (arp_table) @06c29240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (addr) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_update_arp_entry/7 (write) etharp_find_addr/9 (read) etharp_find_addr/9 (addr) etharp_find_addr/9 (addr) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (read) etharp_tmr/5 (write) etharp_tmr/5 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_output_to_arp_index/12 (addr) etharp_query/14 (read) etharp_query/14 (read) etharp_free_entry/4 (read) etharp_free_entry/4 (read) etharp_free_entry/4 (write) etharp_free_entry/4 (write) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_find_entry/6 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (read) etharp_find_entry/6 (read) etharp_update_arp_entry/7 (read) etharp_cleanup_netif/8 (read) etharp_cleanup_netif/8 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_find_entry/6 (read) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (write) etharp_update_arp_entry/7 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_get_entry/10 (read) etharp_get_entry/10 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (read) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (addr) etharp_output_to_arp_index/12 (write) etharp_output_to_arp_index/12 (addr) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (read) etharp_query/14 (write) etharp_query/14 (read) etharp_query/14 (addr) etharp_query/14 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) etharp_output/13 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: etharp_cached_entry/2 arp_table/1
+Removing variables:
+
+Final Symbol table:
+
+ethzero/30 (ethzero) @06cfdee8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+lwip_htons/29 (lwip_htons) @06ceaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_alloc/28 (pbuf_alloc) @06ceae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memp_malloc/27 (memp_malloc) @06ceac40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_ref/26 (pbuf_ref) @06ceab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_clone/25 (pbuf_clone) @06ceaa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ethbroadcast/24 (ethbroadcast) @06cf32d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+lwip_stats/23 (lwip_stats) @06ce91b0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+ethernet_output/22 (ethernet_output) @06c8ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memcpy/21 (memcpy) @06c8cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip4_addr_isbroadcast_u32/20 (ip4_addr_isbroadcast_u32) @06c8cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memp_free/19 (memp_free) @06c8c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+pbuf_free/18 (pbuf_free) @06c8c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_request/17 (etharp_request) @06c7da80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_request_dst/16 (etharp_request_dst) @06c7de00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_raw/15 (etharp_raw) @06c7d9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_query/14 (etharp_query) @06c7d1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_output/13 (etharp_output) @06c74ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_output_to_arp_index/12 (etharp_output_to_arp_index) @06c480e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_input/11 (etharp_input) @06c48d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_get_entry/10 (etharp_get_entry) @06c48000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_find_addr/9 (etharp_find_addr) @06c32c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_cleanup_netif/8 (etharp_cleanup_netif) @06c32e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_update_arp_entry/7 (etharp_update_arp_entry) @06c32b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_find_entry/6 (etharp_find_entry) @06c32620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_tmr/5 (etharp_tmr) @06c321c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_free_entry/4 (etharp_free_entry) @06c2bee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+free_etharp_q/3 (free_etharp_q) @06c2bc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+etharp_cached_entry/2 (etharp_cached_entry) @06c292d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+arp_table/1 (arp_table) @06c29240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06c292d0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

@@ -1,0 +1,91 @@
+fs_bytes_left (struct fs_file * file)
+{
+  int D.6587;
+
+  <bb 2> :
+  _1 = file->len;
+  _2 = file->index;
+  D.6587 = _1 - _2;
+
+  <bb 3> :
+<L0>:
+  return D.6587;
+
+}
+
+
+fs_close (struct fs_file * file)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+fs_open (struct fs_file * file, const char * name)
+{
+  const struct fsdata_file * f;
+  err_t D.6583;
+
+  <bb 2> :
+  if (file == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (name == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.6583 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 5> :
+  f = &file__index_html;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  _1 = f->name;
+  _2 = strcmp (name, _1);
+  if (_2 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _3 = f->data;
+  file->data = _3;
+  _4 = f->len;
+  file->len = _4;
+  _5 = f->len;
+  file->index = _5;
+  file->pextension = 0B;
+  _6 = f->flags;
+  file->flags = _6;
+  D.6583 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  f = f->next;
+
+  <bb 9> :
+  if (f != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  D.6583 = -6;
+
+  <bb 11> :
+<L8>:
+  return D.6583;
+
+}
+
+

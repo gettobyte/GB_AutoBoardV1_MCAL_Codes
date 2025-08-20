@@ -1,0 +1,316 @@
+memp_free (memp_t type, void * mem)
+{
+  <bb 2> :
+  if (type > 14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  if (mem == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _1 = memp_pools[type];
+  do_memp_free_pool (_1, mem);
+
+  <bb 7> :
+<L4>:
+  return;
+
+}
+
+
+memp_free_pool (const struct memp_desc * desc, void * mem)
+{
+  <bb 2> :
+  if (desc == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (desc == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (mem == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  do_memp_free_pool (desc, mem);
+
+  <bb 8> :
+<L6>:
+  return;
+
+}
+
+
+do_memp_free_pool (const struct memp_desc * desc, void * mem)
+{
+  struct memp * memp;
+
+  <bb 2> :
+  mem.2_1 = (unsigned int) mem;
+  _2 = mem.2_1 & 7;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  memp = mem;
+  _3 = desc->stats;
+  _4 = _3->used;
+  _5 = _4;
+  _6 = _5 + 65535;
+  _3->used = _6;
+  _7 = desc->tab;
+  _8 = *_7;
+  memp->next = _8;
+  _9 = desc->tab;
+  *_9 = memp;
+  return;
+
+}
+
+
+memp_malloc (memp_t type)
+{
+  void * memp;
+  void * D.8175;
+
+  <bb 2> :
+  if (type > 14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8175 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 = memp_pools[type];
+  memp = do_memp_malloc_pool (_1);
+  D.8175 = memp;
+
+  <bb 5> :
+<L2>:
+  return D.8175;
+
+}
+
+
+memp_malloc_pool (const struct memp_desc * desc)
+{
+  void * D.8171;
+
+  <bb 2> :
+  if (desc == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (desc == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.8171 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.8171 = do_memp_malloc_pool (desc);
+
+  <bb 7> :
+<L5>:
+  return D.8171;
+
+}
+
+
+do_memp_malloc_pool (const struct memp_desc * desc)
+{
+  struct memp * memp;
+  void * D.8165;
+
+  <bb 2> :
+  _1 = desc->tab;
+  memp = *_1;
+  if (memp != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  _2 = desc->tab;
+  _3 = memp->next;
+  *_2 = _3;
+  memp.1_4 = (unsigned int) memp;
+  _5 = memp.1_4 & 7;
+  if (_5 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  _6 = desc->stats;
+  _7 = _6->used;
+  _8 = _7;
+  _9 = _8 + 1;
+  _6->used = _9;
+  _10 = desc->stats;
+  _11 = _10->used;
+  _12 = desc->stats;
+  _13 = _12->max;
+  if (_11 > _13)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _14 = desc->stats;
+  _15 = desc->stats;
+  _16 = _14->used;
+  _15->max = _16;
+
+  <bb 7> :
+  D.8165 = memp;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _17 = desc->stats;
+  _18 = _17->err;
+  _19 = _18;
+  _20 = _19 + 1;
+  _17->err = _20;
+  D.8165 = 0B;
+
+  <bb 9> :
+<L7>:
+  return D.8165;
+
+}
+
+
+memp_init ()
+{
+  u16_t i;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = memp_pools[_1];
+  memp_init_pool (_2);
+  _3 = (int) i;
+  _4 = memp_pools[_3];
+  _5 = (int) i;
+  _6 = _4->stats;
+  lwip_stats.memp[_5] = _6;
+  i.0_7 = i;
+  i = i.0_7 + 1;
+
+  <bb 4> :
+  if (i <= 14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+memp_init_pool (const struct memp_desc * desc)
+{
+  struct memp * memp;
+  int i;
+
+  <bb 2> :
+  _1 = desc->tab;
+  *_1 = 0B;
+  _2 = desc->base;
+  _3 = (unsigned int) _2;
+  _4 = _3 + 7;
+  _5 = _4 & 4294967288;
+  memp = (struct memp *) _5;
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = desc->tab;
+  _7 = *_6;
+  memp->next = _7;
+  _8 = desc->tab;
+  *_8 = memp;
+  _9 = desc->size;
+  _10 = (sizetype) _9;
+  memp = memp + _10;
+  i = i + 1;
+
+  <bb 4> :
+  _11 = desc->num;
+  _12 = (int) _11;
+  if (i < _12)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _13 = desc->stats;
+  _14 = desc->num;
+  _13->avail = _14;
+  return;
+
+}
+
+

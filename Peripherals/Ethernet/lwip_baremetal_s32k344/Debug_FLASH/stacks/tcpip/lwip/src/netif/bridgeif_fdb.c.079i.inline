@@ -1,0 +1,518 @@
+IPA summary for bridgeif_fdb_init/5 is missing.
+IPA summary for bridgeif_age_tmr/4 is missing.
+IPA summary for bridgeif_fdb_age_one_second/3 is missing.
+IPA summary for bridgeif_fdb_get_dst_ports/2 is missing.
+IPA summary for bridgeif_fdb_update_src/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function not considered for inlining              :        1 calls, 1.000000 freq, 0 count
+function body not available                       :        6 calls, 6.000000 freq, 0 count
+IPA summary for bridgeif_fdb_init/5 is missing.
+IPA summary for bridgeif_age_tmr/4 is missing.
+IPA summary for bridgeif_fdb_age_one_second/3 is missing.
+IPA summary for bridgeif_fdb_get_dst_ports/2 is missing.
+IPA summary for bridgeif_fdb_update_src/1 is missing.
+Symbol table:
+
+mem_calloc/9 (mem_calloc) @06be1460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: bridgeif_fdb_init/5 
+  Calls: 
+sys_timeout/8 (sys_timeout) @06be12a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: bridgeif_fdb_init/5 bridgeif_age_tmr/4 
+  Calls: 
+memcpy/7 (memcpy) @06a4a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: bridgeif_fdb_update_src/1 
+  Calls: 
+memcmp/6 (memcmp) @06a4a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: bridgeif_fdb_get_dst_ports/2 bridgeif_fdb_update_src/1 
+  Calls: 
+bridgeif_fdb_init/5 (bridgeif_fdb_init) @06a4ab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: bridgeif_age_tmr/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/8 mem_calloc/9 
+bridgeif_age_tmr/4 (bridgeif_age_tmr) @06a4a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: bridgeif_age_tmr/4 (addr) 
+  Referring: bridgeif_age_tmr/4 (addr) bridgeif_fdb_init/5 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: sys_timeout/8 bridgeif_fdb_age_one_second/3 
+bridgeif_fdb_age_one_second/3 (bridgeif_fdb_age_one_second) @06a4a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: bridgeif_age_tmr/4 
+  Calls: 
+bridgeif_fdb_get_dst_ports/2 (bridgeif_fdb_get_dst_ports) @06a4a2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memcmp/6 
+bridgeif_fdb_update_src/1 (bridgeif_fdb_update_src) @06a4a000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memcpy/7 memcmp/6 
+
+;; Function bridgeif_fdb_update_src (bridgeif_fdb_update_src, funcdef_no=1, decl_uid=6462, cgraph_uid=2, symbol_order=1)
+
+bridgeif_fdb_update_src (void * fdb_ptr, struct eth_addr * src_addr, u8_t port_idx)
+{
+  struct bridgeif_dfdb_entry_t * e;
+  struct bridgeif_dfdb_entry_t * e;
+  struct bridgeif_dfdb_t * fdb;
+  int i;
+  struct bridgeif_dfdb_entry_t * _1;
+  unsigned int i.0_2;
+  unsigned int _3;
+  unsigned char _4;
+  long unsigned int _5;
+  struct eth_addr * _6;
+  int _7;
+  short unsigned int _8;
+  int _9;
+  struct bridgeif_dfdb_entry_t * _10;
+  unsigned int i.1_11;
+  unsigned int _12;
+  unsigned char _13;
+  long unsigned int _14;
+  unsigned char _15;
+  long unsigned int _16;
+  struct eth_addr * _17;
+  short unsigned int _18;
+  int _19;
+
+  <bb 2> :
+  fdb_24 = fdb_ptr_23(D);
+  i_25 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 3> :
+  _1 = fdb_24->fdb;
+  i.0_2 = (unsigned int) i_20;
+  _3 = i.0_2 * 16;
+  e_36 = _1 + _3;
+  _4 = e_36->used;
+  if (_4 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _5 = e_36->ts;
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _6 = &e_36->addr;
+  _7 = memcmp (_6, src_addr_29(D), 6);
+  if (_7 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  e_36->ts = 300;
+  e_36->port = port_idx_32(D);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 7> :
+  i_39 = i_20 + 1;
+
+  <bb 8> :
+  # i_20 = PHI <i_25(2), i_39(7)>
+  _8 = fdb_24->max_fdb_entries;
+  _9 = (int) _8;
+  if (i_20 < _9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i_27 = 0;
+  goto <bb 16>; [INV]
+
+  <bb 10> :
+  _10 = fdb_24->fdb;
+  i.1_11 = (unsigned int) i_21;
+  _12 = i.1_11 * 16;
+  e_28 = _10 + _12;
+  _13 = e_28->used;
+  if (_13 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _14 = e_28->ts;
+  if (_14 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 12> :
+  _15 = e_28->used;
+  if (_15 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  _16 = e_28->ts;
+  if (_16 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _17 = &e_28->addr;
+  memcpy (_17, src_addr_29(D), 6);
+  e_28->ts = 300;
+  e_28->port = port_idx_32(D);
+  e_28->used = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 17>; [INV]
+
+  <bb 15> :
+  i_35 = i_21 + 1;
+
+  <bb 16> :
+  # i_21 = PHI <i_27(9), i_35(15)>
+  _18 = fdb_24->max_fdb_entries;
+  _19 = (int) _18;
+  if (i_21 < _19)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+<L18>:
+  return;
+
+}
+
+
+
+;; Function bridgeif_fdb_get_dst_ports (bridgeif_fdb_get_dst_ports, funcdef_no=2, decl_uid=6465, cgraph_uid=3, symbol_order=2)
+
+bridgeif_fdb_get_dst_ports (void * fdb_ptr, struct eth_addr * dst_addr)
+{
+  bridgeif_portmask_t ret;
+  struct bridgeif_dfdb_entry_t * e;
+  struct bridgeif_dfdb_t * fdb;
+  int i;
+  bridgeif_portmask_t D.6686;
+  struct bridgeif_dfdb_entry_t * _1;
+  unsigned int i.2_2;
+  unsigned int _3;
+  unsigned char _4;
+  long unsigned int _5;
+  struct eth_addr * _6;
+  int _7;
+  unsigned char _8;
+  int _9;
+  int _10;
+  short unsigned int _11;
+  int _12;
+  bridgeif_portmask_t _14;
+  bridgeif_portmask_t _19;
+  bridgeif_portmask_t _23;
+
+  <bb 2> :
+  fdb_16 = fdb_ptr_15(D);
+  i_17 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 3> :
+  _1 = fdb_16->fdb;
+  i.2_2 = (unsigned int) i_13;
+  _3 = i.2_2 * 16;
+  e_20 = _1 + _3;
+  _4 = e_20->used;
+  if (_4 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _5 = e_20->ts;
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _6 = &e_20->addr;
+  _7 = memcmp (_6, dst_addr_21(D), 6);
+  if (_7 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _8 = e_20->port;
+  _9 = (int) _8;
+  _10 = 1 << _9;
+  ret_22 = (bridgeif_portmask_t) _10;
+  _23 = ret_22;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  i_24 = i_13 + 1;
+
+  <bb 8> :
+  # i_13 = PHI <i_17(2), i_24(7)>
+  _11 = fdb_16->max_fdb_entries;
+  _12 = (int) _11;
+  if (i_13 < _12)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _19 = 255;
+
+  <bb 10> :
+  # _14 = PHI <_23(6), _19(9)>
+<L9>:
+  return _14;
+
+}
+
+
+
+;; Function bridgeif_fdb_age_one_second (bridgeif_fdb_age_one_second, funcdef_no=3, decl_uid=6643, cgraph_uid=4, symbol_order=3)
+
+bridgeif_fdb_age_one_second (void * fdb_ptr)
+{
+  struct bridgeif_dfdb_entry_t * e;
+  struct bridgeif_dfdb_t * fdb;
+  int i;
+  struct bridgeif_dfdb_entry_t * _1;
+  unsigned int i.3_2;
+  unsigned int _3;
+  unsigned char _4;
+  long unsigned int _5;
+  unsigned char _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  short unsigned int _11;
+  int _12;
+
+  <bb 2> :
+  fdb_17 = fdb_ptr_16(D);
+  i_18 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = fdb_17->fdb;
+  i.3_2 = (unsigned int) i_13;
+  _3 = i.3_2 * 16;
+  e_20 = _1 + _3;
+  _4 = e_20->used;
+  if (_4 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _5 = e_20->ts;
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  _6 = e_20->used;
+  if (_6 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _7 = e_20->ts;
+  if (_7 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _8 = e_20->ts;
+  _9 = _8 + 4294967295;
+  e_20->ts = _9;
+  _10 = e_20->ts;
+  if (_10 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  e_20->used = 0;
+
+  <bb 9> :
+  i_23 = i_13 + 1;
+
+  <bb 10> :
+  # i_13 = PHI <i_18(2), i_23(9)>
+  _11 = fdb_17->max_fdb_entries;
+  _12 = (int) _11;
+  if (i_13 < _12)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  return;
+
+}
+
+
+
+;; Function bridgeif_age_tmr (bridgeif_age_tmr, funcdef_no=4, decl_uid=6652, cgraph_uid=5, symbol_order=4)
+
+bridgeif_age_tmr (void * arg)
+{
+  struct bridgeif_dfdb_t * fdb;
+
+  <bb 2> :
+  fdb_3 = arg_2(D);
+  if (arg_2(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  bridgeif_fdb_age_one_second (fdb_3);
+  sys_timeout (1000, bridgeif_age_tmr, arg_2(D));
+  return;
+
+}
+
+
+
+;; Function bridgeif_fdb_init (bridgeif_fdb_init, funcdef_no=5, decl_uid=6467, cgraph_uid=6, symbol_order=5)
+
+bridgeif_fdb_init (u16_t max_fdb_entries)
+{
+  mem_size_t alloc_len;
+  size_t alloc_len_sizet;
+  struct bridgeif_dfdb_t * fdb;
+  void * D.6704;
+  unsigned int _1;
+  unsigned int _2;
+  unsigned int _3;
+  struct bridgeif_dfdb_t * _4;
+  void * _5;
+  void * _17;
+  void * _18;
+
+  <bb 2> :
+  _1 = (unsigned int) max_fdb_entries_8(D);
+  _2 = _1 * 16;
+  alloc_len_sizet_9 = _2 + 8;
+  alloc_len_10 = (mem_size_t) alloc_len_sizet_9;
+  _3 = (unsigned int) alloc_len_10;
+  if (alloc_len_sizet_9 != _3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  fdb_13 = mem_calloc (1, alloc_len_10);
+  if (fdb_13 == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _18 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  fdb_13->max_fdb_entries = max_fdb_entries_8(D);
+  _4 = fdb_13 + 8;
+  fdb_13->fdb = _4;
+  sys_timeout (1000, bridgeif_age_tmr, fdb_13);
+  _17 = fdb_13;
+
+  <bb 7> :
+  # _5 = PHI <_18(5), _17(6)>
+<L5>:
+  return _5;
+
+}
+
+

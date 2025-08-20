@@ -1,0 +1,2939 @@
+mqtt_client_is_connected (struct mqtt_client_t * client)
+{
+  u8_t D.8413;
+
+  <bb 2> :
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = client->conn_state;
+  _2 = _1 == 3;
+  D.8413 = (u8_t) _2;
+
+  <bb 5> :
+<L3>:
+  return D.8413;
+
+}
+
+
+mqtt_disconnect (struct mqtt_client_t * client)
+{
+  <bb 2> :
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = client->conn_state;
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  client->conn_state = 0;
+  mqtt_close (client, 0);
+
+  <bb 6> :
+  return;
+
+}
+
+
+mqtt_client_connect (struct mqtt_client_t * client, const struct ip_addr_t * ip_addr, u16_t port, void (*mqtt_connection_cb_t) (struct mqtt_client_t *, void *, mqtt_connection_status_t) cb, void * arg, const struct mqtt_connect_client_info_t * client_info)
+{
+  u16_t client_pass_len;
+  u16_t client_user_len;
+  u8_t will_msg_len;
+  u8_t will_topic_len;
+  u8_t flags;
+  u16_t remaining_length;
+  u16_t client_id_length;
+  size_t len;
+  err_t err;
+  err_t D.8357;
+
+  <bb 2> :
+  remaining_length = 10;
+  flags = 0;
+  will_topic_len = 0;
+  will_msg_len = 0;
+  client_user_len = 0;
+  client_pass_len = 0;
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (ip_addr == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  if (client_info == 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  _1 = client_info->client_id;
+  if (_1 == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 9>; [INV]
+
+  <bb 10> :
+  _2 = client->conn_state;
+  if (_2 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  D.8357 = -10;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 12> :
+  memset (client, 0, 496);
+  client->connect_arg = arg;
+  client->connect_cb = cb;
+  _3 = client_info->keep_alive;
+  client->keep_alive = _3;
+  _4 = &client->req_list;
+  mqtt_init_requests (_4, 4);
+  _5 = client_info->will_topic;
+  if (_5 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 13> :
+  _6 = client_info->will_msg;
+  if (_6 != 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 14> :
+  flags = flags | 4;
+  _7 = client_info->will_qos;
+  _8 = (int) _7;
+  _9 = _8 << 3;
+  _10 = (signed char) _9;
+  _11 = _10 & 24;
+  flags.24_12 = (signed char) flags;
+  _13 = _11 | flags.24_12;
+  flags = (u8_t) _13;
+  _14 = client_info->will_retain;
+  if (_14 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  flags = flags | 32;
+
+  <bb 16> :
+  _15 = client_info->will_topic;
+  len = strlen (_15);
+  if (len > 255)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 18> :
+  if (len == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 20> :
+  will_topic_len = (u8_t) len;
+  _16 = client_info->will_msg;
+  len = strlen (_16);
+  if (len > 255)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 22> :
+  will_msg_len = (u8_t) len;
+  _17 = (int) remaining_length;
+  _18 = _17 + 2;
+  _19 = (int) will_topic_len;
+  _20 = _18 + _19;
+  _21 = _20 + 2;
+  _22 = (int) will_msg_len;
+  _23 = _21 + _22;
+  len = (size_t) _23;
+  if (len > 65535)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 24> :
+  remaining_length = (u16_t) len;
+
+  <bb 25> :
+  _24 = client_info->client_user;
+  if (_24 != 0B)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 26> :
+  flags = flags | 128;
+  _25 = client_info->client_user;
+  len = strlen (_25);
+  if (len > 65535)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 27> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 28> :
+  if (len == 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 30> :
+  client_user_len = (u16_t) len;
+  _26 = (int) remaining_length;
+  _27 = _26 + 2;
+  _28 = (int) client_user_len;
+  _29 = _27 + _28;
+  len = (size_t) _29;
+  if (len > 65535)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 31> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 32> :
+  remaining_length = (u16_t) len;
+
+  <bb 33> :
+  _30 = client_info->client_pass;
+  if (_30 != 0B)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 34> :
+  flags = flags | 64;
+  _31 = client_info->client_pass;
+  len = strlen (_31);
+  if (len > 65535)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 35> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 36> :
+  if (len == 0)
+    goto <bb 37>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 37> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 38> :
+  client_pass_len = (u16_t) len;
+  _32 = (int) remaining_length;
+  _33 = _32 + 2;
+  _34 = (int) client_pass_len;
+  _35 = _33 + _34;
+  len = (size_t) _35;
+  if (len > 65535)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 39> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 40> :
+  remaining_length = (u16_t) len;
+
+  <bb 41> :
+  flags = flags | 2;
+  _36 = client_info->client_id;
+  len = strlen (_36);
+  if (len > 65535)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 42> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 43> :
+  client_id_length = (u16_t) len;
+  _37 = (int) remaining_length;
+  _38 = _37 + 2;
+  _39 = (int) client_id_length;
+  _40 = _38 + _39;
+  len = (size_t) _40;
+  if (len > 65535)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 44> :
+  D.8357 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 45> :
+  remaining_length = (u16_t) len;
+  _41 = &client->output;
+  _42 = mqtt_output_check_space (_41, remaining_length);
+  if (_42 == 0)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 46> :
+  D.8357 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 47> :
+  _43 = ip_addr->type;
+  _44 = tcp_new_ip_type (_43);
+  client->conn = _44;
+  _45 = client->conn;
+  if (_45 == 0B)
+    goto <bb 48>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 48> :
+  D.8357 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 61>; [INV]
+
+  <bb 49> :
+  _46 = client->conn;
+  tcp_arg (_46, client);
+  _47 = client->conn;
+  err = tcp_bind (_47, &ip_addr_any, 0);
+  if (err != 0)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  // predicted unlikely by goto predictor.
+  goto <bb 60>; [INV]
+
+  <bb 51> :
+  _48 = client->conn;
+  err = tcp_connect (_48, ip_addr, port, mqtt_tcp_connect_cb);
+  if (err != 0)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 52> :
+  // predicted unlikely by goto predictor.
+  goto <bb 60>; [INV]
+
+  <bb 53> :
+  _49 = client->conn;
+  tcp_err (_49, mqtt_tcp_err_cb);
+  client->conn_state = 1;
+  _50 = &client->output;
+  mqtt_output_append_fixed_header (_50, 1, 0, 0, 0, remaining_length);
+  _51 = &client->output;
+  mqtt_output_append_string (_51, "MQTT", 4);
+  _52 = &client->output;
+  mqtt_output_append_u8 (_52, 4);
+  _53 = &client->output;
+  mqtt_output_append_u8 (_53, flags);
+  _54 = &client->output;
+  _55 = client_info->keep_alive;
+  mqtt_output_append_u16 (_54, _55);
+  _56 = &client->output;
+  _57 = client_info->client_id;
+  mqtt_output_append_string (_56, _57, client_id_length);
+  _58 = (int) flags;
+  _59 = _58 & 4;
+  if (_59 != 0)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 55>; [INV]
+
+  <bb 54> :
+  _60 = &client->output;
+  _61 = client_info->will_topic;
+  _62 = (short unsigned int) will_topic_len;
+  mqtt_output_append_string (_60, _61, _62);
+  _63 = &client->output;
+  _64 = client_info->will_msg;
+  _65 = (short unsigned int) will_msg_len;
+  mqtt_output_append_string (_63, _64, _65);
+
+  <bb 55> :
+  flags.25_66 = (signed char) flags;
+  if (flags.25_66 < 0)
+    goto <bb 56>; [INV]
+  else
+    goto <bb 57>; [INV]
+
+  <bb 56> :
+  _67 = &client->output;
+  _68 = client_info->client_user;
+  mqtt_output_append_string (_67, _68, client_user_len);
+
+  <bb 57> :
+  _69 = (int) flags;
+  _70 = _69 & 64;
+  if (_70 != 0)
+    goto <bb 58>; [INV]
+  else
+    goto <bb 59>; [INV]
+
+  <bb 58> :
+  _71 = &client->output;
+  _72 = client_info->client_pass;
+  mqtt_output_append_string (_71, _72, client_pass_len);
+
+  <bb 59> :
+  D.8357 = 0;
+  goto <bb 61>; [INV]
+
+  <bb 60> :
+tcp_fail:
+  _73 = client->conn;
+  tcp_abort (_73);
+  client->conn = 0B;
+  D.8357 = err;
+
+  <bb 61> :
+<L63>:
+  return D.8357;
+
+}
+
+
+mqtt_client_free (struct mqtt_client_t * client)
+{
+  <bb 2> :
+  mem_free (client);
+  return;
+
+}
+
+
+mqtt_client_new ()
+{
+  struct mqtt_client_t * D.8345;
+
+  <bb 2> :
+  D.8345 = mem_calloc (1, 496);
+
+  <bb 3> :
+<L0>:
+  return D.8345;
+
+}
+
+
+mqtt_set_inpub_callback (struct mqtt_client_t * client, void (*mqtt_incoming_publish_cb_t) (void *, const char *, u32_t) pub_cb, void (*mqtt_incoming_data_cb_t) (void *, const u8_t *, u16_t, u8_t) data_cb, void * arg)
+{
+  <bb 2> :
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  client->data_cb = data_cb;
+  client->pub_cb = pub_cb;
+  client->inpub_arg = arg;
+  return;
+
+}
+
+
+mqtt_sub_unsub (struct mqtt_client_t * client, const char * topic, u8_t qos, void (*mqtt_request_cb_t) (void *, err_t) cb, void * arg, u8_t sub)
+{
+  struct mqtt_request_t * r;
+  u16_t pkt_id;
+  u16_t remaining_length;
+  u16_t topic_len;
+  size_t total_len;
+  size_t topic_strlen;
+  u8_t iftmp.23;
+  err_t D.8325;
+
+  <bb 2> :
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (topic == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  topic_strlen = strlen (topic);
+  if (topic_strlen > 65533)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8325 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 8> :
+  topic_len = (u16_t) topic_strlen;
+  _1 = (int) topic_len;
+  _2 = _1 + 4;
+  _3 = sub != 0;
+  _4 = (int) _3;
+  _5 = _2 + _4;
+  total_len = (size_t) _5;
+  if (total_len > 65535)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  D.8325 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 10> :
+  remaining_length = (u16_t) total_len;
+  if (qos > 2)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 11>; [INV]
+
+  <bb 12> :
+  _6 = client->conn_state;
+  if (_6 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  D.8325 = -11;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 14> :
+  pkt_id = msg_generate_packet_id (client);
+  _7 = &client->req_list;
+  r = mqtt_create_request (_7, 4, pkt_id, cb, arg);
+  if (r == 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  D.8325 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 16> :
+  _8 = &client->output;
+  _9 = mqtt_output_check_space (_8, remaining_length);
+  if (_9 == 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  mqtt_delete_request (r);
+  D.8325 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 24>; [INV]
+
+  <bb 18> :
+  _10 = &client->output;
+  if (sub != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  iftmp.23 = 8;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  iftmp.23 = 10;
+
+  <bb 21> :
+  mqtt_output_append_fixed_header (_10, iftmp.23, 0, 1, 0, remaining_length);
+  _11 = &client->output;
+  mqtt_output_append_u16 (_11, pkt_id);
+  _12 = &client->output;
+  mqtt_output_append_string (_12, topic, topic_len);
+  if (sub != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  _13 = &client->output;
+  _14 = MIN_EXPR <qos, 2>;
+  mqtt_output_append_u8 (_13, _14);
+
+  <bb 23> :
+  _15 = &client->pend_req_queue;
+  mqtt_append_request (_15, r);
+  _16 = &client->output;
+  _17 = client->conn;
+  mqtt_output_send (_16, _17);
+  D.8325 = 0;
+
+  <bb 24> :
+<L24>:
+  return D.8325;
+
+}
+
+
+mqtt_publish (struct mqtt_client_t * client, const char * topic, const void * payload, u16_t payload_length, u8_t qos, u8_t retain, void (*mqtt_request_cb_t) (void *, err_t) cb, void * arg)
+{
+  u16_t remaining_length;
+  u16_t topic_len;
+  size_t total_len;
+  size_t topic_strlen;
+  u16_t pkt_id;
+  struct mqtt_request_t * r;
+  err_t D.8300;
+
+  <bb 2> :
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (topic == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = client->conn_state;
+  if (_1 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8300 = -11;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 8> :
+  topic_strlen = strlen (topic);
+  if (topic_strlen > 65533)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  D.8300 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 10> :
+  topic_len = (u16_t) topic_strlen;
+  _2 = (int) topic_len;
+  _3 = _2 + 2;
+  _4 = (int) payload_length;
+  _5 = _3 + _4;
+  total_len = (size_t) _5;
+  if (qos != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  total_len = total_len + 2;
+  pkt_id = msg_generate_packet_id (client);
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  pkt_id = 0;
+
+  <bb 13> :
+  if (total_len > 65535)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  D.8300 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 15> :
+  remaining_length = (u16_t) total_len;
+  _6 = &client->req_list;
+  r = mqtt_create_request (_6, 4, pkt_id, cb, arg);
+  if (r == 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  D.8300 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 17> :
+  _7 = &client->output;
+  _8 = mqtt_output_check_space (_7, remaining_length);
+  if (_8 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  mqtt_delete_request (r);
+  D.8300 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 25>; [INV]
+
+  <bb 19> :
+  _9 = &client->output;
+  mqtt_output_append_fixed_header (_9, 3, 0, qos, retain, remaining_length);
+  _10 = &client->output;
+  mqtt_output_append_string (_10, topic, topic_len);
+  if (qos != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _11 = &client->output;
+  mqtt_output_append_u16 (_11, pkt_id);
+
+  <bb 21> :
+  if (payload != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 22> :
+  if (payload_length != 0)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  _12 = &client->output;
+  mqtt_output_append_buf (_12, payload, payload_length);
+
+  <bb 24> :
+  _13 = &client->pend_req_queue;
+  mqtt_append_request (_13, r);
+  _14 = &client->output;
+  _15 = client->conn;
+  mqtt_output_send (_14, _15);
+  D.8300 = 0;
+
+  <bb 25> :
+<L25>:
+  return D.8300;
+
+}
+
+
+mqtt_tcp_connect_cb (void * arg, struct tcp_pcb * tpcb, err_t err)
+{
+  struct mqtt_client_t * client;
+  err_t D.8292;
+
+  <bb 2> :
+  client = arg;
+  if (err != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8292 = err;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  client->msg_idx = 0;
+  tcp_recv (tpcb, mqtt_tcp_recv_cb);
+  tcp_sent (tpcb, mqtt_tcp_sent_cb);
+  tcp_poll (tpcb, mqtt_tcp_poll_cb, 2);
+  client->conn_state = 2;
+  sys_timeout (5000, mqtt_cyclic_timer, client);
+  client->cyclic_tick = 0;
+  _1 = &client->output;
+  _2 = client->conn;
+  mqtt_output_send (_1, _2);
+  D.8292 = 0;
+
+  <bb 5> :
+<L2>:
+  return D.8292;
+
+}
+
+
+mqtt_tcp_poll_cb (void * arg, struct tcp_pcb * tpcb)
+{
+  struct mqtt_client_t * client;
+  err_t D.8288;
+
+  <bb 2> :
+  client = arg;
+  _1 = client->conn_state;
+  if (_1 == 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = &client->output;
+  mqtt_output_send (_2, tpcb);
+
+  <bb 4> :
+  D.8288 = 0;
+
+  <bb 5> :
+<L2>:
+  return D.8288;
+
+}
+
+
+mqtt_tcp_err_cb (void * arg, err_t err)
+{
+  struct mqtt_client_t * client;
+
+  <bb 2> :
+  client = arg;
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  client->conn = 0B;
+  mqtt_close (client, 256);
+  return;
+
+}
+
+
+mqtt_tcp_sent_cb (void * arg, struct tcp_pcb * tpcb, u16_t len)
+{
+  struct mqtt_request_t * r;
+  struct mqtt_client_t * client;
+  err_t D.8282;
+
+  <bb 2> :
+  client = arg;
+  _1 = client->conn_state;
+  if (_1 == 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  client->cyclic_tick = 0;
+  client->server_watchdog = 0;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _2 = r->cb;
+  if (_2 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = r->cb;
+  _4 = r->arg;
+  _3 (_4, 0);
+
+  <bb 6> :
+  mqtt_delete_request (r);
+
+  <bb 7> :
+  _5 = &client->pend_req_queue;
+  r = mqtt_take_request (_5, 0);
+  if (r != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _6 = &client->output;
+  _7 = client->conn;
+  mqtt_output_send (_6, _7);
+
+  <bb 9> :
+  D.8282 = 0;
+
+  <bb 10> :
+<L7>:
+  return D.8282;
+
+}
+
+
+mqtt_tcp_recv_cb (void * arg, struct tcp_pcb * pcb, struct pbuf * p, err_t err)
+{
+  mqtt_connection_status_t res;
+  struct mqtt_client_t * client;
+  err_t D.8272;
+
+  <bb 2> :
+  client = arg;
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = client->conn;
+  if (pcb != _1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  if (p == 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  mqtt_close (client, 256);
+  goto <bb 14>; [INV]
+
+  <bb 8> :
+  if (err != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  pbuf_free (p);
+  D.8272 = err;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 15>; [INV]
+
+  <bb 10> :
+  _2 = p->tot_len;
+  tcp_recved (pcb, _2);
+  res = mqtt_parse_incoming (client, p);
+  pbuf_free (p);
+  if (res != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  mqtt_close (client, res);
+
+  <bb 12> :
+  _3 = client->keep_alive;
+  if (_3 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  client->server_watchdog = 0;
+
+  <bb 14> :
+  D.8272 = 0;
+
+  <bb 15> :
+<L15>:
+  return D.8272;
+
+}
+
+
+mqtt_parse_incoming (struct mqtt_client_t * client, struct pbuf * p)
+{
+  mqtt_connection_status_t res;
+  u16_t buffer_space;
+  u16_t cpy_len;
+  u8_t b;
+  u8_t fixed_hdr_len;
+  u32_t msg_rem_len;
+  u16_t in_offset;
+  mqtt_connection_status_t D.8259;
+  short unsigned int iftmp.22;
+
+  <bb 2> :
+  in_offset = 0;
+  msg_rem_len = 0;
+  fixed_hdr_len = 0;
+  b = 0;
+  goto <bb 25>; [INV]
+
+  <bb 3> :
+  if (fixed_hdr_len <= 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  b.18_1 = (signed char) b;
+  if (b.18_1 < 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 5> :
+  _2 = (long unsigned int) fixed_hdr_len;
+  _3 = client->msg_idx;
+  if (_2 < _3)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _4 = (int) fixed_hdr_len;
+  b = client->rx_buffer[_4];
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  in_offset.19_5 = in_offset;
+  in_offset = in_offset.19_5 + 1;
+  b = pbuf_get_at (p, in_offset.19_5);
+  _6 = client->msg_idx;
+  _7 = _6;
+  _8 = _7 + 1;
+  client->msg_idx = _8;
+  client->rx_buffer[_7] = b;
+
+  <bb 8> :
+  fixed_hdr_len.20_9 = fixed_hdr_len;
+  fixed_hdr_len = fixed_hdr_len.20_9 + 1;
+  if (fixed_hdr_len > 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 9> :
+  _10 = (long unsigned int) b;
+  _11 = _10 & 127;
+  _12 = (int) fixed_hdr_len;
+  _13 = _12 + -2;
+  _14 = _13 * 7;
+  _15 = _11 << _14;
+  msg_rem_len = msg_rem_len | _15;
+  b.21_16 = (signed char) b;
+  if (b.21_16 >= 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  if (msg_rem_len == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  mqtt_message_received (client, fixed_hdr_len, 0, 0);
+  client->msg_idx = 0;
+  fixed_hdr_len = 0;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _17 = (long unsigned int) fixed_hdr_len;
+  _18 = msg_rem_len + _17;
+  _19 = client->msg_idx;
+  msg_rem_len = _18 - _19;
+
+  <bb 13> :
+  goto <bb 25>; [INV]
+
+  <bb 14> :
+  _20 = p->tot_len;
+  _21 = _20 - in_offset;
+  _22 = (long unsigned int) _21;
+  if (msg_rem_len > _22)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _23 = p->tot_len;
+  iftmp.22 = _23 - in_offset;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.22 = (short unsigned int) msg_rem_len;
+
+  <bb 17> :
+  cpy_len = iftmp.22;
+  _24 = (short unsigned int) fixed_hdr_len;
+  buffer_space = 128 - _24;
+  if (cpy_len > buffer_space)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  cpy_len = buffer_space;
+
+  <bb 19> :
+  _25 = &client->rx_buffer;
+  _26 = (sizetype) fixed_hdr_len;
+  _27 = _25 + _26;
+  pbuf_copy_partial (p, _27, cpy_len, in_offset);
+  _28 = client->msg_idx;
+  _29 = (long unsigned int) cpy_len;
+  _30 = _28 + _29;
+  client->msg_idx = _30;
+  in_offset = in_offset + cpy_len;
+  _31 = (long unsigned int) cpy_len;
+  msg_rem_len = msg_rem_len - _31;
+  if (msg_rem_len == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  if (cpy_len == buffer_space)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 21> :
+  res = mqtt_message_received (client, fixed_hdr_len, cpy_len, msg_rem_len);
+  if (res != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  D.8259 = res;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 27>; [INV]
+
+  <bb 23> :
+  if (msg_rem_len == 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  client->msg_idx = 0;
+  fixed_hdr_len = 0;
+
+  <bb 25> :
+  _32 = p->tot_len;
+  if (in_offset < _32)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 26> :
+  D.8259 = 0;
+
+  <bb 27> :
+<L29>:
+  return D.8259;
+
+}
+
+
+mqtt_message_received (struct mqtt_client_t * client, u8_t fixed_hdr_len, u16_t length, u32_t remaining_length)
+{
+  struct mqtt_request_t * r;
+  u8_t resp_msg;
+  u16_t qos_len;
+  u16_t topic_len;
+  u8_t bkp;
+  u16_t after_topic;
+  u8_t * topic;
+  u8_t qos;
+  u16_t payload_length;
+  u16_t payload_offset;
+  u16_t pkt_id;
+  u8_t pkt_type;
+  size_t var_hdr_payload_bufsize;
+  u8_t * var_hdr_payload;
+  mqtt_connection_status_t res;
+  u8_t iftmp.17;
+  unsigned int iftmp.16;
+  u16_t iftmp.15;
+  mqtt_connection_status_t D.8151;
+
+  <bb 2> :
+  res = 0;
+  _1 = &client->rx_buffer;
+  _2 = (sizetype) fixed_hdr_len;
+  var_hdr_payload = _1 + _2;
+  _3 = (unsigned int) fixed_hdr_len;
+  var_hdr_payload_bufsize = 128 - _3;
+  _4 = client->rx_buffer[0];
+  pkt_type = _4 >> 4;
+  pkt_id = 0;
+  _5 = (long unsigned int) fixed_hdr_len;
+  _6 = client->msg_idx;
+  if (_5 > _6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _7 = (int) fixed_hdr_len;
+  _8 = (int) length;
+  _9 = _7 + _8;
+  if (_9 > 128)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.8151 = 256;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 71>; [INV]
+
+  <bb 6> :
+  if (pkt_type == 2)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 7> :
+  _10 = client->conn_state;
+  if (_10 == 2)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 8> :
+  if (length <= 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 10> :
+  _11 = var_hdr_payload + 1;
+  _12 = *_11;
+  res = (mqtt_connection_status_t) _12;
+  if (res == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 11> :
+  client->cyclic_tick = 0;
+  client->conn_state = 3;
+  _13 = client->connect_cb;
+  if (_13 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 12> :
+  _14 = client->connect_cb;
+  _15 = client->connect_arg;
+  _14 (client, _15, res);
+  goto <bb 69>; [INV]
+
+  <bb 13> :
+  if (pkt_type == 13)
+    goto <bb 69>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  if (pkt_type == 3)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 15> :
+  payload_offset = 0;
+  payload_length = length;
+  _16 = client->rx_buffer[0];
+  _17 = (int) _16;
+  _18 = _17 >> 1;
+  _19 = (unsigned char) _18;
+  qos = _19 & 3;
+  _20 = client->msg_idx;
+  if (_20 <= 128)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 16> :
+  if (qos != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.15 = 2;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  iftmp.15 = 0;
+
+  <bb 19> :
+  qos_len = iftmp.15;
+  _21 = (int) qos_len;
+  _22 = _21 + 1;
+  _23 = (int) length;
+  if (_22 >= _23)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 21> :
+  _24 = *var_hdr_payload;
+  topic_len = (u16_t) _24;
+  _25 = topic_len << 8;
+  _26 = var_hdr_payload + 1;
+  _27 = *_26;
+  _28 = (short unsigned int) _27;
+  topic_len = _25 + _28;
+  _29 = (int) topic_len;
+  _30 = (int) length;
+  _31 = (int) qos_len;
+  _32 = _31 + 2;
+  _33 = _30 - _32;
+  if (_29 > _33)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  _34 = (unsigned int) topic_len;
+  _35 = (unsigned int) qos_len;
+  _36 = var_hdr_payload_bufsize - _35;
+  _37 = _36 + 4294967294;
+  if (_34 > _37)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 24> :
+  topic = var_hdr_payload + 2;
+  after_topic = topic_len + 2;
+  _38 = (unsigned int) after_topic;
+  if (qos != 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  iftmp.16 = 2;
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  iftmp.16 = 1;
+
+  <bb 27> :
+  _39 = iftmp.16 + _38;
+  if (var_hdr_payload_bufsize < _39)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 29> :
+  if (qos != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 30> :
+  _40 = (unsigned int) length;
+  _41 = (unsigned int) after_topic;
+  _42 = _41 + 2;
+  if (_40 < _42)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 31> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 32> :
+  _43 = (sizetype) after_topic;
+  _44 = var_hdr_payload + _43;
+  _45 = *_44;
+  _46 = (short unsigned int) _45;
+  _47 = _46 << 8;
+  _48 = (sizetype) after_topic;
+  _49 = _48 + 1;
+  _50 = var_hdr_payload + _49;
+  _51 = *_50;
+  _52 = (short unsigned int) _51;
+  _53 = _47 + _52;
+  client->inpub_pkt_id = _53;
+  after_topic = after_topic + 2;
+  goto <bb 34>; [INV]
+
+  <bb 33> :
+  client->inpub_pkt_id = 0;
+
+  <bb 34> :
+  _54 = (sizetype) topic_len;
+  _55 = topic + _54;
+  bkp = *_55;
+  _56 = (sizetype) topic_len;
+  _57 = topic + _56;
+  *_57 = 0;
+  payload_length = length - after_topic;
+  payload_offset = after_topic;
+  _58 = client->pub_cb;
+  if (_58 != 0B)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 35> :
+  _59 = client->pub_cb;
+  _60 = client->inpub_arg;
+  _61 = (long unsigned int) payload_length;
+  _62 = remaining_length + _61;
+  _59 (_60, topic, _62);
+
+  <bb 36> :
+  _63 = (sizetype) topic_len;
+  _64 = topic + _63;
+  *_64 = bkp;
+
+  <bb 37> :
+  if (payload_length != 0)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 38> :
+  if (remaining_length == 0)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 39> :
+  _65 = (unsigned int) length;
+  _66 = (int) payload_offset;
+  _67 = (int) payload_length;
+  _68 = _66 + _67;
+  _69 = (unsigned int) _68;
+  if (_65 < _69)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 40> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 41> :
+  _70 = client->data_cb;
+  if (_70 != 0B)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 42> :
+  _71 = client->data_cb;
+  _72 = client->inpub_arg;
+  _73 = (sizetype) payload_offset;
+  _74 = var_hdr_payload + _73;
+  _75 = remaining_length == 0;
+  _76 = (unsigned char) _75;
+  _71 (_72, _74, payload_length, _76);
+
+  <bb 43> :
+  if (remaining_length == 0)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 44> :
+  if (qos != 0)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 69>; [INV]
+
+  <bb 45> :
+  if (qos == 1)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 46> :
+  iftmp.17 = 4;
+  goto <bb 48>; [INV]
+
+  <bb 47> :
+  iftmp.17 = 5;
+
+  <bb 48> :
+  resp_msg = iftmp.17;
+  _77 = client->inpub_pkt_id;
+  pub_ack_rec_rel_response (client, resp_msg, _77, 0);
+  goto <bb 69>; [INV]
+
+  <bb 49> :
+  _78 = *var_hdr_payload;
+  _79 = (short unsigned int) _78;
+  pkt_id = _79 << 8;
+  _80 = var_hdr_payload + 1;
+  _81 = *_80;
+  _82 = (short unsigned int) _81;
+  pkt_id = pkt_id | _82;
+  if (pkt_id == 0)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 51> :
+  if (pkt_type == 5)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 53>; [INV]
+
+  <bb 52> :
+  pub_ack_rec_rel_response (client, 6, pkt_id, 1);
+  goto <bb 69>; [INV]
+
+  <bb 53> :
+  if (pkt_type == 6)
+    goto <bb 54>; [INV]
+  else
+    goto <bb 55>; [INV]
+
+  <bb 54> :
+  pub_ack_rec_rel_response (client, 7, pkt_id, 0);
+  goto <bb 69>; [INV]
+
+  <bb 55> :
+  if (pkt_type == 9)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 56> :
+  if (pkt_type == 11)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 57>; [INV]
+
+  <bb 57> :
+  if (pkt_type == 7)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 58>; [INV]
+
+  <bb 58> :
+  if (pkt_type == 4)
+    goto <bb 59>; [INV]
+  else
+    goto <bb 68>; [INV]
+
+  <bb 59> :
+  _83 = &client->pend_req_queue;
+  r = mqtt_take_request (_83, pkt_id);
+  if (r != 0B)
+    goto <bb 60>; [INV]
+  else
+    goto <bb 67>; [INV]
+
+  <bb 60> :
+  if (pkt_type == 9)
+    goto <bb 61>; [INV]
+  else
+    goto <bb 64>; [INV]
+
+  <bb 61> :
+  if (length <= 2)
+    goto <bb 62>; [INV]
+  else
+    goto <bb 63>; [INV]
+
+  <bb 62> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 63> :
+  _84 = var_hdr_payload + 2;
+  _85 = *_84;
+  mqtt_incomming_suback (r, _85);
+  goto <bb 66>; [INV]
+
+  <bb 64> :
+  _86 = r->cb;
+  if (_86 != 0B)
+    goto <bb 65>; [INV]
+  else
+    goto <bb 66>; [INV]
+
+  <bb 65> :
+  _87 = r->cb;
+  _88 = r->arg;
+  _87 (_88, 0);
+
+  <bb 66> :
+  mqtt_delete_request (r);
+
+  <bb 67> :
+  goto <bb 69>; [INV]
+
+  <bb 68> :
+  // predicted unlikely by goto predictor.
+  goto <bb 70>; [INV]
+
+  <bb 69> :
+  D.8151 = res;
+  goto <bb 71>; [INV]
+
+  <bb 70> :
+out_disconnect:
+  D.8151 = 256;
+
+  <bb 71> :
+<L84>:
+  return D.8151;
+
+}
+
+
+mqtt_incomming_suback (struct mqtt_request_t * r, u8_t result)
+{
+  err_t iftmp.14;
+
+  <bb 2> :
+  _1 = r->cb;
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _2 = r->cb;
+  _3 = r->arg;
+  if (result <= 2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.14 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.14 = -13;
+
+  <bb 6> :
+  _2 (_3, iftmp.14);
+
+  <bb 7> :
+  return;
+
+}
+
+
+pub_ack_rec_rel_response (struct mqtt_client_t * client, u8_t msg, u16_t pkt_id, u8_t qos)
+{
+  err_t err;
+  err_t D.8139;
+
+  <bb 2> :
+  err = 0;
+  _1 = &client->output;
+  _2 = mqtt_output_check_space (_1, 2);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = &client->output;
+  mqtt_output_append_fixed_header (_3, msg, 0, qos, 0, 2);
+  _4 = &client->output;
+  mqtt_output_append_u16 (_4, pkt_id);
+  _5 = &client->output;
+  _6 = client->conn;
+  mqtt_output_send (_5, _6);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  err = -1;
+
+  <bb 5> :
+  D.8139 = err;
+
+  <bb 6> :
+<L3>:
+  return D.8139;
+
+}
+
+
+mqtt_cyclic_timer (void * arg)
+{
+  struct mqtt_client_t * client;
+  u8_t restart_timer;
+
+  <bb 2> :
+  restart_timer = 1;
+  client = arg;
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = client->conn_state;
+  if (_1 == 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _2 = client->cyclic_tick;
+  _3 = _2;
+  _4 = _3 + 1;
+  client->cyclic_tick = _4;
+  _5 = client->cyclic_tick;
+  _6 = (int) _5;
+  _7 = _6 * 5;
+  if (_7 > 99)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 6> :
+  mqtt_close (client, 257);
+  restart_timer = 0;
+  goto <bb 16>; [INV]
+
+  <bb 7> :
+  _8 = client->conn_state;
+  if (_8 == 3)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 8> :
+  _9 = &client->pend_req_queue;
+  mqtt_request_time_elapsed (_9, 5);
+  _10 = client->keep_alive;
+  if (_10 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 9> :
+  _11 = client->server_watchdog;
+  _12 = _11;
+  _13 = _12 + 1;
+  client->server_watchdog = _13;
+  _14 = client->server_watchdog;
+  _15 = (int) _14;
+  _16 = _15 * 5;
+  _17 = client->keep_alive;
+  _18 = (int) _17;
+  _19 = client->keep_alive;
+  _20 = _19 / 2;
+  _21 = (int) _20;
+  _22 = _18 + _21;
+  if (_16 > _22)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  mqtt_close (client, 257);
+  restart_timer = 0;
+
+  <bb 11> :
+  _23 = client->cyclic_tick;
+  _24 = (int) _23;
+  _25 = _24 * 5;
+  _26 = client->keep_alive;
+  _27 = (int) _26;
+  if (_25 >= _27)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  _28 = &client->output;
+  _29 = mqtt_output_check_space (_28, 0);
+  if (_29 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 13> :
+  _30 = &client->output;
+  mqtt_output_append_fixed_header (_30, 12, 0, 0, 0, 0);
+  client->cyclic_tick = 0;
+  goto <bb 16>; [INV]
+
+  <bb 14> :
+  _31 = client->cyclic_tick;
+  _32 = _31;
+  _33 = _32 + 1;
+  client->cyclic_tick = _33;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  restart_timer = 0;
+
+  <bb 16> :
+  if (restart_timer != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  sys_timeout (5000, mqtt_cyclic_timer, arg);
+
+  <bb 18> :
+  return;
+
+}
+
+
+mqtt_close (struct mqtt_client_t * client, mqtt_connection_status_t reason)
+{
+  err_t res;
+
+  <bb 2> :
+  if (client == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = client->conn;
+  if (_1 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _2 = client->conn;
+  tcp_recv (_2, 0B);
+  _3 = client->conn;
+  tcp_err (_3, 0B);
+  _4 = client->conn;
+  tcp_sent (_4, 0B);
+  _5 = client->conn;
+  res = tcp_close (_5);
+  if (res != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _6 = client->conn;
+  tcp_abort (_6);
+
+  <bb 7> :
+  client->conn = 0B;
+
+  <bb 8> :
+  _7 = &client->pend_req_queue;
+  mqtt_clear_requests (_7);
+  sys_untimeout (mqtt_cyclic_timer, client);
+  _8 = client->conn_state;
+  if (_8 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  client->conn_state = 0;
+  _9 = client->connect_cb;
+  if (_9 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _10 = client->connect_cb;
+  _11 = client->connect_arg;
+  _10 (client, _11, reason);
+
+  <bb 11> :
+  return;
+
+}
+
+
+mqtt_output_check_space (struct mqtt_ringbuf_t * rb, u16_t r_length)
+{
+  u16_t total_len;
+  u8_t D.8103;
+
+  <bb 2> :
+  total_len = r_length + 1;
+  if (rb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  total_len.13_1 = total_len;
+  total_len = total_len.13_1 + 1;
+  r_length = r_length >> 7;
+  if (r_length != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _2 = (int) total_len;
+  _3 = mqtt_ringbuf_len (rb);
+  _4 = (int) _3;
+  _5 = 256 - _4;
+  _6 = _2 <= _5;
+  D.8103 = (u8_t) _6;
+
+  <bb 6> :
+<L5>:
+  return D.8103;
+
+}
+
+
+mqtt_output_append_fixed_header (struct mqtt_ringbuf_t * rb, u8_t msg_type, u8_t fdup, u8_t fqos, u8_t fretain, u16_t r_length)
+{
+  signed char iftmp.12;
+
+  <bb 2> :
+  _1 = (int) msg_type;
+  _2 = _1 << 4;
+  _3 = (signed char) _2;
+  _4 = (int) fdup;
+  _5 = _4 << 3;
+  _6 = (signed char) _5;
+  _7 = _6 & 8;
+  _8 = _3 | _7;
+  _9 = (int) fqos;
+  _10 = _9 << 1;
+  _11 = (signed char) _10;
+  _12 = _11 & 6;
+  _13 = _8 | _12;
+  fretain.11_14 = (signed char) fretain;
+  _15 = fretain.11_14 & 1;
+  _16 = _13 | _15;
+  _17 = (unsigned char) _16;
+  mqtt_output_append_u8 (rb, _17);
+
+  <bb 3> :
+  _18 = (signed char) r_length;
+  _19 = _18 & 127;
+  if (r_length > 127)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.12 = -128;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.12 = 0;
+
+  <bb 6> :
+  _20 = iftmp.12 | _19;
+  _21 = (unsigned char) _20;
+  mqtt_output_append_u8 (rb, _21);
+  r_length = r_length >> 7;
+  if (r_length != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+mqtt_output_append_string (struct mqtt_ringbuf_t * rb, const char * str, u16_t length)
+{
+  u16_t n;
+
+  <bb 2> :
+  _1 = length >> 8;
+  _2 = (unsigned char) _1;
+  mqtt_ringbuf_put (rb, _2);
+  _3 = (unsigned char) length;
+  mqtt_ringbuf_put (rb, _3);
+  n = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = (sizetype) n;
+  _5 = str + _4;
+  _6 = *_5;
+  mqtt_ringbuf_put (rb, _6);
+  n.10_7 = n;
+  n = n.10_7 + 1;
+
+  <bb 4> :
+  if (n < length)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+mqtt_output_append_buf (struct mqtt_ringbuf_t * rb, const void * data, u16_t length)
+{
+  u16_t n;
+
+  <bb 2> :
+  n = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (sizetype) n;
+  _2 = data + _1;
+  _3 = *_2;
+  mqtt_ringbuf_put (rb, _3);
+  n.9_4 = n;
+  n = n.9_4 + 1;
+
+  <bb 4> :
+  if (n < length)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+mqtt_output_append_u16 (struct mqtt_ringbuf_t * rb, u16_t value)
+{
+  <bb 2> :
+  _1 = value >> 8;
+  _2 = (unsigned char) _1;
+  mqtt_ringbuf_put (rb, _2);
+  _3 = (unsigned char) value;
+  mqtt_ringbuf_put (rb, _3);
+  return;
+
+}
+
+
+mqtt_output_append_u8 (struct mqtt_ringbuf_t * rb, u8_t value)
+{
+  <bb 2> :
+  mqtt_ringbuf_put (rb, value);
+  return;
+
+}
+
+
+mqtt_init_requests (struct mqtt_request_t * r_objs, size_t r_objs_len)
+{
+  u8_t n;
+
+  <bb 2> :
+  if (r_objs == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  n = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _1 = (unsigned int) n;
+  _2 = _1 * 16;
+  _3 = (unsigned int) n;
+  _4 = _3 * 16;
+  _5 = r_objs + _4;
+  _6 = r_objs + _2;
+  _5->next = _6;
+  n.8_7 = n;
+  n = n.8_7 + 1;
+
+  <bb 6> :
+  _8 = (unsigned int) n;
+  if (r_objs_len > _8)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+mqtt_clear_requests (struct mqtt_request_t * * tail)
+{
+  struct mqtt_request_t * next;
+  struct mqtt_request_t * iter;
+
+  <bb 2> :
+  if (tail == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  iter = *tail;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  next = iter->next;
+  mqtt_delete_request (iter);
+  iter = next;
+
+  <bb 6> :
+  if (iter != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  *tail = 0B;
+  return;
+
+}
+
+
+mqtt_request_time_elapsed (struct mqtt_request_t * * tail, u8_t t)
+{
+  struct mqtt_request_t * r;
+
+  <bb 2> :
+  if (tail == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  r = *tail;
+  goto <bb 10>; [INV]
+
+  <bb 5> :
+  _1 = (short unsigned int) t;
+  _2 = r->timeout_diff;
+  if (_1 >= _2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _3 = r->timeout_diff;
+  _4 = (unsigned char) _3;
+  t = t - _4;
+  _5 = r->next;
+  *tail = _5;
+  _6 = r->cb;
+  if (_6 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _7 = r->cb;
+  _8 = r->arg;
+  _7 (_8, -3);
+
+  <bb 8> :
+  mqtt_delete_request (r);
+  r = MEM[(struct mqtt_request_t * const volatile *)tail];
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _9 = r->timeout_diff;
+  _10 = (short unsigned int) t;
+  _11 = _9 - _10;
+  r->timeout_diff = _11;
+  t = 0;
+
+  <bb 10> :
+  if (t != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  if (r != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  return;
+
+}
+
+
+mqtt_take_request (struct mqtt_request_t * * tail, u16_t pkt_id)
+{
+  struct mqtt_request_t * prev;
+  struct mqtt_request_t * iter;
+  struct mqtt_request_t * D.8083;
+
+  <bb 2> :
+  iter = 0B;
+  prev = 0B;
+  if (tail == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  iter = *tail;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _1 = iter->pkt_id;
+  if (pkt_id == _1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  prev = iter;
+  iter = iter->next;
+
+  <bb 8> :
+  if (iter != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  if (iter != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 10> :
+  if (prev == 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _2 = iter->next;
+  *tail = _2;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _3 = iter->next;
+  prev->next = _3;
+
+  <bb 13> :
+  _4 = iter->next;
+  if (_4 != 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _5 = iter->next;
+  _6 = _5->timeout_diff;
+  _7 = iter->timeout_diff;
+  _8 = iter->next;
+  _9 = _6 + _7;
+  _8->timeout_diff = _9;
+
+  <bb 15> :
+  iter->next = 0B;
+
+  <bb 16> :
+  D.8083 = iter;
+
+  <bb 17> :
+<L15>:
+  return D.8083;
+
+}
+
+
+mqtt_delete_request (struct mqtt_request_t * r)
+{
+  <bb 2> :
+  if (r != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  r->next = r;
+
+  <bb 4> :
+  return;
+
+}
+
+
+mqtt_append_request (struct mqtt_request_t * * tail, struct mqtt_request_t * r)
+{
+  struct mqtt_request_t * iter;
+  s16_t time_before;
+  struct mqtt_request_t * head;
+
+  <bb 2> :
+  head = 0B;
+  time_before = 0;
+  if (tail == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  iter = *tail;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _1 = iter->timeout_diff;
+  time_before.6_2 = (unsigned short) time_before;
+  _3 = _1 + time_before.6_2;
+  time_before = (s16_t) _3;
+  head = iter;
+  iter = iter->next;
+
+  <bb 6> :
+  if (iter != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (time_before > 30)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  time_before.7_4 = (short unsigned int) time_before;
+  _5 = 30 - time_before.7_4;
+  r->timeout_diff = _5;
+  if (head == 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  *tail = r;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  head->next = r;
+
+  <bb 12> :
+  return;
+
+}
+
+
+mqtt_create_request (struct mqtt_request_t * r_objs, size_t r_objs_len, u16_t pkt_id, void (*mqtt_request_cb_t) (void *, err_t) cb, void * arg)
+{
+  u8_t n;
+  struct mqtt_request_t * r;
+  struct mqtt_request_t * D.8061;
+
+  <bb 2> :
+  r = 0B;
+  if (r_objs == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  n = 0;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _1 = (unsigned int) n;
+  _2 = _1 * 16;
+  _3 = r_objs + _2;
+  _4 = _3->next;
+  _5 = (unsigned int) n;
+  _6 = _5 * 16;
+  _7 = r_objs + _6;
+  if (_4 == _7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _8 = (unsigned int) n;
+  _9 = _8 * 16;
+  r = r_objs + _9;
+  r->next = 0B;
+  r->cb = cb;
+  r->arg = arg;
+  r->pkt_id = pkt_id;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  n.5_10 = n;
+  n = n.5_10 + 1;
+
+  <bb 8> :
+  _11 = (unsigned int) n;
+  if (r_objs_len > _11)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  D.8061 = r;
+
+  <bb 10> :
+<L8>:
+  return D.8061;
+
+}
+
+
+mqtt_output_send (struct mqtt_ringbuf_t * rb, struct tcp_pcb * tpcb)
+{
+  u16_t send_len;
+  u16_t ringbuf_lin_len;
+  u8_t wrap;
+  err_t err;
+  u16_t iftmp.4;
+  int iftmp.3;
+  u16_t iftmp.2;
+  u8_t iftmp.1;
+  u16_t iftmp.0;
+
+  <bb 2> :
+  wrap = 0;
+  _1 = mqtt_ringbuf_len (rb);
+  _2 = (int) _1;
+  _3 = rb->get;
+  _4 = (int) _3;
+  _5 = 256 - _4;
+  if (_2 < _5)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.0 = mqtt_ringbuf_len (rb);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _6 = rb->get;
+  iftmp.0 = 256 - _6;
+
+  <bb 5> :
+  ringbuf_lin_len = iftmp.0;
+  send_len = tpcb->snd_buf;
+  if (tpcb == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  if (send_len == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (ringbuf_lin_len == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 29>; [INV]
+
+  <bb 10> :
+  if (send_len > ringbuf_lin_len)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  send_len = ringbuf_lin_len;
+  _7 = mqtt_ringbuf_len (rb);
+  _8 = ringbuf_lin_len < _7;
+  wrap = (u8_t) _8;
+
+  <bb 12> :
+  _9 = mqtt_ringbuf_get_ptr (rb);
+  if (wrap != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.1 = 3;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  iftmp.1 = 1;
+
+  <bb 15> :
+  err = tcp_write (tpcb, _9, send_len, iftmp.1);
+  if (err == 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 16> :
+  if (wrap != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 17> :
+  mqtt_ringbuf_advance_get_idx (rb, send_len);
+  _10 = tpcb->snd_buf;
+  _11 = (int) _10;
+  _12 = mqtt_ringbuf_len (rb);
+  _13 = (int) _12;
+  _14 = rb->get;
+  _15 = (int) _14;
+  _16 = 256 - _15;
+  if (_13 < _16)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _17 = mqtt_ringbuf_len (rb);
+  iftmp.3 = (int) _17;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  _18 = rb->get;
+  _19 = (int) _18;
+  iftmp.3 = 256 - _19;
+
+  <bb 20> :
+  if (iftmp.3 > _11)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  iftmp.2 = tpcb->snd_buf;
+  goto <bb 26>; [INV]
+
+  <bb 22> :
+  _20 = mqtt_ringbuf_len (rb);
+  _21 = (int) _20;
+  _22 = rb->get;
+  _23 = (int) _22;
+  _24 = 256 - _23;
+  if (_21 < _24)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  iftmp.4 = mqtt_ringbuf_len (rb);
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+  _25 = rb->get;
+  iftmp.4 = 256 - _25;
+
+  <bb 25> :
+  iftmp.2 = iftmp.4;
+
+  <bb 26> :
+  send_len = iftmp.2;
+  _26 = mqtt_ringbuf_get_ptr (rb);
+  err = tcp_write (tpcb, _26, send_len, 1);
+
+  <bb 27> :
+  if (err == 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  mqtt_ringbuf_advance_get_idx (rb, send_len);
+  tcp_output (tpcb);
+
+  <bb 29> :
+<L30>:
+  return;
+
+}
+
+
+mqtt_ringbuf_len (struct mqtt_ringbuf_t * rb)
+{
+  u32_t len;
+  u16_t D.8020;
+
+  <bb 2> :
+  _1 = rb->put;
+  _2 = (int) _1;
+  _3 = rb->get;
+  _4 = (int) _3;
+  _5 = _2 - _4;
+  len = (u32_t) _5;
+  if (len > 65535)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  len = len + 256;
+
+  <bb 4> :
+  D.8020 = (u16_t) len;
+
+  <bb 5> :
+<L2>:
+  return D.8020;
+
+}
+
+
+mqtt_ringbuf_advance_get_idx (struct mqtt_ringbuf_t * rb, u16_t len)
+{
+  <bb 2> :
+  if (len > 255)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _1 = rb->get;
+  _2 = len + _1;
+  rb->get = _2;
+  _3 = rb->get;
+  if (_3 > 255)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = rb->get;
+  _5 = _4 + 65280;
+  rb->get = _5;
+
+  <bb 6> :
+  return;
+
+}
+
+
+mqtt_ringbuf_get_ptr (struct mqtt_ringbuf_t * rb)
+{
+  u8_t * D.8012;
+
+  <bb 2> :
+  _1 = rb->get;
+  _2 = (int) _1;
+  D.8012 = &rb->buf[_2];
+
+  <bb 3> :
+<L0>:
+  return D.8012;
+
+}
+
+
+mqtt_ringbuf_put (struct mqtt_ringbuf_t * rb, u8_t item)
+{
+  <bb 2> :
+  _1 = rb->put;
+  _2 = (int) _1;
+  rb->buf[_2] = item;
+  _3 = rb->put;
+  _4 = _3;
+  _5 = _4 + 1;
+  rb->put = _5;
+  _6 = rb->put;
+  if (_6 > 255)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  rb->put = 0;
+
+  <bb 4> :
+  return;
+
+}
+
+
+msg_generate_packet_id (struct mqtt_client_t * client)
+{
+  u16_t D.8008;
+
+  <bb 2> :
+  _1 = client->pkt_id_seq;
+  _2 = _1;
+  _3 = _2 + 1;
+  client->pkt_id_seq = _3;
+  _4 = client->pkt_id_seq;
+  if (_4 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _5 = client->pkt_id_seq;
+  _6 = _5;
+  _7 = _6 + 1;
+  client->pkt_id_seq = _7;
+
+  <bb 4> :
+  D.8008 = client->pkt_id_seq;
+
+  <bb 5> :
+<L2>:
+  return D.8008;
+
+}
+
+

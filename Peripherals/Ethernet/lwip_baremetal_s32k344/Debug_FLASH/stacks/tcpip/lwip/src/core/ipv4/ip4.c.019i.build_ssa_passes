@@ -1,0 +1,1093 @@
+ip4_output (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto)
+{
+  struct netif * netif;
+  err_t D.8133;
+
+  <bb 2> :
+  _1 = p->ref;
+  if (_1 != 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  netif = ip4_route (dest);
+  if (netif == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _2 = lwip_stats.ip.rterr;
+  _3 = _2 + 1;
+  lwip_stats.ip.rterr = _3;
+  D.8133 = -4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.8133 = ip4_output_if (p, src, dest, ttl, tos, proto, netif);
+
+  <bb 7> :
+<L5>:
+  return D.8133;
+
+}
+
+
+ip4_output_if_opt_src (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto, struct netif * netif, void * ip_options, u16_t optlen)
+{
+  int i;
+  u16_t optlen_aligned;
+  u16_t ip_hlen;
+  u32_t chk_sum;
+  struct ip4_addr_t dest_addr;
+  struct ip_hdr * iphdr;
+  err_t D.8108;
+
+  <bb 2> :
+  chk_sum = 0;
+  _1 = p->ref;
+  if (_1 != 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  _2 = lwip_stats.mib2.ipoutrequests;
+  _3 = _2 + 1;
+  lwip_stats.mib2.ipoutrequests = _3;
+  if (dest != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 5> :
+  ip_hlen = 20;
+  optlen_aligned = 0;
+  if (optlen != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 6> :
+  if (optlen > 40)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _4 = lwip_stats.ip.err;
+  _5 = _4 + 1;
+  lwip_stats.ip.err = _5;
+  _6 = lwip_stats.mib2.ipoutdiscards;
+  _7 = _6 + 1;
+  lwip_stats.mib2.ipoutdiscards = _7;
+  D.8108 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 8> :
+  _8 = optlen + 3;
+  optlen_aligned = _8 & 65532;
+  ip_hlen = ip_hlen + optlen_aligned;
+  _9 = (unsigned int) optlen_aligned;
+  _10 = pbuf_add_header (p, _9);
+  if (_10 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _11 = lwip_stats.ip.err;
+  _12 = _11 + 1;
+  lwip_stats.ip.err = _12;
+  _13 = lwip_stats.mib2.ipoutdiscards;
+  _14 = _13 + 1;
+  lwip_stats.mib2.ipoutdiscards = _14;
+  D.8108 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 10> :
+  _15 = p->payload;
+  _16 = (unsigned int) optlen;
+  memcpy (_15, ip_options, _16);
+  if (optlen < optlen_aligned)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _17 = p->payload;
+  _18 = (sizetype) optlen;
+  _19 = _17 + _18;
+  _20 = (int) optlen_aligned;
+  _21 = (int) optlen;
+  _22 = _20 - _21;
+  _23 = (unsigned int) _22;
+  memset (_19, 0, _23);
+
+  <bb 12> :
+  i = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _24 = p->payload;
+  i.6_25 = (unsigned int) i;
+  _26 = i.6_25 * 2;
+  _27 = _24 + _26;
+  _28 = *_27;
+  _29 = (long unsigned int) _28;
+  chk_sum = chk_sum + _29;
+  i = i + 1;
+
+  <bb 14> :
+  _30 = optlen_aligned / 2;
+  _31 = (int) _30;
+  if (i < _31)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  _32 = pbuf_add_header (p, 20);
+  if (_32 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _33 = lwip_stats.ip.err;
+  _34 = _33 + 1;
+  lwip_stats.ip.err = _34;
+  _35 = lwip_stats.mib2.ipoutdiscards;
+  _36 = _35 + 1;
+  lwip_stats.mib2.ipoutdiscards = _36;
+  D.8108 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 17> :
+  iphdr = p->payload;
+  _37 = p->len;
+  if (_37 <= 19)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 18>; [INV]
+
+  <bb 19> :
+  iphdr->_ttl = ttl;
+  iphdr->_proto = proto;
+  _38 = (int) proto;
+  _39 = (int) ttl;
+  _40 = _39 << 8;
+  _41 = _38 | _40;
+  _42 = _41 << 8;
+  _43 = (signed short) _42;
+  _44 = (int) proto;
+  _45 = (int) ttl;
+  _46 = _45 << 8;
+  _47 = _44 | _46;
+  _48 = _47 >> 8;
+  _49 = (signed short) _48;
+  _50 = _49 & 255;
+  _51 = _43 | _50;
+  _52 = (short unsigned int) _51;
+  _53 = (long unsigned int) _52;
+  chk_sum = chk_sum + _53;
+  _54 = dest->addr;
+  iphdr->dest.addr = _54;
+  _55 = iphdr->dest.addr;
+  _56 = _55 & 65535;
+  chk_sum = chk_sum + _56;
+  _57 = iphdr->dest.addr;
+  _58 = _57 >> 16;
+  chk_sum = chk_sum + _58;
+  _59 = ip_hlen / 4;
+  _60 = (unsigned char) _59;
+  _61 = _60 | 64;
+  iphdr->_v_hl = _61;
+  iphdr->_tos = tos;
+  _62 = (int) tos;
+  _63 = iphdr->_v_hl;
+  _64 = (int) _63;
+  _65 = _64 << 8;
+  _66 = _62 | _65;
+  _67 = _66 << 8;
+  _68 = (signed short) _67;
+  _69 = (int) tos;
+  _70 = iphdr->_v_hl;
+  _71 = (int) _70;
+  _72 = _71 << 8;
+  _73 = _69 | _72;
+  _74 = _73 >> 8;
+  _75 = (signed short) _74;
+  _76 = _75 & 255;
+  _77 = _68 | _76;
+  _78 = (short unsigned int) _77;
+  _79 = (long unsigned int) _78;
+  chk_sum = chk_sum + _79;
+  _80 = p->tot_len;
+  _81 = lwip_htons (_80);
+  iphdr->_len = _81;
+  _82 = iphdr->_len;
+  _83 = (long unsigned int) _82;
+  chk_sum = chk_sum + _83;
+  iphdr->_offset = 0;
+  ip_id.7_84 = ip_id;
+  _85 = lwip_htons (ip_id.7_84);
+  iphdr->_id = _85;
+  _86 = iphdr->_id;
+  _87 = (long unsigned int) _86;
+  chk_sum = chk_sum + _87;
+  ip_id.8_88 = ip_id;
+  _89 = ip_id.8_88 + 1;
+  ip_id = _89;
+  if (src == 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _90 = ip_addr_any.u_addr.ip4.addr;
+  iphdr->src.addr = _90;
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  _91 = src->addr;
+  iphdr->src.addr = _91;
+
+  <bb 22> :
+  _92 = iphdr->src.addr;
+  _93 = _92 & 65535;
+  chk_sum = chk_sum + _93;
+  _94 = iphdr->src.addr;
+  _95 = _94 >> 16;
+  chk_sum = chk_sum + _95;
+  _96 = chk_sum >> 16;
+  _97 = chk_sum & 65535;
+  chk_sum = _96 + _97;
+  _98 = chk_sum >> 16;
+  chk_sum = chk_sum + _98;
+  chk_sum = ~chk_sum;
+  _99 = (short unsigned int) chk_sum;
+  iphdr->_chksum = _99;
+  goto <bb 26>; [INV]
+
+  <bb 23> :
+  _100 = p->len;
+  if (_100 <= 19)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _101 = lwip_stats.ip.err;
+  _102 = _101 + 1;
+  lwip_stats.ip.err = _102;
+  _103 = lwip_stats.mib2.ipoutdiscards;
+  _104 = _103 + 1;
+  lwip_stats.mib2.ipoutdiscards = _104;
+  D.8108 = -2;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 25> :
+  iphdr = p->payload;
+  _105 = iphdr->dest.addr;
+  dest_addr.addr = _105;
+  dest = &dest_addr;
+
+  <bb 26> :
+  _106 = lwip_stats.ip.xmit;
+  _107 = _106 + 1;
+  lwip_stats.ip.xmit = _107;
+  _108 = netif->mtu;
+  if (_108 != 0)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 27> :
+  _109 = p->tot_len;
+  _110 = netif->mtu;
+  if (_109 > _110)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  D.8108 = ip4_frag (p, netif, dest);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  _111 = netif->output;
+  D.8108 = _111 (netif, p, dest);
+
+  <bb 30> :
+  dest_addr = {CLOBBER};
+
+  <bb 31> :
+<L32>:
+  return D.8108;
+
+}
+
+
+ip4_output_if_src (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto, struct netif * netif)
+{
+  err_t D.8098;
+
+  <bb 2> :
+  D.8098 = ip4_output_if_opt_src (p, src, dest, ttl, tos, proto, netif, 0B, 0);
+
+  <bb 3> :
+<L0>:
+  return D.8098;
+
+}
+
+
+ip4_output_if_opt (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto, struct netif * netif, void * ip_options, u16_t optlen)
+{
+  const struct ip4_addr_t * src_used;
+  err_t D.8096;
+
+  <bb 2> :
+  src_used = src;
+  if (dest != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  if (src == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _1 = src->addr;
+  if (_1 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  src_used = &netif->ip_addr.u_addr.ip4;
+
+  <bb 6> :
+  D.8096 = ip4_output_if_opt_src (p, src_used, dest, ttl, tos, proto, netif, ip_options, optlen);
+
+  <bb 7> :
+<L5>:
+  return D.8096;
+
+}
+
+
+ip4_output_if (struct pbuf * p, const struct ip4_addr_t * src, const struct ip4_addr_t * dest, u8_t ttl, u8_t tos, u8_t proto, struct netif * netif)
+{
+  err_t D.8089;
+
+  <bb 2> :
+  D.8089 = ip4_output_if_opt (p, src, dest, ttl, tos, proto, netif, 0B, 0);
+
+  <bb 3> :
+<L0>:
+  return D.8089;
+
+}
+
+
+ip4_input (struct pbuf * p, struct netif * inp)
+{
+  struct ip4_addr_t allsystems;
+  raw_input_state_t raw_status;
+  int check_ip_src;
+  u16_t iphdr_len;
+  u16_t iphdr_hlen;
+  struct netif * netif;
+  const struct ip_hdr * iphdr;
+  err_t D.8033;
+
+  <bb 2> :
+  check_ip_src = 1;
+  _1 = lwip_stats.ip.recv;
+  _2 = _1 + 1;
+  lwip_stats.ip.recv = _2;
+  _3 = lwip_stats.mib2.ipinreceives;
+  _4 = _3 + 1;
+  lwip_stats.mib2.ipinreceives = _4;
+  iphdr = p->payload;
+  _5 = iphdr->_v_hl;
+  _6 = _5 >> 4;
+  if (_6 != 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  pbuf_free (p);
+  _7 = lwip_stats.ip.err;
+  _8 = _7 + 1;
+  lwip_stats.ip.err = _8;
+  _9 = lwip_stats.ip.drop;
+  _10 = _9 + 1;
+  lwip_stats.ip.drop = _10;
+  _11 = lwip_stats.mib2.ipinhdrerrors;
+  _12 = _11 + 1;
+  lwip_stats.mib2.ipinhdrerrors = _12;
+  D.8033 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 4> :
+  _13 = iphdr->_v_hl;
+  _14 = _13 & 15;
+  _15 = _14 * 4;
+  iphdr_hlen = (u16_t) _15;
+  _16 = iphdr->_len;
+  iphdr_len = lwip_htons (_16);
+  _17 = p->tot_len;
+  if (iphdr_len < _17)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  pbuf_realloc (p, iphdr_len);
+
+  <bb 6> :
+  _18 = p->len;
+  if (iphdr_hlen > _18)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _19 = p->tot_len;
+  if (iphdr_len > _19)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (iphdr_hlen <= 19)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  _20 = p->len;
+
+  <bb 10> :
+  _21 = p->tot_len;
+
+  <bb 11> :
+  pbuf_free (p);
+  _22 = lwip_stats.ip.lenerr;
+  _23 = _22 + 1;
+  lwip_stats.ip.lenerr = _23;
+  _24 = lwip_stats.ip.drop;
+  _25 = _24 + 1;
+  lwip_stats.ip.drop = _25;
+  _26 = lwip_stats.mib2.ipindiscards;
+  _27 = _26 + 1;
+  lwip_stats.mib2.ipindiscards = _27;
+  D.8033 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 12> :
+  _28 = inet_chksum (iphdr, iphdr_hlen);
+  if (_28 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  pbuf_free (p);
+  _29 = lwip_stats.ip.chkerr;
+  _30 = _29 + 1;
+  lwip_stats.ip.chkerr = _30;
+  _31 = lwip_stats.ip.drop;
+  _32 = _31 + 1;
+  lwip_stats.ip.drop = _32;
+  _33 = lwip_stats.mib2.ipinhdrerrors;
+  _34 = _33 + 1;
+  lwip_stats.mib2.ipinhdrerrors = _34;
+  D.8033 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 14> :
+  _35 = iphdr->dest.addr;
+  ip_data.current_iphdr_dest.u_addr.ip4.addr = _35;
+  ip_data.current_iphdr_dest.type = 0;
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[3] = 0;
+  _36 = ip_data.current_iphdr_dest.u_addr.ip6.addr[3];
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[2] = _36;
+  _37 = ip_data.current_iphdr_dest.u_addr.ip6.addr[2];
+  ip_data.current_iphdr_dest.u_addr.ip6.addr[1] = _37;
+  ip_data.current_iphdr_dest.u_addr.ip6.zone = 0;
+  _38 = iphdr->src.addr;
+  ip_data.current_iphdr_src.u_addr.ip4.addr = _38;
+  ip_data.current_iphdr_src.type = 0;
+  ip_data.current_iphdr_src.u_addr.ip6.addr[3] = 0;
+  _39 = ip_data.current_iphdr_src.u_addr.ip6.addr[3];
+  ip_data.current_iphdr_src.u_addr.ip6.addr[2] = _39;
+  _40 = ip_data.current_iphdr_src.u_addr.ip6.addr[2];
+  ip_data.current_iphdr_src.u_addr.ip6.addr[1] = _40;
+  ip_data.current_iphdr_src.u_addr.ip6.zone = 0;
+  _41 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _42 = _41 & 240;
+  if (_42 == 224)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 15> :
+  _43 = inp->flags;
+  _44 = (unsigned int) _43;
+  _45 = _44 & 32;
+  if (_45 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 16> :
+  _46 = igmp_lookfor_group (inp, &ip_data.current_iphdr_dest.u_addr.ip4);
+  if (_46 != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 17> :
+  allsystems.addr = 16777440;
+  _47 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _48 = allsystems.addr;
+  if (_47 == _48)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 18> :
+  _49 = ip_data.current_iphdr_src.u_addr.ip4.addr;
+  if (_49 == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  check_ip_src = 0;
+
+  <bb 20> :
+  netif = inp;
+  allsystems = {CLOBBER};
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  netif = 0B;
+
+  <bb 22> :
+  goto <bb 33>; [INV]
+
+  <bb 23> :
+  _50 = ip4_input_accept (inp);
+  if (_50 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  netif = inp;
+  goto <bb 33>; [INV]
+
+  <bb 25> :
+  netif = 0B;
+  _51 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _52 = _51 & 255;
+  if (_52 != 127)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 26> :
+  netif = netif_list;
+  goto <bb 32>; [INV]
+
+  <bb 27> :
+  if (netif == inp)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  // predicted unlikely by continue predictor.
+  goto <bb 31>; [INV]
+
+  <bb 29> :
+  _53 = ip4_input_accept (netif);
+  if (_53 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  goto <bb 33>; [INV]
+
+  <bb 31> :
+  netif = netif->next;
+
+  <bb 32> :
+  if (netif != 0B)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 33> :
+  if (check_ip_src != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 34> :
+  _54 = ip_data.current_iphdr_src.u_addr.ip4.addr;
+  _55 = ip4_addr_isbroadcast_u32 (_54, inp);
+  if (_55 != 0)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 35> :
+  _56 = ip_data.current_iphdr_src.u_addr.ip4.addr;
+  _57 = _56 & 240;
+  if (_57 == 224)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  pbuf_free (p);
+  _58 = lwip_stats.ip.drop;
+  _59 = _58 + 1;
+  lwip_stats.ip.drop = _59;
+  _60 = lwip_stats.mib2.ipinaddrerrors;
+  _61 = _60 + 1;
+  lwip_stats.mib2.ipinaddrerrors = _61;
+  _62 = lwip_stats.mib2.ipindiscards;
+  _63 = _62 + 1;
+  lwip_stats.mib2.ipindiscards = _63;
+  D.8033 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 37> :
+  if (netif == 0B)
+    goto <bb 38>; [INV]
+  else
+    goto <bb 39>; [INV]
+
+  <bb 38> :
+  _64 = lwip_stats.ip.drop;
+  _65 = _64 + 1;
+  lwip_stats.ip.drop = _65;
+  _66 = lwip_stats.mib2.ipinaddrerrors;
+  _67 = _66 + 1;
+  lwip_stats.mib2.ipinaddrerrors = _67;
+  _68 = lwip_stats.mib2.ipindiscards;
+  _69 = _68 + 1;
+  lwip_stats.mib2.ipindiscards = _69;
+  pbuf_free (p);
+  D.8033 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 39> :
+  _70 = iphdr->_offset;
+  _71 = (int) _70;
+  _72 = _71 & 65343;
+  if (_72 != 0)
+    goto <bb 40>; [INV]
+  else
+    goto <bb 43>; [INV]
+
+  <bb 40> :
+  p = ip4_reass (p);
+  if (p == 0B)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 41> :
+  D.8033 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 57>; [INV]
+
+  <bb 42> :
+  iphdr = p->payload;
+
+  <bb 43> :
+  ip_data.current_netif = netif;
+  ip_data.current_input_netif = inp;
+  ip_data.current_ip4_header = iphdr;
+  _73 = iphdr->_v_hl;
+  _74 = _73 & 15;
+  _75 = _74 * 4;
+  _76 = (short unsigned int) _75;
+  ip_data.current_ip_header_tot_len = _76;
+  raw_status = raw_input (p, inp);
+  if (raw_status != 1)
+    goto <bb 44>; [INV]
+  else
+    goto <bb 56>; [INV]
+
+  <bb 44> :
+  _77 = (unsigned int) iphdr_hlen;
+  pbuf_remove_header (p, _77);
+  _78 = iphdr->_proto;
+  _79 = (int) _78;
+  switch (_79) <default: <L57> [INV], case 1: <L55> [INV], case 2: <L56> [INV], case 6: <L54> [INV], case 17: <L52> [INV], case 136: <L52> [INV]>
+
+  <bb 45> :
+<L52>:
+  _80 = lwip_stats.mib2.ipindelivers;
+  _81 = _80 + 1;
+  lwip_stats.mib2.ipindelivers = _81;
+  udp_input (p, inp);
+  goto <bb 56>; [INV]
+
+  <bb 46> :
+<L54>:
+  _82 = lwip_stats.mib2.ipindelivers;
+  _83 = _82 + 1;
+  lwip_stats.mib2.ipindelivers = _83;
+  tcp_input (p, inp);
+  goto <bb 56>; [INV]
+
+  <bb 47> :
+<L55>:
+  _84 = lwip_stats.mib2.ipindelivers;
+  _85 = _84 + 1;
+  lwip_stats.mib2.ipindelivers = _85;
+  icmp_input (p, inp);
+  goto <bb 56>; [INV]
+
+  <bb 48> :
+<L56>:
+  igmp_input (p, inp, &ip_data.current_iphdr_dest.u_addr.ip4);
+  goto <bb 56>; [INV]
+
+  <bb 49> :
+<L57>:
+  if (raw_status == 2)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  _86 = lwip_stats.mib2.ipindelivers;
+  _87 = _86 + 1;
+  lwip_stats.mib2.ipindelivers = _87;
+  goto <bb 55>; [INV]
+
+  <bb 51> :
+  _88 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _89 = ip4_addr_isbroadcast_u32 (_88, netif);
+  if (_89 == 0)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 52> :
+  _90 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _91 = _90 & 240;
+  if (_91 != 224)
+    goto <bb 53>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 53> :
+  iphdr_hlen.5_92 = (short int) iphdr_hlen;
+  pbuf_header_force (p, iphdr_hlen.5_92);
+  icmp_dest_unreach (p, 2);
+
+  <bb 54> :
+  _93 = lwip_stats.ip.proterr;
+  _94 = _93 + 1;
+  lwip_stats.ip.proterr = _94;
+  _95 = lwip_stats.ip.drop;
+  _96 = _95 + 1;
+  lwip_stats.ip.drop = _96;
+  _97 = lwip_stats.mib2.ipinunknownprotos;
+  _98 = _97 + 1;
+  lwip_stats.mib2.ipinunknownprotos = _98;
+
+  <bb 55> :
+  pbuf_free (p);
+
+  <bb 56> :
+  ip_data.current_netif = 0B;
+  ip_data.current_input_netif = 0B;
+  ip_data.current_ip4_header = 0B;
+  ip_data.current_ip_header_tot_len = 0;
+  ip_data.current_iphdr_src.u_addr.ip4.addr = 0;
+  ip_data.current_iphdr_dest.u_addr.ip4.addr = 0;
+  D.8033 = 0;
+
+  <bb 57> :
+<L67>:
+  return D.8033;
+
+}
+
+
+ip4_input_accept (struct netif * netif)
+{
+  int D.8029;
+
+  <bb 2> :
+  _1 = netif->flags;
+  _2 = (_Bool) _1;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _3 = &netif->ip_addr.u_addr.ip4;
+  _4 = MEM[(const struct ip4_addr_t *)_3].addr;
+  if (_4 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _5 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _6 = &netif->ip_addr.u_addr.ip4;
+  _7 = MEM[(const struct ip4_addr_t *)_6].addr;
+  if (_5 == _7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _8 = ip_data.current_iphdr_dest.u_addr.ip4.addr;
+  _9 = ip4_addr_isbroadcast_u32 (_8, netif);
+  if (_9 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.8029 = 1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  D.8029 = 0;
+
+  <bb 8> :
+<L7>:
+  return D.8029;
+
+}
+
+
+ip4_route (const struct ip4_addr_t * dest)
+{
+  struct netif * netif;
+  struct netif * D.8002;
+
+  <bb 2> :
+  _1 = dest->addr;
+  _2 = _1 & 240;
+  if (_2 == 224)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  ip4_default_multicast_netif.0_3 = ip4_default_multicast_netif;
+  if (ip4_default_multicast_netif.0_3 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.8002 = ip4_default_multicast_netif;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 5> :
+  netif = netif_list;
+  goto <bb 15>; [INV]
+
+  <bb 6> :
+  _4 = netif->flags;
+  _5 = (_Bool) _4;
+  if (_5 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 7> :
+  _6 = netif->flags;
+  _7 = (unsigned int) _6;
+  _8 = _7 >> 2;
+  _9 = (_Bool) _8;
+  if (_9 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 8> :
+  _10 = &netif->ip_addr.u_addr.ip4;
+  _11 = MEM[(const struct ip4_addr_t *)_10].addr;
+  if (_11 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 9> :
+  _12 = dest->addr;
+  _13 = &netif->ip_addr.u_addr.ip4;
+  _14 = MEM[(const struct ip4_addr_t *)_13].addr;
+  _15 = _12 ^ _14;
+  _16 = &netif->netmask.u_addr.ip4;
+  _17 = MEM[(const struct ip4_addr_t *)_16].addr;
+  _18 = _15 & _17;
+  if (_18 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  D.8002 = netif;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 11> :
+  _19 = netif->flags;
+  _20 = (unsigned int) _19;
+  _21 = _20 & 2;
+  if (_21 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  _22 = dest->addr;
+  _23 = &netif->gw.u_addr.ip4;
+  _24 = MEM[(const struct ip4_addr_t *)_23].addr;
+  if (_22 == _24)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  D.8002 = netif;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 14> :
+  netif = netif->next;
+
+  <bb 15> :
+  if (netif != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  netif_default.1_25 = netif_default;
+  if (netif_default.1_25 == 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  netif_default.2_26 = netif_default;
+  _27 = netif_default.2_26->flags;
+  _28 = (unsigned int) _27;
+  _29 = _28 & 1;
+  if (_29 == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  netif_default.3_30 = netif_default;
+  _31 = netif_default.3_30->flags;
+  _32 = (unsigned int) _31;
+  _33 = _32 & 4;
+  if (_33 == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  netif_default.4_34 = netif_default;
+  _35 = &netif_default.4_34->ip_addr.u_addr.ip4;
+  _36 = MEM[(const struct ip4_addr_t *)_35].addr;
+  if (_36 == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  _37 = dest->addr;
+  _38 = _37 & 255;
+  if (_38 == 127)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _39 = lwip_stats.ip.rterr;
+  _40 = _39 + 1;
+  lwip_stats.ip.rterr = _40;
+  _41 = lwip_stats.mib2.ipoutnoroutes;
+  _42 = _41 + 1;
+  lwip_stats.mib2.ipoutnoroutes = _42;
+  D.8002 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 22> :
+  D.8002 = netif_default;
+
+  <bb 23> :
+<L25>:
+  return D.8002;
+
+}
+
+
+ip4_set_default_multicast_netif (struct netif * default_multicast_netif)
+{
+  <bb 2> :
+  ip4_default_multicast_netif = default_multicast_netif;
+  return;
+
+}
+
+

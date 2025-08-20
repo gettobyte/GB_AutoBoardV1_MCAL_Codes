@@ -1,0 +1,1353 @@
+httpd_init ()
+{
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  pcb = tcp_new_ip_type (46);
+  if (pcb == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  httpd_init_pcb (pcb, 80);
+  return;
+
+}
+
+
+httpd_init_pcb (struct tcp_pcb * pcb, u16_t port)
+{
+  err_t err;
+
+  <bb 2> :
+  if (pcb != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  tcp_setprio (pcb, 1);
+  err = tcp_bind (pcb, &ip_addr_any_type, port);
+  if (err != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  pcb = tcp_listen_with_backlog (pcb, 255);
+  if (pcb == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  tcp_accept (pcb, http_accept);
+
+  <bb 8> :
+  return;
+
+}
+
+
+http_accept (void * arg, struct tcp_pcb * pcb, err_t err)
+{
+  struct http_state * hs;
+  err_t D.8478;
+
+  <bb 2> :
+  if (err != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (pcb == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.8478 = -6;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  tcp_setprio (pcb, 1);
+  hs = http_state_alloc ();
+  if (hs == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.8478 = -1;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  hs->pcb = pcb;
+  tcp_arg (pcb, hs);
+  tcp_recv (pcb, http_recv);
+  tcp_err (pcb, http_err);
+  tcp_poll (pcb, http_poll, 4);
+  tcp_sent (pcb, http_sent);
+  D.8478 = 0;
+
+  <bb 8> :
+<L5>:
+  return D.8478;
+
+}
+
+
+http_recv (void * arg, struct tcp_pcb * pcb, struct pbuf * p, err_t err)
+{
+  err_t parsed;
+  struct http_state * hs;
+  err_t D.8453;
+
+  <bb 2> :
+  hs = arg;
+  if (err != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (p == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  if (hs == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  if (p != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _1 = p->tot_len;
+  tcp_recved (pcb, _1);
+  pbuf_free (p);
+
+  <bb 7> :
+  http_close_conn (pcb, hs);
+  D.8453 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 23>; [INV]
+
+  <bb 8> :
+  _2 = p->tot_len;
+  tcp_recved (pcb, _2);
+  _3 = hs->handle;
+  if (_3 == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 9> :
+  parsed = http_parse_request (p, hs, pcb);
+  if (parsed != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 10> :
+  if (parsed != -5)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 11> :
+  if (parsed != -16)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  if (parsed != -8)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 13>; [INV]
+
+  <bb 14> :
+  if (parsed != -5)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 15> :
+  _4 = hs->req;
+  if (_4 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _5 = hs->req;
+  pbuf_free (_5);
+  hs->req = 0B;
+
+  <bb 17> :
+  pbuf_free (p);
+  if (parsed == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  http_send (pcb, hs);
+  goto <bb 22>; [INV]
+
+  <bb 19> :
+  if (parsed == -16)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 20> :
+  http_close_conn (pcb, hs);
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+  pbuf_free (p);
+
+  <bb 22> :
+  D.8453 = 0;
+
+  <bb 23> :
+<L29>:
+  return D.8453;
+
+}
+
+
+http_poll (void * arg, struct tcp_pcb * pcb)
+{
+  err_t closed;
+  struct http_state * hs;
+  err_t D.8437;
+
+  <bb 2> :
+  hs = arg;
+  if (hs == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  closed = http_close_conn (pcb, 0B);
+  D.8437 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  _1 = hs->retries;
+  _2 = _1;
+  _3 = _2 + 1;
+  hs->retries = _3;
+  _4 = hs->retries;
+  if (_4 == 4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  http_close_conn (pcb, hs);
+  D.8437 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 6> :
+  _5 = hs->handle;
+  if (_5 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _6 = http_send (pcb, hs);
+  if (_6 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  tcp_output (pcb);
+
+  <bb 9> :
+  D.8437 = 0;
+
+  <bb 10> :
+<L8>:
+  return D.8437;
+
+}
+
+
+http_sent (void * arg, struct tcp_pcb * pcb, u16_t len)
+{
+  struct http_state * hs;
+  err_t D.8433;
+
+  <bb 2> :
+  hs = arg;
+  if (hs == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8433 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  hs->retries = 0;
+  http_send (pcb, hs);
+  D.8433 = 0;
+
+  <bb 5> :
+<L2>:
+  return D.8433;
+
+}
+
+
+http_err (void * arg, err_t err)
+{
+  struct http_state * hs;
+
+  <bb 2> :
+  hs = arg;
+  if (hs != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_state_free (hs);
+
+  <bb 4> :
+  return;
+
+}
+
+
+http_init_file (struct http_state * hs, struct fs_file * file, int is_09, const char * uri, u8_t tag_check, char * params)
+{
+  int diff;
+  char * file_start;
+  err_t D.8427;
+
+  <bb 2> :
+  if (file != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 3> :
+  _1 = file->data;
+  if (_1 == 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  hs->handle = file;
+  _2 = file->data;
+  hs->file = _2;
+  _3 = file->len;
+  if (_3 < 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  _4 = file->len;
+  _5 = (long unsigned int) _4;
+  hs->left = _5;
+  hs->retries = 0;
+  _6 = hs->handle;
+  _7 = _6->flags;
+  _8 = (int) _7;
+  _9 = _8 & 1;
+  if (_9 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  if (is_09 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 10> :
+  _10 = hs->handle;
+  _11 = _10->flags;
+  _12 = (int) _11;
+  _13 = _12 & 1;
+  if (_13 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 11> :
+  _14 = hs->file;
+  _15 = hs->left;
+  file_start = lwip_strnstr (_14, "\r\n\r\n", _15);
+  if (file_start != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  _16 = file_start + 4;
+  _17 = hs->file;
+  diff = _16 - _17;
+  _18 = hs->file;
+  diff.10_19 = (sizetype) diff;
+  _20 = _18 + diff.10_19;
+  hs->file = _20;
+  _21 = hs->left;
+  diff.11_22 = (long unsigned int) diff;
+  _23 = _21 - diff.11_22;
+  hs->left = _23;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  hs->handle = 0B;
+  hs->file = 0B;
+  hs->left = 0;
+  hs->retries = 0;
+
+  <bb 14> :
+  D.8427 = 0;
+
+  <bb 15> :
+<L18>:
+  return D.8427;
+
+}
+
+
+http_find_file (struct http_state * hs, const char * uri, int is_09)
+{
+  size_t name_copy_len;
+  size_t name_len;
+  size_t len_left;
+  const char * file_name;
+  size_t copy_len;
+  size_t uri_len;
+  const u8_t tag_check;
+  err_t err;
+  char * params;
+  struct fs_file * file;
+  size_t loop;
+  err_t D.8410;
+
+  <bb 2> :
+  file = 0B;
+  params = 0B;
+  tag_check = 0;
+  uri.3_1 = uri;
+  uri_len = strlen (uri.3_1);
+  if (uri_len != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 3> :
+  uri.4_2 = uri;
+  _3 = uri_len + 4294967295;
+  _4 = uri.4_2 + _3;
+  _5 = *_4;
+  if (_5 == 47)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 4> :
+  uri.5_6 = uri;
+  if (uri.5_6 != &http_uri_buf)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (uri_len == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 6> :
+  _7 = uri_len + 4294967295;
+  copy_len = MIN_EXPR <_7, 63>;
+  if (copy_len != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  uri.6_8 = uri;
+  memcpy (&http_uri_buf, uri.6_8, copy_len);
+  http_uri_buf[copy_len] = 0;
+
+  <bb 8> :
+  loop = 0;
+  goto <bb 17>; [INV]
+
+  <bb 9> :
+  if (copy_len != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  len_left = 63 - copy_len;
+  if (len_left != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _9 = httpd_default_filenames[loop].name;
+  name_len = strlen (_9);
+  name_copy_len = MIN_EXPR <name_len, len_left>;
+  _10 = &http_uri_buf[copy_len];
+  _11 = httpd_default_filenames[loop].name;
+  memcpy (_10, _11, name_copy_len);
+  _12 = copy_len + name_copy_len;
+  http_uri_buf[_12] = 0;
+
+  <bb 12> :
+  file_name = &http_uri_buf;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  file_name = httpd_default_filenames[loop].name;
+
+  <bb 14> :
+  _13 = &hs->file_handle;
+  err = fs_open (_13, file_name);
+  if (err == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  uri = file_name;
+  file = &hs->file_handle;
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+  loop = loop + 1;
+
+  <bb 17> :
+  if (loop <= 4)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  if (file == 0B)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 19> :
+  uri.7_14 = uri;
+  params = strchr (uri.7_14, 63);
+  if (params != 0B)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  *params = 0;
+  params = params + 1;
+
+  <bb 21> :
+  _15 = &hs->file_handle;
+  uri.8_16 = uri;
+  err = fs_open (_15, uri.8_16);
+  if (err == 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  file = &hs->file_handle;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  file = http_get_404_file (hs, &uri);
+
+  <bb 24> :
+  if (file == 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  file = http_get_404_file (hs, &uri);
+
+  <bb 26> :
+  uri.9_17 = uri;
+  D.8410 = http_init_file (hs, file, is_09, uri.9_17, tag_check, params);
+
+  <bb 27> :
+<L28>:
+  return D.8410;
+
+}
+
+
+http_parse_request (struct pbuf * inp, struct http_state * hs, struct tcp_pcb * pcb)
+{
+  char * uri;
+  u16_t uri_len;
+  u16_t left_len;
+  char * sp2;
+  char * sp1;
+  int is_09;
+  u16_t clen;
+  struct pbuf * p;
+  u16_t data_len;
+  char * crlf;
+  char * data;
+  err_t D.8356;
+
+  <bb 2> :
+  p = inp;
+  if (p == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  if (hs == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  _1 = hs->handle;
+  if (_1 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _2 = hs->file;
+  if (_2 != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  D.8356 = -8;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 9> :
+  _3 = hs->req;
+  if (_3 == 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  hs->req = p;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _4 = hs->req;
+  pbuf_cat (_4, p);
+
+  <bb 12> :
+  pbuf_ref (p);
+  _5 = hs->req;
+  _6 = _5->next;
+  if (_6 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _7 = hs->req;
+  _8 = _7->tot_len;
+  data_len = MIN_EXPR <_8, 1023>;
+  _9 = hs->req;
+  pbuf_copy_partial (_9, &httpd_req_buf, data_len, 0);
+  data = &httpd_req_buf;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  data = p->payload;
+  data_len = p->len;
+  _10 = p->len;
+  _11 = p->tot_len;
+
+  <bb 15> :
+  if (data_len > 6)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 16> :
+  _12 = (unsigned int) data_len;
+  crlf = lwip_strnstr (data, "\r\n", _12);
+  if (crlf != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 17> :
+  is_09 = 0;
+  _13 = strncmp (data, "GET ", 4);
+  if (_13 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  sp1 = data + 3;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  _14 = data + 4;
+  *_14 = 0;
+  D.8356 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 20> :
+  _15 = sp1 + 1;
+  _16 = _15 - data;
+  _17 = (short unsigned int) _16;
+  left_len = data_len - _17;
+  _18 = sp1 + 1;
+  _19 = (unsigned int) left_len;
+  sp2 = lwip_strnstr (_18, " ", _19);
+  if (sp2 == 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _20 = sp1 + 1;
+  _21 = (unsigned int) left_len;
+  sp2 = lwip_strnstr (_20, "\r\n", _21);
+  is_09 = 1;
+
+  <bb 22> :
+  _22 = sp1 + 1;
+  _23 = sp2 - _22;
+  uri_len = (u16_t) _23;
+  if (sp2 != 0B)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 23> :
+  if (sp2 > sp1)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 24> :
+  _24 = (unsigned int) data_len;
+  _25 = lwip_strnstr (data, "\r\n\r\n", _24);
+  if (_25 != 0B)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  uri = sp1 + 1;
+  *sp1 = 0;
+  _26 = (sizetype) uri_len;
+  _27 = uri + _26;
+  *_27 = 0;
+  D.8356 = http_find_file (hs, uri, is_09);
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 26> :
+  _28 = hs->req;
+  clen = pbuf_clen (_28);
+  _29 = hs->req;
+  _30 = _29->tot_len;
+  if (_30 <= 1023)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 27> :
+  if (clen <= 5)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  D.8356 = -5;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  D.8356 = -16;
+  // predicted unlikely by early return (on trees) predictor.
+
+  <bb 30> :
+<L36>:
+  return D.8356;
+
+}
+
+
+http_get_404_file (struct http_state * hs, const char * * uri)
+{
+  err_t err;
+  struct fs_file * D.8347;
+
+  <bb 2> :
+  *uri = "/404.html";
+  _1 = &hs->file_handle;
+  _2 = *uri;
+  err = fs_open (_1, _2);
+  if (err != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  *uri = "/404.htm";
+  _3 = &hs->file_handle;
+  _4 = *uri;
+  err = fs_open (_3, _4);
+  if (err != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  *uri = "/404.shtml";
+  _5 = &hs->file_handle;
+  _6 = *uri;
+  err = fs_open (_5, _6);
+  if (err != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  *uri = 0B;
+  D.8347 = 0B;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.8347 = &hs->file_handle;
+
+  <bb 7> :
+<L6>:
+  return D.8347;
+
+}
+
+
+http_send (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  u8_t data_to_send;
+  u8_t D.8331;
+
+  <bb 2> :
+  data_to_send = 0;
+  if (hs == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.8331 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 4> :
+  _1 = hs->left;
+  if (_1 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _2 = http_check_eof (pcb, hs);
+  if (_2 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  D.8331 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+  data_to_send = http_send_data_nonssi (pcb, hs);
+  _3 = hs->left;
+  if (_3 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _4 = hs->handle;
+  _5 = fs_bytes_left (_4);
+  if (_5 <= 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  http_eof (pcb, hs);
+  D.8331 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  D.8331 = data_to_send;
+
+  <bb 11> :
+<L10>:
+  return D.8331;
+
+}
+
+
+http_send_data_nonssi (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  u8_t data_to_send;
+  u16_t len;
+  err_t err;
+  u8_t D.8326;
+  short unsigned int iftmp.0;
+
+  <bb 2> :
+  data_to_send = 0;
+  _1 = hs->left;
+  if (_1 <= 65534)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = hs->left;
+  iftmp.0 = (short unsigned int) _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.0 = 65535;
+
+  <bb 5> :
+  len = iftmp.0;
+  _3 = hs->file;
+  err = http_write (pcb, _3, &len, 0);
+  if (err == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  data_to_send = 1;
+  _4 = hs->file;
+  len.1_5 = len;
+  _6 = (sizetype) len.1_5;
+  _7 = _4 + _6;
+  hs->file = _7;
+  _8 = hs->left;
+  len.2_9 = len;
+  _10 = (long unsigned int) len.2_9;
+  _11 = _8 - _10;
+  hs->left = _11;
+
+  <bb 7> :
+  D.8326 = data_to_send;
+  len = {CLOBBER};
+
+  <bb 8> :
+<L6>:
+  return D.8326;
+
+}
+
+
+http_check_eof (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  int bytes_left;
+  u8_t D.8314;
+
+  <bb 2> :
+  _1 = hs->handle;
+  if (_1 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_eof (pcb, hs);
+  D.8314 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _2 = hs->handle;
+  bytes_left = fs_bytes_left (_2);
+  if (bytes_left <= 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  http_eof (pcb, hs);
+  D.8314 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+<L7>:
+  return D.8314;
+
+}
+
+
+http_eof (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  <bb 2> :
+  http_close_conn (pcb, hs);
+  return;
+
+}
+
+
+http_close_conn (struct tcp_pcb * pcb, struct http_state * hs)
+{
+  err_t D.8310;
+
+  <bb 2> :
+  D.8310 = http_close_or_abort_conn (pcb, hs, 0);
+
+  <bb 3> :
+<L0>:
+  return D.8310;
+
+}
+
+
+http_close_or_abort_conn (struct tcp_pcb * pcb, struct http_state * hs, u8_t abort_conn)
+{
+  err_t err;
+  err_t D.8306;
+
+  <bb 2> :
+  tcp_arg (pcb, 0B);
+  tcp_recv (pcb, 0B);
+  tcp_err (pcb, 0B);
+  tcp_poll (pcb, 0B, 0);
+  tcp_sent (pcb, 0B);
+  if (hs != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_state_free (hs);
+
+  <bb 4> :
+  if (abort_conn != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  tcp_abort (pcb);
+  D.8306 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  err = tcp_close (pcb);
+  if (err != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  tcp_poll (pcb, http_poll, 4);
+
+  <bb 8> :
+  D.8306 = err;
+
+  <bb 9> :
+<L6>:
+  return D.8306;
+
+}
+
+
+http_write (struct tcp_pcb * pcb, const void * ptr, u16_t * length, u8_t apiflags)
+{
+  err_t err;
+  u16_t max_len;
+  u16_t len;
+  err_t D.8286;
+
+  <bb 2> :
+  if (length == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  __asm__ __volatile__("BKPT #0
+	");
+  goto <bb 3>; [INV]
+
+  <bb 4> :
+  len = *length;
+  if (len == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  D.8286 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 21>; [INV]
+
+  <bb 6> :
+  max_len = pcb->snd_buf;
+  if (max_len < len)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  len = max_len;
+
+  <bb 8> :
+  _1 = pcb->mss;
+  max_len = _1 * 2;
+  if (len > max_len)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  len = max_len;
+
+  <bb 10> :
+  err = tcp_write (pcb, ptr, len, apiflags);
+  if (err == -1)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 11> :
+  _2 = pcb->snd_buf;
+  if (_2 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _3 = pcb->snd_queuelen;
+  if (_3 > 19)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  len = 1;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  len = len / 2;
+
+  <bb 15> :
+  if (err == -1)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  if (len > 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  if (err == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  *length = len;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  *length = 0;
+
+  <bb 20> :
+  D.8286 = err;
+
+  <bb 21> :
+<L21>:
+  return D.8286;
+
+}
+
+
+http_state_free (struct http_state * hs)
+{
+  <bb 2> :
+  if (hs != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_state_eof (hs);
+  mem_free (hs);
+
+  <bb 4> :
+  return;
+
+}
+
+
+http_state_eof (struct http_state * hs)
+{
+  <bb 2> :
+  _1 = hs->handle;
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = hs->handle;
+  fs_close (_2);
+  hs->handle = 0B;
+
+  <bb 4> :
+  _3 = hs->req;
+  if (_3 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = hs->req;
+  pbuf_free (_4);
+  hs->req = 0B;
+
+  <bb 6> :
+  return;
+
+}
+
+
+http_state_alloc ()
+{
+  struct http_state * ret;
+  struct http_state * D.8274;
+
+  <bb 2> :
+  ret = mem_malloc (44);
+  if (ret != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  http_state_init (ret);
+
+  <bb 4> :
+  D.8274 = ret;
+
+  <bb 5> :
+<L2>:
+  return D.8274;
+
+}
+
+
+http_state_init (struct http_state * hs)
+{
+  <bb 2> :
+  memset (hs, 0, 44);
+  return;
+
+}
+
+

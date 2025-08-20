@@ -1,0 +1,4532 @@
+Trivially needed symbols: tcp_tcp_get_tcp_addrinfo/65 tcp_debug_state_str/64 tcp_netif_ip_addr_changed/63 tcp_netif_ip_addr_changed_pcblist/62 tcp_eff_send_mss_netif/61 tcp_next_iss/60 tcp_pcb_remove/59 tcp_pcb_purge/58 tcp_poll/57 tcp_accept/56 tcp_err/55 tcp_sent/54 tcp_recv/53 tcp_arg/52 tcp_new_ip_type/51 tcp_new/50 tcp_alloc/49 tcp_handle_closepend/48 tcp_kill_timewait/47 tcp_kill_state/46 tcp_kill_prio/45 tcp_recv_null/44 tcp_setprio/43 tcp_seg_free/42 tcp_segs_free/41 tcp_process_refused_data/40 tcp_txnow/39 tcp_fasttmr/38 tcp_slowtmr/37 tcp_connect/36 tcp_new_port/35 tcp_recved/34 tcp_update_rcv_ann_wnd/33 tcp_listen_with_backlog_and_err/32 tcp_listen_with_backlog/31 tcp_accept_null/30 tcp_bind_netif/29 tcp_bind/28 tcp_abort/27 tcp_abandon/26 tcp_shutdown/25 tcp_close/24 tcp_close_shutdown_fin/23 tcp_close_shutdown/22 tcp_backlog_accepted/21 tcp_backlog_delayed/20 tcp_listen_closed/19 tcp_remove_listener/18 tcp_tmr/17 tcp_free_listen/16 tcp_free/15 tcp_init/14 tcp_timer_ctr/13 tcp_timer/12 tcp_active_pcbs_changed/11 tcp_pcb_lists/10 tcp_tw_pcbs/9 tcp_active_pcbs/8 tcp_listen_pcbs/7 tcp_bound_pcbs/6 tcp_persist_backoff/5 tcp_backoff/4 tcp_ticks/3 tcp_port/2 tcp_state_str/1
+Trivially needed symbols: iss/89
+
+
+Initial Symbol table:
+
+nd6_get_destination_mtu/90 (nd6_get_destination_mtu) @06ee7380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_eff_send_mss_netif/61 
+  Calls: 
+iss/89 (iss) @06ee6ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06e062a0
+  References: 
+  Referring: tcp_next_iss/60 (read) tcp_next_iss/60 (write) tcp_next_iss/60 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+memset/88 (memset) @06ed2620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_alloc/49 
+  Calls: 
+tcp_keepalive/87 (tcp_keepalive) @06e85380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_commit/86 (tcp_rexmit_rto_commit) @06e852a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_prepare/85 (tcp_rexmit_rto_prepare) @06e85ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_split_unsent_seg/84 (tcp_split_unsent_seg) @06e85e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_zero_window_probe/83 (tcp_zero_window_probe) @06e85d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_enqueue_flags/82 (tcp_enqueue_flags) @06e857e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip6_select_source_address/81 (ip6_select_source_address) @06e85700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip4_route/80 (ip4_route) @06e85620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+netif_get_by_index/79 (netif_get_by_index) @06e85540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+memp_malloc/78 (memp_malloc) @06e55620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_listen_with_backlog_and_err/32 
+  Calls: 
+tcp_timer_needed/77 (tcp_timer_needed) @06e559a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 tcp_listen_with_backlog_and_err/32 tcp_bind/28 
+  Calls: 
+ip6_route/76 (ip6_route) @06e558c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+ip_addr_any/75 (ip_addr_any) @06e76c18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_bind/28 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_free/74 (pbuf_free) @06e550e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_pcb_purge/58 tcp_recv_null/44 tcp_seg_free/42 tcp_shutdown/25 
+  Calls: 
+tcp_output/73 (tcp_output) @06e42ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_pcb_remove/59 tcp_txnow/39 tcp_fasttmr/38 tcp_slowtmr/37 tcp_slowtmr/37 tcp_connect/36 tcp_recved/34 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_send_fin/72 (tcp_send_fin) @06e42d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 
+  Calls: 
+lwip_stats/71 (lwip_stats) @06e522d0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_connect/36 (read) tcp_connect/36 (write) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_trigger_input_pcb_close/70 (tcp_trigger_input_pcb_close) @06e42b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_close_shutdown/22 
+  Calls: 
+tcp_input_pcb/69 (tcp_input_pcb) @06e52048
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_rst/68 (tcp_rst) @06e429a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 tcp_abandon/26 tcp_close_shutdown/22 
+  Calls: 
+memp_free/67 (memp_free) @06e420e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_seg_free/42 tcp_free_listen/16 tcp_free/15 
+  Calls: 
+rand/66 (rand) @06e1aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_init/14 
+  Calls: 
+tcp_tcp_get_tcp_addrinfo/65 (tcp_tcp_get_tcp_addrinfo) @06e1ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_debug_state_str/64 (tcp_debug_state_str) @06e1a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06e1ac40
+  References: tcp_state_str/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_netif_ip_addr_changed/63 (tcp_netif_ip_addr_changed) @06e1a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06e1a9a0
+  References: tcp_active_pcbs/8 (read) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_netif_ip_addr_changed_pcblist/62 tcp_netif_ip_addr_changed_pcblist/62 
+tcp_netif_ip_addr_changed_pcblist/62 (tcp_netif_ip_addr_changed_pcblist) @06e068c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06e1a700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed/63 tcp_netif_ip_addr_changed/63 
+  Calls: tcp_abort/27 
+tcp_eff_send_mss_netif/61 (tcp_eff_send_mss_netif) @06e062a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06e068c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: nd6_get_destination_mtu/90 
+tcp_next_iss/60 (tcp_next_iss) @06dfba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06e062a0
+  References: iss/89 (read) tcp_ticks/3 (read) iss/89 (write) iss/89 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: 
+tcp_pcb_remove/59 (tcp_pcb_remove) @06dfb540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dfba80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_pcb_purge/58 
+tcp_pcb_purge/58 (tcp_pcb_purge) @06dfbee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dfb540
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_remove/59 tcp_slowtmr/37 tcp_slowtmr/37 tcp_close_shutdown/22 
+  Calls: tcp_segs_free/41 tcp_segs_free/41 pbuf_free/74 tcp_backlog_accepted/21 
+tcp_poll/57 (tcp_poll) @06dfbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dfbee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_accept/56 (tcp_accept) @06dfb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dfbc40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_err/55 (tcp_err) @06dfb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dfb9a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_sent/54 (tcp_sent) @06dfb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dfb700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_recv/53 (tcp_recv) @06dfb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dfb460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_arg/52 (tcp_arg) @06df4c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dfb1c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_new_ip_type/51 (tcp_new_ip_type) @06df4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06df4c40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_new/50 (tcp_new) @06df4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06df4700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_alloc/49 (tcp_alloc) @06df48c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06df4b60
+  References: lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) tcp_ticks/3 (read) tcp_timer_ctr/13 (read) tcp_recv_null/44 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_new_ip_type/51 tcp_new/50 
+  Calls: memset/88 memp_malloc/78 tcp_kill_prio/45 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_timewait/47 tcp_handle_closepend/48 memp_malloc/78 
+tcp_handle_closepend/48 (tcp_handle_closepend) @06df4620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06df48c0
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_close_shutdown_fin/23 
+tcp_kill_timewait/47 (tcp_kill_timewait) @06df4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06df4620
+  References: tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_kill_state/46 (tcp_kill_state) @06df40e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06df4380
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 tcp_alloc/49 
+  Calls: tcp_abandon/26 
+tcp_kill_prio/45 (tcp_kill_prio) @06dc4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06df40e0
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_recv_null/44 (tcp_recv_null) @06dc42a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Address is taken.
+  Aux: @06dc4a80
+  References: 
+  Referring: tcp_alloc/49 (addr) 
+  Function flags: body
+  Called by: tcp_process_refused_data/40 
+  Calls: tcp_close/24 pbuf_free/74 tcp_recved/34 
+tcp_setprio/43 (tcp_setprio) @06dc4ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dc42a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_seg_free/42 (tcp_seg_free) @06dc4c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dc4ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_segs_free/41 
+  Calls: memp_free/67 pbuf_free/74 
+tcp_segs_free/41 (tcp_segs_free) @06dc49a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dc4c40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_pcb_purge/58 tcp_abandon/26 tcp_abandon/26 
+  Calls: tcp_seg_free/42 
+tcp_process_refused_data/40 (tcp_process_refused_data) @06dc4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dc49a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_fasttmr/38 
+  Calls: tcp_recv_null/44 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_txnow/39 (tcp_txnow) @06dc4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dc4700
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 
+tcp_fasttmr/38 (tcp_fasttmr) @06dc41c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dc4460
+  References: tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_process_refused_data/40 tcp_close_shutdown_fin/23 tcp_output/73 
+tcp_slowtmr/37 (tcp_slowtmr) @06da5620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06dc41c0
+  References: tcp_ticks/3 (read) tcp_ticks/3 (write) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_persist_backoff/5 (read) tcp_backoff/4 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_free/15 tcp_pcb_purge/58 tcp_output/73 tcp_free/15 tcp_rst/68 tcp_pcb_purge/58 tcp_keepalive/87 tcp_rexmit_rto_commit/86 tcp_rexmit_rto_prepare/85 tcp_output/73 tcp_split_unsent_seg/84 tcp_zero_window_probe/83 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_connect/36 (tcp_connect) @06da5540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06da5620
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 tcp_timer_needed/77 tcp_enqueue_flags/82 tcp_eff_send_mss_netif/61 tcp_next_iss/60 tcp_new_port/35 ip6_select_source_address/81 ip4_route/80 ip6_route/76 netif_get_by_index/79 
+tcp_new_port/35 (tcp_new_port) @06d77000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06da5540
+  References: tcp_port/2 (read) tcp_port/2 (write) tcp_port/2 (read) tcp_port/2 (write) tcp_pcb_lists/10 (read) tcp_port/2 (read) tcp_port/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+tcp_recved/34 (tcp_recved) @06d2fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d77000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_output/73 tcp_update_rcv_ann_wnd/33 
+tcp_update_rcv_ann_wnd/33 (tcp_update_rcv_ann_wnd) @06d2fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d2fb60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recved/34 
+  Calls: 
+tcp_listen_with_backlog_and_err/32 (tcp_listen_with_backlog_and_err) @06d2fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d2fe00
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_accept_null/30 (addr) tcp_listen_pcbs/7 (read) tcp_listen_pcbs/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_listen_with_backlog/31 
+  Calls: tcp_timer_needed/77 tcp_free/15 memp_malloc/78 
+tcp_listen_with_backlog/31 (tcp_listen_with_backlog) @06d2f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d2fa80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_listen_with_backlog_and_err/32 
+tcp_accept_null/30 (tcp_accept_null) @06d14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @06d2f000
+  References: 
+  Referring: tcp_listen_with_backlog_and_err/32 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/27 
+tcp_bind_netif/29 (tcp_bind_netif) @06d14c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d14ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_bind/28 (tcp_bind) @06d149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d14c40
+  References: ip_addr_any/75 (addr) tcp_pcb_lists/10 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_timer_needed/77 tcp_new_port/35 ip6_route/76 
+tcp_abort/27 (tcp_abort) @06ccfa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06d149a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed_pcblist/62 tcp_kill_timewait/47 tcp_kill_prio/45 tcp_accept_null/30 
+  Calls: tcp_abandon/26 
+tcp_abandon/26 (tcp_abandon) @06ccf540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ccfa80
+  References: tcp_tw_pcbs/9 (addr) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_kill_state/46 tcp_abort/27 
+  Calls: tcp_free/15 tcp_rst/68 tcp_backlog_accepted/21 tcp_segs_free/41 tcp_segs_free/41 tcp_pcb_remove/59 tcp_free/15 tcp_pcb_remove/59 
+   Indirect call Num speculative call targets: 0
+tcp_shutdown/25 (tcp_shutdown) @06ccfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ccf540
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_close_shutdown/22 pbuf_free/74 tcp_close_shutdown/22 
+tcp_close/24 (tcp_close) @06ccf9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ccfc40
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_close_shutdown/22 
+tcp_close_shutdown_fin/23 (tcp_close_shutdown_fin) @06ccf700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ccf9a0
+  References: lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_handle_closepend/48 tcp_fasttmr/38 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_send_fin/72 tcp_send_fin/72 tcp_backlog_accepted/21 tcp_send_fin/72 
+tcp_close_shutdown/22 (tcp_close_shutdown) @06ccf460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06ccf700
+  References: tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs/8 (read) tcp_active_pcbs_changed/11 (write) tcp_input_pcb/69 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (addr) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_shutdown/25 tcp_shutdown/25 tcp_close/24 
+  Calls: tcp_close_shutdown_fin/23 tcp_free/15 tcp_pcb_remove/59 tcp_free_listen/16 tcp_pcb_remove/59 tcp_listen_closed/19 tcp_free/15 tcp_free/15 tcp_trigger_input_pcb_close/70 tcp_pcb_purge/58 tcp_rst/68 
+tcp_backlog_accepted/21 (tcp_backlog_accepted) @06ccf000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ccf460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_abandon/26 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_backlog_delayed/20 (tcp_backlog_delayed) @06cb3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06ccf000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_listen_closed/19 (tcp_listen_closed) @06cb3e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cb3620
+  References: tcp_pcb_lists/10 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: tcp_remove_listener/18 
+tcp_remove_listener/18 (tcp_remove_listener) @06cb3a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cb3e00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_listen_closed/19 
+  Calls: 
+tcp_tmr/17 (tcp_tmr) @06cb37e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cb3a80
+  References: tcp_timer/12 (read) tcp_timer/12 (write) tcp_timer/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_slowtmr/37 tcp_fasttmr/38 
+tcp_free_listen/16 (tcp_free_listen) @06cb3540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cb37e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_free/15 (tcp_free) @06cb32a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cb3540
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_slowtmr/37 tcp_slowtmr/37 tcp_listen_with_backlog_and_err/32 tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_init/14 (tcp_init) @06cb3000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cb32a0
+  References: tcp_port/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: rand/66 
+tcp_timer_ctr/13 (tcp_timer_ctr) @06cadca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cb3000
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_fasttmr/38 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) tcp_fasttmr/38 (read) tcp_alloc/49 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_timer/12 (tcp_timer) @06cadc18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cadca8
+  References: 
+  Referring: tcp_tmr/17 (read) tcp_tmr/17 (write) tcp_tmr/17 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs_changed/11 (tcp_active_pcbs_changed) @06cadb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cadc18
+  References: 
+  Referring: tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (write) tcp_abandon/26 (write) tcp_connect/36 (write) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_pcb_lists/10 (tcp_pcb_lists) @06cadb40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cadb88
+  References: tcp_listen_pcbs/7 (addr) tcp_bound_pcbs/6 (addr) tcp_active_pcbs/8 (addr) tcp_tw_pcbs/9 (addr) 
+  Referring: tcp_listen_closed/19 (read) tcp_bind/28 (read) tcp_new_port/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_tw_pcbs/9 (tcp_tw_pcbs) @06cadaf8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cadb40
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_abandon/26 (addr) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_kill_timewait/47 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs/8 (tcp_active_pcbs) @06cadab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cadaf8
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (addr) tcp_abandon/26 (addr) tcp_connect/36 (read) tcp_connect/36 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_fasttmr/38 (read) tcp_txnow/39 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_handle_closepend/48 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_listen_pcbs/7 (tcp_listen_pcbs) @06cada68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cadab0
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (addr) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_bound_pcbs/6 (tcp_bound_pcbs) @06cada20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cada68
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_abandon/26 (read) tcp_abandon/26 (read) tcp_abandon/26 (write) tcp_abandon/26 (read) tcp_bind/28 (read) tcp_bind/28 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_connect/36 (read) tcp_connect/36 (read) tcp_connect/36 (write) tcp_connect/36 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_persist_backoff/5 (tcp_persist_backoff) @06cad9d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cada20
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_backoff/4 (tcp_backoff) @06cad900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cad9d8
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_ticks/3 (tcp_ticks) @06cad828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @06cad900
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_kill_prio/45 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_kill_state/46 (read) tcp_kill_timewait/47 (read) tcp_kill_timewait/47 (read) tcp_alloc/49 (read) tcp_next_iss/60 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_port/2 (tcp_port) @06cad7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cad828
+  References: 
+  Referring: tcp_init/14 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+tcp_state_str/1 (tcp_state_str) @06cad750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @06cad7e0
+  References: 
+  Referring: tcp_debug_state_str/64 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+DevAssert/0 (DevAssert) @06ae02a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+nd6_get_destination_mtu/90 (nd6_get_destination_mtu) @06ee7380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_eff_send_mss_netif/61 
+  Calls: 
+iss/89 (iss) @06ee6ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_next_iss/60 (read) tcp_next_iss/60 (write) tcp_next_iss/60 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+memset/88 (memset) @06ed2620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_alloc/49 
+  Calls: 
+tcp_keepalive/87 (tcp_keepalive) @06e85380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_commit/86 (tcp_rexmit_rto_commit) @06e852a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_prepare/85 (tcp_rexmit_rto_prepare) @06e85ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_split_unsent_seg/84 (tcp_split_unsent_seg) @06e85e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_zero_window_probe/83 (tcp_zero_window_probe) @06e85d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_enqueue_flags/82 (tcp_enqueue_flags) @06e857e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip6_select_source_address/81 (ip6_select_source_address) @06e85700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip4_route/80 (ip4_route) @06e85620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+netif_get_by_index/79 (netif_get_by_index) @06e85540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+memp_malloc/78 (memp_malloc) @06e55620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_listen_with_backlog_and_err/32 
+  Calls: 
+tcp_timer_needed/77 (tcp_timer_needed) @06e559a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 tcp_listen_with_backlog_and_err/32 tcp_bind/28 
+  Calls: 
+ip6_route/76 (ip6_route) @06e558c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+ip_addr_any/75 (ip_addr_any) @06e76c18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_bind/28 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_free/74 (pbuf_free) @06e550e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_pcb_purge/58 tcp_recv_null/44 tcp_seg_free/42 tcp_shutdown/25 
+  Calls: 
+tcp_output/73 (tcp_output) @06e42ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_pcb_remove/59 tcp_txnow/39 tcp_fasttmr/38 tcp_slowtmr/37 tcp_slowtmr/37 tcp_connect/36 tcp_recved/34 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_send_fin/72 (tcp_send_fin) @06e42d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 
+  Calls: 
+lwip_stats/71 (lwip_stats) @06e522d0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_connect/36 (read) tcp_connect/36 (write) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_trigger_input_pcb_close/70 (tcp_trigger_input_pcb_close) @06e42b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_close_shutdown/22 
+  Calls: 
+tcp_input_pcb/69 (tcp_input_pcb) @06e52048
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_rst/68 (tcp_rst) @06e429a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 tcp_abandon/26 tcp_close_shutdown/22 
+  Calls: 
+memp_free/67 (memp_free) @06e420e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_seg_free/42 tcp_free_listen/16 tcp_free/15 
+  Calls: 
+rand/66 (rand) @06e1aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_init/14 
+  Calls: 
+tcp_tcp_get_tcp_addrinfo/65 (tcp_tcp_get_tcp_addrinfo) @06e1ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_debug_state_str/64 (tcp_debug_state_str) @06e1a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_state_str/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_netif_ip_addr_changed/63 (tcp_netif_ip_addr_changed) @06e1a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_active_pcbs/8 (read) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_netif_ip_addr_changed_pcblist/62 tcp_netif_ip_addr_changed_pcblist/62 
+tcp_netif_ip_addr_changed_pcblist/62 (tcp_netif_ip_addr_changed_pcblist) @06e068c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed/63 tcp_netif_ip_addr_changed/63 
+  Calls: tcp_abort/27 
+tcp_eff_send_mss_netif/61 (tcp_eff_send_mss_netif) @06e062a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: nd6_get_destination_mtu/90 
+tcp_next_iss/60 (tcp_next_iss) @06dfba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: iss/89 (read) tcp_ticks/3 (read) iss/89 (write) iss/89 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: 
+tcp_pcb_remove/59 (tcp_pcb_remove) @06dfb540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_pcb_purge/58 
+tcp_pcb_purge/58 (tcp_pcb_purge) @06dfbee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_remove/59 tcp_slowtmr/37 tcp_slowtmr/37 tcp_close_shutdown/22 
+  Calls: tcp_segs_free/41 tcp_segs_free/41 pbuf_free/74 tcp_backlog_accepted/21 
+tcp_poll/57 (tcp_poll) @06dfbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_accept/56 (tcp_accept) @06dfb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_err/55 (tcp_err) @06dfb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_sent/54 (tcp_sent) @06dfb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_recv/53 (tcp_recv) @06dfb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_arg/52 (tcp_arg) @06df4c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_new_ip_type/51 (tcp_new_ip_type) @06df4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_new/50 (tcp_new) @06df4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_alloc/49 (tcp_alloc) @06df48c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) tcp_ticks/3 (read) tcp_timer_ctr/13 (read) tcp_recv_null/44 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_new_ip_type/51 tcp_new/50 
+  Calls: memset/88 memp_malloc/78 tcp_kill_prio/45 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_timewait/47 tcp_handle_closepend/48 memp_malloc/78 
+tcp_handle_closepend/48 (tcp_handle_closepend) @06df4620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_close_shutdown_fin/23 
+tcp_kill_timewait/47 (tcp_kill_timewait) @06df4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_kill_state/46 (tcp_kill_state) @06df40e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 tcp_alloc/49 
+  Calls: tcp_abandon/26 
+tcp_kill_prio/45 (tcp_kill_prio) @06dc4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_recv_null/44 (tcp_recv_null) @06dc42a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Address is taken.
+  References: 
+  Referring: tcp_alloc/49 (addr) 
+  Function flags: body
+  Called by: tcp_process_refused_data/40 
+  Calls: tcp_close/24 pbuf_free/74 tcp_recved/34 
+tcp_setprio/43 (tcp_setprio) @06dc4ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_seg_free/42 (tcp_seg_free) @06dc4c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_segs_free/41 
+  Calls: memp_free/67 pbuf_free/74 
+tcp_segs_free/41 (tcp_segs_free) @06dc49a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_pcb_purge/58 tcp_abandon/26 tcp_abandon/26 
+  Calls: tcp_seg_free/42 
+tcp_process_refused_data/40 (tcp_process_refused_data) @06dc4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_fasttmr/38 
+  Calls: tcp_recv_null/44 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_txnow/39 (tcp_txnow) @06dc4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 
+tcp_fasttmr/38 (tcp_fasttmr) @06dc41c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_process_refused_data/40 tcp_close_shutdown_fin/23 tcp_output/73 
+tcp_slowtmr/37 (tcp_slowtmr) @06da5620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_ticks/3 (read) tcp_ticks/3 (write) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_persist_backoff/5 (read) tcp_backoff/4 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_free/15 tcp_pcb_purge/58 tcp_output/73 tcp_free/15 tcp_rst/68 tcp_pcb_purge/58 tcp_keepalive/87 tcp_rexmit_rto_commit/86 tcp_rexmit_rto_prepare/85 tcp_output/73 tcp_split_unsent_seg/84 tcp_zero_window_probe/83 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_connect/36 (tcp_connect) @06da5540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 tcp_timer_needed/77 tcp_enqueue_flags/82 tcp_eff_send_mss_netif/61 tcp_next_iss/60 tcp_new_port/35 ip6_select_source_address/81 ip4_route/80 ip6_route/76 netif_get_by_index/79 
+tcp_new_port/35 (tcp_new_port) @06d77000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_port/2 (read) tcp_port/2 (write) tcp_port/2 (read) tcp_port/2 (write) tcp_pcb_lists/10 (read) tcp_port/2 (read) tcp_port/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+tcp_recved/34 (tcp_recved) @06d2fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_output/73 tcp_update_rcv_ann_wnd/33 
+tcp_update_rcv_ann_wnd/33 (tcp_update_rcv_ann_wnd) @06d2fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recved/34 
+  Calls: 
+tcp_listen_with_backlog_and_err/32 (tcp_listen_with_backlog_and_err) @06d2fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_accept_null/30 (addr) tcp_listen_pcbs/7 (read) tcp_listen_pcbs/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_listen_with_backlog/31 
+  Calls: tcp_timer_needed/77 tcp_free/15 memp_malloc/78 
+tcp_listen_with_backlog/31 (tcp_listen_with_backlog) @06d2f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_listen_with_backlog_and_err/32 
+tcp_accept_null/30 (tcp_accept_null) @06d14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcp_listen_with_backlog_and_err/32 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/27 
+tcp_bind_netif/29 (tcp_bind_netif) @06d14c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_bind/28 (tcp_bind) @06d149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/75 (addr) tcp_pcb_lists/10 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_timer_needed/77 tcp_new_port/35 ip6_route/76 
+tcp_abort/27 (tcp_abort) @06ccfa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed_pcblist/62 tcp_kill_timewait/47 tcp_kill_prio/45 tcp_accept_null/30 
+  Calls: tcp_abandon/26 
+tcp_abandon/26 (tcp_abandon) @06ccf540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_tw_pcbs/9 (addr) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_kill_state/46 tcp_abort/27 
+  Calls: tcp_free/15 tcp_rst/68 tcp_backlog_accepted/21 tcp_segs_free/41 tcp_segs_free/41 tcp_pcb_remove/59 tcp_free/15 tcp_pcb_remove/59 
+   Indirect call Num speculative call targets: 0
+tcp_shutdown/25 (tcp_shutdown) @06ccfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_close_shutdown/22 pbuf_free/74 tcp_close_shutdown/22 
+tcp_close/24 (tcp_close) @06ccf9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_close_shutdown/22 
+tcp_close_shutdown_fin/23 (tcp_close_shutdown_fin) @06ccf700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_handle_closepend/48 tcp_fasttmr/38 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_send_fin/72 tcp_send_fin/72 tcp_backlog_accepted/21 tcp_send_fin/72 
+tcp_close_shutdown/22 (tcp_close_shutdown) @06ccf460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs/8 (read) tcp_active_pcbs_changed/11 (write) tcp_input_pcb/69 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (addr) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_shutdown/25 tcp_shutdown/25 tcp_close/24 
+  Calls: tcp_close_shutdown_fin/23 tcp_free/15 tcp_pcb_remove/59 tcp_free_listen/16 tcp_pcb_remove/59 tcp_listen_closed/19 tcp_free/15 tcp_free/15 tcp_trigger_input_pcb_close/70 tcp_pcb_purge/58 tcp_rst/68 
+tcp_backlog_accepted/21 (tcp_backlog_accepted) @06ccf000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_abandon/26 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_backlog_delayed/20 (tcp_backlog_delayed) @06cb3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_listen_closed/19 (tcp_listen_closed) @06cb3e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_pcb_lists/10 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: tcp_remove_listener/18 
+tcp_remove_listener/18 (tcp_remove_listener) @06cb3a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_listen_closed/19 
+  Calls: 
+tcp_tmr/17 (tcp_tmr) @06cb37e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_timer/12 (read) tcp_timer/12 (write) tcp_timer/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_slowtmr/37 tcp_fasttmr/38 
+tcp_free_listen/16 (tcp_free_listen) @06cb3540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_free/15 (tcp_free) @06cb32a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_slowtmr/37 tcp_slowtmr/37 tcp_listen_with_backlog_and_err/32 tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_init/14 (tcp_init) @06cb3000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_port/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: rand/66 
+tcp_timer_ctr/13 (tcp_timer_ctr) @06cadca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_fasttmr/38 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) tcp_fasttmr/38 (read) tcp_alloc/49 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_timer/12 (tcp_timer) @06cadc18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_tmr/17 (read) tcp_tmr/17 (write) tcp_tmr/17 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs_changed/11 (tcp_active_pcbs_changed) @06cadb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (write) tcp_abandon/26 (write) tcp_connect/36 (write) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_pcb_lists/10 (tcp_pcb_lists) @06cadb40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_listen_pcbs/7 (addr) tcp_bound_pcbs/6 (addr) tcp_active_pcbs/8 (addr) tcp_tw_pcbs/9 (addr) 
+  Referring: tcp_listen_closed/19 (read) tcp_bind/28 (read) tcp_new_port/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_tw_pcbs/9 (tcp_tw_pcbs) @06cadaf8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_abandon/26 (addr) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_kill_timewait/47 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs/8 (tcp_active_pcbs) @06cadab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (addr) tcp_abandon/26 (addr) tcp_connect/36 (read) tcp_connect/36 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_fasttmr/38 (read) tcp_txnow/39 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_handle_closepend/48 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_listen_pcbs/7 (tcp_listen_pcbs) @06cada68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (addr) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_bound_pcbs/6 (tcp_bound_pcbs) @06cada20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_abandon/26 (read) tcp_abandon/26 (read) tcp_abandon/26 (write) tcp_abandon/26 (read) tcp_bind/28 (read) tcp_bind/28 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_connect/36 (read) tcp_connect/36 (read) tcp_connect/36 (write) tcp_connect/36 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_persist_backoff/5 (tcp_persist_backoff) @06cad9d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_backoff/4 (tcp_backoff) @06cad900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_ticks/3 (tcp_ticks) @06cad828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_kill_prio/45 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_kill_state/46 (read) tcp_kill_timewait/47 (read) tcp_kill_timewait/47 (read) tcp_alloc/49 (read) tcp_next_iss/60 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_port/2 (tcp_port) @06cad7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_init/14 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+tcp_state_str/1 (tcp_state_str) @06cad750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_debug_state_str/64 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+nd6_get_destination_mtu/90 (nd6_get_destination_mtu) @06ee7380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_eff_send_mss_netif/61 
+  Calls: 
+iss.0/89 (iss) @06ee6ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_next_iss/60 (read) tcp_next_iss/60 (write) tcp_next_iss/60 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+memset/88 (memset) @06ed2620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_alloc/49 
+  Calls: 
+tcp_keepalive/87 (tcp_keepalive) @06e85380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_commit/86 (tcp_rexmit_rto_commit) @06e852a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_prepare/85 (tcp_rexmit_rto_prepare) @06e85ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_split_unsent_seg/84 (tcp_split_unsent_seg) @06e85e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_zero_window_probe/83 (tcp_zero_window_probe) @06e85d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_enqueue_flags/82 (tcp_enqueue_flags) @06e857e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip6_select_source_address/81 (ip6_select_source_address) @06e85700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip4_route/80 (ip4_route) @06e85620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+netif_get_by_index/79 (netif_get_by_index) @06e85540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+memp_malloc/78 (memp_malloc) @06e55620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_listen_with_backlog_and_err/32 
+  Calls: 
+tcp_timer_needed/77 (tcp_timer_needed) @06e559a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 tcp_listen_with_backlog_and_err/32 tcp_bind/28 
+  Calls: 
+ip6_route/76 (ip6_route) @06e558c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+ip_addr_any/75 (ip_addr_any) @06e76c18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_bind/28 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_free/74 (pbuf_free) @06e550e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_pcb_purge/58 tcp_recv_null/44 tcp_seg_free/42 tcp_shutdown/25 
+  Calls: 
+tcp_output/73 (tcp_output) @06e42ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_pcb_remove/59 tcp_txnow/39 tcp_fasttmr/38 tcp_slowtmr/37 tcp_slowtmr/37 tcp_connect/36 tcp_recved/34 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_send_fin/72 (tcp_send_fin) @06e42d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 
+  Calls: 
+lwip_stats/71 (lwip_stats) @06e522d0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_connect/36 (read) tcp_connect/36 (write) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_trigger_input_pcb_close/70 (tcp_trigger_input_pcb_close) @06e42b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_close_shutdown/22 
+  Calls: 
+tcp_input_pcb/69 (tcp_input_pcb) @06e52048
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_rst/68 (tcp_rst) @06e429a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 tcp_abandon/26 tcp_close_shutdown/22 
+  Calls: 
+memp_free/67 (memp_free) @06e420e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_seg_free/42 tcp_free_listen/16 tcp_free/15 
+  Calls: 
+rand/66 (rand) @06e1aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_init/14 
+  Calls: 
+tcp_tcp_get_tcp_addrinfo/65 (tcp_tcp_get_tcp_addrinfo) @06e1ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_debug_state_str/64 (tcp_debug_state_str) @06e1a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_state_str/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_netif_ip_addr_changed/63 (tcp_netif_ip_addr_changed) @06e1a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_active_pcbs/8 (read) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_netif_ip_addr_changed_pcblist/62 tcp_netif_ip_addr_changed_pcblist/62 
+tcp_netif_ip_addr_changed_pcblist/62 (tcp_netif_ip_addr_changed_pcblist) @06e068c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed/63 tcp_netif_ip_addr_changed/63 
+  Calls: tcp_abort/27 
+tcp_eff_send_mss_netif/61 (tcp_eff_send_mss_netif) @06e062a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: nd6_get_destination_mtu/90 
+tcp_next_iss/60 (tcp_next_iss) @06dfba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: iss.0/89 (read) tcp_ticks/3 (read) iss.0/89 (write) iss.0/89 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: 
+tcp_pcb_remove/59 (tcp_pcb_remove) @06dfb540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_pcb_purge/58 
+tcp_pcb_purge/58 (tcp_pcb_purge) @06dfbee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_remove/59 tcp_slowtmr/37 tcp_slowtmr/37 tcp_close_shutdown/22 
+  Calls: tcp_segs_free/41 tcp_segs_free/41 pbuf_free/74 tcp_backlog_accepted/21 
+tcp_poll/57 (tcp_poll) @06dfbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_accept/56 (tcp_accept) @06dfb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_err/55 (tcp_err) @06dfb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_sent/54 (tcp_sent) @06dfb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_recv/53 (tcp_recv) @06dfb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_arg/52 (tcp_arg) @06df4c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_new_ip_type/51 (tcp_new_ip_type) @06df4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_new/50 (tcp_new) @06df4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_alloc/49 (tcp_alloc) @06df48c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) tcp_ticks/3 (read) tcp_timer_ctr/13 (read) tcp_recv_null/44 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_new_ip_type/51 tcp_new/50 
+  Calls: memset/88 memp_malloc/78 tcp_kill_prio/45 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_timewait/47 tcp_handle_closepend/48 memp_malloc/78 
+tcp_handle_closepend/48 (tcp_handle_closepend) @06df4620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_close_shutdown_fin/23 
+tcp_kill_timewait/47 (tcp_kill_timewait) @06df4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_kill_state/46 (tcp_kill_state) @06df40e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 tcp_alloc/49 
+  Calls: tcp_abandon/26 
+tcp_kill_prio/45 (tcp_kill_prio) @06dc4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_recv_null/44 (tcp_recv_null) @06dc42a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Address is taken.
+  References: 
+  Referring: tcp_alloc/49 (addr) 
+  Function flags: body
+  Called by: tcp_process_refused_data/40 
+  Calls: tcp_close/24 pbuf_free/74 tcp_recved/34 
+tcp_setprio/43 (tcp_setprio) @06dc4ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_seg_free/42 (tcp_seg_free) @06dc4c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_segs_free/41 
+  Calls: memp_free/67 pbuf_free/74 
+tcp_segs_free/41 (tcp_segs_free) @06dc49a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_pcb_purge/58 tcp_abandon/26 tcp_abandon/26 
+  Calls: tcp_seg_free/42 
+tcp_process_refused_data/40 (tcp_process_refused_data) @06dc4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_fasttmr/38 
+  Calls: tcp_recv_null/44 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_txnow/39 (tcp_txnow) @06dc4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 
+tcp_fasttmr/38 (tcp_fasttmr) @06dc41c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_process_refused_data/40 tcp_close_shutdown_fin/23 tcp_output/73 
+tcp_slowtmr/37 (tcp_slowtmr) @06da5620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_ticks/3 (read) tcp_ticks/3 (write) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_persist_backoff/5 (read) tcp_backoff/4 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_free/15 tcp_pcb_purge/58 tcp_output/73 tcp_free/15 tcp_rst/68 tcp_pcb_purge/58 tcp_keepalive/87 tcp_rexmit_rto_commit/86 tcp_rexmit_rto_prepare/85 tcp_output/73 tcp_split_unsent_seg/84 tcp_zero_window_probe/83 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_connect/36 (tcp_connect) @06da5540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 tcp_timer_needed/77 tcp_enqueue_flags/82 tcp_eff_send_mss_netif/61 tcp_next_iss/60 tcp_new_port/35 ip6_select_source_address/81 ip4_route/80 ip6_route/76 netif_get_by_index/79 
+tcp_new_port/35 (tcp_new_port) @06d77000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_port/2 (read) tcp_port/2 (write) tcp_port/2 (read) tcp_port/2 (write) tcp_pcb_lists/10 (read) tcp_port/2 (read) tcp_port/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+tcp_recved/34 (tcp_recved) @06d2fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_output/73 tcp_update_rcv_ann_wnd/33 
+tcp_update_rcv_ann_wnd/33 (tcp_update_rcv_ann_wnd) @06d2fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recved/34 
+  Calls: 
+tcp_listen_with_backlog_and_err/32 (tcp_listen_with_backlog_and_err) @06d2fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_accept_null/30 (addr) tcp_listen_pcbs/7 (read) tcp_listen_pcbs/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_listen_with_backlog/31 
+  Calls: tcp_timer_needed/77 tcp_free/15 memp_malloc/78 
+tcp_listen_with_backlog/31 (tcp_listen_with_backlog) @06d2f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_listen_with_backlog_and_err/32 
+tcp_accept_null/30 (tcp_accept_null) @06d14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcp_listen_with_backlog_and_err/32 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/27 
+tcp_bind_netif/29 (tcp_bind_netif) @06d14c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_bind/28 (tcp_bind) @06d149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/75 (addr) tcp_pcb_lists/10 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_timer_needed/77 tcp_new_port/35 ip6_route/76 
+tcp_abort/27 (tcp_abort) @06ccfa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed_pcblist/62 tcp_kill_timewait/47 tcp_kill_prio/45 tcp_accept_null/30 
+  Calls: tcp_abandon/26 
+tcp_abandon/26 (tcp_abandon) @06ccf540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_tw_pcbs/9 (addr) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_kill_state/46 tcp_abort/27 
+  Calls: tcp_free/15 tcp_rst/68 tcp_backlog_accepted/21 tcp_segs_free/41 tcp_segs_free/41 tcp_pcb_remove/59 tcp_free/15 tcp_pcb_remove/59 
+   Indirect call Num speculative call targets: 0
+tcp_shutdown/25 (tcp_shutdown) @06ccfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_close_shutdown/22 pbuf_free/74 tcp_close_shutdown/22 
+tcp_close/24 (tcp_close) @06ccf9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_close_shutdown/22 
+tcp_close_shutdown_fin/23 (tcp_close_shutdown_fin) @06ccf700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_handle_closepend/48 tcp_fasttmr/38 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_send_fin/72 tcp_send_fin/72 tcp_backlog_accepted/21 tcp_send_fin/72 
+tcp_close_shutdown/22 (tcp_close_shutdown) @06ccf460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs/8 (read) tcp_active_pcbs_changed/11 (write) tcp_input_pcb/69 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (addr) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_shutdown/25 tcp_shutdown/25 tcp_close/24 
+  Calls: tcp_close_shutdown_fin/23 tcp_free/15 tcp_pcb_remove/59 tcp_free_listen/16 tcp_pcb_remove/59 tcp_listen_closed/19 tcp_free/15 tcp_free/15 tcp_trigger_input_pcb_close/70 tcp_pcb_purge/58 tcp_rst/68 
+tcp_backlog_accepted/21 (tcp_backlog_accepted) @06ccf000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_abandon/26 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_backlog_delayed/20 (tcp_backlog_delayed) @06cb3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_listen_closed/19 (tcp_listen_closed) @06cb3e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_pcb_lists/10 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: tcp_remove_listener/18 
+tcp_remove_listener/18 (tcp_remove_listener) @06cb3a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_listen_closed/19 
+  Calls: 
+tcp_tmr/17 (tcp_tmr) @06cb37e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_timer/12 (read) tcp_timer/12 (write) tcp_timer/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_slowtmr/37 tcp_fasttmr/38 
+tcp_free_listen/16 (tcp_free_listen) @06cb3540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_free/15 (tcp_free) @06cb32a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_slowtmr/37 tcp_slowtmr/37 tcp_listen_with_backlog_and_err/32 tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_init/14 (tcp_init) @06cb3000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_port/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: rand/66 
+tcp_timer_ctr/13 (tcp_timer_ctr) @06cadca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_fasttmr/38 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) tcp_fasttmr/38 (read) tcp_alloc/49 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_timer/12 (tcp_timer) @06cadc18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_tmr/17 (read) tcp_tmr/17 (write) tcp_tmr/17 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs_changed/11 (tcp_active_pcbs_changed) @06cadb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (write) tcp_abandon/26 (write) tcp_connect/36 (write) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_pcb_lists/10 (tcp_pcb_lists) @06cadb40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_listen_pcbs/7 (addr) tcp_bound_pcbs/6 (addr) tcp_active_pcbs/8 (addr) tcp_tw_pcbs/9 (addr) 
+  Referring: tcp_listen_closed/19 (read) tcp_bind/28 (read) tcp_new_port/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_tw_pcbs/9 (tcp_tw_pcbs) @06cadaf8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_abandon/26 (addr) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_kill_timewait/47 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs/8 (tcp_active_pcbs) @06cadab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (addr) tcp_abandon/26 (addr) tcp_connect/36 (read) tcp_connect/36 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_fasttmr/38 (read) tcp_txnow/39 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_handle_closepend/48 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_listen_pcbs/7 (tcp_listen_pcbs) @06cada68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (addr) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_bound_pcbs/6 (tcp_bound_pcbs) @06cada20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_abandon/26 (read) tcp_abandon/26 (read) tcp_abandon/26 (write) tcp_abandon/26 (read) tcp_bind/28 (read) tcp_bind/28 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_connect/36 (read) tcp_connect/36 (read) tcp_connect/36 (write) tcp_connect/36 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_persist_backoff/5 (tcp_persist_backoff) @06cad9d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_backoff/4 (tcp_backoff) @06cad900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_ticks/3 (tcp_ticks) @06cad828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_kill_prio/45 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_kill_state/46 (read) tcp_kill_timewait/47 (read) tcp_kill_timewait/47 (read) tcp_alloc/49 (read) tcp_next_iss/60 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_port/2 (tcp_port) @06cad7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_init/14 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+tcp_state_str/1 (tcp_state_str) @06cad750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_debug_state_str/64 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+nd6_get_destination_mtu/90 (nd6_get_destination_mtu) @06ee7380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_eff_send_mss_netif/61 
+  Calls: 
+iss.0/89 (iss) @06ee6ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_next_iss/60 (read) tcp_next_iss/60 (write) tcp_next_iss/60 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+memset/88 (memset) @06ed2620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_alloc/49 
+  Calls: 
+tcp_keepalive/87 (tcp_keepalive) @06e85380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_commit/86 (tcp_rexmit_rto_commit) @06e852a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_prepare/85 (tcp_rexmit_rto_prepare) @06e85ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_split_unsent_seg/84 (tcp_split_unsent_seg) @06e85e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_zero_window_probe/83 (tcp_zero_window_probe) @06e85d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_enqueue_flags/82 (tcp_enqueue_flags) @06e857e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip6_select_source_address/81 (ip6_select_source_address) @06e85700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip4_route/80 (ip4_route) @06e85620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+netif_get_by_index/79 (netif_get_by_index) @06e85540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+memp_malloc/78 (memp_malloc) @06e55620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_listen_with_backlog_and_err/32 
+  Calls: 
+tcp_timer_needed/77 (tcp_timer_needed) @06e559a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 tcp_listen_with_backlog_and_err/32 tcp_bind/28 
+  Calls: 
+ip6_route/76 (ip6_route) @06e558c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+ip_addr_any/75 (ip_addr_any) @06e76c18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_bind/28 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+pbuf_free/74 (pbuf_free) @06e550e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_pcb_purge/58 tcp_recv_null/44 tcp_seg_free/42 tcp_shutdown/25 
+  Calls: 
+tcp_output/73 (tcp_output) @06e42ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_pcb_remove/59 tcp_txnow/39 tcp_fasttmr/38 tcp_slowtmr/37 tcp_slowtmr/37 tcp_connect/36 tcp_recved/34 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_send_fin/72 (tcp_send_fin) @06e42d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 
+  Calls: 
+lwip_stats/71 (lwip_stats) @06e522d0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_connect/36 (read) tcp_connect/36 (write) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_alloc/49 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_trigger_input_pcb_close/70 (tcp_trigger_input_pcb_close) @06e42b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_close_shutdown/22 
+  Calls: 
+tcp_input_pcb/69 (tcp_input_pcb) @06e52048
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_rst/68 (tcp_rst) @06e429a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_slowtmr/37 tcp_abandon/26 tcp_close_shutdown/22 
+  Calls: 
+memp_free/67 (memp_free) @06e420e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_seg_free/42 tcp_free_listen/16 tcp_free/15 
+  Calls: 
+rand/66 (rand) @06e1aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: tcp_init/14 
+  Calls: 
+tcp_tcp_get_tcp_addrinfo/65 (tcp_tcp_get_tcp_addrinfo) @06e1ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_debug_state_str/64 (tcp_debug_state_str) @06e1a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_state_str/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_netif_ip_addr_changed/63 (tcp_netif_ip_addr_changed) @06e1a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_active_pcbs/8 (read) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_netif_ip_addr_changed_pcblist/62 tcp_netif_ip_addr_changed_pcblist/62 
+tcp_netif_ip_addr_changed_pcblist/62 (tcp_netif_ip_addr_changed_pcblist) @06e068c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed/63 tcp_netif_ip_addr_changed/63 
+  Calls: tcp_abort/27 
+tcp_eff_send_mss_netif/61 (tcp_eff_send_mss_netif) @06e062a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: nd6_get_destination_mtu/90 
+tcp_next_iss/60 (tcp_next_iss) @06dfba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: iss.0/89 (read) tcp_ticks/3 (read) iss.0/89 (write) iss.0/89 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: 
+tcp_pcb_remove/59 (tcp_pcb_remove) @06dfb540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_pcb_purge/58 
+tcp_pcb_purge/58 (tcp_pcb_purge) @06dfbee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_remove/59 tcp_slowtmr/37 tcp_slowtmr/37 tcp_close_shutdown/22 
+  Calls: tcp_segs_free/41 tcp_segs_free/41 pbuf_free/74 tcp_backlog_accepted/21 
+tcp_poll/57 (tcp_poll) @06dfbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_accept/56 (tcp_accept) @06dfb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_err/55 (tcp_err) @06dfb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_sent/54 (tcp_sent) @06dfb460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_recv/53 (tcp_recv) @06dfb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_arg/52 (tcp_arg) @06df4c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_new_ip_type/51 (tcp_new_ip_type) @06df4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_new/50 (tcp_new) @06df4b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_alloc/49 (tcp_alloc) @06df48c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) tcp_ticks/3 (read) tcp_timer_ctr/13 (read) tcp_recv_null/44 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_new_ip_type/51 tcp_new/50 
+  Calls: memset/88 memp_malloc/78 tcp_kill_prio/45 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_timewait/47 tcp_handle_closepend/48 memp_malloc/78 
+tcp_handle_closepend/48 (tcp_handle_closepend) @06df4620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_close_shutdown_fin/23 
+tcp_kill_timewait/47 (tcp_kill_timewait) @06df4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_kill_state/46 (tcp_kill_state) @06df40e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 tcp_alloc/49 
+  Calls: tcp_abandon/26 
+tcp_kill_prio/45 (tcp_kill_prio) @06dc4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_recv_null/44 (tcp_recv_null) @06dc42a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Address is taken.
+  References: 
+  Referring: tcp_alloc/49 (addr) 
+  Function flags: body
+  Called by: tcp_process_refused_data/40 
+  Calls: tcp_close/24 pbuf_free/74 tcp_recved/34 
+tcp_setprio/43 (tcp_setprio) @06dc4ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_seg_free/42 (tcp_seg_free) @06dc4c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_segs_free/41 
+  Calls: memp_free/67 pbuf_free/74 
+tcp_segs_free/41 (tcp_segs_free) @06dc49a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_pcb_purge/58 tcp_abandon/26 tcp_abandon/26 
+  Calls: tcp_seg_free/42 
+tcp_process_refused_data/40 (tcp_process_refused_data) @06dc4700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_fasttmr/38 
+  Calls: tcp_recv_null/44 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_txnow/39 (tcp_txnow) @06dc4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 
+tcp_fasttmr/38 (tcp_fasttmr) @06dc41c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_process_refused_data/40 tcp_close_shutdown_fin/23 tcp_output/73 
+tcp_slowtmr/37 (tcp_slowtmr) @06da5620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_ticks/3 (read) tcp_ticks/3 (write) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_persist_backoff/5 (read) tcp_backoff/4 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_free/15 tcp_pcb_purge/58 tcp_output/73 tcp_free/15 tcp_rst/68 tcp_pcb_purge/58 tcp_keepalive/87 tcp_rexmit_rto_commit/86 tcp_rexmit_rto_prepare/85 tcp_output/73 tcp_split_unsent_seg/84 tcp_zero_window_probe/83 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_connect/36 (tcp_connect) @06da5540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 tcp_timer_needed/77 tcp_enqueue_flags/82 tcp_eff_send_mss_netif/61 tcp_next_iss/60 tcp_new_port/35 ip6_select_source_address/81 ip4_route/80 ip6_route/76 netif_get_by_index/79 
+tcp_new_port/35 (tcp_new_port) @06d77000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_port/2 (read) tcp_port/2 (write) tcp_port/2 (read) tcp_port/2 (write) tcp_pcb_lists/10 (read) tcp_port/2 (read) tcp_port/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+tcp_recved/34 (tcp_recved) @06d2fb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_output/73 tcp_update_rcv_ann_wnd/33 
+tcp_update_rcv_ann_wnd/33 (tcp_update_rcv_ann_wnd) @06d2fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recved/34 
+  Calls: 
+tcp_listen_with_backlog_and_err/32 (tcp_listen_with_backlog_and_err) @06d2fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_accept_null/30 (addr) tcp_listen_pcbs/7 (read) tcp_listen_pcbs/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_listen_with_backlog/31 
+  Calls: tcp_timer_needed/77 tcp_free/15 memp_malloc/78 
+tcp_listen_with_backlog/31 (tcp_listen_with_backlog) @06d2f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_listen_with_backlog_and_err/32 
+tcp_accept_null/30 (tcp_accept_null) @06d14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: tcp_listen_with_backlog_and_err/32 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/27 
+tcp_bind_netif/29 (tcp_bind_netif) @06d14c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_bind/28 (tcp_bind) @06d149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: ip_addr_any/75 (addr) tcp_pcb_lists/10 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_timer_needed/77 tcp_new_port/35 ip6_route/76 
+tcp_abort/27 (tcp_abort) @06ccfa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed_pcblist/62 tcp_kill_timewait/47 tcp_kill_prio/45 tcp_accept_null/30 
+  Calls: tcp_abandon/26 
+tcp_abandon/26 (tcp_abandon) @06ccf540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_tw_pcbs/9 (addr) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_kill_state/46 tcp_abort/27 
+  Calls: tcp_free/15 tcp_rst/68 tcp_backlog_accepted/21 tcp_segs_free/41 tcp_segs_free/41 tcp_pcb_remove/59 tcp_free/15 tcp_pcb_remove/59 
+   Indirect call Num speculative call targets: 0
+tcp_shutdown/25 (tcp_shutdown) @06ccfc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_close_shutdown/22 pbuf_free/74 tcp_close_shutdown/22 
+tcp_close/24 (tcp_close) @06ccf9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_close_shutdown/22 
+tcp_close_shutdown_fin/23 (tcp_close_shutdown_fin) @06ccf700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_handle_closepend/48 tcp_fasttmr/38 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_send_fin/72 tcp_send_fin/72 tcp_backlog_accepted/21 tcp_send_fin/72 
+tcp_close_shutdown/22 (tcp_close_shutdown) @06ccf460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs/8 (read) tcp_active_pcbs_changed/11 (write) tcp_input_pcb/69 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (addr) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_shutdown/25 tcp_shutdown/25 tcp_close/24 
+  Calls: tcp_close_shutdown_fin/23 tcp_free/15 tcp_pcb_remove/59 tcp_free_listen/16 tcp_pcb_remove/59 tcp_listen_closed/19 tcp_free/15 tcp_free/15 tcp_trigger_input_pcb_close/70 tcp_pcb_purge/58 tcp_rst/68 
+tcp_backlog_accepted/21 (tcp_backlog_accepted) @06ccf000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_pcb_purge/58 tcp_abandon/26 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_backlog_delayed/20 (tcp_backlog_delayed) @06cb3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_listen_closed/19 (tcp_listen_closed) @06cb3e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: tcp_pcb_lists/10 (read) 
+  Referring: 
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: tcp_remove_listener/18 
+tcp_remove_listener/18 (tcp_remove_listener) @06cb3a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_listen_closed/19 
+  Calls: 
+tcp_tmr/17 (tcp_tmr) @06cb37e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_timer/12 (read) tcp_timer/12 (write) tcp_timer/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: tcp_slowtmr/37 tcp_fasttmr/38 
+tcp_free_listen/16 (tcp_free_listen) @06cb3540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_free/15 (tcp_free) @06cb32a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: tcp_slowtmr/37 tcp_slowtmr/37 tcp_listen_with_backlog_and_err/32 tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_init/14 (tcp_init) @06cb3000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_port/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: rand/66 
+tcp_timer_ctr/13 (tcp_timer_ctr) @06cadca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_fasttmr/38 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) tcp_fasttmr/38 (read) tcp_alloc/49 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_timer/12 (tcp_timer) @06cadc18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_tmr/17 (read) tcp_tmr/17 (write) tcp_tmr/17 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs_changed/11 (tcp_active_pcbs_changed) @06cadb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (write) tcp_abandon/26 (write) tcp_connect/36 (write) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_pcb_lists/10 (tcp_pcb_lists) @06cadb40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: tcp_listen_pcbs/7 (addr) tcp_bound_pcbs/6 (addr) tcp_active_pcbs/8 (addr) tcp_tw_pcbs/9 (addr) 
+  Referring: tcp_listen_closed/19 (read) tcp_bind/28 (read) tcp_new_port/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_tw_pcbs/9 (tcp_tw_pcbs) @06cadaf8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_abandon/26 (addr) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_kill_timewait/47 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_active_pcbs/8 (tcp_active_pcbs) @06cadab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (addr) tcp_abandon/26 (addr) tcp_connect/36 (read) tcp_connect/36 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_fasttmr/38 (read) tcp_txnow/39 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_handle_closepend/48 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_listen_pcbs/7 (tcp_listen_pcbs) @06cada68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (addr) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_bound_pcbs/6 (tcp_bound_pcbs) @06cada20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_abandon/26 (read) tcp_abandon/26 (read) tcp_abandon/26 (write) tcp_abandon/26 (read) tcp_bind/28 (read) tcp_bind/28 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_connect/36 (read) tcp_connect/36 (read) tcp_connect/36 (write) tcp_connect/36 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_persist_backoff/5 (tcp_persist_backoff) @06cad9d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_backoff/4 (tcp_backoff) @06cad900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+tcp_ticks/3 (tcp_ticks) @06cad828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_kill_prio/45 (read) tcp_kill_prio/45 (read) tcp_kill_state/46 (read) tcp_kill_state/46 (read) tcp_kill_timewait/47 (read) tcp_kill_timewait/47 (read) tcp_alloc/49 (read) tcp_next_iss/60 (read) 
+  Availability: not-ready
+  Varpool flags:
+tcp_port/2 (tcp_port) @06cad7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_init/14 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+tcp_state_str/1 (tcp_state_str) @06cad750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: tcp_debug_state_str/64 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+nd6_get_destination_mtu/90 (nd6_get_destination_mtu) @06ee7380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_eff_send_mss_netif/61 
+  Calls: 
+iss.0/89 (iss) @06ee6ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_next_iss/60 (read) tcp_next_iss/60 (write) tcp_next_iss/60 (read) 
+  Availability: available
+  Varpool flags: initialized
+memset/88 (memset) @06ed2620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_alloc/49 
+  Calls: 
+tcp_keepalive/87 (tcp_keepalive) @06e85380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_commit/86 (tcp_rexmit_rto_commit) @06e852a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_rexmit_rto_prepare/85 (tcp_rexmit_rto_prepare) @06e85ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_split_unsent_seg/84 (tcp_split_unsent_seg) @06e85e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_zero_window_probe/83 (tcp_zero_window_probe) @06e85d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_slowtmr/37 
+  Calls: 
+tcp_enqueue_flags/82 (tcp_enqueue_flags) @06e857e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip6_select_source_address/81 (ip6_select_source_address) @06e85700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+ip4_route/80 (ip4_route) @06e85620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+netif_get_by_index/79 (netif_get_by_index) @06e85540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 
+  Calls: 
+memp_malloc/78 (memp_malloc) @06e55620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_alloc/49 tcp_listen_with_backlog_and_err/32 
+  Calls: 
+tcp_timer_needed/77 (tcp_timer_needed) @06e559a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 tcp_bind/28 tcp_listen_with_backlog_and_err/32 
+  Calls: 
+ip6_route/76 (ip6_route) @06e558c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+ip_addr_any/75 (ip_addr_any) @06e76c18
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcp_bind/28 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+pbuf_free/74 (pbuf_free) @06e550e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_shutdown/25 tcp_recv_null/44 tcp_pcb_purge/58 tcp_seg_free/42 
+  Calls: 
+tcp_output/73 (tcp_output) @06e42ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_connect/36 tcp_fasttmr/38 tcp_pcb_remove/59 tcp_slowtmr/37 tcp_slowtmr/37 tcp_txnow/39 tcp_recved/34 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_send_fin/72 (tcp_send_fin) @06e42d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 tcp_close_shutdown_fin/23 
+  Calls: 
+lwip_stats/71 (lwip_stats) @06e522d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_close_shutdown_fin/23 (read) tcp_close_shutdown_fin/23 (write) tcp_alloc/49 (read) tcp_alloc/49 (read) tcp_connect/36 (read) tcp_connect/36 (write) 
+  Availability: not_available
+  Varpool flags:
+tcp_trigger_input_pcb_close/70 (tcp_trigger_input_pcb_close) @06e42b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_close_shutdown/22 
+  Calls: 
+tcp_input_pcb/69 (tcp_input_pcb) @06e52048
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: tcp_close_shutdown/22 (read) 
+  Availability: not_available
+  Varpool flags:
+tcp_rst/68 (tcp_rst) @06e429a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_abandon/26 tcp_close_shutdown/22 tcp_slowtmr/37 
+  Calls: 
+memp_free/67 (memp_free) @06e420e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_seg_free/42 tcp_free_listen/16 tcp_free/15 
+  Calls: 
+rand/66 (rand) @06e1aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: tcp_init/14 
+  Calls: 
+tcp_tcp_get_tcp_addrinfo/65 (tcp_tcp_get_tcp_addrinfo) @06e1ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_debug_state_str/64 (tcp_debug_state_str) @06e1a9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_state_str/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_netif_ip_addr_changed/63 (tcp_netif_ip_addr_changed) @06e1a700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_active_pcbs/8 (read) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_netif_ip_addr_changed_pcblist/62 tcp_netif_ip_addr_changed_pcblist/62 
+tcp_netif_ip_addr_changed_pcblist/62 (tcp_netif_ip_addr_changed_pcblist) @06e068c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed/63 tcp_netif_ip_addr_changed/63 
+  Calls: tcp_abort/27 
+tcp_eff_send_mss_netif/61 (tcp_eff_send_mss_netif) @06e062a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: nd6_get_destination_mtu/90 
+tcp_next_iss/60 (tcp_next_iss) @06dfba80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: iss.0/89 (read) tcp_ticks/3 (read) iss.0/89 (write) iss.0/89 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_connect/36 
+  Calls: 
+tcp_pcb_remove/59 (tcp_pcb_remove) @06dfb540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 
+  Calls: tcp_output/73 tcp_pcb_purge/58 
+tcp_pcb_purge/58 (tcp_pcb_purge) @06dfbee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_close_shutdown/22 tcp_pcb_remove/59 tcp_slowtmr/37 tcp_slowtmr/37 
+  Calls: tcp_segs_free/41 tcp_segs_free/41 pbuf_free/74 tcp_backlog_accepted/21 
+tcp_poll/57 (tcp_poll) @06dfbc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_accept/56 (tcp_accept) @06dfb9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_err/55 (tcp_err) @06dfb700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_sent/54 (tcp_sent) @06dfb460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_recv/53 (tcp_recv) @06dfb1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_arg/52 (tcp_arg) @06df4c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_new_ip_type/51 (tcp_new_ip_type) @06df4700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_new/50 (tcp_new) @06df4b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_alloc/49 
+tcp_alloc/49 (tcp_alloc) @06df48c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) lwip_stats/71 (read) tcp_ticks/3 (read) tcp_timer_ctr/13 (read) tcp_recv_null/44 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_new_ip_type/51 tcp_new/50 
+  Calls: memset/88 memp_malloc/78 tcp_kill_prio/45 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_state/46 memp_malloc/78 tcp_kill_timewait/47 tcp_handle_closepend/48 memp_malloc/78 
+tcp_handle_closepend/48 (tcp_handle_closepend) @06df4620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_close_shutdown_fin/23 
+tcp_kill_timewait/47 (tcp_kill_timewait) @06df4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_kill_state/46 (tcp_kill_state) @06df40e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_alloc/49 tcp_alloc/49 
+  Calls: tcp_abandon/26 
+tcp_kill_prio/45 (tcp_kill_prio) @06dc4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_active_pcbs/8 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_alloc/49 
+  Calls: tcp_abort/27 
+tcp_recv_null/44 (tcp_recv_null) @06dc42a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: 
+  Referring: tcp_alloc/49 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: tcp_process_refused_data/40 
+  Calls: tcp_close/24 pbuf_free/74 tcp_recved/34 
+tcp_setprio/43 (tcp_setprio) @06dc4ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_seg_free/42 (tcp_seg_free) @06dc4c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_segs_free/41 
+  Calls: memp_free/67 pbuf_free/74 
+tcp_segs_free/41 (tcp_segs_free) @06dc49a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_abandon/26 tcp_pcb_purge/58 tcp_pcb_purge/58 
+  Calls: tcp_seg_free/42 
+tcp_process_refused_data/40 (tcp_process_refused_data) @06dc4700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_fasttmr/38 
+  Calls: tcp_recv_null/44 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_txnow/39 (tcp_txnow) @06dc4460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_active_pcbs/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 
+tcp_fasttmr/38 (tcp_fasttmr) @06dc41c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_process_refused_data/40 tcp_close_shutdown_fin/23 tcp_output/73 
+tcp_slowtmr/37 (tcp_slowtmr) @06da5620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_ticks/3 (read) tcp_ticks/3 (write) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (write) tcp_active_pcbs/8 (read) tcp_timer_ctr/13 (read) tcp_timer_ctr/13 (read) tcp_persist_backoff/5 (read) tcp_backoff/4 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_ticks/3 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_active_pcbs_changed/11 (write) tcp_active_pcbs_changed/11 (read) tcp_tw_pcbs/9 (read) tcp_ticks/3 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (read) tcp_tw_pcbs/9 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_tmr/17 
+  Calls: tcp_free/15 tcp_pcb_purge/58 tcp_output/73 tcp_free/15 tcp_rst/68 tcp_pcb_purge/58 tcp_keepalive/87 tcp_rexmit_rto_commit/86 tcp_rexmit_rto_prepare/85 tcp_output/73 tcp_split_unsent_seg/84 tcp_zero_window_probe/83 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+tcp_connect/36 (tcp_connect) @06da5540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_output/73 tcp_timer_needed/77 tcp_enqueue_flags/82 tcp_eff_send_mss_netif/61 tcp_next_iss/60 tcp_new_port/35 ip6_select_source_address/81 ip4_route/80 ip6_route/76 netif_get_by_index/79 
+tcp_new_port/35 (tcp_new_port) @06d77000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_port/2 (read) tcp_port/2 (write) tcp_port/2 (read) tcp_port/2 (write) tcp_pcb_lists/10 (read) tcp_port/2 (read) tcp_port/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_connect/36 tcp_bind/28 
+  Calls: 
+tcp_recved/34 (tcp_recved) @06d2fb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_output/73 tcp_update_rcv_ann_wnd/33 
+tcp_update_rcv_ann_wnd/33 (tcp_update_rcv_ann_wnd) @06d2fe00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_recved/34 
+  Calls: 
+tcp_listen_with_backlog_and_err/32 (tcp_listen_with_backlog_and_err) @06d2fa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_accept_null/30 (addr) tcp_listen_pcbs/7 (read) tcp_listen_pcbs/7 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_listen_with_backlog/31 
+  Calls: tcp_timer_needed/77 tcp_free/15 memp_malloc/78 
+tcp_listen_with_backlog/31 (tcp_listen_with_backlog) @06d2f000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_listen_with_backlog_and_err/32 
+tcp_accept_null/30 (tcp_accept_null) @06d14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: tcp_listen_with_backlog_and_err/32 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_abort/27 
+tcp_bind_netif/29 (tcp_bind_netif) @06d14c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_bind/28 (tcp_bind) @06d149a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any/75 (addr) tcp_pcb_lists/10 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_timer_needed/77 tcp_new_port/35 ip6_route/76 
+tcp_abort/27 (tcp_abort) @06ccfa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_netif_ip_addr_changed_pcblist/62 tcp_kill_timewait/47 tcp_kill_prio/45 tcp_accept_null/30 
+  Calls: tcp_abandon/26 
+tcp_abandon/26 (tcp_abandon) @06ccf540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_tw_pcbs/9 (addr) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_kill_state/46 tcp_abort/27 
+  Calls: tcp_free/15 tcp_rst/68 tcp_backlog_accepted/21 tcp_segs_free/41 tcp_segs_free/41 tcp_pcb_remove/59 tcp_free/15 tcp_pcb_remove/59 
+   Indirect call Num speculative call targets: 0
+tcp_shutdown/25 (tcp_shutdown) @06ccfc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_close_shutdown/22 pbuf_free/74 tcp_close_shutdown/22 
+tcp_close/24 (tcp_close) @06ccf9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_recv_null/44 
+  Calls: tcp_close_shutdown/22 
+tcp_close_shutdown_fin/23 (tcp_close_shutdown_fin) @06ccf700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_fasttmr/38 tcp_close_shutdown/22 tcp_handle_closepend/48 
+  Calls: tcp_output/73 tcp_send_fin/72 tcp_send_fin/72 tcp_backlog_accepted/21 tcp_send_fin/72 
+tcp_close_shutdown/22 (tcp_close_shutdown) @06ccf460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (read) tcp_active_pcbs/8 (write) tcp_active_pcbs/8 (read) tcp_active_pcbs_changed/11 (write) tcp_input_pcb/69 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (read) tcp_bound_pcbs/6 (write) tcp_bound_pcbs/6 (read) tcp_listen_pcbs/7 (addr) tcp_active_pcbs/8 (addr) tcp_active_pcbs_changed/11 (write) lwip_stats/71 (read) lwip_stats/71 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_shutdown/25 tcp_shutdown/25 tcp_close/24 
+  Calls: tcp_close_shutdown_fin/23 tcp_free/15 tcp_pcb_remove/59 tcp_free_listen/16 tcp_pcb_remove/59 tcp_listen_closed/19 tcp_free/15 tcp_free/15 tcp_trigger_input_pcb_close/70 tcp_pcb_purge/58 tcp_rst/68 
+tcp_backlog_accepted/21 (tcp_backlog_accepted) @06ccf000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_pcb_purge/58 tcp_close_shutdown_fin/23 
+  Calls: 
+tcp_backlog_delayed/20 (tcp_backlog_delayed) @06cb3620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+tcp_listen_closed/19 (tcp_listen_closed) @06cb3e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: tcp_pcb_lists/10 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: tcp_remove_listener/18 
+tcp_remove_listener/18 (tcp_remove_listener) @06cb3a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_listen_closed/19 
+  Calls: 
+tcp_tmr/17 (tcp_tmr) @06cb37e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_timer/12 (read) tcp_timer/12 (write) tcp_timer/12 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_slowtmr/37 tcp_fasttmr/38 
+tcp_free_listen/16 (tcp_free_listen) @06cb3540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_close_shutdown/22 
+  Calls: memp_free/67 
+tcp_free/15 (tcp_free) @06cb32a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: tcp_abandon/26 tcp_abandon/26 tcp_close_shutdown/22 tcp_close_shutdown/22 tcp_close_shutdown/22 tcp_slowtmr/37 tcp_slowtmr/37 tcp_listen_with_backlog_and_err/32 
+  Calls: memp_free/67 
+tcp_init/14 (tcp_init) @06cb3000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_port/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: rand/66 
+tcp_timer_ctr/13 (tcp_timer_ctr) @06cadca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_fasttmr/38 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_fasttmr/38 (read) tcp_fasttmr/38 (write) tcp_fasttmr/38 (read) tcp_alloc/49 (read) 
+  Availability: available
+  Varpool flags:
+tcp_timer/12 (tcp_timer) @06cadc18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_tmr/17 (read) tcp_tmr/17 (write) tcp_tmr/17 (read) 
+  Availability: available
+  Varpool flags:
+tcp_active_pcbs_changed/11 (tcp_active_pcbs_changed) @06cadb88
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_close_shutdown/22 (write) tcp_abandon/26 (write) tcp_close_shutdown/22 (write) tcp_fasttmr/38 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_fasttmr/38 (write) tcp_connect/36 (write) 
+  Availability: available
+  Varpool flags:
+tcp_pcb_lists/10 (tcp_pcb_lists) @06cadb40
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: tcp_listen_pcbs/7 (addr) tcp_bound_pcbs/6 (addr) tcp_active_pcbs/8 (addr) tcp_tw_pcbs/9 (addr) 
+  Referring: tcp_new_port/35 (read) tcp_listen_closed/19 (read) tcp_bind/28 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_tw_pcbs/9 (tcp_tw_pcbs) @06cadaf8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_abandon/26 (addr) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_kill_timewait/47 (read) 
+  Availability: available
+  Varpool flags:
+tcp_active_pcbs/8 (tcp_active_pcbs) @06cadab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_kill_state/46 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_close_shutdown/22 (read) tcp_handle_closepend/48 (read) tcp_close_shutdown/22 (addr) tcp_slowtmr/37 (read) tcp_kill_prio/45 (read) tcp_fasttmr/38 (read) tcp_abandon/26 (addr) tcp_connect/36 (write) tcp_txnow/39 (read) tcp_slowtmr/37 (write) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_connect/36 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: available
+  Varpool flags:
+tcp_listen_pcbs/7 (tcp_listen_pcbs) @06cada68
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_close_shutdown/22 (addr) tcp_listen_with_backlog_and_err/32 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: available
+  Varpool flags:
+tcp_bound_pcbs/6 (tcp_bound_pcbs) @06cada20
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) tcp_abandon/26 (read) tcp_abandon/26 (read) tcp_listen_with_backlog_and_err/32 (write) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (read) tcp_listen_with_backlog_and_err/32 (read) tcp_bind/28 (read) tcp_bind/28 (write) tcp_abandon/26 (write) tcp_connect/36 (read) tcp_close_shutdown/22 (read) tcp_close_shutdown/22 (write) tcp_close_shutdown/22 (read) tcp_abandon/26 (read) tcp_close_shutdown/22 (read) tcp_connect/36 (read) tcp_connect/36 (read) tcp_connect/36 (write) tcp_netif_ip_addr_changed/63 (read) 
+  Availability: available
+  Varpool flags:
+tcp_persist_backoff/5 (tcp_persist_backoff) @06cad9d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_backoff/4 (tcp_backoff) @06cad900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_slowtmr/37 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_ticks/3 (tcp_ticks) @06cad828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: tcp_kill_timewait/47 (read) tcp_alloc/49 (read) tcp_kill_prio/45 (read) tcp_kill_prio/45 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_kill_timewait/47 (read) tcp_kill_state/46 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (write) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_slowtmr/37 (read) tcp_kill_state/46 (read) tcp_next_iss/60 (read) 
+  Availability: available
+  Varpool flags:
+tcp_port/2 (tcp_port) @06cad7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_init/14 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (write) tcp_new_port/35 (read) tcp_new_port/35 (read) 
+  Availability: available
+  Varpool flags: initialized
+tcp_state_str/1 (tcp_state_str) @06cad750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: tcp_debug_state_str/64 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: iss.0/89 tcp_timer_ctr/13 tcp_timer/12 tcp_active_pcbs_changed/11 tcp_pcb_lists/10 tcp_tw_pcbs/9 tcp_active_pcbs/8 tcp_listen_pcbs/7 tcp_bound_pcbs/6 tcp_persist_backoff/5 tcp_backoff/4 tcp_ticks/3 tcp_port/2 tcp_state_str/1
+Removing variables:
+
+Final Symbol table:
+
+nd6_get_destination_mtu/90 (nd6_get_destination_mtu) @06ee7380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+iss.0/89 (iss) @06ee6ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+memset/88 (memset) @06ed2620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_keepalive/87 (tcp_keepalive) @06e85380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_rexmit_rto_commit/86 (tcp_rexmit_rto_commit) @06e852a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_rexmit_rto_prepare/85 (tcp_rexmit_rto_prepare) @06e85ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_split_unsent_seg/84 (tcp_split_unsent_seg) @06e85e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_zero_window_probe/83 (tcp_zero_window_probe) @06e85d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_enqueue_flags/82 (tcp_enqueue_flags) @06e857e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_select_source_address/81 (ip6_select_source_address) @06e85700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip4_route/80 (ip4_route) @06e85620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+netif_get_by_index/79 (netif_get_by_index) @06e85540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memp_malloc/78 (memp_malloc) @06e55620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_timer_needed/77 (tcp_timer_needed) @06e559a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip6_route/76 (ip6_route) @06e558c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ip_addr_any/75 (ip_addr_any) @06e76c18
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+pbuf_free/74 (pbuf_free) @06e550e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_output/73 (tcp_output) @06e42ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_send_fin/72 (tcp_send_fin) @06e42d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+lwip_stats/71 (lwip_stats) @06e522d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+tcp_trigger_input_pcb_close/70 (tcp_trigger_input_pcb_close) @06e42b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_input_pcb/69 (tcp_input_pcb) @06e52048
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+tcp_rst/68 (tcp_rst) @06e429a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memp_free/67 (memp_free) @06e420e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+rand/66 (rand) @06e1aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tcp_get_tcp_addrinfo/65 (tcp_tcp_get_tcp_addrinfo) @06e1ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_debug_state_str/64 (tcp_debug_state_str) @06e1a9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_netif_ip_addr_changed/63 (tcp_netif_ip_addr_changed) @06e1a700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_netif_ip_addr_changed_pcblist/62 (tcp_netif_ip_addr_changed_pcblist) @06e068c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_eff_send_mss_netif/61 (tcp_eff_send_mss_netif) @06e062a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_next_iss/60 (tcp_next_iss) @06dfba80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_pcb_remove/59 (tcp_pcb_remove) @06dfb540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_pcb_purge/58 (tcp_pcb_purge) @06dfbee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_poll/57 (tcp_poll) @06dfbc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_accept/56 (tcp_accept) @06dfb9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_err/55 (tcp_err) @06dfb700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_sent/54 (tcp_sent) @06dfb460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recv/53 (tcp_recv) @06dfb1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_arg/52 (tcp_arg) @06df4c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_new_ip_type/51 (tcp_new_ip_type) @06df4700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_new/50 (tcp_new) @06df4b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_alloc/49 (tcp_alloc) @06df48c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_handle_closepend/48 (tcp_handle_closepend) @06df4620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_kill_timewait/47 (tcp_kill_timewait) @06df4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_kill_state/46 (tcp_kill_state) @06df40e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_kill_prio/45 (tcp_kill_prio) @06dc4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recv_null/44 (tcp_recv_null) @06dc42a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_setprio/43 (tcp_setprio) @06dc4ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_seg_free/42 (tcp_seg_free) @06dc4c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_segs_free/41 (tcp_segs_free) @06dc49a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_process_refused_data/40 (tcp_process_refused_data) @06dc4700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_txnow/39 (tcp_txnow) @06dc4460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_fasttmr/38 (tcp_fasttmr) @06dc41c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_slowtmr/37 (tcp_slowtmr) @06da5620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_connect/36 (tcp_connect) @06da5540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_new_port/35 (tcp_new_port) @06d77000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_recved/34 (tcp_recved) @06d2fb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_update_rcv_ann_wnd/33 (tcp_update_rcv_ann_wnd) @06d2fe00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_listen_with_backlog_and_err/32 (tcp_listen_with_backlog_and_err) @06d2fa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_listen_with_backlog/31 (tcp_listen_with_backlog) @06d2f000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_accept_null/30 (tcp_accept_null) @06d14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_bind_netif/29 (tcp_bind_netif) @06d14c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_bind/28 (tcp_bind) @06d149a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_abort/27 (tcp_abort) @06ccfa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_abandon/26 (tcp_abandon) @06ccf540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_shutdown/25 (tcp_shutdown) @06ccfc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_close/24 (tcp_close) @06ccf9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_close_shutdown_fin/23 (tcp_close_shutdown_fin) @06ccf700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_close_shutdown/22 (tcp_close_shutdown) @06ccf460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_backlog_accepted/21 (tcp_backlog_accepted) @06ccf000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_backlog_delayed/20 (tcp_backlog_delayed) @06cb3620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_listen_closed/19 (tcp_listen_closed) @06cb3e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_remove_listener/18 (tcp_remove_listener) @06cb3a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_tmr/17 (tcp_tmr) @06cb37e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_free_listen/16 (tcp_free_listen) @06cb3540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_free/15 (tcp_free) @06cb32a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_init/14 (tcp_init) @06cb3000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+tcp_timer_ctr/13 (tcp_timer_ctr) @06cadca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06ee6ee8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+tcp_timer/12 (tcp_timer) @06cadc18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06cadca8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+tcp_active_pcbs_changed/11 (tcp_active_pcbs_changed) @06cadb88
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06cadc18
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+tcp_pcb_lists/10 (tcp_pcb_lists) @06cadb40
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06cadb88
+  References: tcp_listen_pcbs/7 (addr) tcp_bound_pcbs/6 (addr) tcp_active_pcbs/8 (addr) tcp_tw_pcbs/9 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_tw_pcbs/9 (tcp_tw_pcbs) @06cadaf8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06cadb40
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) 
+  Availability: available
+  Varpool flags:
+tcp_active_pcbs/8 (tcp_active_pcbs) @06cadab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06cadaf8
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) 
+  Availability: available
+  Varpool flags:
+tcp_listen_pcbs/7 (tcp_listen_pcbs) @06cada68
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06cadab0
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) 
+  Availability: available
+  Varpool flags:
+tcp_bound_pcbs/6 (tcp_bound_pcbs) @06cada20
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06cada68
+  References: 
+  Referring: tcp_pcb_lists/10 (addr) 
+  Availability: available
+  Varpool flags:
+tcp_persist_backoff/5 (tcp_persist_backoff) @06cad9d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06cada20
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_backoff/4 (tcp_backoff) @06cad900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06cad9d8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+tcp_ticks/3 (tcp_ticks) @06cad828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public
+  Aux: @06cad900
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+tcp_port/2 (tcp_port) @06cad7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06cad828
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+tcp_state_str/1 (tcp_state_str) @06cad750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written
+  Aux: @06cad7e0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

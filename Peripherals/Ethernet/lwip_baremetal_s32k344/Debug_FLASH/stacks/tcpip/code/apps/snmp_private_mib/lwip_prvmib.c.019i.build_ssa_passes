@@ -1,0 +1,277 @@
+sensor_table_set_value (struct snmp_node_instance * instance, u16_t len, void * value)
+{
+  s32_t * temperature;
+  u32_t i;
+  snmp_err_t D.7553;
+
+  <bb 2> :
+  i = instance->reference.u32;
+  temperature = value;
+  _1 = *temperature;
+  sensors[i].value = _1;
+  D.7553 = 0;
+
+  <bb 3> :
+<L0>:
+  return D.7553;
+
+}
+
+
+sensor_table_get_value (struct snmp_node_instance * instance, void * value)
+{
+  s32_t * temperature;
+  u32_t i;
+  s16_t D.7551;
+
+  <bb 2> :
+  i = instance->reference.u32;
+  temperature = value;
+  _1 = instance->instance_oid.id[1];
+  switch (_1) <default: <L2> [INV], case 1: <L0> [INV], case 2: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  _2 = sensors[i].value;
+  *temperature = _2;
+  D.7551 = 4;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  _3 = &sensors[i].file;
+  _4 = &sensors[i].file;
+  _5 = strlen (_4);
+  memcpy (value, _3, _5);
+  _6 = &sensors[i].file;
+  _7 = strlen (_6);
+  D.7551 = (s16_t) _7;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+  D.7551 = 0;
+
+  <bb 6> :
+<L3>:
+  return D.7551;
+
+}
+
+
+sensor_table_get_next_cell_instance (const u32_t * column, struct snmp_obj_id * row_oid, struct snmp_node_instance * cell_instance)
+{
+  u32_t test_oid[1];
+  u32_t result_temp[1];
+  struct snmp_next_oid_state state;
+  size_t i;
+  snmp_err_t D.7548;
+
+  <bb 2> :
+  _1 = &row_oid->id;
+  _2 = row_oid->len;
+  snmp_next_oid_init (&state, _1, _2, &result_temp, 1);
+  i = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _3 = sensors[i].num;
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _4 = sensors[i].num;
+  _5 = (long unsigned int) _4;
+  test_oid[0] = _5;
+  i.1_6 = (void *) i;
+  snmp_next_oid_check (&state, &test_oid, 1, i.1_6);
+  test_oid = {CLOBBER};
+
+  <bb 5> :
+  i = i + 1;
+
+  <bb 6> :
+  if (i <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _7 = state.status;
+  if (_7 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _8 = state.next_oid;
+  _9 = state.next_oid_len;
+  snmp_oid_assign (row_oid, _8, _9);
+  _10 = state.reference;
+  _11 = (long unsigned int) _10;
+  cell_instance->reference.u32 = _11;
+  D.7548 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  D.7548 = 241;
+
+  <bb 10> :
+  state = {CLOBBER};
+  result_temp = {CLOBBER};
+
+  <bb 11> :
+<L8>:
+  return D.7548;
+
+}
+
+
+sensor_table_get_cell_instance (const u32_t * column, const u32_t * row_oid, u8_t row_oid_len, struct snmp_node_instance * cell_instance)
+{
+  size_t i;
+  u32_t sensor_num;
+  snmp_err_t D.7538;
+
+  <bb 2> :
+  _1 = snmp_oid_in_range (row_oid, row_oid_len, &sensor_table_oid_ranges, 1);
+  if (_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.7538 = 241;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 4> :
+  sensor_num = *row_oid;
+  i = 0;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  _2 = sensors[i].num;
+  if (_2 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _3 = sensors[i].num;
+  _4 = (long unsigned int) _3;
+  if (sensor_num == _4)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  cell_instance->reference.u32 = i;
+  D.7538 = 0;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  i = i + 1;
+
+  <bb 9> :
+  if (i <= 9)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  D.7538 = 241;
+
+  <bb 11> :
+<L9>:
+  return D.7538;
+
+}
+
+
+sensor_count_get_value (struct snmp_node_instance * instance, void * value)
+{
+  u32_t * uint_ptr;
+  size_t count;
+  s16_t D.7534;
+
+  <bb 2> :
+  count = 0;
+  uint_ptr = value;
+  count = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = sensors[count].num;
+  if (_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  *uint_ptr = count;
+  D.7534 = 4;
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  count = count + 1;
+
+  <bb 6> :
+  if (count <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  D.7534 = 0;
+
+  <bb 8> :
+<L5>:
+  return D.7534;
+
+}
+
+
+lwip_privmib_init ()
+{
+  u8_t i;
+
+  <bb 2> :
+  memset (&sensors, 0, 280);
+  __builtin_puts (&"SNMP private MIB start, detecting sensors."[0]);
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = i + 1;
+  sensors[_1].num = _2;
+  _3 = (int) i;
+  _4 = &sensors[_3].file;
+  _5 = (int) i;
+  snprintf (_4, 21, "%d.txt", _5);
+  _6 = (int) i;
+  _7 = _6 + 1;
+  _8 = (int) i;
+  _9 = _7 * 11;
+  sensors[_8].value = _9;
+  i.0_10 = i;
+  i = i.0_10 + 1;
+
+  <bb 4> :
+  if (i <= 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+

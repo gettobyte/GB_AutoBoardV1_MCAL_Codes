@@ -1,0 +1,237 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: netio_init/3
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+tcp_accept/14 (tcp_accept) @06c86e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_init/3 
+  Calls: 
+tcp_listen_with_backlog/13 (tcp_listen_with_backlog) @06c86d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_init/3 
+  Calls: 
+ip_addr_any_type/12 (ip_addr_any_type) @06c882d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: netio_init/3 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+tcp_bind/11 (tcp_bind) @06c86c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_init/3 
+  Calls: 
+tcp_new_ip_type/10 (tcp_new_ip_type) @06c86b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_init/3 
+  Calls: 
+tcp_close/9 (tcp_close) @06c868c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_recv/1 
+  Calls: 
+tcp_recv/8 (tcp_recv) @06c867e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_recv/1 netio_accept/2 
+  Calls: 
+tcp_sent/7 (tcp_sent) @06c86700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_recv/1 netio_accept/2 
+  Calls: 
+tcp_arg/6 (tcp_arg) @06c86620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_recv/1 netio_accept/2 
+  Calls: 
+pbuf_free/5 (pbuf_free) @06c86540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_recv/1 netio_recv/1 
+  Calls: 
+tcp_recved/4 (tcp_recved) @06c86460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: netio_recv/1 
+  Calls: 
+netio_init/3 (netio_init) @06c86000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: ip_addr_any_type/12 (addr) netio_accept/2 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_accept/14 tcp_listen_with_backlog/13 tcp_bind/11 tcp_new_ip_type/10 
+netio_accept/2 (netio_accept) @06c80e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: netio_recv/1 (addr) 
+  Referring: netio_init/3 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_recv/8 tcp_sent/7 tcp_arg/6 
+netio_recv/1 (netio_recv) @06c80b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: netio_accept/2 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: tcp_close/9 tcp_recv/8 tcp_sent/7 tcp_arg/6 pbuf_free/5 pbuf_free/5 tcp_recved/4 
+netio_init ()
+{
+  struct tcp_pcb * pcb;
+
+  <bb 2> :
+  pcb_3 = tcp_new_ip_type (46);
+  tcp_bind (pcb_3, &ip_addr_any_type, 18767);
+  pcb_6 = tcp_listen_with_backlog (pcb_3, 255);
+  tcp_accept (pcb_6, netio_accept);
+  return;
+
+}
+
+
+netio_accept (void * arg, struct tcp_pcb * pcb, err_t err)
+{
+  err_t D.7460;
+  err_t _7;
+
+  <bb 2> :
+  if (pcb_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  tcp_arg (pcb_2(D), 0B);
+  tcp_sent (pcb_2(D), 0B);
+  tcp_recv (pcb_2(D), netio_recv);
+
+  <bb 4> :
+  _7 = 0;
+
+  <bb 5> :
+<L2>:
+  return _7;
+
+}
+
+
+netio_recv (void * arg, struct tcp_pcb * pcb, struct pbuf * p, err_t err)
+{
+  err_t D.7456;
+  short unsigned int _1;
+  err_t _15;
+
+  <bb 2> :
+  if (err_4(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  if (p_5(D) != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 = p_5(D)->tot_len;
+  tcp_recved (pcb_7(D), _1);
+  pbuf_free (p_5(D));
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  pbuf_free (p_5(D));
+
+  <bb 6> :
+  if (err_4(D) == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (p_5(D) == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  tcp_arg (pcb_7(D), 0B);
+  tcp_sent (pcb_7(D), 0B);
+  tcp_recv (pcb_7(D), 0B);
+  tcp_close (pcb_7(D));
+
+  <bb 9> :
+  _15 = 0;
+
+  <bb 10> :
+<L8>:
+  return _15;
+
+}
+
+

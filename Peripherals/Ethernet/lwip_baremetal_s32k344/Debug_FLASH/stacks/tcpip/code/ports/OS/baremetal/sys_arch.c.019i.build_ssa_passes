@@ -1,0 +1,37 @@
+sys_now ()
+{
+  u32_t D.6706;
+
+  <bb 2> :
+  D.6706 = sys_jiffies ();
+
+  <bb 3> :
+<L0>:
+  return D.6706;
+
+}
+
+
+sys_jiffies ()
+{
+  u32_t D.6704;
+
+  <bb 2> :
+  D.6704 = OsIf_GetMilliseconds ();
+
+  <bb 3> :
+<L0>:
+  return D.6704;
+
+}
+
+
+sys_init ()
+{
+  <bb 2> :
+  OsIf_Init (0B);
+  return;
+
+}
+
+
