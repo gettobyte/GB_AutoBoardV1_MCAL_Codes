@@ -351,9 +351,9 @@ int main(void)
 
   Lpspi_Ip_Init(&Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0_Instance_3);
 
-GB_ST7789_Init();
+//GB_ST7789_Init();
 
-// GB_ILI9341_Init();
+ GB_ILI9341_Init();
 //
 //	TestDelay(700000);
 //	ST7789_SetAddressWindow(ST7789_XStart,ST7789_YStart, ST7789_XEnd, ST7789_YEnd);
