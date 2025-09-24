@@ -213,7 +213,7 @@ const Adc_Sar_Ip_ConfigType ADC_2_VS_0 =
     0U, /* UsrGain */
     (boolean)FALSE, /* DmaEnable */
     ADC_SAR_IP_DMA_REQ_CLEAR_ON_ACK, /* DmaClearSource */
-    { 0x8U, 0x20U, 0x0U }, /* ChanMaskNormal */
+    { 0x8U, 0x0U, 0x0U }, /* ChanMaskNormal */
     { 0x0U, 0x0U, 0x0U }, /* ChanMaskInjected */
     0U, /* NumChannels */
     NULL_PTR, /* ChannelConfigsPtr */

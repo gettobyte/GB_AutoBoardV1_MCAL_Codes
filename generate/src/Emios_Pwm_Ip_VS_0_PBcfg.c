@@ -133,8 +133,56 @@ const Emios_Pwm_Ip_ChannelConfigType Emios_Pwm_Ip_VS_0_I0_Ch1 =
             /* .CbFunction */       NULL_PTR,
             /* .CbParameter */      NULL_PTR
                                 },
-    /* .PeriodCount */          3999U,
-    /* .DutyCycle */            2000U,
+    /* .PeriodCount */          1000U,
+    /* .DutyCycle */            100U,
+    /* .PhaseShift */           0U,
+    /* .DeadTime */             0U,
+    /* .TriggerPosition */      10U
+};
+
+/* Emios PWM mode configuration structure for PwmEmios_0/PwmEmiosChannels_1 */
+const Emios_Pwm_Ip_ChannelConfigType Emios_Pwm_Ip_VS_0_I0_Ch2 =
+{
+    /* .ChannelId */            2U,
+    /* .Mode */                 EMIOS_PWM_IP_MODE_OPWMB_FLAG,
+    /* .Timebase */             EMIOS_PWM_IP_BUS_BCDE,
+    /* .DebugMode */            (boolean)FALSE,
+    /* .OutputDisableSource */  EMIOS_PWM_IP_OUTPUT_DISABLE_NONE,
+    /* .InternalPs */           EMIOS_PWM_IP_CLOCK_DIV_1,
+    /* .InternalPsAlternate */  EMIOS_PWM_IP_CLOCK_DIV_1,
+    /* .InternalPsSrc */        EMIOS_PWM_IP_PS_SRC_MODULE_CLOCK,
+    /* .OutputPolarity */       EMIOS_PWM_IP_ACTIVE_HIGH,
+    /* .IrqMode */              EMIOS_PWM_IP_NOTIFICATION_DISABLED,
+    /* .UserCallback */         {
+            /* .CbFunction */       NULL_PTR,
+            /* .CbParameter */      NULL_PTR
+                                },
+    /* .PeriodCount */          1000U,
+    /* .DutyCycle */            5U,
+    /* .PhaseShift */           0U,
+    /* .DeadTime */             0U,
+    /* .TriggerPosition */      50U
+};
+
+/* Emios PWM mode configuration structure for PwmEmios_0/PwmEmiosChannels_2 */
+const Emios_Pwm_Ip_ChannelConfigType Emios_Pwm_Ip_VS_0_I0_Ch3 =
+{
+    /* .ChannelId */            3U,
+    /* .Mode */                 EMIOS_PWM_IP_MODE_OPWMB_FLAG,
+    /* .Timebase */             EMIOS_PWM_IP_BUS_BCDE,
+    /* .DebugMode */            (boolean)FALSE,
+    /* .OutputDisableSource */  EMIOS_PWM_IP_OUTPUT_DISABLE_NONE,
+    /* .InternalPs */           EMIOS_PWM_IP_CLOCK_DIV_1,
+    /* .InternalPsAlternate */  EMIOS_PWM_IP_CLOCK_DIV_1,
+    /* .InternalPsSrc */        EMIOS_PWM_IP_PS_SRC_MODULE_CLOCK,
+    /* .OutputPolarity */       EMIOS_PWM_IP_ACTIVE_HIGH,
+    /* .IrqMode */              EMIOS_PWM_IP_NOTIFICATION_DISABLED,
+    /* .UserCallback */         {
+            /* .CbFunction */       NULL_PTR,
+            /* .CbParameter */      NULL_PTR
+                                },
+    /* .PeriodCount */          1000U,
+    /* .DutyCycle */            500U,
     /* .PhaseShift */           0U,
     /* .DeadTime */             0U,
     /* .TriggerPosition */      0U

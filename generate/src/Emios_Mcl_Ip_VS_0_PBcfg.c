@@ -114,11 +114,11 @@ const Emios_Ip_MasterBusConfigType Emios_Mcl_Ip_0_MasterBusConfig_VS_0[1U] =
         /** @brief Master bus mode for use. */
         EMIOS_IP_MCB_UP_COUNTER,
         /** @brief  Default period */
-        (uint32) 3999U,
+        (uint32) 1000U,
         /** @brief  Offset at start. */
         (uint32) 0U,
         /** @brief  Prescaler value */
-        (uint8) 0U,
+        (uint8) 3U,
         /** @brief  Alternate prescaler value */
         (uint8) 0U,
         /** @brief  Channel Allow Debug Mode */
@@ -138,7 +138,7 @@ const Emios_Ip_GlobalConfigType Emios_Ip_0_GlobalConfig_VS_0 =
     /** @brief  Allow Debug Mode */
     (boolean)TRUE,
     /** @brief  Clock Divider Value */
-    (uint8) 0U,
+    (uint8) 79U,
     /** @brief  Enable Global Time Base */
     (boolean)TRUE
 };

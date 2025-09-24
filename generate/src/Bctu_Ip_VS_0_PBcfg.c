@@ -96,25 +96,16 @@ extern "C"{
 #define ADC_START_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Adc_MemMap.h"
 
-static const Bctu_Ip_TrigConfigType BctuHwUnit_0_aTrigConfigPB_VS_0[2] =
+static const Bctu_Ip_TrigConfigType BctuHwUnit_0_aTrigConfigPB_VS_0[1] =
 {
     {
-        0U, /* TrigIndex - BCTU_EMIOS_0_0 */
-        (boolean)FALSE, /* LoopEn */
-        BCTU_IP_DATA_DEST_FIFO2, /* DataDest */
-        (boolean)TRUE, /* HwTriggersEn */
-        BCTU_IP_TRIG_TYPE_LIST, /* TrigType */
-        2U, /* AdcTargetMask */
-        0U /* AdcChanOrListStart - Start index in BCTU LIST, because trigger is configured in LIST mode */
-    },
-    {
-        8U, /* TrigIndex - BCTU_EMIOS_0_8 */
+        2U, /* TrigIndex - BCTU_EMIOS_0_2 */
         (boolean)FALSE, /* LoopEn */
         BCTU_IP_DATA_DEST_FIFO1, /* DataDest */
         (boolean)TRUE, /* HwTriggersEn */
         BCTU_IP_TRIG_TYPE_LIST, /* TrigType */
-        4U, /* AdcTargetMask */
-        1U /* AdcChanOrListStart - Start index in BCTU LIST, because trigger is configured in LIST mode */
+        2U, /* AdcTargetMask */
+        0U /* AdcChanOrListStart - Start index in BCTU LIST, because trigger is configured in LIST mode */
     }
 };
 
@@ -127,39 +118,27 @@ static const Bctu_Ip_ListItemConfigType BctuHwUnit_0_aItemConfigPB_VS_0[3] =
     },
     { /* Command List Index: 1 - BctuListItems_1 */
         (boolean)FALSE, /* NextChanWaitOnTrig */
-        3U, /* AdcChanIndex */
+        49U, /* AdcChanIndex */
         (boolean)FALSE /* LastChanInList */
     },
     { /* Command List Index: 2 - BctuListItems_2 */
         (boolean)FALSE, /* NextChanWaitOnTrig */
-        37U, /* AdcChanIndex */
+        55U, /* AdcChanIndex */
         (boolean)TRUE /* LastChanInList */
     }
 };
 
-static const Bctu_Ip_FifoConfigType BctuHwUnit_0_aFifoConfigPB_VS_0[2] =
+static const Bctu_Ip_FifoConfigType BctuHwUnit_0_aFifoConfigPB_VS_0[1] =
 {
     /* Configuration for FIFO_1 */
     {
         0U, /* FifoIndex */
-        1U, /* WatermarkValue */
+        3U, /* WatermarkValue */
         (boolean)FALSE, /* FifoDmaEnable */
         0U, /* FifoDmaChannel */
         NULL_PTR, /* UserFifoBuffer */
         (boolean)TRUE, /* bEnNotif */
         Fifo1Watermark, /* WatermarkNotification */
-        NULL_PTR, /* UnderrunNotification */
-        NULL_PTR /* OverrunNotification */
-    },
-    /* Configuration for FIFO_2 */
-    {
-        1U, /* FifoIndex */
-        0U, /* WatermarkValue */
-        (boolean)FALSE, /* FifoDmaEnable */
-        0U, /* FifoDmaChannel */
-        NULL_PTR, /* UserFifoBuffer */
-        (boolean)TRUE, /* bEnNotif */
-        Fifo2Watermark, /* WatermarkNotification */
         NULL_PTR, /* UnderrunNotification */
         NULL_PTR /* OverrunNotification */
     }
@@ -186,11 +165,11 @@ const Bctu_Ip_ConfigType BctuHwUnit_0_VS_0 =
     0U, /* NewDataDmaEnMask */
     Check, /* TriggerNotification */
     { { NULL_PTR, NULL_PTR, NULL_PTR }, { NULL_PTR, NULL_PTR, NULL_PTR }, { NULL_PTR, NULL_PTR, NULL_PTR } }, /* AdcNotifications */
-    2U, /* NumTrigConfigs */
+    1U, /* NumTrigConfigs */
     BctuHwUnit_0_aTrigConfigPB_VS_0, /* TrigConfigs */
     3U, /* NumListItems */
     BctuHwUnit_0_aItemConfigPB_VS_0, /* ListItemConfigs */
-    2U, /* NumFifoConfigs */
+    1U, /* NumFifoConfigs */
     BctuHwUnit_0_aFifoConfigPB_VS_0 /* FifoConfigs */
 };
 

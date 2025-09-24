@@ -3,23 +3,23 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.10377;
+  int D.10378;
   <unnamed type> _1;
   <unnamed type> _2;
   <unnamed type> _3;
-  unsigned char Index.4_4;
-  int exit_code.5_5;
-  int _33;
+  unsigned char Index.3_4;
+  int exit_code.4_5;
+  int _38;
 
   <bb 2> :
   clockStatus_13 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
   goto <bb 4>; [INV]
 
   <bb 3> :
-  clockStatus_35 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
+  clockStatus_40 = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
 
   <bb 4> :
-  # clockStatus_7 = PHI <clockStatus_13(2), clockStatus_35(3)>
+  # clockStatus_7 = PHI <clockStatus_13(2), clockStatus_40(3)>
   if (clockStatus_7 != 0)
     goto <bb 3>; [INV]
   else
@@ -40,17 +40,19 @@ main ()
     goto <bb 7>; [INV]
 
   <bb 7> :
-  IntCtrl_Ip_InstallHandler (180, Adc_Sar_0_Isr, 0B);
+  IntCtrl_Ip_InstallHandler (181, Adc_Sar_1_Isr, 0B);
+  IntCtrl_Ip_InstallHandler (182, Adc_Sar_2_Isr, 0B);
   IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
-  IntCtrl_Ip_EnableIrq (180);
+  IntCtrl_Ip_EnableIrq (181);
+  IntCtrl_Ip_EnableIrq (182);
   IntCtrl_Ip_EnableIrq (87);
-  Index_24 = 0;
+  Index_26 = 0;
   goto <bb 11>; [INV]
 
   <bb 8> :
   _3 = Adc_Sar_Ip_DoCalibration (1);
-  status_26 = (StatusType) _3;
-  if (status_26 == 0)
+  status_28 = (StatusType) _3;
+  if (status_28 == 0)
     goto <bb 9>; [INV]
   else
     goto <bb 10>; [INV]
@@ -59,11 +61,11 @@ main ()
   goto <bb 12>; [INV]
 
   <bb 10> :
-  Index.4_4 = Index_6;
-  Index_27 = Index.4_4 + 1;
+  Index.3_4 = Index_6;
+  Index_29 = Index.3_4 + 1;
 
   <bb 11> :
-  # Index_6 = PHI <Index_24(7), Index_27(10)>
+  # Index_6 = PHI <Index_26(7), Index_29(10)>
   if (Index_6 <= 5)
     goto <bb 8>; [INV]
   else
@@ -71,14 +73,17 @@ main ()
 
   <bb 12> :
   Adc_Sar_Ip_EnableNotifications (1, 1);
+  Adc_Sar_Ip_EnableNotifications (2, 1);
   Bctu_Ip_SetGlobalTriggerEn (0, 1);
   Bctu_Ip_EnableNotifications (0, 1);
   Emios_Mcl_Ip_Init (0, &Emios_Mcl_Ip_0_Config_VS_0);
   Emios_Pwm_Ip_InitChannel (0, &Emios_Pwm_Ip_VS_0_I0_Ch1);
+  Emios_Pwm_Ip_InitChannel (0, &Emios_Pwm_Ip_VS_0_I0_Ch2);
+  Emios_Pwm_Ip_InitChannel (0, &Emios_Pwm_Ip_VS_0_I0_Ch3);
 
   <bb 13> :
-  exit_code.5_5 ={v} exit_code;
-  if (exit_code.5_5 != 0)
+  exit_code.4_5 ={v} exit_code;
+  if (exit_code.4_5 != 0)
     goto <bb 14>; [INV]
   else
     goto <bb 15>; [INV]
@@ -90,28 +95,11 @@ main ()
   goto <bb 13>; [INV]
 
   <bb 16> :
-  _33 ={v} exit_code;
+  _38 ={v} exit_code;
 
   <bb 17> :
 <L15>:
-  return _33;
-
-}
-
-
-Fifo2Watermark ()
-{
-  uint8 idx;
-  int _1;
-  short unsigned int _2;
-
-  <bb 2> :
-  idx_3 = 0;
-  notif_triggered ={v} 1;
-  _1 = (int) idx_3;
-  _2 = Bctu_Ip_GetFifoData (0, 1);
-  data1[_1] ={v} _2;
-  return;
+  return _38;
 
 }
 
@@ -119,21 +107,22 @@ Fifo2Watermark ()
 Fifo1Watermark ()
 {
   uint8 idx;
-  int _1;
-  short unsigned int _2;
-  unsigned char idx.3_3;
+  unsigned char idx.2_1;
+  int _2;
+  short unsigned int _3;
 
   <bb 2> :
-  idx_6 = 2;
+  idx_6 = 3;
   notif_triggered ={v} 1;
+  Siul2_Dio_Ip_WritePin (1076434700B, 15, 1);
   goto <bb 4>; [INV]
 
   <bb 3> :
-  _1 = (int) idx_4;
-  _2 = Bctu_Ip_GetFifoData (0, 0);
-  data1[_1] ={v} _2;
-  idx.3_3 = idx_4;
-  idx_11 = idx.3_3 + 255;
+  idx.2_1 = idx_4;
+  idx_11 = idx.2_1 + 255;
+  _2 = (int) idx.2_1;
+  _3 = Bctu_Ip_GetFifoData (0, 0);
+  data1[_2] ={v} _3;
 
   <bb 4> :
   # idx_4 = PHI <idx_6(2), idx_11(3)>
@@ -143,42 +132,13 @@ Fifo1Watermark ()
     goto <bb 5>; [INV]
 
   <bb 5> :
+  Siul2_Dio_Ip_WritePin (1076434700B, 15, 0);
   return;
 
 }
 
 
 Adc2EndOfChainNotif ()
-{
-  short unsigned int _1;
-  short unsigned int _2;
-  short unsigned int data.2_3;
-
-  <bb 2> :
-  notif_triggered ={v} 1;
-  _1 = Adc_Sar_Ip_GetConvData (1, 4);
-  data ={v} _1;
-  goto <bb 4>; [INV]
-
-  <bb 3> :
-  _2 = Adc_Sar_Ip_GetConvData (1, 4);
-  data ={v} _2;
-  Adc_Sar_Ip_StartConversion (1, 0);
-
-  <bb 4> :
-  data.2_3 ={v} data;
-  if (data.2_3 <= 2999)
-    goto <bb 3>; [INV]
-  else
-    goto <bb 5>; [INV]
-
-  <bb 5> :
-  return;
-
-}
-
-
-Adc1EndOfChainNotif ()
 {
   short unsigned int _1;
   short unsigned int _2;
@@ -208,17 +168,41 @@ Adc1EndOfChainNotif ()
 }
 
 
-Check ()
+Adc1EndOfChainNotif ()
 {
-  long unsigned int eMIOS_count.0_1;
-  long unsigned int _2;
+  short unsigned int _1;
+  short unsigned int _2;
+  short unsigned int data.0_3;
 
   <bb 2> :
-  eMIOS_count.0_1 ={v} eMIOS_count;
-  _2 = eMIOS_count.0_1 + 1;
-  eMIOS_count ={v} _2;
-  Siul2_Dio_Ip_TogglePins (1076434700B, 2048);
-  Siul2_Dio_Ip_TogglePins (1076434700B, 2048);
+  notif_triggered ={v} 1;
+  _1 = Adc_Sar_Ip_GetConvData (1, 4);
+  data ={v} _1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = Adc_Sar_Ip_GetConvData (1, 4);
+  data ={v} _2;
+  Adc_Sar_Ip_StartConversion (1, 0);
+
+  <bb 4> :
+  data.0_3 ={v} data;
+  if (data.0_3 <= 2999)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Check ()
+{
+  <bb 2> :
+  Siul2_Dio_Ip_WritePin (1076434700B, 11, 1);
+  Siul2_Dio_Ip_WritePin (1076434700B, 11, 0);
   return;
 
 }

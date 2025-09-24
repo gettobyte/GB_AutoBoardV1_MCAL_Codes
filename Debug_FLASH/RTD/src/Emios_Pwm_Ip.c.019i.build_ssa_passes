@@ -188,7 +188,7 @@ Emios_Pwm_Ip_GetMasterBusChannel (uint8 Instance, uint8 Channel)
   Emios_Pwm_Ip_CounterBusSourceType CounterBus;
   uint8 ChannelMaster;
   const struct Emios_Pwm_Ip_HwAddrType * const Base;
-  uint8 D.10287;
+  uint8 D.10289;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -218,11 +218,11 @@ Emios_Pwm_Ip_GetMasterBusChannel (uint8 Instance, uint8 Channel)
   ChannelMaster = Channel;
 
   <bb 7> :
-  D.10287 = ChannelMaster;
+  D.10289 = ChannelMaster;
 
   <bb 8> :
 <L5>:
-  return D.10287;
+  return D.10289;
 
 }
 
@@ -230,17 +230,17 @@ Emios_Pwm_Ip_GetMasterBusChannel (uint8 Instance, uint8 Channel)
 Emios_Pwm_Ip_GetChannelMode (uint8 Instance, uint8 Channel)
 {
   Emios_Pwm_Ip_PwmModeType ChannelMode;
-  Emios_Pwm_Ip_PwmModeType D.10285;
+  Emios_Pwm_Ip_PwmModeType D.10287;
 
   <bb 2> :
   _1 = (int) Instance;
   _2 = (int) Channel;
   ChannelMode = Emios_Pwm_Ip_aCurrentModes[_1][_2];
-  D.10285 = ChannelMode;
+  D.10287 = ChannelMode;
 
   <bb 3> :
 <L0>:
-  return D.10285;
+  return D.10287;
 
 }
 
@@ -392,7 +392,7 @@ Emios_Pwm_Ip_GetOutputState (uint8 Instance, uint8 Channel)
 {
   const struct Emios_Pwm_Ip_HwAddrType * const Base;
   Emios_Pwm_Ip_OutputStateType iftmp.14;
-  Emios_Pwm_Ip_OutputStateType D.10253;
+  Emios_Pwm_Ip_OutputStateType D.10255;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -412,11 +412,11 @@ Emios_Pwm_Ip_GetOutputState (uint8 Instance, uint8 Channel)
   iftmp.14 = 1;
 
   <bb 5> :
-  D.10253 = iftmp.14;
+  D.10255 = iftmp.14;
 
   <bb 6> :
 <L3>:
-  return D.10253;
+  return D.10255;
 
 }
 
@@ -484,7 +484,7 @@ Emios_Pwm_Ip_GetFlagRequest (uint8 Instance, uint8 Channel)
 {
   Emios_Pwm_Ip_InterruptType EventType;
   const struct Emios_Pwm_Ip_HwAddrType * const Base;
-  Emios_Pwm_Ip_InterruptType D.10245;
+  Emios_Pwm_Ip_InterruptType D.10247;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -511,11 +511,11 @@ Emios_Pwm_Ip_GetFlagRequest (uint8 Instance, uint8 Channel)
   EventType = 1;
 
   <bb 6> :
-  D.10245 = EventType;
+  D.10247 = EventType;
 
   <bb 7> :
 <L5>:
-  return D.10245;
+  return D.10247;
 
 }
 
@@ -539,7 +539,7 @@ Emios_Pwm_Ip_ChannelEnterDebugMode (uint8 Instance, uint8 Channel)
 {
   Emios_Pwm_Ip_StatusType Ret;
   struct Emios_Pwm_Ip_HwAddrType * const Base;
-  Emios_Pwm_Ip_StatusType D.10236;
+  Emios_Pwm_Ip_StatusType D.10238;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -561,11 +561,11 @@ Emios_Pwm_Ip_ChannelEnterDebugMode (uint8 Instance, uint8 Channel)
 
   <bb 5> :
   SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_21 ();
-  D.10236 = Ret;
+  D.10238 = Ret;
 
   <bb 6> :
 <L3>:
-  return D.10236;
+  return D.10238;
 
 }
 
@@ -608,17 +608,17 @@ Emios_Pwm_Ip_SetTriggerPlacement (uint8 Instance, uint8 Channel, uint32 NewTrigg
 Emios_Pwm_Ip_GetTriggerPlacement (uint8 Instance, uint8 Channel)
 {
   const struct Emios_Pwm_Ip_HwAddrType * const Base;
-  uint32 D.10226;
+  uint32 D.10228;
 
   <bb 2> :
   _1 = (int) Instance;
   Base = Emios_Pwm_Ip_aBasePtr[_1];
   _2 = Emios_Pwm_Ip_GetTrigger (Base, Channel);
-  D.10226 = (uint32) _2;
+  D.10228 = (uint32) _2;
 
   <bb 3> :
 <L0>:
-  return D.10226;
+  return D.10228;
 
 }
 
@@ -641,16 +641,16 @@ Emios_Pwm_Ip_SetDeadTime (uint8 Instance, uint8 Channel, uint16 NewDeadTime)
 Emios_Pwm_Ip_GetDeadTime (uint8 Instance, uint8 Channel)
 {
   const struct Emios_Pwm_Ip_HwAddrType * const Base;
-  uint16 D.10224;
+  uint16 D.10226;
 
   <bb 2> :
   _1 = (int) Instance;
   Base = Emios_Pwm_Ip_aBasePtr[_1];
-  D.10224 = Emios_Pwm_Ip_GetUCRegB (Base, Channel);
+  D.10226 = Emios_Pwm_Ip_GetUCRegB (Base, Channel);
 
   <bb 3> :
 <L0>:
-  return D.10224;
+  return D.10226;
 
 }
 
@@ -663,7 +663,7 @@ Emios_Pwm_Ip_SetPhaseShift (uint8 Instance, uint8 Channel, uint16 PhaseShift)
   Emios_Pwm_Ip_CounterBusSourceType CounterBus;
   struct Emios_Pwm_Ip_HwAddrType * const Base;
   Emios_Pwm_Ip_StatusType Status;
-  Emios_Pwm_Ip_StatusType D.10222;
+  Emios_Pwm_Ip_StatusType D.10224;
   uint8 iftmp.13;
 
   <bb 2> :
@@ -764,11 +764,11 @@ Emios_Pwm_Ip_SetPhaseShift (uint8 Instance, uint8 Channel, uint16 PhaseShift)
 
   <bb 15> :
   SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_18 ();
-  D.10222 = Status;
+  D.10224 = Status;
 
   <bb 16> :
 <L14>:
-  return D.10222;
+  return D.10224;
 
 }
 
@@ -776,16 +776,16 @@ Emios_Pwm_Ip_SetPhaseShift (uint8 Instance, uint8 Channel, uint16 PhaseShift)
 Emios_Pwm_Ip_GetPhaseShift (uint8 Instance, uint8 Channel)
 {
   const struct Emios_Pwm_Ip_HwAddrType * const Base;
-  uint16 D.10210;
+  uint16 D.10212;
 
   <bb 2> :
   _1 = (int) Instance;
   Base = Emios_Pwm_Ip_aBasePtr[_1];
-  D.10210 = Emios_Pwm_Ip_GetUCRegA (Base, Channel);
+  D.10212 = Emios_Pwm_Ip_GetUCRegA (Base, Channel);
 
   <bb 3> :
 <L0>:
-  return D.10210;
+  return D.10212;
 
 }
 
@@ -794,7 +794,7 @@ Emios_Pwm_Ip_SetDutyCycle (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
 {
   Emios_Pwm_Ip_PwmModeType ChMode;
   Emios_Pwm_Ip_StatusType Ret;
-  Emios_Pwm_Ip_StatusType D.10127;
+  Emios_Pwm_Ip_StatusType D.10129;
   Emios_Pwm_Ip_PwmModeType iftmp.10;
 
   <bb 2> :
@@ -855,11 +855,11 @@ Emios_Pwm_Ip_SetDutyCycle (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
 
   <bb 12> :
   SchM_Exit_Pwm_PWM_EXCLUSIVE_AREA_17 ();
-  D.10127 = Ret;
+  D.10129 = Ret;
 
   <bb 13> :
 <L16>:
-  return D.10127;
+  return D.10129;
 
 }
 
@@ -867,17 +867,17 @@ Emios_Pwm_Ip_SetDutyCycle (uint8 Instance, uint8 Channel, uint16 NewDutyCycle)
 Emios_Pwm_Ip_GetDutyCycle (uint8 Instance, uint8 Channel)
 {
   uint16 DutyCycle;
-  uint16 D.10121;
+  uint16 D.10123;
 
   <bb 2> :
   _1 = (int) Instance;
   _2 = (int) Channel;
   DutyCycle = Emios_Pwm_Ip_aDutyCycle[_1][_2];
-  D.10121 = DutyCycle;
+  D.10123 = DutyCycle;
 
   <bb 3> :
 <L0>:
-  return D.10121;
+  return D.10123;
 
 }
 
@@ -913,7 +913,7 @@ Emios_Pwm_Ip_GetPeriod (uint8 Instance, uint8 Channel)
   uint16 ChPeriod;
   Emios_Pwm_Ip_PwmModeType ChMode;
   const struct Emios_Pwm_Ip_HwAddrType * const Base;
-  uint16 D.10114;
+  uint16 D.10116;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -1031,11 +1031,11 @@ Emios_Pwm_Ip_GetPeriod (uint8 Instance, uint8 Channel)
   ChPeriod = 0;
 
   <bb 21> :
-  D.10114 = ChPeriod;
+  D.10116 = ChPeriod;
 
   <bb 22> :
 <L22>:
-  return D.10114;
+  return D.10116;
 
 }
 
@@ -1302,7 +1302,7 @@ Emios_Pwm_Ip_SetDutyCycleDaoc (uint8 Instance, uint8 Channel, uint16 NewDutyCycl
   uint16 DaocRegA;
   Emios_Pwm_Ip_StatusType Ret;
   struct Emios_Pwm_Ip_HwAddrType * const Base;
-  Emios_Pwm_Ip_StatusType D.10197;
+  Emios_Pwm_Ip_StatusType D.10199;
   uint16 iftmp.12;
   uint16 iftmp.11;
 
@@ -1487,11 +1487,11 @@ Emios_Pwm_Ip_SetDutyCycleDaoc (uint8 Instance, uint8 Channel, uint16 NewDutyCycl
   Emios_Pwm_Ip_aNotif[_60][_61] = 0;
 
   <bb 23> :
-  D.10197 = Ret;
+  D.10199 = Ret;
 
   <bb 24> :
 <L23>:
-  return D.10197;
+  return D.10199;
 
 }
 
@@ -1709,7 +1709,7 @@ Emios_Pwm_Ip_SetDutyCycleOpwmt (uint8 Instance, uint8 Channel, uint16 NewDutyCyc
   uint16 ChPeriod;
   Emios_Pwm_Ip_StatusType Ret;
   struct Emios_Pwm_Ip_HwAddrType * const Base;
-  Emios_Pwm_Ip_StatusType D.10208;
+  Emios_Pwm_Ip_StatusType D.10210;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -1784,11 +1784,11 @@ Emios_Pwm_Ip_SetDutyCycleOpwmt (uint8 Instance, uint8 Channel, uint16 NewDutyCyc
   _26 = (int) Instance;
   _27 = (int) Channel;
   Emios_Pwm_Ip_aDutyCycle[_26][_27] = NewDutyCycle;
-  D.10208 = Ret;
+  D.10210 = Ret;
 
   <bb 10> :
 <L9>:
-  return D.10208;
+  return D.10210;
 
 }
 
@@ -1934,7 +1934,7 @@ Emios_Pwm_Ip_SetDutyCycleOpwmb (uint8 Instance, uint8 Channel, uint16 NewDutyCyc
   uint16 ChPeriod;
   Emios_Pwm_Ip_StatusType Ret;
   struct Emios_Pwm_Ip_HwAddrType * const Base;
-  Emios_Pwm_Ip_StatusType D.10170;
+  Emios_Pwm_Ip_StatusType D.10172;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -2007,11 +2007,11 @@ Emios_Pwm_Ip_SetDutyCycleOpwmb (uint8 Instance, uint8 Channel, uint16 NewDutyCyc
   _24 = (int) Instance;
   _25 = (int) Channel;
   Emios_Pwm_Ip_aDutyCycle[_24][_25] = NewDutyCycle;
-  D.10170 = Ret;
+  D.10172 = Ret;
 
   <bb 11> :
 <L9>:
-  return D.10170;
+  return D.10172;
 
 }
 
@@ -2102,7 +2102,7 @@ Emios_Pwm_Ip_SetDutyCycleOpwmcb (uint8 Instance, uint8 Channel, uint16 NewDutyCy
   uint16 ChPeriod;
   Emios_Pwm_Ip_StatusType Ret;
   struct Emios_Pwm_Ip_HwAddrType * const Base;
-  Emios_Pwm_Ip_StatusType D.10159;
+  Emios_Pwm_Ip_StatusType D.10161;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -2207,11 +2207,11 @@ Emios_Pwm_Ip_SetDutyCycleOpwmcb (uint8 Instance, uint8 Channel, uint16 NewDutyCy
   _31 = (int) Instance;
   _32 = (int) Channel;
   Emios_Pwm_Ip_aDutyCycle[_31][_32] = NewDutyCycle;
-  D.10159 = Ret;
+  D.10161 = Ret;
 
   <bb 15> :
 <L15>:
-  return D.10159;
+  return D.10161;
 
 }
 
@@ -2327,7 +2327,7 @@ Emios_Pwm_Ip_SetDutyCycleOpwfmb (uint8 Instance, uint8 Channel, uint16 NewDutyCy
 {
   Emios_Pwm_Ip_StatusType Ret;
   struct Emios_Pwm_Ip_HwAddrType * const Base;
-  Emios_Pwm_Ip_StatusType D.10142;
+  Emios_Pwm_Ip_StatusType D.10144;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -2420,11 +2420,11 @@ Emios_Pwm_Ip_SetDutyCycleOpwfmb (uint8 Instance, uint8 Channel, uint16 NewDutyCy
   _26 = (int) Instance;
   _27 = (int) Channel;
   Emios_Pwm_Ip_aDutyCycle[_26][_27] = NewDutyCycle;
-  D.10142 = Ret;
+  D.10144 = Ret;
 
   <bb 14> :
 <L13>:
-  return D.10142;
+  return D.10144;
 
 }
 
@@ -2507,7 +2507,7 @@ Emios_Pwm_Ip_GetCounterBusMode (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_Coun
 {
   Emios_Pwm_Ip_MasterBusModeType CounterBusMode;
   const struct Emios_Pwm_Ip_HwAddrType * const Base;
-  Emios_Pwm_Ip_MasterBusModeType D.10015;
+  Emios_Pwm_Ip_MasterBusModeType D.10017;
 
   <bb 2> :
   _1 = (int) Instance;
@@ -2536,11 +2536,11 @@ Emios_Pwm_Ip_GetCounterBusMode (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_Coun
   CounterBusMode = 0;
 
   <bb 7> :
-  D.10015 = CounterBusMode;
+  D.10017 = CounterBusMode;
 
   <bb 8> :
 <L5>:
-  return D.10015;
+  return D.10017;
 
 }
 
@@ -2549,17 +2549,17 @@ Emios_Pwm_Ip_GetCounterBusPeriod (uint8 Instance, uint8 Channel, Emios_Pwm_Ip_Co
 {
   uint8 MasterBusCh;
   uint16 ChPeriod;
-  uint16 D.9992;
+  uint16 D.9994;
 
   <bb 2> :
   ChPeriod = 0;
   MasterBusCh = Emios_Pwm_Ip_GetTimebaseChannel (Channel, CounterBus);
   ChPeriod = Emios_Mcl_Ip_GetCounterBusPeriod (Instance, MasterBusCh);
-  D.9992 = ChPeriod;
+  D.9994 = ChPeriod;
 
   <bb 3> :
 <L0>:
-  return D.9992;
+  return D.9994;
 
 }
 
@@ -2598,16 +2598,16 @@ Emios_Pwm_Ip_SetExtendedPrescaler (struct Emios_Pwm_Ip_HwAddrType * const Base, 
 
 Emios_Pwm_Ip_GetTrigger (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  uint16 D.10228;
+  uint16 D.10230;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].ALTA;
-  D.10228 = (uint16) _2;
+  D.10230 = (uint16) _2;
 
   <bb 3> :
 <L0>:
-  return D.10228;
+  return D.10230;
 
 }
 
@@ -2642,17 +2642,17 @@ Emios_Pwm_Ip_ClearFlagEvent (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 
 
 Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  boolean D.10259;
+  boolean D.10261;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].S;
   _3 = _2 & 2;
-  D.10259 = _3 != 0;
+  D.10261 = _3 != 0;
 
   <bb 3> :
 <L0>:
-  return D.10259;
+  return D.10261;
 
 }
 
@@ -2660,7 +2660,7 @@ Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Bas
 Emios_Pwm_Ip_GetChannelPwmMode (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
   Emios_Pwm_Ip_MasterBusModeType MasterBusMode;
-  Emios_Pwm_Ip_MasterBusModeType D.10017;
+  Emios_Pwm_Ip_MasterBusModeType D.10019;
 
   <bb 2> :
   _1 = (int) Channel;
@@ -2698,11 +2698,11 @@ Emios_Pwm_Ip_GetChannelPwmMode (const struct Emios_Pwm_Ip_HwAddrType * const Bas
   MasterBusMode = 0;
 
   <bb 9> :
-  D.10017 = MasterBusMode;
+  D.10019 = MasterBusMode;
 
   <bb 10> :
 <L7>:
-  return D.10017;
+  return D.10019;
 
 }
 
@@ -2759,7 +2759,7 @@ Emios_Pwm_Ip_SetEdgePolarity (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8
 Emios_Pwm_Ip_GetTimebaseChannel (uint8 Channel, Emios_Pwm_Ip_CounterBusSourceType Value)
 {
   uint8 TimbaseChannel;
-  uint8 D.9994;
+  uint8 D.9996;
 
   <bb 2> :
   switch (Value) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L2> [INV], case 2: <L1> [INV]>
@@ -2784,11 +2784,11 @@ Emios_Pwm_Ip_GetTimebaseChannel (uint8 Channel, Emios_Pwm_Ip_CounterBusSourceTyp
   TimbaseChannel = 255;
 
   <bb 7> :
-  D.9994 = TimbaseChannel;
+  D.9996 = TimbaseChannel;
 
   <bb 8> :
 <L5>:
-  return D.9994;
+  return D.9996;
 
 }
 
@@ -2796,7 +2796,7 @@ Emios_Pwm_Ip_GetTimebaseChannel (uint8 Channel, Emios_Pwm_Ip_CounterBusSourceTyp
 Emios_Pwm_Ip_GetCounterBus (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
   Emios_Pwm_Ip_CounterBusSourceType CounterBus;
-  Emios_Pwm_Ip_CounterBusSourceType D.10090;
+  Emios_Pwm_Ip_CounterBusSourceType D.10092;
 
   <bb 2> :
   _1 = (int) Channel;
@@ -2825,11 +2825,11 @@ Emios_Pwm_Ip_GetCounterBus (const struct Emios_Pwm_Ip_HwAddrType * const Base, u
   CounterBus = 3;
 
   <bb 7> :
-  D.10090 = CounterBus;
+  D.10092 = CounterBus;
 
   <bb 8> :
 <L5>:
-  return D.10090;
+  return D.10092;
 
 }
 
@@ -2922,17 +2922,17 @@ Emios_Pwm_Ip_SetForceMatchA (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 
 
 Emios_Pwm_Ip_GetInterruptRequest (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  boolean D.10247;
+  boolean D.10249;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].C;
   _3 = _2 & 131072;
-  D.10247 = _3 != 0;
+  D.10249 = _3 != 0;
 
   <bb 3> :
 <L0>:
-  return D.10247;
+  return D.10249;
 
 }
 
@@ -2974,17 +2974,17 @@ Emios_Pwm_Ip_SetInterruptRequest (struct Emios_Pwm_Ip_HwAddrType * const Base, u
 
 Emios_Pwm_Ip_GetDMARequest (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  boolean D.10249;
+  boolean D.10251;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].C;
   _3 = _2 & 16777216;
-  D.10249 = _3 != 0;
+  D.10251 = _3 != 0;
 
   <bb 3> :
 <L0>:
-  return D.10249;
+  return D.10251;
 
 }
 
@@ -3146,16 +3146,16 @@ Emios_Pwm_Ip_SetFreezeEnable (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8
 
 Emios_Pwm_Ip_GetUCRegB (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  uint16 D.10116;
+  uint16 D.10118;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].B;
-  D.10116 = (uint16) _2;
+  D.10118 = (uint16) _2;
 
   <bb 3> :
 <L0>:
-  return D.10116;
+  return D.10118;
 
 }
 
@@ -3173,16 +3173,16 @@ Emios_Pwm_Ip_SetUCRegB (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Chann
 
 Emios_Pwm_Ip_GetUCRegA (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  uint16 D.10048;
+  uint16 D.10050;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].A;
-  D.10048 = (uint16) _2;
+  D.10050 = (uint16) _2;
 
   <bb 3> :
 <L0>:
-  return D.10048;
+  return D.10050;
 
 }
 
@@ -3200,14 +3200,14 @@ Emios_Pwm_Ip_SetUCRegA (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Chann
 
 Emios_Pwm_Ip_GetOutputUpdateInstance (const struct Emios_Pwm_Ip_HwAddrType * const Base)
 {
-  uint32 D.10302;
+  uint32 D.10304;
 
   <bb 2> :
-  D.10302 = Base->OUDIS;
+  D.10304 = Base->OUDIS;
 
   <bb 3> :
 <L0>:
-  return D.10302;
+  return D.10304;
 
 }
 
@@ -3229,16 +3229,16 @@ Emios_Pwm_Ip_SetOutputUpdate (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8
 
 Emios_Pwm_Ip_GetDebugMode (const struct Emios_Pwm_Ip_HwAddrType * const Base)
 {
-  boolean D.10238;
+  boolean D.10240;
 
   <bb 2> :
   _1 = Base->MCR;
   _2 = _1 & 536870912;
-  D.10238 = _2 != 0;
+  D.10240 = _2 != 0;
 
   <bb 3> :
 <L0>:
-  return D.10238;
+  return D.10240;
 
 }
 

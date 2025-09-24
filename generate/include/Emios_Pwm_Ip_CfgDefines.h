@@ -85,6 +85,16 @@ extern "C"{
 #else
     #error "EMIOS_0_CH_1 channel cannot be used by Pwm. Channel locked by another driver!"
 #endif
+#ifndef EMIOS_0_CH_2_USED
+    #define EMIOS_0_CH_2_USED
+#else
+    #error "EMIOS_0_CH_2 channel cannot be used by Pwm. Channel locked by another driver!"
+#endif
+#ifndef EMIOS_0_CH_3_USED
+    #define EMIOS_0_CH_3_USED
+#else
+    #error "EMIOS_0_CH_3 channel cannot be used by Pwm. Channel locked by another driver!"
+#endif
 
 
 /*==================================================================================================

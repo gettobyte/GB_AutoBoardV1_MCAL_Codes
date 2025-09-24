@@ -13,7 +13,7 @@ Reclaiming variables:
 Clearing address taken flags:
 Symbol table:
 
-__INT_SRAM_START/23 (__INT_SRAM_START) @060ba708
+__INT_SRAM_START/23 (__INT_SRAM_START) @06c7a798
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -21,7 +21,7 @@ __INT_SRAM_START/23 (__INT_SRAM_START) @060ba708
   Referring: IntCtrl_Ip_InstallHandlerPrivileged/1 (addr) 
   Availability: not_available
   Varpool flags:
-IntCtrl_Ip_SetTargetCores/22 (IntCtrl_Ip_SetTargetCores) @060bd2a0
+IntCtrl_Ip_SetTargetCores/22 (IntCtrl_Ip_SetTargetCores) @06c7d540
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -30,7 +30,7 @@ IntCtrl_Ip_SetTargetCores/22 (IntCtrl_Ip_SetTargetCores) @060bd2a0
   Function flags: body
   Called by: IntCtrl_Ip_ConfigIrqRouting/12 
   Calls: IntCtrl_Ip_SetTargetCoresPrivileged/10 
-IntCtrl_Ip_GetActive/21 (IntCtrl_Ip_GetActive) @060bd000
+IntCtrl_Ip_GetActive/21 (IntCtrl_Ip_GetActive) @06c7d2a0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -39,7 +39,7 @@ IntCtrl_Ip_GetActive/21 (IntCtrl_Ip_GetActive) @060bd000
   Function flags: body
   Called by: 
   Calls: IntCtrl_Ip_GetActivePrivileged/9 
-IntCtrl_Ip_GetPending/20 (IntCtrl_Ip_GetPending) @060b8b60
+IntCtrl_Ip_GetPending/20 (IntCtrl_Ip_GetPending) @06c7d000
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -48,7 +48,7 @@ IntCtrl_Ip_GetPending/20 (IntCtrl_Ip_GetPending) @060b8b60
   Function flags: body
   Called by: 
   Calls: IntCtrl_Ip_GetPendingPrivileged/8 
-IntCtrl_Ip_SetPending/19 (IntCtrl_Ip_SetPending) @060b8620
+IntCtrl_Ip_SetPending/19 (IntCtrl_Ip_SetPending) @06c78b60
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -57,7 +57,7 @@ IntCtrl_Ip_SetPending/19 (IntCtrl_Ip_SetPending) @060b8620
   Function flags: body
   Called by: 
   Calls: IntCtrl_Ip_SetPendingPrivileged/7 
-IntCtrl_Ip_ClearPending/18 (IntCtrl_Ip_ClearPending) @060b8000
+IntCtrl_Ip_ClearPending/18 (IntCtrl_Ip_ClearPending) @06c78620
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -66,7 +66,7 @@ IntCtrl_Ip_ClearPending/18 (IntCtrl_Ip_ClearPending) @060b8000
   Function flags: body
   Called by: IntCtrl_Ip_Init/11 
   Calls: IntCtrl_Ip_ClearPendingPrivileged/6 
-IntCtrl_Ip_GetPriority/17 (IntCtrl_Ip_GetPriority) @060b8d20
+IntCtrl_Ip_GetPriority/17 (IntCtrl_Ip_GetPriority) @06c78000
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -75,7 +75,7 @@ IntCtrl_Ip_GetPriority/17 (IntCtrl_Ip_GetPriority) @060b8d20
   Function flags: body
   Called by: 
   Calls: IntCtrl_Ip_GetPriorityPrivileged/5 
-IntCtrl_Ip_SetPriority/16 (IntCtrl_Ip_SetPriority) @060b8a80
+IntCtrl_Ip_SetPriority/16 (IntCtrl_Ip_SetPriority) @06c78d20
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -84,7 +84,7 @@ IntCtrl_Ip_SetPriority/16 (IntCtrl_Ip_SetPriority) @060b8a80
   Function flags: body
   Called by: IntCtrl_Ip_Init/11 
   Calls: IntCtrl_Ip_SetPriorityPrivileged/4 
-IntCtrl_Ip_DisableIrq/15 (IntCtrl_Ip_DisableIrq) @060b87e0
+IntCtrl_Ip_DisableIrq/15 (IntCtrl_Ip_DisableIrq) @06c78a80
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -93,7 +93,7 @@ IntCtrl_Ip_DisableIrq/15 (IntCtrl_Ip_DisableIrq) @060b87e0
   Function flags: body
   Called by: IntCtrl_Ip_Init/11 
   Calls: IntCtrl_Ip_DisableIrqPrivileged/3 
-IntCtrl_Ip_EnableIrq/14 (IntCtrl_Ip_EnableIrq) @060b8540
+IntCtrl_Ip_EnableIrq/14 (IntCtrl_Ip_EnableIrq) @06c787e0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -102,7 +102,7 @@ IntCtrl_Ip_EnableIrq/14 (IntCtrl_Ip_EnableIrq) @060b8540
   Function flags: body
   Called by: IntCtrl_Ip_Init/11 
   Calls: IntCtrl_Ip_EnableIrqPrivileged/2 
-IntCtrl_Ip_InstallHandler/13 (IntCtrl_Ip_InstallHandler) @060b82a0
+IntCtrl_Ip_InstallHandler/13 (IntCtrl_Ip_InstallHandler) @06c78540
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -111,7 +111,7 @@ IntCtrl_Ip_InstallHandler/13 (IntCtrl_Ip_InstallHandler) @060b82a0
   Function flags: body
   Called by: IntCtrl_Ip_ConfigIrqRouting/12 
   Calls: IntCtrl_Ip_InstallHandlerPrivileged/1 
-IntCtrl_Ip_ConfigIrqRouting/12 (IntCtrl_Ip_ConfigIrqRouting) @05fdfe00
+IntCtrl_Ip_ConfigIrqRouting/12 (IntCtrl_Ip_ConfigIrqRouting) @06c781c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -120,7 +120,7 @@ IntCtrl_Ip_ConfigIrqRouting/12 (IntCtrl_Ip_ConfigIrqRouting) @05fdfe00
   Function flags: body
   Called by: 
   Calls: IntCtrl_Ip_InstallHandler/13 IntCtrl_Ip_SetTargetCores/22 DevAssert/0 DevAssert/0 
-IntCtrl_Ip_Init/11 (IntCtrl_Ip_Init) @05fdf8c0
+IntCtrl_Ip_Init/11 (IntCtrl_Ip_Init) @06b9de00
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -129,7 +129,7 @@ IntCtrl_Ip_Init/11 (IntCtrl_Ip_Init) @05fdf8c0
   Function flags: body
   Called by: 
   Calls: IntCtrl_Ip_DisableIrq/15 IntCtrl_Ip_EnableIrq/14 IntCtrl_Ip_SetPriority/16 IntCtrl_Ip_ClearPending/18 DevAssert/0 DevAssert/0 
-IntCtrl_Ip_SetTargetCoresPrivileged/10 (IntCtrl_Ip_SetTargetCoresPrivileged) @05fdf380
+IntCtrl_Ip_SetTargetCoresPrivileged/10 (IntCtrl_Ip_SetTargetCoresPrivileged) @06b9d8c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -138,7 +138,7 @@ IntCtrl_Ip_SetTargetCoresPrivileged/10 (IntCtrl_Ip_SetTargetCoresPrivileged) @05
   Function flags: body
   Called by: IntCtrl_Ip_SetTargetCores/22 
   Calls: DevAssert/0 DevAssert/0 DevAssert/0 DevAssert/0 
-IntCtrl_Ip_GetActivePrivileged/9 (IntCtrl_Ip_GetActivePrivileged) @05fdfd20
+IntCtrl_Ip_GetActivePrivileged/9 (IntCtrl_Ip_GetActivePrivileged) @06b9d0e0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -147,7 +147,7 @@ IntCtrl_Ip_GetActivePrivileged/9 (IntCtrl_Ip_GetActivePrivileged) @05fdfd20
   Function flags: body
   Called by: IntCtrl_Ip_GetActive/21 
   Calls: DevAssert/0 DevAssert/0 
-IntCtrl_Ip_GetPendingPrivileged/8 (IntCtrl_Ip_GetPendingPrivileged) @05fdfa80
+IntCtrl_Ip_GetPendingPrivileged/8 (IntCtrl_Ip_GetPendingPrivileged) @06b9dd20
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -156,7 +156,7 @@ IntCtrl_Ip_GetPendingPrivileged/8 (IntCtrl_Ip_GetPendingPrivileged) @05fdfa80
   Function flags: body
   Called by: IntCtrl_Ip_GetPending/20 
   Calls: DevAssert/0 DevAssert/0 
-IntCtrl_Ip_SetPendingPrivileged/7 (IntCtrl_Ip_SetPendingPrivileged) @05fdf7e0
+IntCtrl_Ip_SetPendingPrivileged/7 (IntCtrl_Ip_SetPendingPrivileged) @06b9da80
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -165,7 +165,7 @@ IntCtrl_Ip_SetPendingPrivileged/7 (IntCtrl_Ip_SetPendingPrivileged) @05fdf7e0
   Function flags: body
   Called by: IntCtrl_Ip_SetPending/19 
   Calls: DevAssert/0 DevAssert/0 
-IntCtrl_Ip_ClearPendingPrivileged/6 (IntCtrl_Ip_ClearPendingPrivileged) @05fdf540
+IntCtrl_Ip_ClearPendingPrivileged/6 (IntCtrl_Ip_ClearPendingPrivileged) @06b9d7e0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -174,7 +174,7 @@ IntCtrl_Ip_ClearPendingPrivileged/6 (IntCtrl_Ip_ClearPendingPrivileged) @05fdf54
   Function flags: body
   Called by: IntCtrl_Ip_ClearPending/18 
   Calls: DevAssert/0 DevAssert/0 
-IntCtrl_Ip_GetPriorityPrivileged/5 (IntCtrl_Ip_GetPriorityPrivileged) @05fdf2a0
+IntCtrl_Ip_GetPriorityPrivileged/5 (IntCtrl_Ip_GetPriorityPrivileged) @06b9d540
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -183,7 +183,7 @@ IntCtrl_Ip_GetPriorityPrivileged/5 (IntCtrl_Ip_GetPriorityPrivileged) @05fdf2a0
   Function flags: body
   Called by: IntCtrl_Ip_GetPriority/17 
   Calls: DevAssert/0 DevAssert/0 
-IntCtrl_Ip_SetPriorityPrivileged/4 (IntCtrl_Ip_SetPriorityPrivileged) @05fdf000
+IntCtrl_Ip_SetPriorityPrivileged/4 (IntCtrl_Ip_SetPriorityPrivileged) @06b9d2a0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -192,7 +192,7 @@ IntCtrl_Ip_SetPriorityPrivileged/4 (IntCtrl_Ip_SetPriorityPrivileged) @05fdf000
   Function flags: body
   Called by: IntCtrl_Ip_SetPriority/16 
   Calls: DevAssert/0 DevAssert/0 DevAssert/0 
-IntCtrl_Ip_DisableIrqPrivileged/3 (IntCtrl_Ip_DisableIrqPrivileged) @05fd8c40
+IntCtrl_Ip_DisableIrqPrivileged/3 (IntCtrl_Ip_DisableIrqPrivileged) @06b9d000
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -201,7 +201,7 @@ IntCtrl_Ip_DisableIrqPrivileged/3 (IntCtrl_Ip_DisableIrqPrivileged) @05fd8c40
   Function flags: body
   Called by: IntCtrl_Ip_DisableIrq/15 
   Calls: DevAssert/0 DevAssert/0 
-IntCtrl_Ip_EnableIrqPrivileged/2 (IntCtrl_Ip_EnableIrqPrivileged) @05fd8e00
+IntCtrl_Ip_EnableIrqPrivileged/2 (IntCtrl_Ip_EnableIrqPrivileged) @06b98b60
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -210,7 +210,7 @@ IntCtrl_Ip_EnableIrqPrivileged/2 (IntCtrl_Ip_EnableIrqPrivileged) @05fd8e00
   Function flags: body
   Called by: IntCtrl_Ip_EnableIrq/14 
   Calls: DevAssert/0 DevAssert/0 
-IntCtrl_Ip_InstallHandlerPrivileged/1 (IntCtrl_Ip_InstallHandlerPrivileged) @05fd8b60
+IntCtrl_Ip_InstallHandlerPrivileged/1 (IntCtrl_Ip_InstallHandlerPrivileged) @06b98d20
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: __INT_SRAM_START/23 (addr) 
@@ -219,7 +219,7 @@ IntCtrl_Ip_InstallHandlerPrivileged/1 (IntCtrl_Ip_InstallHandlerPrivileged) @05f
   Function flags: body
   Called by: IntCtrl_Ip_InstallHandler/13 
   Calls: DevAssert/0 DevAssert/0 DevAssert/0 
-DevAssert/0 (DevAssert) @05f54d20
+DevAssert/0 (DevAssert) @06b15ee0
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -239,30 +239,30 @@ IntCtrl_Ip_SetTargetCores (IRQn_Type eIrqNumber, uint8 u8TargetCores)
 
 IntCtrl_Ip_GetActive (IRQn_Type eIrqNumber)
 {
-  boolean D.6030;
+  boolean D.6033;
 
   <bb 2> :
   _1 = IntCtrl_Ip_GetActivePrivileged (eIrqNumber);
-  D.6030 = _1 != 0;
+  D.6033 = _1 != 0;
 
   <bb 3> :
 <L0>:
-  return D.6030;
+  return D.6033;
 
 }
 
 
 IntCtrl_Ip_GetPending (IRQn_Type eIrqNumber)
 {
-  boolean D.6028;
+  boolean D.6031;
 
   <bb 2> :
   _1 = IntCtrl_Ip_GetPendingPrivileged (eIrqNumber);
-  D.6028 = _1 != 0;
+  D.6031 = _1 != 0;
 
   <bb 3> :
 <L0>:
-  return D.6028;
+  return D.6031;
 
 }
 
@@ -287,14 +287,14 @@ IntCtrl_Ip_ClearPending (IRQn_Type eIrqNumber)
 
 IntCtrl_Ip_GetPriority (IRQn_Type eIrqNumber)
 {
-  uint8 D.6026;
+  uint8 D.6029;
 
   <bb 2> :
-  D.6026 = IntCtrl_Ip_GetPriorityPrivileged (eIrqNumber);
+  D.6029 = IntCtrl_Ip_GetPriorityPrivileged (eIrqNumber);
 
   <bb 3> :
 <L0>:
-  return D.6026;
+  return D.6029;
 
 }
 
@@ -338,7 +338,7 @@ IntCtrl_Ip_InstallHandler (IRQn_Type eIrqNumber, void (*IntCtrl_Ip_IrqHandlerTyp
 IntCtrl_Ip_ConfigIrqRouting (const struct IntCtrl_Ip_GlobalRouteConfigType * routeConfig)
 {
   uint32 irqIdx;
-  IntCtrl_Ip_StatusType D.6024;
+  IntCtrl_Ip_StatusType D.6027;
 
   <bb 2> :
   _1 = routeConfig != 0B;
@@ -378,11 +378,11 @@ IntCtrl_Ip_ConfigIrqRouting (const struct IntCtrl_Ip_GlobalRouteConfigType * rou
     goto <bb 5>; [INV]
 
   <bb 5> :
-  D.6024 = 0;
+  D.6027 = 0;
 
   <bb 6> :
 <L3>:
-  return D.6024;
+  return D.6027;
 
 }
 
@@ -390,7 +390,7 @@ IntCtrl_Ip_ConfigIrqRouting (const struct IntCtrl_Ip_GlobalRouteConfigType * rou
 IntCtrl_Ip_Init (const struct IntCtrl_Ip_CtrlConfigType * pIntCtrlCtrlConfig)
 {
   uint32 irqIdx;
-  IntCtrl_Ip_StatusType D.6022;
+  IntCtrl_Ip_StatusType D.6025;
 
   <bb 2> :
   _1 = pIntCtrlCtrlConfig != 0B;
@@ -451,11 +451,11 @@ IntCtrl_Ip_Init (const struct IntCtrl_Ip_CtrlConfigType * pIntCtrlCtrlConfig)
     goto <bb 8>; [INV]
 
   <bb 8> :
-  D.6022 = 0;
+  D.6025 = 0;
 
   <bb 9> :
 <L6>:
-  return D.6022;
+  return D.6025;
 
 }
 
@@ -485,7 +485,7 @@ IntCtrl_Ip_SetTargetCoresPrivileged (IRQn_Type eIrqNumber, uint8 u8TargetCores)
 
 IntCtrl_Ip_GetActivePrivileged (IRQn_Type eIrqNumber)
 {
-  uint32 D.6017;
+  uint32 D.6020;
 
   <bb 2> :
   _1 = eIrqNumber >= 0;
@@ -501,18 +501,18 @@ IntCtrl_Ip_GetActivePrivileged (IRQn_Type eIrqNumber)
   _9 = _6 >> _8;
   _10 = _9 & 1;
   _11 = _10 != 0;
-  D.6017 = (uint32) _11;
+  D.6020 = (uint32) _11;
 
   <bb 3> :
 <L0>:
-  return D.6017;
+  return D.6020;
 
 }
 
 
 IntCtrl_Ip_GetPendingPrivileged (IRQn_Type eIrqNumber)
 {
-  uint32 D.6015;
+  uint32 D.6018;
 
   <bb 2> :
   _1 = eIrqNumber >= 0;
@@ -528,11 +528,11 @@ IntCtrl_Ip_GetPendingPrivileged (IRQn_Type eIrqNumber)
   _9 = _6 >> _8;
   _10 = _9 & 1;
   _11 = _10 != 0;
-  D.6015 = (uint32) _11;
+  D.6018 = (uint32) _11;
 
   <bb 3> :
 <L0>:
-  return D.6015;
+  return D.6018;
 
 }
 
@@ -579,7 +579,7 @@ IntCtrl_Ip_GetPriorityPrivileged (IRQn_Type eIrqNumber)
 {
   uint8 shift;
   uint8 priority;
-  uint8 D.6013;
+  uint8 D.6016;
 
   <bb 2> :
   _1 = eIrqNumber >= 0;
@@ -594,11 +594,11 @@ IntCtrl_Ip_GetPriorityPrivileged (IRQn_Type eIrqNumber)
   _7 = (int) shift;
   _8 = _6 >> _7;
   priority = (uint8) _8;
-  D.6013 = priority;
+  D.6016 = priority;
 
   <bb 3> :
 <L0>:
-  return D.6013;
+  return D.6016;
 
 }
 

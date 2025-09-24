@@ -84,6 +84,10 @@ extern "C"{
 ==================================================================================================*/
 /* Emios instance index for configuration PwmEmios_0/PwmEmiosChannels_0 */
 #define EMIOS_PWM_IP_VS_0_I0_CH1_CFG      (0U)
+/* Emios instance index for configuration PwmEmios_0/PwmEmiosChannels_1 */
+#define EMIOS_PWM_IP_VS_0_I0_CH2_CFG      (0U)
+/* Emios instance index for configuration PwmEmios_0/PwmEmiosChannels_2 */
+#define EMIOS_PWM_IP_VS_0_I0_CH3_CFG      (0U)
 
 /*==================================================================================================
 *                                       DEFINES AND MACROS
@@ -107,6 +111,12 @@ extern "C"{
 /* Channel configurations for Emios instance 0 */
 /* Emios channel 1 configuration */
 extern const Emios_Pwm_Ip_ChannelConfigType Emios_Pwm_Ip_VS_0_I0_Ch1;
+
+/* Emios channel 2 configuration */
+extern const Emios_Pwm_Ip_ChannelConfigType Emios_Pwm_Ip_VS_0_I0_Ch2;
+
+/* Emios channel 3 configuration */
+extern const Emios_Pwm_Ip_ChannelConfigType Emios_Pwm_Ip_VS_0_I0_Ch3;
 
 #define PWM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Pwm_MemMap.h"

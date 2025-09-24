@@ -35,7 +35,7 @@ IPA summary for Emios_Pwm_Ip_GetUCRegA/8 is missing.
 IPA summary for Emios_Pwm_Ip_SetUCRegA/7 is missing.
 Symbol table:
 
-Emios_Pwm_Ip_aNotificationPtr/48 (Emios_Pwm_Ip_aNotificationPtr) @05f85e58
+Emios_Pwm_Ip_aNotificationPtr/48 (Emios_Pwm_Ip_aNotificationPtr) @0603f0d8
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -43,7 +43,7 @@ Emios_Pwm_Ip_aNotificationPtr/48 (Emios_Pwm_Ip_aNotificationPtr) @05f85e58
   Referring: Emios_Pwm_Ip_IrqHandler/42 (read) Emios_Pwm_Ip_IrqHandler/42 (read) Emios_Pwm_Ip_IrqHandler/42 (read) 
   Availability: not_available
   Varpool flags:
-Emios_Pwm_Ip_aDutyCycle/47 (Emios_Pwm_Ip_aDutyCycle) @05f853a8
+Emios_Pwm_Ip_aDutyCycle/47 (Emios_Pwm_Ip_aDutyCycle) @0603b5e8
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -51,7 +51,7 @@ Emios_Pwm_Ip_aDutyCycle/47 (Emios_Pwm_Ip_aDutyCycle) @05f853a8
   Referring: Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) 
   Availability: not_available
   Varpool flags:
-Emios_Pwm_Ip_aPeriod/46 (Emios_Pwm_Ip_aPeriod) @05f85360
+Emios_Pwm_Ip_aPeriod/46 (Emios_Pwm_Ip_aPeriod) @0603b5a0
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -59,7 +59,7 @@ Emios_Pwm_Ip_aPeriod/46 (Emios_Pwm_Ip_aPeriod) @05f85360
   Referring: Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) 
   Availability: not_available
   Varpool flags:
-Emios_Pwm_Ip_aCurrentModes/45 (Emios_Pwm_Ip_aCurrentModes) @05f85318
+Emios_Pwm_Ip_aCurrentModes/45 (Emios_Pwm_Ip_aCurrentModes) @0603b558
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -67,7 +67,7 @@ Emios_Pwm_Ip_aCurrentModes/45 (Emios_Pwm_Ip_aCurrentModes) @05f85318
   Referring: Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) 
   Availability: not_available
   Varpool flags:
-Emios_Pwm_Ip_GetMasterBusChannel/44 (Emios_Pwm_Ip_GetMasterBusChannel) @05f7d460
+Emios_Pwm_Ip_GetMasterBusChannel/44 (Emios_Pwm_Ip_GetMasterBusChannel) @06022460
   Type: function
   Visibility: external public
   References: 
@@ -76,7 +76,7 @@ Emios_Pwm_Ip_GetMasterBusChannel/44 (Emios_Pwm_Ip_GetMasterBusChannel) @05f7d460
   Function flags:
   Called by: Emios_Pwm_Ip_IrqDaocHandler/41 
   Calls: 
-Emios_Pwm_Ip_aBasePtr/43 (Emios_Pwm_Ip_aBasePtr) @05f851b0
+Emios_Pwm_Ip_aBasePtr/43 (Emios_Pwm_Ip_aBasePtr) @0603b3f0
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -84,7 +84,7 @@ Emios_Pwm_Ip_aBasePtr/43 (Emios_Pwm_Ip_aBasePtr) @05f851b0
   Referring: Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqDaocHandler/41 (read) Emios_Pwm_Ip_IrqHandler/42 (read) 
   Availability: not_available
   Varpool flags: read-only
-Emios_Pwm_Ip_IrqHandler/42 (Emios_Pwm_Ip_IrqHandler) @05f1de00
+Emios_Pwm_Ip_IrqHandler/42 (Emios_Pwm_Ip_IrqHandler) @06017e00
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aNotificationPtr/48 (read) Emios_Pwm_Ip_aNotificationPtr/48 (read) Emios_Pwm_Ip_aNotificationPtr/48 (read) 
@@ -94,7 +94,7 @@ Emios_Pwm_Ip_IrqHandler/42 (Emios_Pwm_Ip_IrqHandler) @05f1de00
   Called by: 
   Calls: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_ClearFlagEvent/35 
    Indirect call Num speculative call targets: 0
-Emios_Pwm_Ip_IrqDaocHandler/41 (Emios_Pwm_Ip_IrqDaocHandler) @05f1da80
+Emios_Pwm_Ip_IrqDaocHandler/41 (Emios_Pwm_Ip_IrqDaocHandler) @06017a80
   Type: function definition analyzed
   Visibility: force_output no_reorder prevailing_def_ironly
   References: Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aCurrentModes/45 (read) Emios_Pwm_Ip_aPeriod/46 (read) Emios_Pwm_Ip_aDutyCycle/47 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aPeriod/46 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aCurrentModes/45 (read) Emios_Pwm_Ip_aPeriod/46 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aDutyCycle/47 (read) Emios_Pwm_Ip_aBasePtr/43 (read) Emios_Pwm_Ip_aBasePtr/43 (read) 
@@ -103,7 +103,7 @@ Emios_Pwm_Ip_IrqDaocHandler/41 (Emios_Pwm_Ip_IrqDaocHandler) @05f1da80
   Function flags: body
   Called by: Emios_Pwm_Ip_IrqHandler/42 
   Calls: Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_SetUCRegB/9 Emios_Pwm_Ip_GetUCRegB/10 Emios_Pwm_Ip_SetUCRegA/7 Emios_Pwm_Ip_GetUCRegB/10 Emios_Pwm_Ip_GetOutputPinState/34 Emios_Pwm_Ip_GetEdgePolarity/26 Emios_Pwm_Ip_GetUCRegA/8 Emios_Pwm_Ip_GetMasterBusChannel/44 
-Emios_Pwm_Ip_ClearFlagEvent/35 (Emios_Pwm_Ip_ClearFlagEvent) @05f14b60
+Emios_Pwm_Ip_ClearFlagEvent/35 (Emios_Pwm_Ip_ClearFlagEvent) @0600db60
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -112,7 +112,7 @@ Emios_Pwm_Ip_ClearFlagEvent/35 (Emios_Pwm_Ip_ClearFlagEvent) @05f14b60
   Function flags: body local
   Called by: Emios_Pwm_Ip_IrqHandler/42 
   Calls: 
-Emios_Pwm_Ip_GetOutputPinState/34 (Emios_Pwm_Ip_GetOutputPinState) @05f147e0
+Emios_Pwm_Ip_GetOutputPinState/34 (Emios_Pwm_Ip_GetOutputPinState) @0600d7e0
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -121,7 +121,7 @@ Emios_Pwm_Ip_GetOutputPinState/34 (Emios_Pwm_Ip_GetOutputPinState) @05f147e0
   Function flags: body local
   Called by: Emios_Pwm_Ip_IrqDaocHandler/41 
   Calls: 
-Emios_Pwm_Ip_GetEdgePolarity/26 (Emios_Pwm_Ip_GetEdgePolarity) @05ec2e00
+Emios_Pwm_Ip_GetEdgePolarity/26 (Emios_Pwm_Ip_GetEdgePolarity) @05fbbe00
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -130,7 +130,7 @@ Emios_Pwm_Ip_GetEdgePolarity/26 (Emios_Pwm_Ip_GetEdgePolarity) @05ec2e00
   Function flags: body local
   Called by: Emios_Pwm_Ip_IrqDaocHandler/41 
   Calls: 
-Emios_Pwm_Ip_GetUCRegB/10 (Emios_Pwm_Ip_GetUCRegB) @05e26a80
+Emios_Pwm_Ip_GetUCRegB/10 (Emios_Pwm_Ip_GetUCRegB) @05f1ea80
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -139,7 +139,7 @@ Emios_Pwm_Ip_GetUCRegB/10 (Emios_Pwm_Ip_GetUCRegB) @05e26a80
   Function flags: body local
   Called by: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 
   Calls: 
-Emios_Pwm_Ip_SetUCRegB/9 (Emios_Pwm_Ip_SetUCRegB) @05e267e0
+Emios_Pwm_Ip_SetUCRegB/9 (Emios_Pwm_Ip_SetUCRegB) @05f1e7e0
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -148,7 +148,7 @@ Emios_Pwm_Ip_SetUCRegB/9 (Emios_Pwm_Ip_SetUCRegB) @05e267e0
   Function flags: body local
   Called by: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 
   Calls: 
-Emios_Pwm_Ip_GetUCRegA/8 (Emios_Pwm_Ip_GetUCRegA) @05e26460
+Emios_Pwm_Ip_GetUCRegA/8 (Emios_Pwm_Ip_GetUCRegA) @05f1e460
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -157,7 +157,7 @@ Emios_Pwm_Ip_GetUCRegA/8 (Emios_Pwm_Ip_GetUCRegA) @05e26460
   Function flags: body local
   Called by: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 
   Calls: 
-Emios_Pwm_Ip_SetUCRegA/7 (Emios_Pwm_Ip_SetUCRegA) @05e261c0
+Emios_Pwm_Ip_SetUCRegA/7 (Emios_Pwm_Ip_SetUCRegA) @05f1e1c0
   Type: function definition analyzed
   Visibility: no_reorder prevailing_def_ironly
   References: 
@@ -167,7 +167,7 @@ Emios_Pwm_Ip_SetUCRegA/7 (Emios_Pwm_Ip_SetUCRegA) @05e261c0
   Called by: Emios_Pwm_Ip_IrqDaocHandler/41 Emios_Pwm_Ip_IrqDaocHandler/41 
   Calls: 
 
-;; Function Emios_Pwm_Ip_SetUCRegA (Emios_Pwm_Ip_SetUCRegA, funcdef_no=7, decl_uid=5963, cgraph_uid=8, symbol_order=7)
+;; Function Emios_Pwm_Ip_SetUCRegA (Emios_Pwm_Ip_SetUCRegA, funcdef_no=7, decl_uid=5965, cgraph_uid=8, symbol_order=7)
 
 Emios_Pwm_Ip_SetUCRegA (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
 {
@@ -184,11 +184,11 @@ Emios_Pwm_Ip_SetUCRegA (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Chann
 
 
 
-;; Function Emios_Pwm_Ip_GetUCRegA (Emios_Pwm_Ip_GetUCRegA, funcdef_no=8, decl_uid=5967, cgraph_uid=9, symbol_order=8)
+;; Function Emios_Pwm_Ip_GetUCRegA (Emios_Pwm_Ip_GetUCRegA, funcdef_no=8, decl_uid=5969, cgraph_uid=9, symbol_order=8)
 
 Emios_Pwm_Ip_GetUCRegA (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  uint16 D.6201;
+  uint16 D.6203;
   int _1;
   long unsigned int _2;
   uint16 _6;
@@ -206,7 +206,7 @@ Emios_Pwm_Ip_GetUCRegA (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8
 
 
 
-;; Function Emios_Pwm_Ip_SetUCRegB (Emios_Pwm_Ip_SetUCRegB, funcdef_no=9, decl_uid=5972, cgraph_uid=10, symbol_order=9)
+;; Function Emios_Pwm_Ip_SetUCRegB (Emios_Pwm_Ip_SetUCRegB, funcdef_no=9, decl_uid=5974, cgraph_uid=10, symbol_order=9)
 
 Emios_Pwm_Ip_SetUCRegB (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel, uint16 Value)
 {
@@ -223,11 +223,11 @@ Emios_Pwm_Ip_SetUCRegB (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Chann
 
 
 
-;; Function Emios_Pwm_Ip_GetUCRegB (Emios_Pwm_Ip_GetUCRegB, funcdef_no=10, decl_uid=5976, cgraph_uid=11, symbol_order=10)
+;; Function Emios_Pwm_Ip_GetUCRegB (Emios_Pwm_Ip_GetUCRegB, funcdef_no=10, decl_uid=5978, cgraph_uid=11, symbol_order=10)
 
 Emios_Pwm_Ip_GetUCRegB (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  uint16 D.6199;
+  uint16 D.6201;
   int _1;
   long unsigned int _2;
   uint16 _6;
@@ -245,11 +245,11 @@ Emios_Pwm_Ip_GetUCRegB (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8
 
 
 
-;; Function Emios_Pwm_Ip_GetEdgePolarity (Emios_Pwm_Ip_GetEdgePolarity, funcdef_no=26, decl_uid=6069, cgraph_uid=27, symbol_order=26)
+;; Function Emios_Pwm_Ip_GetEdgePolarity (Emios_Pwm_Ip_GetEdgePolarity, funcdef_no=26, decl_uid=6071, cgraph_uid=27, symbol_order=26)
 
 Emios_Pwm_Ip_GetEdgePolarity (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  Emios_Pwm_Ip_PolarityType D.6195;
+  Emios_Pwm_Ip_PolarityType D.6197;
   int _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -273,11 +273,11 @@ Emios_Pwm_Ip_GetEdgePolarity (const struct Emios_Pwm_Ip_HwAddrType * const Base,
 
 
 
-;; Function Emios_Pwm_Ip_GetOutputPinState (Emios_Pwm_Ip_GetOutputPinState, funcdef_no=34, decl_uid=6112, cgraph_uid=35, symbol_order=34)
+;; Function Emios_Pwm_Ip_GetOutputPinState (Emios_Pwm_Ip_GetOutputPinState, funcdef_no=34, decl_uid=6114, cgraph_uid=35, symbol_order=34)
 
 Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  boolean D.6197;
+  boolean D.6199;
   int _1;
   long unsigned int _2;
   long unsigned int _3;
@@ -297,7 +297,7 @@ Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Bas
 
 
 
-;; Function Emios_Pwm_Ip_ClearFlagEvent (Emios_Pwm_Ip_ClearFlagEvent, funcdef_no=35, decl_uid=6116, cgraph_uid=36, symbol_order=35)
+;; Function Emios_Pwm_Ip_ClearFlagEvent (Emios_Pwm_Ip_ClearFlagEvent, funcdef_no=35, decl_uid=6118, cgraph_uid=36, symbol_order=35)
 
 Emios_Pwm_Ip_ClearFlagEvent (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
@@ -318,7 +318,7 @@ Emios_Pwm_Ip_ClearFlagEvent (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 
 
 
 
-;; Function Emios_Pwm_Ip_IrqDaocHandler (Emios_Pwm_Ip_IrqDaocHandler, funcdef_no=41, decl_uid=6151, cgraph_uid=42, symbol_order=41)
+;; Function Emios_Pwm_Ip_IrqDaocHandler (Emios_Pwm_Ip_IrqDaocHandler, funcdef_no=41, decl_uid=6153, cgraph_uid=42, symbol_order=41)
 
 Emios_Pwm_Ip_IrqDaocHandler (uint8 Instance, uint8 Channel)
 {
@@ -607,7 +607,7 @@ Emios_Pwm_Ip_IrqDaocHandler (uint8 Instance, uint8 Channel)
 
 
 
-;; Function Emios_Pwm_Ip_IrqHandler (Emios_Pwm_Ip_IrqHandler, funcdef_no=42, decl_uid=6143, cgraph_uid=43, symbol_order=42)
+;; Function Emios_Pwm_Ip_IrqHandler (Emios_Pwm_Ip_IrqHandler, funcdef_no=42, decl_uid=6145, cgraph_uid=43, symbol_order=42)
 
 Emios_Pwm_Ip_IrqHandler (uint8 Instance, uint8 Channel)
 {

@@ -15,11 +15,10 @@
 #include "IntCtrl_Ip.h"
 #include "Adc_Sar_Ip.h"
 #include "Bctu_Ip.h"
-//#include "Pit_Ip.h"
 #include "Emios_Mcl_Ip.h"
+#include "Emios_Pwm_Ip.h"
 #include "Siul2_Dio_Ip.h"
 #include "Siul2_Port_Ip.h"
-#include "Emios_Pwm_Ip.h"
 
 /* By default S32K342 boards will have 3.3V voltage reference selected while S32K312 and S32K344 will have 5V selected.
  * If you have S32K342 with default pin configuration or if you've manually selected 3.3V reference, please uncomment the following line: */
@@ -50,10 +49,11 @@ volatile int exit_code = 0;
 volatile boolean notif_triggered = FALSE;
 
 volatile uint16 data;
-volatile uint16 data1[3];
+volatile uint16 data1[4];
 volatile uint32 eMIOS_count = 0;
 
-extern void Adc_Sar_0_Isr(void);
+extern void Adc_Sar_1_Isr(void);
+extern void Adc_Sar_2_Isr(void);
 extern void Bctu_0_Isr(void);
 
 //void Pit0ch0Notification(void)
@@ -67,9 +67,9 @@ extern void Bctu_0_Isr(void);
 
 void Check(void)
 {
-	eMIOS_count++;
-	Siul2_Dio_Ip_TogglePins(BTCU_Trigger_PORT, (1 << BTCU_Trigger_PIN));
-	Siul2_Dio_Ip_TogglePins(BTCU_Trigger_PORT, (1 << BTCU_Trigger_PIN));
+//	eMIOS_count++;
+	Siul2_Dio_Ip_WritePin(BTCU_Trigger_PORT, BTCU_Trigger_PIN, 1U);
+	Siul2_Dio_Ip_WritePin(BTCU_Trigger_PORT, BTCU_Trigger_PIN, 0U);
 }
 
 void Adc1EndOfChainNotif(void)
@@ -100,15 +100,16 @@ void Adc2EndOfChainNotif(void)
 
 void Fifo1Watermark(void)
 {
-    uint8 idx = 2;
+    uint8 idx = 3;
     notif_triggered = TRUE;
 
+    Siul2_Dio_Ip_WritePin(LED_PORT, LED_PIN, 1U);
 	/* Checks the measured ADC data conversion */
     while(idx > 0)
     {
-    	data1[idx] = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO1_IDX);
-    	idx--;
+    	data1[idx--] = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO1_IDX);
     }
+    Siul2_Dio_Ip_WritePin(LED_PORT, LED_PIN, 0U);
 
 //    while (data < 3000UL)
 //	{
@@ -118,21 +119,24 @@ void Fifo1Watermark(void)
 //	}
 }
 
-void Fifo2Watermark(void)
-{
-    uint8 idx = 0;
-    notif_triggered = TRUE;
-	/* Checks the measured ADC data conversion */
-
-	data1[idx] = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO2_IDX);
-
-//    while (data < 3000UL)
-//	{
-//		data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
+//void Fifo2Watermark(void)
+//{
+//    uint8 idx = 0;
+//    notif_triggered = TRUE;
+//	/* Checks the measured ADC data conversion */
+//    Siul2_Dio_Ip_WritePin(BTCU_Watermark_PORT, BTCU_Watermark_PIN, 1U);
 //
-//		Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
-//	}
-}
+//	data1[idx] = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO2_IDX);
+//
+//	Siul2_Dio_Ip_WritePin(BTCU_Watermark_PORT, BTCU_Watermark_PIN, 0U);
+//
+////    while (data < 3000UL)
+////	{
+////		data = Bctu_Ip_GetFifoData(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_FIFO_IDX);
+////
+////		Bctu_Ip_SwTriggerConversion(BCTUHWUNIT_0_VS_0_INSTANCE, BCTU_USED_SINGLE_TRIG_IDX);
+////	}
+//}
 
 int main(void)
 {
@@ -159,14 +163,13 @@ int main(void)
     while (status != E_OK);
 
     /* Install and enable interrupt handlers */
-    IntCtrl_Ip_InstallHandler(ADC0_IRQn, Adc_Sar_0_Isr, NULL_PTR);
+    IntCtrl_Ip_InstallHandler(ADC1_IRQn, Adc_Sar_1_Isr, NULL_PTR);
+    IntCtrl_Ip_InstallHandler(ADC2_IRQn, Adc_Sar_2_Isr, NULL_PTR);
     IntCtrl_Ip_InstallHandler(BCTU_IRQn, Bctu_0_Isr, NULL_PTR);
-//    IntCtrl_Ip_InstallHandler(PIT0_IRQn, PIT_0_ISR, NULL_PTR);
 
-    IntCtrl_Ip_EnableIrq(ADC0_IRQn);
+    IntCtrl_Ip_EnableIrq(ADC1_IRQn);
+    IntCtrl_Ip_EnableIrq(ADC2_IRQn);
     IntCtrl_Ip_EnableIrq(BCTU_IRQn);
-//    IntCtrl_Ip_EnableIrq(PIT0_IRQn);
-
 
     /* Call Calibration function multiple times, to mitigate instability of board source */
     for(Index = 0; Index <= 5; Index++)
@@ -180,6 +183,8 @@ int main(void)
 
     Adc_Sar_Ip_EnableNotifications(ADC_1_VS_0_INSTANCE, ADC_SAR_IP_NOTIF_FLAG_NORMAL_ENDCHAIN);
 
+    Adc_Sar_Ip_EnableNotifications(ADC_2_VS_0_INSTANCE, ADC_SAR_IP_NOTIF_FLAG_NORMAL_ENDCHAIN);
+
 //    Pit_Ip_Init(PIT_0_IP_INSTANCE_NUMBER, &PIT_0_InitConfig_PB);
 
 //    Pit_Ip_InitChannel(PIT_INST_0, PIT_0_CH_0);
@@ -189,7 +194,7 @@ int main(void)
 //    Pit_Ip_StartChannel(PIT_INST_0, CH_0, PIT_PERIOD);
 
     /* Start a SW triggered normal conversion on ADC_SAR */
-//    Adc_Sar_Ip_StartConversion(ADCHWUNIT_0_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
+//    Adc_Sar_Ip_StartConversion(ADC_1_VS_0_INSTANCE, ADC_SAR_IP_CONV_CHAIN_NORMAL);
 
     /* Wait for the notification to be triggered and read the data */
 //    while (notif_triggered != TRUE);
@@ -218,6 +223,10 @@ int main(void)
     Emios_Mcl_Ip_Init(EMIOS_INST0, &Emios_Mcl_Ip_0_Config_VS_0);
 
     Emios_Pwm_Ip_InitChannel(EMIOS_PWM_IP_VS_0_I0_CH1_CFG, &Emios_Pwm_Ip_VS_0_I0_Ch1);
+
+    Emios_Pwm_Ip_InitChannel(EMIOS_PWM_IP_VS_0_I0_CH2_CFG, &Emios_Pwm_Ip_VS_0_I0_Ch2);
+
+    Emios_Pwm_Ip_InitChannel(EMIOS_PWM_IP_VS_0_I0_CH3_CFG, &Emios_Pwm_Ip_VS_0_I0_Ch3);
 
     for(;;)
     {

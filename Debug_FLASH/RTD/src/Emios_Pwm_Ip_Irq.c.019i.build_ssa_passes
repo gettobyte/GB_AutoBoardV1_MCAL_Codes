@@ -247,13 +247,32 @@ Emios_Pwm_Ip_ClearFlagEvent (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 
 
 Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  boolean D.6197;
+  boolean D.6199;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].S;
   _3 = _2 & 2;
-  D.6197 = _3 != 0;
+  D.6199 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return D.6199;
+
+}
+
+
+Emios_Pwm_Ip_GetEdgePolarity (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
+{
+  Emios_Pwm_Ip_PolarityType D.6197;
+
+  <bb 2> :
+  _1 = (int) Channel;
+  _2 = Base->CH.UC[_1].C;
+  _3 = _2 & 128;
+  _4 = _3 != 0;
+  _5 = (int) _4;
+  D.6197 = (Emios_Pwm_Ip_PolarityType) _5;
 
   <bb 3> :
 <L0>:
@@ -262,37 +281,18 @@ Emios_Pwm_Ip_GetOutputPinState (const struct Emios_Pwm_Ip_HwAddrType * const Bas
 }
 
 
-Emios_Pwm_Ip_GetEdgePolarity (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
-{
-  Emios_Pwm_Ip_PolarityType D.6195;
-
-  <bb 2> :
-  _1 = (int) Channel;
-  _2 = Base->CH.UC[_1].C;
-  _3 = _2 & 128;
-  _4 = _3 != 0;
-  _5 = (int) _4;
-  D.6195 = (Emios_Pwm_Ip_PolarityType) _5;
-
-  <bb 3> :
-<L0>:
-  return D.6195;
-
-}
-
-
 Emios_Pwm_Ip_GetUCRegB (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  uint16 D.6199;
+  uint16 D.6201;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].B;
-  D.6199 = (uint16) _2;
+  D.6201 = (uint16) _2;
 
   <bb 3> :
 <L0>:
-  return D.6199;
+  return D.6201;
 
 }
 
@@ -310,16 +310,16 @@ Emios_Pwm_Ip_SetUCRegB (struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Chann
 
 Emios_Pwm_Ip_GetUCRegA (const struct Emios_Pwm_Ip_HwAddrType * const Base, uint8 Channel)
 {
-  uint16 D.6201;
+  uint16 D.6203;
 
   <bb 2> :
   _1 = (int) Channel;
   _2 = Base->CH.UC[_1].A;
-  D.6201 = (uint16) _2;
+  D.6203 = (uint16) _2;
 
   <bb 3> :
 <L0>:
-  return D.6201;
+  return D.6203;
 
 }
 

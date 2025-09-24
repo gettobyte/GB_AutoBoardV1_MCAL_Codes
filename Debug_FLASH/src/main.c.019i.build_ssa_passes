@@ -3,7 +3,7 @@ main ()
   Clock_Ip_StatusType clockStatus;
   uint8 Index;
   StatusType status;
-  int D.10377;
+  int D.10378;
 
   <bb 2> :
   clockStatus = Clock_Ip_Init (&Clock_Ip_aClockConfig[0]);
@@ -33,9 +33,11 @@ main ()
     goto <bb 7>; [INV]
 
   <bb 7> :
-  IntCtrl_Ip_InstallHandler (180, Adc_Sar_0_Isr, 0B);
+  IntCtrl_Ip_InstallHandler (181, Adc_Sar_1_Isr, 0B);
+  IntCtrl_Ip_InstallHandler (182, Adc_Sar_2_Isr, 0B);
   IntCtrl_Ip_InstallHandler (87, Bctu_0_Isr, 0B);
-  IntCtrl_Ip_EnableIrq (180);
+  IntCtrl_Ip_EnableIrq (181);
+  IntCtrl_Ip_EnableIrq (182);
   IntCtrl_Ip_EnableIrq (87);
   Index = 0;
   goto <bb 11>; [INV]
@@ -52,8 +54,8 @@ main ()
   goto <bb 12>; [INV]
 
   <bb 10> :
-  Index.4_4 = Index;
-  Index = Index.4_4 + 1;
+  Index.3_4 = Index;
+  Index = Index.3_4 + 1;
 
   <bb 11> :
   if (Index <= 5)
@@ -63,14 +65,17 @@ main ()
 
   <bb 12> :
   Adc_Sar_Ip_EnableNotifications (1, 1);
+  Adc_Sar_Ip_EnableNotifications (2, 1);
   Bctu_Ip_SetGlobalTriggerEn (0, 1);
   Bctu_Ip_EnableNotifications (0, 1);
   Emios_Mcl_Ip_Init (0, &Emios_Mcl_Ip_0_Config_VS_0);
   Emios_Pwm_Ip_InitChannel (0, &Emios_Pwm_Ip_VS_0_I0_Ch1);
+  Emios_Pwm_Ip_InitChannel (0, &Emios_Pwm_Ip_VS_0_I0_Ch2);
+  Emios_Pwm_Ip_InitChannel (0, &Emios_Pwm_Ip_VS_0_I0_Ch3);
 
   <bb 13> :
-  exit_code.5_5 = exit_code;
-  if (exit_code.5_5 != 0)
+  exit_code.4_5 = exit_code;
+  if (exit_code.4_5 != 0)
     goto <bb 14>; [INV]
   else
     goto <bb 15>; [INV]
@@ -82,26 +87,11 @@ main ()
   goto <bb 13>; [INV]
 
   <bb 16> :
-  D.10377 = exit_code;
+  D.10378 = exit_code;
 
   <bb 17> :
 <L15>:
-  return D.10377;
-
-}
-
-
-Fifo2Watermark ()
-{
-  uint8 idx;
-
-  <bb 2> :
-  idx = 0;
-  notif_triggered = 1;
-  _1 = (int) idx;
-  _2 = Bctu_Ip_GetFifoData (0, 1);
-  data1[_1] = _2;
-  return;
+  return D.10378;
 
 }
 
@@ -111,16 +101,17 @@ Fifo1Watermark ()
   uint8 idx;
 
   <bb 2> :
-  idx = 2;
+  idx = 3;
   notif_triggered = 1;
+  Siul2_Dio_Ip_WritePin (1076434700B, 15, 1);
   goto <bb 4>; [INV]
 
   <bb 3> :
-  _1 = (int) idx;
-  _2 = Bctu_Ip_GetFifoData (0, 0);
-  data1[_1] = _2;
-  idx.3_3 = idx;
-  idx = idx.3_3 + 255;
+  idx.2_1 = idx;
+  idx = idx.2_1 + 255;
+  _2 = (int) idx.2_1;
+  _3 = Bctu_Ip_GetFifoData (0, 0);
+  data1[_2] = _3;
 
   <bb 4> :
   if (idx != 0)
@@ -129,38 +120,13 @@ Fifo1Watermark ()
     goto <bb 5>; [INV]
 
   <bb 5> :
+  Siul2_Dio_Ip_WritePin (1076434700B, 15, 0);
   return;
 
 }
 
 
 Adc2EndOfChainNotif ()
-{
-  <bb 2> :
-  notif_triggered = 1;
-  _1 = Adc_Sar_Ip_GetConvData (1, 4);
-  data = _1;
-  goto <bb 4>; [INV]
-
-  <bb 3> :
-  _2 = Adc_Sar_Ip_GetConvData (1, 4);
-  data = _2;
-  Adc_Sar_Ip_StartConversion (1, 0);
-
-  <bb 4> :
-  data.2_3 = data;
-  if (data.2_3 <= 2999)
-    goto <bb 3>; [INV]
-  else
-    goto <bb 5>; [INV]
-
-  <bb 5> :
-  return;
-
-}
-
-
-Adc1EndOfChainNotif ()
 {
   <bb 2> :
   notif_triggered = 1;
@@ -186,14 +152,37 @@ Adc1EndOfChainNotif ()
 }
 
 
+Adc1EndOfChainNotif ()
+{
+  <bb 2> :
+  notif_triggered = 1;
+  _1 = Adc_Sar_Ip_GetConvData (1, 4);
+  data = _1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = Adc_Sar_Ip_GetConvData (1, 4);
+  data = _2;
+  Adc_Sar_Ip_StartConversion (1, 0);
+
+  <bb 4> :
+  data.0_3 = data;
+  if (data.0_3 <= 2999)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
 Check ()
 {
   <bb 2> :
-  eMIOS_count.0_1 = eMIOS_count;
-  _2 = eMIOS_count.0_1 + 1;
-  eMIOS_count = _2;
-  Siul2_Dio_Ip_TogglePins (1076434700B, 2048);
-  Siul2_Dio_Ip_TogglePins (1076434700B, 2048);
+  Siul2_Dio_Ip_WritePin (1076434700B, 11, 1);
+  Siul2_Dio_Ip_WritePin (1076434700B, 11, 0);
   return;
 
 }

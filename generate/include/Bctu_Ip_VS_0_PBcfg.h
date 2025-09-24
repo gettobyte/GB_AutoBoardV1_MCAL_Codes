@@ -138,7 +138,6 @@ extern const Bctu_Ip_ConfigType BctuHwUnit_0_VS_0;
 */
 void Check(void);
 void Fifo1Watermark(void);
-void Fifo2Watermark(void);
 
 
 #define ADC_STOP_SEC_CODE

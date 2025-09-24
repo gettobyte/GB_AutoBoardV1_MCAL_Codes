@@ -1,180 +1,203 @@
-Trivially needed symbols: main/11 Fifo2Watermark/10 Fifo1Watermark/9 Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 Check/6 eMIOS_count/5 data1/4 data/3 notif_triggered/2 exit_code/1
+Trivially needed symbols: main/10 Fifo1Watermark/9 Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 Check/6 eMIOS_count/5 data1/4 data/3 notif_triggered/2 exit_code/1
 
 
 Initial Symbol table:
 
-Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @07a01990
+Emios_Pwm_Ip_VS_0_I0_Ch3/38 (Emios_Pwm_Ip_VS_0_I0_Ch3) @086bcd38
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @07a02a80
-  Type: function
-  Visibility: external public
-  References: 
-  Referring: 
-  Function flags:
-  Called by: main/11 
-  Calls: 
-Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @07a01900
+Emios_Pwm_Ip_VS_0_I0_Ch2/37 (Emios_Pwm_Ip_VS_0_I0_Ch2) @086bcca8
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @07a029a0
+Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @086bcc18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @086bda80
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @07a028c0
+Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @086bcb88
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @086bd9a0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @07a027e0
+Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @086bd8c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @07a02700
+Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @086bd7e0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @07a02620
+Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @086bd700
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 
   Calls: 
-IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @07a02540
+Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @086bd620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 
   Calls: 
-Bctu_0_Isr/27 (Bctu_0_Isr) @07a02460
+IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @086bd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/10 main/10 main/10 
+  Calls: 
+Bctu_0_Isr/27 (Bctu_0_Isr) @086bd460
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_0_Isr/26 (Adc_Sar_0_Isr) @07a02380
+Adc_Sar_2_Isr/26 (Adc_Sar_2_Isr) @086bd380
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Function flags:
   Called by: 
   Calls: 
-IntCtrl_Ip_InstallHandler/25 (IntCtrl_Ip_InstallHandler) @07a022a0
+Adc_Sar_1_Isr/25 (Adc_Sar_1_Isr) @086bd2a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: main/10 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+IntCtrl_Ip_InstallHandler/24 (IntCtrl_Ip_InstallHandler) @086bd1c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-ADC_2_VS_0/24 (ADC_2_VS_0) @07a01630
+ADC_2_VS_0/23 (ADC_2_VS_0) @086bc7e0
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-ADC_1_VS_0/23 (ADC_1_VS_0) @07a015a0
+ADC_1_VS_0/22 (ADC_1_VS_0) @086bc750
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Adc_Sar_Ip_Init/22 (Adc_Sar_Ip_Init) @07a020e0
+Adc_Sar_Ip_Init/21 (Adc_Sar_Ip_Init) @086bd000
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-BctuHwUnit_0_VS_0/21 (BctuHwUnit_0_VS_0) @07a01510
+BctuHwUnit_0_VS_0/20 (BctuHwUnit_0_VS_0) @086bc6c0
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Bctu_Ip_Init/20 (Bctu_Ip_Init) @07a02000
+Bctu_Ip_Init/19 (Bctu_Ip_Init) @0866aee0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-g_pin_mux_InitConfigArr0/19 (g_pin_mux_InitConfigArr0) @07a01480
+g_pin_mux_InitConfigArr0/18 (g_pin_mux_InitConfigArr0) @086bc630
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Siul2_Port_Ip_Init/18 (Siul2_Port_Ip_Init) @079f4ee0
+Siul2_Port_Ip_Init/17 (Siul2_Port_Ip_Init) @0866ae00
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Clock_Ip_aClockConfig/17 (Clock_Ip_aClockConfig) @07a013a8
+Clock_Ip_aClockConfig/16 (Clock_Ip_aClockConfig) @086bc558
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) main/11 (addr) 
+  Referring: main/10 (addr) main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Clock_Ip_Init/16 (Clock_Ip_Init) @079f4e00
+Clock_Ip_Init/15 (Clock_Ip_Init) @0866ad20
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-Bctu_Ip_GetFifoData/15 (Bctu_Ip_GetFifoData) @079f4b60
+Bctu_Ip_GetFifoData/14 (Bctu_Ip_GetFifoData) @0866ab60
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: Fifo2Watermark/10 Fifo1Watermark/9 
+  Called by: Fifo1Watermark/9 
   Calls: 
-Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
+Adc_Sar_Ip_StartConversion/13 (Adc_Sar_Ip_StartConversion) @0866a8c0
   Type: function
   Visibility: external public
   References: 
@@ -182,7 +205,7 @@ Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 
   Calls: 
-Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
+Adc_Sar_Ip_GetConvData/12 (Adc_Sar_Ip_GetConvData) @0866a7e0
   Type: function
   Visibility: external public
   References: 
@@ -190,109 +213,100 @@ Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 Adc1EndOfChainNotif/7 
   Calls: 
-Siul2_Dio_Ip_TogglePins/12 (Siul2_Dio_Ip_TogglePins) @079f4620
+Siul2_Dio_Ip_WritePin/11 (Siul2_Dio_Ip_WritePin) @0866a620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: Check/6 Check/6 
+  Called by: Fifo1Watermark/9 Fifo1Watermark/9 Check/6 Check/6 
   Calls: 
-main/11 (main) @079f41c0
+main/10 (main) @0866a1c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   Aux: @01981040
-  References: Clock_Ip_aClockConfig/17 (addr) Clock_Ip_aClockConfig/17 (addr) g_pin_mux_InitConfigArr0/19 (addr) BctuHwUnit_0_VS_0/21 (addr) ADC_1_VS_0/23 (addr) ADC_2_VS_0/24 (addr) Adc_Sar_0_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) exit_code/1 (read) exit_code/1 (read) 
+  References: Clock_Ip_aClockConfig/16 (addr) Clock_Ip_aClockConfig/16 (addr) g_pin_mux_InitConfigArr0/18 (addr) BctuHwUnit_0_VS_0/20 (addr) ADC_1_VS_0/22 (addr) ADC_2_VS_0/23 (addr) Adc_Sar_1_Isr/25 (addr) Adc_Sar_2_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) Emios_Pwm_Ip_VS_0_I0_Ch2/37 (addr) Emios_Pwm_Ip_VS_0_I0_Ch3/38 (addr) exit_code/1 (read) exit_code/1 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/25 IntCtrl_Ip_InstallHandler/25 Adc_Sar_Ip_Init/22 Adc_Sar_Ip_Init/22 Bctu_Ip_Init/20 Siul2_Port_Ip_Init/18 Clock_Ip_Init/16 Clock_Ip_Init/16 
-Fifo2Watermark/10 (Fifo2Watermark) @079eeee0
+  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 Adc_Sar_Ip_Init/21 Adc_Sar_Ip_Init/21 Bctu_Ip_Init/19 Siul2_Port_Ip_Init/17 Clock_Ip_Init/15 Clock_Ip_Init/15 
+Fifo1Watermark/9 (Fifo1Watermark) @08662e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @079f41c0
+  Aux: @0866a1c0
   References: notif_triggered/2 (write) data1/4 (write) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Fifo1Watermark/9 (Fifo1Watermark) @079ee9a0
+  Calls: Siul2_Dio_Ip_WritePin/11 Bctu_Ip_GetFifoData/14 Siul2_Dio_Ip_WritePin/11 
+Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @086628c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @079eeee0
-  References: notif_triggered/2 (write) data1/4 (write) 
-  Referring: 
-  Function flags: body
-  Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @079eee00
-  Type: function definition analyzed
-  Visibility: force_output no_reorder public
-  Aux: @079ee9a0
+  Aux: @08662e00
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @079eeb60
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @08662d20
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @079eee00
+  Aux: @086628c0
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Check/6 (Check) @079ee8c0
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Check/6 (Check) @08662a80
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @079eeb60
-  References: eMIOS_count/5 (read) eMIOS_count/5 (write) 
+  Aux: @08662d20
+  References: 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Siul2_Dio_Ip_TogglePins/12 Siul2_Dio_Ip_TogglePins/12 
-eMIOS_count/5 (eMIOS_count) @07aa5cf0
+  Calls: Siul2_Dio_Ip_WritePin/11 Siul2_Dio_Ip_WritePin/11 
+eMIOS_count/5 (eMIOS_count) @085d1f78
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @079ee8c0
+  Aux: @08662a80
   References: 
-  Referring: Check/6 (read) Check/6 (write) 
+  Referring: 
   Availability: not-ready
   Varpool flags: initialized
-data1/4 (data1) @07aa5c60
+data1/4 (data1) @085d1ee8
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @07aa5cf0
+  Aux: @085d1f78
   References: 
-  Referring: Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Fifo1Watermark/9 (write) 
   Availability: not-ready
   Varpool flags:
-data/3 (data) @07aa5bd0
+data/3 (data) @085d1e58
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @07aa5c60
+  Aux: @085d1ee8
   References: 
   Referring: Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (read) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (read) 
   Availability: not-ready
   Varpool flags:
-notif_triggered/2 (notif_triggered) @07aa5b88
+notif_triggered/2 (notif_triggered) @085d1e10
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @07aa5bd0
+  Aux: @085d1e58
   References: 
-  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) 
   Availability: not-ready
   Varpool flags: initialized
-exit_code/1 (exit_code) @07aa5af8
+exit_code/1 (exit_code) @085d1d80
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @07aa5b88
+  Aux: @085d1e10
   References: 
-  Referring: main/11 (read) main/11 (read) 
+  Referring: main/10 (read) main/10 (read) 
   Availability: not-ready
   Varpool flags: initialized
-DevAssert/0 (DevAssert) @06173c40
+DevAssert/0 (DevAssert) @06e13ee0
   Type: function definition
   Visibility: no_reorder
   References: 
@@ -305,178 +319,201 @@ Removing unused symbols: DevAssert/0
 
 Reclaimed Symbol table:
 
-Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @07a01990
+Emios_Pwm_Ip_VS_0_I0_Ch3/38 (Emios_Pwm_Ip_VS_0_I0_Ch3) @086bcd38
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @07a02a80
-  Type: function
-  Visibility: external public
-  References: 
-  Referring: 
-  Function flags:
-  Called by: main/11 
-  Calls: 
-Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @07a01900
+Emios_Pwm_Ip_VS_0_I0_Ch2/37 (Emios_Pwm_Ip_VS_0_I0_Ch2) @086bcca8
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @07a029a0
+Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @086bcc18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @086bda80
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @07a028c0
+Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @086bcb88
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @086bd9a0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @07a027e0
+Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @086bd8c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @07a02700
+Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @086bd7e0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @07a02620
+Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @086bd700
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 
   Calls: 
-IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @07a02540
+Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @086bd620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 
   Calls: 
-Bctu_0_Isr/27 (Bctu_0_Isr) @07a02460
+IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @086bd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/10 main/10 main/10 
+  Calls: 
+Bctu_0_Isr/27 (Bctu_0_Isr) @086bd460
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_0_Isr/26 (Adc_Sar_0_Isr) @07a02380
+Adc_Sar_2_Isr/26 (Adc_Sar_2_Isr) @086bd380
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Function flags:
   Called by: 
   Calls: 
-IntCtrl_Ip_InstallHandler/25 (IntCtrl_Ip_InstallHandler) @07a022a0
+Adc_Sar_1_Isr/25 (Adc_Sar_1_Isr) @086bd2a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: main/10 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+IntCtrl_Ip_InstallHandler/24 (IntCtrl_Ip_InstallHandler) @086bd1c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-ADC_2_VS_0/24 (ADC_2_VS_0) @07a01630
+ADC_2_VS_0/23 (ADC_2_VS_0) @086bc7e0
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-ADC_1_VS_0/23 (ADC_1_VS_0) @07a015a0
+ADC_1_VS_0/22 (ADC_1_VS_0) @086bc750
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Adc_Sar_Ip_Init/22 (Adc_Sar_Ip_Init) @07a020e0
+Adc_Sar_Ip_Init/21 (Adc_Sar_Ip_Init) @086bd000
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-BctuHwUnit_0_VS_0/21 (BctuHwUnit_0_VS_0) @07a01510
+BctuHwUnit_0_VS_0/20 (BctuHwUnit_0_VS_0) @086bc6c0
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Bctu_Ip_Init/20 (Bctu_Ip_Init) @07a02000
+Bctu_Ip_Init/19 (Bctu_Ip_Init) @0866aee0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-g_pin_mux_InitConfigArr0/19 (g_pin_mux_InitConfigArr0) @07a01480
+g_pin_mux_InitConfigArr0/18 (g_pin_mux_InitConfigArr0) @086bc630
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Siul2_Port_Ip_Init/18 (Siul2_Port_Ip_Init) @079f4ee0
+Siul2_Port_Ip_Init/17 (Siul2_Port_Ip_Init) @0866ae00
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Clock_Ip_aClockConfig/17 (Clock_Ip_aClockConfig) @07a013a8
+Clock_Ip_aClockConfig/16 (Clock_Ip_aClockConfig) @086bc558
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) main/11 (addr) 
+  Referring: main/10 (addr) main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Clock_Ip_Init/16 (Clock_Ip_Init) @079f4e00
+Clock_Ip_Init/15 (Clock_Ip_Init) @0866ad20
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-Bctu_Ip_GetFifoData/15 (Bctu_Ip_GetFifoData) @079f4b60
+Bctu_Ip_GetFifoData/14 (Bctu_Ip_GetFifoData) @0866ab60
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: Fifo2Watermark/10 Fifo1Watermark/9 
+  Called by: Fifo1Watermark/9 
   Calls: 
-Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
+Adc_Sar_Ip_StartConversion/13 (Adc_Sar_Ip_StartConversion) @0866a8c0
   Type: function
   Visibility: external public
   References: 
@@ -484,7 +521,7 @@ Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 
   Calls: 
-Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
+Adc_Sar_Ip_GetConvData/12 (Adc_Sar_Ip_GetConvData) @0866a7e0
   Type: function
   Visibility: external public
   References: 
@@ -492,273 +529,288 @@ Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 Adc1EndOfChainNotif/7 
   Calls: 
-Siul2_Dio_Ip_TogglePins/12 (Siul2_Dio_Ip_TogglePins) @079f4620
+Siul2_Dio_Ip_WritePin/11 (Siul2_Dio_Ip_WritePin) @0866a620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: Check/6 Check/6 
+  Called by: Fifo1Watermark/9 Fifo1Watermark/9 Check/6 Check/6 
   Calls: 
-main/11 (main) @079f41c0
+main/10 (main) @0866a1c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  References: Clock_Ip_aClockConfig/17 (addr) Clock_Ip_aClockConfig/17 (addr) g_pin_mux_InitConfigArr0/19 (addr) BctuHwUnit_0_VS_0/21 (addr) ADC_1_VS_0/23 (addr) ADC_2_VS_0/24 (addr) Adc_Sar_0_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) exit_code/1 (read) exit_code/1 (read) 
+  References: Clock_Ip_aClockConfig/16 (addr) Clock_Ip_aClockConfig/16 (addr) g_pin_mux_InitConfigArr0/18 (addr) BctuHwUnit_0_VS_0/20 (addr) ADC_1_VS_0/22 (addr) ADC_2_VS_0/23 (addr) Adc_Sar_1_Isr/25 (addr) Adc_Sar_2_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) Emios_Pwm_Ip_VS_0_I0_Ch2/37 (addr) Emios_Pwm_Ip_VS_0_I0_Ch3/38 (addr) exit_code/1 (read) exit_code/1 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/25 IntCtrl_Ip_InstallHandler/25 Adc_Sar_Ip_Init/22 Adc_Sar_Ip_Init/22 Bctu_Ip_Init/20 Siul2_Port_Ip_Init/18 Clock_Ip_Init/16 Clock_Ip_Init/16 
-Fifo2Watermark/10 (Fifo2Watermark) @079eeee0
-  Type: function definition analyzed
-  Visibility: force_output no_reorder public
-  References: notif_triggered/2 (write) data1/4 (write) 
-  Referring: 
-  Function flags: body
-  Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Fifo1Watermark/9 (Fifo1Watermark) @079ee9a0
+  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 Adc_Sar_Ip_Init/21 Adc_Sar_Ip_Init/21 Bctu_Ip_Init/19 Siul2_Port_Ip_Init/17 Clock_Ip_Init/15 Clock_Ip_Init/15 
+Fifo1Watermark/9 (Fifo1Watermark) @08662e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data1/4 (write) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @079eee00
+  Calls: Siul2_Dio_Ip_WritePin/11 Bctu_Ip_GetFifoData/14 Siul2_Dio_Ip_WritePin/11 
+Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @086628c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @079eeb60
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @08662d20
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Check/6 (Check) @079ee8c0
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Check/6 (Check) @08662a80
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  References: eMIOS_count/5 (read) eMIOS_count/5 (write) 
+  References: 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Siul2_Dio_Ip_TogglePins/12 Siul2_Dio_Ip_TogglePins/12 
-eMIOS_count/5 (eMIOS_count) @07aa5cf0
+  Calls: Siul2_Dio_Ip_WritePin/11 Siul2_Dio_Ip_WritePin/11 
+eMIOS_count/5 (eMIOS_count) @085d1f78
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Check/6 (read) Check/6 (write) 
+  Referring: 
   Availability: not-ready
   Varpool flags: initialized
-data1/4 (data1) @07aa5c60
+data1/4 (data1) @085d1ee8
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Fifo1Watermark/9 (write) 
   Availability: not-ready
   Varpool flags:
-data/3 (data) @07aa5bd0
+data/3 (data) @085d1e58
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
   Referring: Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (read) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (read) 
   Availability: not-ready
   Varpool flags:
-notif_triggered/2 (notif_triggered) @07aa5b88
+notif_triggered/2 (notif_triggered) @085d1e10
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) 
   Availability: not-ready
   Varpool flags: initialized
-exit_code/1 (exit_code) @07aa5af8
+exit_code/1 (exit_code) @085d1d80
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: main/11 (read) main/11 (read) 
+  Referring: main/10 (read) main/10 (read) 
   Availability: not-ready
   Varpool flags: initialized
 
 
 Initial Symbol table:
 
-Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @07a01990
+Emios_Pwm_Ip_VS_0_I0_Ch3/38 (Emios_Pwm_Ip_VS_0_I0_Ch3) @086bcd38
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @07a02a80
-  Type: function
-  Visibility: external public
-  References: 
-  Referring: 
-  Function flags:
-  Called by: main/11 
-  Calls: 
-Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @07a01900
+Emios_Pwm_Ip_VS_0_I0_Ch2/37 (Emios_Pwm_Ip_VS_0_I0_Ch2) @086bcca8
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @07a029a0
+Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @086bcc18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @086bda80
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @07a028c0
+Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @086bcb88
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @086bd9a0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @07a027e0
+Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @086bd8c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @07a02700
+Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @086bd7e0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @07a02620
+Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @086bd700
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 
   Calls: 
-IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @07a02540
+Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @086bd620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 
   Calls: 
-Bctu_0_Isr/27 (Bctu_0_Isr) @07a02460
+IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @086bd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/10 main/10 main/10 
+  Calls: 
+Bctu_0_Isr/27 (Bctu_0_Isr) @086bd460
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_0_Isr/26 (Adc_Sar_0_Isr) @07a02380
+Adc_Sar_2_Isr/26 (Adc_Sar_2_Isr) @086bd380
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Function flags:
   Called by: 
   Calls: 
-IntCtrl_Ip_InstallHandler/25 (IntCtrl_Ip_InstallHandler) @07a022a0
+Adc_Sar_1_Isr/25 (Adc_Sar_1_Isr) @086bd2a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: main/10 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+IntCtrl_Ip_InstallHandler/24 (IntCtrl_Ip_InstallHandler) @086bd1c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-ADC_2_VS_0/24 (ADC_2_VS_0) @07a01630
+ADC_2_VS_0/23 (ADC_2_VS_0) @086bc7e0
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-ADC_1_VS_0/23 (ADC_1_VS_0) @07a015a0
+ADC_1_VS_0/22 (ADC_1_VS_0) @086bc750
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Adc_Sar_Ip_Init/22 (Adc_Sar_Ip_Init) @07a020e0
+Adc_Sar_Ip_Init/21 (Adc_Sar_Ip_Init) @086bd000
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-BctuHwUnit_0_VS_0/21 (BctuHwUnit_0_VS_0) @07a01510
+BctuHwUnit_0_VS_0/20 (BctuHwUnit_0_VS_0) @086bc6c0
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Bctu_Ip_Init/20 (Bctu_Ip_Init) @07a02000
+Bctu_Ip_Init/19 (Bctu_Ip_Init) @0866aee0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-g_pin_mux_InitConfigArr0/19 (g_pin_mux_InitConfigArr0) @07a01480
+g_pin_mux_InitConfigArr0/18 (g_pin_mux_InitConfigArr0) @086bc630
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Siul2_Port_Ip_Init/18 (Siul2_Port_Ip_Init) @079f4ee0
+Siul2_Port_Ip_Init/17 (Siul2_Port_Ip_Init) @0866ae00
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Clock_Ip_aClockConfig/17 (Clock_Ip_aClockConfig) @07a013a8
+Clock_Ip_aClockConfig/16 (Clock_Ip_aClockConfig) @086bc558
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) main/11 (addr) 
+  Referring: main/10 (addr) main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Clock_Ip_Init/16 (Clock_Ip_Init) @079f4e00
+Clock_Ip_Init/15 (Clock_Ip_Init) @0866ad20
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-Bctu_Ip_GetFifoData/15 (Bctu_Ip_GetFifoData) @079f4b60
+Bctu_Ip_GetFifoData/14 (Bctu_Ip_GetFifoData) @0866ab60
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: Fifo2Watermark/10 Fifo1Watermark/9 
+  Called by: Fifo1Watermark/9 
   Calls: 
-Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
+Adc_Sar_Ip_StartConversion/13 (Adc_Sar_Ip_StartConversion) @0866a8c0
   Type: function
   Visibility: external public
   References: 
@@ -766,7 +818,7 @@ Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 
   Calls: 
-Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
+Adc_Sar_Ip_GetConvData/12 (Adc_Sar_Ip_GetConvData) @0866a7e0
   Type: function
   Visibility: external public
   References: 
@@ -774,95 +826,87 @@ Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 Adc1EndOfChainNotif/7 
   Calls: 
-Siul2_Dio_Ip_TogglePins/12 (Siul2_Dio_Ip_TogglePins) @079f4620
+Siul2_Dio_Ip_WritePin/11 (Siul2_Dio_Ip_WritePin) @0866a620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: Check/6 Check/6 
+  Called by: Fifo1Watermark/9 Fifo1Watermark/9 Check/6 Check/6 
   Calls: 
-main/11 (main) @079f41c0
+main/10 (main) @0866a1c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  References: Clock_Ip_aClockConfig/17 (addr) Clock_Ip_aClockConfig/17 (addr) g_pin_mux_InitConfigArr0/19 (addr) BctuHwUnit_0_VS_0/21 (addr) ADC_1_VS_0/23 (addr) ADC_2_VS_0/24 (addr) Adc_Sar_0_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) exit_code/1 (read) exit_code/1 (read) 
+  References: Clock_Ip_aClockConfig/16 (addr) Clock_Ip_aClockConfig/16 (addr) g_pin_mux_InitConfigArr0/18 (addr) BctuHwUnit_0_VS_0/20 (addr) ADC_1_VS_0/22 (addr) ADC_2_VS_0/23 (addr) Adc_Sar_1_Isr/25 (addr) Adc_Sar_2_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) Emios_Pwm_Ip_VS_0_I0_Ch2/37 (addr) Emios_Pwm_Ip_VS_0_I0_Ch3/38 (addr) exit_code/1 (read) exit_code/1 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/25 IntCtrl_Ip_InstallHandler/25 Adc_Sar_Ip_Init/22 Adc_Sar_Ip_Init/22 Bctu_Ip_Init/20 Siul2_Port_Ip_Init/18 Clock_Ip_Init/16 Clock_Ip_Init/16 
-Fifo2Watermark/10 (Fifo2Watermark) @079eeee0
-  Type: function definition analyzed
-  Visibility: force_output no_reorder public
-  References: notif_triggered/2 (write) data1/4 (write) 
-  Referring: 
-  Function flags: body
-  Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Fifo1Watermark/9 (Fifo1Watermark) @079ee9a0
+  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 Adc_Sar_Ip_Init/21 Adc_Sar_Ip_Init/21 Bctu_Ip_Init/19 Siul2_Port_Ip_Init/17 Clock_Ip_Init/15 Clock_Ip_Init/15 
+Fifo1Watermark/9 (Fifo1Watermark) @08662e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data1/4 (write) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @079eee00
+  Calls: Siul2_Dio_Ip_WritePin/11 Bctu_Ip_GetFifoData/14 Siul2_Dio_Ip_WritePin/11 
+Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @086628c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @079eeb60
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @08662d20
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Check/6 (Check) @079ee8c0
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Check/6 (Check) @08662a80
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  References: eMIOS_count/5 (read) eMIOS_count/5 (write) 
+  References: 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Siul2_Dio_Ip_TogglePins/12 Siul2_Dio_Ip_TogglePins/12 
-eMIOS_count/5 (eMIOS_count) @07aa5cf0
+  Calls: Siul2_Dio_Ip_WritePin/11 Siul2_Dio_Ip_WritePin/11 
+eMIOS_count/5 (eMIOS_count) @085d1f78
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Check/6 (read) Check/6 (write) 
+  Referring: 
   Availability: not-ready
   Varpool flags: initialized
-data1/4 (data1) @07aa5c60
+data1/4 (data1) @085d1ee8
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Fifo1Watermark/9 (write) 
   Availability: not-ready
   Varpool flags:
-data/3 (data) @07aa5bd0
+data/3 (data) @085d1e58
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
   Referring: Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (read) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (read) 
   Availability: not-ready
   Varpool flags:
-notif_triggered/2 (notif_triggered) @07aa5b88
+notif_triggered/2 (notif_triggered) @085d1e10
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) 
   Availability: not-ready
   Varpool flags: initialized
-exit_code/1 (exit_code) @07aa5af8
+exit_code/1 (exit_code) @085d1d80
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: main/11 (read) main/11 (read) 
+  Referring: main/10 (read) main/10 (read) 
   Availability: not-ready
   Varpool flags: initialized
 
@@ -870,178 +914,201 @@ Removing unused symbols:
 
 Reclaimed Symbol table:
 
-Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @07a01990
+Emios_Pwm_Ip_VS_0_I0_Ch3/38 (Emios_Pwm_Ip_VS_0_I0_Ch3) @086bcd38
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @07a02a80
-  Type: function
-  Visibility: external public
-  References: 
-  Referring: 
-  Function flags:
-  Called by: main/11 
-  Calls: 
-Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @07a01900
+Emios_Pwm_Ip_VS_0_I0_Ch2/37 (Emios_Pwm_Ip_VS_0_I0_Ch2) @086bcca8
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @07a029a0
+Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @086bcc18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @086bda80
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @07a028c0
+Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @086bcb88
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @086bd9a0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @07a027e0
+Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @086bd8c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @07a02700
+Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @086bd7e0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @07a02620
+Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @086bd700
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 
   Calls: 
-IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @07a02540
+Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @086bd620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 
   Calls: 
-Bctu_0_Isr/27 (Bctu_0_Isr) @07a02460
+IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @086bd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/10 main/10 main/10 
+  Calls: 
+Bctu_0_Isr/27 (Bctu_0_Isr) @086bd460
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_0_Isr/26 (Adc_Sar_0_Isr) @07a02380
+Adc_Sar_2_Isr/26 (Adc_Sar_2_Isr) @086bd380
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Function flags:
   Called by: 
   Calls: 
-IntCtrl_Ip_InstallHandler/25 (IntCtrl_Ip_InstallHandler) @07a022a0
+Adc_Sar_1_Isr/25 (Adc_Sar_1_Isr) @086bd2a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: main/10 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+IntCtrl_Ip_InstallHandler/24 (IntCtrl_Ip_InstallHandler) @086bd1c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-ADC_2_VS_0/24 (ADC_2_VS_0) @07a01630
+ADC_2_VS_0/23 (ADC_2_VS_0) @086bc7e0
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-ADC_1_VS_0/23 (ADC_1_VS_0) @07a015a0
+ADC_1_VS_0/22 (ADC_1_VS_0) @086bc750
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Adc_Sar_Ip_Init/22 (Adc_Sar_Ip_Init) @07a020e0
+Adc_Sar_Ip_Init/21 (Adc_Sar_Ip_Init) @086bd000
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-BctuHwUnit_0_VS_0/21 (BctuHwUnit_0_VS_0) @07a01510
+BctuHwUnit_0_VS_0/20 (BctuHwUnit_0_VS_0) @086bc6c0
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Bctu_Ip_Init/20 (Bctu_Ip_Init) @07a02000
+Bctu_Ip_Init/19 (Bctu_Ip_Init) @0866aee0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-g_pin_mux_InitConfigArr0/19 (g_pin_mux_InitConfigArr0) @07a01480
+g_pin_mux_InitConfigArr0/18 (g_pin_mux_InitConfigArr0) @086bc630
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Siul2_Port_Ip_Init/18 (Siul2_Port_Ip_Init) @079f4ee0
+Siul2_Port_Ip_Init/17 (Siul2_Port_Ip_Init) @0866ae00
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Clock_Ip_aClockConfig/17 (Clock_Ip_aClockConfig) @07a013a8
+Clock_Ip_aClockConfig/16 (Clock_Ip_aClockConfig) @086bc558
   Type: variable
   Visibility: external public
   References: 
-  Referring: main/11 (addr) main/11 (addr) 
+  Referring: main/10 (addr) main/10 (addr) 
   Availability: not-ready
   Varpool flags: read-only
-Clock_Ip_Init/16 (Clock_Ip_Init) @079f4e00
+Clock_Ip_Init/15 (Clock_Ip_Init) @0866ad20
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-Bctu_Ip_GetFifoData/15 (Bctu_Ip_GetFifoData) @079f4b60
+Bctu_Ip_GetFifoData/14 (Bctu_Ip_GetFifoData) @0866ab60
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: Fifo2Watermark/10 Fifo1Watermark/9 
+  Called by: Fifo1Watermark/9 
   Calls: 
-Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
+Adc_Sar_Ip_StartConversion/13 (Adc_Sar_Ip_StartConversion) @0866a8c0
   Type: function
   Visibility: external public
   References: 
@@ -1049,7 +1116,7 @@ Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 
   Calls: 
-Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
+Adc_Sar_Ip_GetConvData/12 (Adc_Sar_Ip_GetConvData) @0866a7e0
   Type: function
   Visibility: external public
   References: 
@@ -1057,95 +1124,87 @@ Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 Adc1EndOfChainNotif/7 
   Calls: 
-Siul2_Dio_Ip_TogglePins/12 (Siul2_Dio_Ip_TogglePins) @079f4620
+Siul2_Dio_Ip_WritePin/11 (Siul2_Dio_Ip_WritePin) @0866a620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Function flags:
-  Called by: Check/6 Check/6 
+  Called by: Fifo1Watermark/9 Fifo1Watermark/9 Check/6 Check/6 
   Calls: 
-main/11 (main) @079f41c0
+main/10 (main) @0866a1c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  References: Clock_Ip_aClockConfig/17 (addr) Clock_Ip_aClockConfig/17 (addr) g_pin_mux_InitConfigArr0/19 (addr) BctuHwUnit_0_VS_0/21 (addr) ADC_1_VS_0/23 (addr) ADC_2_VS_0/24 (addr) Adc_Sar_0_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) exit_code/1 (read) exit_code/1 (read) 
+  References: Clock_Ip_aClockConfig/16 (addr) Clock_Ip_aClockConfig/16 (addr) g_pin_mux_InitConfigArr0/18 (addr) BctuHwUnit_0_VS_0/20 (addr) ADC_1_VS_0/22 (addr) ADC_2_VS_0/23 (addr) Adc_Sar_1_Isr/25 (addr) Adc_Sar_2_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) Emios_Pwm_Ip_VS_0_I0_Ch2/37 (addr) Emios_Pwm_Ip_VS_0_I0_Ch3/38 (addr) exit_code/1 (read) exit_code/1 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/25 IntCtrl_Ip_InstallHandler/25 Adc_Sar_Ip_Init/22 Adc_Sar_Ip_Init/22 Bctu_Ip_Init/20 Siul2_Port_Ip_Init/18 Clock_Ip_Init/16 Clock_Ip_Init/16 
-Fifo2Watermark/10 (Fifo2Watermark) @079eeee0
-  Type: function definition analyzed
-  Visibility: force_output no_reorder public
-  References: notif_triggered/2 (write) data1/4 (write) 
-  Referring: 
-  Function flags: body
-  Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Fifo1Watermark/9 (Fifo1Watermark) @079ee9a0
+  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 Adc_Sar_Ip_Init/21 Adc_Sar_Ip_Init/21 Bctu_Ip_Init/19 Siul2_Port_Ip_Init/17 Clock_Ip_Init/15 Clock_Ip_Init/15 
+Fifo1Watermark/9 (Fifo1Watermark) @08662e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data1/4 (write) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @079eee00
+  Calls: Siul2_Dio_Ip_WritePin/11 Bctu_Ip_GetFifoData/14 Siul2_Dio_Ip_WritePin/11 
+Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @086628c0
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @079eeb60
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @08662d20
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Check/6 (Check) @079ee8c0
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Check/6 (Check) @08662a80
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  References: eMIOS_count/5 (read) eMIOS_count/5 (write) 
+  References: 
   Referring: 
   Function flags: body
   Called by: 
-  Calls: Siul2_Dio_Ip_TogglePins/12 Siul2_Dio_Ip_TogglePins/12 
-eMIOS_count/5 (eMIOS_count) @07aa5cf0
+  Calls: Siul2_Dio_Ip_WritePin/11 Siul2_Dio_Ip_WritePin/11 
+eMIOS_count/5 (eMIOS_count) @085d1f78
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Check/6 (read) Check/6 (write) 
+  Referring: 
   Availability: not-ready
   Varpool flags: initialized
-data1/4 (data1) @07aa5c60
+data1/4 (data1) @085d1ee8
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Fifo1Watermark/9 (write) 
   Availability: not-ready
   Varpool flags:
-data/3 (data) @07aa5bd0
+data/3 (data) @085d1e58
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
   Referring: Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (read) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (read) 
   Availability: not-ready
   Varpool flags:
-notif_triggered/2 (notif_triggered) @07aa5b88
+notif_triggered/2 (notif_triggered) @085d1e10
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) 
   Availability: not-ready
   Varpool flags: initialized
-exit_code/1 (exit_code) @07aa5af8
+exit_code/1 (exit_code) @085d1d80
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
-  Referring: main/11 (read) main/11 (read) 
+  Referring: main/10 (read) main/10 (read) 
   Availability: not-ready
   Varpool flags: initialized
 
@@ -1154,200 +1213,226 @@ Reclaiming variables:
 Clearing address taken flags:
 Optimized Symbol table:
 
-Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @07a01990
+Emios_Pwm_Ip_VS_0_I0_Ch3/38 (Emios_Pwm_Ip_VS_0_I0_Ch3) @086bcd38
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @07a02a80
-  Type: function
-  Visibility: external public
-  References: 
-  Referring: 
-  Availability: not_available
-  Function flags:
-  Called by: main/11 
-  Calls: 
-Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @07a01900
+Emios_Pwm_Ip_VS_0_I0_Ch2/37 (Emios_Pwm_Ip_VS_0_I0_Ch2) @086bcca8
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @07a029a0
+Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @086bcc18
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @086bda80
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @07a028c0
+Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @086bcb88
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @086bd9a0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @07a027e0
+Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @086bd8c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @07a02700
+Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @086bd7e0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @07a02620
+Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @086bd700
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 
+  Called by: main/10 main/10 
   Calls: 
-IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @07a02540
+Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @086bd620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 
   Calls: 
-Bctu_0_Isr/27 (Bctu_0_Isr) @07a02460
+IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @086bd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/10 main/10 main/10 
+  Calls: 
+Bctu_0_Isr/27 (Bctu_0_Isr) @086bd460
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not_available
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_0_Isr/26 (Adc_Sar_0_Isr) @07a02380
+Adc_Sar_2_Isr/26 (Adc_Sar_2_Isr) @086bd380
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not_available
   Function flags:
   Called by: 
   Calls: 
-IntCtrl_Ip_InstallHandler/25 (IntCtrl_Ip_InstallHandler) @07a022a0
+Adc_Sar_1_Isr/25 (Adc_Sar_1_Isr) @086bd2a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: main/10 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+IntCtrl_Ip_InstallHandler/24 (IntCtrl_Ip_InstallHandler) @086bd1c0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 main/10 
   Calls: 
-ADC_2_VS_0/24 (ADC_2_VS_0) @07a01630
+ADC_2_VS_0/23 (ADC_2_VS_0) @086bc7e0
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not_available
   Varpool flags: read-only
-ADC_1_VS_0/23 (ADC_1_VS_0) @07a015a0
+ADC_1_VS_0/22 (ADC_1_VS_0) @086bc750
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Adc_Sar_Ip_Init/22 (Adc_Sar_Ip_Init) @07a020e0
+Adc_Sar_Ip_Init/21 (Adc_Sar_Ip_Init) @086bd000
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-BctuHwUnit_0_VS_0/21 (BctuHwUnit_0_VS_0) @07a01510
+BctuHwUnit_0_VS_0/20 (BctuHwUnit_0_VS_0) @086bc6c0
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Bctu_Ip_Init/20 (Bctu_Ip_Init) @07a02000
+Bctu_Ip_Init/19 (Bctu_Ip_Init) @0866aee0
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-g_pin_mux_InitConfigArr0/19 (g_pin_mux_InitConfigArr0) @07a01480
+g_pin_mux_InitConfigArr0/18 (g_pin_mux_InitConfigArr0) @086bc630
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/11 (addr) 
+  Referring: main/10 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Siul2_Port_Ip_Init/18 (Siul2_Port_Ip_Init) @079f4ee0
+Siul2_Port_Ip_Init/17 (Siul2_Port_Ip_Init) @0866ae00
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 
+  Called by: main/10 
   Calls: 
-Clock_Ip_aClockConfig/17 (Clock_Ip_aClockConfig) @07a013a8
+Clock_Ip_aClockConfig/16 (Clock_Ip_aClockConfig) @086bc558
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
   References: 
-  Referring: main/11 (addr) main/11 (addr) 
+  Referring: main/10 (addr) main/10 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Clock_Ip_Init/16 (Clock_Ip_Init) @079f4e00
+Clock_Ip_Init/15 (Clock_Ip_Init) @0866ad20
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: main/11 main/11 
+  Called by: main/10 main/10 
   Calls: 
-Bctu_Ip_GetFifoData/15 (Bctu_Ip_GetFifoData) @079f4b60
+Bctu_Ip_GetFifoData/14 (Bctu_Ip_GetFifoData) @0866ab60
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: Fifo2Watermark/10 Fifo1Watermark/9 
+  Called by: Fifo1Watermark/9 
   Calls: 
-Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
+Adc_Sar_Ip_StartConversion/13 (Adc_Sar_Ip_StartConversion) @0866a8c0
   Type: function
   Visibility: external public
   References: 
@@ -1356,7 +1441,7 @@ Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 
   Calls: 
-Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
+Adc_Sar_Ip_GetConvData/12 (Adc_Sar_Ip_GetConvData) @0866a7e0
   Type: function
   Visibility: external public
   References: 
@@ -1365,34 +1450,25 @@ Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
   Function flags:
   Called by: Adc2EndOfChainNotif/8 Adc2EndOfChainNotif/8 Adc1EndOfChainNotif/7 Adc1EndOfChainNotif/7 
   Calls: 
-Siul2_Dio_Ip_TogglePins/12 (Siul2_Dio_Ip_TogglePins) @079f4620
+Siul2_Dio_Ip_WritePin/11 (Siul2_Dio_Ip_WritePin) @0866a620
   Type: function
   Visibility: external public
   References: 
   Referring: 
   Availability: not_available
   Function flags:
-  Called by: Check/6 Check/6 
+  Called by: Fifo1Watermark/9 Fifo1Watermark/9 Check/6 Check/6 
   Calls: 
-main/11 (main) @079f41c0
+main/10 (main) @0866a1c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
-  References: Clock_Ip_aClockConfig/17 (addr) Clock_Ip_aClockConfig/17 (addr) g_pin_mux_InitConfigArr0/19 (addr) BctuHwUnit_0_VS_0/21 (addr) ADC_1_VS_0/23 (addr) ADC_2_VS_0/24 (addr) Adc_Sar_0_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) exit_code/1 (read) exit_code/1 (read) 
+  References: Clock_Ip_aClockConfig/16 (addr) Clock_Ip_aClockConfig/16 (addr) g_pin_mux_InitConfigArr0/18 (addr) BctuHwUnit_0_VS_0/20 (addr) ADC_1_VS_0/22 (addr) ADC_2_VS_0/23 (addr) Adc_Sar_1_Isr/25 (addr) Adc_Sar_2_Isr/26 (addr) Bctu_0_Isr/27 (addr) Emios_Mcl_Ip_0_Config_VS_0/34 (addr) Emios_Pwm_Ip_VS_0_I0_Ch1/36 (addr) Emios_Pwm_Ip_VS_0_I0_Ch2/37 (addr) Emios_Pwm_Ip_VS_0_I0_Ch3/38 (addr) exit_code/1 (read) exit_code/1 (read) 
   Referring: 
   Availability: available
   Function flags: body
   Called by: 
-  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/25 IntCtrl_Ip_InstallHandler/25 Adc_Sar_Ip_Init/22 Adc_Sar_Ip_Init/22 Bctu_Ip_Init/20 Siul2_Port_Ip_Init/18 Clock_Ip_Init/16 Clock_Ip_Init/16 
-Fifo2Watermark/10 (Fifo2Watermark) @079eeee0
-  Type: function definition analyzed
-  Visibility: force_output externally_visible no_reorder public
-  References: notif_triggered/2 (write) data1/4 (write) 
-  Referring: 
-  Availability: available
-  Function flags: body
-  Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Fifo1Watermark/9 (Fifo1Watermark) @079ee9a0
+  Calls: Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Pwm_Ip_InitChannel/35 Emios_Mcl_Ip_Init/33 Bctu_Ip_EnableNotifications/32 Bctu_Ip_SetGlobalTriggerEn/31 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_EnableNotifications/30 Adc_Sar_Ip_DoCalibration/29 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_EnableIrq/28 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 IntCtrl_Ip_InstallHandler/24 Adc_Sar_Ip_Init/21 Adc_Sar_Ip_Init/21 Bctu_Ip_Init/19 Siul2_Port_Ip_Init/17 Clock_Ip_Init/15 Clock_Ip_Init/15 
+Fifo1Watermark/9 (Fifo1Watermark) @08662e00
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: notif_triggered/2 (write) data1/4 (write) 
@@ -1400,8 +1476,8 @@ Fifo1Watermark/9 (Fifo1Watermark) @079ee9a0
   Availability: available
   Function flags: body
   Called by: 
-  Calls: Bctu_Ip_GetFifoData/15 
-Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @079eee00
+  Calls: Siul2_Dio_Ip_WritePin/11 Bctu_Ip_GetFifoData/14 Siul2_Dio_Ip_WritePin/11 
+Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @086628c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
@@ -1409,8 +1485,8 @@ Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @079eee00
   Availability: available
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @079eeb60
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @08662d20
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: notif_triggered/2 (write) data/3 (write) data/3 (write) data/3 (read) 
@@ -1418,49 +1494,49 @@ Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @079eeb60
   Availability: available
   Function flags: body
   Called by: 
-  Calls: Adc_Sar_Ip_StartConversion/14 Adc_Sar_Ip_GetConvData/13 Adc_Sar_Ip_GetConvData/13 
-Check/6 (Check) @079ee8c0
+  Calls: Adc_Sar_Ip_StartConversion/13 Adc_Sar_Ip_GetConvData/12 Adc_Sar_Ip_GetConvData/12 
+Check/6 (Check) @08662a80
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
-  References: eMIOS_count/5 (read) eMIOS_count/5 (write) 
+  References: 
   Referring: 
   Availability: available
   Function flags: body
   Called by: 
-  Calls: Siul2_Dio_Ip_TogglePins/12 Siul2_Dio_Ip_TogglePins/12 
-eMIOS_count/5 (eMIOS_count) @07aa5cf0
+  Calls: Siul2_Dio_Ip_WritePin/11 Siul2_Dio_Ip_WritePin/11 
+eMIOS_count/5 (eMIOS_count) @085d1f78
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
-  Referring: Check/6 (read) Check/6 (write) 
+  Referring: 
   Availability: available
   Varpool flags: initialized
-data1/4 (data1) @07aa5c60
+data1/4 (data1) @085d1ee8
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
-  Referring: Fifo1Watermark/9 (write) Fifo2Watermark/10 (write) 
+  Referring: Fifo1Watermark/9 (write) 
   Availability: available
   Varpool flags:
-data/3 (data) @07aa5bd0
+data/3 (data) @085d1e58
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
   Referring: Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (write) Adc1EndOfChainNotif/7 (read) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (write) Adc2EndOfChainNotif/8 (read) 
   Availability: available
   Varpool flags:
-notif_triggered/2 (notif_triggered) @07aa5b88
+notif_triggered/2 (notif_triggered) @085d1e10
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
-  Referring: Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) Adc1EndOfChainNotif/7 (write) Fifo2Watermark/10 (write) 
+  Referring: Adc1EndOfChainNotif/7 (write) Adc2EndOfChainNotif/8 (write) Fifo1Watermark/9 (write) 
   Availability: available
   Varpool flags: initialized
-exit_code/1 (exit_code) @07aa5af8
+exit_code/1 (exit_code) @085d1d80
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
-  Referring: main/11 (read) main/11 (read) 
+  Referring: main/10 (read) main/10 (read) 
   Availability: available
   Varpool flags: initialized
 Materializing clones
@@ -1474,7 +1550,7 @@ Removing variables:
 
 Final Symbol table:
 
-Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @07a01990
+Emios_Pwm_Ip_VS_0_I0_Ch3/38 (Emios_Pwm_Ip_VS_0_I0_Ch3) @086bcd38
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -1482,16 +1558,7 @@ Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @07a01990
   Referring: 
   Availability: not_available
   Varpool flags: read-only
-Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @07a02a80
-  Type: function
-  Visibility: external public
-  References: 
-  Referring: 
-  Availability: not_available
-  Function flags:
-  Called by: 
-  Calls: 
-Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @07a01900
+Emios_Pwm_Ip_VS_0_I0_Ch2/37 (Emios_Pwm_Ip_VS_0_I0_Ch2) @086bcca8
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -1499,7 +1566,15 @@ Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @07a01900
   Referring: 
   Availability: not_available
   Varpool flags: read-only
-Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @07a029a0
+Emios_Pwm_Ip_VS_0_I0_Ch1/36 (Emios_Pwm_Ip_VS_0_I0_Ch1) @086bcc18
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Emios_Pwm_Ip_InitChannel/35 (Emios_Pwm_Ip_InitChannel) @086bda80
   Type: function
   Visibility: external public
   References: 
@@ -1508,7 +1583,15 @@ Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @07a029a0
   Function flags:
   Called by: 
   Calls: 
-Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @07a028c0
+Emios_Mcl_Ip_0_Config_VS_0/34 (Emios_Mcl_Ip_0_Config_VS_0) @086bcb88
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Emios_Mcl_Ip_Init/33 (Emios_Mcl_Ip_Init) @086bd9a0
   Type: function
   Visibility: external public
   References: 
@@ -1517,7 +1600,7 @@ Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @07a028c0
   Function flags:
   Called by: 
   Calls: 
-Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @07a027e0
+Bctu_Ip_EnableNotifications/32 (Bctu_Ip_EnableNotifications) @086bd8c0
   Type: function
   Visibility: external public
   References: 
@@ -1526,7 +1609,7 @@ Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @07a027e0
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @07a02700
+Bctu_Ip_SetGlobalTriggerEn/31 (Bctu_Ip_SetGlobalTriggerEn) @086bd7e0
   Type: function
   Visibility: external public
   References: 
@@ -1535,7 +1618,7 @@ Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @07a02700
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @07a02620
+Adc_Sar_Ip_EnableNotifications/30 (Adc_Sar_Ip_EnableNotifications) @086bd700
   Type: function
   Visibility: external public
   References: 
@@ -1544,7 +1627,7 @@ Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @07a02620
   Function flags:
   Called by: 
   Calls: 
-IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @07a02540
+Adc_Sar_Ip_DoCalibration/29 (Adc_Sar_Ip_DoCalibration) @086bd620
   Type: function
   Visibility: external public
   References: 
@@ -1553,7 +1636,16 @@ IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @07a02540
   Function flags:
   Called by: 
   Calls: 
-Bctu_0_Isr/27 (Bctu_0_Isr) @07a02460
+IntCtrl_Ip_EnableIrq/28 (IntCtrl_Ip_EnableIrq) @086bd540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Bctu_0_Isr/27 (Bctu_0_Isr) @086bd460
   Type: function
   Visibility: external public
   Address is taken.
@@ -1563,7 +1655,7 @@ Bctu_0_Isr/27 (Bctu_0_Isr) @07a02460
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_0_Isr/26 (Adc_Sar_0_Isr) @07a02380
+Adc_Sar_2_Isr/26 (Adc_Sar_2_Isr) @086bd380
   Type: function
   Visibility: external public
   Address is taken.
@@ -1573,7 +1665,17 @@ Adc_Sar_0_Isr/26 (Adc_Sar_0_Isr) @07a02380
   Function flags:
   Called by: 
   Calls: 
-IntCtrl_Ip_InstallHandler/25 (IntCtrl_Ip_InstallHandler) @07a022a0
+Adc_Sar_1_Isr/25 (Adc_Sar_1_Isr) @086bd2a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+IntCtrl_Ip_InstallHandler/24 (IntCtrl_Ip_InstallHandler) @086bd1c0
   Type: function
   Visibility: external public
   References: 
@@ -1582,7 +1684,7 @@ IntCtrl_Ip_InstallHandler/25 (IntCtrl_Ip_InstallHandler) @07a022a0
   Function flags:
   Called by: 
   Calls: 
-ADC_2_VS_0/24 (ADC_2_VS_0) @07a01630
+ADC_2_VS_0/23 (ADC_2_VS_0) @086bc7e0
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -1590,7 +1692,7 @@ ADC_2_VS_0/24 (ADC_2_VS_0) @07a01630
   Referring: 
   Availability: not_available
   Varpool flags: read-only
-ADC_1_VS_0/23 (ADC_1_VS_0) @07a015a0
+ADC_1_VS_0/22 (ADC_1_VS_0) @086bc750
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -1598,7 +1700,7 @@ ADC_1_VS_0/23 (ADC_1_VS_0) @07a015a0
   Referring: 
   Availability: not_available
   Varpool flags: read-only
-Adc_Sar_Ip_Init/22 (Adc_Sar_Ip_Init) @07a020e0
+Adc_Sar_Ip_Init/21 (Adc_Sar_Ip_Init) @086bd000
   Type: function
   Visibility: external public
   References: 
@@ -1607,7 +1709,7 @@ Adc_Sar_Ip_Init/22 (Adc_Sar_Ip_Init) @07a020e0
   Function flags:
   Called by: 
   Calls: 
-BctuHwUnit_0_VS_0/21 (BctuHwUnit_0_VS_0) @07a01510
+BctuHwUnit_0_VS_0/20 (BctuHwUnit_0_VS_0) @086bc6c0
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -1615,7 +1717,7 @@ BctuHwUnit_0_VS_0/21 (BctuHwUnit_0_VS_0) @07a01510
   Referring: 
   Availability: not_available
   Varpool flags: read-only
-Bctu_Ip_Init/20 (Bctu_Ip_Init) @07a02000
+Bctu_Ip_Init/19 (Bctu_Ip_Init) @0866aee0
   Type: function
   Visibility: external public
   References: 
@@ -1624,7 +1726,7 @@ Bctu_Ip_Init/20 (Bctu_Ip_Init) @07a02000
   Function flags:
   Called by: 
   Calls: 
-g_pin_mux_InitConfigArr0/19 (g_pin_mux_InitConfigArr0) @07a01480
+g_pin_mux_InitConfigArr0/18 (g_pin_mux_InitConfigArr0) @086bc630
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -1632,7 +1734,7 @@ g_pin_mux_InitConfigArr0/19 (g_pin_mux_InitConfigArr0) @07a01480
   Referring: 
   Availability: not_available
   Varpool flags: read-only
-Siul2_Port_Ip_Init/18 (Siul2_Port_Ip_Init) @079f4ee0
+Siul2_Port_Ip_Init/17 (Siul2_Port_Ip_Init) @0866ae00
   Type: function
   Visibility: external public
   References: 
@@ -1641,7 +1743,7 @@ Siul2_Port_Ip_Init/18 (Siul2_Port_Ip_Init) @079f4ee0
   Function flags:
   Called by: 
   Calls: 
-Clock_Ip_aClockConfig/17 (Clock_Ip_aClockConfig) @07a013a8
+Clock_Ip_aClockConfig/16 (Clock_Ip_aClockConfig) @086bc558
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -1649,7 +1751,7 @@ Clock_Ip_aClockConfig/17 (Clock_Ip_aClockConfig) @07a013a8
   Referring: 
   Availability: not_available
   Varpool flags: read-only
-Clock_Ip_Init/16 (Clock_Ip_Init) @079f4e00
+Clock_Ip_Init/15 (Clock_Ip_Init) @0866ad20
   Type: function
   Visibility: external public
   References: 
@@ -1658,7 +1760,7 @@ Clock_Ip_Init/16 (Clock_Ip_Init) @079f4e00
   Function flags:
   Called by: 
   Calls: 
-Bctu_Ip_GetFifoData/15 (Bctu_Ip_GetFifoData) @079f4b60
+Bctu_Ip_GetFifoData/14 (Bctu_Ip_GetFifoData) @0866ab60
   Type: function
   Visibility: external public
   References: 
@@ -1667,7 +1769,7 @@ Bctu_Ip_GetFifoData/15 (Bctu_Ip_GetFifoData) @079f4b60
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
+Adc_Sar_Ip_StartConversion/13 (Adc_Sar_Ip_StartConversion) @0866a8c0
   Type: function
   Visibility: external public
   References: 
@@ -1676,7 +1778,7 @@ Adc_Sar_Ip_StartConversion/14 (Adc_Sar_Ip_StartConversion) @079f48c0
   Function flags:
   Called by: 
   Calls: 
-Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
+Adc_Sar_Ip_GetConvData/12 (Adc_Sar_Ip_GetConvData) @0866a7e0
   Type: function
   Visibility: external public
   References: 
@@ -1685,7 +1787,7 @@ Adc_Sar_Ip_GetConvData/13 (Adc_Sar_Ip_GetConvData) @079f47e0
   Function flags:
   Called by: 
   Calls: 
-Siul2_Dio_Ip_TogglePins/12 (Siul2_Dio_Ip_TogglePins) @079f4620
+Siul2_Dio_Ip_WritePin/11 (Siul2_Dio_Ip_WritePin) @0866a620
   Type: function
   Visibility: external public
   References: 
@@ -1694,7 +1796,7 @@ Siul2_Dio_Ip_TogglePins/12 (Siul2_Dio_Ip_TogglePins) @079f4620
   Function flags:
   Called by: 
   Calls: 
-main/11 (main) @079f41c0
+main/10 (main) @0866a1c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1703,7 +1805,7 @@ main/11 (main) @079f41c0
   Function flags:
   Called by: 
   Calls: 
-Fifo2Watermark/10 (Fifo2Watermark) @079eeee0
+Fifo1Watermark/9 (Fifo1Watermark) @08662e00
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1712,7 +1814,7 @@ Fifo2Watermark/10 (Fifo2Watermark) @079eeee0
   Function flags:
   Called by: 
   Calls: 
-Fifo1Watermark/9 (Fifo1Watermark) @079ee9a0
+Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @086628c0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1721,7 +1823,7 @@ Fifo1Watermark/9 (Fifo1Watermark) @079ee9a0
   Function flags:
   Called by: 
   Calls: 
-Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @079eee00
+Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @08662d20
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1730,7 +1832,7 @@ Adc2EndOfChainNotif/8 (Adc2EndOfChainNotif) @079eee00
   Function flags:
   Called by: 
   Calls: 
-Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @079eeb60
+Check/6 (Check) @08662a80
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   References: 
@@ -1739,16 +1841,7 @@ Adc1EndOfChainNotif/7 (Adc1EndOfChainNotif) @079eeb60
   Function flags:
   Called by: 
   Calls: 
-Check/6 (Check) @079ee8c0
-  Type: function definition analyzed
-  Visibility: force_output externally_visible no_reorder asm_written public
-  References: 
-  Referring: 
-  Availability: available
-  Function flags:
-  Called by: 
-  Calls: 
-eMIOS_count/5 (eMIOS_count) @07aa5cf0
+eMIOS_count/5 (eMIOS_count) @085d1f78
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
   Aux: @00000001
@@ -1756,34 +1849,34 @@ eMIOS_count/5 (eMIOS_count) @07aa5cf0
   Referring: 
   Availability: available
   Varpool flags: initialized
-data1/4 (data1) @07aa5c60
+data1/4 (data1) @085d1ee8
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
-  Aux: @07aa5cf0
+  Aux: @085d1f78
   References: 
   Referring: 
   Availability: available
   Varpool flags:
-data/3 (data) @07aa5bd0
+data/3 (data) @085d1e58
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
-  Aux: @07aa5c60
+  Aux: @085d1ee8
   References: 
   Referring: 
   Availability: available
   Varpool flags:
-notif_triggered/2 (notif_triggered) @07aa5b88
+notif_triggered/2 (notif_triggered) @085d1e10
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
-  Aux: @07aa5bd0
+  Aux: @085d1e58
   References: 
   Referring: 
   Availability: available
   Varpool flags: initialized
-exit_code/1 (exit_code) @07aa5af8
+exit_code/1 (exit_code) @085d1d80
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public
-  Aux: @07aa5b88
+  Aux: @085d1e10
   References: 
   Referring: 
   Availability: available
