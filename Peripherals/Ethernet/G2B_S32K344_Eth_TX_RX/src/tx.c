@@ -144,16 +144,21 @@ int main(void) {
 	/* Call the helper function to copy the assembled frame into the hardware buffer. */
 	BuildEthernetFrame(&TxBuffer, &txFrame);
 
-	/* --- Send the Frame --- */
-	/* Instruct the GMAC hardware to send the contents of the buffer. */
-	Status = Gmac_Ip_SendFrame(INST_GMAC_0, 0U, &TxBuffer, &TxOptions);
-	DevAssert(Status == GMAC_STATUS_SUCCESS); // Halt if sending fails.
-
-	Status = Gmac_Ip_GetTransmitStatus(INST_GMAC_0, 0U, &TxBuffer, &TxInfo);
-	DevAssert((GMAC_STATUS_SUCCESS == Status) || (0U != TxInfo.ErrMask));
-
 	/* Infinite loop to keep the program running, typical for embedded applications. */
 	for (;;) {
+
+		/* --- Send the Frame --- */
+		/* Instruct the GMAC hardware to send the contents of the buffer. */
+		Status = Gmac_Ip_SendFrame(INST_GMAC_0, 0U, &TxBuffer, &TxOptions);
+		DevAssert(Status == GMAC_STATUS_SUCCESS); // Halt if sending fails.
+
+	    /* Wait for the frame to be transmitted */
+	    do {
+	        Status = Gmac_Ip_GetTransmitStatus(INST_GMAC_0, 0U, &TxBuffer, &TxInfo);
+	    } while (Status == GMAC_STATUS_BUSY);
+
+		DevAssert((GMAC_STATUS_SUCCESS == Status) || (0U != TxInfo.ErrMask));
+
 		if (exit_code != 0) {
 			break;
 		}
