@@ -24,7 +24,7 @@ boolean correct_frame = false;
 /* A global variable to hold the status returned by GMAC driver functions. */
 Gmac_Ip_StatusType Status = 0;
 
-/* A buffer structure for receiving data (though not used in this transmit-only example). */
+/* A buffer structure for receiving data. */
 Gmac_Ip_BufferType RxBuffer = { 0 };
 
 /* Structures to hold metadata about the reception. */
@@ -81,8 +81,10 @@ int main(void) {
 
 	while (1) {
 
-		Status = Gmac_Ip_ReadFrame(INST_GMAC_0, 0U, &RxBuffer, &RxInfo);
-//		DevAssert(Status == GMAC_STATUS_SUCCESS);
+		/* Wait for the frame to be received */
+		do {
+			Status = Gmac_Ip_ReadFrame(INST_GMAC_0, 0U, &RxBuffer, &RxInfo);
+		} while (Status == GMAC_STATUS_RX_QUEUE_EMPTY);
 
 		if (Status == GMAC_STATUS_SUCCESS && RxInfo.ErrMask == 0U) {
 
@@ -107,7 +109,8 @@ int main(void) {
 				correct_frame = true;
 			}
 
-			Gmac_Ip_ProvideRxBuff(INST_GMAC_0, 0U, &RxBuffer);
+		Gmac_Ip_ProvideRxBuff(INST_GMAC_0, 0U, &RxBuffer);
+
 		}
 	}
 

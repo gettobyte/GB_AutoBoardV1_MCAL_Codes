@@ -8,7 +8,7 @@
 *   Autosar Revision     : ASR_REL_4_7_REV_0000
 *   Autosar Conf.Variant :
 *   SW Version           : 4.0.0
-*   Build Version        : S32K3_RTD_4_0_0_P20_D2403_ASR_REL_4_7_REV_0000_20240315
+*   Build Version        : S32K3_RTD_4_0_0_P24_D2405_ASR_REL_4_7_REV_0000_20240515
 *
 *   Copyright 2020 - 2024 NXP
 *
@@ -193,7 +193,7 @@ static const Gmac_Ip_ConfigType GMAC_0_InitConfigPB =
     /*.callback = */NULL_PTR,
     /*.miiMode = */GMAC_RMII_MODE,
     /*.txSchedAlgo = */GMAC_SCHED_ALGO_SP,
-    /*.speed = */GMAC_SPEED_10M,
+    /*.speed = */GMAC_SPEED_100M,
     /*.duplex = */GMAC_FULL_DUPLEX,
     /*.macConfig = */0U | ((uint32)0U << GMAC_MAC_CONFIGURATION_IPG_SHIFT),
     /*.extendedMacConfig = */ 0U,
