@@ -82,7 +82,7 @@ int main(void) {
 	while (1) {
 
 		Status = Gmac_Ip_ReadFrame(INST_GMAC_0, 0U, &RxBuffer, &RxInfo);
-		DevAssert(Status == GMAC_STATUS_SUCCESS);
+//		DevAssert(Status == GMAC_STATUS_SUCCESS);
 
 		if (Status == GMAC_STATUS_SUCCESS && RxInfo.ErrMask == 0U) {
 
