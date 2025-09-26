@@ -6,12 +6,12 @@
  */
 
 /* Including necessary configuration files for the microcontroller and peripherals. */
-#include "Mcal.h"           // Microcontroller Abstraction Layer definitions.
-#include "Clock_Ip.h"       // Clock initialization and configuration driver.
-#include "Siul2_Port_Ip_Cfg.h" // SIUL2 (System Integration Unit Lite 2) Port configuration.
-#include "Siul2_Port_Ip.h"  // SIUL2 Port driver for pin muxing.
-#include "Gmac_Ip.h"        // Gigabit MAC (Ethernet Controller) driver.
-#include "string.h"         // Standard C library for memory operations.
+#include "Mcal.h"               // Microcontroller Abstraction Layer definitions.
+#include "Clock_Ip.h"           // Clock initialization and configuration driver.
+#include "Siul2_Port_Ip_Cfg.h"  // SIUL2 (System Integration Unit Lite 2) Port configuration.
+#include "Siul2_Port_Ip.h"      // SIUL2 Port driver for pin muxing.
+#include "Gmac_Ip.h"            // Gigabit MAC (Ethernet Controller) driver.
+#include "string.h"             // Standard C library for memory operations.
 
 /* A volatile integer used for gracefully exiting the main loop, typically changed by a debugger. */
 volatile int exit_code = 0;
