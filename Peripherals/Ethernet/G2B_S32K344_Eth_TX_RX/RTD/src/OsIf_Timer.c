@@ -8,7 +8,7 @@
 * Autosar Revision : ASR_REL_4_7_REV_0000
 * Autosar Conf.Variant :
 * SW Version : 4.0.0
-* Build Version : S32K3_RTD_4_0_0_P24_D2405_ASR_REL_4_7_REV_0000_20240515
+* Build Version : S32K3_RTD_4_0_0_P20_D2403_ASR_REL_4_7_REV_0000_20240315
 *
 * Copyright 2020 - 2024 NXP
 * All Rights Reserved.
