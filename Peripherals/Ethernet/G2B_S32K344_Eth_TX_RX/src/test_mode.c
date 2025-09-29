@@ -1,5 +1,5 @@
 /*
- * rx_eth.c
+ * test_mode_eth.c
  *
  * Created on: 24-Sep-2025
  * Author: RohanS002 Gettbyte
@@ -70,19 +70,24 @@ int main(void) {
 
 	} while (register_value_0 & 0x8000U); /* Check the 15th bit and loop if it's 1 (TJA110X is resetting). */
 
+//	Setting Config-Enable flag of Phy-Control Register otherwise access is resticted
+
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
 			&register_value_0, 1U);
 
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8100U, 0x4000U,
+	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8100U, 0x000U,
 			1U);
 
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
 			&register_value_0, 1U);
 
+//	Setting Test-Enable flag of Phy-Config Register to guards against accidental
+//	test mode selection of the Ethernet PHY
+
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
 			&register_value_0, 1U);
 
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8108U, 0x0002U,
+	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8108U, 0x0001U,
 			1U);
 
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
