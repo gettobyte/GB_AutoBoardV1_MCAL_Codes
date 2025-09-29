@@ -1,8 +1,8 @@
 /*
- * test_mode_eth.c
+ * register_test.c
  *
- * Created on: 24-Sep-2025
- * Author: RohanS002 Gettbyte
+ *  Created on: 29-Sep-2025
+ *      Author: singh
  */
 
 /* Including necessary configuration files for the microcontroller and peripherals. */
@@ -71,70 +71,60 @@ int main(void) {
 	} while (register_value_0 & 0x8000U); /* Check the 15th bit and loop if it's 1 (TJA110X is resetting). */
 
 //	Setting Config-Enable flag of Phy-Control Register otherwise access is resticted
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
+			&register_value_0, 1U);
+
+	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8100U, 0x4000U,
+			1U);
 
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
 			&register_value_0, 1U);
 
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8100U, 0x0000U,
-			1U);
 
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
+//	If returned value is 32768 then board is in Slave mode or
+//	if returned value is 49152 then board is in Master mode
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x834U,
 			&register_value_0, 1U);
 
-//	Setting Test-Enable flag of Phy-Config Register to guards against accidental
-//	test mode selection of the Ethernet PHY
+
+//	Auto-polarity correction to be enabled only for slave
+//	configuration where pin strapping is disabling the polarity correction
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
+			&register_value_0, 1U);
+
+	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8108U, 0x1U,
+			1U);
 
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
 			&register_value_0, 1U);
 
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8108U, 0x0001U,
-			1U);
 
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
+//	Start operation check(bit 0)
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x40U,
 			&register_value_0, 1U);
 
-//	Test mode 1
 
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x836U,
+//	ePHY enable or not check(bit 2)
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x8048U,
 			&register_value_0, 1U);
 
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 1, 0x836U, 0x2000U,
-			1U);
 
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x836U,
+//	xMII Basic Config if value is 21 which means rev-RMII
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0xAFC6U,
 			&register_value_0, 1U);
 
-//	Test mode 2
 
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x836U,
+//	Phy_Linking Register
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8102U,
 			&register_value_0, 1U);
 
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 1, 0x836U, 0x4000U,
-			1U);
 
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x836U,
+//	Phy-state Basic State
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x810CU,
 			&register_value_0, 1U);
 
-//	Test mode 4
-
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x836U,
-			&register_value_0, 1U);
-
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 1, 0x836U, 0x8000U,
-			1U);
-
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x836U,
-			&register_value_0, 1U);
-
-//	Test mode 5
-
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x836U,
-			&register_value_0, 1U);
-
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 1, 0x836U, 0xA000U,
-			1U);
-
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x836U,
+//	Linking Timer
+	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8340U,
 			&register_value_0, 1U);
 
 	for (;;) {
@@ -143,4 +133,3 @@ int main(void) {
 
 	return 0;
 }
-

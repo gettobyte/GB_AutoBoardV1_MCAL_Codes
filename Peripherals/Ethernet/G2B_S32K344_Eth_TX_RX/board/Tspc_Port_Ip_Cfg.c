@@ -111,7 +111,7 @@ PortContainer_0_BOARD_InitPeripherals:
   - {pin_num: '36', peripheral: EMAC, signal: emac_mii_rmii_tx_en, pin_signal: PTE9}
   - {pin_num: '63', peripheral: EMAC, signal: 'emac_mii_rmii_rxd, 0', pin_signal: PTD9}
   - {pin_num: '64', peripheral: EMAC, signal: 'emac_mii_rmii_rxd, 1', pin_signal: PTD8}
-  - {pin_num: '65', peripheral: EMAC, signal: emac_mii_rmii_rx_dv, pin_signal: PTC17}
+  - {pin_num: '65', peripheral: EMAC, signal: emac_mii_rmii_rx_dv, pin_signal: PTC17, pullSelect: pullUp, pullEnable: enabled}
   - {pin_num: '66', peripheral: EMAC, signal: emac_mii_rmii_rx_er, pin_signal: PTC16}
   - {pin_num: '46', peripheral: EMAC, signal: emac_mii_rmii_mdc, pin_signal: PTE8}
   - {pin_num: '34', peripheral: EMAC, signal: emac_mii_rmii_mdio, pin_signal: PTD16, direction: INPUT/OUTPUT}

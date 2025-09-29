@@ -48,7 +48,12 @@
                   <pin peripheral="EMAC" signal="emac_mii_rmii_tx_en" pin_num="36" pin_signal="PTE9"/>
                   <pin peripheral="EMAC" signal="emac_mii_rmii_rxd, 0" pin_num="63" pin_signal="PTD9"/>
                   <pin peripheral="EMAC" signal="emac_mii_rmii_rxd, 1" pin_num="64" pin_signal="PTD8"/>
-                  <pin peripheral="EMAC" signal="emac_mii_rmii_rx_dv" pin_num="65" pin_signal="PTC17"/>
+                  <pin peripheral="EMAC" signal="emac_mii_rmii_rx_dv" pin_num="65" pin_signal="PTC17">
+                     <pin_features>
+                        <pin_feature name="pullSelect" value="pullUp"/>
+                        <pin_feature name="pullEnable" value="enabled"/>
+                     </pin_features>
+                  </pin>
                   <pin peripheral="EMAC" signal="emac_mii_rmii_rx_er" pin_num="66" pin_signal="PTC16"/>
                   <pin peripheral="EMAC" signal="emac_mii_rmii_mdc" pin_num="46" pin_signal="PTE8"/>
                   <pin peripheral="EMAC" signal="emac_mii_rmii_mdio" pin_num="34" pin_signal="PTD16">
@@ -593,8 +598,8 @@
                                     </struct>
                                     <struct name="6">
                                        <setting name="Name" value="EMAC_MII_RMII_RX_DV_IN"/>
-                                       <setting name="PortPinPue" value="false"/>
-                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinPue" value="true"/>
+                                       <setting name="PortPinPus" value="true"/>
                                        <setting name="PortPinSafeMode" value="false"/>
                                        <setting name="PortPinDse" value="false"/>
                                        <setting name="PortPinWithReadBack" value="false"/>
