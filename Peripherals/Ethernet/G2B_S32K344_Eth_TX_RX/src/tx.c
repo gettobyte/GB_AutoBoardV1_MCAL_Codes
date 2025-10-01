@@ -103,6 +103,11 @@ static void BuildEthernetFrame(Gmac_Ip_BufferType *txBuf,
 
 int main(void) {
 
+	/* Configure RMII mode for Ethernet MAC in DCM module */
+	IP_DCM_GPR->DCMRWF1 = (IP_DCM_GPR->DCMRWF1
+			& ~DCM_GPR_DCMRWF1_MAC_CONF_SEL_MASK)
+			| DCM_GPR_DCMRWF1_MAC_CONF_SEL(2U);
+
 	/* Initialize the microcontroller's clock system based on the provided configuration. */
 	Clock_Ip_Init(&Clock_Ip_aClockConfig[0]);
 

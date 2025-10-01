@@ -81,18 +81,16 @@ int main(void) {
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x8048U,
 			&register_value_0, 1U);
 
-
 	/* Unlock Config access if not already enabled */
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
 			&register_value_0, 1U);
 	if ((register_value_0 & 0x4000U) == 0U) {
 		Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
 				0x4000U, 1U);
+		/* Verify Config-Enable flag */
+		Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
+				&register_value_0, 1U);
 	}
-	/* Verify Config-Enable flag */
-	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8100U,
-			&register_value_0, 1U);
-
 
 	/* Master/Slave mode check (Reg 0x834, Device 1)
 	 * - 32768 = Slave mode
@@ -101,11 +99,9 @@ int main(void) {
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 1, 0x0834U,
 			&register_value_0, 1U);
 
-
 	/* xMII Basic Config (0xAFC6 should return 21 -> Rev-RMII) */
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0xAFC6U,
 			&register_value_0, 1U);
-
 
 	/* Auto-polarity correction:
 	 * - Bit0 = auto (should be set by default)
@@ -115,16 +111,13 @@ int main(void) {
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
 			&register_value_0, 1U);
 
-
 	/* Force polarity correction config (set bit0 only) */
 	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8108U, 0x0001U,
 			1U);
 
-
 	/* Verify polarity correction settings */
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
 			&register_value_0, 1U);
-
 
 	/* ======================== PHY Status ============================= */
 
