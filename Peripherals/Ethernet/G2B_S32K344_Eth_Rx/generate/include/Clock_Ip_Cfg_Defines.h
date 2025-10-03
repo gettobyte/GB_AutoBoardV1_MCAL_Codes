@@ -1,24 +1,24 @@
 /*==================================================================================================
-* Project : RTD AUTOSAR 4.7
-* Platform : CORTEXM
-* Peripheral : S32K3XX
-* Dependencies : none
+*   Project              : RTD AUTOSAR 4.7
+*   Platform             : CORTEXM
+*   Peripheral           : 
+*   Dependencies         : none
 *
-* Autosar Version : 4.7.0
-* Autosar Revision : ASR_REL_4_7_REV_0000
-* Autosar Conf.Variant :
-* SW Version : 4.0.0
-* Build Version : S32K3_RTD_4_0_0_P20_D2403_ASR_REL_4_7_REV_0000_20240315
+*   Autosar Version      : 4.7.0
+*   Autosar Revision     : ASR_REL_4_7_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 4.0.0
+*   Build Version        : S32K3_RTD_4_0_0_P20_D2403_ASR_REL_4_7_REV_0000_20240315
 *
-* Copyright 2020 - 2024 NXP
+*   Copyright 2020 - 2024 NXP
 *
-* NXP Confidential. This software is owned or controlled by NXP and may only be
-* used strictly in accordance with the applicable license terms. By expressly
-* accepting such terms or by downloading, installing, activating and/or otherwise
-* using the software, you are agreeing that you have read, and that you agree to
-* comply with and are bound by, such license terms. If you do not agree to be
-* bound by the applicable license terms, then you may not retain, install,
-* activate or otherwise use the software.
+*   NXP Confidential. This software is owned or controlled by NXP and may only be
+*   used strictly in accordance with the applicable license terms. By expressly
+*   accepting such terms or by downloading, installing, activating and/or otherwise
+*   using the software, you are agreeing that you have read, and that you agree to
+*   comply with and are bound by, such license terms. If you do not agree to be
+*   bound by the applicable license terms, then you may not retain, install,
+*   activate or otherwise use the software.
 ==================================================================================================*/
 /**
 *   @file       Clock_Ip_Cfg_Defines.h
@@ -127,12 +127,12 @@ extern "C"{
 /**
 * @brief            Max number of clock gates
 */
-#define CLOCK_IP_GATES_COUNT       (100U)
+#define CLOCK_IP_GATES_COUNT       (101U)
 
 /**
 * @brief            Max number of clock monitoring units
 */
-#define CLOCK_IP_CMUS_COUNT       (4U)
+#define CLOCK_IP_CMUS_COUNT       (3U)
 
 /**
 * @brief            Max number of configured frequencies values
@@ -154,9 +154,8 @@ extern "C"{
 #define CLOCK_IP_CONFIGURED_DIVIDERS_0_NO       (21U)
 #define CLOCK_IP_CONFIGURED_DIVIDER_TRIGGERS_0_NO       (1U)
 #define CLOCK_IP_CONFIGURED_EXT_CLKS_0_NO       (2U)
-#define CLOCK_IP_CONFIGURED_GATES_0_NO       (100U)
-#define CLOCK_IP_CONFIGURED_CMUS_0_NO       (4U)
-#define CLOCK_IP_CONFIGURED_FREQUENCIES_0_NO       (6U)
+#define CLOCK_IP_CONFIGURED_GATES_0_NO       (101U)
+#define CLOCK_IP_CONFIGURED_CMUS_0_NO       (3U)
 
 /**
 * @brief            Supported power mode.
@@ -336,34 +335,32 @@ extern "C"{
 #define CLOCK_IP_HAS_LPUART14_CLK         113U
 #define CLOCK_IP_HAS_LPUART15_CLK         114U
 #define CLOCK_IP_HAS_MSCM_CLK         115U
-#define CLOCK_IP_HAS_MU2A_CLK         116U
-#define CLOCK_IP_HAS_MU2B_CLK         117U
-#define CLOCK_IP_HAS_PIT0_CLK         118U
-#define CLOCK_IP_HAS_PIT1_CLK         119U
-#define CLOCK_IP_HAS_PIT2_CLK         120U
-#define CLOCK_IP_HAS_QSPI_2XSFIF_CLK         121U
-#define CLOCK_IP_HAS_QSPI0_CLK         122U
-#define CLOCK_IP_HAS_QSPI0_RAM_CLK         123U
-#define CLOCK_IP_HAS_QSPI0_TX_MEM_CLK         124U
-#define CLOCK_IP_HAS_QSPI_SFCK_CLK         125U
-#define CLOCK_IP_HAS_RTC_CLK         126U
-#define CLOCK_IP_HAS_RTC0_CLK         127U
-#define CLOCK_IP_HAS_SAI0_CLK         128U
-#define CLOCK_IP_HAS_SAI1_CLK         129U
-#define CLOCK_IP_HAS_SEMA42_CLK         130U
-#define CLOCK_IP_HAS_SIUL2_CLK         131U
-#define CLOCK_IP_HAS_STCU0_CLK         132U
-#define CLOCK_IP_HAS_STMA_CLK         133U
-#define CLOCK_IP_HAS_STM0_CLK         134U
-#define CLOCK_IP_HAS_STMB_CLK         135U
-#define CLOCK_IP_HAS_STM1_CLK         136U
-#define CLOCK_IP_HAS_SWT0_CLK         137U
-#define CLOCK_IP_HAS_TEMPSENSE_CLK         138U
-#define CLOCK_IP_HAS_TRACE_CLK         139U
-#define CLOCK_IP_HAS_TRGMUX0_CLK         140U
-#define CLOCK_IP_HAS_TSENSE0_CLK         141U
-#define CLOCK_IP_HAS_WKPU0_CLK         142U
-#define CLOCK_IP_FEATURE_NAMES_NO         143U
+#define CLOCK_IP_HAS_PIT0_CLK         116U
+#define CLOCK_IP_HAS_PIT1_CLK         117U
+#define CLOCK_IP_HAS_PIT2_CLK         118U
+#define CLOCK_IP_HAS_QSPI0_CLK         119U
+#define CLOCK_IP_HAS_QSPI0_RAM_CLK         120U
+#define CLOCK_IP_HAS_QSPI0_TX_MEM_CLK         121U
+#define CLOCK_IP_HAS_QSPI_SFCK_CLK         122U
+#define CLOCK_IP_HAS_RTC_CLK         123U
+#define CLOCK_IP_HAS_RTC0_CLK         124U
+#define CLOCK_IP_HAS_SAI0_CLK         125U
+#define CLOCK_IP_HAS_SAI1_CLK         126U
+#define CLOCK_IP_HAS_SEMA42_CLK         127U
+#define CLOCK_IP_HAS_SIUL2_CLK         128U
+#define CLOCK_IP_HAS_STCU0_CLK         129U
+#define CLOCK_IP_HAS_STMA_CLK         130U
+#define CLOCK_IP_HAS_STM0_CLK         131U
+#define CLOCK_IP_HAS_STMB_CLK         132U
+#define CLOCK_IP_HAS_STM1_CLK         133U
+#define CLOCK_IP_HAS_SWT0_CLK         134U
+#define CLOCK_IP_HAS_TEMPSENSE_CLK         135U
+#define CLOCK_IP_HAS_TRACE_CLK         136U
+#define CLOCK_IP_HAS_TRGMUX0_CLK         137U
+#define CLOCK_IP_HAS_TSENSE0_CLK         138U
+#define CLOCK_IP_HAS_WKPU0_CLK         139U
+#define CLOCK_IP_FEATURE_NAMES_NO         140U
+#define CLOCK_IP_PLL_SUPPORTED_PLLCLKMUX (STD_OFF)
 
 
 /*==================================================================================================

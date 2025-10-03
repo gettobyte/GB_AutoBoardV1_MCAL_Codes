@@ -1,24 +1,24 @@
 /*==================================================================================================
-* Project : RTD AUTOSAR 4.7
-* Platform : CORTEXM
-* Peripheral : S32K3XX
-* Dependencies : none
+*   Project              : RTD AUTOSAR 4.7
+*   Platform             : CORTEXM
+*   Peripheral           : 
+*   Dependencies         : none
 *
-* Autosar Version : 4.7.0
-* Autosar Revision : ASR_REL_4_7_REV_0000
-* Autosar Conf.Variant :
-* SW Version : 4.0.0
-* Build Version : S32K3_RTD_4_0_0_P20_D2403_ASR_REL_4_7_REV_0000_20240315
+*   Autosar Version      : 4.7.0
+*   Autosar Revision     : ASR_REL_4_7_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 4.0.0
+*   Build Version        : S32K3_RTD_4_0_0_P20_D2403_ASR_REL_4_7_REV_0000_20240315
 *
-* Copyright 2020 - 2024 NXP
+*   Copyright 2020 - 2024 NXP
 *
-* NXP Confidential. This software is owned or controlled by NXP and may only be
-* used strictly in accordance with the applicable license terms. By expressly
-* accepting such terms or by downloading, installing, activating and/or otherwise
-* using the software, you are agreeing that you have read, and that you agree to
-* comply with and are bound by, such license terms. If you do not agree to be
-* bound by the applicable license terms, then you may not retain, install,
-* activate or otherwise use the software.
+*   NXP Confidential. This software is owned or controlled by NXP and may only be
+*   used strictly in accordance with the applicable license terms. By expressly
+*   accepting such terms or by downloading, installing, activating and/or otherwise
+*   using the software, you are agreeing that you have read, and that you agree to
+*   comply with and are bound by, such license terms. If you do not agree to be
+*   bound by the applicable license terms, then you may not retain, install,
+*   activate or otherwise use the software.
 ==================================================================================================*/
 
 /**
@@ -1262,47 +1262,54 @@ static const Clock_Ip_GateConfigType Clock_Ip_GatesConfigurations_0[CLOCK_IP_CON
 
     #if CLOCK_IP_CONFIGURED_GATES_0_NO > 93U
     {
-        STM0_CLK,                    /* name */
+        STCU0_CLK,                    /* name */
         1U,                           /* enable */
     },
     #endif
 
     #if CLOCK_IP_CONFIGURED_GATES_0_NO > 94U
     {
-        STM1_CLK,                    /* name */
+        STM0_CLK,                    /* name */
         1U,                           /* enable */
     },
     #endif
 
     #if CLOCK_IP_CONFIGURED_GATES_0_NO > 95U
     {
-        SWT0_CLK,                    /* name */
+        STM1_CLK,                    /* name */
         1U,                           /* enable */
     },
     #endif
 
     #if CLOCK_IP_CONFIGURED_GATES_0_NO > 96U
     {
-        TEMPSENSE_CLK,                    /* name */
+        SWT0_CLK,                    /* name */
         1U,                           /* enable */
     },
     #endif
 
     #if CLOCK_IP_CONFIGURED_GATES_0_NO > 97U
     {
-        TRGMUX0_CLK,                    /* name */
+        TEMPSENSE_CLK,                    /* name */
         1U,                           /* enable */
     },
     #endif
 
     #if CLOCK_IP_CONFIGURED_GATES_0_NO > 98U
     {
-        TSENSE0_CLK,                    /* name */
+        TRGMUX0_CLK,                    /* name */
         1U,                           /* enable */
     },
     #endif
 
     #if CLOCK_IP_CONFIGURED_GATES_0_NO > 99U
+    {
+        TSENSE0_CLK,                    /* name */
+        1U,                           /* enable */
+    },
+    #endif
+
+    #if CLOCK_IP_CONFIGURED_GATES_0_NO > 100U
     {
         WKPU0_CLK,                    /* name */
         1U,                           /* enable */
@@ -1364,57 +1371,40 @@ static const Clock_Ip_CmuConfigType Clock_Ip_CmuConfigurations_0[CLOCK_IP_CONFIG
         },
     },
     #endif
-    #if CLOCK_IP_CONFIGURED_CMUS_0_NO > 0U
-    {
-        HSE_CLK,            /* Clock name associated to clock monitor. */
-        0U,                   /*Enable/disable clock monitor CMU_FC_5 */
-        (                                           /* IER for CMU_FC_5 */
-            CMU_FC_IER_FLLIE(0U) |
-            CMU_FC_IER_FHHIE(0U) |
-            CMU_FC_IER_FLLAIE(0U) |
-            CMU_FC_IER_FHHAIE(0U)
-        ),
-        80000000U,
-        {
-                0U,          /* Start index in register values array */
-                0U,          /* End index in register values array */
-        },
-    },
-    #endif
 };
 
 
-static const Clock_Ip_ConfiguredFrequencyType Clock_Ip_ConfiguredFrequencyConfigurations_0[CLOCK_IP_CONFIGURED_FREQUENCIES_0_NO] = {
+static const Clock_Ip_ConfiguredFrequencyType Clock_Ip_ConfiguredFrequencyConfigurations_0[CLOCK_IP_CONFIGURED_FREQUENCIES_COUNT] = {
 
     {
         CLOCK_IS_OFF,
         0U,
     },
-    #if CLOCK_IP_CONFIGURED_FREQUENCIES_0_NO > 1U
+    #if CLOCK_IP_CONFIGURED_FREQUENCIES_COUNT > 1U
     {
         FIRC_CLK,
         48000000U,
     },
     #endif
-    #if CLOCK_IP_CONFIGURED_FREQUENCIES_0_NO > 2U
+    #if CLOCK_IP_CONFIGURED_FREQUENCIES_COUNT > 2U
     {
         FXOSC_CLK,
         16000000U,
     },
     #endif
-    #if CLOCK_IP_CONFIGURED_FREQUENCIES_0_NO > 3U
+    #if CLOCK_IP_CONFIGURED_FREQUENCIES_COUNT > 3U
     {
         CORE_CLK,
         160000000U,
     },
     #endif
-    #if CLOCK_IP_CONFIGURED_FREQUENCIES_0_NO > 4U
+    #if CLOCK_IP_CONFIGURED_FREQUENCIES_COUNT > 4U
     {
         AIPS_PLAT_CLK,
         80000000U,
     },
     #endif
-    #if CLOCK_IP_CONFIGURED_FREQUENCIES_0_NO > 5U
+    #if CLOCK_IP_CONFIGURED_FREQUENCIES_COUNT > 5U
     {
         AIPS_SLOW_CLK,
         40000000U,
@@ -1442,9 +1432,9 @@ const Clock_Ip_ClockConfigType Clock_Ip_aClockConfig[1U] = {
         1U,                       /* dividerTriggersCount */
         0U,                       /* fracDivsCount */
         2U,                       /* extClksCount */
-        100U,                       /* gatesCount */
+        101U,                       /* gatesCount */
         0U,                       /* pcfsCount */
-        4U,                       /* cmusCount */
+        3U,                       /* cmusCount */
         6U,                       /* configureFrequenciesCount */
 
         (&Clock_Ip_IrcoscConfigurations_0),                    /* Ircosc configurations */

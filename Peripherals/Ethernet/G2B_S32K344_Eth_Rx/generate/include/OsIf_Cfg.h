@@ -60,28 +60,30 @@ extern "C"{
 /*==================================================================================================
 *                                     FILE VERSION CHECKS
 ==================================================================================================*/
-/* Checks against OsIf_ArchCfg.h */
+/* Check if OsIf_Cfg.h file and OsIf_ArchCfg.h file are of the same vendor */
 #if (OSIF_CFG_VENDOR_ID != OSIF_ARCHCFG_VENDOR_ID)
     #error "OsIf_Cfg.h and OsIf_ArchCfg.h have different vendor ids"
 #endif
+/* Check if OsIf_Cfg.h file and OsIf_ArchCfg.h file are of the same Autosar version */
 #if ((OSIF_CFG_AR_RELEASE_MAJOR_VERSION    != OSIF_ARCHCFG_AR_RELEASE_MAJOR_VERSION) || \
      (OSIF_CFG_AR_RELEASE_MINOR_VERSION    != OSIF_ARCHCFG_AR_RELEASE_MINOR_VERSION) || \
      (OSIF_CFG_AR_RELEASE_REVISION_VERSION != OSIF_ARCHCFG_AR_RELEASE_REVISION_VERSION))
      #error "AUTOSAR Version Numbers of OsIf_Cfg.h and OsIf_ArchCfg.h are different"
 #endif
+/* Check if OsIf_Cfg.h file and OsIf_ArchCfg.h file are of the same Software version */
 #if ((OSIF_CFG_SW_MAJOR_VERSION != OSIF_ARCHCFG_SW_MAJOR_VERSION) || \
      (OSIF_CFG_SW_MINOR_VERSION != OSIF_ARCHCFG_SW_MINOR_VERSION) || \
      (OSIF_CFG_SW_PATCH_VERSION != OSIF_ARCHCFG_SW_PATCH_VERSION))
     #error "Software Version Numbers of OsIf_Cfg.h and OsIf_ArchCfg.h are different"
 #endif
 
-/* Checks against StandardTypes.h */
+/* Check if OsIf_Cfg.h file and StandardTypes.h file are of the same Autosar version */
 #ifndef DISABLE_MCAL_INTERMODULE_ASR_CHECK
     #if ((OSIF_CFG_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION) || \
          (OSIF_CFG_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION))
         #error "AutoSar Version Numbers of OsIf_Cfg.h and StandardTypes.h are different"
     #endif
-#endif
+#endif /* DISABLE_MCAL_INTERMODULE_ASR_CHECK */
 /*==================================================================================================
 *                                            CONSTANTS
 ==================================================================================================*/
