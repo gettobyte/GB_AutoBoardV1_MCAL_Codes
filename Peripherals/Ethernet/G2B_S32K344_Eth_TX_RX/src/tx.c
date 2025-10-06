@@ -27,10 +27,10 @@ uint16_t register_value_1;
 Gmac_Ip_StatusType Status = 0;
 
 /* A 6-byte array to store the source MAC address, which will be retrieved from the hardware. */
-uint8 MacAddr_Src[6U] = { 0U };
+uint8 MacAddr_Src[6U] = { 66, 55, 44, 33, 22, 11 };
 
 /* A 6-byte array defining the destination MAC address for the Ethernet frame. */
-uint8 MacAddr_Dest[6U] = { 02, 00, 00, 00, 00, 02 };
+uint8 MacAddr_Dest[6U] = { 66, 55, 44, 33, 22, 12 };
 
 /* Configuration options for the transmission, enabling automatic CRC and padding insertion. */
 Gmac_Ip_TxOptionsType TxOptions = { TRUE, GMAC_CRC_AND_PAD_INSERTION,
@@ -261,7 +261,7 @@ int main(void) {
 	Eth_Phy_Init();
 
 	/* Retrieve the unique MAC address from the GMAC hardware and store it. */
-	Gmac_Ip_GetMacAddr(INST_GMAC_0, MacAddr_Src);
+//	Gmac_Ip_GetMacAddr(INST_GMAC_0, MacAddr_Src);
 
 	/* --- Assemble the Ethernet Frame --- */
 	/* Copy the retrieved hardware MAC as the source address. */
