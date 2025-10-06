@@ -293,21 +293,21 @@ static const Clock_Ip_SelectorConfigType Clock_Ip_SelectorConfigurations_0[CLOCK
     #if CLOCK_IP_CONFIGURED_SELECTORS_0_NO > 3U
     {
         EMAC_RX_CLK,                    /* Clock name associated to selector */
-        FIRC_CLK,                    /* Name of the selected input source */
+        EMAC_MII_RMII_TX_CLK,                    /* Name of the selected input source */
     },
     #endif
 
     #if CLOCK_IP_CONFIGURED_SELECTORS_0_NO > 4U
     {
         EMAC_TS_CLK,                    /* Clock name associated to selector */
-        FIRC_CLK,                    /* Name of the selected input source */
+        EMAC_MII_RMII_TX_CLK,                    /* Name of the selected input source */
     },
     #endif
 
     #if CLOCK_IP_CONFIGURED_SELECTORS_0_NO > 5U
     {
         EMAC_TX_CLK,                    /* Clock name associated to selector */
-        FIRC_CLK,                    /* Name of the selected input source */
+        EMAC_MII_RMII_TX_CLK,                    /* Name of the selected input source */
     },
     #endif
 
@@ -488,7 +488,7 @@ static const Clock_Ip_DividerConfigType Clock_Ip_DividerConfigurations_0[CLOCK_I
     #if CLOCK_IP_CONFIGURED_DIVIDERS_0_NO > 12U
     {
         EMAC_RX_CLK,                    /* name */
-        1U,                              /* value */
+        2U,                              /* value */
         {
             0U,
         }
@@ -508,7 +508,7 @@ static const Clock_Ip_DividerConfigType Clock_Ip_DividerConfigurations_0[CLOCK_I
     #if CLOCK_IP_CONFIGURED_DIVIDERS_0_NO > 14U
     {
         EMAC_TX_CLK,                    /* name */
-        1U,                              /* value */
+        2U,                              /* value */
         {
             0U,
         }
@@ -601,7 +601,7 @@ static const Clock_Ip_ExtClkConfigType Clock_Ip_ExtClkConfigurations_0[CLOCK_IP_
     #if CLOCK_IP_CONFIGURED_EXT_CLKS_0_NO > 1U
     {
         EMAC_MII_RMII_TX_CLK,                    /* name */
-        0U,                              /* value */
+        50000000U,                              /* value */
     },
     #endif
 };

@@ -54,12 +54,13 @@ outputs:
 - {id: EDMA0_TCD8_CLK.outFreq, value: 160 MHz}
 - {id: EDMA0_TCD9_CLK.outFreq, value: 160 MHz}
 - {id: EIM0_CLK.outFreq, value: 80 MHz}
-- {id: EMAC0_RX_CLK.outFreq, value: 48 MHz}
-- {id: EMAC0_TS_CLK.outFreq, value: 48 MHz}
-- {id: EMAC0_TX_CLK.outFreq, value: 48 MHz}
-- {id: EMAC_RX_CLK.outFreq, value: 48 MHz}
-- {id: EMAC_TS_CLK.outFreq, value: 48 MHz}
-- {id: EMAC_TX_CLK.outFreq, value: 48 MHz}
+- {id: EMAC0_RX_CLK.outFreq, value: 25 MHz}
+- {id: EMAC0_TS_CLK.outFreq, value: 50 MHz}
+- {id: EMAC0_TX_CLK.outFreq, value: 25 MHz}
+- {id: EMAC_MII_RMII_TX.outFreq, value: 50 MHz}
+- {id: EMAC_RX_CLK.outFreq, value: 25 MHz}
+- {id: EMAC_TS_CLK.outFreq, value: 50 MHz}
+- {id: EMAC_TX_CLK.outFreq, value: 25 MHz}
 - {id: EMIOS0_CLK.outFreq, value: 160 MHz}
 - {id: EMIOS1_CLK.outFreq, value: 160 MHz}
 - {id: EMIOS2_CLK.outFreq, value: 160 MHz}
@@ -161,6 +162,12 @@ settings:
 - {id: MC_CGM_MUX_6_DIV0.scale, value: '2', locked: true}
 - {id: MODULE_CLOCKS.MC_CGM_AUX3_DIV0.scale, value: '2', locked: true}
 - {id: MODULE_CLOCKS.MC_CGM_AUX4_DIV0.scale, value: '2', locked: true}
+- {id: MODULE_CLOCKS.MC_CGM_AUX7_DIV0.scale, value: '2', locked: true}
+- {id: MODULE_CLOCKS.MC_CGM_AUX7_MUX.sel, value: external_clocks.EMACMIIRMIITXOUT}
+- {id: MODULE_CLOCKS.MC_CGM_AUX8_DIV0.scale, value: '2', locked: true}
+- {id: MODULE_CLOCKS.MC_CGM_AUX8_MUX.sel, value: external_clocks.EMACMIIRMIITXOUT}
+- {id: MODULE_CLOCKS.MC_CGM_AUX9_DIV0.scale, value: '1', locked: true}
+- {id: MODULE_CLOCKS.MC_CGM_AUX9_MUX.sel, value: external_clocks.EMACMIIRMIITXOUT}
 - {id: PHI0.scale, value: '3', locked: true}
 - {id: PHI1.scale, value: '3', locked: true}
 - {id: PLL_PREDIV.scale, value: '2', locked: true}
@@ -169,5 +176,7 @@ settings:
 sources:
 - {id: FXOSC_CLK.FXOSC_CLK.outFreq, value: 16 MHz, enabled: true}
 - {id: SXOSC_CLK.SXOSC_CLK.outFreq, value: 32.768 kHz, enabled: true}
+- {id: external_clocks.emac_mii_rmii_tx.outFreq, value: 50 MHz, enabled: true}
+- {id: external_clocks.emac_mii_rx.outFreq, value: 50 MHz}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS **********/
    

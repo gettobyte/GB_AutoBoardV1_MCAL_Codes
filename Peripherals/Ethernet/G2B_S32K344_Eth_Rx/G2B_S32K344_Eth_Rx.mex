@@ -126,6 +126,19 @@
                         <data>OUTPUT</data>
                      </feature>
                   </dependency>
+                  <dependency resourceType="PinSignal" resourceId=".EMAC_MII_RMII_TX" description="&apos;External pin&apos; (Pins tool id: .EMAC_MII_RMII_TX, Clocks tool id: external_clocks.EMAC_MII_RMII_TX) needs to be routed" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId=".EMAC_MII_RMII_TX" description="&apos;External pin&apos; (Pins tool id: .EMAC_MII_RMII_TX, Clocks tool id: external_clocks.EMAC_MII_RMII_TX) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
                   <dependency resourceType="SWComponent" resourceId="platform.driver.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:ClockConfig0">
                      <feature name="enabled" evaluation="equal" configuration="M7_0">
                         <data>true</data>
@@ -135,6 +148,8 @@
                <clock_sources>
                   <clock_source id="FXOSC_CLK.FXOSC_CLK.outFreq" value="16 MHz" locked="false" enabled="true"/>
                   <clock_source id="SXOSC_CLK.SXOSC_CLK.outFreq" value="32.768 kHz" locked="false" enabled="true"/>
+                  <clock_source id="external_clocks.emac_mii_rmii_tx.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="external_clocks.emac_mii_rx.outFreq" value="50 MHz" locked="false" enabled="false"/>
                </clock_sources>
                <clock_outputs>
                   <clock_output id="ADC0_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
@@ -188,12 +203,13 @@
                   <clock_output id="EDMA0_TCD8_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
                   <clock_output id="EDMA0_TCD9_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
                   <clock_output id="EIM0_CLK.outFreq" value="80 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC0_RX_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC0_TS_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC0_TX_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC_RX_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC_TS_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC_TX_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC0_RX_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC0_TS_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC0_TX_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_MII_RMII_TX.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_RX_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_TS_CLK.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_TX_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
                   <clock_output id="EMIOS0_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
                   <clock_output id="EMIOS1_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
                   <clock_output id="EMIOS2_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
@@ -296,6 +312,12 @@
                   <setting id="MC_CGM_MUX_6_DIV0.scale" value="2" locked="true"/>
                   <setting id="MODULE_CLOCKS.MC_CGM_AUX3_DIV0.scale" value="2" locked="true"/>
                   <setting id="MODULE_CLOCKS.MC_CGM_AUX4_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX7_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX7_MUX.sel" value="external_clocks.EMACMIIRMIITXOUT" locked="false"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX8_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX8_MUX.sel" value="external_clocks.EMACMIIRMIITXOUT" locked="false"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX9_DIV0.scale" value="1" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX9_MUX.sel" value="external_clocks.EMACMIIRMIITXOUT" locked="false"/>
                   <setting id="PHI0.scale" value="3" locked="true"/>
                   <setting id="PHI1.scale" value="3" locked="true"/>
                   <setting id="PLL_PREDIV.scale" value="2" locked="true"/>
@@ -672,7 +694,7 @@
                                     <setting name="0" value="REDUCED"/>
                                  </array>
                                  <array name="EthCtrlMacLayerSpeed">
-                                    <setting name="0" value="ETH_MAC_LAYER_SPEED_10M"/>
+                                    <setting name="0" value="ETH_MAC_LAYER_SPEED_100M"/>
                                  </array>
                                  <array name="EthCtrlPhyAddress">
                                     <setting name="0" value="02:00:00:00:00:02"/>
