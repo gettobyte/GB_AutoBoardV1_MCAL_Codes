@@ -498,7 +498,7 @@ static const Clock_Ip_DividerConfigType Clock_Ip_DividerConfigurations_0[CLOCK_I
     #if CLOCK_IP_CONFIGURED_DIVIDERS_0_NO > 13U
     {
         EMAC_TS_CLK,                    /* name */
-        2U,                              /* value */
+        1U,                              /* value */
         {
             0U,
         }
