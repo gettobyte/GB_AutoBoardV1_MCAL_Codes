@@ -140,7 +140,7 @@ static Gmac_Ip_TxGateControl GMAC_0_GateControlListPB[1U]  =
 
 
 /*! @brief The MAC address(es) of the configured controller(s) */
-static const uint8 GMAC_0_au8MacAddrPB[GMAC_MAC_ADDR_LENGTH] = { 0x02U, 0x00U, 0x00U, 0x00U, 0x00U, 0x02U };
+static const uint8 GMAC_0_au8MacAddrPB[GMAC_MAC_ADDR_LENGTH] = { 0x98U, 0x29U, 0xa6U, 0x4aU, 0xa0U, 0xc9U };
 
 /*! @brief Reception ring configuration structures */
 static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
@@ -151,10 +151,10 @@ static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
         /*.callback = */NULL_PTR,
         /*.buffer = */GMAC_0_RxRing_0_DataBuffer,
         /*.interrupts = */(uint32)0U,
-        /*.bufferLen = */64U,
+        /*.bufferLen = */128U,
         /*.ringSize = */4U,
         /*.priorityMask = */0U,
-        /*.dmaBurstLength = */16U
+        /*.dmaBurstLength = */32U
     }
 };
 
@@ -172,10 +172,10 @@ static const Gmac_Ip_TxRingConfigType GMAC_0_aTxRingConfigPB[1U] =
         /*.callback = */NULL_PTR,
         /*.buffer = */GMAC_0_TxRing_0_DataBuffer,
         /*.interrupts = */(uint32)0U,
-        /*.bufferLen = */64U,
+        /*.bufferLen = */128U,
         /*.ringSize = */4U,
         /*.priorityMask = */0U,
-        /*.dmaBurstLength = */16U,
+        /*.dmaBurstLength = */32U,
         /*.queueOpMode = */GMAC_OP_MODE_DCB_GEN
     }
 };
