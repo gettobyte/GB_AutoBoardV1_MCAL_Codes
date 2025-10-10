@@ -170,71 +170,96 @@ static void Eth_Phy_Init(void) {
 		while (1)
 			; /* Halt if link not OK */
 	}
-
 }
 
-/*
- * Ethernet Frame Format (IEEE 802.3 / Ethernet II)
- *
- * +------------+------------+-----------+------------------+-----------+
- * | Destination|   Source   | EtherType |      Payload     |    FCS    |
- * |   MAC (6B) |   MAC (6B) |   (2B)    |    (46–1500 B)   |   (4B)    |
- * +------------+------------+-----------+------------------+-----------+
- *
- * Field Details:
- * - Destination MAC (6 bytes): Who the frame is sent to
- * - Source MAC      (6 bytes): Who is sending the frame
- * - EtherType/Length(2 bytes): Protocol indicator
- * e.g. 0x0800 = IPv4, 0x0806 = ARP, custom = 0x88B5 etc.
- * - Payload         (46–1500 bytes): Actual data being sent
- * - FCS             (4 bytes): CRC checksum (auto-inserted by GMAC HW)
- *
- * In our code:
- * [0..5]   -> txFrame.dstMac
- * [6..11]  -> txFrame.srcMac
- * [12..13] -> txFrame.etherType
- * [14..N]  -> txFrame.payload
- * [N+1..]  -> FCS (handled automatically by hardware)
- */
+/* ============================================================
+ * New Frame Builder: Ethernet + IPv4 + ICMP (Custom Payload)
+ * ============================================================ */
 
-/* A structure to represent an Ethernet frame in a user-friendly way. */
-typedef struct {
-	uint8 dstMac[6];
-	uint8 srcMac[6];
-	uint16 etherType;
-	uint8 payload[64]; /* A buffer for the payload data. */
-	uint16 payloadLen; /* The actual length of the payload. */
-} EthFrame_t;
-
-/**
- * @brief Constructs a raw Ethernet frame into a GMAC hardware buffer.
- * @param txBuf A pointer to the GMAC transmit buffer where the frame will be built.
- * @param frame A pointer to the user-friendly frame structure containing the data.
- */
-static void BuildEthernetFrame(Gmac_Ip_BufferType *txBuf,
-		const EthFrame_t *frame) {
-	/* Get a pointer to the beginning of the hardware buffer's data area. */
-	uint8 *ptr = txBuf->Data;
-
-	/* Copy the 6-byte destination MAC address into the buffer. */
-	memcpy(ptr, frame->dstMac, 6U);
-	ptr += 6U; // Move the pointer forward by 6 bytes.
-
-	/* Copy the 6-byte source MAC address. */
-	memcpy(ptr, frame->srcMac, 6U);
-	ptr += 6U; // Move the pointer forward.
-
-	/* Copy the 2-byte EtherType, handling big-endian byte order manually. */
-	*ptr++ = (uint8) ((frame->etherType >> 8) & 0xFFU); // Most Significant Byte (MSB)
-	*ptr++ = (uint8) (frame->etherType & 0xFFU); // Least Significant Byte (LSB)
-
-	/* Copy the payload data into the buffer. */
-	memcpy(ptr, frame->payload, frame->payloadLen);
-	ptr += frame->payloadLen; // Move the pointer past the payload.
-
-	/* Set the total length of the buffer. The FCS (CRC) will be added by the hardware. */
-	txBuf->Length = (uint32) (ptr - txBuf->Data);
+static uint16 CalcChecksum(const uint8 *data, uint16 len)
+{
+    uint32 sum = 0;
+    for (uint16 i = 0; i < len - 1; i += 2) {
+        uint16 word = ((uint16)data[i] << 8) | data[i + 1];
+        sum += word;
+    }
+    if (len & 1) { // odd length
+        sum += ((uint16)data[len - 1] << 8);
+    }
+    while (sum >> 16)
+        sum = (sum & 0xFFFFU) + (sum >> 16);
+    return (uint16)(~sum);
 }
+
+static void BuildEthernetIPv4ICMPFrame(Gmac_Ip_BufferType *txBuf,
+                                       const uint8 srcMac[6],
+                                       const uint8 dstMac[6],
+                                       uint32 srcIP,
+                                       uint32 dstIP,
+                                       const uint8 *icmpPayload,
+                                       uint16 payloadLen)
+{
+    uint8 *ptr = txBuf->Data;
+
+    /* ========== Ethernet Header ========== */
+    memcpy(ptr, dstMac, 6U);
+    ptr += 6U;
+    memcpy(ptr, srcMac, 6U);
+    ptr += 6U;
+    *ptr++ = 0x08U; // EtherType = IPv4 (0x0800)
+    *ptr++ = 0x00U;
+
+    /* ========== IPv4 Header ========== */
+    uint8 *ipHeader = ptr;
+    uint16 ipHeaderLen = 20U;
+    uint16 totalLen = ipHeaderLen + 8U + payloadLen; // IP + ICMP
+
+    ipHeader[0] = 0x45;          // Version 4, IHL = 5
+    ipHeader[1] = 0x00;          // DSCP/ECN
+    ipHeader[2] = (totalLen >> 8) & 0xFF;
+    ipHeader[3] = totalLen & 0xFF;
+    ipHeader[4] = 0x00; ipHeader[5] = 0x01; // ID
+    ipHeader[6] = 0x40; ipHeader[7] = 0x00; // Flags/Offset
+    ipHeader[8] = 64;              // TTL
+    ipHeader[9] = 1;               // Protocol = ICMP
+    ipHeader[10] = 0; ipHeader[11] = 0; // Checksum placeholder
+    ipHeader[12] = (srcIP >> 24) & 0xFF;
+    ipHeader[13] = (srcIP >> 16) & 0xFF;
+    ipHeader[14] = (srcIP >> 8) & 0xFF;
+    ipHeader[15] = srcIP & 0xFF;
+    ipHeader[16] = (dstIP >> 24) & 0xFF;
+    ipHeader[17] = (dstIP >> 16) & 0xFF;
+    ipHeader[18] = (dstIP >> 8) & 0xFF;
+    ipHeader[19] = dstIP & 0xFF;
+
+    uint16 ipChecksum = CalcChecksum(ipHeader, ipHeaderLen);
+    ipHeader[10] = (ipChecksum >> 8) & 0xFF;
+    ipHeader[11] = ipChecksum & 0xFF;
+    ptr += ipHeaderLen;
+
+    /* ========== ICMP Header + Payload ========== */
+    uint8 *icmp = ptr;
+    icmp[0] = 8;   // Type = Echo Request
+    icmp[1] = 0;   // Code = 0
+    icmp[2] = 0; icmp[3] = 0; // Checksum placeholder
+    icmp[4] = 0x12; icmp[5] = 0x34; // Identifier
+    icmp[6] = 0x00; icmp[7] = 0x01; // Sequence
+
+    memcpy(&icmp[8], icmpPayload, payloadLen);
+
+    uint16 icmpLen = 8U + payloadLen;
+    uint16 icmpChecksum = CalcChecksum(icmp, icmpLen);
+    icmp[2] = (icmpChecksum >> 8) & 0xFF;
+    icmp[3] = icmpChecksum & 0xFF;
+    ptr += icmpLen;
+
+    /* ========== Finalize ========== */
+    txBuf->Length = (uint32)(ptr - txBuf->Data);
+}
+
+/* ============================================================
+ * Main Function
+ * ============================================================ */
 
 int main(void) {
 
@@ -251,50 +276,33 @@ int main(void) {
 	NUM_OF_CONFIGURED_PINS_PortContainer_0_BOARD_InitPeripherals,
 			g_pin_mux_InitConfigArr_PortContainer_0_BOARD_InitPeripherals);
 
-	/* Declare a local variable to hold the Ethernet frame data. */
-	EthFrame_t txFrame;
-
 	/* Initialize the GMAC (Ethernet) peripheral with its configuration. */
 	Status = Gmac_Ip_Init(INST_GMAC_0, &Gmac_0_ConfigPB);
-	DevAssert(Status == GMAC_STATUS_SUCCESS); // Halt if initialization fails.
+	DevAssert(Status == GMAC_STATUS_SUCCESS);
 
 	Eth_Phy_Init();
 
-	/* Retrieve the unique MAC address from the GMAC hardware and store it. */
-//	Gmac_Ip_GetMacAddr(INST_GMAC_0, MacAddr_Src);
+	/* ========== Create Custom ICMP Frame ========== */
+	uint8 icmpMsg[] = "Welcome to Gettobyte";
 
-	/* --- Assemble the Ethernet Frame --- */
-	/* Copy the retrieved hardware MAC as the source address. */
-	memcpy(txFrame.srcMac, MacAddr_Src, 6U);
-	/* Copy the predefined destination MAC address. */
-	memcpy(txFrame.dstMac, MacAddr_Dest, 6U);
-	/* Set a custom EtherType (e.g., for a proprietary protocol). 0xBB80 = 48000 */
-	txFrame.etherType = 0xBB80U;
-	/* Set the payload length. Ethernet requires a minimum frame size, so payloads < 46 bytes get padded. */
-	txFrame.payloadLen = 46U;
-
-	/* Fill the payload with dummy data (a simple ascending sequence of numbers). */
-	for (uint16 i = 0; i < txFrame.payloadLen; i++) {
-		txFrame.payload[i] = (uint8) i;
-	}
-
-	/* --- Prepare for Transmission --- */
-	/* Request a free transmit buffer from the GMAC driver's internal queue. */
 	Status = Gmac_Ip_GetTxBuff(INST_GMAC_0, 0U, &TxBuffer, NULL_PTR);
-	DevAssert(Status == GMAC_STATUS_SUCCESS); // Halt if no buffer is available.
+	DevAssert(Status == GMAC_STATUS_SUCCESS);
 
-	/* Call the helper function to copy the assembled frame into the hardware buffer. */
-	BuildEthernetFrame(&TxBuffer, &txFrame);
+	/* Example IPs: 192.168.1.10 -> 192.168.1.20 */
+	BuildEthernetIPv4ICMPFrame(&TxBuffer,
+							   MacAddr_Src,
+							   MacAddr_Dest,
+							   0xC0A8010A, // 192.168.1.10
+							   0xC0A80114, // 192.168.1.20
+							   icmpMsg,
+							   sizeof(icmpMsg) - 1);
 
-	/* Infinite loop to keep the program running, typical for embedded applications. */
+	/* ========== Send Loop ========== */
 	for (;;) {
 
-		/* --- Send the Frame --- */
-		/* Instruct the GMAC hardware to send the contents of the buffer. */
 		Status = Gmac_Ip_SendFrame(INST_GMAC_0, 0U, &TxBuffer, &TxOptions);
-		DevAssert(Status == GMAC_STATUS_SUCCESS); // Halt if sending fails.
+		DevAssert(Status == GMAC_STATUS_SUCCESS);
 
-		/* Wait for the frame to be transmitted */
 		do {
 			Status = Gmac_Ip_GetTransmitStatus(INST_GMAC_0, 0U, &TxBuffer,
 					&TxInfo);
