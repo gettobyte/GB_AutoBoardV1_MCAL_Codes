@@ -413,8 +413,20 @@
                   <data type="Version">1.0.0</data>
                </feature>
             </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.cache" description="cache is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.cache" description="An unsupported version of the cache in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
          </dependencies>
          <generated_project_files>
+            <file path="generate/include/Cache_Ip_Cfg_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Cache_Ip_Cfg_DeviceRegisters.h" update_enabled="true"/>
             <file path="generate/include/Gmac_Ip_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Gmac_Ip_Device_Registers.h" update_enabled="true"/>
             <file path="generate/include/Gmac_Ip_Features.h" update_enabled="true"/>
@@ -822,6 +834,24 @@
                                  </struct>
                               </struct>
                            </array>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Cache_Ip" uuid="2135d8bf-ccd1-48d7-92b9-15847bc52882" type="Cache_Ip" type_id="Cache_Ip" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Cache_Ip">
+                        <setting name="Name" value="Cache"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-POST-BUILD"/>
+                        </struct>
+                        <struct name="MclGeneral">
+                           <setting name="Name" value="MclGeneral"/>
+                           <setting name="MclEnableUserModeSupport" value="false"/>
+                           <struct name="MclCache">
+                              <setting name="Name" value="MclCache"/>
+                              <setting name="MclEnableCache" value="true"/>
+                              <setting name="MclEnableCacheDevErrorDetect" value="false"/>
+                           </struct>
                         </struct>
                      </config_set>
                   </instance>
