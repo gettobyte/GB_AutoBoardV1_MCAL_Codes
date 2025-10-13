@@ -704,8 +704,8 @@
                                     <struct name="EthCtrlConfigGeneral">
                                        <setting name="Name" value="EthCtrlConfigGeneral"/>
                                        <setting name="EthCtrlEnableAtInit" value="true"/>
-                                       <setting name="EthCtrlAllocateTxDataBuffers" value="true"/>
-                                       <setting name="EthCtrlAllocateRxDataBuffers" value="true"/>
+                                       <setting name="EthCtrlAllocateTxDataBuffers" value="false"/>
+                                       <setting name="EthCtrlAllocateRxDataBuffers" value="false"/>
                                        <setting name="EthDuplexMode" value="ETH_FULL_DUPLEX"/>
                                     </struct>
                                     <struct name="EthCtrlConfigSafety">

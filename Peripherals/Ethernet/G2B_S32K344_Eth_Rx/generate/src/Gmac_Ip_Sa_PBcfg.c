@@ -107,9 +107,7 @@ extern "C"{
 #include "Eth_MemMap.h"
 
 extern Gmac_Ip_BufferDescriptorType GMAC_0_RxRing_0_DescBuffer[];
-extern uint8 GMAC_0_RxRing_0_DataBuffer[];
 extern Gmac_Ip_BufferDescriptorType GMAC_0_TxRing_0_DescBuffer[];
-extern uint8 GMAC_0_TxRing_0_DataBuffer[];
 
 #define ETH_STOP_SEC_VAR_CLEARED_UNSPECIFIED_NO_CACHEABLE
 #include "Eth_MemMap.h"
@@ -149,7 +147,7 @@ static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
     {
         /*.ringDesc = */GMAC_0_RxRing_0_DescBuffer,
         /*.callback = */NULL_PTR,
-        /*.buffer = */GMAC_0_RxRing_0_DataBuffer,
+        /*.buffer = */NULL_PTR,
         /*.interrupts = */(uint32)0U,
         /*.bufferLen = */128U,
         /*.ringSize = */4U,
@@ -170,7 +168,7 @@ static const Gmac_Ip_TxRingConfigType GMAC_0_aTxRingConfigPB[1U] =
         /*.loCredit = */0,
         /*.ringDesc = */GMAC_0_TxRing_0_DescBuffer,
         /*.callback = */NULL_PTR,
-        /*.buffer = */GMAC_0_TxRing_0_DataBuffer,
+        /*.buffer = */NULL_PTR,
         /*.interrupts = */(uint32)0U,
         /*.bufferLen = */128U,
         /*.ringSize = */4U,

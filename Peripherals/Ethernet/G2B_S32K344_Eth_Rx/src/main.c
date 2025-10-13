@@ -116,6 +116,9 @@ static void Eth_Phy_Init(void) {
 	 */
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
 			&register_value_0, 1U);
+
+	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
+				0x1, 1U);
 	if (((register_value_0 & 0x1U) == 0U) || /* Bit0 must be 1 */
 	((register_value_0 & 0x2U) != 0U)) { /* Bit1 must be 0 */
 		while (1)
@@ -205,13 +208,13 @@ int main(void) {
 			& ~DCM_GPR_DCMRWF1_MAC_CONF_SEL_MASK)
 			| DCM_GPR_DCMRWF1_MAC_CONF_SEL(2U);
 
-	/* Initialize the microcontroller's clock system based on the provided configuration. */
-	Clock_Ip_Init(&Clock_Ip_aClockConfig[0]);
-
 	/* Initialize and configure the MCU's pins for peripherals (like Ethernet). */
 	Siul2_Port_Ip_Init(
 	NUM_OF_CONFIGURED_PINS_PortContainer_0_BOARD_InitPeripherals,
 			g_pin_mux_InitConfigArr_PortContainer_0_BOARD_InitPeripherals);
+
+	/* Initialize the microcontroller's clock system based on the provided configuration. */
+	Clock_Ip_Init(&Clock_Ip_aClockConfig[0]);
 
 	/* Initialize the GMAC (Ethernet) peripheral with its configuration. */
 	Status = Gmac_Ip_Init(INST_GMAC_0, &Gmac_0_ConfigPB);
