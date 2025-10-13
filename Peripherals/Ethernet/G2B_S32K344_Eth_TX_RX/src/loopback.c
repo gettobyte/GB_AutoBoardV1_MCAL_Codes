@@ -60,9 +60,9 @@ int main(void) {
 	NUM_OF_CONFIGURED_PINS_PortContainer_0_BOARD_InitPeripherals,
 			g_pin_mux_InitConfigArr_PortContainer_0_BOARD_InitPeripherals);
 
-	/* Initialize the GMAC (Ethernet) peripheral with its configuration. */
-	Status = Gmac_Ip_Init(INST_GMAC_0, &Gmac_0_ConfigPB);
-	DevAssert(Status == GMAC_STATUS_SUCCESS);
+//	/* Initialize the GMAC (Ethernet) peripheral with its configuration. */
+//	Status = Gmac_Ip_Init(INST_GMAC_0, &Gmac_0_ConfigPB);
+//	DevAssert(Status == GMAC_STATUS_SUCCESS);
 
 	Gmac_Ip_EnableMDIO(INST_GMAC_0, FALSE, 48000000U);
 
@@ -106,7 +106,7 @@ int main(void) {
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0x8048U, &register_value_0,
 			1U);
 
-	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0x8048U, 0x0800, 1U); // Set PORT_FUNC_ENABLES.BIST_ENABLE = 1
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0x8048U, 0x2805, 1U); // Set PORT_FUNC_ENABLES.BIST_ENABLE = 1
 
 //    Configure datapath to send BIST frames to the MDI (ePHY)
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA807U, &register_value_0,

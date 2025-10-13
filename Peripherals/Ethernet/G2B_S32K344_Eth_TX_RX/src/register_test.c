@@ -169,77 +169,77 @@ int main(void) {
 //		while (1)
 //			; /* Halt if link not OK */
 //	}
-
 	/* ======================== BIST Enable ============================= */
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0x0040U, &register_value_0,
 			1U);
 
 	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0x0040U, 0x2001, 1U);
 
-
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA800U, &register_value_0,
 			1U);
 
 	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA800U, 0x4000, 1U);
-
 
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0x8048U, &register_value_0,
 			1U);
 
 	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0x8048U, 0x2805, 1U);
 
-
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 3U, 0x0000U, &register_value_0,
 			1U);
 
 //	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 3U, 0x0000U, 0x6000, 1U);
-
 
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA807U, &register_value_0,
 			1U);
 
 	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA807U, 0x0820, 1U);
 
-
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA8C0U, &register_value_0,
 			1U);
 
 	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA8C0U, 0x4001, 1U);
-
 
 	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA880U, &register_value_0,
 			1U);
 
 	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA880U, 0x6000, 1U);
 
-	//	BIST DA {15:0}
-		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA888U, &bist_DA_0, 1U);
-		Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA888U, 0x2211, 1U);
-	//	BIST DA {31:16}
-		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA889U, &bist_DA_1, 1U);
-		Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA889U, 0x4433, 1U);
-	//	BIST DA {47:32}
-		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA88AU, &bist_DA_2, 1U);
-		Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA88AU, 0x6655, 1U);
+//	BIST DA {15:0}
+	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA888U, &bist_DA_0, 1U);
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA888U, 0x2211, 1U);
+//	BIST DA {31:16}
+	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA889U, &bist_DA_1, 1U);
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA889U, 0x4433, 1U);
+//	BIST DA {47:32}
+	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA88AU, &bist_DA_2, 1U);
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA88AU, 0x6655, 1U);
 
-	//	BIST SA {15:0}
-		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA88BU, &bist_SA_0, 1U);
-		Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA88BU, 0x2212, 1U);
-	//	BIST SA {31:16}
-		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA88CU, &bist_SA_1, 1U);
-		Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA88CU, 0x4433, 1U);
-	//	BIST SA {47:32}
-		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA88DU, &bist_SA_2, 1U);
-		Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA88DU, 0x6655, 1U);
+//	BIST SA {15:0}
+	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA88BU, &bist_SA_0, 1U);
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA88BU, 0x2212, 1U);
+//	BIST SA {31:16}
+	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA88CU, &bist_SA_1, 1U);
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA88CU, 0x4433, 1U);
+//	BIST SA {47:32}
+	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA88DU, &bist_SA_2, 1U);
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA88DU, 0x6655, 1U);
+
+	Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA890U, &register_value_0,
+			1U);
+
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA890U, 0x0800, 1U);
+
+	Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30U, 0xA880U, 0x1000, 1U);
 
 	/* ======================== Infinite Loop ========================== */
 	for (;;) {
 		// Application main loop
-		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA8D0U, &register_value_0,
-				1U);
+		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA8D0U,
+				&register_value_0, 1U);
 
-		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA8D2U, &register_value_0,
-				1U);
+		Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30U, 0xA8D2U,
+				&register_value_0, 1U);
 	}
 
 	return 0;
