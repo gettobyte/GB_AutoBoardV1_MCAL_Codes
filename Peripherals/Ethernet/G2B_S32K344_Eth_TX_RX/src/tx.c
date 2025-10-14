@@ -3,7 +3,7 @@
  *
  * Purpose: Build and transmit a valid Ethernet -> IPv4 -> UDP frame
  * Platform: S32K344 + TJA1103 (RMII)
- * Author: Gettobyte
+ * Author: RohanS002 Gettobyte
  * Date: 11-Oct-2025
  */
 

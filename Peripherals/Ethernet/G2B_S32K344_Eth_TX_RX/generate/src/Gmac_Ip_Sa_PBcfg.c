@@ -140,7 +140,7 @@ static Gmac_Ip_TxGateControl GMAC_0_GateControlListPB[1U]  =
 
 
 /*! @brief The MAC address(es) of the configured controller(s) */
-static const uint8 GMAC_0_au8MacAddrPB[GMAC_MAC_ADDR_LENGTH] = { 0x02U, 0x00U, 0x00U, 0x00U, 0x00U, 0x01U };
+static const uint8 GMAC_0_au8MacAddrPB[GMAC_MAC_ADDR_LENGTH] = { 0x10U, 0x11U, 0x22U, 0x77U, 0x77U, 0x77U };
 
 /*! @brief Reception ring configuration structures */
 static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
