@@ -12,6 +12,8 @@
 #include "Siul2_Port_Ip.h"  // SIUL2 Port driver for pin muxing.
 #include "Gmac_Ip.h"        // Gigabit MAC (Ethernet Controller) driver.
 #include "string.h"         // Standard C library for memory operations.
+#include "IntCtrl_Ip.h"
+#include "Gmac_Ip_Irq.h"
 
 /* A volatile integer used for gracefully exiting the main loop, typically changed by a debugger. */
 volatile int exit_code = 0;
@@ -117,8 +119,7 @@ static void Eth_Phy_Init(void) {
 	Status = Gmac_Ip_MDIOReadMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
 			&register_value_0, 1U);
 
-	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8108U,
-				0x1, 1U);
+	Status = Gmac_Ip_MDIOWriteMMD(INST_GMAC_0, phy_addr, 30, 0x8108U, 0x1, 1U);
 	if (((register_value_0 & 0x1U) == 0U) || /* Bit0 must be 1 */
 	((register_value_0 & 0x2U) != 0U)) { /* Bit1 must be 0 */
 		while (1)
@@ -177,6 +178,42 @@ typedef struct {
 	uint16 payloadLen; /* The actual length of the payload. */
 } EthFrame_t;
 
+EthFrame_t rxFrame;
+
+void Rx_Callback(void) {
+	/* Wait for the frame to be received */
+	do {
+		Status = Gmac_Ip_ReadFrame(INST_GMAC_0, 0U, &RxBuffer, &RxInfo);
+	} while (Status == GMAC_STATUS_RX_QUEUE_EMPTY);
+
+	if (Status == GMAC_STATUS_SUCCESS && RxInfo.ErrMask == 0U) {
+
+		uint8 *ptr = RxBuffer.Data;
+
+		/* Extract directly into rxFrame structure */
+		memcpy(rxFrame.dstMac, ptr, 6U);
+		ptr += 6U;
+
+		memcpy(rxFrame.srcMac, ptr, 6U);
+		ptr += 6U;
+
+		rxFrame.etherType = (uint16) ((ptr[0] << 8) | ptr[1]);
+		ptr += 2U;
+
+		rxFrame.payloadLen = (uint16) (RxBuffer.Length - 14U);
+
+		memcpy(rxFrame.payload, ptr, rxFrame.payloadLen);
+
+		/* Simple check */
+		if (rxFrame.etherType == 0xBB80U) {
+			correct_frame = true;
+		}
+
+		Gmac_Ip_ProvideRxBuff(INST_GMAC_0, 0U, &RxBuffer);
+
+	}
+}
+
 /*
  * Ethernet Frame Format (IEEE 802.3 / Ethernet II)
  *
@@ -216,47 +253,20 @@ int main(void) {
 	/* Initialize the microcontroller's clock system based on the provided configuration. */
 	Clock_Ip_Init(&Clock_Ip_aClockConfig[0]);
 
+	IntCtrl_Ip_InstallHandler(EMAC_2_IRQn, GMAC0_CH_RX_IRQHandler, NULL_PTR);
+	IntCtrl_Ip_EnableIrq(EMAC_2_IRQn);
+
+	IntCtrl_Ip_InstallHandler(EMAC_0_IRQn, GMAC0_Common_IRQHandler, NULL_PTR);
+	IntCtrl_Ip_EnableIrq(EMAC_0_IRQn);
+
 	/* Initialize the GMAC (Ethernet) peripheral with its configuration. */
 	Status = Gmac_Ip_Init(INST_GMAC_0, &Gmac_0_ConfigPB);
 	DevAssert(Status == GMAC_STATUS_SUCCESS); // Halt if initialization fails.
 
 	Eth_Phy_Init();
 
-	EthFrame_t rxFrame;
-
 	while (1) {
 
-		/* Wait for the frame to be received */
-		do {
-			Status = Gmac_Ip_ReadFrame(INST_GMAC_0, 0U, &RxBuffer, &RxInfo);
-		} while (Status == GMAC_STATUS_RX_QUEUE_EMPTY);
-
-		if (Status == GMAC_STATUS_SUCCESS && RxInfo.ErrMask == 0U) {
-
-			uint8 *ptr = RxBuffer.Data;
-
-			/* Extract directly into rxFrame structure */
-			memcpy(rxFrame.dstMac, ptr, 6U);
-			ptr += 6U;
-
-			memcpy(rxFrame.srcMac, ptr, 6U);
-			ptr += 6U;
-
-			rxFrame.etherType = (uint16) ((ptr[0] << 8) | ptr[1]);
-			ptr += 2U;
-
-			rxFrame.payloadLen = (uint16) (RxBuffer.Length - 14U);
-
-			memcpy(rxFrame.payload, ptr, rxFrame.payloadLen);
-
-			/* Simple check */
-			if (rxFrame.etherType == 0xBB80U) {
-				correct_frame = true;
-			}
-
-			Gmac_Ip_ProvideRxBuff(INST_GMAC_0, 0U, &RxBuffer);
-
-		}
 	}
 
 	return 0;

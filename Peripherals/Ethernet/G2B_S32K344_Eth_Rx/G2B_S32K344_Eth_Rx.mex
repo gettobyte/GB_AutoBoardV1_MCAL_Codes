@@ -394,12 +394,24 @@
                   <data type="Version">1.0.0</data>
                </feature>
             </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.IntCtrl_Ip" description="IntCtrl_Ip is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.IntCtrl_Ip" description="An unsupported version of the IntCtrl_Ip in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
          </dependencies>
          <generated_project_files>
             <file path="generate/include/Gmac_Ip_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Gmac_Ip_Device_Registers.h" update_enabled="true"/>
             <file path="generate/include/Gmac_Ip_Features.h" update_enabled="true"/>
             <file path="generate/include/Gmac_Ip_Sa_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/IntCtrl_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/IntCtrl_Ip_CfgDefines.h" update_enabled="true"/>
             <file path="generate/include/OsIf_ArchCfg.h" update_enabled="true"/>
             <file path="generate/include/OsIf_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Siul2_Port_Ip_Defines.h" update_enabled="true"/>
@@ -407,6 +419,7 @@
             <file path="generate/include/modules.h" update_enabled="true"/>
             <file path="generate/src/Gmac_Ip_Cfg.c" update_enabled="true"/>
             <file path="generate/src/Gmac_Ip_Sa_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/IntCtrl_Ip_Cfg.c" update_enabled="true"/>
             <file path="generate/src/OsIf_Cfg.c" update_enabled="true"/>
          </generated_project_files>
          <peripherals_profile>
@@ -686,7 +699,7 @@
                                  <setting name="Name" value="EthCtrlConfig_0"/>
                                  <setting name="EthCtrlEnableMii" value="false"/>
                                  <setting name="EthCtrlEnableMmd" value="false"/>
-                                 <setting name="EthCtrlEnableRxInterrupt" value="false"/>
+                                 <setting name="EthCtrlEnableRxInterrupt" value="true"/>
                                  <setting name="EthCtrlEnableTxInterrupt" value="false"/>
                                  <setting name="EthCtrlIdx" value="0"/>
                                  <setting name="EthCtrlMacLayerType" value="ETH_MAC_LAYER_TYPE_XMII"/>
@@ -697,7 +710,7 @@
                                     <setting name="0" value="ETH_MAC_LAYER_SPEED_100M"/>
                                  </array>
                                  <array name="EthCtrlPhyAddress">
-                                    <setting name="0" value="98:29:a6:4a:a0:c9"/>
+                                    <setting name="0" value="10:11:22:77:77:78"/>
                                  </array>
                                  <struct name="EthCtrlVendorSpecific">
                                     <setting name="Name" value="EthCtrlVendorSpecific"/>
@@ -792,7 +805,7 @@
                                           <setting name="EthCtrlConfigIngressFifoBufLenByte" value="128"/>
                                           <setting name="EthCtrlConfigIngressFifoBufTotal" value="4"/>
                                           <setting name="EthCtrlConfigIngressFifoIdx" value="0"/>
-                                          <setting name="EthCtrlConfigIngressFifoCallback" value="NULL_PTR"/>
+                                          <setting name="EthCtrlConfigIngressFifoCallback" value="Rx_Callback"/>
                                           <array name="EthCtrlConfigIngressFifoPriorityAssignment"/>
                                        </struct>
                                     </array>
@@ -804,6 +817,21 @@
                               </struct>
                            </array>
                         </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="IntCtrl_Ip" uuid="b5ab306e-739e-46f8-a46d-6be3b84a08f1" type="IntCtrl_Ip" type_id="IntCtrl_Ip" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="IntCtrl_Ip">
+                        <setting name="Name" value="IntCtrl_Ip"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="IntCtrlConfigGeneral">
+                           <setting name="Name" value="IntCtrlConfigGeneral"/>
+                           <setting name="IntCtrlDevErrorDetect" value="true"/>
+                           <setting name="PlatformEnableUserModeSupport" value="false"/>
+                        </struct>
+                        <array name="IntCtrlConfig"/>
                      </config_set>
                   </instance>
                </instances>

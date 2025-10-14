@@ -99,6 +99,14 @@ extern "C"{
 /*==================================================================================================
 *                                       GLOBAL FUNCTIONS
 ==================================================================================================*/
+#define ETH_START_SEC_CODE
+#include "Eth_MemMap.h"
+
+/*! @brief Channel callbacks external declarations */
+extern void Rx_Callback(uint8 instance, uint8 channel);
+
+#define ETH_STOP_SEC_CODE
+#include "Eth_MemMap.h"
 
 /*==================================================================================================
 *                                      BUFFER DECLARATIONS
@@ -138,7 +146,7 @@ static Gmac_Ip_TxGateControl GMAC_0_GateControlListPB[1U]  =
 
 
 /*! @brief The MAC address(es) of the configured controller(s) */
-static const uint8 GMAC_0_au8MacAddrPB[GMAC_MAC_ADDR_LENGTH] = { 0x98U, 0x29U, 0xa6U, 0x4aU, 0xa0U, 0xc9U };
+static const uint8 GMAC_0_au8MacAddrPB[GMAC_MAC_ADDR_LENGTH] = { 0x10U, 0x11U, 0x22U, 0x77U, 0x77U, 0x78U };
 
 /*! @brief Reception ring configuration structures */
 static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
@@ -146,9 +154,9 @@ static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
     /* The configuration structure for Rx Ring 0 */
     {
         /*.ringDesc = */GMAC_0_RxRing_0_DescBuffer,
-        /*.callback = */NULL_PTR,
+        /*.callback = */Rx_Callback,
         /*.buffer = */NULL_PTR,
-        /*.interrupts = */(uint32)0U,
+        /*.interrupts = */(uint32)GMAC_CH_INTERRUPT_RI,
         /*.bufferLen = */128U,
         /*.ringSize = */4U,
         /*.priorityMask = */0U,
