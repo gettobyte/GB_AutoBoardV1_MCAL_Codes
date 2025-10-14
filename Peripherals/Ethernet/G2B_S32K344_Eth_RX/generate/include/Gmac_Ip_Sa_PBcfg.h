@@ -94,10 +94,16 @@ extern "C"{
 #ifndef GMAC_0_TXRING_0_DESCR
     #define GMAC_0_TXRING_0_DESCR
 #endif
+#ifndef GMAC_0_TXRING_0_DATA
+    #define GMAC_0_TXRING_0_DATA
+#endif
 
 /* Used for allocation of RX buffers */
 #ifndef GMAC_0_RXRING_0_DESCR
     #define GMAC_0_RXRING_0_DESCR
+#endif
+#ifndef GMAC_0_RXRING_0_DATA
+    #define GMAC_0_RXRING_0_DATA
 #endif
 
 
@@ -119,12 +125,18 @@ extern "C"{
 
 /* Maximum length of a single buffer across all Tx Rings */
 #ifndef GMAC_0_MAX_TXBUFFLEN_SUPPORTED
-    #define GMAC_0_MAX_TXBUFFLEN_SUPPORTED	(1536U)
+    #define GMAC_0_MAX_TXBUFFLEN_SUPPORTED	(128U)
+#elif (GMAC_0_MAX_TXBUFFLEN_SUPPORTED < 128)
+    #undef GMAC_0_MAX_TXBUFFLEN_SUPPORTED
+    #define GMAC_0_MAX_TXBUFFLEN_SUPPORTED	(128U) 
 #endif
 
 /* Maximum length of a single buffer across all Rx Rings */
 #ifndef GMAC_0_MAX_RXBUFFLEN_SUPPORTED
-    #define GMAC_0_MAX_RXBUFFLEN_SUPPORTED	(1536U)
+    #define GMAC_0_MAX_RXBUFFLEN_SUPPORTED    (128U)
+#elif (GMAC_0_MAX_RXBUFFLEN_SUPPORTED < 128)
+    #undef GMAC_0_MAX_RXBUFFLEN_SUPPORTED
+    #define GMAC_0_MAX_RXBUFFLEN_SUPPORTED    (128U) 
 #endif
 
 /*==================================================================================================

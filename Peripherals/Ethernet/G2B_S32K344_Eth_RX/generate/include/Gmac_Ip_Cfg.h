@@ -117,11 +117,11 @@ extern "C"{
 #endif
 
 /* @brief Enables / Disables the allocation of the TX data buffers. */
-#define GMAC_IP_HAS_EXTERNAL_TX_BUFFERS  (STD_ON)
+#define GMAC_IP_HAS_EXTERNAL_TX_BUFFERS  (STD_OFF)
 
 #if (STD_ON == GMAC_IP_HAS_EXTERNAL_TX_BUFFERS)
     /* @brief Array of the feature of external buffers support indexed at controller level. */
-    #define GMAC_IP_INST_HAS_EXTERNAL_TX_BUFFERS  {(boolean) TRUE}
+    #define GMAC_IP_INST_HAS_EXTERNAL_TX_BUFFERS  {(boolean) FALSE}
 #endif
 
 /*! @brief Enables/Disables internal cache management */

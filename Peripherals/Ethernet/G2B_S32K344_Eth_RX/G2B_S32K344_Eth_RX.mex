@@ -126,6 +126,32 @@
                         <data>OUTPUT</data>
                      </feature>
                   </dependency>
+                  <dependency resourceType="PinSignal" resourceId=".EMAC_MII_RX" description="&apos;External pin&apos; (Pins tool id: .EMAC_MII_RX, Clocks tool id: external_clocks.EMAC_MII_RX) needs to be routed" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId=".EMAC_MII_RX" description="&apos;External pin&apos; (Pins tool id: .EMAC_MII_RX, Clocks tool id: external_clocks.EMAC_MII_RX) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId=".EMAC_MII_RMII_TX" description="&apos;External pin&apos; (Pins tool id: .EMAC_MII_RMII_TX, Clocks tool id: external_clocks.EMAC_MII_RMII_TX) needs to be routed" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId=".EMAC_MII_RMII_TX" description="&apos;External pin&apos; (Pins tool id: .EMAC_MII_RMII_TX, Clocks tool id: external_clocks.EMAC_MII_RMII_TX) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
                   <dependency resourceType="SWComponent" resourceId="platform.driver.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:ClockConfig0">
                      <feature name="enabled" evaluation="equal" configuration="M7_0">
                         <data>true</data>
@@ -135,6 +161,8 @@
                <clock_sources>
                   <clock_source id="FXOSC_CLK.FXOSC_CLK.outFreq" value="16 MHz" locked="false" enabled="true"/>
                   <clock_source id="SXOSC_CLK.SXOSC_CLK.outFreq" value="32.768 kHz" locked="false" enabled="true"/>
+                  <clock_source id="external_clocks.emac_mii_rmii_tx.outFreq" value="50 MHz" locked="false" enabled="true"/>
+                  <clock_source id="external_clocks.emac_mii_rx.outFreq" value="50 MHz" locked="false" enabled="true"/>
                </clock_sources>
                <clock_outputs>
                   <clock_output id="ADC0_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
@@ -188,12 +216,14 @@
                   <clock_output id="EDMA0_TCD8_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
                   <clock_output id="EDMA0_TCD9_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
                   <clock_output id="EIM0_CLK.outFreq" value="80 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC0_RX_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC0_TS_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC0_TX_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC_RX_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC_TS_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
-                  <clock_output id="EMAC_TX_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC0_RX_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC0_TS_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC0_TX_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_MII_RMII_TX.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_MII_RX.outFreq" value="50 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_RX_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_TS_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMAC_TX_CLK.outFreq" value="25 MHz" locked="false" accuracy=""/>
                   <clock_output id="EMIOS0_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
                   <clock_output id="EMIOS1_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
                   <clock_output id="EMIOS2_CLK.outFreq" value="160 MHz" locked="false" accuracy=""/>
@@ -296,6 +326,12 @@
                   <setting id="MC_CGM_MUX_6_DIV0.scale" value="2" locked="true"/>
                   <setting id="MODULE_CLOCKS.MC_CGM_AUX3_DIV0.scale" value="2" locked="true"/>
                   <setting id="MODULE_CLOCKS.MC_CGM_AUX4_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX7_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX7_MUX.sel" value="external_clocks.EMACMIIRMIITXOUT" locked="false"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX8_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX8_MUX.sel" value="external_clocks.EMACMIIRMIITXOUT" locked="false"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX9_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX9_MUX.sel" value="external_clocks.EMACMIIRMIITXOUT" locked="false"/>
                   <setting id="PHI0.scale" value="3" locked="true"/>
                   <setting id="PHI1.scale" value="3" locked="true"/>
                   <setting id="PLL_PREDIV.scale" value="2" locked="true"/>
@@ -684,7 +720,34 @@
                            <setting name="IntCtrlDevErrorDetect" value="true"/>
                            <setting name="PlatformEnableUserModeSupport" value="false"/>
                         </struct>
-                        <array name="IntCtrlConfig"/>
+                        <array name="IntCtrlConfig">
+                           <struct name="0">
+                              <setting name="Name" value="IntCtrlConfig_0"/>
+                              <array name="PlatformIsrConfig">
+                                 <struct name="0">
+                                    <setting name="Name" value="PlatformIsrConfig_0"/>
+                                    <setting name="IsrName" value="EMAC_1_IRQn"/>
+                                    <setting name="IsrEnabled" value="true"/>
+                                    <setting name="IsrPriority" value="7"/>
+                                    <setting name="IsrHandler" value="GMAC0_CH_TX_IRQHandler"/>
+                                 </struct>
+                                 <struct name="1">
+                                    <setting name="Name" value="PlatformIsrConfig_1"/>
+                                    <setting name="IsrName" value="EMAC_2_IRQn"/>
+                                    <setting name="IsrEnabled" value="true"/>
+                                    <setting name="IsrPriority" value="6"/>
+                                    <setting name="IsrHandler" value="GMAC0_CH_RX_IRQHandler"/>
+                                 </struct>
+                                 <struct name="2">
+                                    <setting name="Name" value="PlatformIsrConfig_2"/>
+                                    <setting name="IsrName" value="EMAC_0_IRQn"/>
+                                    <setting name="IsrEnabled" value="true"/>
+                                    <setting name="IsrPriority" value="5"/>
+                                    <setting name="IsrHandler" value="GMAC0_Common_IRQHandler"/>
+                                 </struct>
+                              </array>
+                           </struct>
+                        </array>
                      </config_set>
                   </instance>
                   <instance name="Gmac" uuid="4b45ee97-9b92-4ced-9ca4-6fb503425f67" type="Gmac" type_id="Gmac" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
@@ -723,7 +786,7 @@
                                  <setting name="EthCtrlEnableMii" value="false"/>
                                  <setting name="EthCtrlEnableMmd" value="false"/>
                                  <setting name="EthCtrlEnableRxInterrupt" value="true"/>
-                                 <setting name="EthCtrlEnableTxInterrupt" value="false"/>
+                                 <setting name="EthCtrlEnableTxInterrupt" value="true"/>
                                  <setting name="EthCtrlIdx" value="0"/>
                                  <setting name="EthCtrlMacLayerType" value="ETH_MAC_LAYER_TYPE_XMII"/>
                                  <array name="EthCtrlMacLayerSubType">
@@ -740,8 +803,8 @@
                                     <struct name="EthCtrlConfigGeneral">
                                        <setting name="Name" value="EthCtrlConfigGeneral"/>
                                        <setting name="EthCtrlEnableAtInit" value="true"/>
-                                       <setting name="EthCtrlAllocateTxDataBuffers" value="false"/>
-                                       <setting name="EthCtrlAllocateRxDataBuffers" value="false"/>
+                                       <setting name="EthCtrlAllocateTxDataBuffers" value="true"/>
+                                       <setting name="EthCtrlAllocateRxDataBuffers" value="true"/>
                                        <setting name="EthDuplexMode" value="ETH_FULL_DUPLEX"/>
                                     </struct>
                                     <struct name="EthCtrlConfigSafety">
@@ -780,7 +843,7 @@
                                        <setting name="PKT_FILTER_DST_ADDR_INV_FILTER_EN" value="false"/>
                                        <setting name="PKT_FILTER_HASH_MULTICAST" value="false"/>
                                        <setting name="PKT_FILTER_HASH_UNICAST" value="false"/>
-                                       <setting name="PKT_FILTER_PROMISCUOUS_MODE" value="false"/>
+                                       <setting name="PKT_FILTER_PROMISCUOUS_MODE" value="true"/>
                                     </struct>
                                  </struct>
                                  <struct name="EthCtrlConfigEgress">
@@ -792,7 +855,7 @@
                                           <setting name="EthCtrlConfigEgressFifoBufLenByte" value="128"/>
                                           <setting name="EthCtrlConfigEgressFifoBufTotal" value="4"/>
                                           <setting name="EthCtrlConfigEgressFifoIdx" value="0"/>
-                                          <setting name="EthCtrlConfigEgressFifoCallback" value="NULL_PTR"/>
+                                          <setting name="EthCtrlConfigEgressFifoCallback" value="TX_Callback"/>
                                           <array name="EthCtrlConfigEgressFifoPriorityAssignment"/>
                                        </struct>
                                     </array>

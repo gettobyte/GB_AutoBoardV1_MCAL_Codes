@@ -104,6 +104,7 @@ extern "C"{
 
 /*! @brief Channel callbacks external declarations */
 extern void RX_Callback(uint8 instance, uint8 channel);
+extern void TX_Callback(uint8 instance, uint8 channel);
 
 #define ETH_STOP_SEC_CODE
 #include "Eth_MemMap.h"
@@ -115,7 +116,9 @@ extern void RX_Callback(uint8 instance, uint8 channel);
 #include "Eth_MemMap.h"
 
 extern Gmac_Ip_BufferDescriptorType GMAC_0_RxRing_0_DescBuffer[];
+extern uint8 GMAC_0_RxRing_0_DataBuffer[];
 extern Gmac_Ip_BufferDescriptorType GMAC_0_TxRing_0_DescBuffer[];
+extern uint8 GMAC_0_TxRing_0_DataBuffer[];
 
 #define ETH_STOP_SEC_VAR_CLEARED_UNSPECIFIED_NO_CACHEABLE
 #include "Eth_MemMap.h"
@@ -155,7 +158,7 @@ static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
     {
         /*.ringDesc = */GMAC_0_RxRing_0_DescBuffer,
         /*.callback = */RX_Callback,
-        /*.buffer = */NULL_PTR,
+        /*.buffer = */GMAC_0_RxRing_0_DataBuffer,
         /*.interrupts = */(uint32)GMAC_CH_INTERRUPT_RI,
         /*.bufferLen = */128U,
         /*.ringSize = */4U,
@@ -175,9 +178,9 @@ static const Gmac_Ip_TxRingConfigType GMAC_0_aTxRingConfigPB[1U] =
         /*.hiCredit = */0U,
         /*.loCredit = */0,
         /*.ringDesc = */GMAC_0_TxRing_0_DescBuffer,
-        /*.callback = */NULL_PTR,
-        /*.buffer = */NULL_PTR,
-        /*.interrupts = */(uint32)0U,
+        /*.callback = */TX_Callback,
+        /*.buffer = */GMAC_0_TxRing_0_DataBuffer,
+        /*.interrupts = */(uint32)GMAC_CH_INTERRUPT_TI,
         /*.bufferLen = */128U,
         /*.ringSize = */4U,
         /*.priorityMask = */0U,
@@ -203,7 +206,7 @@ static const Gmac_Ip_ConfigType GMAC_0_InitConfigPB =
     /*.duplex = */GMAC_FULL_DUPLEX,
     /*.macConfig = */0U | ((uint32)0U << GMAC_MAC_CONFIGURATION_IPG_SHIFT) | ((uint32)GMAC_MAC_CONFIG_CHECKSUM_OFFLOAD),
     /*.extendedMacConfig = */ 0U,
-    /*.macPktFilterConfig = */0U | (uint32)GMAC_PKT_FILTER_RECV_ALL,
+    /*.macPktFilterConfig = */0U | (uint32)GMAC_PKT_FILTER_RECV_ALL | (uint32)GMAC_PKT_FILTER_PROMISCUOUS_MODE,
     /*.enableCtrl = */TRUE
 #if (GMAC_TX_SPORADIC_BIG_BUFFERS == STD_ON)
     ,/*.TxBigBufferCount = */ GMAC_0_TX_SPORADIC_BIG_BUFFERS_COUNT
