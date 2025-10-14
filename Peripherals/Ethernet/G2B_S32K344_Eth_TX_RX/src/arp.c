@@ -43,7 +43,7 @@ static uint32_t IP_SENDER_HOST = IP4(192, 168, 1, 10); /* who’s asking / who rep
 static uint32_t IP_TARGET_HOST = IP4(192, 168, 1, 10); /* who we want the MAC of (for request) */
 
 /* ARP mode: request (broadcast) or reply (unicast to MAC_PEER) */
-static arp_opcode_t g_arp_mode = ARP_REQUEST;
+static arp_opcode_t g_arp_mode = ARP_REPLY;
 
 /* ===== Ethernet / ARP constants ===== */
 #define ETH_HDR_LEN           (14U)
