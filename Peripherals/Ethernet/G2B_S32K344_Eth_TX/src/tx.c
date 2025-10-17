@@ -18,7 +18,7 @@
 volatile int exit_code = 0;
 /* User includes */
 
-#define PAYLOAD_SIZE 144U
+#define PAYLOAD_SIZE 46U
 
 /* ===== PHY discovery scratch ===== */
 static uint16 phy_addr; /* discovered PHY address (0..31) */
@@ -70,7 +70,7 @@ typedef struct {
 	uint8 dstMac[6];
 	uint8 srcMac[6];
 	uint16 etherType;
-	uint8 payload[PAYLOAD_SIZE]; /* A buffer for the payload data. */
+	uint16 payload[PAYLOAD_SIZE]; /* A buffer for the payload data. */
 	uint16 payloadLen; /* The actual length of the payload. */
 } EthFrame_t;
 
@@ -193,7 +193,7 @@ int main(void) {
 
 	/* Fill the payload with dummy data (a simple ascending sequence of numbers). */
 	for (uint16 i = 0; i < txFrame.payloadLen; i++) {
-		txFrame.payload[i] = (uint8) i;
+		txFrame.payload[i] = i;
 	}
 
 	/* --- Prepare for Transmission --- */
