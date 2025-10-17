@@ -33,7 +33,7 @@ G2B_S32K344_Eth_TX.siz \
 all: G2B_S32K344_Eth_TX.elf secondary-outputs
 
 # Tool invocations
-G2B_S32K344_Eth_TX.elf: $(OBJS) C:/Users/singh/workspaceS32DS.3.5/G2B_S32K344_Eth_TX/Project_Settings/Linker_Files/linker_flash_s32k344.ld $(USER_OBJS)
+G2B_S32K344_Eth_TX.elf: $(OBJS) C:/Users/singh/OneDrive/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/Ethernet/G2B_S32K344_Eth_TX/Project_Settings/Linker_Files/linker_flash_s32k344.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "G2B_S32K344_Eth_TX.elf" "@G2B_S32K344_Eth_TX.args"  $(USER_OBJS)

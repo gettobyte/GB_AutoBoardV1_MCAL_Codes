@@ -6,11 +6,11 @@ RTD/src/OsIf_Timer.o: ../RTD/src/OsIf_Timer.c ../RTD/include/OsIf.h \
  C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Compiler.h \
  C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Compiler_Cfg.h \
  C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/CompilerDefinition.h \
- C\:/Users/singh/workspaceS32DS.3.5/G2B_S32K344_Eth_TX/generate/include/Soc_Ips.h \
+ C\:/Users/singh/OneDrive/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/Ethernet/G2B_S32K344_Eth_TX/generate/include/Soc_Ips.h \
  C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h \
  C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/IpVersionMacros.h \
- C\:/Users/singh/workspaceS32DS.3.5/G2B_S32K344_Eth_TX/generate/include/OsIf_Cfg.h \
- C\:/Users/singh/workspaceS32DS.3.5/G2B_S32K344_Eth_TX/generate/include/OsIf_ArchCfg.h \
+ C\:/Users/singh/OneDrive/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/Ethernet/G2B_S32K344_Eth_TX/generate/include/OsIf_Cfg.h \
+ C\:/Users/singh/OneDrive/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/Ethernet/G2B_S32K344_Eth_TX/generate/include/OsIf_ArchCfg.h \
  C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_SYSTICK.h \
  C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_COMMON.h \
  C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/BasicTypes.h \
@@ -29,11 +29,11 @@ C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/
 C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Compiler.h:
 C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Compiler_Cfg.h:
 C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/CompilerDefinition.h:
-C\:/Users/singh/workspaceS32DS.3.5/G2B_S32K344_Eth_TX/generate/include/Soc_Ips.h:
+C\:/Users/singh/OneDrive/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/Ethernet/G2B_S32K344_Eth_TX/generate/include/Soc_Ips.h:
 C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/Platform_Types.h:
 C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/IpVersionMacros.h:
-C\:/Users/singh/workspaceS32DS.3.5/G2B_S32K344_Eth_TX/generate/include/OsIf_Cfg.h:
-C\:/Users/singh/workspaceS32DS.3.5/G2B_S32K344_Eth_TX/generate/include/OsIf_ArchCfg.h:
+C\:/Users/singh/OneDrive/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/Ethernet/G2B_S32K344_Eth_TX/generate/include/OsIf_Cfg.h:
+C\:/Users/singh/OneDrive/Documents/GB_AutoBoardV1_MCAL_Codes/Peripherals/Ethernet/G2B_S32K344_Eth_TX/generate/include/OsIf_ArchCfg.h:
 C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_SYSTICK.h:
 C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/header/S32K344_COMMON.h:
 C\:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M40I0R0/include/BasicTypes.h:
