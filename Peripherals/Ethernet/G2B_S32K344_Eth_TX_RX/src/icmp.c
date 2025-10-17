@@ -146,7 +146,7 @@ static Gmac_Ip_TxInfoType TxInfo;
   static Gmac_Ip_TxOptionsType TxOptions = {
       TRUE,
       GMAC_CRC_AND_PAD_INSERTION,
-      GMAC_CHECKSUM_INSERTION_DISABLE
+	  GMAC_CHECKSUM_INSERTION_PROTO_PSEUDOH
   };
 #endif
 
