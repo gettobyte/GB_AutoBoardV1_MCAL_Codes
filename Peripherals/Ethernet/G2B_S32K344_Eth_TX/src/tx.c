@@ -25,7 +25,7 @@ static uint16 phy_addr; /* discovered PHY address (0..31) */
 static uint16 register_value_0;
 static uint16 register_value_1;
 
-Gmac_Ip_TxOptionsType TxOptions = { FALSE, GMAC_CRC_INSERTION_DISABLE,
+Gmac_Ip_TxOptionsType TxOptions = { FALSE, GMAC_CRC_AND_PAD_INSERTION,
 		GMAC_CHECKSUM_INSERTION_DISABLE};
 Gmac_Ip_BufferType TxBuffer = { 0 };
 Gmac_Ip_TxInfoType TxInfo = { 0 };
@@ -70,7 +70,7 @@ typedef struct {
 	uint8 dstMac[6];
 	uint8 srcMac[6];
 	uint16 etherType;
-	uint16 payload[PAYLOAD_SIZE]; /* A buffer for the payload data. */
+	uint8 payload[PAYLOAD_SIZE]; /* A buffer for the payload data. */
 	uint16 payloadLen; /* The actual length of the payload. */
 } EthFrame_t;
 
