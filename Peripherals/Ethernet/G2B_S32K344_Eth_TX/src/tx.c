@@ -18,7 +18,7 @@
 volatile int exit_code = 0;
 /* User includes */
 
-#define PAYLOAD_SIZE 46U
+#define PAYLOAD_SIZE 50U
 
 /* ===== PHY discovery scratch ===== */
 static uint16 phy_addr; /* discovered PHY address (0..31) */
@@ -26,7 +26,7 @@ static uint16 register_value_0;
 static uint16 register_value_1;
 
 Gmac_Ip_TxOptionsType TxOptions = { FALSE, GMAC_CRC_AND_PAD_INSERTION,
-		GMAC_CHECKSUM_INSERTION_DISABLE};
+		GMAC_CHECKSUM_INSERTION_IP};
 Gmac_Ip_BufferType TxBuffer = { 0 };
 Gmac_Ip_TxInfoType TxInfo = { 0 };
 Gmac_Ip_StatusType Status;
