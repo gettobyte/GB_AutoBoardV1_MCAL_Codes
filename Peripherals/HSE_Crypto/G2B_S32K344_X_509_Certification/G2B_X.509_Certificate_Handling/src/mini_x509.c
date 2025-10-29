@@ -2,7 +2,7 @@
  * mini_x509.c
  *
  *  Created on: 26-Oct-2025
- *      Author: Rohan
+ *      Author: RohanS002 Gettobyte
  */
 
 
@@ -465,4 +465,93 @@ void simple_x509_set_thumbprints(SimpleCert* out,
     if (!out) return;
     if (sha1 && sha1_len == 20)  hexify_fixed(out->sha1_thumb,   sizeof(out->sha1_thumb),   sha1,   sha1_len);
     if (sha256 && sha256_len==32)hexify_fixed(out->sha256_thumb, sizeof(out->sha256_thumb), sha256, sha256_len);
+}
+
+/* Lightweight re-walk for verification materials:
+   Certificate ::= SEQUENCE { tbsCertificate SEQUENCE, signatureAlgorithm AlgId, signatureValue BIT STRING } */
+int simple_x509_locate_core(const uint8_t* der, size_t der_len,
+                            const uint8_t** tbs_ptr, size_t* tbs_len,
+                            const uint8_t** sig_alg_oid, size_t* sig_alg_oid_len,
+                            const uint8_t** sig_value, size_t* sig_value_len)
+{
+    if (!der || der_len < 4 || !tbs_ptr || !tbs_len || !sig_alg_oid || !sig_alg_oid_len || !sig_value || !sig_value_len)
+        return SX_BAD_INPUT;
+
+    asn1 a={der,der+der_len}, cert, tbs;
+    if (enter_seq(&a,&cert)) return SX_INVALID_FORMAT;          /* Certificate */
+    /* Remember TBS content range */
+    if (enter_seq(&cert,&tbs)) return SX_INVALID_FORMAT;         /* tbsCertificate */
+    *tbs_ptr = tbs.p; *tbs_len = (size_t)(tbs.end - tbs.p);
+    /* Skip over the TBS fully to move cert.p to next field */
+    cert.p = tbs.end;
+
+    /* signatureAlgorithm (outer) */
+    asn1 sigalg;
+    if (enter_seq(&cert, &sigalg)) return SX_INVALID_FORMAT;
+    if (get_oid(&sigalg, sig_alg_oid, sig_alg_oid_len)) return SX_INVALID_FORMAT;
+    /* tolerate/skip params if present */
+    if (sigalg.p < sigalg.end){
+        if (*sigalg.p == TAG_NULL){ if (get_null(&sigalg)) return SX_INVALID_FORMAT; }
+        else { size_t L=0; uint8_t t=*sigalg.p++; if (get_len(&sigalg,&L)) return SX_INVALID_FORMAT;
+               if ((size_t)(sigalg.end - sigalg.p) < L) return SX_INVALID_FORMAT; sigalg.p += L; (void)t; }
+    }
+    if (sigalg.p != sigalg.end) return SX_INVALID_FORMAT;
+
+    /* signatureValue (outer) */
+    if (get_bit_contents(&cert, sig_value, sig_value_len)) return SX_INVALID_FORMAT;
+    if (cert.p != cert.end) return SX_INVALID_FORMAT;
+
+    return SX_OK;
+}
+
+/* issuer/subject raw DER (their Name sequences inside TBS) */
+int simple_x509_locate_names(const uint8_t* der, size_t der_len,
+                             const uint8_t** issuer_ptr, size_t* issuer_len,
+                             const uint8_t** subject_ptr, size_t* subject_len)
+{
+    if (!der || !issuer_ptr || !issuer_len || !subject_ptr || !subject_len) return SX_BAD_INPUT;
+    asn1 a={der,der+der_len}, cert, tbs;
+    if (enter_seq(&a,&cert) || enter_seq(&cert,&tbs)) return SX_INVALID_FORMAT;
+
+    /* version [0] EXPLICIT DEFAULT v1 ? skip if present */
+    if (tbs.p < tbs.end && *tbs.p == CTX_EXPL(0)){ size_t L=0; tbs.p++; if (get_len(&tbs,&L)) return SX_INVALID_FORMAT; if ((size_t)(tbs.end-tbs.p)<L) return SX_INVALID_FORMAT; tbs.p+=L; }
+
+    /* serialNumber */ { const uint8_t *sp=NULL; size_t sl=0; if (get_int(&tbs,&sp,&sl)) return SX_INVALID_FORMAT; }
+    /* signature (TBSCertificate) */ { asn1 tmp; if (enter_seq(&tbs,&tmp)) return SX_INVALID_FORMAT; tbs.p = tmp.end; }
+
+    /* issuer Name: capture TLV range of the SEQUENCE value (we return just content) */
+    { asn1 name; if (enter_seq(&tbs,&name)) return SX_INVALID_FORMAT;
+      *issuer_ptr = name.p; *issuer_len = (size_t)(name.end - name.p);
+      tbs.p = name.end;
+    }
+    /* validity */ { asn1 val; if (enter_seq(&tbs,&val)) return SX_INVALID_FORMAT; tbs.p = val.end; }
+    /* subject Name */
+    { asn1 name; if (enter_seq(&tbs,&name)) return SX_INVALID_FORMAT;
+      *subject_ptr = name.p; *subject_len = (size_t)(name.end - name.p);
+      tbs.p = name.end;
+    }
+    return SX_OK;
+}
+
+/* SPKI raw public key bits (exact bytes after removing 1-byte 'unused bits' header) */
+int simple_x509_locate_spki_bits(const uint8_t* der, size_t der_len,
+                                 const uint8_t** spki_bits, size_t* spki_bits_len)
+{
+    if (!der || !spki_bits || !spki_bits_len) return SX_BAD_INPUT;
+    asn1 a={der,der+der_len}, cert, tbs;
+    if (enter_seq(&a,&cert) || enter_seq(&cert,&tbs)) return SX_INVALID_FORMAT;
+
+    /* Skip to subjectPublicKeyInfo */
+    if (tbs.p < tbs.end && *tbs.p == CTX_EXPL(0)){ size_t L=0; tbs.p++; if (get_len(&tbs,&L)) return SX_INVALID_FORMAT; if ((size_t)(tbs.end-tbs.p)<L) return SX_INVALID_FORMAT; tbs.p+=L; }
+    { const uint8_t *sp=NULL; size_t sl=0; if (get_int(&tbs,&sp,&sl)) return SX_INVALID_FORMAT; }       /* serialNumber */
+    { asn1 tmp; if (enter_seq(&tbs,&tmp)) return SX_INVALID_FORMAT; tbs.p = tmp.end; }                  /* TBSCert.sig */
+    { asn1 name; if (enter_seq(&tbs,&name)) return SX_INVALID_FORMAT; tbs.p = name.end; }               /* issuer */
+    { asn1 val;  if (enter_seq(&tbs,&val )) return SX_INVALID_FORMAT; tbs.p = val.end; }                /* validity */
+    { asn1 name; if (enter_seq(&tbs,&name)) return SX_INVALID_FORMAT; tbs.p = name.end; }               /* subject */
+
+    /* subjectPublicKeyInfo */
+    asn1 spki; if (enter_seq(&tbs,&spki)) return SX_INVALID_FORMAT;
+    { asn1 alg; if (enter_seq(&spki,&alg)) return SX_INVALID_FORMAT; spki.p = alg.end; }                /* skip AlgId */
+    if (get_bit_contents(&spki, spki_bits, spki_bits_len)) return SX_INVALID_FORMAT;
+    return SX_OK;
 }

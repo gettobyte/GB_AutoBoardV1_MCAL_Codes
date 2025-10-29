@@ -2,7 +2,7 @@
  * mini_x509.h
  *
  *  Created on: 26-Oct-2025
- *      Author: Rohan
+ *      Author: RohanS002 Gettobyte
  */
 
 #ifndef INC_MINI_X509_H_
@@ -101,6 +101,21 @@ int simple_x509_parse_der(const uint8_t* der, size_t der_len, SimpleCert* out);
 void simple_x509_set_thumbprints(SimpleCert* out,
                                  const uint8_t* sha1,   size_t sha1_len,
                                  const uint8_t* sha256, size_t sha256_len);
+
+/* Locate core verify materials without reallocating/copying */
+int simple_x509_locate_core(const uint8_t* der, size_t der_len,
+                            const uint8_t** tbs_ptr, size_t* tbs_len,
+                            const uint8_t** sig_alg_oid, size_t* sig_alg_oid_len,
+                            const uint8_t** sig_value, size_t* sig_value_len);
+
+/* (Optional) Locate raw issuer/subject sequences (DER of Name) */
+int simple_x509_locate_names(const uint8_t* der, size_t der_len,
+                             const uint8_t** issuer_ptr, size_t* issuer_len,
+                             const uint8_t** subject_ptr, size_t* subject_len);
+
+/* (Optional) Locate raw SPKI BIT STRING (public key bytes exactly as in cert) */
+int simple_x509_locate_spki_bits(const uint8_t* der, size_t der_len,
+                                 const uint8_t** spki_bits, size_t* spki_bits_len);
 
 #ifdef __cplusplus
 }
