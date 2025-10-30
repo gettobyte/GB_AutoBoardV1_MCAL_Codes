@@ -1,5 +1,5 @@
 /*
- * main.h
+ * X.509_CA_Single_Certificate_Parsing.c
  *
  *  Created on: 26-Oct-2025
  *      Author: RohanS002 Gettobyte
@@ -182,6 +182,11 @@ int main(void)
     } else {
         /* Name capture failure is rare if parse succeeded; indicates unusual encoding. */
     }
+
+    bool self_signed = (issuer_len == subject_len) &&
+                       (0 == memcmp(issuer_raw, subject_raw, issuer_len));
+    /* If self_signed == true, you may verify with SPKI from the same cert.
+       Otherwise, you MUST verify with the issuer/CA public key. */
 
     /* --- Lifetime note ---
      * Keep [der] alive until all verification operations that use tbs/sig/spki_bits are done,
