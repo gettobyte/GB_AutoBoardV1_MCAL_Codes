@@ -479,10 +479,13 @@ int simple_x509_locate_core(const uint8_t* der, size_t der_len,
 
     asn1 a={der,der+der_len}, cert, tbs;
     if (enter_seq(&a,&cert)) return SX_INVALID_FORMAT;          /* Certificate */
-    /* Remember TBS content range */
-    if (enter_seq(&cert,&tbs)) return SX_INVALID_FORMAT;         /* tbsCertificate */
-    *tbs_ptr = tbs.p; *tbs_len = (size_t)(tbs.end - tbs.p);
-    /* Skip over the TBS fully to move cert.p to next field */
+    /* Remember TBS *TLV* range: start at SEQUENCE tag, include header + content */
+    const uint8_t *tbs_seq_start = cert.p;
+    if (enter_seq(&cert,&tbs)) return SX_INVALID_FORMAT;         /* tbsCertificate (content) */
+    /* Now: tbs.p..tbs.end = content(V).  cert.p advanced past SEQ header already.
+       We want TLV, so start at tbs_seq_start (the tag), and end at tbs.end. */
+    *tbs_ptr = tbs_seq_start;
+    *tbs_len = (size_t)(tbs.end - tbs_seq_start);
     cert.p = tbs.end;
 
     /* signatureAlgorithm (outer) */
