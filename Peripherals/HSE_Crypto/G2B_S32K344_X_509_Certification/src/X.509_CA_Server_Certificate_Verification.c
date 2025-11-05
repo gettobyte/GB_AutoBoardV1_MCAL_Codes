@@ -17,6 +17,7 @@
 #include "hse_host_format_key_catalogs.h"
 #include "hse_keys_allocator.h"
 #include "hse_host_import_key.h"
+#include "hse_host_sign.h"
 #include <stdio.h>                        // Optional printf (not used explicitly below)
 #include <stdlib.h>                       // free()
 
@@ -67,7 +68,6 @@ hseKeyInfo_t rsa_Certificate_PublicKey = { .keyFlags = HSE_KF_USAGE_VERIFY,
 /*==================================================================================================
  *                                     FUNCTION PROTOTYPES
  ==================================================================================================*/
-
 
 int main(void) {
 	/* ==========================================================
@@ -157,14 +157,14 @@ int main(void) {
 //	}
 
 	g2b_HSE_Status = HashReq(HSE_ACCESS_MODE_ONE_PASS, 0U, 1U,
-	HSE_HASH_ALGO_SHA2_256, 0U, (uint32_t) tbs_len, tbs, &hash_len, hash,
+	HSE_HASH_ALGO_SHA2_256, 0U, (uint32_t) (tbs_len+4), (tbs-4), &hash_len, hash,
 			txOptions, HSE_SGT_OPTION_NONE);
 
 	g2b_HSE_Status = LoadRsaPublicKey(&g2b_keyPubHandler, 0U, ca_pub.n_bits,
 			ca_pub.N, (uint16_t)ca_pub.E_len, ca_pub.E);
 
 	g2b_HSE_Status = RsaPkcs1v15VerSrv(g2b_keyPubHandler, HSE_HASH_ALGO_SHA2_256,
-			(uint32_t) tbs_len, tbs, FALSE, HSE_SGT_OPTION_NONE,
+			(uint32_t) (tbs_len+4), (tbs-4), FALSE, HSE_SGT_OPTION_NONE,
 			(uint32_t) &sig_len, sig);
 
 	rsa_pub_free(&ca_pub);
